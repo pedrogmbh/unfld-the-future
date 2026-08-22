@@ -6,7 +6,16 @@ import { Section } from "@/components/site/section";
 import { pageTitle, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({ meta: [{ title: pageTitle("Contact sales") }] }),
+  head: () => ({
+    meta: [
+      { title: pageTitle("Contact") },
+      {
+        name: "description",
+        content:
+          "Tell us what needs to work differently. Choose a product, propose a partnership, or describe the operation you need to improve.",
+      },
+    ],
+  }),
   component: Contact,
 });
 
@@ -17,8 +26,9 @@ function Contact() {
     <main>
       <PageHero
         kicker="Contact"
-        title="Talk to UNFLD."
-        lede="Sales, partnerships, press, and security. We read everything. We reply to the things that matter."
+        title="Tell us what needs"
+        titleSecond="to work differently."
+        lede="Choose a product, propose a partnership, or describe the operation you need to improve. Your message will reach the person responsible for the next step."
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-16 lg:grid-cols-[1fr_18rem]">
@@ -26,8 +36,8 @@ function Contact() {
             <div className="rounded-xl border border-border p-8">
               <h2 className="font-display text-2xl font-medium">Received.</h2>
               <p className="mt-3 text-muted">
-                Thank you. A human on the UNFLD team will follow up. If this is
-                a vulnerability, use {SITE.security} with the subject
+                Thank you. A member of the UNFLD team will follow up directly. If this is
+                a vulnerability report, please reach out to {SITE.security} with the subject
                 “Responsible Disclosure.”
               </p>
             </div>
@@ -68,7 +78,7 @@ function Contact() {
               </label>
               <label className="block sm:col-span-2">
                 <span className="mb-1.5 block text-[12px] text-muted">
-                  What do you want to talk about?
+                  What is happening today, and what needs to be different?
                 </span>
                 <textarea
                   required
@@ -78,14 +88,14 @@ function Contact() {
                 />
               </label>
               <div className="sm:col-span-2">
-                <Btn type="submit">Send</Btn>
+                <Btn type="submit">Send message</Btn>
               </div>
             </form>
           )}
           <aside className="space-y-6 text-sm">
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-                Sales
+                Sales & partnerships
               </p>
               <a href={`mailto:${SITE.sales}`} className="mt-1 block hover:opacity-70">
                 {SITE.sales}
@@ -101,7 +111,7 @@ function Contact() {
             </div>
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-                Registered
+                Registered entity
               </p>
               <a
                 href={`mailto:${SITE.registeredEmail}`}

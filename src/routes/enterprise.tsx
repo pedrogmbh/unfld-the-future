@@ -5,21 +5,69 @@ import { Section } from "@/components/site/section";
 import { pageTitle } from "@/lib/site";
 
 export const Route = createFileRoute("/enterprise")({
-  head: () => ({ meta: [{ title: pageTitle("Enterprise") }] }),
+  head: () => ({
+    meta: [
+      { title: pageTitle("Enterprise") },
+      {
+        name: "description",
+        content:
+          "A contract shaped around the system you actually need. Available controls are confirmed per product and order form.",
+      },
+    ],
+  }),
   component: Enterprise,
 });
+
+const capabilities = [
+  [
+    "Enterprise identity",
+    "Support for SAML SSO and directory integration where supported by the specific product scope.",
+  ],
+  [
+    "Isolated environments",
+    "Dedicated data planes, VPC peering, and tenancy isolation when regulatory review requires it.",
+  ],
+  [
+    "Audit exports",
+    "Traceable event logs, access reporting, and structured telemetry exportable for enterprise compliance.",
+  ],
+  [
+    "Regional hosting",
+    "Data residency within Brazilian cloud regions, meeting domestic compliance and latency requirements.",
+  ],
+  [
+    "Service level commitments",
+    "Contractual availability objectives, scheduled maintenance windows, and prioritized incident escalation.",
+  ],
+  [
+    "Named technical team",
+    "Direct engineering access, structured onboarding, and continuous architecture reviews.",
+  ],
+  [
+    "Contractual privacy basis",
+    "Customer data is used only for the purposes defined in the applicable agreement and privacy documentation. Any model-improvement use requires an explicit contractual basis.",
+  ],
+  [
+    "Commercial flexibility",
+    "Volume-adjusted terms, custom invoicing, and purchase-order workflows tailored to corporate procurement.",
+  ],
+  [
+    "Security documentation",
+    "Comprehensive architecture reviews, security questionnaire support, and contractual data processing agreements.",
+  ],
+];
 
 function Enterprise() {
   return (
     <main>
       <PageHero
         kicker="Enterprise"
-        title="The stack, with"
-        titleSecond="the controls."
-        lede="SSO, data residency, dedicated throughput, and a named team — for organizations that need UNFLD products, or the software-house work, under one contract."
+        title="A contract shaped around"
+        titleSecond="the system you actually need."
+        lede="Available controls are confirmed per product and order form. Options may include enterprise identity, isolated environments, audit exports, regional hosting, service levels, and named support."
         actions={
           <>
-            <BtnLink to="/contact">Contact sales</BtnLink>
+            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
             <BtnLink to="/security" variant="secondary">
               Security
             </BtnLink>
@@ -28,20 +76,10 @@ function Enterprise() {
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            ["Custom rate limits", "Tailored throughput for your workload."],
-            ["Dedicated support", "Named account team and onboarding."],
-            ["SSO & SCIM", "Bring your identity provider."],
-            ["Data residency", "Control where your data lives."],
-            ["Volume pricing", "Discounts at scale."],
-            ["Dedicated data plane", "Isolation when the review requires it."],
-            ["Customer-managed keys", "You hold the encryption material."],
-            ["Advanced audit", "Who did what, when, exported on demand."],
-            ["No training", "Your data does not train our models."],
-          ].map(([t, d]) => (
+          {capabilities.map(([t, d]) => (
             <article key={t} className="bg-bg p-7">
               <h2 className="font-medium">{t}</h2>
-              <p className="mt-2 text-sm text-muted">{d}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{d}</p>
             </article>
           ))}
         </div>

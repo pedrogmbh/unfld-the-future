@@ -9,58 +9,41 @@ export const Route = createFileRoute("/legal/privacy-policy")({
 
 function Page() {
   return (
-    <LegalDoc title="Privacy Policy" updated="August 1, 2026">
+    <LegalDoc title="Privacy Policy" updated="August 22, 2026">
       <p>
-        This Privacy Policy explains how {SITE.legal} (“UNFLD”) collects, uses,
-        and shares personal information when you use our websites and products.
+        This notice describes processing by {SITE.legal} (“UNFLD”) for the UNFLD corporate website and any product that expressly incorporates this notice. Product-specific notices apply where stated.
       </p>
       <H>Information we collect</H>
       <p>
-        Account data (name, email, company), usage data (logs, device, approx.
-        location), content you submit to the Services, and payment data handled
-        by our processor. We do not store full card numbers.
+        We collect contact information (name, business email, company), communication records, technical logs (IP address, browser type, device metadata), and any data you submit when contacting us or using our web surfaces. Payment processing for paid services is handled by accredited payment partners.
       </p>
-      <H>How we use it</H>
+      <H>How we use information</H>
       <p>
-        To provide, secure, and improve the Services; to communicate with you;
-        to prevent abuse; and to comply with law. Company and Enterprise content
-        is not used to train models unless you opt in.
+        To provide, maintain, and secure our websites and services; to respond to inquiries; to fulfill contractual obligations; and to comply with legal requirements under Brazilian law (including the Lei Geral de Proteção de Dados - LGPD).
       </p>
-      <H>Legal bases</H>
+      <H>Legal bases for processing</H>
       <p>
-        Where GDPR or LGPD applies, we rely on contract, legitimate interests,
-        consent, and legal obligation as appropriate. You may withdraw consent
-        without affecting prior processing.
+        Under LGPD and applicable privacy laws, we process personal data based on contract execution, legitimate interests, compliance with statutory obligations, and consent where requested. You may withdraw consent at any time.
       </p>
-      <H>Sharing</H>
+      <H>Sharing and subprocessors</H>
       <p>
-        We share data with subprocessors who help us run the Services (cloud,
-        payments, email), with affiliates, and when required by law. We do not
-        sell personal information.
+        We share data with vetted service providers who assist in hosting, communication, email delivery, and infrastructure operations under confidentiality and data protection agreements. We do not sell personal data.
+      </p>
+      <H>International data transfers</H>
+      <p>
+        Personal data may be processed in Brazil and in countries where approved service providers operate, subject to the safeguards required by applicable law, including contractual data protection clauses.
       </p>
       <H>Retention</H>
       <p>
-        We keep account data for the life of the account and a limited period
-        after, logs for security, and content according to your plan and
-        deletion requests.
+        We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, satisfy legal or audit obligations, and resolve disputes.
       </p>
-      <H>Your rights</H>
+      <H>Your data rights</H>
       <p>
-        Depending on where you live, you may access, correct, delete, port, or
-        object to processing of your information. Contact privacy@unfld.com or
-        use Privacy choices in the footer. California residents may use the
-        same channel; we will not discriminate for exercising rights.
+        You have the right to confirm the existence of processing, access your data, request correction of incomplete or inaccurate data, request anonymization or deletion where legally applicable, and revoke consent. Contact {SITE.privacy} or our Data Protection Officer at {SITE.dpo}.
       </p>
-      <H>International transfers</H>
+      <H>Contact & DPO</H>
       <p>
-        We operate in Brazil, the EU, and the United States. Transfers use
-        appropriate safeguards, including standard contractual clauses where
-        required.
-      </p>
-      <H>Contact</H>
-      <p>
-        {formatLegalContact()} privacy@unfld.com. Data protection officer:
-        dpo@unfld.com.
+        {formatLegalContact()} Privacy inquiries: {SITE.privacy}. Data Protection Officer: {SITE.dpo}.
       </p>
     </LegalDoc>
   );

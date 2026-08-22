@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { pageTitle } from "@/lib/site";
+import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/legal/acceptable-use-policy")({
   head: () => ({ meta: [{ title: pageTitle("Acceptable Use Policy") }] }),
@@ -9,29 +9,25 @@ export const Route = createFileRoute("/legal/acceptable-use-policy")({
 
 function Page() {
   return (
-    <LegalDoc title="Acceptable Use Policy" updated="August 1, 2026">
+    <LegalDoc title="Acceptable Use Policy" updated="August 22, 2026">
       <p>
-        This Acceptable Use Policy (“AUP”) is part of the Terms of Service. It
-        applies to all UNFLD products.
+        This Acceptable Use Policy (“AUP”) applies to each service that expressly incorporates this policy, together with any product-specific restrictions.
       </p>
-      <H>You may not</H>
+      <H>Prohibited activities</H>
       <p>
-        Use the Services to violate law; exploit, harm, or attempt to harm
-        minors; generate or distribute malware; probe or overload our systems
-        without authorization; impersonate UNFLD or others; infringe IP;
-        scrape the Services in a way that impairs them; or use outputs to train
-        competing models in violation of your plan.
+        You may not use our services to: violate applicable local, national, or international laws; generate, distribute, or facilitate malware or security exploits; conduct unauthorized vulnerability scanning, penetration testing, or denial-of-service attempts; impersonate any person or entity; infringe intellectual property or proprietary rights; or use a service to extract, reproduce, or exploit protected product content or functionality beyond the rights granted by the applicable agreement.
       </p>
-      <H>Sensitive uses</H>
+      <H>Regulated workflows & domain compliance</H>
       <p>
-        If you use our products in healthcare, finance, agriculture, or
-        government, you are responsible for domain-specific compliance. UNFLD
-        does not provide legal, medical, or financial advice.
+        If you deploy our products or custom systems in regulated domains—such as workplace health (NR-1), fiscal documentation, agriculture, or public sector workflows—you remain responsible for operational compliance with relevant regulatory standards. UNFLD software provides tools and workflows, but does not substitute for licensed legal, medical, or formal accounting counsel.
       </p>
-      <H>Enforcement</H>
+      <H>Investigation and enforcement</H>
       <p>
-        We may investigate, suspend, or terminate for AUP violations. We may
-        report illegal activity to authorities. Questions: aup@unfld.com.
+        We reserve the right to investigate suspected violations of this policy, suspend or terminate access for non-compliance, and cooperate with law enforcement authorities where appropriate.
+      </p>
+      <H>Contact</H>
+      <p>
+        Report suspected violations or inquiries: {SITE.aup}. {formatLegalContact()}
       </p>
     </LegalDoc>
   );

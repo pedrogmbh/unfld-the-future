@@ -6,59 +6,59 @@ import { Kicker, Section } from "@/components/site/section";
 import { ownedProducts, pageTitle } from "@/lib/site";
 
 export const Route = createFileRoute("/products")({
-  head: () => ({ meta: [{ title: pageTitle("Products") }] }),
+  head: () => ({ meta: [{ title: pageTitle("Products by UNFLD") }] }),
   component: Products,
 });
 
 function Products() {
   return (
     <ProductPage
-      kicker="Products"
-      title="Products we own"
-      titleSecond="and operate."
-      lede="FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial — designed, built, and run by the same team. Distinct from the software-house work."
-      primary="Talk to sales"
+      kicker="Portfolio"
+      title="Products by"
+      titleSecond="UNFLD."
+      lede="Five products, built around five kinds of work that should be simpler: agronomy, digital presence, fiscal operations, hiring, and workplace health."
+      primary="Talk to UNFLD"
       primaryTo="/contact"
-      secondary="The company"
-      secondaryTo="/company"
+      secondary="How we build"
+      secondaryTo="/how-we-work"
       image="/images/forge.jpg"
       imageAlt="UNFLD products on glass devices in a dark void"
       features={[
         {
-          title: "Five products in market",
-          body: "FCR (Ferramenta de Coleta, with Timac Agro), SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial. These we operate.",
+          title: "Five products, each at a different stage",
+          body: "FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus advance across clearly defined stages—from private deployments to live general access.",
         },
         {
-          title: "Operated, not delivered",
-          body: "We still ship for others. Owned products stay in our hands — release trains, support, and the boring reliability work.",
+          title: "Operated with accountability",
+          body: "We stay close to the systems we run—maintaining release trains, monitoring reliability, and evolving with customer reality.",
         },
         {
-          title: "Each has its own site",
-          body: "Open the product. SiteCreator, Doutor Fiscal, Dialogus, and Queravaga live on their own domains. FCR is on the App Store.",
+          title: "Distinct entry points",
+          body: "Each product offers a dedicated, secure entry point tailored to how users work—whether on mobile in the field, on WhatsApp, or in the browser.",
         },
         {
-          title: "WhatsApp where it belongs",
-          body: "SiteCreator and Doutor Fiscal meet the company where it already is: the thread, not a new login.",
+          title: "WhatsApp where it creates speed",
+          body: "SiteCreator and Doutor Fiscal meet small businesses in the channel they already use daily, reducing friction and onboarding steps.",
         },
         {
-          title: "The house behind them",
-          body: "Years of building for SporTV, Netflix, Timac Agro, Embraer, and the rest of the roster. That is the muscle. These are the products.",
+          title: "Field and enterprise depth",
+          body: "FCR and Dialogus deliver deep domain logic for agronomy teams and organizational risk managers, backing operational routines with verifiable data.",
         },
         {
-          title: "A long horizon",
-          body: "We ship products we intend to run for a decade. The software-house years were practice. This is the owned work.",
+          title: "Long-term commitment",
+          body: "We build systems intended to endure. The standard is consistent: understand the work, ship what matters, and remain accountable.",
         },
       ]}
       quote={{
-        kicker: "The shift",
-        title: "A software house makes other people’s products. These are ours.",
-        body: "The craft did not change. On FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus, the ownership did.",
+        kicker: "Operating principle",
+        title: "We build for ourselves and beside our clients.",
+        body: "The standard is the same: understand the work, ship what matters, and stay accountable after release.",
       }}
     >
       <Section className="pb-20 sm:pb-28">
-        <Kicker>In market</Kicker>
+        <Kicker>The portfolio</Kicker>
         <h2 className="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium tracking-tight">
-          The products.
+          Systems in operation.
         </h2>
         <Stagger
           className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
@@ -70,9 +70,14 @@ function Products() {
                 to={p.href as never}
                 className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
               >
-                <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                  {p.kicker}
-                </p>
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
+                    {p.kicker}
+                  </p>
+                  <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
+                    {p.status}
+                  </span>
+                </div>
                 <div className="mt-6 flex items-baseline justify-between gap-4">
                   <h3 className="font-display text-2xl font-medium tracking-tight">
                     {p.name}
@@ -81,10 +86,38 @@ function Products() {
                     {p.explore}
                   </TextArrow>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{p.line}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {p.line}
+                </p>
               </Link>
             </StaggerItem>
           ))}
+          <StaggerItem>
+            <Link
+              to="/build-with-us"
+              className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
+            >
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
+                  Custom systems
+                </p>
+                <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
+                  Scoped
+                </span>
+              </div>
+              <div className="mt-6 flex items-baseline justify-between gap-4">
+                <h3 className="font-display text-2xl font-medium tracking-tight">
+                  Built with UNFLD
+                </h3>
+                <TextArrow className="text-[13px] text-muted group-hover:text-fg">
+                  Explore
+                </TextArrow>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                Custom software systems designed and shipped beside organizations with consequential operations.
+              </p>
+            </Link>
+          </StaggerItem>
         </Stagger>
       </Section>
     </ProductPage>

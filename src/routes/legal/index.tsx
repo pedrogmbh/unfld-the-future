@@ -4,7 +4,16 @@ import { Section } from "@/components/site/section";
 import { footer, pageTitle } from "@/lib/site";
 
 export const Route = createFileRoute("/legal/")({
-  head: () => ({ meta: [{ title: pageTitle("Legal") }] }),
+  head: () => ({
+    meta: [
+      { title: pageTitle("Legal") },
+      {
+        name: "description",
+        content:
+          "The policies that govern UNFLD’s corporate website and the services that expressly incorporate them. Product-specific terms may also apply.",
+      },
+    ],
+  }),
   component: LegalIndex,
 });
 
@@ -14,7 +23,7 @@ function LegalIndex() {
       <PageHero
         kicker="Legal policies"
         title="Legal"
-        lede="Terms, privacy, acceptable use, cookies, and the brand system. The institutional layer for UNFOLDING THE FUTURE, trading as UNFLD."
+        lede="The policies that govern UNFLD’s corporate website and the services that expressly incorporate them. Product-specific terms may also apply."
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-12 md:grid-cols-2">

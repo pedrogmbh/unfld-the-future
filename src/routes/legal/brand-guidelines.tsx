@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mark } from "@/components/site/logo";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { pageTitle } from "@/lib/site";
+import { pageTitle, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/legal/brand-guidelines")({
   head: () => ({ meta: [{ title: pageTitle("Brand Guidelines") }] }),
@@ -10,11 +10,9 @@ export const Route = createFileRoute("/legal/brand-guidelines")({
 
 function Page() {
   return (
-    <LegalDoc kicker="Brand" title="UNFLD Brand Guidelines" updated="August 1, 2026">
+    <LegalDoc kicker="Brand" title="UNFLD Brand Guidelines" updated="August 22, 2026">
       <p>
-        Use these guidelines if you write about UNFLD, ship with us, or
-        partner with us. Do not redraw the mark. Do not invent a new one. The
-        trading name is UNFLD. The legal name is UNFOLDING THE FUTURE LTDA.
+        UNFLD stands for UNFOLDING THE FUTURE: the belief that meaningful progress is built by turning difficult work into systems people can use. The brand should feel precise, calm, practical, and in motion. Use these guidelines when referencing UNFLD, our products, or partner engagements.
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -36,43 +34,47 @@ function Page() {
         </div>
       </div>
 
-      <H>Name</H>
+      <H>Name & legal identity</H>
       <p>
         UNFLD is spelled in five capital letters. It is pronounced “unfold.”
         Do not write Unfld, Unfold, or UNFOLD in product or press, except when
-        explaining pronunciation. In contracts and invoices, use the legal name
-        UNFOLDING THE FUTURE LTDA (CNPJ 62.855.761/0001-82). The trading name
-        and the legal name are not interchangeable on legal documents. The
-        registered electronic address is admin@unfolding.com.br.
+        explaining pronunciation. In contracts, formal agreements, and invoices, use the full legal name
+        UNFOLDING THE FUTURE LTDA (CNPJ {SITE.cnpj}). The trading name
+        and the legal name are not interchangeable on formal legal documents.
       </p>
-      <H>Mark</H>
+      <H>Voice & communication</H>
+      <p>
+        Write with concrete verbs, specific proof, and short sentences. Prefer what the product changes over what the company claims to be. Avoid borrowed futurism, unexplained superlatives, theatrical aggression, and claims the product cannot evidence.
+      </p>
+      <H>The fold mark</H>
       <p>
         The fold mark is three polygons suggesting a plane unfolding. Use it
-        with the wordmark, or alone when the name is already on the surface.
+        with the wordmark, or alone when the brand name is already established on the surface.
         Clear space: the width of one fold wing on all sides. Do not rotate,
-        recolor, or add shadows.
+        recolor, distort, or add decorative shadows.
       </p>
-      <H>Color</H>
+      <H>Color system</H>
       <p>
-        Primary field: #000000. Primary type: #F5F5F5. Muted: #8A8A8A. No
-        purple, no gold, no gradients as brand fills. The only accent is white
-        on black, or black on white.
+        Primary field: pure black (#000000). Primary type: off-white (#F5F5F5). Muted type: neutral gray (#8A8A8A). No extra brand colors, purple, gold, or gradient blobs in chrome. The only accent is crisp white on black, or black on white.
       </p>
-      <H>Type</H>
+      <H>Typography</H>
       <p>
-        Inter Tight for display and UI. IBM Plex Mono for code and coordinates.
+        Inter Tight for display titles and interface elements. IBM Plex Mono for code, coordinates, timestamps, and technical metadata.
         Headlines are tight, slightly negatively tracked, never all-caps for
         long sentences. The wordmark itself is tracked out.
       </p>
-      <H>Do not</H>
+      <H>Restrictions</H>
       <p>
-        Do not put the mark on a busy photograph. Do not lock it up with another
-        logo without permission. Do not use the fold as a decorative spinner.
-        Do not mimic x.ai, SpaceX, or any other company’s identity and call it
-        UNFLD.
+        Do not place the mark on busy photographs without proper gradient masking. Do not lock it up with third-party logos without permission. Do not imitate another company’s visual identity, information architecture, or voice. Inspiration must be transformed into a system recognizably ours.
       </p>
-      <H>Questions</H>
-      <p>brand@unfld.com</p>
+      <H>Questions & approvals</H>
+      <p>
+        For brand asset requests or approval questions:{" "}
+        <a href={`mailto:${SITE.brand}`} className="text-fg underline-offset-4 hover:underline">
+          {SITE.brand}
+        </a>
+        .
+      </p>
     </LegalDoc>
   );
 }

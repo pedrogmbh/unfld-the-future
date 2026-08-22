@@ -9,17 +9,18 @@ import { cn } from "@/lib/utils";
 function navMenus() {
   return [
     { label: "Products", items: footer.products },
-    { label: "Solutions", items: footer.solutions },
-    { label: "Developer", items: footer.developers },
+    { label: "Build with us", items: footer.buildWithUs },
     {
       label: "Company",
       items: [
         { label: "About", to: "/company" },
         { label: "Careers", to: "/careers" },
+        { label: "News", to: "/news" },
         { label: "Security", to: "/security" },
         { label: "São Paulo", to: "/sao-paulo" },
         { label: "Infrastructure", to: "/infrastructure" },
         { label: "Enterprise", to: "/enterprise" },
+        { label: "Contact", to: "/contact" },
       ],
     },
   ] as const;
@@ -28,13 +29,6 @@ function navMenus() {
 const links = [
   { label: "Pricing", to: "/pricing" },
   { label: "News", to: "/news" },
-] as const;
-
-const tryItems = [
-  { label: "Our products", to: "/products" },
-  { label: "Contact sales", to: "/contact" },
-  { label: "Download FCR", to: "/download" },
-  { label: "Custom software", to: "/api" },
 ] as const;
 
 export function Header() {
@@ -90,11 +84,10 @@ export function Header() {
           <div className="hidden items-center gap-2 lg:flex">
             <Link
               to="/contact"
-              className="inline-flex h-9 items-center rounded-full border border-border-strong px-4 text-[13px] font-medium text-fg transition-colors duration-150 hover:border-fg/40 hover:bg-fg/5 active:scale-[0.96]"
+              className="inline-flex h-9 items-center rounded-full bg-accent px-4 text-[13px] font-medium text-accent-fg transition-opacity duration-150 hover:opacity-90 active:scale-[0.96]"
             >
-              Contact Sales
+              Talk to UNFLD
             </Link>
-            <TrySplit />
           </div>
           <button
             type="button"
@@ -158,15 +151,9 @@ export function Header() {
           ))}
           <Link
             to="/contact"
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-full border border-border-strong text-sm font-medium"
+            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-fg"
           >
-            Contact Sales
-          </Link>
-          <Link
-            to="/sitecreator"
-            className="mt-3 inline-flex h-12 items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-fg"
-          >
-            Try for free
+            Talk to UNFLD
           </Link>
         </nav>
       </div>
@@ -221,67 +208,6 @@ function HoverMenu({
               {items.map((item) => (
                 <Link
                   key={item.to + item.label}
-                  to={item.to as never}
-                  className="block rounded-lg px-3 py-2 text-[13px] text-muted transition-colors duration-150 hover:bg-fg/5 hover:text-fg"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-function TrySplit() {
-  const [open, setOpen] = useState(false);
-  const t = useRef<number | null>(null);
-
-  function show() {
-    if (t.current) window.clearTimeout(t.current);
-    setOpen(true);
-  }
-  function hide() {
-    if (t.current) window.clearTimeout(t.current);
-    t.current = window.setTimeout(() => setOpen(false), 90);
-  }
-
-  return (
-    <div className="relative flex" onMouseEnter={show} onMouseLeave={hide}>
-      <Link
-        to="/sitecreator"
-        className="inline-flex h-9 items-center rounded-l-full bg-accent px-4 text-[13px] font-medium text-accent-fg transition-opacity duration-150 hover:opacity-90 active:scale-[0.96]"
-      >
-        Try for free
-      </Link>
-      <button
-        type="button"
-        aria-label="More ways to try"
-        aria-expanded={open}
-        className="inline-flex h-9 items-center rounded-r-full border-l border-accent-fg/15 bg-accent px-2 text-accent-fg transition-opacity duration-150 hover:opacity-90"
-      >
-        <ChevronDown
-          className={cn(
-            "size-3.5 transition-transform duration-200",
-            open && "rotate-180",
-          )}
-        />
-      </button>
-      <AnimatePresence>
-        {open ? (
-          <motion.div
-            initial={{ opacity: 0, y: 6, scale: 0.97, filter: "blur(4px)" }}
-            animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, y: 4, scale: 0.99, filter: "blur(2px)" }}
-            transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute right-0 top-full z-50 min-w-[13rem] origin-top-right pt-2"
-          >
-            <div className="rounded-xl border border-border-strong bg-bg-elevated p-1.5 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.8)]">
-              {tryItems.map((item) => (
-                <Link
-                  key={item.to}
                   to={item.to as never}
                   className="block rounded-lg px-3 py-2 text-[13px] text-muted transition-colors duration-150 hover:bg-fg/5 hover:text-fg"
                 >

@@ -42,7 +42,8 @@ function Page() {
         Do not write Unfld, Unfold, or UNFOLD in product or press, except when
         explaining pronunciation. In contracts and invoices, use the legal name
         UNFOLDING THE FUTURE LTDA (CNPJ 62.855.761/0001-82). The trading name
-        and the legal name are not interchangeable on legal documents.
+        and the legal name are not interchangeable on legal documents. The
+        registered electronic address is admin@unfolding.com.br.
       </p>
       <H>Mark</H>
       <p>

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { pageTitle } from "@/lib/site";
+import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/legal/terms-of-service")({
   head: () => ({ meta: [{ title: pageTitle("Terms of Service") }] }),
@@ -19,11 +19,11 @@ function Page() {
       </p>
       <H>Who we are</H>
       <p>
-        The Services are provided by UNFOLDING THE FUTURE LTDA (“UNFLD”, “we”,
-        “us”), a Brazilian limited company (CNPJ 62.855.761/0001-82), trading
-        as UNFLD. If you are entering into these Terms on behalf of an
-        organization, you represent that you have authority to bind that
-        organization.
+        The Services are provided by {SITE.legal} (“UNFLD”, “we”, “us”), a
+        Brazilian limited liability company ({SITE.legalNature}, CNPJ{" "}
+        {SITE.cnpj}), trading as UNFLD, opened {SITE.founded}. If you are
+        entering into these Terms on behalf of an organization, you represent
+        that you have authority to bind that organization.
       </p>
       <H>Accounts</H>
       <p>
@@ -85,9 +85,7 @@ function Page() {
       </p>
       <H>Contact</H>
       <p>
-        Questions: legal@unfld.com. UNFOLDING THE FUTURE LTDA, Rua Avanhandava,
-        126, 10º andar, Edifício Cambuí, Bela Vista, São Paulo/SP, 01306-901,
-        Brazil. CNPJ 62.855.761/0001-82.
+        Questions: legal@unfld.com. {formatLegalContact()}
       </p>
     </LegalDoc>
   );

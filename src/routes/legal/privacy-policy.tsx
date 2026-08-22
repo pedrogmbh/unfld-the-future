@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { pageTitle } from "@/lib/site";
+import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/legal/privacy-policy")({
   head: () => ({ meta: [{ title: pageTitle("Privacy Policy") }] }),
@@ -11,9 +11,8 @@ function Page() {
   return (
     <LegalDoc title="Privacy Policy" updated="August 1, 2026">
       <p>
-        This Privacy Policy explains how UNFOLDING THE FUTURE LTDA (“UNFLD”)
-        collects, uses, and shares personal information when you use our
-        websites and products.
+        This Privacy Policy explains how {SITE.legal} (“UNFLD”) collects, uses,
+        and shares personal information when you use our websites and products.
       </p>
       <H>Information we collect</H>
       <p>
@@ -60,9 +59,7 @@ function Page() {
       </p>
       <H>Contact</H>
       <p>
-        UNFOLDING THE FUTURE LTDA, Rua Avanhandava, 126, 10º andar, Edifício
-        Cambuí, Bela Vista, São Paulo/SP, 01306-901, Brazil. CNPJ
-        62.855.761/0001-82. privacy@unfld.com. Data protection officer:
+        {formatLegalContact()} privacy@unfld.com. Data protection officer:
         dpo@unfld.com.
       </p>
     </LegalDoc>

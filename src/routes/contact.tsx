@@ -101,6 +101,23 @@ function Contact() {
             </div>
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
+                Registered
+              </p>
+              <a
+                href={`mailto:${SITE.registeredEmail}`}
+                className="mt-1 block hover:opacity-70"
+              >
+                {SITE.registeredEmail}
+              </a>
+              <a
+                href={`tel:${SITE.phoneHref}`}
+                className="mt-1 block hover:opacity-70"
+              >
+                {SITE.phone}
+              </a>
+            </div>
+            <div>
+              <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
                 Headquarters
               </p>
               <p className="mt-1 leading-relaxed text-muted">
@@ -115,6 +132,8 @@ function Contact() {
                 {SITE.address.postal}
                 <br />
                 CNPJ {SITE.cnpj}
+                <br />
+                {SITE.status} · {SITE.establishment} · {SITE.porte}
               </p>
             </div>
             <div>

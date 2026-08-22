@@ -5,10 +5,24 @@ export const SITE = {
   cnpj: "62.855.761/0001-82",
   tagline: "Unfold the future.",
   email: "hello@unfld.com",
+  registeredEmail: "admin@unfolding.com.br",
   sales: "sales@unfld.com",
   security: "security@unfld.com",
   press: "press@unfld.com",
+  phone: "(43) 3422-8348",
+  phoneHref: "+554334228348",
   year: 2026,
+  founded: "Sep 23, 2025",
+  status: "Ativa",
+  establishment: "Matriz",
+  porte: "ME",
+  legalNature: "Sociedade Empresária Limitada",
+  legalNatureCode: "206-2",
+  activity: {
+    code: "62.04-0-00",
+    name: "Consultoria em tecnologia da informação",
+    nameEn: "Information technology consultancy",
+  },
   address: {
     line1: "Rua Avanhandava, 126",
     line2: "10º andar, Edifício Cambuí",
@@ -473,7 +487,7 @@ export const timeline = [
   {
     date: "2025",
     title: "UNFLD",
-    body: "UNFOLDING THE FUTURE LTDA is incorporated in São Paulo, trading as UNFLD. The house keeps building for others. It also starts shipping what it owns.",
+    body: "On 23 September 2025, UNFOLDING THE FUTURE LTDA is incorporated in São Paulo (CNPJ 62.855.761/0001-82), trading as UNFLD. The house keeps building for others. It also starts shipping what it owns.",
   },
   {
     date: "2026",
@@ -801,4 +815,8 @@ export function pageTitle(page?: string) {
 export function formatAddress() {
   const { line1, line2, district, city, region, postal, country } = SITE.address;
   return `${line1}, ${line2}, ${district}, ${city}/${region}, ${postal}, ${country}`;
+}
+
+export function formatLegalContact() {
+  return `${SITE.legal}, ${formatAddress()}. CNPJ ${SITE.cnpj}. ${SITE.phone}. ${SITE.registeredEmail}.`;
 }

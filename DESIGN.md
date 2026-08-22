@@ -21,7 +21,7 @@ Public-facing brand rules (name, mark, color) also live at
 | | |
 |---|---|
 | Name | **UNFLD** — five capitals, pronounced “unfold”. Never Unfld, Unfold, UNFOLD in UI. |
-| Legal | UNFOLDING THE FUTURE LTDA (CNPJ 62.855.761/0001-82). Trading name: UNFLD. |
+| Legal | UNFOLDING THE FUTURE LTDA (CNPJ 62.855.761/0001-82). Trading name: UNFLD. Opened 23 Sep 2025. Matriz, Ativa, ME. CNAE 62.04-0-00. Registered: admin@unfolding.com.br · (43) 3422-8348. |
 | Tagline | Unfold the future. |
 | Story | A software house that also ships its own products. We still build for others. We operate FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial. |
 | Products | Owned (in market): FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial. Site families still on the IA: Forge (apps), Build (engineering), Studio (creative), Pulse (intelligence), Relay (API) — to be updated. |

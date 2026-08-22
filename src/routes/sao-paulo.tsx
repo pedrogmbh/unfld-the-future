@@ -60,14 +60,25 @@ function SaoPaulo() {
             </dt>
             <dd className="mt-2 text-sm text-muted">
               {SITE.legal} · CNPJ {SITE.cnpj}
+              <br />
+              {SITE.status} · {SITE.establishment} · opened {SITE.founded}
             </dd>
           </div>
           <div>
             <dt className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-              Working hours
+              Contact
             </dt>
             <dd className="mt-2 text-sm text-muted">
-              In office, the hours the work needs. Not a theater of presence.
+              <a href={`tel:${SITE.phoneHref}`} className="hover:text-fg">
+                {SITE.phone}
+              </a>
+              <br />
+              <a
+                href={`mailto:${SITE.registeredEmail}`}
+                className="hover:text-fg"
+              >
+                {SITE.registeredEmail}
+              </a>
             </dd>
           </div>
         </dl>

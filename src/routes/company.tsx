@@ -45,16 +45,21 @@ function Company() {
         </h2>
         <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted">
           We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a
-          Brazilian limited company in Bela Vista, São Paulo. For years we
-          designed and shipped digital products for other companies. We still
-          do. We also operate products under our own name.
+          Brazilian limited company (sociedade empresária limitada) in Bela
+          Vista, São Paulo, active since {SITE.founded}. For years we designed
+          and shipped digital products for other companies. We still do. We
+          also operate products under our own name.
         </p>
         <dl className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {[
             ["Trading name", SITE.name],
             ["Legal name", SITE.legal],
             ["CNPJ", SITE.cnpj],
-            ["Headquarters", `${SITE.address.city}, ${SITE.address.region}`],
+            ["Opened", SITE.founded],
+            ["Activity", SITE.activity.nameEn],
+            ["Nature", SITE.legalNature],
+            ["Status", `${SITE.status} · ${SITE.establishment}`],
+            ["Size", SITE.porte],
           ].map(([k, v]) => (
             <div key={k} className="bg-bg p-6">
               <dt className="text-[11px] tracking-[0.16em] text-subtle uppercase">
@@ -63,12 +68,30 @@ function Company() {
               <dd className="mt-2 font-display text-lg font-medium tracking-tight">
                 {v}
               </dd>
+              {k === "Activity" ? (
+                <p className="mt-2 font-mono text-[11px] text-subtle">
+                  CNAE {SITE.activity.code}
+                </p>
+              ) : null}
             </div>
           ))}
         </dl>
-        <p className="mt-6 font-mono text-[12px] leading-relaxed text-subtle">
-          {formatAddress()}
-        </p>
+        <div className="mt-6 flex flex-col gap-2 font-mono text-[12px] leading-relaxed text-subtle sm:flex-row sm:flex-wrap sm:gap-x-8">
+          <p>{formatAddress()}</p>
+          <p>
+            <a href={`tel:${SITE.phoneHref}`} className="hover:text-fg">
+              {SITE.phone}
+            </a>
+          </p>
+          <p>
+            <a
+              href={`mailto:${SITE.registeredEmail}`}
+              className="hover:text-fg"
+            >
+              {SITE.registeredEmail}
+            </a>
+          </p>
+        </div>
       </Section>
 
       <section className="px-5 sm:px-8 lg:px-12">

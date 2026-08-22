@@ -55,6 +55,9 @@ export function Footer() {
               <span className="mt-1 block font-mono text-[11px]">
                 CNPJ {SITE.cnpj}
               </span>
+              <span className="mt-1 block font-mono text-[11px]">
+                {SITE.phone} · {SITE.registeredEmail}
+              </span>
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">

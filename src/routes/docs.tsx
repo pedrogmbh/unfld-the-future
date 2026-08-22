@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CodeBlock } from "@/components/site/code-block";
-import { CodeTabs, RELAY_SAMPLES } from "@/components/site/code-tabs";
+import { CodeTabs, HOUSE_SAMPLES } from "@/components/site/code-tabs";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
@@ -15,39 +15,38 @@ const groups = [
   {
     title: "Start",
     items: [
-      ["Quickstart", "A key, a call, a response."],
-      ["Authentication", "Bearer tokens, rotation, and scoped keys."],
-      ["Errors", "Codes, retries, and idempotency."],
-    ],
-  },
-  {
-    title: "Relay",
-    items: [
-      ["Pulse query", "Ask the live business a question."],
-      ["Events", "Subscribe, filter, and verify signatures."],
-      ["Files", "Upload, chunk, and retrieve collections."],
+      ["Contact", "Custom software begins with the brief, not a key."],
+      ["Products", "Each owned product has its own site."],
+      ["Company", "Who we are, and who we have shipped for."],
     ],
   },
   {
     title: "Products",
     items: [
-      ["Forge apps", "Identity, webhooks, and app tokens."],
-      ["Build", "CLI flags, workflows, and plugins."],
-      ["Studio", "Image endpoints and brand constraints."],
+      ["FCR", "Ferramenta de Coleta — agronomy, with Timac Agro."],
+      ["SiteCreator", "A site in five minutes, over WhatsApp."],
+      ["Doutor Fiscal", "Fiscal work and BPO on WhatsApp."],
+    ],
+  },
+  {
+    title: "Also",
+    items: [
+      ["Dialogus", "Psychosocial risk. NR-1."],
+      ["Queravaga", "Into the job market in minutes."],
+      ["Enterprise", "Contracts, residency, a named team."],
     ],
   },
 ];
 
-const INSTALL = `pip install unfld
-# or
-npm install @unfld/sdk`;
+const SHAPE = `{
+  "tool": "Ferramenta de Coleta",
+  "partner": "Timac Agro",
+  "offline": true
+}`;
 
-const AUTH = `from unfld import Client
-import os
-
-client = Client(
-    api_key=os.getenv("UNFLD_API_KEY")
-)`;
+const SITE_FLOW = `channel: whatsapp
+cnpj:    from the Receita
+site:    *.live.sitecreator.com.br`;
 
 function Docs() {
   return (
@@ -55,7 +54,7 @@ function Docs() {
       <PageHero
         kicker="Developers"
         title="Documentation"
-        lede="Reference for Relay, Pulse, Forge, and Build. Written the way we wish vendor docs were written."
+        lede="There is no public UNFLD API. Product documentation lives on each product site. This page is how we work, and where to go next."
       />
       <Section className="pb-16">
         <div className="grid gap-10 md:grid-cols-3">
@@ -67,7 +66,7 @@ function Docs() {
               <ul className="mt-4 space-y-4">
                 {g.items.map(([t, d]) => (
                   <li key={t}>
-                    <Link to="/api" className="font-medium hover:opacity-70">
+                    <Link to="/products" className="font-medium hover:opacity-70">
                       {t}
                     </Link>
                     <p className="text-sm text-muted">{d}</p>
@@ -80,31 +79,31 @@ function Docs() {
       </Section>
 
       <Section className="pb-16">
-        <Kicker>Quickstart</Kicker>
+        <Kicker>Shape of the work</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Zero to first token.
+          Field collection. WhatsApp products.
         </h2>
         <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">
-          Install an SDK, create a key in the Console, and call Pulse. The same
-          surface speaks text, code, events, and media.
+          Illustrative payloads — not a public SDK. FCR syncs when the signal
+          returns. SiteCreator publishes from a CNPJ and a chat.
         </p>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <CodeBlock code={INSTALL} filename="install.sh" />
-          <CodeBlock code={AUTH} filename="auth.py" />
+          <CodeBlock code={SHAPE} filename="fcr.json" />
+          <CodeBlock code={SITE_FLOW} filename="sitecreator.txt" />
         </div>
       </Section>
 
       <Section className="pb-24 sm:pb-32">
-        <Kicker>First request</Kicker>
+        <Kicker>Samples</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          One API. Every modality.
+          How the work looks.
         </h2>
         <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">
           Switch languages in the window. Colors are the same ones we use on the
           homepage — keywords, calls, and strings.
         </p>
         <div className="mt-10">
-          <CodeTabs samples={RELAY_SAMPLES} />
+          <CodeTabs samples={HOUSE_SAMPLES} />
         </div>
       </Section>
     </main>

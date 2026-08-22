@@ -12,7 +12,7 @@ function Page() {
   return (
     <LegalDoc kicker="Brand" title="UNFLD Brand Guidelines" updated="August 1, 2026">
       <p>
-        Use these guidelines if you write about UNFLD, build on Relay, or
+        Use these guidelines if you write about UNFLD, ship with us, or
         partner with us. Do not redraw the mark. Do not invent a new one. The
         trading name is UNFLD. The legal name is UNFOLDING THE FUTURE LTDA.
       </p>

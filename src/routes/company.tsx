@@ -98,7 +98,7 @@ function Company() {
         <Stagger className="mx-auto grid max-w-6xl gap-3 sm:grid-cols-2" delay={0.08}>
           {[
             {
-              href: "/forge",
+              href: "/products",
               img: "/images/forge.jpg",
               t: "Products we own",
               d: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus.",

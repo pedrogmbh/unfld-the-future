@@ -12,8 +12,8 @@ function Page() {
     <LegalDoc title="Terms of Service" updated="August 1, 2026">
       <p>
         These Terms of Service (“Terms”) govern access to and use of UNFLD
-        products, including FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus
-        Psicossocial, Forge, Build, Studio, Pulse, Relay, websites, and related
+        products, including FCR (Ferramenta de Coleta), SiteCreator, Doutor
+        Fiscal, Queravaga, Dialogus Psicossocial, websites, and related
         services (the “Services”). By using the Services you agree to these
         Terms.
       </p>

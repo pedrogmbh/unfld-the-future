@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiRouteImport } from './routes/api'
-import { Route as BuildRouteImport } from './routes/build'
 import { Route as CompanyRouteImport } from './routes/company'
 import { Route as ConsoleRouteImport } from './routes/console'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -21,17 +20,14 @@ import { Route as DoutorFiscalRouteImport } from './routes/doutor-fiscal'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
 import { Route as FcrRouteImport } from './routes/fcr'
-import { Route as ForgeRouteImport } from './routes/forge'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as PricingRouteImport } from './routes/pricing'
-import { Route as PulseRouteImport } from './routes/pulse'
+import { Route as ProductsRouteImport } from './routes/products'
 import { Route as QueravagaRouteImport } from './routes/queravaga'
-import { Route as RelayRouteImport } from './routes/relay'
 import { Route as SaoPauloRouteImport } from './routes/sao-paulo'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitecreatorRouteImport } from './routes/sitecreator'
 import { Route as StatusRouteImport } from './routes/status'
-import { Route as StudioRouteImport } from './routes/studio'
 import { Route as CareersIndexRouteImport } from './routes/careers/index'
 import { Route as CareersOpenRolesRouteImport } from './routes/careers/open-roles'
 import { Route as LegalIndexRouteImport } from './routes/legal/index'
@@ -54,11 +50,6 @@ const IndexRoute = IndexRouteImport.update({
 const ApiRoute = ApiRouteImport.update({
   id: '/api',
   path: '/api',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BuildRoute = BuildRouteImport.update({
-  id: '/build',
-  path: '/build',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompanyRoute = CompanyRouteImport.update({
@@ -106,11 +97,6 @@ const FcrRoute = FcrRouteImport.update({
   path: '/fcr',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ForgeRoute = ForgeRouteImport.update({
-  id: '/forge',
-  path: '/forge',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const InfrastructureRoute = InfrastructureRouteImport.update({
   id: '/infrastructure',
   path: '/infrastructure',
@@ -121,19 +107,14 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PulseRoute = PulseRouteImport.update({
-  id: '/pulse',
-  path: '/pulse',
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
   getParentRoute: () => rootRouteImport,
 } as any)
 const QueravagaRoute = QueravagaRouteImport.update({
   id: '/queravaga',
   path: '/queravaga',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RelayRoute = RelayRouteImport.update({
-  id: '/relay',
-  path: '/relay',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SaoPauloRoute = SaoPauloRouteImport.update({
@@ -154,11 +135,6 @@ const SitecreatorRoute = SitecreatorRouteImport.update({
 const StatusRoute = StatusRouteImport.update({
   id: '/status',
   path: '/status',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StudioRoute = StudioRouteImport.update({
-  id: '/studio',
-  path: '/studio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersIndexRoute = CareersIndexRouteImport.update({
@@ -232,7 +208,6 @@ const SolutionsSlugRoute = SolutionsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
-  '/build': typeof BuildRoute
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
@@ -242,17 +217,14 @@ export interface FileRoutesByFullPath {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
-  '/forge': typeof ForgeRoute
   '/infrastructure': typeof InfrastructureRoute
   '/pricing': typeof PricingRoute
-  '/pulse': typeof PulseRoute
+  '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
-  '/relay': typeof RelayRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
   '/status': typeof StatusRoute
-  '/studio': typeof StudioRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -270,7 +242,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
-  '/build': typeof BuildRoute
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
@@ -280,17 +251,14 @@ export interface FileRoutesByTo {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
-  '/forge': typeof ForgeRoute
   '/infrastructure': typeof InfrastructureRoute
   '/pricing': typeof PricingRoute
-  '/pulse': typeof PulseRoute
+  '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
-  '/relay': typeof RelayRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
   '/status': typeof StatusRoute
-  '/studio': typeof StudioRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -309,7 +277,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
-  '/build': typeof BuildRoute
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
@@ -319,17 +286,14 @@ export interface FileRoutesById {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
-  '/forge': typeof ForgeRoute
   '/infrastructure': typeof InfrastructureRoute
   '/pricing': typeof PricingRoute
-  '/pulse': typeof PulseRoute
+  '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
-  '/relay': typeof RelayRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
   '/status': typeof StatusRoute
-  '/studio': typeof StudioRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -349,7 +313,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/api'
-    | '/build'
     | '/company'
     | '/console'
     | '/contact'
@@ -359,17 +322,14 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/fcr'
-    | '/forge'
     | '/infrastructure'
     | '/pricing'
-    | '/pulse'
+    | '/products'
     | '/queravaga'
-    | '/relay'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
     | '/status'
-    | '/studio'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -387,7 +347,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/api'
-    | '/build'
     | '/company'
     | '/console'
     | '/contact'
@@ -397,17 +356,14 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/fcr'
-    | '/forge'
     | '/infrastructure'
     | '/pricing'
-    | '/pulse'
+    | '/products'
     | '/queravaga'
-    | '/relay'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
     | '/status'
-    | '/studio'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -425,7 +381,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/api'
-    | '/build'
     | '/company'
     | '/console'
     | '/contact'
@@ -435,17 +390,14 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/fcr'
-    | '/forge'
     | '/infrastructure'
     | '/pricing'
-    | '/pulse'
+    | '/products'
     | '/queravaga'
-    | '/relay'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
     | '/status'
-    | '/studio'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -464,7 +416,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApiRoute: typeof ApiRoute
-  BuildRoute: typeof BuildRoute
   CompanyRoute: typeof CompanyRoute
   ConsoleRoute: typeof ConsoleRoute
   ContactRoute: typeof ContactRoute
@@ -474,17 +425,14 @@ export interface RootRouteChildren {
   DownloadRoute: typeof DownloadRoute
   EnterpriseRoute: typeof EnterpriseRoute
   FcrRoute: typeof FcrRoute
-  ForgeRoute: typeof ForgeRoute
   InfrastructureRoute: typeof InfrastructureRoute
   PricingRoute: typeof PricingRoute
-  PulseRoute: typeof PulseRoute
+  ProductsRoute: typeof ProductsRoute
   QueravagaRoute: typeof QueravagaRoute
-  RelayRoute: typeof RelayRoute
   SaoPauloRoute: typeof SaoPauloRoute
   SecurityRoute: typeof SecurityRoute
   SitecreatorRoute: typeof SitecreatorRoute
   StatusRoute: typeof StatusRoute
-  StudioRoute: typeof StudioRoute
   CareersOpenRolesRoute: typeof CareersOpenRolesRoute
   LegalAcceptableUsePolicyRoute: typeof LegalAcceptableUsePolicyRoute
   LegalBrandGuidelinesRoute: typeof LegalBrandGuidelinesRoute
@@ -514,13 +462,6 @@ declare module '@tanstack/react-router' {
       path: '/api'
       fullPath: '/api'
       preLoaderRoute: typeof ApiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/build': {
-      id: '/build'
-      path: '/build'
-      fullPath: '/build'
-      preLoaderRoute: typeof BuildRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/company': {
@@ -586,13 +527,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FcrRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/forge': {
-      id: '/forge'
-      path: '/forge'
-      fullPath: '/forge'
-      preLoaderRoute: typeof ForgeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/infrastructure': {
       id: '/infrastructure'
       path: '/infrastructure'
@@ -607,11 +541,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/pulse': {
-      id: '/pulse'
-      path: '/pulse'
-      fullPath: '/pulse'
-      preLoaderRoute: typeof PulseRouteImport
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/queravaga': {
@@ -619,13 +553,6 @@ declare module '@tanstack/react-router' {
       path: '/queravaga'
       fullPath: '/queravaga'
       preLoaderRoute: typeof QueravagaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/relay': {
-      id: '/relay'
-      path: '/relay'
-      fullPath: '/relay'
-      preLoaderRoute: typeof RelayRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sao-paulo': {
@@ -654,13 +581,6 @@ declare module '@tanstack/react-router' {
       path: '/status'
       fullPath: '/status'
       preLoaderRoute: typeof StatusRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/studio': {
-      id: '/studio'
-      path: '/studio'
-      fullPath: '/studio'
-      preLoaderRoute: typeof StudioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers/': {
@@ -760,7 +680,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApiRoute: ApiRoute,
-  BuildRoute: BuildRoute,
   CompanyRoute: CompanyRoute,
   ConsoleRoute: ConsoleRoute,
   ContactRoute: ContactRoute,
@@ -770,17 +689,14 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadRoute: DownloadRoute,
   EnterpriseRoute: EnterpriseRoute,
   FcrRoute: FcrRoute,
-  ForgeRoute: ForgeRoute,
   InfrastructureRoute: InfrastructureRoute,
   PricingRoute: PricingRoute,
-  PulseRoute: PulseRoute,
+  ProductsRoute: ProductsRoute,
   QueravagaRoute: QueravagaRoute,
-  RelayRoute: RelayRoute,
   SaoPauloRoute: SaoPauloRoute,
   SecurityRoute: SecurityRoute,
   SitecreatorRoute: SitecreatorRoute,
   StatusRoute: StatusRoute,
-  StudioRoute: StudioRoute,
   CareersOpenRolesRoute: CareersOpenRolesRoute,
   LegalAcceptableUsePolicyRoute: LegalAcceptableUsePolicyRoute,
   LegalBrandGuidelinesRoute: LegalBrandGuidelinesRoute,

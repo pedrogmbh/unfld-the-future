@@ -24,9 +24,9 @@ function Page() {
       </p>
       <H>Sensitive uses</H>
       <p>
-        If you use Pulse or Relay in healthcare, finance, or government, you
-        are responsible for domain-specific compliance. UNFLD does not provide
-        legal, medical, or financial advice.
+        If you use our products in healthcare, finance, agriculture, or
+        government, you are responsible for domain-specific compliance. UNFLD
+        does not provide legal, medical, or financial advice.
       </p>
       <H>Enforcement</H>
       <p>

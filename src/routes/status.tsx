@@ -9,12 +9,12 @@ export const Route = createFileRoute("/status")({
 });
 
 const endpoints = [
-  ["api.unfld.com", "Relay", "100%"],
-  ["sa-east-1.api.unfld.com", "São Paulo", "100%"],
-  ["eu-west-1.api.unfld.com", "Ireland", "100%"],
-  ["us-east-1.api.unfld.com", "Virginia", "100%"],
-  ["forge.unfld.com", "Forge", "100%"],
-  ["pulse.unfld.com", "Pulse", "100%"],
+  ["unfld.com", "Institutional", "100%"],
+  ["sitecreator.com.br", "SiteCreator", "100%"],
+  ["doutorfiscal.com", "Doutor Fiscal", "100%"],
+  ["dialoguspsicossocial.com.br", "Dialogus", "100%"],
+  ["queravaga.com", "Queravaga", "100%"],
+  ["apps.apple.com · FCR", "Ferramenta de Coleta", "100%"],
 ];
 
 function Status() {
@@ -24,7 +24,7 @@ function Status() {
         kicker="Service status"
         title="All systems"
         titleSecond="operational."
-        lede="No incidents declared. Live data from monitoring is below — health even when we have nothing to say."
+        lede="No incidents declared. Product hosts we operate, and the App Store listing for FCR."
       />
       <Section className="pb-24 sm:pb-32">
         <div className="rounded-xl border border-border">

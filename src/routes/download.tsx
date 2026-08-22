@@ -14,39 +14,39 @@ function Download() {
     <main>
       <PageHero
         kicker="Download"
-        title="UNFLD on every"
-        titleSecond="surface."
-        lede="Forge apps, Pulse, and Build — web, iOS, Android, and desktop. Same account. Same Relay backend."
+        title="FCR on the"
+        titleSecond="App Store."
+        lede="Ferramenta de Coleta is the agronomy app we ship with Timac Agro. The other products live on the web — open their sites."
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-4 md:grid-cols-2">
           <Card
-            id="web"
-            title="Web"
-            body="Forge, Pulse, and the Console run in the browser. No install."
-            cta="Open in browser"
-            to="/console"
-          />
-          <Card
             id="ios"
-            title="iOS"
-            body="Forge and Pulse on iPhone and iPad. Biometrics, offline cache, widgets."
+            title="FCR · iOS"
+            body="Ferramenta de Coleta, for agronomy engineers. Collect technical results in the field — offline, then sync."
             cta="App Store"
-            href="https://apps.apple.com"
+            href="https://apps.apple.com/br/app/fcr/id6461211731"
           />
           <Card
-            id="android"
-            title="Android"
-            body="The same products on Play. Material where it belongs, UNFLD everywhere else."
-            cta="Google Play"
-            href="https://play.google.com"
+            id="web"
+            title="Product sites"
+            body="SiteCreator, Doutor Fiscal, Dialogus, and Queravaga run in the browser. No shared UNFLD install."
+            cta="Our products"
+            to="/products"
           />
           <Card
-            id="desktop"
-            title="Desktop · Build"
-            body="macOS, Windows, and Linux. The harness we use to make UNFLD products."
-            cta="macOS"
-            extra
+            id="sitecreator"
+            title="SiteCreator"
+            body="A site on the air in five minutes, over WhatsApp. For MEI and microempresa."
+            cta="sitecreator.com.br"
+            href="https://www.sitecreator.com.br"
+          />
+          <Card
+            id="doutor-fiscal"
+            title="Doutor Fiscal"
+            body="Fiscal work on WhatsApp. Waitlist open for MEI, micro, and small companies."
+            cta="doutorfiscal.com"
+            href="https://www.doutorfiscal.com"
           />
         </div>
       </Section>
@@ -61,7 +61,6 @@ function Card({
   cta,
   to,
   href,
-  extra,
 }: {
   id: string;
   title: string;
@@ -69,7 +68,6 @@ function Card({
   cta: string;
   to?: string;
   href?: string;
-  extra?: boolean;
 }) {
   return (
     <article
@@ -79,19 +77,15 @@ function Card({
       <h2 className="font-display text-2xl font-medium tracking-tight">{title}</h2>
       <p className="mt-3 text-sm leading-relaxed text-muted">{body}</p>
       <div className="mt-6 flex flex-wrap gap-2">
-        <BtnLink to={to} href={href} variant="secondary" size="sm">
+        <BtnLink
+          to={to}
+          href={href}
+          variant="secondary"
+          size="sm"
+          {...(href ? { target: "_blank", rel: "noreferrer" } : {})}
+        >
           {cta}
         </BtnLink>
-        {extra ? (
-          <>
-            <BtnLink href="#desktop" variant="secondary" size="sm">
-              Windows
-            </BtnLink>
-            <BtnLink href="#desktop" variant="secondary" size="sm">
-              Linux
-            </BtnLink>
-          </>
-        ) : null}
       </div>
     </article>
   );

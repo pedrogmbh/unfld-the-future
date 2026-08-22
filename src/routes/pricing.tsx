@@ -14,9 +14,9 @@ function Pricing() {
     <main>
       <PageHero
         kicker="Pricing"
-        title="Start free."
-        titleSecond="Scale as you grow."
-        lede="Same products on every plan. Limits, admin, and the contract layer change as the organization does."
+        title="Product sites."
+        titleSecond="Custom by conversation."
+        lede="Pricing lives on each product. SiteCreator is free to publish. Doutor Fiscal is on a waitlist. FCR and software-house work start with sales."
       />
       <Section className="pb-16">
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -41,9 +41,11 @@ function Pricing() {
                 ))}
               </ul>
               <BtnLink
-                to={p.href}
-                variant={p.name === "Enterprise" ? "primary" : "secondary"}
+                to={p.external ? undefined : p.href}
+                href={p.external ? p.href : undefined}
+                variant={p.name === "Custom" ? "primary" : "secondary"}
                 className="mt-8 w-full"
+                {...(p.external ? { target: "_blank", rel: "noreferrer" } : {})}
               >
                 {p.cta}
               </BtnLink>
@@ -57,7 +59,7 @@ function Pricing() {
           Talk to sales.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Custom rate limits, dedicated infrastructure, SSO, compliance, and
+          Custom contracts, dedicated infrastructure, SSO, compliance, and
           volume pricing. Or email sales@unfld.com.
         </p>
         <div className="mt-8">

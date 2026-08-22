@@ -1,0 +1,31 @@
+# deps / build
+node_modules/
+.vercel/
+.tanstack/
+dist/
+.output/
+*.log
+*.tsbuildinfo
+
+# env / local
+.env
+.env.*
+!.env.example
+.project_id
+.node_modules.lock
+
+# sandbox / platform (not part of the UNFLD site)
+.grok/
+AGENTS.md
+AGENTS.project.md
+startup.sh
+artifacts/
+attachments/
+screenshots/
+public/__grok/
+
+# os / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp

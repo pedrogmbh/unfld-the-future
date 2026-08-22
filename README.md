@@ -1,6 +1,7 @@
 # UNFLD
 
-Institutional site for **UNFLD** — a product company that used to be a software house.
+Institutional site for **UNFLD** — trading name of **UNFOLDING THE FUTURE**.
+A software house that also ships its own products.
 
 Unfold the future.
 
@@ -11,9 +12,9 @@ TanStack Start · React 19 · Tailwind v4 · Motion
 - Design: [DESIGN.md](./DESIGN.md)
 - Agent instructions: [AGENTS.md](./AGENTS.md)
 
-## Products
+## Products we own
 
-Forge · Build · Studio · Pulse · Relay
+FCR · SiteCreator · Doutor Fiscal · Queravaga · Dialogus Psicossocial
 
 ## Develop
 

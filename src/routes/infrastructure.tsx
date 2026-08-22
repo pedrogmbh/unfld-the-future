@@ -13,9 +13,9 @@ function Infra() {
     <main>
       <PageHero
         kicker="Infrastructure"
-        title="Our gigafactory"
-        titleSecond="of compute."
-        lede="We were told it would take years to own our own plane. So we took the project into our own hands, removed whatever was unnecessary, and built it."
+        title="Compute we can"
+        titleSecond="actually inspect."
+        lede="São Paulo is headquarters. Products we own, and the software-house work, run on infrastructure we chose — not a future we cannot see."
       />
       <section className="px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-xl">
@@ -30,10 +30,10 @@ function Infra() {
         <Kicker>By the numbers</Kicker>
         <div className="mt-8 grid grid-cols-2 gap-8 lg:grid-cols-4">
           {[
-            ["12", "Regions live"],
-            ["<80ms", "Median Relay latency"],
-            ["99.99%", "Uptime, last 12 months"],
-            ["3", "Continents"],
+            ["SP", "Headquarters"],
+            ["5", "Products we own"],
+            ["15+", "Companies shipped for"],
+            ["2019", "Building since"],
           ].map(([n, l]) => (
             <div key={l}>
               <p className="font-display text-4xl font-medium tracking-tight tabular-nums">
@@ -49,10 +49,10 @@ function Infra() {
           We go further, faster.
         </h2>
         <p className="mt-6 max-w-2xl text-muted">
-          Progress in product is driven by compute we can actually touch. No one
-          on this team is interested in renting a future we cannot inspect.
-          Austin runs the hall. São Paulo runs the products. Lisbon keeps Europe
-          close.
+          Progress in product is driven by systems we can actually inspect. São
+          Paulo runs the company. The products we own — FCR, SiteCreator, Doutor
+          Fiscal, Queravaga, Dialogus — and the work we still do for others sit
+          on that same bar.
         </p>
       </Section>
     </main>

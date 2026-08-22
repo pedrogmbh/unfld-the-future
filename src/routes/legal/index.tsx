@@ -14,7 +14,7 @@ function LegalIndex() {
       <PageHero
         kicker="Legal policies"
         title="Legal"
-        lede="Terms, privacy, acceptable use, cookies, and the brand system. The institutional layer that makes a product company look like one."
+        lede="Terms, privacy, acceptable use, cookies, and the brand system. The institutional layer for UNFOLDING THE FUTURE, trading as UNFLD."
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-12 md:grid-cols-2">

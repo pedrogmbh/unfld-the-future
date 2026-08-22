@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { pageTitle } from "@/lib/site";
+import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/legal/terms-of-service")({
   head: () => ({ meta: [{ title: pageTitle("Terms of Service") }] }),
@@ -12,15 +12,18 @@ function Page() {
     <LegalDoc title="Terms of Service" updated="August 1, 2026">
       <p>
         These Terms of Service (“Terms”) govern access to and use of UNFLD
-        products, including Forge, Build, Studio, Pulse, Relay, websites, and
-        related services (the “Services”). By using the Services you agree to
-        these Terms.
+        products, including FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus
+        Psicossocial, Forge, Build, Studio, Pulse, Relay, websites, and related
+        services (the “Services”). By using the Services you agree to these
+        Terms.
       </p>
       <H>Who we are</H>
       <p>
-        The Services are provided by UNFLD Ltda. (“UNFLD”, “we”, “us”). If you
-        are entering into these Terms on behalf of an organization, you
-        represent that you have authority to bind that organization.
+        The Services are provided by {SITE.legal} (“UNFLD”, “we”, “us”), a
+        Brazilian limited liability company ({SITE.legalNature}, CNPJ{" "}
+        {SITE.cnpj}), trading as UNFLD, opened {SITE.founded}. If you are
+        entering into these Terms on behalf of an organization, you represent
+        that you have authority to bind that organization.
       </p>
       <H>Accounts</H>
       <p>
@@ -81,7 +84,9 @@ function Page() {
         jurisdiction, except where consumer law requires otherwise.
       </p>
       <H>Contact</H>
-      <p>Questions: legal@unfld.com. UNFLD Ltda., São Paulo, Brazil.</p>
+      <p>
+        Questions: legal@unfld.com. {formatLegalContact()}
+      </p>
     </LegalDoc>
   );
 }

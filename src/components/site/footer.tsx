@@ -50,8 +50,14 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-6 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
             <Logo />
-            <p className="text-[12px] text-subtle">
+            <p className="text-[12px] leading-relaxed text-subtle">
               © {SITE.year} {SITE.legal}
+              <span className="mt-1 block font-mono text-[11px]">
+                CNPJ {SITE.cnpj}
+              </span>
+              <span className="mt-1 block font-mono text-[11px]">
+                {SITE.phone} · {SITE.registeredEmail}
+              </span>
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">

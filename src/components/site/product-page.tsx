@@ -10,25 +10,29 @@ export function ProductPage({
   lede,
   primary,
   primaryTo,
+  primaryHref,
   secondary,
   secondaryTo,
   image,
   imageAlt,
   features,
   quote,
+  children,
 }: {
   kicker: string;
   title: string;
   titleSecond?: string;
   lede: string;
   primary: string;
-  primaryTo: string;
+  primaryTo?: string;
+  primaryHref?: string;
   secondary?: string;
   secondaryTo?: string;
   image: string;
   imageAlt: string;
   features: { title: string; body: string }[];
   quote?: { kicker: string; title: string; body: string };
+  children?: React.ReactNode;
 }) {
   return (
     <main>
@@ -39,7 +43,13 @@ export function ProductPage({
         lede={lede}
         actions={
           <>
-            <BtnLink to={primaryTo}>{primary}</BtnLink>
+            <BtnLink
+              to={primaryTo}
+              href={primaryHref}
+              {...(primaryHref ? { target: "_blank", rel: "noreferrer" } : {})}
+            >
+              {primary}
+            </BtnLink>
             {secondary && secondaryTo ? (
               <BtnLink to={secondaryTo} variant="secondary">
                 {secondary}
@@ -70,6 +80,7 @@ export function ProductPage({
           ))}
         </Stagger>
       </Section>
+      {children}
       {quote ? (
         <Section className="pb-24 sm:pb-32">
           <Reveal>

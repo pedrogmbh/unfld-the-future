@@ -14,7 +14,7 @@ TanStack Start · React 19 · Tailwind v4 · Motion
 
 ## Products we own
 
-FCR · SiteCreator · Doutor Fiscal · Queravaga · Dialogus Psicossocial
+FCR (Ferramenta de Coleta) · SiteCreator · Doutor Fiscal · Queravaga · Dialogus Psicossocial
 
 ## Develop
 

@@ -16,7 +16,7 @@ function Solutions() {
         kicker="Solutions"
         title="UNFLD for every"
         titleSecond="team."
-        lede="Purpose-built products for the industries and workflows that matter most. From startups to government agencies."
+        lede="Purpose-built products for the industries and workflows that matter most. Agronomy, small business, NR-1, hiring, and custom software."
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2">

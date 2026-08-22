@@ -31,10 +31,10 @@ const links = [
 ] as const;
 
 const tryItems = [
-  { label: "Open Console", to: "/console" },
-  { label: "Our products", to: "/forge" },
-  { label: "Get an API key", to: "/api" },
-  { label: "Download apps", to: "/download" },
+  { label: "Our products", to: "/products" },
+  { label: "Contact sales", to: "/contact" },
+  { label: "Download FCR", to: "/download" },
+  { label: "Custom software", to: "/api" },
 ] as const;
 
 export function Header() {
@@ -163,7 +163,7 @@ export function Header() {
             Contact Sales
           </Link>
           <Link
-            to="/console"
+            to="/sitecreator"
             className="mt-3 inline-flex h-12 items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-fg"
           >
             Try for free
@@ -251,7 +251,7 @@ function TrySplit() {
   return (
     <div className="relative flex" onMouseEnter={show} onMouseLeave={hide}>
       <Link
-        to="/console"
+        to="/sitecreator"
         className="inline-flex h-9 items-center rounded-l-full bg-accent px-4 text-[13px] font-medium text-accent-fg transition-opacity duration-150 hover:opacity-90 active:scale-[0.96]"
       >
         Try for free

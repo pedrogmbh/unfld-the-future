@@ -15,7 +15,7 @@ function NewsIndex() {
         kicker="News"
         title="Research, product,"
         titleSecond="and company."
-        lede="Announcements from UNFLD — products we ship, the software-house work, and the unfold from studio to products we own."
+        lede="Announcements from UNFLD — products we ship, the software-house work, and the company."
       />
       <Section className="pb-24 sm:pb-32">
         <ul className="divide-y divide-border border-y border-border">

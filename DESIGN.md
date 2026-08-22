@@ -24,7 +24,7 @@ Public-facing brand rules (name, mark, color) also live at
 | Legal | UNFOLDING THE FUTURE LTDA (CNPJ 62.855.761/0001-82). Trading name: UNFLD. Opened 23 Sep 2025. Matriz, Ativa, ME. CNAE 62.04-0-00. Registered: admin@unfolding.com.br · (43) 3422-8348. |
 | Tagline | Unfold the future. |
 | Story | A software house that also ships its own products. We still build for others. We operate FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial. |
-| Products | Owned (in market): FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial. Site families still on the IA: Forge (apps), Build (engineering), Studio (creative), Pulse (intelligence), Relay (API) — to be updated. |
+| Products | Owned (in market): FCR (Ferramenta de Coleta, with Timac Agro), SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial. |
 | HQ | São Paulo — Rua Avanhandava, 126, Bela Vista. |
 
 **Mark** — three polygons suggesting a plane unfolding. Source:
@@ -332,9 +332,9 @@ people-first stock).
 
 ## Voice in UI
 
-- Product names are proper nouns. Owned products: FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial. Site families still in the IA: Forge, Build, Studio, Pulse, Relay.
-- API product is **Relay**; the intelligence model is **pulse-2**.
-- CTAs: “Our products”, “Get API Key”, “Read Docs”, “Contact Sales”,
+- Product names are proper nouns. Owned products: FCR (Ferramenta de Coleta), SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial.
+- Product sites: sitecreator.com.br, doutorfiscal.com, dialoguspsicossocial.com.br, queravaga.com. FCR is on the App Store.
+- CTAs: “Our products”, “Contact Sales”, “Open SiteCreator”,
   “Try for free”. Title case, no “Learn more” without a destination.
 - Dates: `Aug 18, 2026`.
 - Stats are sparse and specific (`15+`, `5`, `2019`).

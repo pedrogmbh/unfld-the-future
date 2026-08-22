@@ -60,7 +60,7 @@ function Home() {
 
           <Reveal delay={0.28}>
             <div className="mt-10 flex flex-wrap gap-3">
-              <BtnLink to="/forge">Our products</BtnLink>
+              <BtnLink to="/products">Our products</BtnLink>
               <BtnLink to="/contact" variant="secondary">
                 Contact Sales
               </BtnLink>
@@ -206,18 +206,19 @@ function Home() {
                 For developers
               </p>
               <h2 className="font-display text-[clamp(2.2rem,5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.035em]">
-                One API.
+                Field software.
                 <br />
-                <span className="text-muted">Every modality.</span>
+                <span className="text-muted">Still a house.</span>
               </h2>
               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted">
-                Text, code, voice, images, and video — all through a single
-                unified API. Start building in seconds.
+                FCR collects agronomy results offline, then syncs. We still
+                sit with operations — Timac Agro, and the rest of the roster
+                — and ship what they actually run.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <BtnLink to="/console">Get API Key</BtnLink>
-                <BtnLink to="/docs" variant="secondary">
-                  Read Docs
+                <BtnLink to="/fcr">Open FCR</BtnLink>
+                <BtnLink to="/contact" variant="secondary">
+                  Contact Sales
                 </BtnLink>
               </div>
             </Reveal>

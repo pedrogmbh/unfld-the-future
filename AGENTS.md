@@ -10,9 +10,8 @@ Do not invent a second UI, stack, or brand.
 
 Institutional site for UNFLD, a product company and software house
 trading as **UNFLD** (legal name **UNFOLDING THE FUTURE LTDA**).
-Owned products in market: **FCR**, **SiteCreator**, **Doutor Fiscal**,
-**Queravaga**, **Dialogus Psicossocial**. Site families still in the IA:
-**Forge**, **Build**, **Studio**, **Pulse**, **Relay** — to be updated.
+Owned products in market: **FCR** (Ferramenta de Coleta, with Timac Agro),
+**SiteCreator**, **Doutor Fiscal**, **Queravaga**, **Dialogus Psicossocial**.
 
 North star: [x.ai](https://x.ai) visual/motion language (black field,
 Inter Tight, IBM Plex Mono, grain, blur+y, stacked code windows). Copy
@@ -110,7 +109,7 @@ Wrap content in `<main>`. Link new pages from `footer` in `site.ts`
 (and the header menu if they belong there).
 
 News posts: `/news/$slug` + `getNews()`. Do not hardcode
-`/news/pulse-2` as a typed route — use `params={{ slug: "pulse-2" }}`.
+`/news/queravaga` as a typed route — use `params={{ slug: "queravaga" }}`.
 
 ---
 
@@ -152,7 +151,7 @@ fill + white type, not a white pill.
 Edit copy in `src/lib/site.ts`, not scattered through routes.
 
 Calm, precise, first-person plural. No hype, no emoji, no `!` in product
-UI. CTAs: “Our products”, “Get API Key”, “Read Docs”, “Contact Sales”,
+UI. CTAs: “Our products”, “Contact Sales”, “Open SiteCreator”,
 “Try for free”.
 
 ---

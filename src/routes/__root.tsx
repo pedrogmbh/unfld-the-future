@@ -22,7 +22,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "UNFLD builds its own digital products for the future — apps, APIs, intelligence, and counsel.",
+          "UNFLD is the trading name of UNFOLDING THE FUTURE. A São Paulo software house that also ships its own digital products.",
       },
     ],
     links: [

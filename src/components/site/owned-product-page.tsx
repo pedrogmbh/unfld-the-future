@@ -15,7 +15,7 @@ export function OwnedProductPage({ slug }: { slug: string }) {
       primaryTo={product.url ? undefined : "/contact"}
       primaryHref={product.url}
       secondary="All products"
-      secondaryTo="/forge"
+      secondaryTo="/products"
       image={product.image}
       imageAlt={product.name}
       features={product.features}

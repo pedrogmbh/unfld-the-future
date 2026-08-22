@@ -37,70 +37,12 @@ export const SITE = {
 export type NavLink = { label: string; to: string; external?: boolean };
 
 export const headerNav: NavLink[] = [
-  { label: "Products", to: "/forge" },
+  { label: "Products", to: "/products" },
   { label: "Solutions", to: "/solutions" },
   { label: "Developers", to: "/api" },
   { label: "Company", to: "/company" },
   { label: "News", to: "/news" },
 ];
-
-export const products = [
-  {
-    slug: "forge",
-    name: "Forge",
-    href: "/forge",
-    kicker: "Apps",
-    explore: "Explore",
-    line: "Products we own and operate.",
-    blurb:
-      "Consumer and B2B apps shipped under the UNFLD name — designed, built, and run by the same team.",
-    image: "/images/forge.jpg",
-  },
-  {
-    slug: "build",
-    name: "Build",
-    href: "/build",
-    kicker: "Engineering",
-    explore: "Explore",
-    line: "Bring UNFLD to your computer.",
-    blurb:
-      "A product-engineering system for complex work. Agents, workflows, and a terminal that ships.",
-    image: "/images/build.jpg",
-  },
-  {
-    slug: "studio",
-    name: "Studio",
-    href: "/studio",
-    kicker: "Creative",
-    explore: "Explore",
-    line: "Brand, design, and generative media.",
-    blurb:
-      "The creative stack behind every UNFLD surface — identity, motion, and image systems built for product.",
-    image: "/images/studio.jpg",
-  },
-  {
-    slug: "pulse",
-    name: "Pulse",
-    href: "/pulse",
-    kicker: "Intelligence",
-    explore: "Explore",
-    line: "See the business as it happens.",
-    blurb:
-      "Business intelligence that reads live operations, not last quarter’s export. Dashboards, models, decisions.",
-    image: "/images/pulse.jpg",
-  },
-  {
-    slug: "relay",
-    name: "Relay",
-    href: "/relay",
-    kicker: "APIs",
-    explore: "Explore",
-    line: "One API. Every product.",
-    blurb:
-      "Services, events, and data planes that connect Forge, Pulse, and the systems around them.",
-    image: "/images/relay.jpg",
-  },
-] as const;
 
 export type OwnedProduct = {
   slug: string;
@@ -124,90 +66,92 @@ export const ownedProducts: readonly OwnedProduct[] = [
     slug: "fcr",
     name: "FCR",
     href: "/fcr",
-    kicker: "Operations",
+    kicker: "Agronomy",
     explore: "Explore",
-    line: "Resolution on the first contact.",
-    title: "The first contact",
-    titleSecond: "is the last.",
-    primary: "Talk to sales",
+    line: "Ferramenta de Coleta — for agronomy engineers.",
+    title: "Ferramenta de Coleta.",
+    titleSecond: "For agronomists.",
+    primary: "App Store",
+    url: "https://apps.apple.com/br/app/fcr/id6461211731",
     blurb:
-      "An operations product we own and run. Context, routing, and resolution in one surface — so the first contact can be the last.",
+      "FCR is Ferramenta de Coleta, an agronomy app for agronomy engineers. Collect technical results in the field — offline, then sync. Made in partnership with Timac Agro.",
     image: "/images/pulse.jpg",
     features: [
       {
-        title: "One surface",
-        body: "Context, routing, and history in the same place. The person who answers does not start from zero.",
+        title: "Ferramenta de Coleta",
+        body: "The product agronomy engineers take to the plot. Results collected where the work happens, not back at a desk.",
       },
       {
-        title: "Owned, not handed off",
-        body: "FCR is an UNFLD product. We design it, ship it, and run it. The release train does not stop at launch.",
+        title: "Field first",
+        body: "Capture technical results offline. Sync when the signal returns. The report should not wait on coverage.",
       },
       {
-        title: "Built for operations",
-        body: "Support, success, and field teams that measure resolution — not tickets opened.",
+        title: "Built with Timac Agro",
+        body: "FCR is an UNFLD product, made in partnership with Timac Agro. The brief came from agronomists. The app is how we answered it.",
       },
       {
-        title: "The same craft",
-        body: "The software-house years taught us how contact centers actually work. FCR is that knowledge, as a product.",
+        title: "For agronomy engineers",
+        body: "Not a generic field form. The language, the cadence, and the reports match how agronomists already work.",
       },
       {
-        title: "Enterprise ready",
-        body: "When the team outgrows a single queue, the controls are already there. Talk to us about seats and identity.",
+        title: "Reports that land",
+        body: "What is collected in the field becomes a result the technical team can read. That is the product.",
       },
       {
-        title: "A long horizon",
-        body: "We ship products we intend to run for a decade. FCR is one of them.",
+        title: "Owned by UNFLD",
+        body: "We design it, ship it, and run it. The partnership is with Timac Agro. The product is ours.",
       },
     ],
     quote: {
       kicker: "FCR",
-      title: "A ticket that bounces is a product failure.",
-      body: "We built FCR so the first conversation can finish the work. That is the product.",
+      title: "The plot is not a spreadsheet.",
+      body: "Ferramenta de Coleta is how agronomy engineers collect results in the field. UNFLD built it. Timac Agro is the partner it was built with.",
     },
   },
   {
     slug: "sitecreator",
     name: "SiteCreator",
     href: "/sitecreator",
-    kicker: "Sites",
+    kicker: "Small business",
     explore: "Explore",
-    line: "A site, without a custom build.",
-    title: "A site, without",
-    titleSecond: "a custom build.",
-    primary: "Talk to sales",
+    line: "A site on the air in five minutes, over WhatsApp.",
+    title: "A site in five minutes.",
+    titleSecond: "Over WhatsApp.",
+    primary: "Open SiteCreator",
+    url: "https://www.sitecreator.com.br",
     blurb:
-      "Publish and operate a site without a six-month project. Structure, pages, and content — in a product UNFLD runs.",
+      "For MEI and microempresa. Send the CNPJ. We pull Receita, Instagram, and Facebook, and publish a site — with a free address. WhatsApp is the login.",
     image: "/images/studio.jpg",
     features: [
       {
-        title: "Structure first",
-        body: "Pages, content, and publishing in a system — not a pile of files someone has to remember.",
+        title: "WhatsApp is the account",
+        body: "The number authenticates. No password, no email form, no agency kickoff. Open WhatsApp and start.",
       },
       {
-        title: "Operated by UNFLD",
-        body: "SiteCreator is ours. We keep it current. You do not inherit a frozen brochure.",
+        title: "Send the CNPJ",
+        body: "We consult the Receita, then Instagram and Facebook, to understand the business. An audio is optional — hours, specialty, the way the house talks.",
       },
       {
-        title: "For teams, not agencies",
-        body: "When the need is a site, not a six-month discovery. The craft is still ours.",
+        title: "On the air in about five minutes",
+        body: "seunegocio.live.sitecreator.com.br, with SSL. A site, not a digital business card.",
       },
       {
-        title: "Same design language",
-        body: "Identity and motion come from the system we use on unfld.com. No leftover template skin.",
+        title: "Free to publish",
+        body: "One site, free subdomain, hosting, WhatsApp button, updates by audio. Own domain, professional email, and priority from R$49 / month.",
       },
       {
-        title: "From the house",
-        body: "We have shipped hundreds of sites as a software house. SiteCreator is that muscle, productized.",
+        title: "Change it in the chat",
+        body: "New hours, a new dish, a new photo: send an audio. We update the site. The client still clicks through to WhatsApp.",
       },
       {
-        title: "A long horizon",
-        body: "A site you can still edit next year. That is the point.",
+        title: "For MEI and microempresa",
+        body: "Bakery, salon, workshop, clinic. If there is a CNPJ and WhatsApp, there is a site. sitecreator.com.br.",
       },
     ],
     quote: {
       kicker: "SiteCreator",
-      title: "Not every site needs a custom build. Every site needs an operator.",
-      body: "SiteCreator is how UNFLD publishes and runs sites as a product — not as a project that ends.",
+      title: "Not every site needs an agency.",
+      body: "Send the CNPJ. Speak as you speak to the customer. Five minutes later the site is on the air. That is SiteCreator.",
     },
   },
   {
@@ -216,43 +160,44 @@ export const ownedProducts: readonly OwnedProduct[] = [
     href: "/doutor-fiscal",
     kicker: "Fiscal",
     explore: "Explore",
-    line: "Brazilian fiscal work, as a product.",
+    line: "The company’s fiscal work, now on WhatsApp.",
     title: "Fiscal work,",
-    titleSecond: "as a product.",
-    primary: "Talk to sales",
+    titleSecond: "on WhatsApp.",
+    primary: "Open Doutor Fiscal",
+    url: "https://www.doutorfiscal.com",
     blurb:
-      "Documents, obligations, and the tax reform as it lands — for finance and accounting teams that need a system, not another spreadsheet.",
+      "BPO financeiro plus fiscal intelligence, for MEI, micro, and small companies. Send an audio asking for the invoice. The system calculates, issues NF-e or NFS-e, and returns the PDF.",
     image: "/images/build.jpg",
     features: [
       {
-        title: "Brazilian by design",
-        body: "Obligations, documents, and the cadence of the Receita — not a generic ledger with a tax plug-in.",
+        title: "WhatsApp first",
+        body: "The number that calls is the company. No form, no password. Audio, text, or a PDF — the product asks only for what is missing.",
       },
       {
-        title: "Reform as it lands",
-        body: "The tax reform is not a blog post. Doutor Fiscal is built to absorb the rules as they become real.",
+        title: "Audio becomes a note",
+        body: "“Issue one thousand five hundred for João at the bakery.” It transcribes, calculates Simples Nacional, emits, and returns the PDF.",
       },
       {
-        title: "For finance teams",
-        body: "Accounting, fiscal, and controllers who already know the work. The product should keep up.",
+        title: "A fiscal inbox",
+        body: "Each CNPJ gets empresa@doutorfiscal.com. The box triages invoices, posts to the ERP, and notifies on WhatsApp — or blocks what looks wrong.",
       },
       {
-        title: "Owned by UNFLD",
-        body: "We run Doutor Fiscal. Support, releases, and the boring reliability work stay with us.",
+        title: "BPO, not a spreadsheet",
+        body: "Issuance, collections, payments, reconciliation. The writing and the conference stay with the product. You stay on the phone.",
       },
       {
-        title: "The house behind it",
-        body: "Years of shipping for companies that live under Brazilian tax law. This is that knowledge, as software.",
+        title: "Waitlist pricing",
+        body: "MEI from R$59 / month. Micro from R$159. Small company from R$349. Cancel in WhatsApp. No loyalty clause.",
       },
       {
-        title: "A long horizon",
-        body: "Fiscal software that is wrong next year is not software. We intend to be here for the next decade of rules.",
+        title: "Made for who invoices",
+        body: "Bakery, atelier, clinic, shop. Doutor Fiscal takes the work that stalls the day: the note, the boleto, the invoice, the conversation with the fisco.",
       },
     ],
     quote: {
       kicker: "Doutor Fiscal",
-      title: "Spreadsheets are not a fiscal system.",
-      body: "Doutor Fiscal is the product we run for teams that need the work done — documents, obligations, and the reform — without hoping a folder stays current.",
+      title: "The accountant should not be the bottleneck for a note.",
+      body: "Fiscal intelligence on WhatsApp, plus a mailbox that thinks. doutorfiscal.com — waitlist open.",
     },
   },
   {
@@ -265,7 +210,7 @@ export const ownedProducts: readonly OwnedProduct[] = [
     title: "Into the market",
     titleSecond: "in minutes.",
     primary: "Open Queravaga",
-    url: "https://www.queravaga.com/",
+    url: "https://www.queravaga.com",
     blurb:
       "Connects people looking for work with teams that need to hire. A profile ready for interviews — in the time of a coffee.",
     image: "/images/forge.jpg",
@@ -288,7 +233,7 @@ export const ownedProducts: readonly OwnedProduct[] = [
       },
       {
         title: "An UNFLD product",
-        body: "Queravaga is ours. We launched it on 20 August 2026. We operate it.",
+        body: "Queravaga is ours. We launched it on 20 August 2026. We operate it. queravaga.com.",
       },
       {
         title: "A different way in",
@@ -305,46 +250,46 @@ export const ownedProducts: readonly OwnedProduct[] = [
     slug: "dialogus",
     name: "Dialogus Psicossocial",
     href: "/dialogus",
-    kicker: "People",
+    kicker: "NR-1",
     explore: "Explore",
-    line: "Psychosocial risk, mapped.",
+    line: "Psychosocial risk, managed as a system.",
     title: "Psychosocial risk,",
-    titleSecond: "mapped.",
+    titleSecond: "as a system.",
     primary: "Open Dialogus",
-    url: "https://www.dialoguspsicossocial.com.br/",
+    url: "https://www.dialoguspsicossocial.com.br",
     blurb:
-      "Structured listening and digital mapping for psychosocial risk. Dashboards, action plans, and NR-1 compliance — for leadership that has to show how it cares.",
+      "A platform for the strategic management of psychosocial risks. Structured listening, ILO and WHO-style digital mapping, dashboards, and action plans — so NR-1 is not a campaign.",
     image: "/images/office.jpg",
     features: [
       {
-        title: "Mapped, not guessed",
-        body: "Digital questionnaires that can follow ILO and WHO methods, and can be tailored to the company. Risk named, classified, visible.",
-      },
-      {
         title: "NR-1 as management",
-        body: "The 2026 update of NR-1 asks for proof, not a wellness campaign. Dialogus is built for that standard.",
-      },
-      {
-        title: "A dashboard leadership can use",
-        body: "Complex data, turned into something a director can act on. Criticality, plans, follow-through.",
+        body: "Managing psychosocial risk is a legal requirement, with deadlines and a PGR that has to stand up. Dialogus is built for that standard.",
       },
       {
         title: "Structured listening",
-        body: "Dialogue with method. Technology that protects people rather than performing care.",
+        body: "Lis, the Dialogus assistant, conducts individual dialogues. Method plus technology. Risk named, classified, visible — without performing care.",
+      },
+      {
+        title: "Mapped to ILO and WHO",
+        body: "Digital questionnaires that can follow ILO and WHO methods, and can be tailored to the company. The mapping is the start, not the slide.",
+      },
+      {
+        title: "A dashboard leadership can use",
+        body: "Aggregated data, criticality, and follow-through. Individual answers stay confidential. Directors see what they can act on.",
       },
       {
         title: "Action by criticality",
-        body: "Plans that match the score. Preventive and corrective work, not a generic programme copied from last year.",
+        body: "Preventive and corrective programmes matched to the score, aligned to NR-1. Audit-ready reports, not a wellness poster.",
       },
       {
-        title: "An UNFLD product",
-        body: "Dialogus Psicossocial is ours to operate. The consultancy around it, and the software, sit together.",
+        title: "Plans on the product site",
+        body: "Essencial, Avançar, and Integral — on dialoguspsicossocial.com.br. Software and specialised accompaniment sit together.",
       },
     ],
     quote: {
       kicker: "Dialogus",
       title: "It is not enough to say the company cares. You have to show how.",
-      body: "Dialogus Psicossocial is how UNFLD helps organisations map psychosocial risk and stand up to NR-1 — with a product, not a slide.",
+      body: "Dialogus Psicossocial is how organisations map psychosocial risk and stand up to NR-1 — with a product, not a slide.",
     },
   },
 ];
@@ -369,16 +314,12 @@ export const customers = [
 
 export const footer = {
   products: [
-    { label: "Forge", to: "/forge" },
+    { label: "All products", to: "/products" },
     { label: "FCR", to: "/fcr" },
     { label: "SiteCreator", to: "/sitecreator" },
     { label: "Doutor Fiscal", to: "/doutor-fiscal" },
     { label: "Queravaga", to: "/queravaga" },
     { label: "Dialogus", to: "/dialogus" },
-    { label: "Build", to: "/build" },
-    { label: "Studio", to: "/studio" },
-    { label: "Pulse", to: "/pulse" },
-    { label: "Relay", to: "/relay" },
   ],
   download: [
     { label: "Web", to: "/download" },
@@ -389,8 +330,8 @@ export const footer = {
   solutions: [
     { label: "Business", to: "/solutions/business" },
     { label: "Government", to: "/solutions/government" },
-    { label: "Customer Support", to: "/solutions/support" },
-    { label: "Legal", to: "/solutions/legal" },
+    { label: "Operations", to: "/solutions/support" },
+    { label: "Legal & fiscal", to: "/solutions/legal" },
     { label: "Security", to: "/solutions/security" },
     { label: "Use Cases", to: "/solutions" },
   ],
@@ -431,16 +372,16 @@ export const stats = [
 
 export const homePrompts = [
   {
-    q: "Can we hire without a two-week process?",
-    a: "Queravaga is built for that gap — a profile ready for interviews, and a path into the market in minutes, not weeks.",
+    q: "Our agronomists collect results in the field. Coverage is not a given.",
+    a: "FCR — Ferramenta de Coleta — is an agronomy app for agronomy engineers. Offline collection, then sync. Made in partnership with Timac Agro.",
+  },
+  {
+    q: "We are MEI. We need a site, not an agency.",
+    a: "SiteCreator publishes over WhatsApp. Send the CNPJ. We pull Receita and social, and the site is on the air in about five minutes — sitecreator.com.br.",
   },
   {
     q: "How do we prove psychosocial risk is managed, not just discussed?",
-    a: "Dialogus Psicossocial maps the risk, scores criticality, and gives leadership a dashboard that stands up to NR-1 — structured listening, not a campaign.",
-  },
-  {
-    q: "We need software that understands our operation, not a generic suite.",
-    a: "That is still the software-house work. We sit with the operation — agribusiness, industry, media, luxury — then we ship. Timac Agro is one of the partnerships that taught us how.",
+    a: "Dialogus Psicossocial maps the risk with structured listening, ILO and WHO-style questionnaires, and a dashboard that stands up to NR-1.",
   },
 ] as const;
 
@@ -515,95 +456,7 @@ export const news: NewsPost[] = [
     body: [
       "Queravaga is an UNFLD product. It is not a job board we built for someone else. We own it, we operate it, and it launched today.",
       "The promise is simple: into the job market in the time of a coffee. A profile formatted for hiring teams, and a path to interviews without a two-week ritual.",
-      "If you are looking, or you need to hire, Queravaga is live.",
-    ],
-  },
-  {
-    slug: "pulse-2",
-    date: "Aug 18, 2026",
-    title: "Introducing Pulse 2",
-    standfirst:
-      "Pulse 2 is our intelligence platform rebuilt for live operations — models that read the business as it happens.",
-    body: [
-      "Pulse 2 is the largest rewrite of our intelligence stack since we stopped being only a software house. It connects to the systems companies already run — ERPs, warehouses, ledgers, CRMs — and produces a live picture instead of a quarterly lag.",
-      "The new engine is built on Relay events. Every product UNFLD operates now emits a consistent stream; Pulse 2 is the first surface that can read all of them at once.",
-      "Pulse 2 is available today on web, and through the Relay API for teams that want models inside their own tools.",
-    ],
-    code: {
-      filename: "pulse_query.py",
-      content: `import os
-from unfld import Client
-from unfld.chat import user
-
-client = Client(api_key=os.getenv("UNFLD_API_KEY"))
-chat = client.chat.create(model="pulse-2")
-chat.append(user("Forecast Q4 cash from live operations"))
-print(chat.sample().content)`,
-    },
-  },
-  {
-    slug: "relay-ga",
-    date: "Aug 12, 2026",
-    title: "Relay is generally available",
-    standfirst:
-      "One API for Forge, Pulse, and the services around them. Usage-based, with a playground in every account.",
-    body: [
-      "Relay leaves private preview today. Developers get a single base URL, one key, and SDKs that match the way they already work.",
-      "The first GA release covers text and structured APIs, webhooks, files, and live Pulse queries. Image and voice endpoints follow on the existing roadmap.",
-      "Create a key in the Console and call api.unfld.com/v1. Docs are live at unfld.com/docs.",
-    ],
-    code: {
-      filename: "relay.ts",
-      content: `import { Unfld } from "@unfld/sdk";
-
-const client = new Unfld({ apiKey: process.env.UNFLD_API_KEY });
-const pulse = await client.pulse.query({
-  prompt: "Show live pipeline versus target",
-});
-console.log(pulse.answer);`,
-    },
-  },
-  {
-    slug: "forge-ios",
-    date: "Aug 4, 2026",
-    title: "Forge apps on the App Store and Google Play",
-    standfirst:
-      "The products we own are now on iOS and Android — same accounts, same Relay backend, native clients.",
-    body: [
-      "Forge has always been web-first. Native clients were the missing surface. They ship today with biometric unlock, offline caches, and the same design language as the web products.",
-      "Existing Forge accounts work immediately. No new sign-up.",
-    ],
-  },
-  {
-    slug: "build-mode",
-    date: "Jul 28, 2026",
-    title: "UNFLD Build on web and desktop",
-    standfirst:
-      "A coding agent and product-engineering system for complex work, now in the browser and on macOS.",
-    body: [
-      "Build is how we make UNFLD products. We opened it because the same harness is useful on any codebase.",
-      "Install from the Download page, or run it in the browser. It works with any language, any repo, right now.",
-    ],
-  },
-  {
-    slug: "enterprise",
-    date: "Jun 22, 2026",
-    title: "UNFLD for Enterprise",
-    standfirst:
-      "SSO, data residency, dedicated throughput, and a named team — for organizations that need the whole stack.",
-    body: [
-      "Enterprise is the contract layer around products companies already use. Same Forge, Pulse, and Relay — with the controls a security review expects.",
-      "Talk to sales if you need custom rate limits, a dedicated data plane, or volume pricing.",
-    ],
-  },
-  {
-    slug: "studio-system",
-    date: "Jun 3, 2026",
-    title: "Studio, our creative system",
-    standfirst:
-      "The identity, motion, and image stack we use on every UNFLD surface is now a product.",
-    body: [
-      "Studio is not an agency. It is the system that produces brand, interface, and generative media for products we operate — and, now, for a small number of partners.",
+      "If you are looking, or you need to hire, Queravaga is live at queravaga.com.",
     ],
   },
   {
@@ -615,44 +468,37 @@ console.log(pulse.answer);`,
     body: [
       "UNFLD is the name we trade under. The company is UNFOLDING THE FUTURE LTDA, incorporated in São Paulo. Five letters. Pronounced unfold.",
       "For years we were a software house — a focused studio that designed and built digital products for other companies. SporTV, Netflix, Timac Agro, Embraer, L’Oréal Paris, Cartier, and the rest of the roster on the Company page. We were good at it. We still are. That work continues.",
-      "Owning the product is the other half of the story. FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial are ours to operate. The craft is the same. On these, the ownership is not someone else’s.",
+      "Owning the product is the other half of the story. FCR (Ferramenta de Coleta, with Timac Agro), SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial are ours to operate. The craft is the same. On these, the ownership is not someone else’s.",
     ],
   },
 ];
 
 export const roles = [
   {
-    id: "mts-pulse",
-    title: "Member of Technical Staff — Pulse",
-    team: "Intelligence",
+    id: "eng-owned",
+    title: "Software Engineer — Owned products",
+    team: "Products",
     locations: ["São Paulo"],
     type: "Full-time",
   },
   {
-    id: "eng-relay",
-    title: "Software Engineer — Relay (APIs)",
-    team: "Platform",
-    locations: ["São Paulo"],
-    type: "Full-time",
-  },
-  {
-    id: "eng-build",
-    title: "Software Engineer — Build",
+    id: "eng-house",
+    title: "Software Engineer — Software house",
     team: "Engineering",
     locations: ["São Paulo"],
     type: "Full-time",
   },
   {
-    id: "design-studio",
-    title: "Product Designer — Studio",
-    team: "Design",
+    id: "eng-fcr",
+    title: "Mobile Engineer — FCR",
+    team: "Agronomy",
     locations: ["São Paulo"],
     type: "Full-time",
   },
   {
-    id: "eng-owned",
-    title: "Software Engineer — Owned products",
-    team: "Apps",
+    id: "design-product",
+    title: "Product Designer",
+    team: "Design",
     locations: ["São Paulo"],
     type: "Full-time",
   },
@@ -667,13 +513,6 @@ export const roles = [
     id: "sec-app",
     title: "Application Security Engineer",
     team: "Security",
-    locations: ["São Paulo"],
-    type: "Full-time",
-  },
-  {
-    id: "ios-forge",
-    title: "iOS Engineer — Forge",
-    team: "Apps",
     locations: ["São Paulo"],
     type: "Full-time",
   },
@@ -706,96 +545,94 @@ export const solutions = [
   {
     slug: "business",
     name: "Business",
-    line: "UNFLD across sales, operations, finance, and engineering — with enterprise-grade controls.",
-    body: "Deploy Forge apps, Pulse intelligence, and Relay APIs across the company. Seat management, SSO, and consolidated billing from day one.",
+    line: "Owned products and custom software — under one house, from São Paulo.",
+    body: "SiteCreator and Doutor Fiscal for MEI, micro, and small companies. Queravaga when hiring has to move. Custom software when the operation is not a template. Seat-level contracts when the review requires them.",
   },
   {
     slug: "government",
     name: "Government",
     line: "Products for the public mission — with the security, compliance, and deployment controls agencies require.",
-    body: "Data residency, dedicated planes, and audit that stands up to a review. Built for ministries, cities, and national programs.",
+    body: "NR-1 and psychosocial risk through Dialogus. Custom systems with data residency, dedicated planes, and audit that stands up to a review. Built for ministries, cities, and national programs.",
   },
   {
     slug: "support",
-    name: "Customer Support",
-    line: "Reduce response times and resolution costs with products that handle voice, chat, and email.",
-    body: "Forge support surfaces plus Pulse on top of your ticket history. The same quality bar we hold on our own apps.",
+    name: "Operations",
+    line: "Field collection, fiscal work, and the WhatsApp thread the company already lives in.",
+    body: "FCR for agronomy engineers in the plot. Doutor Fiscal for notes, invoices, and BPO on WhatsApp. The same quality bar we hold when we ship for Timac Agro and the rest of the roster.",
   },
   {
     slug: "legal",
-    name: "Legal",
-    line: "Accelerate contract review, research, and compliance analysis with systems that understand nuance.",
-    body: "Pulse for legal operations, Relay for matter data, and counsel from a team that has sat through the audits.",
+    name: "Legal & fiscal",
+    line: "Brazilian obligations as a product — and counsel from a team that has sat through the audits.",
+    body: "Doutor Fiscal for NF-e, NFS-e, and the fiscal inbox. Dialogus for NR-1 documentation. Custom work when the brief is a system, not a plan.",
   },
   {
     slug: "security",
     name: "Security",
-    line: "Analyze threats, triage alerts, and automate response at machine speed.",
-    body: "Relay event streams into Pulse models trained on your telemetry. No training on your data unless you opt in.",
+    line: "How we treat data on products we operate, and on software we ship for others.",
+    body: "Private paths, no surprise egress, and no training on your data unless you opt in. Talk to us about the review you actually have to pass.",
   },
 ] as const;
 
 export const plans = [
   {
-    name: "Free",
-    price: "$0",
-    period: "",
-    blurb: "Start with Forge web and the Relay playground.",
-    cta: "Get started",
-    href: "/console",
+    name: "SiteCreator",
+    price: "Free",
+    period: " · R$49 / domain",
+    blurb: "A site on the air in five minutes, over WhatsApp. For MEI and microempresa.",
+    cta: "Open SiteCreator",
+    href: "https://www.sitecreator.com.br",
+    external: true,
     features: [
-      "Forge web apps",
-      "Pulse Lite dashboards",
-      "Relay playground",
-      "Community support",
+      "WhatsApp as login",
+      "CNPJ, Receita, Instagram, Facebook",
+      "Free *.live.sitecreator.com.br",
+      "Own domain from R$49 / month",
     ],
   },
   {
-    name: "Studio",
-    price: "$30",
+    name: "Doutor Fiscal",
+    price: "R$59",
     period: "/month",
-    blurb: "The full product surface for independent teams.",
-    cta: "Start Studio",
-    href: "/console",
+    blurb: "Waitlist. Fiscal work and BPO on WhatsApp, from MEI to small company.",
+    cta: "Open Doutor Fiscal",
+    href: "https://www.doutorfiscal.com",
+    external: true,
     features: [
-      "Everything in Free",
-      "Pulse 2",
-      "Build on web and desktop",
-      "Higher Relay limits",
-      "Image generation in Studio",
-      "Priority in the queue",
+      "Audio becomes NF-e / NFS-e",
+      "empresa@doutorfiscal.com",
+      "MEI R$59 · Micro R$159 · Small R$349",
+      "Cancel in WhatsApp",
     ],
   },
   {
-    name: "Company",
-    price: "$100",
-    period: "/seat /month",
-    blurb: "Shared workspace, admin, and significantly higher usage.",
-    cta: "Start Company",
-    href: "/console",
-    features: [
-      "Everything in Studio",
-      "Seat management",
-      "SSO",
-      "Consolidated billing",
-      "SOC 2 (Type I & II)",
-      "No training on your data",
-    ],
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
+    name: "Dialogus",
+    price: "Plans",
     period: "",
-    blurb: "Dedicated throughput, residency, and a named team.",
+    blurb: "Psychosocial risk and NR-1. Essencial, Avançar, and Integral on the product site.",
+    cta: "Open Dialogus",
+    href: "https://www.dialoguspsicossocial.com.br",
+    external: true,
+    features: [
+      "Structured listening with Lis",
+      "ILO / WHO-style mapping",
+      "Dashboards and action plans",
+      "Audit-ready NR-1 reports",
+    ],
+  },
+  {
+    name: "Custom",
+    price: "Contact",
+    period: "",
+    blurb: "FCR with Timac Agro, Queravaga, and the software-house work. Named team when you need one.",
     cta: "Contact sales",
     href: "/contact",
+    external: false,
     features: [
-      "Everything in Company",
-      "Custom rate limits",
-      "Data residency",
-      "Dedicated data plane",
-      "Volume pricing",
-      "Named account team",
+      "FCR — Ferramenta de Coleta",
+      "Queravaga hiring",
+      "Custom software",
+      "Enterprise contracts",
     ],
   },
 ] as const;

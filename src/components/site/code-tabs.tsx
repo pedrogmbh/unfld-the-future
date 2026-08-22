@@ -13,64 +13,63 @@ import { cn } from "@/lib/utils";
 
 export type CodeSample = { id: string; label: string; code: string };
 
-export const RELAY_SAMPLES: CodeSample[] = [
+export const HOUSE_SAMPLES: CodeSample[] = [
   {
     id: "python",
     label: "Python",
-    code: `import os
-from unfld import Client
-from unfld.chat import user
+    code: `record = {
+    "tool": "Ferramenta de Coleta",
+    "partner": "Timac Agro",
+    "engineer": "agronomo.01",
+    "crop": "soja",
+    "plot": "talhao-14",
+    "offline": True,
+}
 
-client = Client(
-    api_key=os.getenv("UNFLD_API_KEY")
-)
-
-chat = client.chat.create(model="pulse-2")
-chat.append(user("Forecast Q4 cash from live operations"))
-response = chat.sample()
-print(response.content)`,
+# Sync when the signal returns.
+print(record["plot"], record["crop"])`,
   },
   {
     id: "ts",
     label: "TypeScript",
-    code: `import { Unfld } from "@unfld/sdk";
-import { user } from "@unfld/sdk/chat";
+    code: `type Collection = {
+  tool: "Ferramenta de Coleta";
+  partner: "Timac Agro";
+  engineer: string;
+  crop: string;
+  plot: string;
+  offline: boolean;
+};
 
-const client = new Unfld({
-  apiKey: process.env.UNFLD_API_KEY,
-});
-
-const chat = await client.chat.create({ model: "pulse-2" });
-chat.append(user("Forecast Q4 cash from live operations"));
-const response = await chat.sample();
-console.log(response.content);`,
+const record: Collection = {
+  tool: "Ferramenta de Coleta",
+  partner: "Timac Agro",
+  engineer: "agronomo.01",
+  crop: "soja",
+  plot: "talhao-14",
+  offline: true,
+};`,
   },
   {
-    id: "openai",
-    label: "TypeScript (OpenAI SDK)",
-    code: `import OpenAI from "openai";
-
-const client = new OpenAI({
-  apiKey: process.env.UNFLD_API_KEY,
-  baseURL: "https://api.unfld.com/v1",
-});
-
-const res = await client.chat.completions.create({
-  model: "pulse-2",
-  messages: [{ role: "user", content: "Forecast Q4 cash" }],
-});
-console.log(res.choices[0].message.content);`,
+    id: "json",
+    label: "JSON",
+    code: `{
+  "product": "SiteCreator",
+  "channel": "whatsapp",
+  "cnpj": "00.000.000/0001-00",
+  "site": "padaria.live.sitecreator.com.br",
+  "minutes": 5
+}`,
   },
   {
     id: "curl",
     label: "cURL",
-    code: `curl https://api.unfld.com/v1/chat/completions \\
-  -H "Authorization: Bearer $UNFLD_API_KEY" \\
-  -H "Content-Type: application/json" \\
-  -d '{
-    "model": "pulse-2",
-    "messages": [{"role":"user","content":"Forecast Q4 cash"}]
-  }'`,
+    code: `curl https://www.sitecreator.com.br \\
+  -H "Accept: text/html" \\
+  --max-time 20
+
+# Fiscal work lives on WhatsApp.
+# doutorfiscal.com — waitlist.`,
   },
 ];
 
@@ -78,7 +77,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 const spring = { stiffness: 55, damping: 18, mass: 0.55 };
 
 export function CodeTabs({
-  samples = RELAY_SAMPLES,
+  samples = HOUSE_SAMPLES,
   className,
 }: {
   samples?: CodeSample[];

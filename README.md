@@ -8,7 +8,8 @@ Unfold the future.
 
 TanStack Start · React 19 · Tailwind v4 · Motion
 
-Design contract: [DESIGN.md](./DESIGN.md)
+- Design: [DESIGN.md](./DESIGN.md)
+- Agent instructions: [AGENTS.md](./AGENTS.md)
 
 ## Products
 

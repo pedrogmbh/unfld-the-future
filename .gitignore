@@ -16,8 +16,6 @@ dist/
 
 # sandbox / platform (not part of the UNFLD site)
 .grok/
-AGENTS.md
-AGENTS.project.md
 startup.sh
 artifacts/
 attachments/

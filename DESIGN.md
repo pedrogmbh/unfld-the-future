@@ -21,11 +21,11 @@ Public-facing brand rules (name, mark, color) also live at
 | | |
 |---|---|
 | Name | **UNFLD** — five capitals, pronounced “unfold”. Never Unfld, Unfold, UNFOLD in UI. |
-| Legal | UNFLD Ltda. |
+| Legal | UNFOLDING THE FUTURE LTDA (CNPJ 62.855.761/0001-82). Trading name: UNFLD. |
 | Tagline | Unfold the future. |
-| Story | We used to be a software house. Now we build our own products — apps, APIs, intelligence, and counsel. |
-| Products | Forge (apps), Build (engineering), Studio (creative), Pulse (intelligence), Relay (API). |
-| HQ | São Paulo, with Porto Alegre, Lisbon, Austin. |
+| Story | A software house that also ships its own products. We still build for others. We operate FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial. |
+| Products | Owned (in market): FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial. Site families still on the IA: Forge (apps), Build (engineering), Studio (creative), Pulse (intelligence), Relay (API) — to be updated. |
+| HQ | São Paulo — Rua Avanhandava, 126, Bela Vista. |
 
 **Mark** — three polygons suggesting a plane unfolding. Source:
 `src/components/site/logo.tsx` (`Mark`) and `public/favicon.svg`. Use
@@ -332,12 +332,12 @@ people-first stock).
 
 ## Voice in UI
 
-- Product names are proper nouns: Forge, Build, Studio, Pulse, Relay.
+- Product names are proper nouns. Owned products: FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial. Site families still in the IA: Forge, Build, Studio, Pulse, Relay.
 - API product is **Relay**; the intelligence model is **pulse-2**.
-- CTAs: “Try Forge”, “Get API Key”, “Read Docs”, “Contact Sales”,
+- CTAs: “Our products”, “Get API Key”, “Read Docs”, “Contact Sales”,
   “Try for free”. Title case, no “Learn more” without a destination.
 - Dates: `Aug 18, 2026`.
-- Stats are sparse and specific (`1M+`, `<80ms`, `5+`).
+- Stats are sparse and specific (`15+`, `5`, `2019`).
 
 ---
 

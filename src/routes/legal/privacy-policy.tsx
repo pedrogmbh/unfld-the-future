@@ -11,8 +11,9 @@ function Page() {
   return (
     <LegalDoc title="Privacy Policy" updated="August 1, 2026">
       <p>
-        This Privacy Policy explains how UNFLD Ltda. collects, uses, and shares
-        personal information when you use our websites and products.
+        This Privacy Policy explains how UNFOLDING THE FUTURE LTDA (“UNFLD”)
+        collects, uses, and shares personal information when you use our
+        websites and products.
       </p>
       <H>Information we collect</H>
       <p>
@@ -59,8 +60,10 @@ function Page() {
       </p>
       <H>Contact</H>
       <p>
-        UNFLD Ltda., São Paulo, Brazil. privacy@unfld.com. Data protection
-        officer: dpo@unfld.com.
+        UNFOLDING THE FUTURE LTDA, Rua Avanhandava, 126, 10º andar, Edifício
+        Cambuí, Bela Vista, São Paulo/SP, 01306-901, Brazil. CNPJ
+        62.855.761/0001-82. privacy@unfld.com. Data protection officer:
+        dpo@unfld.com.
       </p>
     </LegalDoc>
   );

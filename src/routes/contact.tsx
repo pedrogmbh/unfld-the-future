@@ -101,6 +101,24 @@ function Contact() {
             </div>
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
+                Headquarters
+              </p>
+              <p className="mt-1 leading-relaxed text-muted">
+                {SITE.legal}
+                <br />
+                {SITE.address.line1}
+                <br />
+                {SITE.address.line2}
+                <br />
+                {SITE.address.district}, {SITE.address.city}/{SITE.address.region}
+                <br />
+                {SITE.address.postal}
+                <br />
+                CNPJ {SITE.cnpj}
+              </p>
+            </div>
+            <div>
+              <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
                 Security
               </p>
               <a

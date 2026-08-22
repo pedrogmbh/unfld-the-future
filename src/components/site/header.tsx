@@ -32,7 +32,7 @@ const links = [
 
 const tryItems = [
   { label: "Open Console", to: "/console" },
-  { label: "Try Forge", to: "/forge" },
+  { label: "Our products", to: "/forge" },
   { label: "Get an API key", to: "/api" },
   { label: "Download apps", to: "/download" },
 ] as const;

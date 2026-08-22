@@ -13,7 +13,8 @@ function Page() {
     <LegalDoc kicker="Brand" title="UNFLD Brand Guidelines" updated="August 1, 2026">
       <p>
         Use these guidelines if you write about UNFLD, build on Relay, or
-        partner with us. Do not redraw the mark. Do not invent a new one.
+        partner with us. Do not redraw the mark. Do not invent a new one. The
+        trading name is UNFLD. The legal name is UNFOLDING THE FUTURE LTDA.
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -39,7 +40,9 @@ function Page() {
       <p>
         UNFLD is spelled in five capital letters. It is pronounced “unfold.”
         Do not write Unfld, Unfold, or UNFOLD in product or press, except when
-        explaining pronunciation.
+        explaining pronunciation. In contracts and invoices, use the legal name
+        UNFOLDING THE FUTURE LTDA (CNPJ 62.855.761/0001-82). The trading name
+        and the legal name are not interchangeable on legal documents.
       </p>
       <H>Mark</H>
       <p>

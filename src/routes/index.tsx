@@ -9,7 +9,7 @@ import {
   WordStagger,
 } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import { homePrompts, news, pageTitle, products } from "@/lib/site";
+import { customers, homePrompts, news, ownedProducts, pageTitle } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "UNFLD builds its own digital products for the future — apps, APIs, intelligence, and counsel.",
+          "UNFLD is the trading name of UNFOLDING THE FUTURE. A São Paulo software house that also ships its own digital products.",
       },
     ],
   }),
@@ -33,13 +33,13 @@ function Home() {
           <Reveal>
             <Link
               to="/news/$slug"
-              params={{ slug: "pulse-2" }}
+              params={{ slug: "queravaga" }}
               className="inline-flex items-center gap-2 text-[13px] text-muted transition-colors hover:text-fg"
             >
               <span className="rounded-full border border-border-strong px-2 py-0.5 text-[10px] font-medium tracking-[0.14em] text-fg uppercase">
                 New
               </span>
-              Meet Pulse 2 · Our intelligence platform
+              Queravaga · Into the job market in minutes
               <span aria-hidden>→</span>
             </Link>
           </Reveal>
@@ -52,16 +52,17 @@ function Home() {
 
           <Reveal delay={0.18}>
             <p className="mt-8 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
-              We used to be a software house. Now we build our own products —
-              apps, APIs, intelligence, and counsel — for the decade ahead.
+              UNFLD is the trading name of UNFOLDING THE FUTURE. We build for
+              other companies, and we ship products we own — from São Paulo,
+              for the decade ahead.
             </p>
           </Reveal>
 
           <Reveal delay={0.28}>
             <div className="mt-10 flex flex-wrap gap-3">
-              <BtnLink to="/forge">Try Forge</BtnLink>
-              <BtnLink to="/api" variant="secondary">
-                Build with Relay
+              <BtnLink to="/forge">Our products</BtnLink>
+              <BtnLink to="/contact" variant="secondary">
+                Contact Sales
               </BtnLink>
             </div>
           </Reveal>
@@ -79,7 +80,7 @@ function Home() {
 
       <Section id="products" className="py-20 sm:py-28">
         <Reveal>
-          <Kicker>Products</Kicker>
+          <Kicker>Products we own</Kicker>
           <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
             What we ship now.
           </h2>
@@ -88,7 +89,7 @@ function Home() {
           className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
           delay={0.06}
         >
-          {products.map((p) => (
+          {ownedProducts.map((p) => (
             <StaggerItem key={p.slug}>
               <Link
                 to={p.href as never}
@@ -113,22 +114,22 @@ function Home() {
           ))}
           <StaggerItem>
             <Link
-              to="/api"
+              to="/company"
               className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
             >
               <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                Developers
+                Software house
               </p>
               <div className="mt-6 flex items-baseline justify-between gap-4">
                 <h3 className="font-display text-2xl font-medium tracking-tight">
-                  Relay API
+                  Built for others
                 </h3>
                 <TextArrow className="text-[13px] text-muted group-hover:text-fg">
                   Explore
                 </TextArrow>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                One API. Every modality.
+                SporTV, Netflix, Timac Agro, Embraer, and the rest of the roster.
               </p>
             </Link>
           </StaggerItem>
@@ -160,6 +161,43 @@ function Home() {
         </div>
       </Section>
 
+      <Section id="clients" className="py-16 sm:py-24">
+        <Reveal>
+          <Kicker>Clients</Kicker>
+          <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
+            When we develop as a house.
+          </h2>
+          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">
+            Selected companies we have shipped for. Timac Agro is one of the
+            principal partnerships. The list is not complete.
+          </p>
+        </Reveal>
+        <Stagger
+          className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
+          delay={0.04}
+        >
+          {customers.map((c) => (
+            <StaggerItem key={c.name}>
+              <div className="bg-bg px-6 py-5 sm:px-8 sm:py-6">
+                <p className="font-display text-lg font-medium tracking-tight">
+                  {c.name}
+                </p>
+                {"note" in c && c.note ? (
+                  <p className="mt-1 text-[13px] text-muted">{c.note}</p>
+                ) : null}
+              </div>
+            </StaggerItem>
+          ))}
+          <StaggerItem>
+            <div className="flex h-full items-center bg-bg px-6 py-5 sm:px-8 sm:py-6">
+              <p className="font-display text-lg font-medium tracking-tight text-muted">
+                And others.
+              </p>
+            </div>
+          </StaggerItem>
+        </Stagger>
+      </Section>
+
       <Section className="py-16 sm:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-8">
           <div className="min-w-0">
@@ -186,9 +224,9 @@ function Home() {
             <Stagger className="mt-10 grid max-w-md grid-cols-3 gap-4" delay={0.1}>
               {(
                 [
-                  ["1M+", "API calls per day"],
-                  ["<80ms", "Median latency"],
-                  ["5+", "Product surfaces"],
+                  ["5", "Products we own"],
+                  ["15+", "Companies shipped for"],
+                  ["2019", "Building since"],
                 ] as const
               ).map(([v, l]) => (
                 <StaggerItem key={l}>
@@ -211,7 +249,7 @@ function Home() {
           <div>
             <Kicker>Latest news</Kicker>
             <h2 className="font-display text-3xl font-medium tracking-tight">
-              From the lab.
+              From UNFLD.
             </h2>
           </div>
           <Link

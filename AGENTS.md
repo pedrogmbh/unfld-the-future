@@ -8,8 +8,11 @@ Do not invent a second UI, stack, or brand.
 
 ## What this is
 
-Institutional site for UNFLD, a product company (formerly a software
-house). Products: **Forge**, **Build**, **Studio**, **Pulse**, **Relay**.
+Institutional site for UNFLD, a product company and software house
+trading as **UNFLD** (legal name **UNFOLDING THE FUTURE LTDA**).
+Owned products in market: **FCR**, **SiteCreator**, **Doutor Fiscal**,
+**Queravaga**, **Dialogus Psicossocial**. Site families still in the IA:
+**Forge**, **Build**, **Studio**, **Pulse**, **Relay** — to be updated.
 
 North star: [x.ai](https://x.ai) visual/motion language (black field,
 Inter Tight, IBM Plex Mono, grain, blur+y, stacked code windows). Copy
@@ -149,7 +152,7 @@ fill + white type, not a white pill.
 Edit copy in `src/lib/site.ts`, not scattered through routes.
 
 Calm, precise, first-person plural. No hype, no emoji, no `!` in product
-UI. CTAs: “Try Forge”, “Get API Key”, “Read Docs”, “Contact Sales”,
+UI. CTAs: “Our products”, “Get API Key”, “Read Docs”, “Contact Sales”,
 “Try for free”.
 
 ---

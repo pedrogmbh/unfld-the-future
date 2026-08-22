@@ -15,16 +15,21 @@ import { Route as BuildRouteImport } from './routes/build'
 import { Route as CompanyRouteImport } from './routes/company'
 import { Route as ConsoleRouteImport } from './routes/console'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DialogusRouteImport } from './routes/dialogus'
 import { Route as DocsRouteImport } from './routes/docs'
+import { Route as DoutorFiscalRouteImport } from './routes/doutor-fiscal'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
+import { Route as FcrRouteImport } from './routes/fcr'
 import { Route as ForgeRouteImport } from './routes/forge'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PulseRouteImport } from './routes/pulse'
+import { Route as QueravagaRouteImport } from './routes/queravaga'
 import { Route as RelayRouteImport } from './routes/relay'
 import { Route as SaoPauloRouteImport } from './routes/sao-paulo'
 import { Route as SecurityRouteImport } from './routes/security'
+import { Route as SitecreatorRouteImport } from './routes/sitecreator'
 import { Route as StatusRouteImport } from './routes/status'
 import { Route as StudioRouteImport } from './routes/studio'
 import { Route as CareersIndexRouteImport } from './routes/careers/index'
@@ -71,9 +76,19 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DialogusRoute = DialogusRouteImport.update({
+  id: '/dialogus',
+  path: '/dialogus',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsRoute = DocsRouteImport.update({
   id: '/docs',
   path: '/docs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoutorFiscalRoute = DoutorFiscalRouteImport.update({
+  id: '/doutor-fiscal',
+  path: '/doutor-fiscal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DownloadRoute = DownloadRouteImport.update({
@@ -84,6 +99,11 @@ const DownloadRoute = DownloadRouteImport.update({
 const EnterpriseRoute = EnterpriseRouteImport.update({
   id: '/enterprise',
   path: '/enterprise',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FcrRoute = FcrRouteImport.update({
+  id: '/fcr',
+  path: '/fcr',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForgeRoute = ForgeRouteImport.update({
@@ -106,6 +126,11 @@ const PulseRoute = PulseRouteImport.update({
   path: '/pulse',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QueravagaRoute = QueravagaRouteImport.update({
+  id: '/queravaga',
+  path: '/queravaga',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RelayRoute = RelayRouteImport.update({
   id: '/relay',
   path: '/relay',
@@ -119,6 +144,11 @@ const SaoPauloRoute = SaoPauloRouteImport.update({
 const SecurityRoute = SecurityRouteImport.update({
   id: '/security',
   path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitecreatorRoute = SitecreatorRouteImport.update({
+  id: '/sitecreator',
+  path: '/sitecreator',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StatusRoute = StatusRouteImport.update({
@@ -206,16 +236,21 @@ export interface FileRoutesByFullPath {
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
+  '/dialogus': typeof DialogusRoute
   '/docs': typeof DocsRoute
+  '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
+  '/fcr': typeof FcrRoute
   '/forge': typeof ForgeRoute
   '/infrastructure': typeof InfrastructureRoute
   '/pricing': typeof PricingRoute
   '/pulse': typeof PulseRoute
+  '/queravaga': typeof QueravagaRoute
   '/relay': typeof RelayRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
+  '/sitecreator': typeof SitecreatorRoute
   '/status': typeof StatusRoute
   '/studio': typeof StudioRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
@@ -239,16 +274,21 @@ export interface FileRoutesByTo {
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
+  '/dialogus': typeof DialogusRoute
   '/docs': typeof DocsRoute
+  '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
+  '/fcr': typeof FcrRoute
   '/forge': typeof ForgeRoute
   '/infrastructure': typeof InfrastructureRoute
   '/pricing': typeof PricingRoute
   '/pulse': typeof PulseRoute
+  '/queravaga': typeof QueravagaRoute
   '/relay': typeof RelayRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
+  '/sitecreator': typeof SitecreatorRoute
   '/status': typeof StatusRoute
   '/studio': typeof StudioRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
@@ -273,16 +313,21 @@ export interface FileRoutesById {
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
+  '/dialogus': typeof DialogusRoute
   '/docs': typeof DocsRoute
+  '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
+  '/fcr': typeof FcrRoute
   '/forge': typeof ForgeRoute
   '/infrastructure': typeof InfrastructureRoute
   '/pricing': typeof PricingRoute
   '/pulse': typeof PulseRoute
+  '/queravaga': typeof QueravagaRoute
   '/relay': typeof RelayRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
+  '/sitecreator': typeof SitecreatorRoute
   '/status': typeof StatusRoute
   '/studio': typeof StudioRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
@@ -308,16 +353,21 @@ export interface FileRouteTypes {
     | '/company'
     | '/console'
     | '/contact'
+    | '/dialogus'
     | '/docs'
+    | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
+    | '/fcr'
     | '/forge'
     | '/infrastructure'
     | '/pricing'
     | '/pulse'
+    | '/queravaga'
     | '/relay'
     | '/sao-paulo'
     | '/security'
+    | '/sitecreator'
     | '/status'
     | '/studio'
     | '/careers/open-roles'
@@ -341,16 +391,21 @@ export interface FileRouteTypes {
     | '/company'
     | '/console'
     | '/contact'
+    | '/dialogus'
     | '/docs'
+    | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
+    | '/fcr'
     | '/forge'
     | '/infrastructure'
     | '/pricing'
     | '/pulse'
+    | '/queravaga'
     | '/relay'
     | '/sao-paulo'
     | '/security'
+    | '/sitecreator'
     | '/status'
     | '/studio'
     | '/careers/open-roles'
@@ -374,16 +429,21 @@ export interface FileRouteTypes {
     | '/company'
     | '/console'
     | '/contact'
+    | '/dialogus'
     | '/docs'
+    | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
+    | '/fcr'
     | '/forge'
     | '/infrastructure'
     | '/pricing'
     | '/pulse'
+    | '/queravaga'
     | '/relay'
     | '/sao-paulo'
     | '/security'
+    | '/sitecreator'
     | '/status'
     | '/studio'
     | '/careers/open-roles'
@@ -408,16 +468,21 @@ export interface RootRouteChildren {
   CompanyRoute: typeof CompanyRoute
   ConsoleRoute: typeof ConsoleRoute
   ContactRoute: typeof ContactRoute
+  DialogusRoute: typeof DialogusRoute
   DocsRoute: typeof DocsRoute
+  DoutorFiscalRoute: typeof DoutorFiscalRoute
   DownloadRoute: typeof DownloadRoute
   EnterpriseRoute: typeof EnterpriseRoute
+  FcrRoute: typeof FcrRoute
   ForgeRoute: typeof ForgeRoute
   InfrastructureRoute: typeof InfrastructureRoute
   PricingRoute: typeof PricingRoute
   PulseRoute: typeof PulseRoute
+  QueravagaRoute: typeof QueravagaRoute
   RelayRoute: typeof RelayRoute
   SaoPauloRoute: typeof SaoPauloRoute
   SecurityRoute: typeof SecurityRoute
+  SitecreatorRoute: typeof SitecreatorRoute
   StatusRoute: typeof StatusRoute
   StudioRoute: typeof StudioRoute
   CareersOpenRolesRoute: typeof CareersOpenRolesRoute
@@ -479,11 +544,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dialogus': {
+      id: '/dialogus'
+      path: '/dialogus'
+      fullPath: '/dialogus'
+      preLoaderRoute: typeof DialogusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs': {
       id: '/docs'
       path: '/docs'
       fullPath: '/docs'
       preLoaderRoute: typeof DocsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doutor-fiscal': {
+      id: '/doutor-fiscal'
+      path: '/doutor-fiscal'
+      fullPath: '/doutor-fiscal'
+      preLoaderRoute: typeof DoutorFiscalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/download': {
@@ -498,6 +577,13 @@ declare module '@tanstack/react-router' {
       path: '/enterprise'
       fullPath: '/enterprise'
       preLoaderRoute: typeof EnterpriseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fcr': {
+      id: '/fcr'
+      path: '/fcr'
+      fullPath: '/fcr'
+      preLoaderRoute: typeof FcrRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/forge': {
@@ -528,6 +614,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PulseRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/queravaga': {
+      id: '/queravaga'
+      path: '/queravaga'
+      fullPath: '/queravaga'
+      preLoaderRoute: typeof QueravagaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/relay': {
       id: '/relay'
       path: '/relay'
@@ -547,6 +640,13 @@ declare module '@tanstack/react-router' {
       path: '/security'
       fullPath: '/security'
       preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitecreator': {
+      id: '/sitecreator'
+      path: '/sitecreator'
+      fullPath: '/sitecreator'
+      preLoaderRoute: typeof SitecreatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/status': {
@@ -664,16 +764,21 @@ const rootRouteChildren: RootRouteChildren = {
   CompanyRoute: CompanyRoute,
   ConsoleRoute: ConsoleRoute,
   ContactRoute: ContactRoute,
+  DialogusRoute: DialogusRoute,
   DocsRoute: DocsRoute,
+  DoutorFiscalRoute: DoutorFiscalRoute,
   DownloadRoute: DownloadRoute,
   EnterpriseRoute: EnterpriseRoute,
+  FcrRoute: FcrRoute,
   ForgeRoute: ForgeRoute,
   InfrastructureRoute: InfrastructureRoute,
   PricingRoute: PricingRoute,
   PulseRoute: PulseRoute,
+  QueravagaRoute: QueravagaRoute,
   RelayRoute: RelayRoute,
   SaoPauloRoute: SaoPauloRoute,
   SecurityRoute: SecurityRoute,
+  SitecreatorRoute: SitecreatorRoute,
   StatusRoute: StatusRoute,
   StudioRoute: StudioRoute,
   CareersOpenRolesRoute: CareersOpenRolesRoute,

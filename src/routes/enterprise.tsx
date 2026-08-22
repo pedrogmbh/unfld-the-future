@@ -16,7 +16,7 @@ function Enterprise() {
         kicker="Enterprise"
         title="The stack, with"
         titleSecond="the controls."
-        lede="SSO, data residency, dedicated throughput, and a named team — for organizations that need Forge, Pulse, and Relay under one contract."
+        lede="SSO, data residency, dedicated throughput, and a named team — for organizations that need UNFLD products, or the software-house work, under one contract."
         actions={
           <>
             <BtnLink to="/contact">Contact sales</BtnLink>

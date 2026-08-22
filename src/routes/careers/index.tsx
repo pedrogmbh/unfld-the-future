@@ -16,7 +16,7 @@ function Careers() {
         kicker="Careers"
         title="Build products that"
         titleSecond="outlast the brief."
-        lede="We are a team of engineers, designers, and operators on a mission to unfold the next decade of software. Join us if you want to own what you ship."
+        lede="We are a team of engineers, designers, and operators on a mission to unfold the next decade of software. Join us if you want to own what you ship — and still sit with clients."
         actions={
           <BtnLink to="/careers/open-roles">View open roles</BtnLink>
         }
@@ -38,8 +38,8 @@ function Careers() {
             ["Health and wellness", "Medical, dental, vision, and disability coverage for you and your family."],
             ["Life and family", "Life insurance and family-forming support. We plan to be here a long time."],
             ["Flexible vacation", "We work hard and take time off when we need it. No burn-out theater."],
-            ["Visa sponsorship", "We support international talent joining São Paulo, Lisbon, and Austin."],
-            ["Ownership", "The people who build Forge, Pulse, and Relay also run them."],
+            ["Visa sponsorship", "We support international talent joining São Paulo."],
+            ["Ownership", "The people who build FCR, Queravaga, and Dialogus also run them."],
           ].map(([t, d]) => (
             <article key={t} className="bg-bg p-7">
               <h3 className="font-medium">{t}</h3>
@@ -100,7 +100,7 @@ function Careers() {
       <Section className="py-16 pb-24 sm:pb-32">
         <Kicker>Offices</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Collaboration across borders
+          Based in São Paulo
         </h2>
         <div className="mt-10 overflow-hidden rounded-xl">
           <img

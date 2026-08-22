@@ -43,8 +43,8 @@ function Page() {
       <H>Support</H>
       <p>
         Enterprise includes a named account team, onboarding, and priority
-        support during business hours in São Paulo, Lisbon, and Austin, with
-        severity-1 coverage as stated in the order form.
+        support during business hours in São Paulo, with severity-1 coverage as
+        stated in the order form.
       </p>
       <H>Indemnity</H>
       <p>

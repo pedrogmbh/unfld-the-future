@@ -21,12 +21,15 @@ import { Route as DownloadRouteImport } from './routes/download'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
 import { Route as FcrRouteImport } from './routes/fcr'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as QueravagaRouteImport } from './routes/queravaga'
+import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SaoPauloRouteImport } from './routes/sao-paulo'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitecreatorRouteImport } from './routes/sitecreator'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StatusRouteImport } from './routes/status'
 import { Route as CareersIndexRouteImport } from './routes/careers/index'
 import { Route as CareersOpenRolesRouteImport } from './routes/careers/open-roles'
@@ -102,6 +105,11 @@ const InfrastructureRoute = InfrastructureRouteImport.update({
   path: '/infrastructure',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -117,6 +125,11 @@ const QueravagaRoute = QueravagaRouteImport.update({
   path: '/queravaga',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
+  id: '/robots.txt',
+  path: '/robots.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SaoPauloRoute = SaoPauloRouteImport.update({
   id: '/sao-paulo',
   path: '/sao-paulo',
@@ -130,6 +143,11 @@ const SecurityRoute = SecurityRouteImport.update({
 const SitecreatorRoute = SitecreatorRouteImport.update({
   id: '/sitecreator',
   path: '/sitecreator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StatusRoute = StatusRouteImport.update({
@@ -218,12 +236,15 @@ export interface FileRoutesByFullPath {
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
@@ -252,12 +273,15 @@ export interface FileRoutesByTo {
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
@@ -287,12 +311,15 @@ export interface FileRoutesById {
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
   '/infrastructure': typeof InfrastructureRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
+  '/robots.txt': typeof RobotsDottxtRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
@@ -323,12 +350,15 @@ export interface FileRouteTypes {
     | '/enterprise'
     | '/fcr'
     | '/infrastructure'
+    | '/llms.txt'
     | '/pricing'
     | '/products'
     | '/queravaga'
+    | '/robots.txt'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
+    | '/sitemap.xml'
     | '/status'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
@@ -357,12 +387,15 @@ export interface FileRouteTypes {
     | '/enterprise'
     | '/fcr'
     | '/infrastructure'
+    | '/llms.txt'
     | '/pricing'
     | '/products'
     | '/queravaga'
+    | '/robots.txt'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
+    | '/sitemap.xml'
     | '/status'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
@@ -391,12 +424,15 @@ export interface FileRouteTypes {
     | '/enterprise'
     | '/fcr'
     | '/infrastructure'
+    | '/llms.txt'
     | '/pricing'
     | '/products'
     | '/queravaga'
+    | '/robots.txt'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
+    | '/sitemap.xml'
     | '/status'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
@@ -426,12 +462,15 @@ export interface RootRouteChildren {
   EnterpriseRoute: typeof EnterpriseRoute
   FcrRoute: typeof FcrRoute
   InfrastructureRoute: typeof InfrastructureRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   PricingRoute: typeof PricingRoute
   ProductsRoute: typeof ProductsRoute
   QueravagaRoute: typeof QueravagaRoute
+  RobotsDottxtRoute: typeof RobotsDottxtRoute
   SaoPauloRoute: typeof SaoPauloRoute
   SecurityRoute: typeof SecurityRoute
   SitecreatorRoute: typeof SitecreatorRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StatusRoute: typeof StatusRoute
   CareersOpenRolesRoute: typeof CareersOpenRolesRoute
   LegalAcceptableUsePolicyRoute: typeof LegalAcceptableUsePolicyRoute
@@ -534,6 +573,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InfrastructureRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pricing': {
       id: '/pricing'
       path: '/pricing'
@@ -555,6 +601,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QueravagaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/robots.txt': {
+      id: '/robots.txt'
+      path: '/robots.txt'
+      fullPath: '/robots.txt'
+      preLoaderRoute: typeof RobotsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sao-paulo': {
       id: '/sao-paulo'
       path: '/sao-paulo'
@@ -574,6 +627,13 @@ declare module '@tanstack/react-router' {
       path: '/sitecreator'
       fullPath: '/sitecreator'
       preLoaderRoute: typeof SitecreatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/status': {
@@ -690,12 +750,15 @@ const rootRouteChildren: RootRouteChildren = {
   EnterpriseRoute: EnterpriseRoute,
   FcrRoute: FcrRoute,
   InfrastructureRoute: InfrastructureRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   PricingRoute: PricingRoute,
   ProductsRoute: ProductsRoute,
   QueravagaRoute: QueravagaRoute,
+  RobotsDottxtRoute: RobotsDottxtRoute,
   SaoPauloRoute: SaoPauloRoute,
   SecurityRoute: SecurityRoute,
   SitecreatorRoute: SitecreatorRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StatusRoute: StatusRoute,
   CareersOpenRolesRoute: CareersOpenRolesRoute,
   LegalAcceptableUsePolicyRoute: LegalAcceptableUsePolicyRoute,

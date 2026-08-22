@@ -1,5 +1,6 @@
 export const SITE = {
   name: "UNFLD",
+  url: "https://unfld.com",
   legal: "UNFOLDING THE FUTURE LTDA",
   trading: "UNFLD",
   cnpj: "62.855.761/0001-82",

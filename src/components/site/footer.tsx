@@ -38,11 +38,10 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-bg">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
           <Col title="Products" links={footer.products} />
-          <Col title="Download" links={footer.download} />
-          <Col title="Solutions" links={footer.solutions} />
-          <Col title="Developers" links={footer.developers} />
+          <Col title="Access" links={footer.access} />
+          <Col title="Build with us" links={footer.buildWithUs} />
           <Col title="Company" links={footer.company} />
           <Col title="Legal" links={footer.legal} />
         </div>

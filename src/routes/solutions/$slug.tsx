@@ -11,13 +11,22 @@ export const Route = createFileRoute("/solutions/$slug")({
     return s;
   },
   head: ({ loaderData }) => ({
-    meta: [{ title: pageTitle(loaderData?.name ?? "Solutions") }],
+    meta: [
+      { title: pageTitle(loaderData?.name ?? "Solutions") },
+      {
+        name: "description",
+        content: loaderData?.line ?? "UNFLD Solutions.",
+      },
+    ],
   }),
   component: Solution,
 });
 
 function Solution() {
   const s = Route.useLoaderData();
+  const caps: readonly string[] =
+    "capabilities" in s && Array.isArray(s.capabilities) ? s.capabilities : [];
+
   return (
     <main>
       <PageHero
@@ -26,26 +35,24 @@ function Solution() {
         lede={s.line}
         actions={
           <>
-            <BtnLink to="/contact">Talk to sales</BtnLink>
-            <BtnLink to="/enterprise" variant="secondary">
-              Enterprise
+            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/build-with-us" variant="secondary">
+              Build with us
             </BtnLink>
           </>
         }
       />
       <Section className="pb-24 sm:pb-32">
         <p className="max-w-2xl text-[16px] leading-relaxed text-muted">{s.body}</p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          {[
-            "Named onboarding",
-            "SSO and SCIM",
-            "No training on your data",
-          ].map((t) => (
-            <div key={t} className="rounded-xl border border-border p-5 text-sm">
-              {t}
-            </div>
-          ))}
-        </div>
+        {caps.length > 0 && (
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {caps.map((t: string) => (
+              <div key={t} className="rounded-xl border border-border p-5 text-sm">
+                <p className="font-medium text-fg">{t}</p>
+              </div>
+            ))}
+          </div>
+        )}
         <p className="mt-12">
           <Link to="/solutions" className="text-sm text-muted hover:text-fg">
             ← All solutions

@@ -5,7 +5,16 @@ import { Section } from "@/components/site/section";
 import { formatAddress, offices, pageTitle, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/sao-paulo")({
-  head: () => ({ meta: [{ title: pageTitle("São Paulo") }] }),
+  head: () => ({
+    meta: [
+      { title: pageTitle("São Paulo") },
+      {
+        name: "description",
+        content:
+          "UNFLD in São Paulo. Registered headquarters of UNFOLDING THE FUTURE LTDA, in Bela Vista.",
+      },
+    ],
+  }),
   component: SaoPaulo,
 });
 
@@ -15,29 +24,34 @@ function SaoPaulo() {
   return (
     <main>
       <PageHero
-        kicker="UNFLD São Paulo"
-        title="We’re hiring"
-        titleSecond="in São Paulo."
-        lede="Headquarters of UNFOLDING THE FUTURE. Product, design, and the people who still sit with clients. Bela Vista, minutes from Avenida Paulista."
-        actions={<BtnLink to="/careers">View open roles</BtnLink>}
+        kicker="Headquarters"
+        title="UNFLD in"
+        titleSecond="São Paulo."
+        lede="The registered headquarters and meeting point of UNFOLDING THE FUTURE LTDA, in Bela Vista, minutes from Avenida Paulista."
+        actions={
+          <>
+            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/careers" variant="secondary">
+              Careers
+            </BtnLink>
+          </>
+        }
       />
       <section className="px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-xl">
           <img
             src="/images/hq.jpg"
-            alt="UNFLD headquarters at night"
+            alt="UNFLD São Paulo location"
             className="aspect-[16/8] w-full object-cover"
           />
         </div>
       </section>
       <Section className="py-20 sm:py-28">
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Who we’re looking for
+          Registered office and meeting point
         </h2>
         <p className="mt-4 max-w-2xl text-muted">
-          Small, focused teams building the products we own — FCR, SiteCreator,
-          Doutor Fiscal, Queravaga, Dialogus — and the software-house work
-          beside them. We prioritize in-person work.
+          Our base for product decisions, client sessions, and company operations in São Paulo.
         </p>
         <dl className="mt-12 grid gap-8 sm:grid-cols-2">
           <div>
@@ -56,7 +70,7 @@ function SaoPaulo() {
           </div>
           <div>
             <dt className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-              Legal
+              Legal entity
             </dt>
             <dd className="mt-2 text-sm text-muted">
               {SITE.legal} · CNPJ {SITE.cnpj}

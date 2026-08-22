@@ -4,7 +4,16 @@ import { Section } from "@/components/site/section";
 import { news, pageTitle } from "@/lib/site";
 
 export const Route = createFileRoute("/news/")({
-  head: () => ({ meta: [{ title: pageTitle("News") }] }),
+  head: () => ({
+    meta: [
+      { title: pageTitle("News") },
+      {
+        name: "description",
+        content:
+          "What UNFLD is building—and what we are learning from the work. Product releases, field notes, and company announcements.",
+      },
+    ],
+  }),
   component: NewsIndex,
 });
 
@@ -12,10 +21,10 @@ function NewsIndex() {
   return (
     <main>
       <PageHero
-        kicker="News"
-        title="Research, product,"
-        titleSecond="and company."
-        lede="Announcements from UNFLD — products we ship, the software-house work, and the company."
+        kicker="News & updates"
+        title="What UNFLD is building"
+        titleSecond="—and what we are learning."
+        lede="Product releases, field notes, company decisions, and evidence from the systems we operate."
       />
       <Section className="pb-24 sm:pb-32">
         <ul className="divide-y divide-border border-y border-border">
@@ -24,9 +33,9 @@ function NewsIndex() {
               <Link
                 to="/news/$slug"
                 params={{ slug: p.slug }}
-                className="grid gap-2 py-8 sm:grid-cols-[9rem_1fr] sm:gap-10"
+                className="grid gap-2 py-8 transition-colors hover:opacity-80 sm:grid-cols-[9rem_1fr] sm:gap-10"
               >
-                <p className="text-[13px] text-subtle">{p.date}</p>
+                <p className="font-mono text-[13px] text-subtle">{p.date}</p>
                 <div>
                   <h2 className="font-display text-xl font-medium tracking-tight sm:text-2xl">
                     {p.title}

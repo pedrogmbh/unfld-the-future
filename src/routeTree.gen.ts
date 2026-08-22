@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccessRouteImport } from './routes/access'
 import { Route as ApiRouteImport } from './routes/api'
+import { Route as BuildWithUsRouteImport } from './routes/build-with-us'
 import { Route as CompanyRouteImport } from './routes/company'
 import { Route as ConsoleRouteImport } from './routes/console'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -20,6 +22,7 @@ import { Route as DoutorFiscalRouteImport } from './routes/doutor-fiscal'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
 import { Route as FcrRouteImport } from './routes/fcr'
+import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -50,9 +53,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccessRoute = AccessRouteImport.update({
+  id: '/access',
+  path: '/access',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiRoute = ApiRouteImport.update({
   id: '/api',
   path: '/api',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuildWithUsRoute = BuildWithUsRouteImport.update({
+  id: '/build-with-us',
+  path: '/build-with-us',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CompanyRoute = CompanyRouteImport.update({
@@ -98,6 +111,11 @@ const EnterpriseRoute = EnterpriseRouteImport.update({
 const FcrRoute = FcrRouteImport.update({
   id: '/fcr',
   path: '/fcr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowWeWorkRoute = HowWeWorkRouteImport.update({
+  id: '/how-we-work',
+  path: '/how-we-work',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InfrastructureRoute = InfrastructureRouteImport.update({
@@ -225,7 +243,9 @@ const SolutionsSlugRoute = SolutionsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/access': typeof AccessRoute
   '/api': typeof ApiRoute
+  '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
@@ -235,6 +255,7 @@ export interface FileRoutesByFullPath {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
+  '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/pricing': typeof PricingRoute
@@ -262,7 +283,9 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/access': typeof AccessRoute
   '/api': typeof ApiRoute
+  '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
@@ -272,6 +295,7 @@ export interface FileRoutesByTo {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
+  '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/pricing': typeof PricingRoute
@@ -300,7 +324,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/access': typeof AccessRoute
   '/api': typeof ApiRoute
+  '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
@@ -310,6 +336,7 @@ export interface FileRoutesById {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/fcr': typeof FcrRoute
+  '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/pricing': typeof PricingRoute
@@ -339,7 +366,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/access'
     | '/api'
+    | '/build-with-us'
     | '/company'
     | '/console'
     | '/contact'
@@ -349,6 +378,7 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/fcr'
+    | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
     | '/pricing'
@@ -376,7 +406,9 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/access'
     | '/api'
+    | '/build-with-us'
     | '/company'
     | '/console'
     | '/contact'
@@ -386,6 +418,7 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/fcr'
+    | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
     | '/pricing'
@@ -413,7 +446,9 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/access'
     | '/api'
+    | '/build-with-us'
     | '/company'
     | '/console'
     | '/contact'
@@ -423,6 +458,7 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/fcr'
+    | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
     | '/pricing'
@@ -451,7 +487,9 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccessRoute: typeof AccessRoute
   ApiRoute: typeof ApiRoute
+  BuildWithUsRoute: typeof BuildWithUsRoute
   CompanyRoute: typeof CompanyRoute
   ConsoleRoute: typeof ConsoleRoute
   ContactRoute: typeof ContactRoute
@@ -461,6 +499,7 @@ export interface RootRouteChildren {
   DownloadRoute: typeof DownloadRoute
   EnterpriseRoute: typeof EnterpriseRoute
   FcrRoute: typeof FcrRoute
+  HowWeWorkRoute: typeof HowWeWorkRoute
   InfrastructureRoute: typeof InfrastructureRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   PricingRoute: typeof PricingRoute
@@ -496,11 +535,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/access': {
+      id: '/access'
+      path: '/access'
+      fullPath: '/access'
+      preLoaderRoute: typeof AccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api': {
       id: '/api'
       path: '/api'
       fullPath: '/api'
       preLoaderRoute: typeof ApiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/build-with-us': {
+      id: '/build-with-us'
+      path: '/build-with-us'
+      fullPath: '/build-with-us'
+      preLoaderRoute: typeof BuildWithUsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/company': {
@@ -564,6 +617,13 @@ declare module '@tanstack/react-router' {
       path: '/fcr'
       fullPath: '/fcr'
       preLoaderRoute: typeof FcrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-we-work': {
+      id: '/how-we-work'
+      path: '/how-we-work'
+      fullPath: '/how-we-work'
+      preLoaderRoute: typeof HowWeWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/infrastructure': {
@@ -739,7 +799,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccessRoute: AccessRoute,
   ApiRoute: ApiRoute,
+  BuildWithUsRoute: BuildWithUsRoute,
   CompanyRoute: CompanyRoute,
   ConsoleRoute: ConsoleRoute,
   ContactRoute: ContactRoute,
@@ -749,6 +811,7 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadRoute: DownloadRoute,
   EnterpriseRoute: EnterpriseRoute,
   FcrRoute: FcrRoute,
+  HowWeWorkRoute: HowWeWorkRoute,
   InfrastructureRoute: InfrastructureRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   PricingRoute: PricingRoute,

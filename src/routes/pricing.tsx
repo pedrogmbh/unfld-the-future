@@ -2,10 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
-import { pageTitle, plans } from "@/lib/site";
+import { pageTitle, plans, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/pricing")({
-  head: () => ({ meta: [{ title: pageTitle("Pricing") }] }),
+  head: () => ({
+    meta: [
+      { title: pageTitle("Pricing") },
+      {
+        name: "description",
+        content:
+          "A clear next step for every product. Current availability, pricing model, and next steps across UNFLD products.",
+      },
+    ],
+  }),
   component: Pricing,
 });
 
@@ -13,13 +22,13 @@ function Pricing() {
   return (
     <main>
       <PageHero
-        kicker="Pricing"
-        title="Product sites."
-        titleSecond="Custom by conversation."
-        lede="Pricing lives on each product. SiteCreator is free to publish. Doutor Fiscal is on a waitlist. FCR and software-house work start with sales."
+        kicker="Pricing & availability"
+        title="A clear next step"
+        titleSecond="for every product."
+        lede="Choose a product below to see its current availability, pricing model, and next step. Custom systems and enterprise configurations begin with a scoped conversation."
       />
       <Section className="pb-16">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {plans.map((p) => (
             <article
               key={p.name}
@@ -28,9 +37,9 @@ function Pricing() {
               <h2 className="text-[13px] tracking-[0.16em] text-subtle uppercase">
                 {p.name}
               </h2>
-              <p className="mt-4 font-display text-4xl font-medium tracking-tight">
+              <p className="mt-4 font-display text-3xl font-medium tracking-tight">
                 {p.price}
-                <span className="text-base font-normal text-muted">
+                <span className="text-sm font-normal text-muted">
                   {p.period}
                 </span>
               </p>
@@ -54,16 +63,22 @@ function Pricing() {
         </div>
       </Section>
       <Section className="pb-24 sm:pb-32">
-        <Kicker>Need a custom plan?</Kicker>
+        <Kicker>Custom systems & enterprise</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Talk to sales.
+          Scope a custom system.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Custom contracts, dedicated infrastructure, SSO, compliance, and
-          volume pricing. Or email sales@unfld.com.
+          Custom contracts, dedicated infrastructure, SSO, compliance, and volume pricing. Or reach us directly at{" "}
+          <a
+            href={`mailto:${SITE.sales}`}
+            className="text-fg underline-offset-4 hover:underline"
+          >
+            {SITE.sales}
+          </a>
+          .
         </p>
         <div className="mt-8">
-          <BtnLink to="/contact">Contact sales</BtnLink>
+          <BtnLink to="/contact">Talk to UNFLD</BtnLink>
         </div>
       </Section>
     </main>

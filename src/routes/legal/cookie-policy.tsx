@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { pageTitle } from "@/lib/site";
+import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/legal/cookie-policy")({
   head: () => ({ meta: [{ title: pageTitle("Cookie Policy") }] }),
@@ -9,37 +9,33 @@ export const Route = createFileRoute("/legal/cookie-policy")({
 
 function Page() {
   return (
-    <LegalDoc title="Cookie Policy" updated="August 1, 2026">
+    <LegalDoc title="Cookie Policy" updated="August 22, 2026">
       <p>
-        UNFLD uses cookies and similar technologies on unfld.com and related
-        properties. This policy explains what they do and how you can choose.
+        UNFLD uses cookies and similar technologies on unfld.com.br and on product domains that expressly link to this policy. This policy explains what they do and how you can manage your preferences.
       </p>
-      <H>Essential</H>
+      <H>Essential cookies</H>
       <p>
-        Required for authentication, security, load balancing, and remembering
-        your privacy choices. The site will not work correctly without them.
+        Essential cookies are required for core website functionality, security, session management, and remembering your privacy choices. The site cannot function properly without these technical cookies.
       </p>
-      <H>Analytics</H>
+      <H>Analytics cookies</H>
       <p>
-        Optional. Help us understand which pages are used. Aggregated. Off if
-        you decline in Privacy choices.
+        Analytics cookies help us understand how visitors interact with our pages by collecting aggregated, non-personally identifiable telemetry. These cookies are optional and only set if accepted.
       </p>
-      <H>Advertising</H>
+      <H>Advertising and third-party trackers</H>
       <p>
-        Off by default. We rarely use advertising cookies. If we ever do, they
-        will appear in Privacy choices before they run.
+        We do not deploy third-party advertising tracking cookies across the UNFLD corporate site.
       </p>
-      <H>How to choose</H>
+      <H>Managing cookies</H>
       <p>
-        Open Privacy choices in the footer of any UNFLD page. You can also
-        control cookies in your browser. Blocking essential cookies will break
-        sign-in.
+        You can control and configure cookie preferences through your browser settings at any time. Disabling essential cookies may impair website navigation and functionality.
       </p>
-      <H>List of cookies</H>
+      <H>Cookie inventory</H>
       <p>
-        unfld_session (essential, session), unfld_csrf (essential, session),
-        unfld-privacy (essential, 1 year), unfld_an (analytics, 6 months, only
-        if accepted).
+        The current cookie inventory is generated from the production site and shown in Privacy choices, including purpose, provider, category, and retention period.
+      </p>
+      <H>Contact</H>
+      <p>
+        Questions regarding our cookie practices: {SITE.privacy}. {formatLegalContact()}
       </p>
     </LegalDoc>
   );

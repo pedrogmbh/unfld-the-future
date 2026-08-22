@@ -28,7 +28,14 @@ function Security() {
         kicker="Trust & Security"
         title="Security at UNFLD"
         lede="Data privacy and security are fundamental to our mission. We prioritize the responsible management of data and the trust our users place in our products."
-        actions={<BtnLink to="/contact">Talk to security</BtnLink>}
+        actions={
+          <div className="flex flex-wrap items-center gap-3">
+            <BtnLink to="/compliance">Explore compliance controls</BtnLink>
+            <BtnLink to="/contact" variant="secondary">
+              Talk to security
+            </BtnLink>
+          </div>
+        }
       />
       <Section className="pb-16">
         <div className="grid gap-8 md:grid-cols-3">
@@ -56,6 +63,20 @@ function Security() {
               <p className="mt-2 text-sm text-muted">{d}</p>
             </article>
           ))}
+        </div>
+      </Section>
+      <Section className="pb-16">
+        <div className="rounded-xl border border-border bg-bg-elevated p-8 sm:p-10">
+          <Kicker>Audit & compliance</Kicker>
+          <h2 className="font-display text-2xl font-medium tracking-tight">
+            Institutional compliance repository
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+            Review detailed answers across 19 security domains—including PSSI, ISO 27001/27002 alignment, GDPR/LGPD data residency, encryption, disaster recovery, and SOC operations.
+          </p>
+          <div className="mt-6">
+            <BtnLink to="/compliance">View full compliance index</BtnLink>
+          </div>
         </div>
       </Section>
       <Section className="pb-24 sm:pb-32">

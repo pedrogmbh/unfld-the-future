@@ -347,6 +347,7 @@ export const footer = {
     { label: "Careers", to: "/careers" },
     { label: "News", to: "/news" },
     { label: "Security", to: "/security" },
+    { label: "Compliance", to: "/compliance" },
     { label: "São Paulo", to: "/sao-paulo" },
     { label: "Infrastructure", to: "/infrastructure" },
     { label: "Enterprise", to: "/enterprise" },
@@ -355,6 +356,7 @@ export const footer = {
   ],
   legal: [
     { label: "Legal", to: "/legal" },
+    { label: "Compliance", to: "/compliance" },
     { label: "Terms", to: "/legal/terms-of-service" },
     { label: "Enterprise Terms", to: "/legal/terms-of-service-enterprise" },
     { label: "Privacy", to: "/legal/privacy-policy" },
@@ -571,7 +573,7 @@ export const solutions = [
     slug: "security",
     name: "Security",
     line: "How we treat data on products we operate, and on software we ship for others.",
-    body: "Private paths, no surprise egress, and no training on your data unless you opt in. Talk to us about the review you actually have to pass.",
+    body: "Private paths, no surprise egress, and institutional compliance disclosures. Explore our ISO 27001/27002 aligned controls, data residency across EU and São Paulo, and vendor risk assessments.",
   },
 ] as const;
 

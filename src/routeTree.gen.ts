@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiRouteImport } from './routes/api'
 import { Route as CompanyRouteImport } from './routes/company'
+import { Route as ComplianceRouteImport } from './routes/compliance'
 import { Route as ConsoleRouteImport } from './routes/console'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DialogusRouteImport } from './routes/dialogus'
@@ -58,6 +59,11 @@ const ApiRoute = ApiRouteImport.update({
 const CompanyRoute = CompanyRouteImport.update({
   id: '/company',
   path: '/company',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplianceRoute = ComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsoleRoute = ConsoleRouteImport.update({
@@ -227,6 +233,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
   '/company': typeof CompanyRoute
+  '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
   '/dialogus': typeof DialogusRoute
@@ -264,6 +271,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
   '/company': typeof CompanyRoute
+  '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
   '/dialogus': typeof DialogusRoute
@@ -302,6 +310,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
   '/company': typeof CompanyRoute
+  '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
   '/dialogus': typeof DialogusRoute
@@ -341,6 +350,7 @@ export interface FileRouteTypes {
     | '/'
     | '/api'
     | '/company'
+    | '/compliance'
     | '/console'
     | '/contact'
     | '/dialogus'
@@ -378,6 +388,7 @@ export interface FileRouteTypes {
     | '/'
     | '/api'
     | '/company'
+    | '/compliance'
     | '/console'
     | '/contact'
     | '/dialogus'
@@ -415,6 +426,7 @@ export interface FileRouteTypes {
     | '/'
     | '/api'
     | '/company'
+    | '/compliance'
     | '/console'
     | '/contact'
     | '/dialogus'
@@ -453,6 +465,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApiRoute: typeof ApiRoute
   CompanyRoute: typeof CompanyRoute
+  ComplianceRoute: typeof ComplianceRoute
   ConsoleRoute: typeof ConsoleRoute
   ContactRoute: typeof ContactRoute
   DialogusRoute: typeof DialogusRoute
@@ -508,6 +521,13 @@ declare module '@tanstack/react-router' {
       path: '/company'
       fullPath: '/company'
       preLoaderRoute: typeof CompanyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compliance': {
+      id: '/compliance'
+      path: '/compliance'
+      fullPath: '/compliance'
+      preLoaderRoute: typeof ComplianceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/console': {
@@ -741,6 +761,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApiRoute: ApiRoute,
   CompanyRoute: CompanyRoute,
+  ComplianceRoute: ComplianceRoute,
   ConsoleRoute: ConsoleRoute,
   ContactRoute: ContactRoute,
   DialogusRoute: DialogusRoute,

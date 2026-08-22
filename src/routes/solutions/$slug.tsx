@@ -25,12 +25,15 @@ function Solution() {
         title={s.name}
         lede={s.line}
         actions={
-          <>
+          <div className="flex flex-wrap items-center gap-3">
             <BtnLink to="/contact">Talk to sales</BtnLink>
-            <BtnLink to="/enterprise" variant="secondary">
-              Enterprise
+            <BtnLink
+              to={s.slug === "security" ? "/compliance" : "/enterprise"}
+              variant="secondary"
+            >
+              {s.slug === "security" ? "Compliance controls" : "Enterprise"}
             </BtnLink>
-          </>
+          </div>
         }
       />
       <Section className="pb-24 sm:pb-32">

@@ -154,6 +154,13 @@ export function machinePages(): MachinePage[] {
       { changefreq: "yearly", priority: 0.5 },
     ),
     page(
+      "/compliance",
+      "Compliance",
+      "Information security policies, controls, ISMS alignment, data residency, and compliance answers.",
+      "Company",
+      { changefreq: "monthly", priority: 0.7 },
+    ),
+    page(
       "/sao-paulo",
       "São Paulo",
       `Headquarters — ${SITE.address.line1}, ${SITE.address.district}, ${SITE.address.city}.`,

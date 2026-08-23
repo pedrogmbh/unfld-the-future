@@ -19,7 +19,7 @@ jobs:
       - name: Purge cache
         id: purge
         run: |
-          curl --fail-with-body -sS -X POST \
+          curl -v --fail-with-body -sS -X POST \
             "https://api.bunny.net/pullzone/${{ vars.BUNNY_PULL_ZONE_ID }}/purgeCache" \
             -H "AccessKey: ${{ secrets.BUNNYCDN_API_KEY }}"
 

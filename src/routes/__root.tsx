@@ -12,9 +12,9 @@ import appCss from "../styles.css?url";
 import { LocaleProvider } from "@/lib/i18n/provider";
 import { resolveRequestLocale } from "@/lib/i18n/resolve";
 import { setCurrentLocale } from "@/lib/i18n/runtime";
-import { defaultI18n } from "@/lib/i18n/instance";
+import { getDefaultI18n } from "@/lib/i18n/instance";
 import { getMessages } from "@/lib/i18n/messages";
-import { LOCALE_META, type Locale } from "@/lib/i18n/locales";
+import { DEFAULT_LOCALE, LOCALE_META, type Locale } from "@/lib/i18n/locales";
 
 const APP_NAME = "UNFLD";
 
@@ -24,10 +24,15 @@ export type RouterContext = {
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   beforeLoad: async ({ location }) => {
-    const locale = await resolveRequestLocale(location.search);
-    setCurrentLocale(locale);
-    await defaultI18n.changeLanguage(locale);
-    return { locale };
+    try {
+      const locale = await resolveRequestLocale(location.search);
+      setCurrentLocale(locale);
+      await getDefaultI18n().changeLanguage(locale);
+      return { locale };
+    } catch {
+      setCurrentLocale(DEFAULT_LOCALE);
+      return { locale: DEFAULT_LOCALE };
+    }
   },
   head: ({ match }) => {
     const locale = match.context.locale ?? "en-US";

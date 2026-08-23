@@ -3,14 +3,19 @@ import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/lib/i18n/locales";
 import { getMessages } from "@/lib/i18n/messages";
 import { localizeOwnedProducts } from "@/lib/i18n/localize";
 
-const ORG_ID = `${SITE.url}/#organization`;
-const WEBSITE_ID = `${SITE.url}/#website`;
+function orgId() {
+  return `${SITE.url}/#organization`;
+}
+
+function websiteId() {
+  return `${SITE.url}/#website`;
+}
 
 export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
   const messages = getMessages(locale);
   return {
     "@type": "Organization",
-    "@id": ORG_ID,
+    "@id": orgId(),
     name: SITE.name,
     legalName: SITE.legal,
     alternateName: [SITE.trading, "UNFOLDING THE FUTURE", "Unfolding the Future"],
@@ -74,13 +79,13 @@ export function homeJsonLd(locale: Locale = DEFAULT_LOCALE) {
     ...organizationJsonLd(locale),
     mainEntityOfPage: {
       "@type": "WebSite",
-      "@id": WEBSITE_ID,
+      "@id": websiteId(),
       name: SITE.name,
       alternateName: ["UNFLD", "unfld.com.br", "UNFOLDING THE FUTURE"],
       url: SITE.url,
       description: messages.catalog.tagline,
       inLanguage: [...LOCALES],
-      publisher: { "@id": ORG_ID },
+      publisher: { "@id": orgId() },
     },
     makesOffer: localizeOwnedProducts(locale).map((product) => ({
       "@type": "Offer",
@@ -110,8 +115,8 @@ export function developerResourcesJsonLd(
     headline: title,
     url: `${SITE.url}${path}`,
     description,
-    isPartOf: { "@id": WEBSITE_ID },
-    about: { "@id": ORG_ID },
+    isPartOf: { "@id": websiteId() },
+    about: { "@id": orgId() },
     inLanguage: locale,
     mainEntity: {
       "@type": "WebAPI",
@@ -119,7 +124,7 @@ export function developerResourcesJsonLd(
       description: copy.apiDescription,
       url: `${SITE.url}/api/v1`,
       documentation: `${SITE.url}/openapi.json`,
-      provider: { "@id": ORG_ID },
+      provider: { "@id": orgId() },
     },
     significantLink: [
       `${SITE.url}/developers`,

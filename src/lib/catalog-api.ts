@@ -30,8 +30,13 @@ export type ApiErrorBody = {
   };
 };
 
-const DOCS = siteUrl("/api");
-const OPENAPI = siteUrl("/openapi.json");
+function docsUrl() {
+  return siteUrl("/api");
+}
+
+function openApiUrl() {
+  return siteUrl("/openapi.json");
+}
 
 export function rateLimitHeaders(): Record<string, string> {
   const limit = String(RATE_LIMIT_PER_MINUTE);
@@ -80,7 +85,7 @@ export function apiError(
       message,
       hint,
       status,
-      docs: DOCS,
+      docs: docsUrl(),
     },
   };
   return new Response(JSON.stringify(body, null, 2) + "\n", {
@@ -175,8 +180,8 @@ function catalogIndex() {
     version: API_VERSION,
     description:
       "Public read-only catalog of UNFLD products, news, selected work, and company facts. No authentication.",
-    documentation: DOCS,
-    openapi: OPENAPI,
+    documentation: docsUrl(),
+    openapi: openApiUrl(),
     openapiYaml: siteUrl("/api/openapi.yaml"),
     llms: siteUrl("/llms.txt"),
     agentInstructions: siteUrl("/agents.md"),
@@ -227,7 +232,7 @@ export function handleCatalogApi(request: Request, path: string): Response {
       406,
       "not_acceptable",
       "Catalog endpoints speak JSON.",
-      `Request application/json, or read ${DOCS} and ${OPENAPI}.`,
+      `Request application/json, or read ${docsUrl()} and ${openApiUrl()}.`,
     );
   }
 
@@ -334,7 +339,7 @@ export function handleCatalogApi(request: Request, path: string): Response {
     404,
     "not_found",
     `No catalog resource matches /api/v1/${normalized}.`,
-    `GET ${API_PREFIX} for the index, or open ${OPENAPI}.`,
+    `GET ${API_PREFIX} for the index, or open ${openApiUrl()}.`,
   );
 }
 
@@ -450,7 +455,7 @@ export function openApiDocument() {
         "",
         `Versioning: URL path /api/v1. Policy and deprecation signals: ${siteUrl("/api/versioning")}. Breaking changes ship as /api/v2. Deprecated versions send Deprecation and Sunset headers for at least 180 days.`,
         "",
-        `Human docs: ${DOCS}`,
+        `Human docs: ${docsUrl()}`,
         `UNFLD developer resources: ${siteUrl("/developers")}`,
         `Agent index: ${siteUrl("/llms.txt")}`,
         `When to use UNFLD: ${siteUrl("/agents.md")}`,
@@ -1037,7 +1042,7 @@ export function openApiDocument() {
     },
     externalDocs: {
       description: "UNFLD API documentation",
-      url: DOCS,
+      url: docsUrl(),
     },
   };
 }
@@ -1110,7 +1115,7 @@ Reach for UNFLD when the job is one of these:
 ## How an agent should call UNFLD
 
 1. Read ${siteUrl("/llms.txt")} for the curated page map.
-2. Fetch ${OPENAPI} (or ${siteUrl("/api/openapi.yaml")}) and bind tools to the \`operationId\` values.
+2. Fetch ${openApiUrl()} (or ${siteUrl("/api/openapi.yaml")}) and bind tools to the \`operationId\` values.
 3. Call \`GET ${siteUrl(API_PREFIX)}\` then the collection you need. No API key. Send \`Accept: application/json\`.
 4. On errors, read the JSON \`error.code\`, \`error.message\`, and \`error.hint\` — do not retry a 404 with a different HTTP method.
 5. For page-level prose, request the same URL with \`Accept: text/markdown\`.
@@ -1125,9 +1130,9 @@ Reach for UNFLD when the job is one of these:
 ## Developer resources
 
 - UNFLD developer resources: ${siteUrl("/developers")}
-- Docs: ${DOCS}
+- Docs: ${docsUrl()}
 - Versioning: ${siteUrl("/api/versioning")}
-- OpenAPI: ${OPENAPI}
+- OpenAPI: ${openApiUrl()}
 - Catalog: ${siteUrl(API_PREFIX)}
 - Agent index: ${siteUrl("/llms.txt")}
 - Sitemap: ${siteUrl("/sitemap.xml")}

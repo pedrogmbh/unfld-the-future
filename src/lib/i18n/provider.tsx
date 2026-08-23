@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState, type ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";
 import { useRouter } from "@tanstack/react-router";
 import { LocaleContext } from "./context";
-import { defaultI18n } from "./instance";
+import { getDefaultI18n } from "./instance";
 import {
   LOCALE_COOKIE,
   LOCALE_META,
@@ -25,7 +25,7 @@ export function LocaleProvider({
       setLocaleState(next);
       setCurrentLocale(next);
       writeLocaleCookie(LOCALE_COOKIE, next);
-      void defaultI18n.changeLanguage(next);
+      void getDefaultI18n().changeLanguage(next);
       if (typeof document !== "undefined") {
         document.documentElement.lang = LOCALE_META[next].html;
       }
@@ -38,7 +38,7 @@ export function LocaleProvider({
 
   return (
     <LocaleContext.Provider value={value}>
-      <I18nextProvider i18n={defaultI18n}>{children}</I18nextProvider>
+      <I18nextProvider i18n={getDefaultI18n()}>{children}</I18nextProvider>
     </LocaleContext.Provider>
   );
 }

@@ -340,6 +340,14 @@ function applyCustomCardFromFs(site, cwd) {
   return { ...site, card: "custom", image: disk };
 }
 
+function publicOrigin(host = "", site = {}) {
+  const publicHost = resolvePublicHost(host);
+  if (publicHost) return `https://${publicHost}`;
+  const fromSite = String(site.url ?? "").trim().replace(/\/+$/, "");
+  if (/^https?:\/\//i.test(fromSite)) return fromSite;
+  return "";
+}
+
 export function grokOgHeadTags({
   host = "",
   appName = DEFAULT_APP_NAME,
@@ -349,31 +357,34 @@ export function grokOgHeadTags({
 } = {}) {
   const title = resolveOgTitle(site, appName, host, documentTitle);
   const publicHost = resolvePublicHost(host);
+  const origin = publicOrigin(host, site);
   const tags = [
     `<meta name="twitter:card" content="summary_large_image">`,
     `<meta property="og:title" content="${escapeHtml(title)}">`,
+    `<meta property="og:type" content="${
+      String(site.type ?? "").toLowerCase() === "x:game" ? "x:game" : "website"
+    }">`,
   ];
   const description = String(site.description ?? "").trim();
   if (description) {
     tags.push(`<meta property="og:description" content="${escapeHtml(description)}">`);
   }
-  if (String(site.type ?? "").toLowerCase() === "x:game") {
-    tags.push(`<meta property="og:type" content="x:game">`);
-  }
-  if (publicHost) {
+  if (origin) {
     const asset = resolveOgCardAsset(site, cwd);
     const custom = Boolean(asset);
     let image = custom
-      ? `https://${publicHost}${asset.startsWith("/") ? asset : `/${asset}`}`
-      : `${ogServiceUrl()}/v1/card.png?host=${encodeURIComponent(publicHost)}&title=${encodeURIComponent(title)}`;
-    const color = !custom ? placeholderCardColor(site) : "";
+      ? `${origin}${asset.startsWith("/") ? asset : `/${asset}`}`
+      : publicHost
+        ? `${ogServiceUrl()}/v1/card.png?host=${encodeURIComponent(publicHost)}&title=${encodeURIComponent(title)}`
+        : `${origin}/og.jpg`;
+    const color = !custom && publicHost ? placeholderCardColor(site) : "";
     if (color) image += `&color=${encodeURIComponent(color)}`;
     tags.push(`<meta property="og:image" content="${escapeHtml(image)}">`);
     tags.push(`<meta property="og:image:width" content="1200">`);
     tags.push(`<meta property="og:image:height" content="630">`);
     const banner = String(site.banner ?? "").trim();
     if (banner) {
-      const bannerUrl = `https://${publicHost}${banner.startsWith("/") ? banner : `/${banner}`}`;
+      const bannerUrl = `${origin}${banner.startsWith("/") ? banner : `/${banner}`}`;
       tags.push(`<meta property="x:game:image" content="${escapeHtml(bannerUrl)}">`);
       tags.push(`<meta property="x:game:image:width" content="1200">`);
       tags.push(`<meta property="x:game:image:height" content="264">`);
@@ -382,11 +393,28 @@ export function grokOgHeadTags({
   return tags;
 }
 
-export function stripShareMetaTags(html) {
+export function replacedShareMetaKeys(ctx = {}) {
+  const site = ctx.site ?? {};
+  const keys = new Set(["twitter:card", "og:title", "og:type"]);
+  if (String(site.description ?? "").trim()) keys.add("og:description");
+  if (publicOrigin(ctx.host ?? "", site)) {
+    keys.add("og:image");
+    keys.add("og:image:width");
+    keys.add("og:image:height");
+    if (String(site.banner ?? "").trim()) {
+      keys.add("x:game:image");
+      keys.add("x:game:image:width");
+      keys.add("x:game:image:height");
+    }
+  }
+  return keys;
+}
+
+export function stripShareMetaTags(html, keys = SHARE_META_KEYS) {
   return String(html).replace(/<meta\b[^>]*>/gi, (tag) => {
     const attrs = [...tag.matchAll(/\b(?:property|name)\s*=\s*["']([^"']+)["']/gi)];
     for (const match of attrs) {
-      if (SHARE_META_KEYS.has(String(match[1]).toLowerCase())) return "";
+      if (keys.has(String(match[1]).toLowerCase())) return "";
     }
     return tag;
   });
@@ -437,7 +465,10 @@ export function injectGrokPwaHead(html, ctx = {}) {
     host,
     documentTitle,
   );
-  let next = stripShareMetaTags(html);
+  let next = stripShareMetaTags(
+    html,
+    replacedShareMetaKeys({ site, host, cwd }),
+  );
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BtnLink, TextArrow } from "@/components/site/buttons";
+import { CodeTabs, type CodeSample } from "@/components/site/code-tabs";
 import { WorkTile } from "@/components/site/work-page";
 import {
   ParallaxImage,
@@ -15,8 +16,8 @@ import {
   homePrompts,
   news,
   ownedProducts,
-  SITE,
 } from "@/lib/site";
+import { homeJsonLd } from "@/lib/jsonld";
 import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/")({
@@ -25,39 +26,44 @@ export const Route = createFileRoute("/")({
       path: "/",
       description:
         "Across agronomy, hiring, small business, and workplace health, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
-      jsonLd: {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: SITE.name,
-        legalName: SITE.legal,
-        url: SITE.url,
-        logo: `${SITE.url}/favicon.svg`,
-        description:
-          "UNFLD builds and operates technology for essential work and builds custom systems beside organizations with consequential operations.",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: `${SITE.address.line1}, ${SITE.address.line2}`,
-          addressLocality: SITE.address.city,
-          addressRegion: SITE.address.region,
-          postalCode: SITE.address.postal,
-          addressCountry: "BR",
-        },
-        contactPoint: [
-          {
-            "@type": "ContactPoint",
-            email: SITE.sales,
-            contactType: "sales",
-          },
-          {
-            "@type": "ContactPoint",
-            email: SITE.security,
-            contactType: "security",
-          },
-        ],
-      },
+      jsonLd: homeJsonLd(),
     }),
   component: Home,
 });
+
+const apiSamples: CodeSample[] = [
+  {
+    id: "curl",
+    label: "cURL",
+    code: `curl https://www.unfld.com.br/api/v1/products \\
+  -H "Accept: application/json"
+
+# Spec:  GET /openapi.json
+# Docs:  GET /api
+# Agent: GET /llms.txt`,
+  },
+  {
+    id: "ts",
+    label: "TypeScript",
+    code: `const res = await fetch("https://www.unfld.com.br/api/v1", {
+  headers: { Accept: "application/json" },
+});
+const catalog = await res.json();
+console.log(catalog.links.products);`,
+  },
+  {
+    id: "python",
+    label: "Python",
+    code: `import urllib.request, json
+
+req = urllib.request.Request(
+    "https://www.unfld.com.br/openapi.json",
+    headers={"Accept": "application/json"},
+)
+spec = json.load(urllib.request.urlopen(req))
+print(spec["info"]["title"], spec["info"]["version"])`,
+  },
+];
 
 const proofItems = [
   {
@@ -349,6 +355,32 @@ function Home() {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section className="py-16 sm:py-24">
+        <div className="grid items-start gap-12 lg:grid-cols-2">
+          <Reveal>
+            <p className="mb-4 text-[13px] font-medium text-muted">
+              For developers
+            </p>
+            <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
+              UNFLD API.
+            </h2>
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">
+              A public catalog of products, news, work, and company facts.
+              OpenAPI at /openapi.json. No authentication.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <BtnLink to="/api">UNFLD API</BtnLink>
+              <BtnLink href="/openapi.json" variant="secondary">
+                OpenAPI spec
+              </BtnLink>
+            </div>
+          </Reveal>
+          <div className="min-w-0">
+            <CodeTabs samples={apiSamples} />
           </div>
         </div>
       </Section>

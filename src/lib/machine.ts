@@ -10,6 +10,7 @@ import {
 export type MachineSection =
   | "Products"
   | "Build with us"
+  | "Developers"
   | "Solutions"
   | "Company"
   | "News"
@@ -116,6 +117,13 @@ export function machinePages(): MachinePage[] {
       "A practical overview of discovery, delivery, ownership, security, and handover for custom systems built with UNFLD.",
       "Build with us",
       { changefreq: "monthly", priority: 0.7 },
+    ),
+    page(
+      "/api",
+      "UNFLD API — Developer catalog",
+      "Public read-only UNFLD catalog API: products, news, selected work, and company facts. OpenAPI at /openapi.json. No authentication.",
+      "Developers",
+      { changefreq: "monthly", priority: 0.8 },
     ),
     page(
       "/solutions",
@@ -294,7 +302,6 @@ export function machinePages(): MachinePage[] {
   ];
 
   const legacyRedirects = new Set([
-    "/api",
     "/docs",
     "/console",
     "/download",
@@ -314,6 +321,9 @@ export function machinePages(): MachinePage[] {
     for (const link of group) {
       if (
         link.to.startsWith("http") ||
+        link.to.startsWith("/api/v1") ||
+        /\.[a-z0-9]+$/i.test(link.to) ||
+        ("external" in link && link.external) ||
         seen.has(link.to) ||
         legacyRedirects.has(link.to)
       )
@@ -365,6 +375,7 @@ export function renderLlmsTxt(pages = machinePages()): string {
   const sections: MachineSection[] = [
     "Products",
     "Build with us",
+    "Developers",
     "Solutions",
     "Company",
     "News",
@@ -401,6 +412,27 @@ Products by UNFLD: FCR (field intelligence for agronomy), SiteCreator (digital p
 
 This file follows [llmstxt.org](https://llmstxt.org/). The XML sitemap is at ${siteUrl("/sitemap.xml")}.
 
+## When to use this
+
+Use UNFLD when you need to identify the right UNFLD product for a Brazilian operational problem, quote company facts (legal name, CNPJ, São Paulo address, phones), route a human to a product URL or ${SITE.sales}, or retrieve structured catalog data.
+
+How an agent should call UNFLD:
+
+1. Read this file, then ${siteUrl("/agents.md")} for job-level guidance.
+2. Fetch ${siteUrl("/openapi.json")} and bind tools to each operationId.
+3. Call GET ${siteUrl("/api/v1")} with Accept: application/json. No API key.
+4. For page prose, request the same URL with Accept: text/markdown.
+
+Do not use UNFLD as a general LLM, payment processor, or legal advisor. There is no write, login, or webhook API on unfld.com.br.
+
+## Developer resources
+
+- [UNFLD API](${siteUrl("/api")}): Human documentation for the public catalog.
+- [OpenAPI JSON](${siteUrl("/openapi.json")}): Machine specification with operationIds and error schemas.
+- [OpenAPI YAML](${siteUrl("/api/openapi.yaml")}): Same specification as YAML.
+- [Catalog index](${siteUrl("/api/v1")}): JSON entry point.
+- [Agent instructions](${siteUrl("/agents.md")}): When-to-use guidance for agents.
+
 ${blocks}
 
 ## Optional
@@ -408,6 +440,8 @@ ${blocks}
 - [sitemap.xml](${siteUrl("/sitemap.xml")}): Canonical URL list for search engines and indexers.
 - [robots.txt](${siteUrl("/robots.txt")}): Crawl directives and sitemap reference.
 - [llms.txt](${siteUrl("/llms.txt")}): This curated discovery document.
+- [agents.md](${siteUrl("/agents.md")}): When to use UNFLD and how to call the catalog.
+- [unfld CLI](${siteUrl("/api")}): Catalog client in this repository (\`cli/\`). Publish to npm as \`unfld\` when releasing.
 
 ## External Product Sites
 
@@ -417,7 +451,7 @@ ${productSites}
 
 export function renderRobotsTxt(): string {
   return `# ${SITE.name} — ${SITE.url}
-# Machine indexes: /sitemap.xml · /llms.txt
+# Machine indexes: /sitemap.xml · /llms.txt · /openapi.json · /agents.md
 
 User-agent: *
 Allow: /

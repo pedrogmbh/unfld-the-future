@@ -1,0 +1,16 @@
+{
+  "name": "unfld",
+  "version": "1.0.0",
+  "description": "Official CLI for the public UNFLD catalog API",
+  "type": "module",
+  "bin": {
+    "unfld": "./bin/unfld.mjs"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pedrogmbh/unfld-the-future.git"
+  },
+  "homepage": "https://www.unfld.com.br/api",
+  "keywords": ["unfld", "catalog", "openapi", "cli"]
+}

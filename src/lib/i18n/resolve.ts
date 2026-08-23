@@ -5,6 +5,7 @@ import {
   parseLocale,
   type Locale,
 } from "./locales";
+import { peekRequestLocale } from "./request-locale";
 import { readClientCookie } from "./runtime";
 
 export function localeFromSearch(search: unknown): Locale | undefined {
@@ -15,10 +16,7 @@ export function localeFromSearch(search: unknown): Locale | undefined {
 
 const localeFromHints = createIsomorphicFn()
   .client(() => parseLocale(readClientCookie(LOCALE_COOKIE)) ?? DEFAULT_LOCALE)
-  .server(async () => {
-    const { localeFromServerRequest } = await import("./resolve.server");
-    return localeFromServerRequest();
-  });
+  .server(() => peekRequestLocale());
 
 export async function resolveRequestLocale(search?: unknown): Promise<Locale> {
   const fromQuery = localeFromSearch(search);

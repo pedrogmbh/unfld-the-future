@@ -97,7 +97,7 @@ function homeMarkdown(): string {
 
 > ${SITE.tagline}
 
-Across agronomy, hiring, small business, and workplace health, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.
+Across agronomy, hiring, small business, workplace health, drawing, and vehicle retail, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.
 
 UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}, ${formatAddress()}.
 

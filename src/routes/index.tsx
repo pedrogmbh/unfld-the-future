@@ -84,7 +84,7 @@ function Home() {
           <Reveal>
             <Link
               to="/news/$slug"
-              params={{ slug: "queravaga" }}
+              params={{ slug: "unifikar" }}
               className="inline-flex items-center gap-2 text-[13px] text-muted transition-colors hover:text-fg"
             >
               <span className="rounded-full border border-border-strong px-2 py-0.5 text-[10px] font-medium tracking-[0.14em] text-fg uppercase">

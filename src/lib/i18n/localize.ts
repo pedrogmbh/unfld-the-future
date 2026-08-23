@@ -279,20 +279,16 @@ export function localizeFooter(locale: Locale) {
   return {
     products: [
       { label: labels.allProducts, to: "/products" },
-      { label: "FCR", to: "/fcr" },
-      { label: "SiteCreator", to: "/sitecreator" },
-      { label: "Doutor Fiscal", to: "/doutor-fiscal" },
-      { label: "Queravaga", to: "/queravaga" },
-      { label: "Dialogus", to: "/dialogus" },
+      ...ownedProducts.map((product) => ({
+        label: product.shortName,
+        to: product.href,
+      })),
       { label: labels.access, to: "/access" },
     ],
-    access: [
-      { label: "FCR", to: "/fcr" },
-      { label: "SiteCreator", to: "/sitecreator" },
-      { label: "Doutor Fiscal", to: "/doutor-fiscal" },
-      { label: "Queravaga", to: "/queravaga" },
-      { label: "Dialogus", to: "/dialogus" },
-    ],
+    access: ownedProducts.map((product) => ({
+      label: product.shortName,
+      to: product.href,
+    })),
     buildWithUs: [
       { label: labels.customSoftware, to: "/build-with-us" },
       { label: labels.howWeWork, to: "/how-we-work" },
@@ -311,6 +307,8 @@ export function localizeFooter(locale: Locale) {
     ],
     solutions: [
       { label: labels.smallBusiness, to: "/solutions/business" },
+      { label: labels.drawing, to: "/solutions/drawing" },
+      { label: labels.vehicleRetail, to: "/solutions/vehicles" },
       { label: labels.publicMissions, to: "/solutions/government" },
       { label: labels.operations, to: "/solutions/operations" },
       { label: labels.fiscalRisk, to: "/solutions/legal" },

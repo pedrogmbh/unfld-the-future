@@ -1,3 +1,28 @@
+/**
+ * Icon keys resolved to `lucide-react` components in
+ * `src/components/site/compliance.tsx`. Data files stay free of JSX.
+ */
+export type ComplianceIcon =
+  | "shield"
+  | "training"
+  | "key"
+  | "trace"
+  | "building"
+  | "operations"
+  | "network"
+  | "incident"
+  | "vendor"
+  | "sdlc"
+  | "backup"
+  | "continuity"
+  | "data"
+  | "legal"
+  | "hosting"
+  | "software"
+  | "layers"
+  | "hypervisor"
+  | "identity";
+
 export type ComplianceItem = {
   id: string;
   category: string;
@@ -8,6 +33,8 @@ export type ComplianceItem = {
 export type ComplianceCategory = {
   name: string;
   slug: string;
+  short: string;
+  icon: ComplianceIcon;
   description: string;
   items: ComplianceItem[];
 };
@@ -701,78 +728,445 @@ export const COMPLIANCE_ITEMS: readonly ComplianceItem[] = [
   },
 ] as const;
 
-export function getComplianceCategories(): ComplianceCategory[] {
-  const categoriesMap = new Map<string, ComplianceItem[]>();
-  
-  for (const item of COMPLIANCE_ITEMS) {
-    const list = categoriesMap.get(item.category) ?? [];
-    list.push(item);
-    categoriesMap.set(item.category, list);
-  }
+type CategoryMeta = {
+  name: string;
+  short: string;
+  icon: ComplianceIcon;
+  description: string;
+};
 
-  const categoryDescriptions: Record<string, string> = {
-    "General and PSSI": "Information Security Policy (PSSI), risk evaluation cadences, ISO 27001/27002 alignment, and vulnerability management.",
-    "User awareness and training": "Security awareness curricula, phishing simulations, and privacy compliance training by role.",
-    "Access Authorization Management": "Identity lifecycle, least privilege, RBAC, password policies, and multi-factor authentication.",
-    "Monitoring and Traceability": "Centralized log aggregation, SIEM alerting, administrator tracing, and SOC response.",
-    "Physical security": "Data center physical safeguards, AWS hosting facilities, and cabling infrastructure.",
-    "Security related to operations": "Workstation hardening (macOS FileVault), patch management, and daily vulnerability detection.",
-    "Security of communications": "Network segmentation, VPC architectures, Cloudflare WAF, TLS encryption, and email authentication (SPF/DKIM/DMARC).",
-    "Incident Management": "Security incident response playbooks, data breach notification protocols, and disaster preparedness.",
-    "Subcontracting Security": "Vendor due diligence, contractual security clauses, and supplier compliance verification.",
-    "Project Information Systems": "Secure SDLC, GitHub Enterprise code controls, automated SAST, and pre-release audits.",
-    "Backups Management": "Automated snapshot policies, AWS S3 storage with WORM immutability, encryption, and quarterly recovery drills.",
-    "Business Continuity": "Disaster recovery planning, RTO/RPO targets, multi-region redundancy, and leadership escalation.",
-    "Data Security": "Data classification tiers, AWS RDS database encryption at rest, synthetic testing data, and DLP.",
-    "Compliance": "GDPR and LGPD compliance, NIS2 alignment, ISMS review cadences, and end-of-contract data reversibility.",
-    "Hosting": "AWS cloud infrastructure, Cloudflare edge services, enterprise SLAs, and disaster recovery.",
-    "Software": "Peer review standards, CI/CD automated security gates, and regular penetration testing.",
-    "Services and layers": "Three-tier architecture, technology stack, multi-tenant data separation, and API integrations.",
-    "Hypervisor & OS": "Workstation and server operating systems, AWS virtualization hypervisors, and security posture.",
-    "Authentication": "Enterprise SAML 2.0/OAuth2/OIDC SSO federation, token security, and MFA enforcement.",
-  };
+/** Ordered category metadata. `name` matches `ComplianceItem.category` exactly. */
+const CATEGORY_META: readonly CategoryMeta[] = [
+  {
+    name: "General and PSSI",
+    short: "PSSI",
+    icon: "shield",
+    description:
+      "Information Security Policy, risk evaluation cadence, ISO 27001/27002 alignment, and vulnerability management.",
+  },
+  {
+    name: "User awareness and training",
+    short: "Training",
+    icon: "training",
+    description:
+      "Security awareness curricula, phishing detection, and privacy compliance training by role.",
+  },
+  {
+    name: "Access Authorization Management",
+    short: "Access",
+    icon: "key",
+    description:
+      "Identity lifecycle, least privilege, password policy, and multi-factor authentication.",
+  },
+  {
+    name: "Monitoring and Traceability",
+    short: "Monitoring",
+    icon: "trace",
+    description:
+      "Centralized log aggregation, SIEM alerting, administrator tracing, and SOC response.",
+  },
+  {
+    name: "Physical security",
+    short: "Physical",
+    icon: "building",
+    description:
+      "Data center safeguards, biometric access control, and secured power and telecom paths.",
+  },
+  {
+    name: "Security related to operations",
+    short: "Operations",
+    icon: "operations",
+    description:
+      "Workstation hardening, change management, patch windows, and daily vulnerability detection.",
+  },
+  {
+    name: "Security of communications",
+    short: "Communications",
+    icon: "network",
+    description:
+      "Network segmentation, VPC isolation, Cloudflare WAF, TLS, and email authentication.",
+  },
+  {
+    name: "Incident Management",
+    short: "Incidents",
+    icon: "incident",
+    description:
+      "Response playbooks, breach notification, credential protection, and crisis escalation.",
+  },
+  {
+    name: "Subcontracting Security",
+    short: "Vendors",
+    icon: "vendor",
+    description:
+      "Vendor due diligence, contractual security clauses, and supplier compliance verification.",
+  },
+  {
+    name: "Project Information Systems",
+    short: "Projects",
+    icon: "sdlc",
+    description:
+      "Secure development environments, scoped third-party access, and pre-delivery verification.",
+  },
+  {
+    name: "Backups Management",
+    short: "Backups",
+    icon: "backup",
+    description:
+      "Snapshot policy, WORM immutability, encryption, retention, and recovery drills.",
+  },
+  {
+    name: "Business Continuity",
+    short: "Continuity",
+    icon: "continuity",
+    description:
+      "Disaster recovery planning, RTO and RPO targets, and multi-region redundancy.",
+  },
+  {
+    name: "Data Security",
+    short: "Data",
+    icon: "data",
+    description:
+      "Classification tiers, database encryption, anonymized non-production data, and DLP.",
+  },
+  {
+    name: "Compliance",
+    short: "Regulatory",
+    icon: "legal",
+    description:
+      "GDPR and LGPD obligations, NIS2 alignment, ISMS review, retention, and reversibility.",
+  },
+  {
+    name: "Hosting",
+    short: "Hosting",
+    icon: "hosting",
+    description:
+      "AWS regions, Cloudflare edge, service level agreements, and failover protocol.",
+  },
+  {
+    name: "Software",
+    short: "Software",
+    icon: "software",
+    description: "Peer review standards, automated security gates, and penetration testing.",
+  },
+  {
+    name: "Services and layers",
+    short: "Architecture",
+    icon: "layers",
+    description:
+      "Application tiers, technology stack, tenant separation, and third-party integrations.",
+  },
+  {
+    name: "Hypervisor & OS",
+    short: "Hypervisor",
+    icon: "hypervisor",
+    description: "Workstation and server operating systems, and AWS virtualization.",
+  },
+  {
+    name: "Authentication",
+    short: "Identity",
+    icon: "identity",
+    description: "SAML 2.0, OAuth 2.0, and OIDC federation, session security, and MFA.",
+  },
+];
 
-  const categories: ComplianceCategory[] = [];
-
-  for (const [name, items] of categoriesMap.entries()) {
-    const slug = name
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-    categories.push({
-      name,
-      slug,
-      description: categoryDescriptions[name] || "Security controls and compliance practices.",
-      items,
-    });
-  }
-
-  return categories;
+export function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
+
+function itemsInCategory(name: string): ComplianceItem[] {
+  return COMPLIANCE_ITEMS.filter((item) => item.category === name);
+}
+
+export function getComplianceCategories(): ComplianceCategory[] {
+  return CATEGORY_META.map((meta) => ({
+    ...meta,
+    slug: slugify(meta.name),
+    items: itemsInCategory(meta.name),
+  }));
+}
+
+export function getCategoryMeta(name: string): CategoryMeta | undefined {
+  return CATEGORY_META.find((meta) => meta.name === name);
+}
+
+/**
+ * How a chapter renders its disclosures. Cycling these is what keeps a
+ * 98-item repository from reading as one uninterrupted column of cards.
+ */
+export type ChapterLayout = "split" | "stack" | "columns";
+
+export type ComplianceChapter = {
+  n: string;
+  slug: string;
+  title: string;
+  lede: string;
+  icon: ComplianceIcon;
+  layout: ChapterLayout;
+  categoryNames: readonly string[];
+};
+
+export const COMPLIANCE_CHAPTERS: readonly ComplianceChapter[] = [
+  {
+    n: "01",
+    slug: "governance",
+    title: "Governance and policy",
+    lede: "The Information Security Policy that everything else hangs from — how it is validated, reviewed, audited, and held against ISO 27001, SOC 2, GDPR, and LGPD.",
+    icon: "shield",
+    layout: "split",
+    categoryNames: ["General and PSSI", "User awareness and training", "Compliance"],
+  },
+  {
+    n: "02",
+    slug: "identity",
+    title: "Identity and access",
+    lede: "Who can reach what, proven at every boundary. Least privilege, documented identity lifecycle, enforced multi-factor authentication, and enterprise federation.",
+    icon: "key",
+    layout: "stack",
+    categoryNames: ["Access Authorization Management", "Authentication"],
+  },
+  {
+    n: "03",
+    slug: "infrastructure",
+    title: "Infrastructure and perimeter",
+    lede: "Where the compute physically sits, how the network is cut into segments, and what stands between the public internet and a database.",
+    icon: "hosting",
+    layout: "split",
+    categoryNames: [
+      "Physical security",
+      "Security of communications",
+      "Hosting",
+      "Hypervisor & OS",
+    ],
+  },
+  {
+    n: "04",
+    slug: "operations",
+    title: "Operations and response",
+    lede: "The day-to-day: hardened workstations, change control, log aggregation, and what happens in the hours after something goes wrong.",
+    icon: "operations",
+    layout: "columns",
+    categoryNames: [
+      "Monitoring and Traceability",
+      "Security related to operations",
+      "Incident Management",
+    ],
+  },
+  {
+    n: "05",
+    slug: "data",
+    title: "Data, backup, and continuity",
+    lede: "Classification, encryption, immutable snapshots, and the recovery objectives we hold ourselves to when a region goes dark.",
+    icon: "data",
+    layout: "split",
+    categoryNames: ["Data Security", "Backups Management", "Business Continuity"],
+  },
+  {
+    n: "06",
+    slug: "engineering",
+    title: "Engineering and supply chain",
+    lede: "How software gets built and reviewed before it ships, how tenants stay separated, and what we require of every vendor we bring in.",
+    icon: "sdlc",
+    layout: "stack",
+    categoryNames: [
+      "Project Information Systems",
+      "Software",
+      "Services and layers",
+      "Subcontracting Security",
+    ],
+  },
+];
+
+export type ResolvedChapter = ComplianceChapter & {
+  items: ComplianceItem[];
+  categories: ComplianceCategory[];
+};
+
+export function getComplianceChapters(): ResolvedChapter[] {
+  const byName = new Map(getComplianceCategories().map((c) => [c.name, c]));
+  return COMPLIANCE_CHAPTERS.map((chapter) => {
+    const categories = chapter.categoryNames
+      .map((name) => byName.get(name))
+      .filter((c): c is ComplianceCategory => Boolean(c));
+    return {
+      ...chapter,
+      categories,
+      items: categories.flatMap((c) => c.items),
+    };
+  });
+}
+
+/**
+ * Canonical reference number per disclosure, following chapter order so the
+ * numbering reads sequentially while browsing and stays stable in search.
+ */
+export function getDisclosureOrder(): Map<string, number> {
+  const order = new Map<string, number>();
+  let n = 0;
+  for (const chapter of getComplianceChapters()) {
+    for (const item of chapter.items) order.set(item.id, ++n);
+  }
+  return order;
+}
+
+/** Headline numbers for the posture band. Derived counts stay in the page. */
+export const COMPLIANCE_POSTURE = [
+  { value: "AES-256", label: "At rest, every tier", note: "FileVault · RDS · S3" },
+  { value: "TLS 1.3", label: "In transit, enforced", note: "HTTP redirected to HTTPS" },
+  { value: "< 4h", label: "Recovery time objective", note: "RPO under one hour" },
+  { value: "11×9", label: "Backup durability", note: "Multi-AZ, WORM locked" },
+] as const;
+
+/**
+ * Standards we answer to. `scope` keeps the distinction honest: AWS holds the
+ * accreditation, UNFLD calibrates its own practice against the criteria.
+ */
+export const COMPLIANCE_STANDARDS = [
+  {
+    name: "ISO 27001",
+    scope: "UNFLD practice · AWS certified",
+    detail: "Information security management system controls and review cadence.",
+  },
+  {
+    name: "ISO 27002",
+    scope: "UNFLD practice",
+    detail: "Control implementation guidance applied across the PSSI.",
+  },
+  {
+    name: "SOC 2 Type II",
+    scope: "UNFLD practice · AWS certified",
+    detail: "Security, availability, and confidentiality criteria.",
+  },
+  {
+    name: "GDPR",
+    scope: "Contractual",
+    detail: "Legal basis, DPAs with Standard Contractual Clauses, subject rights.",
+  },
+  {
+    name: "LGPD",
+    scope: "Contractual",
+    detail: "Brazilian personal data protection across products we operate.",
+  },
+  {
+    name: "NIS2",
+    scope: "Aligned",
+    detail: "Risk management, incident reporting, and supply chain practice.",
+  },
+  {
+    name: "PCI DSS Level 1",
+    scope: "AWS certified",
+    detail: "Platform accreditation inherited from the hosting layer.",
+  },
+] as const;
+
+/** Figures cited in the operations interlude. */
+export const COMPLIANCE_RESPONSE = [
+  { value: "12 mo", label: "Log retention" },
+  { value: "24–72h", label: "Critical patch window" },
+  { value: "90 days", label: "Snapshot retention" },
+] as const;
+
+export const COMPLIANCE_REGIONS = [
+  {
+    region: "eu-central-1",
+    city: "Frankfurt",
+    country: "Germany",
+    role: "EU primary",
+    note: "GDPR-resident workloads and encrypted RDS instances.",
+  },
+  {
+    region: "eu-west-1",
+    city: "Dublin",
+    country: "Ireland",
+    role: "EU secondary",
+    note: "Cross-region replication target for European clients.",
+  },
+  {
+    region: "sa-east-1",
+    city: "São Paulo",
+    country: "Brazil",
+    role: "LATAM primary",
+    note: "Local residency for Brazilian and LGPD-governed data.",
+  },
+] as const;
+
+/** Illustrative posture manifest for the encryption interlude. */
+export const COMPLIANCE_POSTURE_MANIFEST = `# posture.yml — enforced across every UNFLD environment
+transport:
+  minimum: "TLS 1.2"
+  preferred: "TLS 1.3"
+  plaintext_http: "redirect"        # never served
+
+at_rest:
+  workstations: "FileVault AES-XTS"
+  databases: "AWS RDS AES-256"
+  objects: "S3 SSE-KMS AES-256"
+  backups: "AES-256 + S3 Object Lock"
+
+credentials:
+  hashing: "Argon2id, bcrypt fallback"
+  admin_mfa: "required"             # TOTP or hardware key
+  federation: ["SAML 2.0", "OAuth 2.0", "OIDC"]
+
+retention:
+  operational_logs: "12 months"
+  database_snapshots: "90 days"
+  archives: "monthly + yearly point-in-time"`;
+
+export const COMPLIANCE_LIFECYCLE = [
+  {
+    n: "01",
+    title: "Peer review",
+    body: "Every pull request needs a human reviewer. No exceptions, no self-merge to production branches.",
+  },
+  {
+    n: "02",
+    title: "Automated gates",
+    body: "Static analysis, dependency scanning, and secret detection run on each commit before a merge is possible.",
+  },
+  {
+    n: "03",
+    title: "Staged deploy",
+    body: "Infrastructure and application changes reach staging first, under the same encryption and access controls.",
+  },
+  {
+    n: "04",
+    title: "External assessment",
+    body: "Penetration tests and vulnerability assessments with outside specialists, remediated by severity.",
+  },
+] as const;
 
 export const COMPLIANCE_HIGHLIGHTS = [
   {
-    title: "ISO 27001 & SOC 2 Aligned",
-    desc: "Practices and internal controls calibrated against ISO 27001/27002 and SOC 2 standards.",
+    title: "ISO 27001 & SOC 2 aligned",
+    desc: "Internal controls calibrated against ISO 27001/27002 and SOC 2 Type II criteria, on certified AWS infrastructure.",
+    icon: "shield" as ComplianceIcon,
   },
   {
-    title: "Data Residency & GDPR",
-    desc: "Deployment in EU (Frankfurt, Ireland) and Brazil (São Paulo) with full GDPR and LGPD alignment.",
+    title: "Data residency by contract",
+    desc: "European workloads in Frankfurt and Ireland, LATAM workloads in São Paulo. GDPR and LGPD alignment throughout.",
+    icon: "hosting" as ComplianceIcon,
   },
   {
-    title: "AES-256 & TLS 1.3",
-    desc: "End-to-end encryption for all data at rest and in transit across applications, databases, and backups.",
+    title: "Encrypted end to end",
+    desc: "AES-256 at rest across databases, object storage, and snapshots. TLS 1.3/1.2 for every connection in transit.",
+    icon: "data" as ComplianceIcon,
   },
   {
-    title: "Enterprise SSO & MFA",
-    desc: "SAML 2.0, OAuth 2.0, and OpenID Connect identity federation with mandatory multi-factor authentication.",
+    title: "Enterprise SSO and MFA",
+    desc: "SAML 2.0, OAuth 2.0, and OpenID Connect federation with multi-factor authentication mandatory for privileged access.",
+    icon: "identity" as ComplianceIcon,
   },
   {
-    title: "Immutable Backups",
-    desc: "AWS S3 WORM-protected snapshots with quarterly recovery validation drills and 99.999999999% durability.",
+    title: "Immutable backups",
+    desc: "S3 Object Lock snapshots that cannot be deleted or altered, validated by quarterly restoration drills.",
+    icon: "backup" as ComplianceIcon,
   },
   {
-    title: "Continuous Audits & SAST",
-    desc: "Automated vulnerability scanning on every pull request, peer code reviews, and regular external pentests.",
+    title: "Continuous verification",
+    desc: "Dependency and static analysis on every pull request, monthly system scans, and periodic external penetration tests.",
+    icon: "software" as ComplianceIcon,
   },
 ] as const;

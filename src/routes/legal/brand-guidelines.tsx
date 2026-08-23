@@ -17,7 +17,7 @@ export const Route = createFileRoute("/legal/brand-guidelines")({
 
 function Page() {
   return (
-    <LegalDoc kicker="Brand" title="UNFLD Brand Guidelines" updated="August 22, 2026">
+    <LegalDoc kicker="Brand" title="UNFLD Brand Guidelines" updated="August 23, 2026">
       <p>
         UNFLD stands for UNFOLDING THE FUTURE: the belief that meaningful progress is built by turning difficult work into systems people can use. The brand should feel precise, calm, practical, and in motion. Use these guidelines when referencing UNFLD, our products, or partner engagements.
       </p>
@@ -62,7 +62,7 @@ function Page() {
       </p>
       <H>Color system</H>
       <p>
-        Primary field: pure black (#000000). Primary type: off-white (#F5F5F5). Muted type: neutral gray (#8A8A8A). No extra brand colors, purple, gold, or gradient blobs in chrome. The only accent is crisp white on black, or black on white.
+        Primary field: pure black (#000000). Primary type: off-white (#F5F5F5). Muted type: neutral gray (#8A8A8A). The action accent remains crisp white on black, or black on white: buttons, the fold mark, and fills stay there. Section kickers use a quiet brass (#E3B26A), the same hue as strings in code. Use it only on those labels — uppercase section kickers, page titles’ kickers, and the sentence-case “For developers” line. Do not put it on buttons, the mark, status pills, rules, or fills. Do not substitute a brighter gold. Operational status uses a small dark green dot (#187533) beside “All systems operational.” in the footer legal bar and on the service status page. Do not pulse it, and do not use that green elsewhere in chrome. The brighter window-chrome green stays on code windows only. No purple, blue, or gradient blobs in chrome.
       </p>
       <H>Typography</H>
       <p>

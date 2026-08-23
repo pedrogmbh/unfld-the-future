@@ -22,7 +22,7 @@ export function Hairline() {
 
 export function Kicker({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-4 text-[13px] font-medium tracking-[0.18em] text-muted uppercase">
+    <p className="mb-4 text-[13px] font-medium tracking-[0.18em] text-gold uppercase">
       {children}
     </p>
   );

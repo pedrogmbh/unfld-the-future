@@ -521,25 +521,18 @@ function ChapterBanner({ chapter }: { chapter: ResolvedChapter }) {
 function CategoryGroup({
   category,
   labelled,
-  variant,
   open,
   onToggle,
 }: {
   category: ComplianceCategory;
   labelled: boolean;
-  variant: "card" | "row";
   open: OpenMap;
   onToggle: (id: string) => void;
 }) {
   return (
-    <section className={variant === "card" ? "space-y-3" : undefined}>
+    <section className="space-y-3">
       {labelled ? (
-        <div
-          className={cn(
-            "flex items-center gap-3",
-            variant === "card" ? "pt-2 pb-1" : "border-b border-border pt-8 pb-3",
-          )}
-        >
+        <div className="flex items-center gap-3 pt-2 pb-1">
           <ComplianceGlyph icon={category.icon} className="size-3.5 shrink-0 text-muted" />
           <h3 className="text-[11px] font-medium tracking-[0.16em] text-muted uppercase">
             {category.name}
@@ -557,7 +550,6 @@ function CategoryGroup({
           index={order.get(item.id) ?? 0}
           open={open[item.id] ?? false}
           onToggle={() => onToggle(item.id)}
-          variant={variant}
         />
       ))}
     </section>
@@ -573,14 +565,12 @@ function Chapter({
   open: OpenMap;
   onToggle: (id: string) => void;
 }) {
-  const variant = chapter.layout === "aside" ? "card" : "row";
   const labelled = chapter.categories.length > 1;
   const group = (category: ComplianceCategory) => (
     <CategoryGroup
       key={category.slug}
       category={category}
       labelled={labelled}
-      variant={variant}
       open={open}
       onToggle={onToggle}
     />
@@ -599,12 +589,34 @@ function Chapter({
     );
   }
 
+  // Banner chapters run their rows in two columns: it halves the tallest
+  // chapters and reads as a different structure, not just a different skin.
+  const half = Math.ceil(chapter.items.length / 2);
+  const column = (items: typeof chapter.items) => (
+    <div className="min-w-0">
+      {items.map((item) => (
+        <Disclosure
+          key={item.id}
+          item={item}
+          index={order.get(item.id) ?? 0}
+          open={open[item.id] ?? false}
+          onToggle={() => onToggle(item.id)}
+          variant="row"
+          showCategory={labelled}
+        />
+      ))}
+    </div>
+  );
+
   return (
     <Section id={chapter.slug} className="scroll-mt-24 pb-20 sm:scroll-mt-28 sm:pb-28">
       <Reveal>
         <ChapterBanner chapter={chapter} />
       </Reveal>
-      <div className="mt-2">{chapter.categories.map(group)}</div>
+      <div className="mt-2 grid gap-x-14 lg:grid-cols-2 lg:items-start">
+        {column(chapter.items.slice(0, half))}
+        {column(chapter.items.slice(half))}
+      </div>
     </Section>
   );
 }

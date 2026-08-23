@@ -12,7 +12,7 @@ import appCss from "../styles.css?url";
 import { LocaleProvider } from "@/lib/i18n/provider";
 import { resolveRequestLocale } from "@/lib/i18n/resolve";
 import { setCurrentLocale } from "@/lib/i18n/runtime";
-import { defaultI18n } from "@/lib/i18n/instance";
+import { getDefaultI18n } from "@/lib/i18n/instance";
 import { getMessages } from "@/lib/i18n/messages";
 import { DEFAULT_LOCALE, LOCALE_META, type Locale } from "@/lib/i18n/locales";
 
@@ -27,7 +27,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
     try {
       const locale = await resolveRequestLocale(location.search);
       setCurrentLocale(locale);
-      await defaultI18n.changeLanguage(locale);
+      await getDefaultI18n().changeLanguage(locale);
       return { locale };
     } catch {
       setCurrentLocale(DEFAULT_LOCALE);

@@ -3,19 +3,16 @@ import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import { pageTitle } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/how-we-work")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("How we build — UNFLD") },
-      {
-        name: "description",
-        content:
-          "A practical overview of discovery, delivery, ownership, security, and handover for custom systems built with UNFLD.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "How we build custom software",
+      description:
+        "A practical overview of discovery, delivery, ownership, security, and handover for custom systems built with UNFLD.",
+      path: "/how-we-work",
+    }),
   component: HowWeWorkPage,
 });
 
@@ -57,7 +54,7 @@ const deliverables = [
   },
   {
     title: "Security & data controls",
-    body: "Explicit data boundaries, regional hosting, customer-controlled access policies, and audit documentation defined per scope.",
+    body: "Explicit data boundaries, agreed hosting regions, customer-controlled access policies, and audit documentation defined per scope.",
   },
 ] as const;
 

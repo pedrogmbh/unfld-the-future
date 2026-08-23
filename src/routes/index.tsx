@@ -15,20 +15,47 @@ import {
   homePrompts,
   news,
   ownedProducts,
-  pageTitle,
+  SITE,
 } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: pageTitle() },
-      {
-        name: "description",
-        content:
-          "UNFLD builds and operates technology for the work that shapes what comes next—from agronomy and hiring to small-business operations and workplace health.",
+  head: () =>
+    buildPageHead({
+      path: "/",
+      description:
+        "Across agronomy, hiring, small business, and workplace health, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: SITE.name,
+        legalName: SITE.legal,
+        url: SITE.url,
+        logo: `${SITE.url}/favicon.svg`,
+        description:
+          "UNFLD builds and operates technology for essential work and builds custom systems beside organizations with consequential operations.",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: `${SITE.address.line1}, ${SITE.address.line2}`,
+          addressLocality: SITE.address.city,
+          addressRegion: SITE.address.region,
+          postalCode: SITE.address.postal,
+          addressCountry: "BR",
+        },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            email: SITE.sales,
+            contactType: "sales",
+          },
+          {
+            "@type": "ContactPoint",
+            email: SITE.security,
+            contactType: "security",
+          },
+        ],
       },
-    ],
-  }),
+    }),
   component: Home,
 });
 
@@ -271,7 +298,7 @@ function Home() {
           <div className="min-w-0">
             <Reveal>
               <p className="mb-5 text-[13px] font-medium text-muted">
-                For developers & operations
+                Built with UNFLD
               </p>
               <h2 className="font-display text-[clamp(2.2rem,5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.035em]">
                 Built beside

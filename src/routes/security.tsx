@@ -2,19 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
-import { pageTitle, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/security")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Security") },
-      {
-        name: "description",
-        content:
-          "Security at UNFLD: know what data a product needs, limit who and what can reach it, and make important actions traceable.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Security at UNFLD",
+      description:
+        "Security at UNFLD: know what data a product needs, limit who and what can reach it, and make important actions traceable.",
+      path: "/security",
+    }),
   component: Security,
 });
 
@@ -25,11 +23,11 @@ const principles = [
   ],
   [
     "Access boundaries",
-    "Access to operational infrastructure and customer data is restricted by role, authenticated with MFA, and reviewed on a defined schedule.",
+    "Access controls are documented per product and deployment. Role restrictions, MFA, and access reviews are applied according to the system’s current architecture and contractual scope.",
   ],
   [
     "Traceable actions",
-    "Critical events, authentication flows, and configuration changes generate auditable records with retention policies aligned to the deployment.",
+    "Relevant security and authentication events are logged according to the product scope, architecture, and documented retention model.",
   ],
 ];
 
@@ -44,7 +42,7 @@ const practices = [
   ],
   [
     "Deployment options",
-    "Enterprise scopes can configure dedicated data planes, regional hosting in Brazil, and customer-defined retention rules.",
+    "Available isolation, regional-hosting, and retention options are confirmed during architecture review and recorded in the applicable order form.",
   ],
   [
     "Identity & access",
@@ -52,7 +50,7 @@ const practices = [
   ],
   [
     "Vulnerability triage",
-    "Continuous dependency audits, controlled release workflows, and a direct channel for coordinated vulnerability reporting.",
+    "Automated dependency scanning and controlled release workflows are documented for the products and environments where they are enabled.",
   ],
   [
     "Incident response",
@@ -67,7 +65,14 @@ function Security() {
         kicker="Trust & Security"
         title="Security at UNFLD"
         lede="Security at UNFLD starts with a narrower promise: know what data a product needs, limit who and what can reach it, and make important actions traceable."
-        actions={<BtnLink to="/contact">Contact security</BtnLink>}
+        actions={
+          <>
+            <BtnLink to="/contact">Contact security</BtnLink>
+            <BtnLink to="/compliance" variant="secondary">
+              Compliance disclosures
+            </BtnLink>
+          </>
+        }
       />
 
       <Section className="pb-16">
@@ -100,6 +105,20 @@ function Security() {
               <p className="mt-2 text-sm text-muted">{d}</p>
             </article>
           ))}
+        </div>
+      </Section>
+      <Section className="pb-16">
+        <div className="rounded-xl border border-border bg-bg-elevated p-8 sm:p-10">
+          <Kicker>Compliance disclosures</Kicker>
+          <h2 className="font-display text-2xl font-medium tracking-tight">
+            Standing answers to vendor security review
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+            The compliance repository holds our standing answers across 19 control domains: information security policy, access management, encryption, data residency, backup and continuity, incident response, and supply chain. It is published rather than sent on request.
+          </p>
+          <div className="mt-6">
+            <BtnLink to="/compliance">Open the compliance repository</BtnLink>
+          </div>
         </div>
       </Section>
 

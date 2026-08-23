@@ -2,19 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/page-hero";
 import { TextArrow } from "@/components/site/buttons";
 import { Section } from "@/components/site/section";
-import { pageTitle, solutions } from "@/lib/site";
+import { solutions } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/solutions/")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Solutions") },
-      {
-        name: "description",
-        content:
-          "Start with the work that needs to change. Agronomy, hiring, small business, workplace health, and custom systems.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Solutions",
+      description:
+        "Start with the work that needs to change. Agronomy, hiring, small business, workplace health, and custom systems.",
+      path: "/solutions",
+    }),
   component: Solutions,
 });
 

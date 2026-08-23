@@ -1,19 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { footer, pageTitle } from "@/lib/site";
+import { footer } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/legal/")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Legal") },
-      {
-        name: "description",
-        content:
-          "The policies that govern UNFLD’s corporate website and the services that expressly incorporate them. Product-specific terms may also apply.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Legal",
+      description:
+        "The policies that govern UNFLD’s corporate website and the services that expressly incorporate them. Product-specific terms may also apply.",
+      path: "/legal",
+    }),
   component: LegalIndex,
 });
 
@@ -56,6 +54,7 @@ function LegalIndex() {
             <ul className="mt-4 space-y-3">
               <Item to="/legal/brand-guidelines" label="UNFLD Brand Guidelines" />
               <Item to="/security" label="Security" />
+              <Item to="/compliance" label="Compliance" />
               <Item to="/contact" label="Legal request" />
             </ul>
           </div>

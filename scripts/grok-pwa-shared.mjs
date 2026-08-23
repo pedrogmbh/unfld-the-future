@@ -158,7 +158,8 @@ export function renderInstallPageHtml(template, { host, url } = {}) {
 }
 
 export function renderWebManifest(hostHeader) {
-  const name = appNameFromHost(hostHeader);
+  const hostName = appNameFromHost(hostHeader);
+  const name = hostName && hostName !== DEFAULT_APP_NAME ? hostName : "UNFLD";
   return JSON.stringify(
     {
       name,

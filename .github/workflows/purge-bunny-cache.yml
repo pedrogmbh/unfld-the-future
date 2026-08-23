@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
+      - name: Wait for Vercel to finish deploying
+        run: sleep 20
       - name: Purge cache
         id: purge
         run: |
@@ -21,7 +23,7 @@ jobs:
             "https://api.bunny.net/pullzone/${{ vars.BUNNY_PULL_ZONE_ID }}/purgeCache" \
             -H "AccessKey: ${{ secrets.BUNNYCDN_API_KEY }}"
 
-      - name: Wait for edges to settle
+      - name: Wait for BunnyCDN purge take effect
         run: sleep 10
 
       - name: Check is-agentic score

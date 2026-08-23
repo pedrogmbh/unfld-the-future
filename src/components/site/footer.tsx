@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "@/components/site/logo";
-import { footer, SITE, systemsStatus } from "@/lib/site";
+import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { localizeFooter } from "@/lib/i18n/localize";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { SITE, systemsStatus } from "@/lib/site";
 
 function isFileOrExternal(to: string, external?: boolean) {
   return Boolean(external) || to.startsWith("http") || /\.[a-z0-9]+$/i.test(to);
@@ -44,15 +47,19 @@ function Col({
 }
 
 export function Footer() {
+  const locale = useLocale();
+  const { chrome } = useMessages();
+  const footer = localizeFooter(locale);
+
   return (
     <footer className="border-t border-border bg-bg">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
-          <Col title="Products" links={footer.products} />
-          <Col title="Developers" links={footer.developers} />
-          <Col title="Build with us" links={footer.buildWithUs} />
-          <Col title="Company" links={footer.company} />
-          <Col title="Legal" links={footer.legal} />
+          <Col title={chrome.footer.products} links={footer.products} />
+          <Col title={chrome.footer.developers} links={footer.developers} />
+          <Col title={chrome.footer.buildWithUs} links={footer.buildWithUs} />
+          <Col title={chrome.footer.company} links={footer.company} />
+          <Col title={chrome.footer.legal} links={footer.legal} />
         </div>
 
         <div className="mt-16 flex flex-col gap-6 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
@@ -69,6 +76,7 @@ export function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <LanguageSwitcher />
             <Link
               to={systemsStatus.to}
               className="inline-flex items-center gap-2 text-[12px] text-subtle transition-colors hover:text-fg"
@@ -77,7 +85,7 @@ export function Footer() {
                 aria-hidden
                 className="size-2 shrink-0 rounded-full bg-status"
               />
-              {systemsStatus.label}
+              {chrome.systemsStatus}
             </Link>
             {footer.legal.slice(1).map((l) => (
               <Link

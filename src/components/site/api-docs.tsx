@@ -3,7 +3,10 @@ import { CodeTabs, type CodeSample } from "@/components/site/code-tabs";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Section } from "@/components/site/section";
-import { SITE, developerSurface } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { localizeDeveloperSurface } from "@/lib/i18n/localize";
+import { interpolate } from "@/lib/i18n/interpolate";
+import { useLocale, useMessages } from "@/lib/i18n";
 
 const samples: CodeSample[] = [
   {
@@ -52,40 +55,45 @@ print(org["legalName"], org["taxId"])`,
 ];
 
 export function ApiDocs({
-  title = developerSurface.heroTitle,
-  titleSecond = developerSurface.heroTitleSecond,
-  lede = developerSurface.heroLede,
+  title,
+  titleSecond,
+  lede,
 }: {
   title?: string;
   titleSecond?: string;
   lede?: string;
 }) {
+  const locale = useLocale();
+  const { chrome, pages } = useMessages();
+  const surface = localizeDeveloperSurface(locale);
   return (
     <main>
       <PageHero
-        title={title}
-        titleSecond={titleSecond}
-        lede={lede}
+        title={title ?? surface.heroTitle}
+        titleSecond={titleSecond ?? surface.heroTitleSecond}
+        lede={lede ?? surface.heroLede}
         actions={
           <>
-            <BtnLink href="/openapi.json">OpenAPI spec</BtnLink>
+            <BtnLink href="/openapi.json">{chrome.common.openApiSpec}</BtnLink>
             <BtnLink href="/api/v1" variant="secondary">
-              Catalog index
+              {chrome.common.catalogIndex}
             </BtnLink>
             <BtnLink to="/api/versioning" variant="secondary">
-              Versioning
+              {chrome.common.versioning}
             </BtnLink>
           </>
         }
       />
 
       <Section className="pb-8">
-        <p className="mb-4 text-[13px] font-medium text-gold">For developers</p>
+        <p className="mb-4 text-[13px] font-medium text-gold">
+          {chrome.common.forDevelopers}
+        </p>
         <h2 className="max-w-2xl font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
-          {developerSurface.howTitle}
+          {surface.howTitle}
         </h2>
         <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
-          {developerSurface.howLede}
+          {surface.howLede}
         </p>
         <div className="mt-10 min-w-0">
           <CodeTabs samples={samples} />
@@ -94,10 +102,10 @@ export function ApiDocs({
 
       <Section className="py-16">
         <p className="mb-4 text-[13px] font-medium tracking-[0.18em] text-gold uppercase">
-          Endpoints
+          {chrome.common.endpoints}
         </p>
         <Stagger className="mt-2 divide-y divide-border border-y border-border">
-          {developerSurface.endpoints.map((item) => (
+          {surface.endpoints.map((item) => (
             <StaggerItem key={item.path}>
               <div className="grid gap-3 py-6 sm:grid-cols-[4.5rem_minmax(0,18rem)_1fr] sm:items-baseline">
                 <p className="font-mono text-[12px] text-subtle">{item.method}</p>
@@ -114,7 +122,7 @@ export function ApiDocs({
           className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2"
           delay={0.06}
         >
-          {developerSurface.rules.map((rule) => (
+          {surface.rules.map((rule) => (
             <StaggerItem key={rule.title}>
               <div className="h-full bg-bg p-7 sm:p-8">
                 <h3 className="font-display text-lg font-medium tracking-tight">
@@ -129,7 +137,10 @@ export function ApiDocs({
         </Stagger>
         <Reveal>
           <p className="mt-10 text-sm text-muted">
-            Sales and scoping: {SITE.sales}. Security: {SITE.security}.
+            {interpolate(pages.developers.salesLine, {
+              sales: SITE.sales,
+              security: SITE.security,
+            })}
           </p>
         </Reveal>
       </Section>

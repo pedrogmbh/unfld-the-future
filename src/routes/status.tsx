@@ -1,39 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
+import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
-import { ownedProducts, SITE } from "@/lib/site";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeOwnedProducts } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/status")({
-  head: () =>
-    buildPageHead({
-      title: "Service status",
-      description:
-        "No active incident has been posted. This page is maintained manually and is not a real-time availability monitor.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.status;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/status",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: Status,
 });
 
-const services = [
-  { name: SITE.name, role: "Corporate website" },
-  ...ownedProducts.map((p) => ({ name: p.shortName, role: p.kicker })),
-];
-
 function Status() {
+  const locale = useLocale();
+  const { pages } = useMessages();
+  const p = pages.status;
+  const services = [
+    { name: SITE.name, role: p.corporate },
+    ...localizeOwnedProducts(locale).map((product) => ({
+      name: product.shortName,
+      role: product.kicker,
+    })),
+  ];
+  const [contactBefore, contactAfter] = p.contact.split("{{email}}");
   return (
     <main>
       <PageHero
-        kicker="Service status"
-        title="No active incident"
-        titleSecond="has been posted."
-        lede="No active incident has been posted as of August 2026. This page is maintained manually and is not a real-time availability monitor."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
       />
       <Section className="pb-24 sm:pb-32">
         <div className="rounded-xl border border-border">
           <div className="flex items-center justify-between border-b border-border px-5 py-4">
-            <p className="text-sm font-medium">Products</p>
-            <p className="text-[12px] text-subtle">Manual editorial status</p>
+            <p className="text-sm font-medium">{p.monitored}</p>
+            <p className="text-[12px] text-subtle">{p.editorial}</p>
           </div>
           <ul>
             {services.map((s) => (
@@ -50,21 +61,21 @@ function Status() {
                     aria-hidden
                     className="size-2 rounded-full bg-status"
                   />
-                  <p className="text-sm text-fg">Operational</p>
+                  <p className="text-sm text-fg">{p.operational}</p>
                 </div>
               </li>
             ))}
           </ul>
         </div>
         <p className="mt-8 text-sm text-muted">
-          For incident reporting or urgent operational inquiries, contact{" "}
+          {contactBefore}
           <a
-            href="mailto:security@unfld.com.br"
+            href={`mailto:${SITE.security}`}
             className="text-fg underline-offset-4 hover:underline"
           >
-            security@unfld.com.br
+            {SITE.security}
           </a>
-          .
+          {contactAfter}
         </p>
       </Section>
     </main>

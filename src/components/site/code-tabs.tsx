@@ -10,6 +10,7 @@ import {
 import { Check, Copy } from "lucide-react";
 import { highlightLines } from "@/lib/highlight";
 import { cn } from "@/lib/utils";
+import { useMessages } from "@/lib/i18n";
 
 export type CodeSample = { id: string; label: string; code: string };
 
@@ -84,6 +85,7 @@ export function CodeTabs({
   className?: string;
 }) {
   const reduce = useReducedMotion();
+  const { chrome } = useMessages();
   const root = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(samples[0]?.id ?? "");
   const [copied, setCopied] = useState(false);
@@ -197,7 +199,7 @@ export function CodeTabs({
                 type="button"
                 onClick={copy}
                 className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[11px] text-muted transition-colors hover:text-fg"
-                aria-label="Copy code"
+                aria-label={chrome.copyCode}
               >
                 <span className="relative size-3.5">
                   <span

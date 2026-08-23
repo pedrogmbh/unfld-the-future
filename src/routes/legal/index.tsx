@@ -1,69 +1,77 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { footer } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeFooter } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/legal/")({
-  head: () =>
-    buildPageHead({
-      title: "Legal",
-      description:
-        "The policies that govern UNFLD’s corporate website and the services that expressly incorporate them. Product-specific terms may also apply.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.legalIndex;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/legal",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: LegalIndex,
 });
 
 function LegalIndex() {
+  const locale = useLocale();
+  const { pages } = useMessages();
+  const p = pages.legalIndex;
+  const legalLinks = localizeFooter(locale).legal;
   return (
     <main>
       <PageHero
-        kicker="Legal policies"
-        title="Legal"
-        lede="The policies that govern UNFLD’s corporate website and the services that expressly incorporate them. Product-specific terms may also apply."
+        kicker={p.kicker}
+        title={p.title}
+        lede={p.lede}
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-12 md:grid-cols-2">
           <div>
             <h2 className="text-[13px] tracking-[0.16em] text-subtle uppercase">
-              Terms of Service
+              {p.terms}
             </h2>
             <ul className="mt-4 space-y-3">
-              <Item to="/legal/terms-of-service" label="Terms of Service" />
+              <Item to="/legal/terms-of-service" label={p.tos} />
               <Item
                 to="/legal/terms-of-service-enterprise"
-                label="Enterprise Terms"
+                label={p.enterprise}
               />
             </ul>
           </div>
           <div>
             <h2 className="text-[13px] tracking-[0.16em] text-subtle uppercase">
-              Policies
+              {p.policies}
             </h2>
             <ul className="mt-4 space-y-3">
-              <Item to="/legal/acceptable-use-policy" label="Acceptable Use Policy" />
-              <Item to="/legal/privacy-policy" label="Privacy Policy" />
-              <Item to="/legal/cookie-policy" label="Cookie Policy" />
+              <Item to="/legal/acceptable-use-policy" label={p.aup} />
+              <Item to="/legal/privacy-policy" label={p.privacy} />
+              <Item to="/legal/cookie-policy" label={p.cookies} />
             </ul>
           </div>
           <div>
             <h2 className="text-[13px] tracking-[0.16em] text-subtle uppercase">
-              Other
+              {p.other}
             </h2>
             <ul className="mt-4 space-y-3">
-              <Item to="/legal/brand-guidelines" label="UNFLD Brand Guidelines" />
-              <Item to="/security" label="Security" />
-              <Item to="/compliance" label="Compliance" />
-              <Item to="/contact" label="Legal request" />
+              <Item to="/legal/brand-guidelines" label={p.brand} />
+              <Item to="/security" label={p.security} />
+              <Item to="/compliance" label={p.compliance} />
+              <Item to="/contact" label={p.legalRequest} />
             </ul>
           </div>
           <div>
             <h2 className="text-[13px] tracking-[0.16em] text-subtle uppercase">
-              Quick links
+              {p.quick}
             </h2>
             <ul className="mt-4 space-y-3">
-              {footer.legal.map((l) => (
+              {legalLinks.map((l) => (
                 <Item key={l.to} to={l.to} label={l.label} />
               ))}
             </ul>

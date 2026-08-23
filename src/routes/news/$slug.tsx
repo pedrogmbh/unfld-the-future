@@ -2,20 +2,24 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CodeBlock } from "@/components/site/code-block";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { getNews, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { useMessages } from "@/lib/i18n";
+import { getMessages } from "@/lib/i18n/messages";
+import { localizeNewsPost } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/news/$slug")({
-  loader: ({ params }) => {
-    const post = getNews(params.slug);
+  loader: ({ params, context }) => {
+    const post = localizeNewsPost(params.slug, context.locale);
     if (!post) throw notFound();
     return post;
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, match }) => {
     if (!loaderData) {
       return buildPageHead({
-        title: "News",
+        title: getMessages(match.context.locale).pages.news.metaTitle,
         path: "/news",
+        locale: match.context.locale,
       });
     }
     return buildPageHead({
@@ -23,6 +27,7 @@ export const Route = createFileRoute("/news/$slug")({
       description: loaderData.standfirst,
       path: `/news/${loaderData.slug}`,
       type: "article",
+      locale: match.context.locale,
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -51,13 +56,14 @@ export const Route = createFileRoute("/news/$slug")({
 
 function NewsPost() {
   const post = Route.useLoaderData();
+  const { chrome } = useMessages();
   return (
     <main>
       <PageHero kicker={post.date} title={post.title} lede={post.standfirst} />
       <Section className="pb-24 sm:pb-32">
         <article className="max-w-2xl space-y-6 text-[16px] leading-[1.7] text-muted">
-          {post.body.map((p) => (
-            <p key={p.slice(0, 24)}>{p}</p>
+          {post.body.map((paragraph) => (
+            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
           ))}
         </article>
         {post.code ? (
@@ -67,7 +73,7 @@ function NewsPost() {
         ) : null}
         <p className="mt-16">
           <Link to="/news" className="text-sm text-muted hover:text-fg">
-            ← All posts
+            {chrome.common.allPostsBack}
           </Link>
         </p>
       </Section>

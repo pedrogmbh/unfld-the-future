@@ -22,8 +22,8 @@ import {
   ShieldCheck,
   Siren,
 } from "lucide-react";
-import type { ComplianceIcon, ComplianceItem } from "@/lib/compliance";
-import { getCategoryMeta } from "@/lib/compliance";
+import { COMPLIANCE_ITEMS, getCategoryMeta, type ComplianceIcon, type ComplianceItem } from "@/lib/compliance";
+import { useMessages } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const ICONS: Record<ComplianceIcon, typeof ShieldCheck> = {
@@ -156,16 +156,21 @@ export function Disclosure({
 }) {
   const reduce = useReducedMotion();
   const panelId = useId();
-  const meta = getCategoryMeta(item.category);
+  const { compliance } = useMessages();
+  const englishName =
+    COMPLIANCE_ITEMS.find((entry) => entry.id === item.id)?.category ?? item.category;
+  const meta = getCategoryMeta(englishName);
+  const categoryCopy = compliance.categories[englishName as keyof typeof compliance.categories];
+  const categoryShort = categoryCopy?.short ?? meta?.short;
   const row = variant === "row";
 
   const label = (
     <span className="flex items-center gap-2 font-mono text-[11px] text-subtle">
       <span className="tabular-nums">{String(index).padStart(2, "0")}</span>
-      {showCategory && meta ? (
+      {showCategory && categoryShort ? (
         <>
           <span aria-hidden>·</span>
-          <span className="truncate">{meta.short}</span>
+          <span className="truncate">{categoryShort}</span>
         </>
       ) : null}
     </span>

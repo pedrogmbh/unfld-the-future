@@ -4,96 +4,72 @@ import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useMessages } from "@/lib/i18n";
 
 export const Route = createFileRoute("/build-with-us")({
-  head: () =>
-    buildPageHead({
-      title: "Build with UNFLD — Custom software",
-      description:
-        "We design and ship custom systems beside teams whose operation cannot be reduced to a template.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.buildWithUs;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/build-with-us",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: BuildWithUsPage,
 });
 
-const pillars = [
-  {
-    title: "Sit with the operation",
-    body: "We begin with the people, constraints, and daily routines already inside the workflow. Technology follows understanding.",
-  },
-  {
-    title: "Define the smallest outcome",
-    body: "We identify the highest-leverage friction point and build the smallest verifiable system that resolves it.",
-  },
-  {
-    title: "Prove in real use",
-    body: "We test and validate in active operations with real teams, gathering direct evidence before expanding scope.",
-  },
-  {
-    title: "Operate or transition",
-    body: "We can operate the system under defined SLAs or execute a structured handover with documentation and training.",
-  },
-] as const;
-
-const engagements = [
-  {
-    kicker: "Field intelligence",
-    title: "Agronomy & operations",
-    body: "Offline mobile tools, operational sync, and recommendation engines tailored to complex field protocols.",
-  },
-  {
-    kicker: "Conversational workflows",
-    title: "WhatsApp-first systems",
-    body: "Guided routines, document intake, and transactional workflows meeting users directly where they already work.",
-  },
-  {
-    kicker: "Occupational & compliance",
-    title: "Documented risk systems",
-    body: "Confidential listening, risk classification, and documented evidence designed to support review and management follow-up.",
-  },
-  {
-    kicker: "Enterprise architecture",
-    title: "Custom platforms",
-    body: "Tailored software with agreed hosting configurations, role-based access, and designated team support recorded in the contract.",
-  },
-] as const;
-
 export function BuildWithUsPage() {
+  const { pages, chrome } = useMessages();
+  const p = pages.buildWithUs;
+  const pillars = [
+    { title: p.pillar1Title, body: p.pillar1Body },
+    { title: p.pillar2Title, body: p.pillar2Body },
+    { title: p.pillar3Title, body: p.pillar3Body },
+    { title: p.pillar4Title, body: p.pillar4Body },
+  ];
+  const engagements = [
+    { kicker: p.eng1Kicker, title: p.eng1Title, body: p.eng1Body },
+    { kicker: p.eng2Kicker, title: p.eng2Title, body: p.eng2Body },
+    { kicker: p.eng3Kicker, title: p.eng3Title, body: p.eng3Body },
+    { kicker: p.eng4Kicker, title: p.eng4Title, body: p.eng4Body },
+  ];
   return (
     <main>
       <PageHero
-        kicker="Custom systems"
-        title="Build with UNFLD."
-        lede="We design and ship custom systems beside teams whose operation cannot be reduced to a template. Understand the operation. Define the smallest outcome worth shipping. Prove it in use. Then scale what works."
+        kicker={p.kicker}
+        title={p.title}
+        lede={p.lede}
         actions={
           <>
-            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
             <BtnLink to="/how-we-work" variant="secondary">
-              How we work
+              {chrome.common.howWeWork}
             </BtnLink>
           </>
         }
       />
 
       <Section className="pb-16">
-        <Kicker>Engagement model</Kicker>
+        <Kicker>{p.modelKicker}</Kicker>
         <h2 className="max-w-2xl font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
-          How we build beside you.
+          {p.modelTitle}
         </h2>
         <Stagger
           className="mt-10 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4"
           delay={0.06}
         >
-          {pillars.map((p, i) => (
-            <StaggerItem key={p.title}>
+          {pillars.map((pillar, i) => (
+            <StaggerItem key={pillar.title}>
               <div className="flex h-full flex-col justify-between bg-bg p-7">
                 <div>
                   <p className="font-mono text-xs text-subtle">0{i + 1}</p>
                   <h3 className="mt-4 font-display text-lg font-medium tracking-tight">
-                    {p.title}
+                    {pillar.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">
-                    {p.body}
+                    {pillar.body}
                   </p>
                 </div>
               </div>
@@ -103,9 +79,9 @@ export function BuildWithUsPage() {
       </Section>
 
       <Section className="py-16">
-        <Kicker>Focus areas</Kicker>
+        <Kicker>{p.focusKicker}</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Systems we build.
+          {p.focusTitle}
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {engagements.map((e) => (
@@ -129,20 +105,19 @@ export function BuildWithUsPage() {
         <Reveal>
           <div className="rounded-xl border border-border bg-bg-elevated p-8 sm:p-12">
             <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
-              When the product is ours, we operate it.
+              {p.ctaTitle}
               <br />
               <span className="text-muted">
-                When the mission is yours, we build beside you.
+                {p.ctaTitleSecond}
               </span>
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-              Start with a conversation about the operation you need to improve.
-              We scope engagements realistically, without agency theatrics.
+              {p.ctaLede}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+              <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
               <BtnLink to="/work" variant="secondary">
-                Selected work
+                {chrome.common.selectedWork}
               </BtnLink>
             </div>
           </div>

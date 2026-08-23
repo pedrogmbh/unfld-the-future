@@ -4,50 +4,53 @@ import { PageHero } from "@/components/site/page-hero";
 import { WorkTile } from "@/components/site/work-page";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import {
-  pageTitle,
-  selectedWork,
-  workRows,
-} from "@/lib/site";
+import { workRows } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeWork } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/work/")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Selected work") },
-      {
-        name: "description",
-        content:
-          "Selected work from UNFLD’s team history — media, aviation, energy, education, sport, and the systems behind them.",
-      },
-    ],
-  }),
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.work;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
+      path: "/work",
+      locale: match.context.locale,
+    });
+  },
   component: WorkIndex,
 });
 
 function WorkIndex() {
-  const rows = workRows();
+  const locale = useLocale();
+  const { pages, chrome } = useMessages();
+  const p = pages.work;
+  const items = localizeWork(locale);
+  const rows = workRows(items);
 
   return (
     <main>
       <PageHero
-        kicker="Selected work"
-        title="Work people"
-        titleSecond="actually used."
-        lede="Selected work from the history we carry — media, aviation, energy, education, sport, and the systems behind them. Direct engagements, prior companies, and projects built beside others. Named where the relationship and permission are clear."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
         actions={
           <>
-            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
             <BtnLink to="/build-with-us" variant="secondary">
-              Build with us
+              {chrome.common.buildWithUs}
             </BtnLink>
           </>
         }
       />
 
       <Section className="pb-16 sm:pb-24">
-        <Kicker>Index</Kicker>
+        <Kicker>{p.index}</Kicker>
         <ol>
-          {selectedWork.map((w, i) => (
+          {items.map((w, i) => (
             <li key={w.slug} className="border-t border-border last:border-b">
               <Link
                 to="/work/$slug"
@@ -75,7 +78,7 @@ function WorkIndex() {
 
       <Section className="pb-24 sm:pb-32">
         <Reveal>
-          <Kicker>Chapters</Kicker>
+          <Kicker>{p.chapters}</Kicker>
         </Reveal>
         <div className="mt-8 space-y-14 sm:space-y-20">
           {rows.map((row) =>

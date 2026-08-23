@@ -4,70 +4,85 @@ import { WorkTile } from "@/components/site/work-page";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import {
-  customers,
-  featuredWork,
-  formatAddress,
-  news,
-  offices,
-  ownedProducts,
-  SITE,
-  timeline,
-  values,
-} from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { interpolate } from "@/lib/i18n/interpolate";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import {
+  formatAddressLocalized,
+  localizeCustomers,
+  localizeFacts,
+  localizeNews,
+  localizeOffices,
+  localizeOwnedProducts,
+  localizeTimeline,
+  localizeValues,
+  localizeWork,
+} from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/company")({
-  head: () =>
-    buildPageHead({
-      title: "Company",
-      description:
-        "UNFLD is a product company and technology partner. We turn what should exist next into something people can use now.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.company;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/company",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: Company,
 });
 
 function Company() {
+  const locale = useLocale();
+  const { pages, chrome } = useMessages();
+  const p = pages.company;
+  const facts = localizeFacts(locale);
+  const owned = localizeOwnedProducts(locale);
+  const work = localizeWork(locale).filter((item) => item.featured);
+  const featured = work;
+  const customerList = localizeCustomers(locale);
+  const valueList = localizeValues(locale);
+  const officeList = localizeOffices(locale);
+  const timelineList = localizeTimeline(locale);
+  const posts = localizeNews(locale);
+
   return (
     <main>
       <PageHero
-        kicker="Our mission"
-        title="We turn what should exist next"
-        titleSecond="into something people can use now."
-        lede="UNFLD is a product company and technology partner. We build and operate products across essential kinds of work, and we build custom systems beside organizations facing problems worth solving properly."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
         actions={
           <>
-            <BtnLink to="/careers">Careers</BtnLink>
+            <BtnLink to="/careers">{chrome.nav.careers}</BtnLink>
             <BtnLink to="/news" variant="secondary">
-              News
+              {chrome.nav.news}
             </BtnLink>
           </>
         }
       />
 
       <Section className="pb-16 sm:pb-20">
-        <Kicker>Who we are</Kicker>
+        <Kicker>{p.whoKicker}</Kicker>
         <h2 className="max-w-3xl font-display text-[clamp(1.7rem,3.5vw,2.6rem)] font-medium leading-tight tracking-tight">
-          Five letters. A full legal name. A house that builds.
+          {p.whoTitle}
         </h2>
         <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-muted">
-          We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a
-          Brazilian limited company (sociedade empresária limitada) in Bela
-          Vista, São Paulo, active since {SITE.founded}. We build and operate
-          products under our own name and build custom systems beside
-          organizations with consequential operations.
+          {interpolate(p.whoBody, { founded: facts.founded })}
         </p>
         <dl className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ["Trading name", SITE.name],
-            ["Legal name", SITE.legal],
-            ["CNPJ", SITE.cnpj],
-            ["Opened", SITE.founded],
-            ["Activity", SITE.activity.nameEn],
-            ["Nature", SITE.legalNature],
-            ["Status", `${SITE.status} · ${SITE.establishment}`],
-            ["Size", SITE.porte],
+            [chrome.facts.tradingName, SITE.name],
+            [chrome.facts.legalName, SITE.legal],
+            [chrome.facts.cnpj, SITE.cnpj],
+            [chrome.facts.opened, facts.founded],
+            [chrome.facts.activity, facts.activityName],
+            [chrome.facts.nature, facts.legalNature],
+            [chrome.facts.status, `${facts.statusValue} · ${facts.establishment}`],
+            [chrome.facts.size, facts.porte],
           ].map(([k, v]) => (
             <div key={k} className="bg-bg p-6">
               <dt className="text-[11px] tracking-[0.16em] text-subtle uppercase">
@@ -76,7 +91,7 @@ function Company() {
               <dd className="mt-2 font-display text-lg font-medium tracking-tight">
                 {v}
               </dd>
-              {k === "Activity" ? (
+              {k === chrome.facts.activity ? (
                 <p className="mt-2 font-mono text-[11px] text-subtle">
                   CNAE {SITE.activity.code}
                 </p>
@@ -85,7 +100,7 @@ function Company() {
           ))}
         </dl>
         <div className="mt-6 flex flex-col gap-2 font-mono text-[12px] leading-relaxed text-subtle sm:flex-row sm:flex-wrap sm:gap-x-8">
-          <p>{formatAddress()}</p>
+          <p>{formatAddressLocalized(locale)}</p>
           <p>
             <a href={`tel:${SITE.phoneHref}`} className="hover:text-fg">
               {SITE.phone}
@@ -108,26 +123,26 @@ function Company() {
             {
               href: "/products",
               img: "/images/forge.jpg",
-              t: "Products by UNFLD",
-              d: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus.",
+              t: p.tileProducts,
+              d: p.tileProductsBody,
             },
             {
               href: "/sao-paulo",
               img: "/images/hq.jpg",
-              t: "São Paulo",
-              d: "Bela Vista. Registered office.",
+              t: p.tileSp,
+              d: p.tileSpBody,
             },
             {
               href: "/work",
               img: "/images/work/plastic-hero.png",
-              t: "Selected work",
-              d: "Netflix, Embraer, SporTV, and more.",
+              t: p.tileWork,
+              d: p.tileWorkBody,
             },
             {
               href: "/careers",
               img: "/images/office.jpg",
-              t: "Careers",
-              d: "Join the team.",
+              t: p.tileCareers,
+              d: p.tileCareersBody,
             },
           ].map((c) => (
             <StaggerItem key={c.t}>
@@ -152,35 +167,35 @@ function Company() {
       </section>
 
       <Section id="products" className="py-20 sm:py-28">
-        <Kicker>The portfolio</Kicker>
+        <Kicker>{p.portfolioKicker}</Kicker>
         <h2 className="max-w-3xl font-display text-[clamp(1.7rem,3.5vw,2.6rem)] font-medium leading-tight tracking-tight">
-          Five products shaped by one operating principle.
+          {p.portfolioTitle}
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Find work that should be simpler. Build the system. Keep improving it in use.
+          {p.portfolioLede}
         </p>
         <Stagger
           className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
           delay={0.06}
         >
-          {ownedProducts.map((p) => (
-            <StaggerItem key={p.slug}>
+          {owned.map((product) => (
+            <StaggerItem key={product.slug}>
               <Link
-                to={p.href as never}
+                to={product.href as never}
                 className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
               >
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                    {p.kicker}
+                    {product.kicker}
                   </p>
                   <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
-                    {p.status}
+                    {product.status}
                   </span>
                 </div>
                 <h3 className="mt-6 font-display text-2xl font-medium tracking-tight">
-                  {p.name}
+                  {product.name}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{p.line}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{product.line}</p>
               </Link>
             </StaggerItem>
           ))}
@@ -188,26 +203,25 @@ function Company() {
       </Section>
 
       <Section id="clients" className="pb-20 sm:pb-28">
-        <Kicker>Selected work</Kicker>
+        <Kicker>{p.workKicker}</Kicker>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="font-display text-[clamp(1.7rem,3.5vw,2.6rem)] font-medium tracking-tight">
-              Work people actually used.
+              {p.workTitle}
             </h2>
             <p className="mt-4 max-w-xl text-muted">
-              Selected work from the history we carry. Direct engagements,
-              prior companies, and projects built beside others.
+              {p.workLede}
             </p>
           </div>
           <Link to="/work" className="text-[13px] text-muted hover:text-fg">
-            All work →
+            {chrome.common.allWorkArrow}
           </Link>
         </div>
         <Stagger
           className="mt-12 grid gap-8 sm:grid-cols-2"
           delay={0.08}
         >
-          {featuredWork().map((w) => (
+          {featured.map((w) => (
             <StaggerItem key={w.slug}>
               <WorkTile work={w} variant="half" />
             </StaggerItem>
@@ -217,7 +231,7 @@ function Company() {
           className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
           delay={0.04}
         >
-          {customers.map((c) => (
+          {customerList.map((c) => (
             <StaggerItem key={c.name}>
               {c.workSlug ? (
                 <Link
@@ -244,12 +258,12 @@ function Company() {
       </Section>
 
       <Section className="pb-20 sm:pb-28">
-        <Kicker>Operating principles</Kicker>
+        <Kicker>{p.valuesKicker}</Kicker>
         <h2 className="max-w-3xl font-display text-[clamp(1.7rem,3.5vw,2.6rem)] font-medium leading-tight tracking-tight">
-          The principles behind the work.
+          {p.valuesTitle}
         </h2>
         <div className="mt-14 grid gap-10 md:grid-cols-3">
-          {values.map((v) => (
+          {valueList.map((v) => (
             <Reveal key={v.n}>
               <p className="font-mono text-[12px] text-subtle">{v.n}</p>
               <h3 className="mt-3 font-display text-xl font-medium tracking-tight">
@@ -262,15 +276,15 @@ function Company() {
       </Section>
 
       <Section id="offices" className="pb-20 sm:pb-28">
-        <Kicker>Office</Kicker>
+        <Kicker>{p.officeKicker}</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          UNFLD in São Paulo.
+          {p.officeTitle}
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Registered office and meeting point for UNFLD in São Paulo, in Bela Vista, minutes from Avenida Paulista.
+          {p.officeLede}
         </p>
         <div className="mt-10 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {offices.map((o) => (
+          {officeList.map((o) => (
             <Link
               key={o.city}
               to={o.href as never}
@@ -286,12 +300,12 @@ function Company() {
       </Section>
 
       <Section className="pb-20 sm:pb-28">
-        <Kicker>Our path of progress</Kicker>
+        <Kicker>{p.pathKicker}</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Experience rooted in 2019.
+          {p.pathTitle}
         </h2>
         <ol className="mt-12 space-y-0">
-          {timeline.map((t, i) => (
+          {timelineList.map((t, i) => (
             <li
               key={t.date}
               className="grid gap-2 border-t border-border py-8 sm:grid-cols-[8rem_1fr] sm:gap-10"
@@ -301,7 +315,7 @@ function Company() {
                 <h3 className="font-display text-xl font-medium">{t.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{t.body}</p>
               </div>
-              <span className="sr-only">Step {i + 1}</span>
+              <span className="sr-only">{interpolate(chrome.step, { n: i + 1 })}</span>
             </li>
           ))}
         </ol>
@@ -309,16 +323,16 @@ function Company() {
 
       <Section className="pb-24 sm:pb-32">
         <div className="mb-8 flex items-end justify-between">
-          <h2 className="font-display text-2xl font-medium">Latest news</h2>
+          <h2 className="font-display text-2xl font-medium">{p.latestNews}</h2>
           <Link to="/news" className="text-[13px] text-muted hover:text-fg">
-            All posts →
+            {chrome.common.allPostsArrow}
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2">
-          {news.slice(0, 4).map((p) => (
-            <Link key={p.slug} to="/news/$slug" params={{ slug: p.slug }}>
-              <p className="text-[12px] text-subtle">{p.date}</p>
-              <p className="mt-2 font-medium">{p.title}</p>
+          {posts.slice(0, 4).map((post) => (
+            <Link key={post.slug} to="/news/$slug" params={{ slug: post.slug }}>
+              <p className="text-[12px] text-subtle">{post.date}</p>
+              <p className="mt-2 font-medium">{post.title}</p>
             </Link>
           ))}
         </div>

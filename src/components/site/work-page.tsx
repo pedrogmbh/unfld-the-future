@@ -9,10 +9,9 @@ import {
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
 import { cn } from "@/lib/utils";
-import {
-  type SelectedWork,
-  workNeighbors,
-} from "@/lib/site";
+import { type SelectedWork } from "@/lib/site";
+import { localizeWorkNeighbors } from "@/lib/i18n/localize";
+import { useLocale, useMessages } from "@/lib/i18n";
 
 export function WorkStill({
   src,
@@ -122,20 +121,29 @@ export function WorkTile({
       <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-[15px]">
         {work.line}
       </p>
-      <TextArrow className="mt-3 text-[13px] text-muted group-hover:text-fg">
-        Read
-      </TextArrow>
+      <WorkTileCta />
     </Link>
   );
 }
 
+function WorkTileCta() {
+  const { chrome } = useMessages();
+  return (
+    <TextArrow className="mt-3 text-[13px] text-muted group-hover:text-fg">
+      {chrome.common.read}
+    </TextArrow>
+  );
+}
+
 export function WorkCase({ work }: { work: SelectedWork }) {
-  const { prev, next } = workNeighbors(work.slug);
+  const locale = useLocale();
+  const { chrome, pages } = useMessages();
+  const { prev, next } = localizeWorkNeighbors(work.slug, locale);
   const facts = [
-    ["Client", work.client],
-    ["Year", work.year],
-    ["Form", work.form],
-    ["Field", work.field],
+    [chrome.common.client, work.client],
+    [chrome.common.year, work.year],
+    [chrome.common.form, work.form],
+    [chrome.common.field, work.field],
   ] as const;
 
   return (
@@ -147,9 +155,9 @@ export function WorkCase({ work }: { work: SelectedWork }) {
         actions={
           <>
             <BtnLink to="/work" variant="secondary">
-              All work
+              {chrome.common.allWork}
             </BtnLink>
-            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
           </>
         }
       />
@@ -178,7 +186,7 @@ export function WorkCase({ work }: { work: SelectedWork }) {
       <Section className="pb-16 sm:pb-24">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <Reveal>
-            <Kicker>The work</Kicker>
+            <Kicker>{chrome.common.theWork}</Kicker>
             <h2 className="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
               {work.outcome}
             </h2>
@@ -196,7 +204,7 @@ export function WorkCase({ work }: { work: SelectedWork }) {
       {work.film ? (
         <Section className="pb-16 sm:pb-24">
           <Reveal>
-            <Kicker>On screen</Kicker>
+            <Kicker>{chrome.common.onScreen}</Kicker>
             <div className="mt-6 w-full min-w-0">
               <WorkFilm
                 id={work.film.id}
@@ -209,7 +217,7 @@ export function WorkCase({ work }: { work: SelectedWork }) {
       ) : null}
 
       <Section className="pb-16 sm:pb-24">
-        <Kicker>Stills</Kicker>
+        <Kicker>{chrome.common.stills}</Kicker>
         <Stagger
           className="mt-6 grid gap-3 sm:grid-cols-2"
           delay={0.07}
@@ -243,7 +251,7 @@ export function WorkCase({ work }: { work: SelectedWork }) {
               className="group bg-bg p-6 transition-colors hover:bg-bg-elevated sm:p-8"
             >
               <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                Previous
+                {chrome.common.previous}
               </p>
               <p className="mt-3 font-display text-xl font-medium tracking-tight">
                 {prev.title}
@@ -258,7 +266,7 @@ export function WorkCase({ work }: { work: SelectedWork }) {
               className="group bg-bg p-6 transition-colors hover:bg-bg-elevated sm:p-8"
             >
               <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                Next
+                {chrome.common.next}
               </p>
               <p className="mt-3 font-display text-xl font-medium tracking-tight">
                 {next.title}
@@ -273,19 +281,17 @@ export function WorkCase({ work }: { work: SelectedWork }) {
         <Reveal>
           <div className="rounded-xl border border-border bg-bg-elevated p-8 sm:p-12">
             <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
-              When the mission is yours,
+              {pages.work.ctaTitle}
               <br />
-              <span className="text-muted">we build beside you.</span>
+              <span className="text-muted">{pages.work.ctaTitleSecond}</span>
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-              Selected work from the history we carry. Custom systems we
-              design and ship beside teams whose operation cannot be reduced
-              to a template.
+              {pages.work.ctaLede}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+              <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
               <BtnLink to="/build-with-us" variant="secondary">
-                How we build
+                {chrome.common.howWeBuild}
               </BtnLink>
             </div>
           </div>

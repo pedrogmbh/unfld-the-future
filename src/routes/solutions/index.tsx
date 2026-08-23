@@ -2,38 +2,47 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/page-hero";
 import { TextArrow } from "@/components/site/buttons";
 import { Section } from "@/components/site/section";
-import { solutions } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeSolutions } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/solutions/")({
-  head: () =>
-    buildPageHead({
-      title: "Solutions",
-      description:
-        "Start with the work that needs to change. Agronomy, hiring, small business, workplace health, and custom systems.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.solutions;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/solutions",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: Solutions,
 });
 
-const primarySolutions = solutions.filter((s) =>
-  [
-    "agronomy",
-    "hiring",
-    "small-business",
-    "workplace-health",
-    "custom-systems",
-  ].includes(s.slug),
-);
+const PRIMARY_SLUGS = [
+  "agronomy",
+  "hiring",
+  "small-business",
+  "workplace-health",
+  "custom-systems",
+];
 
 function Solutions() {
+  const locale = useLocale();
+  const { pages, chrome } = useMessages();
+  const p = pages.solutions;
+  const primarySolutions = localizeSolutions(locale).filter((s) =>
+    PRIMARY_SLUGS.includes(s.slug),
+  );
+
   return (
     <main>
       <PageHero
-        kicker="Solutions"
-        title="Start with the work"
-        titleSecond="that needs to change."
-        lede="Across agronomy, hiring, small business, workplace health, and custom systems, we turn complex work into technology people can actually use."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
@@ -52,7 +61,7 @@ function Solutions() {
               </div>
               <div className="mt-8">
                 <TextArrow className="text-[13px] text-muted group-hover:text-fg">
-                  Learn more
+                  {chrome.common.learnMore}
                 </TextArrow>
               </div>
             </Link>

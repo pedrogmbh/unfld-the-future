@@ -3,6 +3,7 @@ import { Check, Copy } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { highlightLines } from "@/lib/highlight";
 import { cn } from "@/lib/utils";
+import { useMessages } from "@/lib/i18n";
 
 export function CodeBlock({
   code,
@@ -15,6 +16,7 @@ export function CodeBlock({
 }) {
   const reduce = useReducedMotion();
   const [copied, setCopied] = useState(false);
+  const { chrome } = useMessages();
   const lines = highlightLines(code);
 
   async function copy() {
@@ -53,7 +55,7 @@ export function CodeBlock({
           type="button"
           onClick={copy}
           className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[11px] text-muted transition-colors hover:text-fg"
-          aria-label="Copy code"
+          aria-label={chrome.copyCode}
         >
           <span className="relative size-3.5">
             <span
@@ -77,7 +79,7 @@ export function CodeBlock({
               <Copy className="size-3.5" strokeWidth={2} />
             </span>
           </span>
-          Copy
+          {copied ? chrome.copied : chrome.copyCode}
         </button>
       </div>
       <pre className="code-scroll m-0 overflow-x-auto px-5 pb-5 font-mono text-[12.5px] leading-[1.7]">

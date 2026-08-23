@@ -1,8 +1,11 @@
 import { ProductPage } from "@/components/site/product-page";
-import { getOwnedProduct } from "@/lib/site";
+import { localizeOwnedProduct } from "@/lib/i18n/localize";
+import { useLocale, useMessages } from "@/lib/i18n";
 
 export function OwnedProductPage({ slug }: { slug: string }) {
-  const product = getOwnedProduct(slug);
+  const locale = useLocale();
+  const { chrome } = useMessages();
+  const product = localizeOwnedProduct(slug, locale);
   if (!product) return null;
 
   return (
@@ -14,7 +17,7 @@ export function OwnedProductPage({ slug }: { slug: string }) {
       primary={product.primary}
       primaryTo={product.url ? undefined : "/contact"}
       primaryHref={product.url}
-      secondary="All products"
+      secondary={chrome.common.allProducts}
       secondaryTo="/products"
       image={product.image}
       imageAlt={product.name}

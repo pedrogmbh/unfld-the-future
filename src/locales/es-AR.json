@@ -1,0 +1,2326 @@
+{
+  "chrome": {
+    "language": "Idioma",
+    "switchTo": "Cambiar el idioma a {{name}}",
+    "talkToUnfld": "Hablar con UNFLD",
+    "systemsStatus": "Todos los sistemas operativos.",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "homeAria": "Inicio de UNFLD",
+    "copyCode": "Copiar código",
+    "copied": "Copiado",
+    "lastUpdated": "Última actualización {{date}}.",
+    "step": "Paso {{n}}",
+    "new": "Nuevo",
+    "legalKicker": "Legal",
+    "privacyChoices": "Opciones de privacidad",
+    "privacyChoicesBilingual": "Opciones de privacidad",
+    "closePrivacyChoices": "Cerrar opciones de privacidad",
+    "cookieIntro": "Las cookies esenciales mantienen el sitio funcionando de forma segura. Las cookies opcionales nos ayudan a entender el tráfico solo con su consentimiento. No vendemos información personal.",
+    "cookieEssential": "Esenciales",
+    "cookieEssentialHint": "Necesarias para la seguridad, la autenticación y el funcionamiento principal.",
+    "cookieEssentialAria": "Cookies esenciales",
+    "cookieAnalytics": "Analítica",
+    "cookieAnalyticsHint": "Telemetría de uso agregada para mejorar el rendimiento y los productos.",
+    "cookieAnalyticsAria": "Cookies de analítica",
+    "cookieAdvertising": "Publicidad",
+    "cookieAdvertisingHint": "Desactivadas por defecto. Cookies de marketing de terceros.",
+    "cookieAdvertisingAria": "Cookies de publicidad",
+    "cookieReject": "Rechazar opcionales",
+    "cookieAccept": "Aceptar opcionales",
+    "cookieCancel": "Cancelar",
+    "cookieSave": "Guardar opciones",
+    "nav": {
+      "products": "Productos",
+      "buildWithUs": "Construir con nosotros",
+      "developers": "Desarrolladores",
+      "company": "Empresa",
+      "about": "Acerca de",
+      "selectedWork": "Trabajos seleccionados",
+      "careers": "Carreras",
+      "news": "Novedades",
+      "security": "Seguridad",
+      "compliance": "Cumplimiento",
+      "saoPaulo": "São Paulo",
+      "infrastructure": "Infraestructura",
+      "enterprise": "Empresas",
+      "contact": "Contacto",
+      "pricing": "Precios"
+    },
+    "footer": {
+      "products": "Productos",
+      "access": "Acceso",
+      "developers": "Desarrolladores",
+      "buildWithUs": "Construir con nosotros",
+      "company": "Empresa",
+      "legal": "Legal",
+      "allProducts": "Todos los productos",
+      "customSoftware": "Software a medida",
+      "howWeWork": "Cómo trabajamos",
+      "unfldApi": "UNFLD API",
+      "versioning": "Versionado",
+      "openapi": "OpenAPI",
+      "catalog": "Catálogo",
+      "agentIndex": "Índice para agentes",
+      "whenToUse": "Cuándo usar UNFLD",
+      "developerResources": "Recursos para desarrolladores de UNFLD",
+      "smallBusiness": "Pequeños negocios",
+      "publicMissions": "Misiones públicas",
+      "operations": "Operaciones",
+      "fiscalRisk": "Fiscal y riesgo",
+      "terms": "Términos",
+      "enterpriseTerms": "Términos Enterprise",
+      "privacy": "Privacidad",
+      "cookies": "Cookies",
+      "aup": "AUP",
+      "brand": "Marca"
+    },
+    "notFound": {
+      "title": "Esta página se plegó.",
+      "body": "La URL no coincide con nada que publiquemos. Vuelvan al inicio, recorran los productos o lean el índice para agentes.",
+      "home": "Volver a UNFLD",
+      "api": "UNFLD API"
+    },
+    "error": {
+      "kicker": "Error",
+      "title": "Algo salió mal",
+      "fallback": "Ocurrió un error inesperado. Prueben recargar la página."
+    },
+    "common": {
+      "explore": "Explorar",
+      "learnMore": "Saber más",
+      "allProducts": "Todos los productos",
+      "allWork": "Todos los trabajos",
+      "allPosts": "Todas las notas",
+      "allWorkArrow": "Todos los trabajos →",
+      "allPostsArrow": "Todas las notas →",
+      "allRolesArrow": "Todos los roles →",
+      "allSolutions": "← Todas las soluciones",
+      "allPostsBack": "← Todas las notas",
+      "read": "Leer",
+      "previous": "Anterior",
+      "next": "Siguiente",
+      "client": "Cliente",
+      "year": "Año",
+      "form": "Formato",
+      "field": "Rubro",
+      "theWork": "El trabajo",
+      "onScreen": "En pantalla",
+      "stills": "Fotogramas",
+      "scoped": "Acotado",
+      "customSystems": "Sistemas a medida",
+      "builtWithUnfld": "Hecho con UNFLD",
+      "forDevelopers": "Para desarrolladores",
+      "openApiSpec": "Especificación OpenAPI",
+      "catalogIndex": "Índice del catálogo",
+      "versioning": "Versionado",
+      "endpoints": "Endpoints",
+      "howWeBuild": "Cómo construimos",
+      "howWeWork": "Cómo trabajamos",
+      "selectedWork": "Trabajos seleccionados",
+      "careers": "Carreras",
+      "news": "Novedades",
+      "security": "Seguridad",
+      "contactSecurity": "Contactar seguridad",
+      "complianceDisclosures": "Divulgaciones de cumplimiento",
+      "enterpriseOptions": "Opciones enterprise",
+      "buildWithUs": "Construir con nosotros",
+      "headquarters": "Sede",
+      "address": "Dirección",
+      "coordinates": "Coordenadas",
+      "legalEntity": "Entidad legal",
+      "contact": "Contacto",
+      "opened": "abierta {{date}}",
+      "apply": "Postularse",
+      "applicationNoted": "Postulación registrada",
+      "all": "Todos"
+    },
+    "facts": {
+      "tradingName": "Nombre comercial",
+      "legalName": "Razón social",
+      "cnpj": "CNPJ",
+      "opened": "Apertura",
+      "activity": "Actividad",
+      "nature": "Naturaleza",
+      "status": "Estado",
+      "size": "Tamaño",
+      "country": "Brasil",
+      "activityName": "Consultoría en tecnología de la información",
+      "statusValue": "Activa",
+      "establishment": "Sede",
+      "porte": "Pequeña empresa",
+      "legalNature": "Sociedad de responsabilidad limitada",
+      "founded": "23 sep. 2025"
+    },
+    "statuses": {
+      "Live": "En producción",
+      "Private deployment": "Despliegue privado",
+      "Early access": "Acceso anticipado",
+      "Waitlist": "Lista de espera"
+    },
+    "customerNotes": {
+      "Principal partnership": "Alianza principal",
+      "Selected work": "Trabajo seleccionado",
+      "Team experience": "Experiencia del equipo",
+      "Partner project · WPP": "Proyecto con socio · WPP",
+      "Partner project · Input Output Group": "Proyecto con socio · Input Output Group"
+    }
+  },
+  "pages": {
+    "home": {
+      "metaDescription": "En agronomía, contratación, pequeños negocios y salud laboral, UNFLD convierte el trabajo complejo en tecnología que las personas pueden usar de verdad. También construimos junto a organizaciones cuyos problemas más importantes no entran en un producto genérico.",
+      "newsBanner": "Queravaga · Un camino más corto del perfil a la entrevista",
+      "heroTitle": "Desplegando el futuro.",
+      "heroTitleSecond": "Un sistema real por vez.",
+      "lede": "En agronomía, contratación, pequeños negocios y salud laboral, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad. Cuando el producto adecuado no existe, lo construimos junto a la organización que lo necesita.",
+      "ourProducts": "Nuestros productos",
+      "heroImageAlt": "Un plano geométrico desplegándose en un vacío negro",
+      "productsKicker": "Productos de UNFLD",
+      "productsTitle": "Mercados distintos. La misma convicción.",
+      "productsLede": "Entender el trabajo, construir lo que debería existir después y seguir siendo responsables de lo que ocurre luego del release.",
+      "customTileKicker": "Sistemas a medida",
+      "customTileTitle": "Hecho con UNFLD",
+      "customTileBody": "Cuando el producto es nuestro, lo operamos. Cuando la misión es de ustedes, construimos a su lado.",
+      "inPractice": "En la práctica",
+      "inPracticeTitle": "El futuro se vuelve práctico cuando un problema difícil se convierte en un sistema usable.",
+      "selectedWorkKicker": "Trabajos seleccionados",
+      "selectedWorkTitle": "Trabajo que la gente usó de verdad.",
+      "selectedWorkLede": "Medios, aviación, energía, educación, deporte y los sistemas detrás. De la historia que cargamos — nombrada donde la relación y el permiso son claros.",
+      "customKicker": "Hecho con UNFLD",
+      "customTitle": "Construido junto a",
+      "customTitleSecond": "su operación.",
+      "customLede": "Diseñamos y entregamos sistemas a medida junto a equipos cuya operación no se puede reducir a una plantilla. Entendemos el dominio, demostramos el resultado en uso y operamos con ustedes.",
+      "statProducts": "Productos de UNFLD",
+      "statRooted": "Con raíces en",
+      "statHq": "Sede São Paulo",
+      "proof1Title": "Sin conexión en el campo.",
+      "proof1Body": "Capturen evidencia, realicen evaluaciones y registren hechos técnicos donde ocurre el trabajo — sin romperse cuando desaparece la conectividad.",
+      "proof2Title": "Trazable en la oficina.",
+      "proof2Body": "Datos estructurados, registros listos para auditoría y visibilidad operativa que conectan la realidad del campo con las decisiones de gestión.",
+      "proof3Title": "Listo para la siguiente decisión.",
+      "proof3Body": "Guía clara, recomendaciones listas para el productor e insights accionables, entregados a las personas responsables de los resultados.",
+      "developersTitle": "Recursos para desarrolladores de UNFLD.",
+      "developersLede": "Documentación de API, OpenAPI, versionado y un catálogo público de productos, novedades, trabajos y datos de la empresa. Sin autenticación.",
+      "developerResources": "Recursos para desarrolladores de UNFLD",
+      "newsKicker": "Últimas novedades",
+      "newsTitle": "Desde UNFLD."
+    },
+    "products": {
+      "metaTitle": "Productos de UNFLD",
+      "metaDescription": "Conozcan FCR, SiteCreator, Doutor Fiscal, Queravaga y Dialogus — cinco productos de UNFLD en agronomía, pequeños negocios, contratación y salud laboral.",
+      "kicker": "Portafolio",
+      "title": "Productos de",
+      "titleSecond": "UNFLD.",
+      "lede": "Cinco productos, construidos alrededor de cinco tipos de trabajo que deberían ser más simples: agronomía, presencia digital, operaciones fiscales, contratación y salud laboral.",
+      "primary": "Hablar con UNFLD",
+      "secondary": "Cómo construimos",
+      "imageAlt": "Productos de UNFLD en dispositivos de vidrio en un vacío oscuro",
+      "feature1Title": "Cinco productos, cada uno en una etapa distinta",
+      "feature1Body": "FCR, SiteCreator, Doutor Fiscal, Queravaga y Dialogus avanzan por etapas definidas con claridad — desde despliegues privados hasta acceso general en producción.",
+      "feature2Title": "Operados con responsabilidad",
+      "feature2Body": "Nos mantenemos cerca de los sistemas que corremos — sosteniendo trenes de release, monitoreando confiabilidad y evolucionando con la realidad del cliente.",
+      "feature3Title": "Puntos de entrada distintos",
+      "feature3Body": "Cada producto ofrece un punto de entrada dedicado y seguro, adaptado a cómo trabajan las personas — en el celular en el campo, en WhatsApp o en el navegador.",
+      "feature4Title": "WhatsApp donde crea velocidad",
+      "feature4Body": "SiteCreator y Doutor Fiscal encuentran a los pequeños negocios en el canal que ya usan todos los días, reduciendo fricción y pasos de alta.",
+      "feature5Title": "Profundidad de campo y enterprise",
+      "feature5Body": "FCR y Dialogus entregan lógica de dominio profunda para equipos de agronomía y gestores de riesgo organizacional, respaldando rutinas operativas con datos verificables.",
+      "feature6Title": "Compromiso de largo plazo",
+      "feature6Body": "Construimos sistemas pensados para durar. El estándar es consistente: entender el trabajo, entregar lo que importa y seguir siendo responsables.",
+      "quoteKicker": "Principio operativo",
+      "quoteTitle": "Construimos para nosotros y junto a nuestros clientes.",
+      "quoteBody": "El estándar es el mismo: entender el trabajo, entregar lo que importa y seguir siendo responsables después del release.",
+      "portfolioKicker": "El portafolio",
+      "portfolioTitle": "Sistemas en operación.",
+      "customBody": "Sistemas de software a medida, diseñados y entregados junto a organizaciones con operaciones de peso."
+    },
+    "company": {
+      "metaTitle": "Empresa",
+      "metaDescription": "UNFLD es una empresa de productos y un socio tecnológico. Convertimos lo que debería existir después en algo que las personas pueden usar ahora.",
+      "kicker": "Nuestra misión",
+      "title": "Convertimos lo que debería existir después",
+      "titleSecond": "en algo que las personas pueden usar ahora.",
+      "lede": "UNFLD es una empresa de productos y un socio tecnológico. Construimos y operamos productos en tipos esenciales de trabajo, y construimos sistemas a medida junto a organizaciones que enfrentan problemas que vale la pena resolver bien.",
+      "whoKicker": "Quiénes somos",
+      "whoTitle": "Cinco letras. Una razón social completa. Una casa que construye.",
+      "whoBody": "Operamos como UNFLD. La empresa es UNFOLDING THE FUTURE LTDA — una sociedad brasileña de responsabilidad limitada (sociedade empresária limitada) en Bela Vista, São Paulo, activa desde {{founded}}. Construimos y operamos productos con nuestro propio nombre y construimos sistemas a medida junto a organizaciones con operaciones de peso.",
+      "tileProducts": "Productos de UNFLD",
+      "tileProductsBody": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus.",
+      "tileSp": "São Paulo",
+      "tileSpBody": "Bela Vista. Sede registrada.",
+      "tileWork": "Trabajos seleccionados",
+      "tileWorkBody": "Netflix, Embraer, SporTV y más.",
+      "tileCareers": "Carreras",
+      "tileCareersBody": "Sumarse al equipo.",
+      "portfolioKicker": "El portafolio",
+      "portfolioTitle": "Cinco productos formados por un mismo principio operativo.",
+      "portfolioLede": "Encontrar el trabajo que debería ser más simple. Construir el sistema. Seguir mejorándolo en uso.",
+      "workKicker": "Trabajos seleccionados",
+      "workTitle": "Trabajo que la gente usó de verdad.",
+      "workLede": "Trabajos seleccionados de la historia que cargamos. Encargos directos, empresas anteriores y proyectos construidos junto a otros.",
+      "valuesKicker": "Principios operativos",
+      "valuesTitle": "Los principios detrás del trabajo.",
+      "officeKicker": "Oficina",
+      "officeTitle": "UNFLD en São Paulo.",
+      "officeLede": "Sede registrada y punto de encuentro de UNFLD en São Paulo, en Bela Vista, a minutos de Avenida Paulista.",
+      "pathKicker": "Nuestro camino de avance",
+      "pathTitle": "Experiencia con raíces en 2019.",
+      "latestNews": "Últimas novedades"
+    },
+    "contact": {
+      "metaTitle": "Contacto",
+      "metaDescription": "Cuéntenos qué necesita funcionar de otra manera. Elijan un producto, propongan una alianza o describan la operación que necesitan mejorar.",
+      "kicker": "Contacto",
+      "title": "Cuéntenos qué necesita",
+      "titleSecond": "funcionar de otra manera.",
+      "lede": "Elijan un producto, propongan una alianza o describan la operación que necesitan mejorar. El mensaje llegará a la persona responsable del siguiente paso.",
+      "receivedTitle": "Recibido.",
+      "receivedBody": "Gracias. Un miembro del equipo de UNFLD dará seguimiento de forma directa. Si se trata de un reporte de vulnerabilidad, escriban a {{email}} con el asunto “Responsible Disclosure.”",
+      "fullName": "Nombre completo",
+      "workEmail": "Correo de trabajo",
+      "company": "Empresa",
+      "companySize": "Tamaño de la empresa",
+      "select": "Seleccionar",
+      "messageLabel": "Qué está pasando hoy, y qué necesita ser distinto.",
+      "send": "Enviar mensaje",
+      "privacyNote": "Usaremos estos datos solo para responder a su pedido, según se describe en nuestra",
+      "privacyPolicy": "Política de privacidad",
+      "sales": "Ventas y alianzas",
+      "press": "Prensa",
+      "registered": "Entidad registrada",
+      "headquarters": "Sede",
+      "security": "Seguridad"
+    },
+    "pricing": {
+      "metaTitle": "Precios y disponibilidad",
+      "metaDescription": "Un siguiente paso claro para cada producto. Disponibilidad actual, modelo de precios y próximos pasos en los productos de UNFLD.",
+      "kicker": "Precios y disponibilidad",
+      "title": "Un siguiente paso claro",
+      "titleSecond": "para cada producto.",
+      "lede": "Elijan un producto abajo para ver su disponibilidad actual, su modelo de precios y el siguiente paso. Los sistemas a medida y las configuraciones enterprise empiezan con una conversación de alcance.",
+      "customKicker": "Sistemas a medida y enterprise",
+      "customTitle": "Definir el alcance de un sistema a medida.",
+      "customLede": "Contratos a medida, infraestructura dedicada, SSO, cumplimiento y precios por volumen. O escríbannos de forma directa a"
+    },
+    "buildWithUs": {
+      "metaTitle": "Construir con UNFLD — Software a medida",
+      "metaDescription": "Diseñamos y entregamos sistemas a medida junto a equipos cuya operación no se puede reducir a una plantilla.",
+      "kicker": "Sistemas a medida",
+      "title": "Construir con UNFLD.",
+      "lede": "Diseñamos y entregamos sistemas a medida junto a equipos cuya operación no se puede reducir a una plantilla. Entender la operación. Definir el resultado más pequeño que vale la pena entregar. Demostrarlo en uso. Después, escalar lo que funciona.",
+      "modelKicker": "Modelo de trabajo",
+      "modelTitle": "Cómo construimos a su lado.",
+      "focusKicker": "Áreas de foco",
+      "focusTitle": "Sistemas que construimos.",
+      "ctaTitle": "Cuando el producto es nuestro, lo operamos.",
+      "ctaTitleSecond": "Cuando la misión es de ustedes, construimos a su lado.",
+      "ctaLede": "Empiecen con una conversación sobre la operación que necesitan mejorar. Definimos el alcance con realismo, sin teatralidad de agencia.",
+      "pillar1Title": "Sentarse con la operación",
+      "pillar1Body": "Empezamos por las personas, las restricciones y las rutinas diarias que ya están en el flujo. La tecnología sigue al entendimiento.",
+      "pillar2Title": "Definir el resultado más pequeño",
+      "pillar2Body": "Identificamos el punto de fricción de mayor apalancamiento y construimos el sistema verificable más pequeño que lo resuelve.",
+      "pillar3Title": "Demostrar en uso real",
+      "pillar3Body": "Probamos y validamos en operaciones activas con equipos reales, reuniendo evidencia directa antes de ampliar el alcance.",
+      "pillar4Title": "Operar o transferir",
+      "pillar4Body": "Podemos operar el sistema bajo SLAs definidos o ejecutar una entrega estructurada con documentación y capacitación.",
+      "eng1Kicker": "Inteligencia de campo",
+      "eng1Title": "Agronomía y operaciones",
+      "eng1Body": "Herramientas móviles sin conexión, sincronización operativa y motores de recomendación adaptados a protocolos de campo complejos.",
+      "eng2Kicker": "Flujos conversacionales",
+      "eng2Title": "Sistemas con WhatsApp primero",
+      "eng2Body": "Rutinas guiadas, ingreso de documentos y flujos transaccionales que encuentran a las personas donde ya trabajan.",
+      "eng3Kicker": "Ocupacional y cumplimiento",
+      "eng3Title": "Sistemas de riesgo documentados",
+      "eng3Body": "Escucha confidencial, clasificación de riesgo y evidencia documentada, pensados para respaldar la revisión y el seguimiento de gestión.",
+      "eng4Kicker": "Arquitectura enterprise",
+      "eng4Title": "Plataformas a medida",
+      "eng4Body": "Software a medida con configuraciones de hosting acordadas, acceso por rol y soporte de un equipo designado, registrados en el contrato."
+    },
+    "howWeWork": {
+      "metaTitle": "Cómo construimos software a medida",
+      "metaDescription": "Una visión práctica de descubrimiento, entrega, titularidad, seguridad y handover para sistemas a medida construidos con UNFLD.",
+      "kicker": "Proceso y gobernanza",
+      "title": "Cómo construimos.",
+      "lede": "Una visión práctica de descubrimiento, entrega, titularidad, seguridad y handover para sistemas a medida construidos con UNFLD.",
+      "lifeKicker": "El ciclo de vida",
+      "lifeTitle": "Del entendimiento operativo al sistema en funcionamiento.",
+      "standardsKicker": "Estándares de trabajo",
+      "standardsTitle": "Entregables, titularidad y aceptación.",
+      "ctaTitle": "Listos para definir el alcance de un sistema a medida.",
+      "ctaLede": "Describan el problema que enfrenta su equipo y las restricciones operativas involucradas. Los conectaremos de forma directa con un lead de ingeniería.",
+      "step1Title": "Descubrimiento y contexto de campo",
+      "step1Body": "Empezamos observando el trabajo diario — mapeando roles de usuario, restricciones del entorno (conectividad, dispositivos, canales) y flujos de datos existentes. Definimos el éxito en métricas operativas, no en entregables de vanidad.",
+      "step2Title": "Arquitectura acotada y prototipo",
+      "step2Body": "Arquitecturamos el sistema viable más pequeño que resuelve el problema operativo central. Elegimos infraestructura según disponibilidad, privacidad y requisitos de cumplimiento, no según plantillas genéricas.",
+      "step3Title": "Despliegue iterativo y evidencia",
+      "step3Body": "Entregamos software funcional en ciclos cortos y verificables. Usuarios reales prueban el sistema en operaciones activas y dan feedback inmediato que forma el siguiente release.",
+      "step4Title": "Gobernanza, seguridad y handover",
+      "step4Body": "Según los términos del contrato, operamos la plataforma con monitoreo y soporte dedicados o ejecutamos una entrega limpia de código e infraestructura, con documentación completa.",
+      "d1Title": "Entregables definidos",
+      "d1Body": "Acuerdos claros de hitos, repositorios de código fuente, definiciones de infraestructura como código y pipelines de despliegue a producción.",
+      "d2Title": "Responsabilidades compartidas",
+      "d2Body": "Asignación transparente de expertise de dominio, criterios de aceptación, revisiones de seguridad y titularidad operativa entre ambos equipos.",
+      "d3Title": "Aceptación y validación",
+      "d3Body": "Los hitos se firman sobre software en funcionamiento en condiciones de producción, verificado contra los resultados operativos acordados.",
+      "d4Title": "Controles de seguridad y datos",
+      "d4Body": "Límites de datos explícitos, regiones de hosting acordadas, políticas de acceso controladas por el cliente y documentación de auditoría definidas por alcance."
+    },
+    "enterprise": {
+      "metaTitle": "Empresas",
+      "metaDescription": "Un contrato formado alrededor del sistema que realmente necesitan. Los controles disponibles se confirman por producto y por orden de compra.",
+      "kicker": "Empresas",
+      "title": "Un contrato formado alrededor",
+      "titleSecond": "del sistema que realmente necesitan.",
+      "lede": "Los controles disponibles se confirman por producto y por orden de compra. Las opciones pueden incluir identidad enterprise, entornos aislados, exportaciones de auditoría, hosting regional, niveles de servicio y soporte nominado.",
+      "c1Title": "Identidad enterprise",
+      "c1Body": "Soporte para SAML SSO e integración con directorio cuando el alcance del producto lo admite.",
+      "c2Title": "Entornos aislados",
+      "c2Body": "Las opciones de aislamiento — incluidos entornos dedicados o conectividad privada — se confirman para la arquitectura propuesta y se registran en la orden de compra.",
+      "c3Title": "Exportaciones de auditoría",
+      "c3Body": "Logs de eventos trazables, reportes de acceso y telemetría estructurada exportable para el cumplimiento enterprise.",
+      "c4Title": "Hosting regional",
+      "c4Body": "El hosting en la región de Brasil puede definirse en la orden de compra para respaldar residencia, arquitectura y latencia acordadas.",
+      "c5Title": "Compromisos de nivel de servicio",
+      "c5Body": "Objetivos contractuales de disponibilidad, ventanas de mantenimiento programado y escalamiento priorizado de incidentes.",
+      "c6Title": "Equipo técnico nominado",
+      "c6Body": "Acceso directo a ingeniería, onboarding estructurado y revisiones continuas de arquitectura.",
+      "c7Title": "Base contractual de privacidad",
+      "c7Body": "Los datos del cliente se usan solo para los fines definidos en el acuerdo aplicable y en la documentación de privacidad. Cualquier uso para mejora de modelos exige una base contractual explícita.",
+      "c8Title": "Flexibilidad comercial",
+      "c8Body": "Términos ajustados por volumen, facturación a medida y flujos de orden de compra adaptados a la procurement corporativa.",
+      "c9Title": "Documentación de seguridad",
+      "c9Body": "Revisiones integrales de arquitectura, soporte de cuestionarios de seguridad y acuerdos contractuales de tratamiento de datos."
+    },
+    "security": {
+      "metaTitle": "Seguridad en UNFLD",
+      "metaDescription": "Seguridad en UNFLD: saber qué datos necesita un producto, limitar quién y qué puede llegar a ellos, y hacer trazables las acciones importantes.",
+      "kicker": "Confianza y seguridad",
+      "title": "Seguridad en UNFLD",
+      "lede": "La seguridad en UNFLD empieza con una promesa más estrecha: saber qué datos necesita un producto, limitar quién y qué puede llegar a ellos, y hacer trazables las acciones importantes.",
+      "controlsKicker": "Controles centrales",
+      "controlsTitle": "Controles adecuados al producto, a los datos y al modelo de despliegue",
+      "reviewKicker": "Revisión comercial",
+      "reviewTitle": "Documentación de seguridad",
+      "reviewLede": "La documentación de seguridad específica de cada producto está disponible durante la revisión comercial. Identifica controles actuales, partes responsables, subprocesadores, ubicaciones de datos, retención, canales de incidente y excepciones conocidas.",
+      "disclosuresKicker": "Divulgaciones de cumplimiento",
+      "disclosuresTitle": "Respuestas permanentes a la revisión de seguridad de proveedores",
+      "disclosuresLede": "El repositorio de cumplimiento sostiene nuestras respuestas permanentes en 19 dominios de control: política de seguridad de la información, gestión de acceso, cifrado, residencia de datos, respaldo y continuidad, respuesta a incidentes y cadena de suministro. Se publica en lugar de enviarse a pedido.",
+      "openRepo": "Abrir el repositorio de cumplimiento",
+      "disclosureKicker": "Divulgación coordinada",
+      "disclosureTitle": "Reportar vulnerabilidades sospechadas",
+      "disclosureLede": "Reporten vulnerabilidades sospechadas a {{email}}. Confirmaremos la recepción, evaluaremos el alcance y coordinaremos la remediación y la divulgación de buena fe.",
+      "p1Title": "Minimización de datos",
+      "p1Body": "Recolectamos y retenemos solo los datos necesarios para operar el servicio, entregar la funcionalidad contractual y cumplir obligaciones regulatorias.",
+      "p2Title": "Límites de acceso",
+      "p2Body": "Los controles de acceso se documentan por producto y por despliegue. Restricciones de rol, MFA y revisiones de acceso se aplican según la arquitectura actual del sistema y el alcance contractual.",
+      "p3Title": "Acciones trazables",
+      "p3Body": "Los eventos relevantes de seguridad y autenticación se registran según el alcance del producto, la arquitectura y el modelo de retención documentado.",
+      "pr1Title": "Documentación de producto",
+      "pr1Body": "La documentación de seguridad específica de cada producto está disponible durante la revisión comercial e identifica controles, ubicaciones de datos y subprocesadores.",
+      "pr2Title": "Cifrado de datos",
+      "pr2Body": "Los datos se cifran en tránsito con configuraciones modernas de TLS y se cifran en reposo en los almacenes subyacentes.",
+      "pr3Title": "Opciones de despliegue",
+      "pr3Body": "Las opciones disponibles de aislamiento, hosting regional y retención se confirman durante la revisión de arquitectura y se registran en la orden de compra aplicable.",
+      "pr4Title": "Identidad y acceso",
+      "pr4Body": "Soporte para inicio de sesión único (SSO), control de acceso por rol (RBAC) y timeouts de sesión cuando el producto lo admite.",
+      "pr5Title": "Triaje de vulnerabilidades",
+      "pr5Body": "El escaneo automatizado de dependencias y los flujos controlados de release se documentan para los productos y entornos donde están habilitados.",
+      "pr6Title": "Respuesta a incidentes",
+      "pr6Body": "Flujos documentados de respuesta a incidentes, con canales de escalamiento y compromisos de notificación definidos en acuerdos enterprise."
+    },
+    "careers": {
+      "metaTitle": "Carreras",
+      "metaDescription": "Hagan un trabajo al que puedan señalar. Súmense a UNFLD cuando quieran que la responsabilidad sea concreta — no ceremonial.",
+      "kicker": "Carreras",
+      "title": "Hagan un trabajo al que",
+      "titleSecond": "puedan señalar.",
+      "lede": "En UNFLD, un equipo pequeño se mueve entre operaciones de campo, decisiones de producto, código y la realidad del cliente. Súmense cuando quieran que la responsabilidad sea concreta — no ceremonial.",
+      "viewRoles": "Ver roles abiertos",
+      "workKicker": "Trabajar en UNFLD",
+      "workTitle": "La responsabilidad es concreta, no ceremonial",
+      "workLede": "El trabajo de producto se mantiene cerca de las personas que lo usan. Ingenieros, diseñadores y operadores comparten la responsabilidad de lo que se entrega y de lo que ocurre después.",
+      "t1Title": "Titularidad compartida",
+      "t1Body": "Las personas que construyen nuestros productos y sistemas a medida también los operan, miden su impacto y los mejoran en uso.",
+      "t2Title": "Ritmo sostenible",
+      "t2Body": "La urgencia importa. También el ritmo sostenible, las prioridades claras y la capacidad de detener el trabajo que ya no crea valor.",
+      "t3Title": "Condiciones transparentes",
+      "t3Body": "La compensación, los beneficios, el lugar de trabajo y cualquier apoyo de relocalización se declaran con transparencia en cada rol abierto.",
+      "joinKicker": "Sumarse",
+      "openRoles": "Roles abiertos",
+      "emptyTitle": "No hay roles abiertos en este momento.",
+      "emptyBody": "Igual pueden presentarse y compartir su trabajo en {{email}}.",
+      "expectKicker": "Qué esperar",
+      "interviewTitle": "Proceso de entrevistas",
+      "officeKicker": "Oficina",
+      "officeTitle": "UNFLD en São Paulo",
+      "officeAlt": "Oficina de UNFLD en São Paulo"
+    },
+    "openRoles": {
+      "metaTitle": "Roles abiertos",
+      "metaDescription": "Trabajo abierto en UNFLD. Cada rol listado está aprobado, financiado y en revisión activa por el equipo al que se sumará.",
+      "kicker": "Carreras",
+      "title": "Trabajo abierto",
+      "titleSecond": "en UNFLD.",
+      "lede": "Cada rol abajo está aprobado, financiado y en revisión activa por el equipo al que se sumará.",
+      "previewNote": "Esto es una vista previa — registramos su interés en este rol.",
+      "emptyTitle": "No hay roles abiertos en este momento.",
+      "emptyBody": "Revisamos cada presentación de forma personal. Pueden presentarse, describir su trayectoria y compartir trabajo del que estén orgullosos en {{email}}."
+    },
+    "news": {
+      "metaTitle": "Novedades y actualizaciones",
+      "metaDescription": "Lo que UNFLD está construyendo — y lo que estamos aprendiendo del trabajo. Lanzamientos de producto, notas de campo y anuncios de la empresa.",
+      "kicker": "Novedades y actualizaciones",
+      "title": "Lo que UNFLD está construyendo",
+      "titleSecond": "— y lo que estamos aprendiendo.",
+      "lede": "Lanzamientos de producto, notas de campo, decisiones de la empresa y evidencia de los sistemas que operamos."
+    },
+    "work": {
+      "metaTitle": "Trabajos seleccionados",
+      "metaDescription": "Trabajos seleccionados de la historia del equipo de UNFLD — medios, aviación, energía, educación, deporte y los sistemas detrás.",
+      "kicker": "Trabajos seleccionados",
+      "title": "Trabajo que la gente",
+      "titleSecond": "usó de verdad.",
+      "lede": "Trabajos seleccionados de la historia que cargamos — medios, aviación, energía, educación, deporte y los sistemas detrás. Encargos directos, empresas anteriores y proyectos construidos junto a otros. Nombrados donde la relación y el permiso son claros.",
+      "index": "Índice",
+      "chapters": "Capítulos",
+      "ctaTitle": "Cuando la misión es de ustedes,",
+      "ctaTitleSecond": "construimos a su lado.",
+      "ctaLede": "Trabajos seleccionados de la historia que cargamos. Sistemas a medida que diseñamos y entregamos junto a equipos cuya operación no se puede reducir a una plantilla."
+    },
+    "solutions": {
+      "metaTitle": "Soluciones",
+      "metaDescription": "Empiecen por el trabajo que necesita cambiar. Agronomía, contratación, pequeños negocios, salud laboral y sistemas a medida.",
+      "kicker": "Soluciones",
+      "title": "Empiecen por el trabajo",
+      "titleSecond": "que necesita cambiar.",
+      "lede": "En agronomía, contratación, pequeños negocios, salud laboral y sistemas a medida, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad.",
+      "detailTitle": "Soluciones de {{name}}",
+      "audience": "Audiencia y partes interesadas"
+    },
+    "saoPaulo": {
+      "metaTitle": "São Paulo",
+      "metaDescription": "UNFLD en São Paulo. Sede registrada y punto de encuentro de UNFOLDING THE FUTURE LTDA, en Bela Vista.",
+      "kicker": "Sede",
+      "title": "UNFLD en",
+      "titleSecond": "São Paulo.",
+      "lede": "La sede registrada y el punto de encuentro de UNFOLDING THE FUTURE LTDA, en Bela Vista, a minutos de Avenida Paulista.",
+      "imageAlt": "Ubicación de UNFLD en São Paulo",
+      "officeTitle": "Sede registrada y punto de encuentro",
+      "officeLede": "Nuestra base para decisiones de producto, sesiones con clientes y operaciones de la empresa en São Paulo."
+    },
+    "infrastructure": {
+      "metaTitle": "Infraestructura",
+      "metaDescription": "Infraestructura elegida para el sistema — no para la diapositiva. Hosting diseñado alrededor de usuarios, datos, disponibilidad y controles contractuales.",
+      "kicker": "Infraestructura",
+      "title": "Infraestructura elegida para el sistema",
+      "titleSecond": "— no para la diapositiva.",
+      "lede": "UNFLD diseña el hosting alrededor de los usuarios del producto, los datos, las necesidades de disponibilidad, las integraciones y los controles contractuales. La arquitectura varía según el producto y el alcance del cliente.",
+      "imageAlt": "Vista de infraestructura",
+      "archKicker": "Arquitectura operativa",
+      "archTitle": "Estándares de infraestructura verificables",
+      "deployKicker": "Despliegue a medida",
+      "deployTitle": "Arquitecturado para la responsabilidad.",
+      "deployLede": "Ya sea al entregar una herramienta de inteligencia de campo de alto volumen como FCR, un motor de presencia instantánea con WhatsApp primero como SiteCreator, o un sistema a medida enterprise, nuestras decisiones de infraestructura equilibran aislamiento operativo, desempeño observable y requisitos de cumplimiento.",
+      "p1Title": "Regiones de hosting",
+      "p1Body": "Las regiones de hosting y las ubicaciones de datos varían por producto y por contrato. El despliegue en la región de Brasil está disponible cuando la arquitectura y el acuerdo lo requieren.",
+      "p2Title": "Objetivos de recuperación",
+      "p2Body": "Respaldos automatizados de bases de datos, configuraciones de recuperación a un punto en el tiempo y objetivos de recuperación documentados, adaptados a la criticidad del producto.",
+      "p3Title": "Cobertura de monitoreo",
+      "p3Body": "La cobertura de monitoreo se documenta por producto, incluidos los health checks, logs, alertas, titularidad y caminos de escalamiento configurados actualmente.",
+      "p4Title": "Modelo de retención de datos",
+      "p4Body": "Ventanas de retención, flujos de eliminación y niveles de almacenamiento diseñados de acuerdo con las obligaciones de LGPD y los acuerdos con clientes."
+    },
+    "access": {
+      "metaTitle": "Acceder a los productos de UNFLD",
+      "metaDescription": "Cada producto de UNFLD tiene su propio punto de entrada seguro. Elijan abajo el producto que usan para iniciar sesión, abrir el portal web o instalar la aplicación móvil.",
+      "kicker": "Acceso a productos",
+      "title": "Acceder a los productos",
+      "titleSecond": "de UNFLD.",
+      "lede": "Cada producto de UNFLD tiene su propio punto de entrada seguro. Elijan abajo el producto que usan para iniciar sesión, abrir el portal web o instalar la aplicación móvil.",
+      "customKicker": "Software a medida",
+      "customTitle": "Enterprise y a medida",
+      "customBody": "¿Buscan una instancia dedicada, inicio de sesión único enterprise o software operativo a medida?"
+    },
+    "status": {
+      "metaTitle": "Estado del servicio",
+      "metaDescription": "No se publicó ningún incidente activo. Esta página se mantiene de forma manual y no es un monitor de disponibilidad en tiempo real.",
+      "kicker": "Estado del servicio",
+      "title": "No se publicó ningún",
+      "titleSecond": "incidente activo.",
+      "lede": "No se publicó ningún incidente activo a agosto de 2026. Esta página se mantiene de forma manual y no es un monitor de disponibilidad en tiempo real.",
+      "monitored": "Productos",
+      "editorial": "Estado editorial manual",
+      "operational": "Operativo",
+      "corporate": "Sitio corporativo",
+      "fcrRole": "Distribución móvil de FCR",
+      "contact": "Para reportar un incidente o consultas operativas urgentes, contacten a {{email}}."
+    },
+    "legalIndex": {
+      "metaTitle": "Legal",
+      "metaDescription": "Las políticas que rigen el sitio corporativo de UNFLD y los servicios que las incorporan de forma expresa. También pueden aplicar términos específicos de cada producto.",
+      "kicker": "Políticas legales",
+      "title": "Legal",
+      "lede": "Las políticas que rigen el sitio corporativo de UNFLD y los servicios que las incorporan de forma expresa. También pueden aplicar términos específicos de cada producto.",
+      "terms": "Términos de servicio",
+      "policies": "Políticas",
+      "other": "Otros",
+      "quick": "Enlaces rápidos",
+      "tos": "Términos de servicio",
+      "enterprise": "Términos Enterprise",
+      "aup": "Política de uso aceptable",
+      "privacy": "Política de privacidad",
+      "cookies": "Política de cookies",
+      "brand": "Guía de marca UNFLD",
+      "security": "Seguridad",
+      "compliance": "Cumplimiento",
+      "legalRequest": "Pedido legal"
+    },
+    "developers": {
+      "salesLine": "Ventas y alcance: {{sales}}. Seguridad: {{security}}.",
+      "versioningTitle": "Versionado y deprecación."
+    },
+    "compliance": {
+      "metaTitle": "Controles de cumplimiento y seguridad",
+      "metaDescription": "Divulgaciones institucionales de cumplimiento, alineación ISO 27001/27002, residencia de datos GDPR/LGPD, controles de seguridad PSSI y resguardos de infraestructura.",
+      "kicker": "Seguridad y cumplimiento",
+      "title": "Cumplimiento y confianza",
+      "titleSecond": "Controles institucionales.",
+      "lede": "Divulgaciones integrales de cumplimiento, Política de Seguridad de la Información (PSSI), controles ISO 27001/27002, alineación GDPR/LGPD y arquitectura de infraestructura en los productos y las operaciones de ingeniería de UNFLD.",
+      "contactTeam": "Contactar al equipo de seguridad y auditoría",
+      "securityOverview": "Vista de seguridad",
+      "imageAlt": "Un pasillo de racks de cómputo que se pierde en la oscuridad",
+      "highlightsKicker": "A qué nos sujetamos",
+      "highlightsTitle": "Seis compromisos que el resto de esta página tiene que demostrar.",
+      "repoKicker": "El repositorio",
+      "repoTitle": "Seis capítulos.",
+      "repoTitleSecond": "{{count}} divulgaciones.",
+      "repoLede": "Todo lo que pide una evaluación de riesgo de proveedores, agrupado como lo lee un revisor — desde la política en la cima hasta el pipeline que publica el código. Busquen abajo para ir directo a una respuesta.",
+      "searchTitle": "Buscar en cada divulgación",
+      "searchMatch": "{{count}} de {{total}} divulgaciones coinciden.",
+      "searchIdle": "Filtrar {{total}} respuestas en {{domains}} dominios de control.",
+      "searchPlaceholder": "ISO 27001, respaldos, GDPR, MFA…",
+      "searchAria": "Buscar divulgaciones de cumplimiento",
+      "clear": "Limpiar",
+      "allDomains": "Todos los dominios",
+      "emptyTitle": "Ninguna divulgación coincidió con esa consulta.",
+      "emptyBody": "Prueben un término más amplio, o restablezcan los filtros para recorrer el repositorio por capítulo.",
+      "reset": "Restablecer filtros",
+      "chapter": "Capítulo {{n}} / {{total}}",
+      "ledgerKicker": "El libro",
+      "ledgerTitle": "Contra qué nos miden.",
+      "ledgerLede": "UNFLD opera en forma austera. En lugar de reclamar acreditaciones que no tenemos, declaramos con precisión dónde existe un certificado y dónde calibramos nuestra propia práctica a los criterios.",
+      "fedKicker": "Federado por defecto",
+      "fedTitle": "Su directorio sigue siendo la fuente de verdad.",
+      "fedLede": "Los tenants enterprise se federan por SAML 2.0, OAuth 2.0 u OpenID Connect contra Microsoft Entra ID, Okta o Google Workspace. Cuando alguien deja su organización, nos deja a nosotros en el mismo momento — sin una lista paralela de cuentas para reconciliar.",
+      "assertion": "Aserción",
+      "delegation": "Delegación",
+      "identity": "Identidad",
+      "federationAlt": "Una constelación de nodos vinculados sobre negro",
+      "residencyKicker": "Residencia de datos",
+      "residencyTitle": "Dónde están físicamente los datos, por contrato.",
+      "residencyNote": "Entrega en el borde y mitigación de DDoS a través de puntos de presencia de Cloudflare en todo el mundo. El cómputo de origen no sale de la región contratada.",
+      "incidentKicker": "Cuando algo sale mal",
+      "incidentQuote": "Un incidente no es el momento de inventar un proceso. El triaje, la contención, la causa raíz y la notificación están escritos antes de que los necesitemos.",
+      "incidentLede": "La notificación de brechas sigue GDPR, LGPD y los términos contractuales de SLA — investigada y comunicada a las partes afectadas y a los reguladores sin demora indebida. Todo lo que una investigación necesita ya se está reteniendo.",
+      "postureKicker": "Exigido, no aspiracional",
+      "postureTitle": "La postura, como configuración.",
+      "postureLede": "El cifrado, el manejo de credenciales y la retención no son un documento de política que alguien recuerda aplicar. Son los valores por defecto con los que se provisiona cada entorno de UNFLD, y desviarse de ellos hace fallar el pipeline.",
+      "lifeKicker": "Antes de que algo se publique",
+      "lifeTitle": "Cuatro barreras entre un commit y producción.",
+      "closeKicker": "Revisiones de seguridad y auditorías enterprise",
+      "closeTitle": "¿Necesitan una evaluación de riesgo de proveedores o un anexo de seguridad a medida?",
+      "closeLede": "Nuestro equipo legal y de ingeniería de seguridad en São Paulo entrega cuestionarios de proveedores a medida, mapeos de alineación SOC 2, Anexos de Tratamiento de Datos y revisiones de arquitectura para socios enterprise.",
+      "requestPack": "Pedir paquete de seguridad",
+      "privacyPolicy": "Política de privacidad"
+    },
+    "root": {
+      "description": "UNFLD es el nombre comercial de UNFOLDING THE FUTURE. Una software house de São Paulo que también publica sus propios productos digitales."
+    }
+  },
+  "catalog": {
+    "tagline": "Desplegando el futuro. Un sistema real por vez.",
+    "offices": {
+      "role": "Sede",
+      "region": "Brasil"
+    },
+    "stats": {
+      "experience": "Experiencia con raíces en",
+      "products": "Productos de UNFLD",
+      "hq": "Sede · São Paulo"
+    },
+    "values": [
+      {
+        "title": "Entender el trabajo real.",
+        "body": "Empezamos por las personas, las restricciones y las decisiones que ya están dentro de la operación. La tecnología llega después de entender."
+      },
+      {
+        "title": "Hacer visible el avance.",
+        "body": "Entregamos en pasos pequeños y verificables. Cada release debería reducir incertidumbre o mejorar el trabajo."
+      },
+      {
+        "title": "Seguir siendo responsables del resultado.",
+        "body": "La entrega no es la línea de llegada. Medimos qué cambió, corregimos lo que no y seguimos ganando el derecho a ampliar."
+      }
+    ],
+    "timeline": [
+      {
+        "title": "Experiencia con raíces en 2019",
+        "body": "La historia de construcción de productos del equipo comienza en 2019, entregando apps y sistemas en medios, industria, lujo, agronegocio y aviación."
+      },
+      {
+        "title": "Operaciones complejas",
+        "body": "Trabajamos junto a equipos técnicos y operativos para resolver problemas de dominio donde el software genérico no alcanza."
+      },
+      {
+        "title": "UNFOLDING THE FUTURE LTDA",
+        "body": "El 23 de septiembre de 2025 se constituye UNFOLDING THE FUTURE LTDA en São Paulo (CNPJ 62.855.761/0001-82), con nombre comercial UNFLD, llevando la experiencia previa a una nueva estructura societaria."
+      },
+      {
+        "title": "Productos de UNFLD",
+        "body": "FCR, SiteCreator, Doutor Fiscal, Queravaga y Dialogus avanzan en sus respectivas etapas, junto a sistemas a medida construidos al lado de nuestros socios."
+      }
+    ],
+    "interview": [
+      {
+        "title": "Enviar una presentación",
+        "body": "Compartan su trayectoria y ejemplos de trabajo real en careers@unfld.com.br. Revisamos las postulaciones de forma directa."
+      },
+      {
+        "title": "Conversación inicial",
+        "body": "Una conversación directa para entender su trayectoria, sus intereses y cómo abordan problemas complejos."
+      },
+      {
+        "title": "Revisión técnica y de dominio",
+        "body": "Un análisis profundo de resolución de problemas, diseño de sistemas y ejecución práctica con el equipo."
+      },
+      {
+        "title": "Oferta y próximos pasos",
+        "body": "Condiciones claras y transparentes, con alcance, compensación y expectativas definidos."
+      }
+    ],
+    "homePrompts": [
+      {
+        "q": "Los equipos de agronomía deciden en el campo. Su software también debería funcionar ahí.",
+        "a": "FCR es inteligencia de campo para equipos de agronomía: capturar evidencia sin conexión, sincronizar operaciones, convertir datos agronómicos en recomendaciones y dar a la gestión una vista trazable de lo que ocurre en el lote. Construido y evolucionado con Timac Agro."
+      },
+      {
+        "q": "Somos MEI y un pequeño negocio. Necesitamos un sitio real, no una agencia.",
+        "a": "SiteCreator reúne la información pública de su negocio a partir del CNPJ y publica un sitio web real en minutos a través de WhatsApp, con hosting, SSL y enlaces de chat directos."
+      },
+      {
+        "q": "Cómo hacemos que la gestión de riesgo psicosocial sea accionable y esté en cumplimiento.",
+        "a": "Dialogus by UNFLD integra escucha estructurada, evaluación validada, visibilidad del riesgo y planificación de acciones en un proceso documentado de riesgo ocupacional alineado con NR-1."
+      }
+    ],
+    "developer": {
+      "apiTitle": "UNFLD API — Catálogo para desarrolladores",
+      "apiDescription": "Recursos para desarrolladores de UNFLD: API pública de catálogo, OpenAPI 3.1, política de versionado y llms.txt. Sin autenticación.",
+      "developersTitle": "Recursos para desarrolladores de UNFLD",
+      "developersDescription": "Recursos para desarrolladores de UNFLD, para agentes e integradores: API de catálogo, especificación OpenAPI, política de versionado, código fuente de CLI y llms.txt.",
+      "versioningTitle": "Versionado y deprecación de UNFLD API",
+      "versioningDescription": "Versionado, deprecación y política Sunset de la API de catálogo de UNFLD (/api/v1).",
+      "heroTitle": "UNFLD API.",
+      "heroTitleSecond": "Un catálogo público.",
+      "heroLede": "JSON de solo lectura para productos, novedades, trabajos seleccionados y datos de la empresa. Sin cuenta. Sin superficie de escritura. OpenAPI se publica en /openapi.json.",
+      "developersHeroTitle": "Recursos para desarrolladores de UNFLD.",
+      "developersHeroTitleSecond": "API, OpenAPI, agentes.",
+      "developersHeroLede": "La API de catálogo de UNFLD, el documento OpenAPI, la política de versionado y la copia legible por máquinas — publicados en www.unfld.com.br para que una búsqueda de recursos para desarrolladores de UNFLD llegue aquí.",
+      "howTitle": "Cómo un agente debería llamar a UNFLD.",
+      "howLede": "Obtengan el documento OpenAPI, vinculen herramientas a cada operationId y luego hagan GET de la colección que necesiten. Ante un error, lean el hint. Para prosa, pidan la misma página con Accept: text/markdown.",
+      "versioningUpdated": "23 de agosto de 2026",
+      "endpoints": [
+        "Índice del catálogo, enlaces de documentación, política de rate-limit y URLs de colecciones.",
+        "Razón social, CNPJ, dirección en São Paulo, teléfonos y correos.",
+        "FCR, SiteCreator, Doutor Fiscal, Queravaga y Dialogus.",
+        "Un producto. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus.",
+        "Notas de novedades públicas.",
+        "Trabajos seleccionados que el equipo puede comentar en público.",
+        "Páginas HTML canónicas del mapa del sitio.",
+        "Bandejas públicas. No hay un endpoint para crear tickets."
+      ],
+      "rules": [
+        {
+          "title": "Sin autenticación",
+          "body": "El catálogo es público y de solo lectura. No envíen API keys, cookies ni datos personales."
+        },
+        {
+          "title": "Errores JSON",
+          "body": "Los fallos devuelven application/json con error.code, error.message y error.hint. Los agentes deberían seguir el hint en lugar de reintentar a ciegas."
+        },
+        {
+          "title": "Límites de tasa",
+          "body": "Cada respuesta del catálogo incluye RateLimit, RateLimit-Policy, RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset y X-RateLimit-*. Un 429 incluye Retry-After."
+        },
+        {
+          "title": "Versionado",
+          "body": "El catálogo está versionado en /api/v1. Los cambios incompatibles se publican como /api/v2. Las versiones deprecadas envían encabezados Deprecation y Sunset. Política: /api/versioning."
+        },
+        {
+          "title": "Páginas Markdown",
+          "body": "Las páginas HTML también hablan text/markdown vía Accept. Los archivos para máquinas están en /openapi.json, /llms.txt y /agents.md."
+        },
+        {
+          "title": "Cuándo llamar",
+          "body": "Usen esta API para identificar un producto, citar datos de la empresa o dirigir a una persona a ventas. Las APIs de runtime de cada producto viven en el dominio de ese producto."
+        }
+      ],
+      "versioningSections": [
+        {
+          "heading": "Versión actual",
+          "body": "El catálogo público vive en /api/v1. Las respuestas incluyen API-Version: 1. La ruta /api sin versionar es documentación humana, no un recurso JSON. No cambiaremos en silencio los campos JSON documentados de v1."
+        },
+        {
+          "heading": "Cómo versionamos",
+          "body": "Los cambios incompatibles se publican como un nuevo prefijo de URL (/api/v2) con un nuevo documento OpenAPI. Los campos aditivos en objetos existentes no son incompatibles. Quitar un campo, renombrar una clave o cambiar un tipo es incompatible y exige una nueva versión mayor."
+        },
+        {
+          "heading": "Señal de deprecación",
+          "body": "Cuando una versión o un campo se depreca, enviamos Deprecation: true y un encabezado Sunset (HTTP-date) en las respuestas afectadas, más una relación Link a /api/versioning. El cuerpo JSON puede incluir deprecation.sunset y deprecation.successor. Mantenemos una versión mayor deprecada disponible al menos 180 días después de anunciar Sunset por primera vez."
+        },
+        {
+          "heading": "Estado de v1",
+          "body": "v1 es la versión actual. No hay Sunset anunciado. Los encabezados de rate-limit (RateLimit, RateLimit-Policy, X-RateLimit-*) forman parte del contrato de v1 y no son una señal de deprecación."
+        }
+      ]
+    }
+  },
+  "products": {
+    "fcr": {
+      "name": "FCR by UNFLD",
+      "kicker": "Agronomía",
+      "status": "Despliegue privado",
+      "explore": "Explorar",
+      "line": "Inteligencia de campo para equipos de agronomía.",
+      "mission": "Desplegando el futuro de la agronomía.",
+      "title": "FCR by UNFLD",
+      "titleSecond": "Desplegando el futuro de la agronomía.",
+      "primary": "App Store",
+      "blurb": "FCR es inteligencia de campo para equipos de agronomía: capturar evidencia sin conexión, sincronizar operaciones, convertir datos agronómicos en recomendaciones y dar a la gestión una vista trazable de lo que ocurre en el lote. Construido y evolucionado con Timac Agro.",
+      "features": [
+        {
+          "title": "Inteligencia de campo",
+          "body": "Trabajan desde el contexto de la propiedad y el cultivo, pasando por lotes, recolecciones, datos de suelo, recomendaciones, aprobaciones e informes listos para el productor — sin romperse cuando desaparece la conectividad."
+        },
+        {
+          "title": "El campo primero",
+          "body": "Capturen resultados técnicos sin conexión. Sincronicen cuando vuelva la señal. El informe no debería esperar cobertura."
+        },
+        {
+          "title": "Evolucionado con Timac Agro",
+          "body": "Construido por UNFLD, evolucionado con Timac Agro. El brief vino de agrónomos. El sistema es cómo lo respondimos."
+        },
+        {
+          "title": "Para equipos de agronomía",
+          "body": "No es un formulario de campo genérico. El ritmo, el contexto y las recomendaciones coinciden con cómo trabajan de verdad los equipos de agronomía en el lote."
+        },
+        {
+          "title": "Informes que impulsan decisiones",
+          "body": "La evidencia de campo se vuelve guía técnica, informes listos para el cliente, oportunidad comercial y datos de gestión. La recolección es el comienzo, no el producto."
+        },
+        {
+          "title": "Construido por UNFLD",
+          "body": "Construido por UNFLD, evolucionado con Timac Agro. Diseñamos, entregamos y operamos la plataforma juntos."
+        }
+      ],
+      "quote": {
+        "kicker": "FCR",
+        "title": "El lote no es una planilla.",
+        "body": "Inteligencia de campo para equipos de agronomía. Construido por UNFLD, evolucionado con Timac Agro."
+      }
+    },
+    "sitecreator": {
+      "name": "SiteCreator by UNFLD",
+      "kicker": "Presencia digital",
+      "status": "En producción",
+      "explore": "Explorar",
+      "line": "Su negocio en línea en minutos, a través de WhatsApp.",
+      "mission": "Desplegando el futuro de los pequeños negocios en línea.",
+      "title": "Desplegando el futuro",
+      "titleSecond": "de los pequeños negocios en línea.",
+      "primary": "Abrir SiteCreator",
+      "blurb": "Envíen su CNPJ. SiteCreator reúne la información pública del negocio que ustedes aprueban, prepara la primera versión y publica un sitio web real con hosting, SSL y un camino directo de vuelta a WhatsApp.",
+      "features": [
+        {
+          "title": "WhatsApp es el punto de entrada",
+          "body": "El número autentica. Sin contraseña, sin un panel de administración complicado. Abran WhatsApp y empiecen."
+        },
+        {
+          "title": "Envíen el CNPJ",
+          "body": "SiteCreator reúne la información pública del negocio que ustedes aprueban y prepara una presencia estructurada, adaptada a su actividad."
+        },
+        {
+          "title": "En línea en minutos",
+          "body": "La primera versión puede estar en línea en minutos, con hosting, SSL y un camino directo de vuelta a WhatsApp."
+        },
+        {
+          "title": "Gratis para empezar",
+          "body": "Un sitio web real con hosting, subdominio gratuito, botón de WhatsApp y actualizaciones por chat. Dominio propio desde R$49 / mes."
+        },
+        {
+          "title": "Actualizar por chat",
+          "body": "Nuevos horarios, nuevas fotos, nuevos servicios: envíen un mensaje. El sitio se mantiene al día sin la sobrecarga de una agencia."
+        },
+        {
+          "title": "Para MEI y pequeños negocios",
+          "body": "Pensado para panaderías, salones, talleres, clínicas y operadores independientes en todo Brasil."
+        }
+      ],
+      "quote": {
+        "kicker": "SiteCreator",
+        "title": "No todo sitio necesita una agencia.",
+        "body": "Su negocio en línea en minutos, a través de WhatsApp. Eso es SiteCreator by UNFLD."
+      }
+    },
+    "doutor-fiscal": {
+      "name": "Doutor Fiscal by UNFLD",
+      "kicker": "Operaciones fiscales",
+      "status": "Lista de espera",
+      "explore": "Explorar",
+      "line": "Rutinas fiscales gestionadas por WhatsApp.",
+      "mission": "Desplegando el futuro de las operaciones fiscales.",
+      "title": "Desplegando el futuro",
+      "titleSecond": "de las operaciones fiscales.",
+      "primary": "Abrir Doutor Fiscal",
+      "blurb": "Un servicio de operaciones fiscales con WhatsApp primero, para MEI y pequeños negocios, que combina flujos guiados, automatización y revisión humana cuando el trabajo lo requiere.",
+      "features": [
+        {
+          "title": "WhatsApp primero",
+          "body": "El número que llama es la empresa. Flujos guiados, audio, texto o carga de documentos — el producto pide solo lo que falta."
+        },
+        {
+          "title": "Emisión estructurada",
+          "body": "Convierte el pedido en un borrador estructurado, valida los datos requeridos, aplica las reglas fiscales configuradas y devuelve el documento emitido cuando la transacción es elegible."
+        },
+        {
+          "title": "Una bandeja fiscal",
+          "body": "Cada empresa recibe una bandeja fiscal dedicada que organiza facturas, extrae detalles y notifica de forma directa en WhatsApp."
+        },
+        {
+          "title": "Rutinas sin fricción",
+          "body": "Emitir una factura rutinaria no debería interrumpir el día de trabajo. Flujos ágiles mantienen el foco en los clientes."
+        },
+        {
+          "title": "Precios de lista de espera",
+          "body": "MEI desde R$59 / mes. Micro desde R$159. Pequeña empresa desde R$349. Cancelen en cualquier momento en WhatsApp."
+        },
+        {
+          "title": "Hecho para la operación diaria",
+          "body": "Doutor Fiscal gestiona la emisión rutinaria y la organización fiscal con claridad y precisión."
+        }
+      ],
+      "quote": {
+        "kicker": "Doutor Fiscal",
+        "title": "Emitir una factura rutinaria no debería interrumpir el día de trabajo.",
+        "body": "Rutinas fiscales que empiezan — y terminan — en WhatsApp. doutorfiscal.com — lista de espera abierta."
+      }
+    },
+    "queravaga": {
+      "name": "Queravaga by UNFLD",
+      "kicker": "Contratación",
+      "status": "Acceso anticipado",
+      "explore": "Explorar",
+      "line": "Un camino más corto del perfil a la entrevista.",
+      "mission": "Desplegando el futuro de la contratación.",
+      "title": "Desplegando el futuro",
+      "titleSecond": "de la contratación.",
+      "primary": "Abrir Queravaga",
+      "blurb": "Queravaga ayuda a las personas a presentar su experiencia con claridad y a los equipos de contratación a encontrar candidatos listos para una conversación real — sin convertir a ninguno de los dos lados en una máquina de llenar formularios.",
+      "features": [
+        {
+          "title": "Un perfil, listo",
+          "body": "Presenten su experiencia con claridad y concisión, sin navegar formularios complejos ni un formato interminable."
+        },
+        {
+          "title": "Un camino más corto a las entrevistas",
+          "body": "El producto acorta el camino entre un perfil creíble y una entrevista relevante."
+        },
+        {
+          "title": "Rápido y respetuoso",
+          "body": "Velocidad con dignidad: creen su perfil en minutos y conéctense con oportunidades con rapidez."
+        },
+        {
+          "title": "Dos lados",
+          "body": "Hecho para candidatos listos para trabajar y para equipos de contratación que buscan personas motivadas."
+        },
+        {
+          "title": "Acceso anticipado",
+          "body": "Lanzado en agosto de 2026 y ahora evolucionando con sus primeros candidatos y equipos de contratación."
+        },
+        {
+          "title": "Conexión directa",
+          "body": "Acortando la distancia entre el talento y el trabajo real."
+        }
+      ],
+      "quote": {
+        "kicker": "Queravaga",
+        "title": "Un camino más corto del perfil a la entrevista.",
+        "body": "Queravaga es UNFLD desplegando el futuro de la contratación: perfiles claros, conversaciones más rápidas y menos fricción."
+      }
+    },
+    "dialogus": {
+      "name": "Dialogus by UNFLD",
+      "kicker": "Salud laboral",
+      "status": "En producción",
+      "explore": "Explorar",
+      "line": "Gestión de riesgo psicosocial pensada para NR-1.",
+      "mission": "Desplegando el futuro de la salud laboral.",
+      "title": "Desplegando el futuro",
+      "titleSecond": "de la salud laboral.",
+      "primary": "Abrir Dialogus",
+      "blurb": "Escucha estructurada, métodos de evaluación seleccionados con profesionales calificados, visibilidad del riesgo, planificación de acciones y evidencia para una gestión continua de NR-1.",
+      "features": [
+        {
+          "title": "Gestión continua de NR-1",
+          "body": "Dialogus ayuda a las organizaciones a integrar el riesgo psicosocial en un proceso documentado y continuo de riesgo ocupacional, alineado con NR-1."
+        },
+        {
+          "title": "Escucha estructurada",
+          "body": "Lis, el asistente conversacional de Dialogus, conduce diálogos individuales con confidencialidad y rigor metodológico."
+        },
+        {
+          "title": "Evaluación estructurada",
+          "body": "Métodos de evaluación estructurados, seleccionados con profesionales calificados de salud ocupacional, adaptados al contexto organizacional y al riesgo operativo."
+        },
+        {
+          "title": "Tableros ejecutivos",
+          "body": "Analítica agregada, criticidad del riesgo y seguimiento del avance, con acceso a nivel individual limitado según el modelo de confidencialidad configurado."
+        },
+        {
+          "title": "Planificación de acciones",
+          "body": "Planes de acción que generan evidencia documentada para respaldar la revisión del PGR, el seguimiento y la mejora continua."
+        },
+        {
+          "title": "Cuidado documentado",
+          "body": "El cuidado se vuelve creíble cuando el riesgo se escucha, se entiende, se actúa y se vuelve a revisar."
+        }
+      ],
+      "quote": {
+        "kicker": "Dialogus",
+        "title": "El cuidado se vuelve creíble cuando el riesgo se escucha, se entiende, se actúa y se vuelve a revisar.",
+        "body": "Gestión de riesgo psicosocial pensada para NR-1. Software y acompañamiento especializado trabajando juntos."
+      }
+    }
+  },
+  "news": {
+    "queravaga": {
+      "date": "20 ago. 2026",
+      "title": "Queravaga empieza a acortar el camino al trabajo",
+      "standfirst": "Un camino más corto del perfil a la entrevista — para quienes buscan trabajo y para equipos listos para contratar.",
+      "body": [
+        "Queravaga es UNFLD desplegando el futuro de la contratación: un perfil más claro para candidatos, una vía más rápida hacia conversaciones relevantes y menos fricción para equipos listos para contratar.",
+        "La promesa es simple: presentar la experiencia con claridad en minutos, sin burocracia ni rituales complejos de formato.",
+        "Lanzado en agosto de 2026 y ahora evolucionando con sus primeros candidatos y equipos de contratación en queravaga.com."
+      ]
+    },
+    "the-unfold": {
+      "date": "23 sep. 2025",
+      "title": "UNFLD, UNFOLDING THE FUTURE",
+      "standfirst": "UNFLD es la forma corta de UNFOLDING THE FUTURE. Convertimos lo que debería existir después en algo que las personas pueden usar ahora.",
+      "body": [
+        "UNFLD es la forma corta de UNFOLDING THE FUTURE — y eso es más que la razón social. Es el trabajo: encontrar el trabajo que importa y que debería ser más simple, construir el sistema y seguir mejorándolo en uso.",
+        "La experiencia de nuestro equipo abarca productos y proyectos entregados de forma directa, a través de empresas anteriores y junto a socios en agricultura, medios, industria y operaciones empresariales.",
+        "FCR despliega el futuro de la agronomía. SiteCreator pone a los pequeños negocios en línea. Doutor Fiscal simplifica las operaciones fiscales. Queravaga acorta el camino al trabajo. Dialogus hace visible y accionable el riesgo laboral. Mercados distintos; una misma convicción operativa."
+      ]
+    }
+  },
+  "work": {
+    "fields": {
+      "Entertainment": "Entretenimiento",
+      "Aviation": "Aviación",
+      "Environment": "Ambiente",
+      "Sport": "Deporte",
+      "Music": "Música",
+      "Energy": "Energía",
+      "Education": "Educación",
+      "Hiring": "Contratación",
+      "Finance": "Finanzas"
+    },
+    "forms": {
+      "Web experience": "Experiencia web",
+      "Corporate site": "Sitio corporativo",
+      "Interactive experience": "Experiencia interactiva",
+      "Mobile app": "App móvil",
+      "Campaign site": "Sitio de campaña",
+      "Web and mobile": "Web y móvil",
+      "Movement site": "Sitio de movimiento",
+      "University portal": "Portal universitario",
+      "Platform": "Plataforma",
+      "Operations platform": "Plataforma de operaciones"
+    },
+    "items": {
+      "netflix-tudum-2020": {
+        "title": "Almanaque Tudum",
+        "line": "Un almanaque digital de jerga, series y el sonido de un logo.",
+        "lede": "Netflix pidió una superficie que tratara Tudum como lenguaje — jerga de internet mezclada con las películas y series que la gente ya quería. Construimos un almanaque web: tipografía firme, humor preciso y un sistema por el que valía la pena deambular.",
+        "story": [
+          "Tudum es un sonido. El brief era convertirlo en un lugar.",
+          "El almanaque reunió la jerga popular y el catálogo en un solo objeto visual — gráfico, cómico y preciso. Algo que un fan pudiera recorrer, no solo escanear.",
+          "Construimos una experiencia que se sentía como la propia plataforma: densa, referencial y liviana de pies. El fandom, sostenido como lenguaje."
+        ],
+        "outcome": "Una superficie que los fans podían explorar. No una página de campaña. Un objeto."
+      },
+      "embraer": {
+        "title": "Portal corporativo",
+        "line": "Aeronaves y tecnología, mostradas para que el siguiente clic se sienta inevitable.",
+        "lede": "Un portal corporativo para una de las empresas aeroespaciales del mundo. Fotografía y cine en lugar de lenguaje de folleto. Trabajo serio, sostenido con ligereza.",
+        "story": [
+          "La aeroespacial es seria. El portal igual tenía que invitar al siguiente clic.",
+          "Construimos la superficie corporativa de Embraer alrededor de las aeronaves y las tecnologías detrás de ellas, usando fotografía y cine en lugar de copy de catálogo. La navegación como una ruta de vuelo: clara, quieta, exacta.",
+          "La industria pesada no necesita cromo pesado. El trabajo era hacer legible una empresa compleja sin achicarla."
+        ],
+        "outcome": "Una casa de aeronaves que se podía recorrer, no solo listar."
+      },
+      "o-boticario-planeta-de-plastico": {
+        "title": "Planeta de Plástico",
+        "line": "Una estadística por la que se podía caminar.",
+        "lede": "O Boticário necesitaba que el residuo plástico se sintiera, no solo se citara. Construimos una lectura interactiva de habitaciones familiares sepultadas en residuos — datos hechos espaciales. Al final, una calculadora hogareña. En el celular, la cámara entraba en la historia.",
+        "story": [
+          "Los números del residuo plástico se conocen. No mueven a las personas hasta que ocupan una habitación.",
+          "Construimos entornos 3D de la vida ordinaria, cubiertos. Una cocina, una calle, un planeta armado de fragmentos. Los datos se volvieron espacio. Al cierre de la experiencia, una calculadora del plástico anual de un hogar.",
+          "En el celular, la cámara del teléfono se volvió una segunda puerta hacia el mismo argumento. El brief no era decorar una causa. Era hacer innegable la escala."
+        ],
+        "outcome": "El residuo, hecho espacial. Una causa con una habitación en la que se podía estar."
+      },
+      "sportv-album-de-campeao": {
+        "title": "Álbum de Campeão",
+        "line": "Tokio 2020, sostenido en la mano.",
+        "lede": "Un álbum virtual de figuritas de atletas brasileños en los Juegos Olímpicos y Paralímpicos de Tokio. Coleccionar se volvió el evento. Un ranking en vivo de coleccionistas. Presencia diaria en Ohayo Tokyo.",
+        "story": [
+          "Los Juegos pedían una forma de sostenerlos cuando no se estaba en el estadio.",
+          "Con SporTV construimos Álbum de Campeão: un álbum virtual de figuritas que cubría la mayor parte de la delegación brasileña en los Juegos Olímpicos y Paralímpicos. Sobres, intercambios, páginas de atletas, un ranking en vivo de coleccionistas.",
+          "Coleccionar se volvió un evento propio. El álbum vivió en canales sociales y tuvo presencia diaria en Ohayo Tokyo, el programa hecho para seguir los Juegos. El deporte, como algo que se podía guardar."
+        ],
+        "outcome": "Un segundo estadio, en el bolsillo. Atletas como figuritas que la gente de verdad buscaba."
+      },
+      "spotify-retrospectiva": {
+        "title": "Retrospectiva",
+        "line": "Un año de escucha, hecho tangible.",
+        "lede": "Cuando llegó Spotify Wrapped 2021, los oyentes más fieles de tres artistas brasileños podían reclamar una remera del artista con el que habían convivido todo el año. Construimos la página que hizo que ese reclamo se sintiera personal.",
+        "story": [
+          "Wrapped es un espejo. Esto era un regalo detrás.",
+          "Los oyentes más fieles de Luísa Sonza, Juliette y Matuê fueron invitados a una página dedicada para reclamar una remera del artista con el que habían pasado el año. Construimos esa superficie: seguir los pasos, tomar el regalo, irse sin teatro.",
+          "La lealtad suele ser una métrica. Acá se volvió un objeto que se podía usar."
+        ],
+        "outcome": "Un reclamo que se sintió como reconocimiento, no como un formulario."
+      },
+      "netflix-tudum-2021": {
+        "title": "Almanaque Tudum",
+        "line": "El objeto impreso, abierto en la pantalla — y después ensanchado.",
+        "lede": "El segundo año llevó el almanaque físico a web y móvil, y después sumó un audiolibro, una batalla de fan clubs, remixes de bandas sonoras en cinco géneros y un camino hacia el evento global de Netflix.",
+        "story": [
+          "El almanaque había sido un objeto que la gente quería sostener. El trabajo era llevarlo a las pantallas sin aplanarlo.",
+          "Construimos la edición 2021 para web y móvil, y después la ensanchamos: un audiolibro para que más gente pudiera entrar; una batalla de fan clubs por la serie más querida; remixes de bandas sonoras icónicas en cinco géneros, llevados a desafíos sociales; un camino hacia el evento global de Netflix.",
+          "El chiste se mantuvo preciso. La jerga se mantuvo nativa. La superficie creció sin perder el tono que el primer año había ganado."
+        ],
+        "outcome": "Un segundo año que creció en alcance sin volverse ruidoso."
+      },
+      "omega-luz-livre": {
+        "title": "Luz Livre",
+        "line": "El derecho a elegir energía limpia, argumentado en público.",
+        "lede": "Un argumento público para abrir el mercado libre de energía a cada brasileño. Energía limpia, una factura más simple, el derecho a elegir. Software al servicio de una elección que debería existir.",
+        "story": [
+          "El mercado libre de energía seguía cerrado para la mayoría de los brasileños. El trabajo no era una página de producto. Era un movimiento.",
+          "Luz Livre sostuvo el caso para abrir ese mercado: electricidad limpia, accesible y más simple, elegida y no asignada. Construimos la superficie que llevó el argumento — clara para sumarse, exacta para confiar.",
+          "La política energética suele escribirse para especialistas. Esto tenía que escribirse para quienes pagan la factura."
+        ],
+        "outcome": "Un argumento público con una puerta. La elección, con un lugar donde pararse."
+      },
+      "pucpr-multiversidade": {
+        "title": "Multiversidade",
+        "line": "La decisión de estudiar en un lugar, con una puerta.",
+        "lede": "El vestibular de la universidad como portal: programas de grado, las carreras 4D y un camino a los resultados del examen. Una sola superficie para la decisión de estudiar ahí.",
+        "story": [
+          "Elegir una universidad es una secuencia de preguntas sin respuesta. El portal tenía que sostenerlas sin volverse un folleto.",
+          "Multiversidade reunió los programas de grado — incluidas las carreras 4D — y un camino a los resultados del vestibular en una sola superficie. Los futuros estudiantes podían ver la oferta y, más tarde, verse en ella.",
+          "El marketing educativo a menudo le habla al postulante. Esto tenía que hablar con ellos: un lugar al que se pudiera entrar de verdad."
+        ],
+        "outcome": "Un vestibular que se sintió como una invitación, no como un embudo."
+      },
+      "sportv-doe-gols": {
+        "title": "Doe Gols",
+        "line": "Cada gol se volvió tres pares de zapatillas.",
+        "lede": "Un hotsite para SporTV que convirtió cada gol de la Série A brasileña en tres pares de zapatillas, entregados a instituciones de todo Brasil — con Topper y Fundação Abrinq.",
+        "story": [
+          "Un campeonato produce goles. Este también produjo zapatillas.",
+          "Con SporTV, Topper y Fundação Abrinq, construimos un registro público para la Série A brasileña: cada gol convertido se volvió tres pares de zapatillas, entregados a instituciones de todo el país. El sitio sostuvo el conteo a la vista — goles de un lado, pares del otro.",
+          "El deporte como mecanismo, no como eslogan. La emoción de la fecha, convertida sin diluirse."
+        ],
+        "outcome": "Un marcador que contaba regalos con la misma claridad con que contaba goles."
+      },
+      "matchone": {
+        "title": "MatchOne",
+        "line": "Roles y personas, emparejados sin una fábrica de formularios.",
+        "lede": "Una plataforma de contratación que conecta candidatos y empresas sin convertir a ninguno de los dos lados en papeleo. Postularse. Evaluar. Decidir.",
+        "story": [
+          "La contratación todavía pide demasiado a ambos lados antes de una conversación real.",
+          "MatchOne es una plataforma para roles abiertos y las personas que podrían ocuparlos. Los candidatos se postulan sin un laberinto. Las empresas evalúan sin ahogarse en archivos. El matching hace el trabajo silencioso en el medio.",
+          "La misma convicción vive después en Queravaga: acortar el camino del perfil a la entrevista. Acá se construyó como un marketplace — claro, rápido, respetuoso del tiempo."
+        ],
+        "outcome": "Un camino más corto de la vacante a la decisión."
+      },
+      "neuronos": {
+        "title": "NeuronOS",
+        "line": "Las finanzas de la empresa como una estructura, no como un montón de archivos.",
+        "lede": "Una plataforma de control financiero construida con FLAGCX: plan de cuentas, registros de empresas, pagos, usuarios. Estructura para el dinero tal como se mueve.",
+        "story": [
+          "Las finanzas de una empresa son una estructura, o son un desorden.",
+          "Con FLAGCX construimos NeuronOS — un plano de control para cómo se registra y se libera el dinero. Plan de cuentas. Altas de empresas. Usuarios y permisos. Pagos, visibles.",
+          "La interfaz es quieta a propósito. Las finanzas no necesitan teatro. Necesitan un libro que la gente pueda confiar, y un camino del registro al pago que no pierda el hilo."
+        ],
+        "outcome": "El control, hecho visible. La precisión como hábito operativo."
+      }
+    }
+  },
+  "solutions": {
+    "agronomy": {
+      "name": "Agronomía",
+      "audience": "Equipos de ingeniería agronómica, consultores agrícolas y responsables de operaciones en el campo.",
+      "line": "Inteligencia de campo para equipos de agronomía: capturar evidencia sin conexión y convertir datos de campo en recomendaciones.",
+      "body": "Trabajan desde el contexto de la propiedad y el cultivo, pasando por lotes, recolecciones, datos de suelo, recomendaciones, aprobaciones e informes listos para el productor — sin romperse cuando desaparece la conectividad en el campo. Impulsado por FCR, construido y evolucionado con Timac Agro.",
+      "capabilities": [
+        "Recolección sin conexión en el campo, con sincronización en segundo plano",
+        "Flujos de gestión trazables que conectan técnicos con coordinadores",
+        "Motor de recomendación agronómica que genera informes listos para el productor"
+      ]
+    },
+    "hiring": {
+      "name": "Contratación",
+      "audience": "Candidatos que buscan una colocación directa y equipos de contratación que necesitan candidatos verificados.",
+      "line": "Un camino más corto del perfil a la entrevista: perfiles claros, conversaciones más rápidas, menos fricción.",
+      "body": "Queravaga ayuda a los candidatos a presentar su experiencia con claridad en minutos y a los equipos de contratación a encontrar candidatos listos para conversaciones reales — sin convertir a ninguno de los dos lados en una máquina de llenar formularios.",
+      "capabilities": [
+        "Perfiles claros de candidatos, generados en minutos, sin un formato complejo",
+        "Canales de comunicación directa entre responsables de contratación y postulantes",
+        "Menos fricción administrativa para contrataciones operativas de alta rotación"
+      ]
+    },
+    "small-business": {
+      "name": "Pequeños negocios",
+      "audience": "MEI (microempreendedores individuais), microempresas y dueños de pymes en Brasil.",
+      "line": "Presencia digital y rutinas fiscales gestionadas por WhatsApp.",
+      "body": "Los pequeños negocios en Brasil operan dentro de WhatsApp. SiteCreator entrega un sitio web aprobado y verificado, con hosting y SSL, en minutos a partir de un CNPJ. Doutor Fiscal agiliza la emisión de facturas, el seguimiento de Simples Nacional y el cumplimiento fiscal rutinario, sin interrumpir las ventas del día.",
+      "capabilities": [
+        "Presencia web inmediata con SiteCreator y soporte de dominio propio",
+        "Emisión de facturas guiada y organización fiscal con Doutor Fiscal",
+        "Flujos conversacionales que evitan la sobrecarga de tableros complejos"
+      ]
+    },
+    "workplace-health": {
+      "name": "Salud laboral",
+      "audience": "Directores de RR. HH., líderes de SESMT, coordinadores de salud ocupacional y responsables de cumplimiento legal.",
+      "line": "Gestión de riesgo psicosocial pensada para NR-1.",
+      "body": "Dialogus ayuda a las organizaciones a integrar el riesgo psicosocial en un proceso documentado y continuo de riesgo ocupacional, alineado con NR-1. Combina escucha conversacional confidencial a través de Lis, evaluaciones estructuradas seleccionadas con profesionales calificados de salud ocupacional, tableros de riesgo agregados y planes de acción que generan evidencia documentada.",
+      "capabilities": [
+        "Alineación continua con NR-1 y evidencia documentada para el PGR",
+        "Escucha conversacional confidencial y mapeo estructurado del riesgo",
+        "Tableros de gestión accionables con control de acceso por rol"
+      ]
+    },
+    "custom-systems": {
+      "name": "Sistemas a medida",
+      "audience": "Líderes de operaciones, jefes de ingeniería empresarial y ejecutivos ante cuellos de botella operativos específicos.",
+      "line": "Diseñamos y entregamos sistemas a medida junto a organizaciones cuyos problemas no entran en un producto genérico.",
+      "body": "Cuando el software genérico no alcanza, UNFLD se incorpora junto a su equipo operativo. Descubrimos las restricciones reales del flujo de trabajo, diseñamos una arquitectura web, móvil o conversacional a medida, desplegamos en iteraciones rápidas y verificables, y operamos o ejecutamos una entrega estructurada de código e infraestructura.",
+      "capabilities": [
+        "Descubrimiento de flujos de campo y operación por equipos senior de ingeniería",
+        "Planos de datos dedicados, hosting regional en Brasil y SLAs a medida",
+        "Entrega completa de código fuente e infraestructura como código, u operación continua"
+      ]
+    },
+    "government": {
+      "name": "Misiones públicas",
+      "audience": "Líderes de organismos públicos, secretarías municipales y departamentos estatales.",
+      "line": "Sistemas digitales a medida para operaciones de servicio público — con alcance, hosting, controles de acceso y requisitos de auditoría definidos en el contrato.",
+      "body": "Entregamos plataformas digitales seguras y auditables, adaptadas a flujos del sector público, operaciones municipales y monitoreo regulatorio. La infraestructura, la residencia de datos en Brasil y los controles de acceso quedan gobernados de forma explícita por el contrato.",
+      "capabilities": [
+        "Infraestructura definida por contrato y residencia de datos en Brasil",
+        "Registro de auditoría completo y controles administrativos por rol",
+        "Documentación estructurada y protocolos verificados de transferencia de conocimiento"
+      ]
+    },
+    "operations": {
+      "name": "Operaciones",
+      "audience": "Gerentes de cadena de suministro, directores de servicio de campo y ejecutivos de operaciones.",
+      "line": "Pongan el software donde el trabajo ocurre de verdad — en el campo, en la conversación y en las decisiones que la gestión necesita tomar después.",
+      "body": "La eficiencia operativa aparece cuando la tecnología quita fricción en el borde. Desde inteligencia agronómica sin conexión hasta rutinas fiscales conversacionales y sistemas de seguimiento a medida, UNFLD construye sistemas que reflejan las restricciones operativas reales.",
+      "capabilities": [
+        "Interfaces móviles y conversacionales resilientes, con prioridad offline",
+        "Sincronización de estado en tiempo real y alertas de excepción",
+        "Datos de decisión trazables que conectan acciones de campo con reportes ejecutivos"
+      ]
+    },
+    "legal": {
+      "name": "Operaciones fiscales y laborales",
+      "audience": "Controllers corporativos, oficiales de cumplimiento, líderes de RR. HH. y equipos de operaciones legales.",
+      "line": "Software para rutinas documentadas de fiscalidad y riesgo laboral en Brasil.",
+      "body": "Los entornos regulatorios de Brasil exigen documentación rigurosa. UNFLD ofrece herramientas de software especializadas — como Doutor Fiscal para la emisión de facturas y Dialogus para la gestión de riesgo psicosocial según NR-1 — que generan registros auditables y agilizan el cumplimiento rutinario, sin sustituir el asesoramiento legal.",
+      "capabilities": [
+        "Rutinas fiscales documentadas y validación automatizada de borradores",
+        "Integración continua del riesgo ocupacional NR-1 y generación de evidencia",
+        "Registros operativos documentados, pensados para respaldar revisión y auditoría"
+      ]
+    },
+    "business": {
+      "name": "Negocios",
+      "audience": "Dueños de pequeños negocios y operadores empresariales.",
+      "line": "Usen un producto ya construido para el problema — o construyan el sistema que su operación necesita de forma única.",
+      "body": "SiteCreator y Doutor Fiscal ofrecen presencia y flujos fiscales con WhatsApp primero para MEI y pequeños negocios. Sistemas a medida cuando su operación requiere flujos propios.",
+      "capabilities": [
+        "Flujos con WhatsApp primero",
+        "Capacidades específicas de cada producto",
+        "Opciones de software a medida"
+      ]
+    },
+    "support": {
+      "name": "Operaciones",
+      "audience": "Equipos de operaciones y líderes de campo.",
+      "line": "Pongan el software donde el trabajo ocurre de verdad — en el campo, en la conversación y en las decisiones que la gestión necesita tomar después.",
+      "body": "Pongan el software donde el trabajo ocurre de verdad — en el campo, en la conversación y en las decisiones que la gestión necesita tomar después.",
+      "capabilities": [
+        "Flujos de campo con prioridad offline",
+        "Canales de comunicación en tiempo real",
+        "Datos para decisiones de gestión"
+      ]
+    },
+    "security": {
+      "name": "Seguridad y controles",
+      "audience": "Oficiales de seguridad y arquitectos empresariales.",
+      "line": "Los requisitos de seguridad se definen según el producto, los datos, los usuarios y el despliegue — no se copian de una lista genérica.",
+      "body": "Los requisitos de seguridad se definen según el producto, los datos, los usuarios y el despliegue — no se copian de una lista genérica. Pidan los controles y la evidencia disponibles para su alcance.",
+      "capabilities": [
+        "Controles específicos de cada producto",
+        "Opciones de aislamiento de datos",
+        "Límites claros de subprocesadores"
+      ]
+    }
+  },
+  "plans": {
+    "SiteCreator": {
+      "price": "Gratis",
+      "period": " · R$49 / dominio",
+      "blurb": "Su negocio en línea en minutos, a través de WhatsApp. Para MEI y pequeños negocios.",
+      "cta": "Abrir SiteCreator",
+      "features": [
+        "WhatsApp como punto de entrada",
+        "Alta a partir del CNPJ",
+        "Gratis *.live.sitecreator.com.br",
+        "Dominio propio desde R$49 / mes"
+      ]
+    },
+    "Doutor Fiscal": {
+      "price": "R$59",
+      "period": "/mes",
+      "blurb": "Lista de espera abierta. Rutinas fiscales gestionadas por WhatsApp, para MEI y pequeños negocios.",
+      "cta": "Abrir Doutor Fiscal",
+      "features": [
+        "Emisión rutinaria en WhatsApp",
+        "Bandeja fiscal dedicada",
+        "MEI R$59 · Micro R$159 · Pequeña R$349",
+        "Cancelar en cualquier momento en WhatsApp"
+      ]
+    },
+    "Dialogus": {
+      "price": "Planes",
+      "period": "",
+      "blurb": "Gestión de riesgo psicosocial pensada para NR-1. Planes Essencial, Avançar e Integral.",
+      "cta": "Abrir Dialogus",
+      "features": [
+        "Escucha estructurada con Lis",
+        "Métodos de evaluación validados",
+        "Tableros ejecutivos y planes de acción",
+        "Documentación continua de NR-1"
+      ]
+    },
+    "Queravaga": {
+      "price": "Acceso anticipado",
+      "period": "",
+      "blurb": "Un camino más corto del perfil a la entrevista. Para candidatos y equipos de contratación.",
+      "cta": "Abrir Queravaga",
+      "features": [
+        "Perfil claro en minutos",
+        "Caminos directos de los perfiles a conversaciones de contratación",
+        "Portales para candidatos y equipos de contratación",
+        "Registro gratuito de acceso anticipado"
+      ]
+    },
+    "Custom": {
+      "price": "Hablar con UNFLD",
+      "period": "",
+      "blurb": "Sistemas a medida construidos junto a su equipo. El alcance se define en conversación.",
+      "cta": "Hablar con UNFLD",
+      "features": [
+        "Sistemas de software a medida",
+        "Despliegues de agronomía FCR",
+        "Configuraciones enterprise",
+        "Alcance y entrega dedicados"
+      ]
+    }
+  },
+  "legal": {
+    "updated": "22 de agosto de 2026",
+    "terms": {
+      "metaTitle": "Términos de servicio",
+      "metaDescription": "Términos que rigen el sitio de UNFLD y los servicios que los incorporan de forma expresa.",
+      "title": "Términos de servicio",
+      "intro": "Estos Términos rigen el sitio de UNFLD y cualquier servicio de UNFLD que los enlace o los incorpore de forma expresa. Pueden aplicar términos adicionales de producto, orden de compra, socio o enterprise. Al acceder o usar nuestros sitios o servicios, aceptan estos Términos.",
+      "sections": [
+        {
+          "heading": "Quiénes somos",
+          "body": "Los Servicios son prestados por {{legal}} (“UNFLD”, “nosotros”), una sociedad brasileña de responsabilidad limitada ({{nature}}, CNPJ {{cnpj}}), con nombre comercial UNFLD, abierta {{founded}}. Si celebran estos Términos en nombre de una organización, declaran que tienen autoridad para obligarla."
+        },
+        {
+          "heading": "Cuentas",
+          "body": "Son responsables de las credenciales que se les emitan y de la actividad bajo su cuenta. Notifíquennos si creen que una cuenta fue comprometida. Podemos suspender cuentas que violen estos Términos o la Política de uso aceptable."
+        },
+        {
+          "heading": "Los Servicios",
+          "body": "Les otorgamos un derecho limitado, no exclusivo e intransferible de usar los Servicios de acuerdo con estos Términos y su plan. Las funciones, los límites y la disponibilidad pueden cambiar. Las funciones en vista previa y de acceso anticipado se ofrecen tal cual y pueden actualizarse o retirarse."
+        },
+        {
+          "heading": "Su contenido",
+          "body": "Conservan todos los derechos sobre el contenido que envían. UNFLD trata el contenido del cliente solo según se describe en los términos de servicio aplicables, el aviso de privacidad, los términos de tratamiento de datos y la orden de compra."
+        },
+        {
+          "heading": "Uso aceptable",
+          "body": "Deben seguir la Política de uso aceptable. No pueden sondear, aplicar ingeniería inversa ni sobrecargar los Servicios, salvo lo permitido en una evaluación de seguridad por escrito."
+        },
+        {
+          "heading": "Honorarios",
+          "body": "Los planes pagos se facturan por adelantado o por uso, según se indique en el checkout o en una orden de compra. Los honorarios no son reembolsables salvo cuando la ley lo exija. Podemos cambiar precios con aviso para el siguiente período."
+        },
+        {
+          "heading": "Exención de responsabilidad",
+          "body": "Los Servicios se ofrecen “tal cual”. Renunciamos a las garantías de comerciabilidad, idoneidad para un fin particular y no infracción, en la máxima medida permitida por la ley."
+        },
+        {
+          "heading": "Limitación de responsabilidad",
+          "body": "En la máxima medida permitida por la ley, la responsabilidad agregada de UNFLD bajo estos Términos se limita a los montos que nos hayan pagado en los doce meses anteriores al reclamo. No somos responsables por daños indirectos, incidentales o consecuentes."
+        },
+        {
+          "heading": "Terminación",
+          "body": "Pueden dejar de usar los Servicios en cualquier momento. Podemos suspender o terminar por incumplimiento material. Tras la terminación, su derecho a usar los Servicios cesa. Las disposiciones que deban sobrevivir, sobreviven."
+        },
+        {
+          "heading": "Ley aplicable",
+          "body": "Estos Términos se rigen por las leyes de Brasil, sin consideración a las normas de conflicto de leyes. Los tribunales de São Paulo, SP tienen jurisdicción exclusiva, salvo cuando la ley de protección al consumidor disponga otra cosa."
+        },
+        {
+          "heading": "Contacto",
+          "body": "Consultas: {{legalEmail}}. {{contact}}"
+        }
+      ]
+    },
+    "privacy": {
+      "metaTitle": "Política de privacidad",
+      "metaDescription": "Cómo UNFOLDING THE FUTURE LTDA trata datos personales para el sitio de UNFLD y los productos aplicables.",
+      "title": "Política de privacidad",
+      "intro": "Este aviso describe el tratamiento realizado por {{legal}} (“UNFLD”) para el sitio corporativo de UNFLD y cualquier producto que incorpore este aviso de forma expresa. Aplican avisos específicos de producto donde se indique.",
+      "sections": [
+        {
+          "heading": "Información que recolectamos",
+          "body": "Recolectamos información de contacto (nombre, correo laboral, empresa), registros de comunicación, logs técnicos (dirección IP, tipo de navegador, metadatos del dispositivo) y cualquier dato que envíen al contactarnos o al usar nuestras superficies web. El procesamiento de pagos de servicios pagos lo realizan socios de pago acreditados."
+        },
+        {
+          "heading": "Cómo usamos la información",
+          "body": "Para prestar, mantener y asegurar nuestros sitios y servicios; para responder consultas; para cumplir obligaciones contractuales; y para cumplir requisitos legales bajo la ley brasileña (incluida la Lei Geral de Proteção de Dados - LGPD)."
+        },
+        {
+          "heading": "Bases legales del tratamiento",
+          "body": "Bajo LGPD y las leyes de privacidad aplicables, tratamos datos personales con base en la ejecución de un contrato, intereses legítimos, cumplimiento de obligaciones legales y consentimiento cuando se solicita. Pueden retirar el consentimiento en cualquier momento."
+        },
+        {
+          "heading": "Compartir y subprocesadores",
+          "body": "Compartimos datos con proveedores de servicios evaluados que asisten en hosting, comunicación, envío de correo e infraestructura, bajo acuerdos de confidencialidad y protección de datos. No vendemos datos personales."
+        },
+        {
+          "heading": "Transferencias internacionales de datos",
+          "body": "Los datos personales pueden tratarse en Brasil y en países donde operan proveedores de servicios aprobados, sujetos a las salvaguardas exigidas por la ley aplicable, incluidas cláusulas contractuales de protección de datos."
+        },
+        {
+          "heading": "Retención",
+          "body": "Retenemos datos personales solo durante el tiempo necesario para cumplir los fines para los que se recolectaron, satisfacer obligaciones legales o de auditoría y resolver disputas."
+        },
+        {
+          "heading": "Sus derechos sobre los datos",
+          "body": "Tienen derecho a confirmar la existencia del tratamiento, acceder a sus datos, solicitar la corrección de datos incompletos o inexactos, solicitar la anonimización o eliminación cuando sea legalmente aplicable, y revocar el consentimiento. Contacten a {{privacy}} o a nuestro Oficial de Protección de Datos en {{dpo}}."
+        },
+        {
+          "heading": "Contacto y DPO",
+          "body": "{{contact}} Consultas de privacidad: {{privacy}}. Oficial de Protección de Datos: {{dpo}}."
+        }
+      ]
+    },
+    "aup": {
+      "metaTitle": "Política de uso aceptable",
+      "metaDescription": "Qué está permitido en los servicios de UNFLD y en las superficies del sitio.",
+      "title": "Política de uso aceptable",
+      "intro": "Esta Política de uso aceptable (“AUP”) aplica a cada servicio que incorpore esta política de forma expresa, junto con cualquier restricción específica de producto.",
+      "sections": [
+        {
+          "heading": "Actividades prohibidas",
+          "body": "No pueden usar nuestros servicios para: violar leyes locales, nacionales o internacionales aplicables; generar, distribuir o facilitar malware o exploits de seguridad; realizar escaneos de vulnerabilidad no autorizados, pruebas de penetración o intentos de denegación de servicio; suplantar a cualquier persona o entidad; infringir propiedad intelectual o derechos de propiedad; o usar un servicio para extraer, reproducir o explotar contenido o funcionalidad protegidos del producto más allá de los derechos otorgados por el acuerdo aplicable."
+        },
+        {
+          "heading": "Flujos regulados y cumplimiento de dominio",
+          "body": "Si despliegan nuestros productos o sistemas a medida en dominios regulados — como salud laboral (NR-1), documentación fiscal, agricultura o flujos del sector público — siguen siendo responsables del cumplimiento operativo con los estándares regulatorios pertinentes. El software de UNFLD ofrece herramientas y flujos, pero no sustituye el asesoramiento legal, médico o contable formal con licencia."
+        },
+        {
+          "heading": "Investigación y aplicación",
+          "body": "Nos reservamos el derecho de investigar presuntas violaciones de esta política, suspender o terminar el acceso por incumplimiento y cooperar con las autoridades cuando corresponda."
+        },
+        {
+          "heading": "Contacto",
+          "body": "Reporten presuntas violaciones o consultas: {{aup}}. {{contact}}"
+        }
+      ]
+    },
+    "enterprise": {
+      "metaTitle": "Términos Enterprise",
+      "metaDescription": "Términos para servicios bajo una orden de compra enterprise emitida por UNFOLDING THE FUTURE LTDA.",
+      "title": "Términos Enterprise",
+      "intro": "Estos Términos Enterprise aplican cuando compran servicios bajo una orden de compra enterprise emitida por UNFOLDING THE FUTURE LTDA. Complementan los Términos de servicio. Si hay conflicto, prevalece la orden de compra, luego estos Términos Enterprise y después los Términos de servicio.",
+      "sections": [
+        {
+          "heading": "Órdenes de compra",
+          "body": "Cada orden de compra indica productos, alcance, plazo, honorarios, residencia y cualquier capacidad dedicada o compromiso de nivel de servicio. Los servicios empiezan en la fecha de vigencia de la orden de compra, salvo que se indique otra cosa."
+        },
+        {
+          "heading": "Tratamiento de datos",
+          "body": "UNFLD trata los datos del cliente como encargado del tratamiento para prestar los Servicios acordados. Un Anexo de Tratamiento de Datos (DPA) alineado con LGPD está disponible y se incorpora cuando se firma. Las restricciones de hosting regional aplican según se defina en la orden de compra."
+        },
+        {
+          "heading": "Seguridad",
+          "body": "Mantenemos salvaguardas administrativas, técnicas y físicas adecuadas al alcance del servicio, incluido cifrado en tránsito y en reposo, control de acceso y registro de auditoría estructurado. La documentación de seguridad vigente y cualquier atestación independiente aplicable se identifican durante la revisión y pueden entregarse bajo NDA."
+        },
+        {
+          "heading": "Contenido del cliente y privacidad",
+          "body": "Los datos del cliente se tratan únicamente para cumplir los servicios especificados en el acuerdo. No usamos datos del cliente para entrenar modelos externos o generales sin una base contractual explícita."
+        },
+        {
+          "heading": "Soporte y SLA",
+          "body": "Los contratos enterprise pueden incluir contactos técnicos designados, onboarding estructurado y ventanas de respuesta por nivel de severidad durante el horario hábil de Brasil, según se especifique en la orden de compra aplicable."
+        },
+        {
+          "heading": "Indemnidad",
+          "body": "Los defenderemos frente a reclamos de terceros que sostengan que los Servicios, tal como los prestamos, infringen derechos de propiedad intelectual, y pagaremos los daños finalmente concedidos, siempre que nos notifiquen con prontitud y nos otorguen el control de la defensa."
+        },
+        {
+          "heading": "Publicidad",
+          "body": "No usaremos su nombre ni sus marcas en listas de clientes ni en materiales de marketing sin permiso previo por escrito, salvo cuando la ley lo exija."
+        },
+        {
+          "heading": "Contacto",
+          "body": "Consultas enterprise: {{legalEmail}}. {{contact}}"
+        }
+      ]
+    },
+    "cookies": {
+      "metaTitle": "Política de cookies",
+      "metaDescription": "Cookies y tecnologías similares usadas en unfld.com.br y en los dominios de productos de UNFLD aplicables.",
+      "title": "Política de cookies",
+      "intro": "UNFLD usa cookies y tecnologías similares en unfld.com.br y en los dominios de producto que enlazan a esta política de forma expresa. Esta política explica qué hacen y cómo pueden gestionar sus preferencias.",
+      "sections": [
+        {
+          "heading": "Cookies esenciales",
+          "body": "Las cookies esenciales son necesarias para la funcionalidad principal del sitio, la seguridad, la gestión de sesión y el recuerdo de sus opciones de privacidad. El sitio no puede funcionar de forma adecuada sin estas cookies técnicas."
+        },
+        {
+          "heading": "Cookies de analítica",
+          "body": "Las cookies de analítica nos ayudan a entender cómo los visitantes interactúan con nuestras páginas, al recolectar telemetría agregada y no identificable de forma personal. Estas cookies son opcionales y solo se establecen si se aceptan."
+        },
+        {
+          "heading": "Publicidad y rastreadores de terceros",
+          "body": "No desplegamos cookies de rastreo publicitario de terceros en el sitio corporativo de UNFLD."
+        },
+        {
+          "heading": "Gestión de cookies",
+          "body": "Pueden controlar y configurar las preferencias de cookies a través de la configuración del navegador en cualquier momento. Desactivar las cookies esenciales puede afectar la navegación y la funcionalidad del sitio."
+        },
+        {
+          "heading": "Inventario de cookies",
+          "body": "El inventario actual de cookies se genera a partir del sitio de producción y se enumera en esta página, e incluye propósito, proveedor, categoría y período de retención."
+        },
+        {
+          "heading": "Contacto",
+          "body": "Consultas sobre nuestras prácticas de cookies: {{privacy}}. {{contact}}"
+        }
+      ]
+    },
+    "brand": {
+      "metaTitle": "Guía de marca",
+      "metaDescription": "Cómo nombrar, escribir y representar visualmente a UNFLD y su marca de pliegue.",
+      "kicker": "Marca",
+      "title": "Guía de marca UNFLD",
+      "intro": "UNFLD significa UNFOLDING THE FUTURE: la convicción de que el progreso que importa se construye al convertir el trabajo difícil en sistemas que las personas pueden usar. La marca debería sentirse precisa, calma, práctica y en movimiento. Usen estas pautas al referirse a UNFLD, a nuestros productos o a encargos con socios.",
+      "sections": [
+        {
+          "heading": "Nombre e identidad legal",
+          "body": "UNFLD se escribe en cinco letras mayúsculas. Se pronuncia “unfold.” No escriban Unfld, Unfold ni UNFOLD en producto o prensa, salvo al explicar la pronunciación. En contratos, acuerdos formales y facturas, usen la razón social completa UNFOLDING THE FUTURE LTDA (CNPJ {{cnpj}}). El nombre comercial y la razón social no son intercambiables en documentos legales formales."
+        },
+        {
+          "heading": "Voz y comunicación",
+          "body": "Escriban con verbos concretos, prueba específica y oraciones cortas. Prefieran lo que el producto cambia a lo que la empresa dice ser. Eviten futurismo prestado, superlativos sin explicación, agresividad teatral y afirmaciones que el producto no pueda evidenciar."
+        },
+        {
+          "heading": "La marca de pliegue",
+          "body": "La marca de pliegue son tres polígonos que sugieren un plano desplegándose. Úsenla con el wordmark, o sola cuando el nombre de la marca ya está establecido en la superficie. Espacio libre: el ancho de un ala del pliegue en todos los lados. No la roten, recoloreen, distorsionen ni le agreguen sombras decorativas."
+        },
+        {
+          "heading": "Sistema de color",
+          "body": "Campo primario: negro puro (#000000). Tipografía primaria: off-white (#F5F5F5). Tipografía atenuada: gris neutro (#8A8A8A). El acento de acción sigue siendo blanco nítido sobre negro, o negro sobre blanco: botones, la marca fold y los rellenos se quedan ahí. Los kickers de sección usan un latón discreto (#E3B26A), el mismo tono que las strings en el código. Úsenlo solo en esas etiquetas — kickers de sección en mayúsculas, kickers de título de página y la línea en sentence case “Para desarrolladores”. No lo pongan en botones, en la marca, en pastillas de estado, reglas o rellenos. No lo sustituyan por un oro más vivo. El estado operativo usa un punto verde oscuro pequeño (#187533) junto a “Todos los sistemas operativos.” en la barra jurídica del pie y en la página de estado del servicio. No lo hagan pulsar, y no usen ese verde en otro lugar del chrome. El verde más claro de las ventanas de código se queda solo en las ventanas de código. Sin púrpura, azul ni manchas de degradé en el chrome."
+        },
+        {
+          "heading": "Tipografía",
+          "body": "Inter Tight para títulos de display y elementos de interfaz. IBM Plex Mono para código, coordenadas, marcas de tiempo y metadatos técnicos. Los titulares son compactos, con tracking levemente negativo, nunca en mayúsculas para oraciones largas. El wordmark mismo va con tracking abierto."
+        },
+        {
+          "heading": "Restricciones",
+          "body": "No coloquen la marca sobre fotografías recargadas sin un enmascarado de degradé adecuado. No la bloqueen con logos de terceros sin permiso. No imiten la identidad visual, la arquitectura de información o la voz de otra empresa. La inspiración debe transformarse en un sistema reconociblemente nuestro."
+        },
+        {
+          "heading": "Consultas y aprobaciones",
+          "body": "Para pedidos de assets de marca o consultas de aprobación: {{brand}}."
+        }
+      ]
+    }
+  },
+  "compliance": {
+    "items": {
+      "pssi-alignment": {
+        "category": "General y PSSI",
+        "question": "¿Tienen una PSSI validada y alineada con ISO 27001/27002?",
+        "answer": "Sí. Mantenemos una Política de Seguridad de la Información (PSSI) robusta, validada de forma formal y impulsada por la dirección. Está alineada con los requisitos de las partes interesadas y calibrada contra los estándares ISO 27001 e ISO 27002, con aplicación activa en todas las operaciones de UNFLD."
+      },
+      "security-risk-reviews": {
+        "category": "General y PSSI",
+        "question": "¿Mapean y revisan los riesgos de seguridad con regularidad? ¿Con qué frecuencia?",
+        "answer": "Sí, mapeamos y reevaluamos con regularidad los riesgos de seguridad informática mediante un proceso formalizado de revisión. Realizamos evaluaciones integrales de riesgo al menos de forma trimestral, con monitoreo continuo en el intervalo. Las estaciones de trabajo usan macOS con cifrado de disco (FileVault) y protección de endpoint."
+      },
+      "isms-evaluation": {
+        "category": "General y PSSI",
+        "question": "¿Evalúan con regularidad el desempeño y la eficacia del ISMS?",
+        "answer": "Realizamos revisiones ad hoc y evaluaciones basadas en riesgo cada vez que ocurren cambios críticos de arquitectura o aparecen nuevos vectores de amenaza, combinando monitoreo continuo con ciclos periódicos de revisión alineados con las expectativas de las partes interesadas."
+      },
+      "intrusion-tests-vulnerability-scans": {
+        "category": "General y PSSI",
+        "question": "¿Hacen pruebas de intrusión y escaneos de vulnerabilidad? ¿Corrigen dentro de 1 año?",
+        "answer": "Sí. Realizamos pruebas de intrusión y escaneo de vulnerabilidades con una cadencia regular, en alianza con especialistas de la industria y con insights automatizados de seguridad. Las remediaciones se priorizan por severidad, se resuelven en general en días o semanas y bien dentro de los acuerdos de nivel de servicio habituales."
+      },
+      "pssi-internal-audits": {
+        "category": "General y PSSI",
+        "question": "¿Realizan auditorías internas regulares de cumplimiento de la PSSI?",
+        "answer": "Realizamos evaluaciones puntuales de cumplimiento y aplicamos controles de seguridad reforzados durante el onboarding, los releases clave y los encargos de alto riesgo, estableciendo rastros de auditoría y puntos de verificación."
+      },
+      "non-conformity-improvement": {
+        "category": "General y PSSI",
+        "question": "¿Hay un enfoque de mejora ante no conformidades?",
+        "answer": "Sí. Mantenemos un mecanismo de remediación receptivo cada vez que se identifican no conformidades o hallazgos, con seguimiento sistemático e integración de correcciones técnicas en los flujos de desarrollo."
+      },
+      "certifications-iso-soc2": {
+        "category": "General y PSSI",
+        "question": "¿Cuentan con ISO 27001, SOC2 type 2 u otras certificaciones similares?",
+        "answer": "UNFLD opera como una organización austera y alinea sus controles y procesos internos de seguridad de forma directa con los criterios ISO 27001 y SOC 2 Type II. Nuestro proveedor central de hosting en la nube (AWS) sostiene certificaciones ISO 27001, SOC 1/2/3 y cumplimiento PCI DSS."
+      },
+      "software-component-inventory": {
+        "category": "General y PSSI",
+        "question": "¿Mantienen un inventario de software y componentes (p. ej. bibliotecas)?",
+        "answer": "Sí. Mantenemos un inventario actualizado de todo el software y las dependencias de terceros usadas en nuestra infraestructura. Aplicamos escaneo automatizado de dependencias (p. ej. GitHub Dependabot y secret scanning), junto con revisiones de debida diligencia antes de adoptar servicios externos."
+      },
+      "security-awareness-training": {
+        "category": "Conciencia y capacitación de usuarios",
+        "question": "¿Tienen un proceso de conciencia de seguridad informática?",
+        "answer": "Sí. Dictamos capacitación obligatoria de seguridad que cubre detección de phishing, higiene de credenciales, prácticas de código seguro y cumplimiento de privacidad (GDPR/LGPD). La capacitación se adapta a roles de ingeniería, operaciones y dirección."
+      },
+      "least-privilege-duties": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Los perfiles de autorización siguen privilegio mínimo y separación de funciones?",
+        "answer": "Sí. Los perfiles de autorización se atienen de forma estricta al principio de privilegio mínimo y a la separación de funciones. Los derechos de acceso se provisionan según la función del puesto para impedir el acceso no autorizado y minimizar la amenaza interna."
+      },
+      "identity-lifecycle-procedure": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Hay un procedimiento para crear, modificar y eliminar identificadores? Descríbanlo.",
+        "answer": "Seguimos un procedimiento documentado de ciclo de vida de identidad. La creación de cuentas, las modificaciones de rol y el desaprovisionamiento al egreso se registran, se aprueban por responsables designados y se ejecutan con prontitud ante cambios organizativos o de proyecto."
+      },
+      "mfa-enforcement": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Se aplica autenticación multifactor para administradores y usuarios?",
+        "answer": "Sí. La autenticación multifactor (MFA) se exige de forma estricta para todo acceso administrativo y de desarrollo en consolas de producción, repositorios de código, proveedores de nube y herramientas corporativas, usando TOTP o llaves de seguridad de hardware."
+      },
+      "cryptographic-standards": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Autenticación criptográfica fuerte alineada con RGS o CNIL?",
+        "answer": "Sí. Exigimos estándares criptográficos modernos, incluido AES-256 para datos en reposo, TLS 1.3/1.2 para seguridad de transporte y algoritmos de hashing resilientes (como Argon2/bcrypt) para el almacenamiento de autenticación, adhiriéndonos a estándares de seguridad establecidos."
+      },
+      "password-policy": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Política de contraseñas fuertes? Descríbanla para usuarios y administradores.",
+        "answer": "Nuestra política de contraseñas exige longitud mínima (12+ caracteres), altos requisitos de complejidad y la prohibición de credenciales reutilizadas o comprometidas. Las cuentas de privilegio elevado requieren un segundo factor obligatorio de hardware o TOTP."
+      },
+      "password-rotation": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Exigen que el usuario cambie la contraseña con regularidad?",
+        "answer": "Exigimos rotación programada para cuentas administrativas, junto con invalidación automatizada de credenciales y disparadores de restablecimiento ante cualquier anomalía o sospecha de exposición."
+      },
+      "login-audit-logs": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Se registran los inicios de sesión exitosos y fallidos?",
+        "answer": "Sí. Todos los eventos de autenticación — tanto inicios de sesión exitosos como intentos fallidos — se registran, se marcan con marca de tiempo y se ingieren en sistemas centralizados de monitoreo para alerta en tiempo real y auditabilidad."
+      },
+      "access-compromise-detection": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Medios para detectar el compromiso de acceso? Si sí, descríbanlos.",
+        "answer": "Usamos detección automatizada de anomalías, limitación de tasa en las pasarelas de autenticación y alertas SIEM para identificar cambios sospechosos de geolocalización, intentos de fuerza bruta o escalamientos inusuales de privilegio."
+      },
+      "sso-saml-oauth2": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Soportan SSO? ¿Qué protocolos (SAML, OAuth2, etc.) están soportados?",
+        "answer": "Sí. Soportamos Single Sign-On (SSO) con los estándares de la industria SAML 2.0, OAuth 2.0 y OpenID Connect (OIDC), lo que permite una integración fluida con proveedores de identidad enterprise como Microsoft Entra ID (Azure AD), Okta y Google Workspace."
+      },
+      "access-rights-review": {
+        "category": "Gestión de autorización de acceso",
+        "question": "¿Se revisan los derechos de acceso con regularidad? Si es así, ¿con qué frecuencia?",
+        "answer": "Sí. Realizamos auditorías trimestrales de acceso para infraestructura crítica y bases de datos de producción, y revisiones semestrales en las aplicaciones corporativas para asegurar que todos los permisos coincidan con los roles y responsabilidades actuales."
+      },
+      "logging-system-implementation": {
+        "category": "Monitoreo y trazabilidad",
+        "question": "¿Implementaron un sistema de logging?",
+        "answer": "Sí. Mantenemos una infraestructura centralizada de logging que captura eventos críticos del sistema, solicitudes de API, cambios de infraestructura y acciones administrativas en todas las capas de aplicación."
+      },
+      "admin-action-tracing": {
+        "category": "Monitoreo y trazabilidad",
+        "question": "¿Se trazan las acciones realizadas por administradores?",
+        "answer": "Sí. Se aplica un trazado de auditoría reforzado a todas las actividades de administradores, incluidas modificaciones de configuración, ajustes de privilegio y cambios de infraestructura, con logs de auditoría inmutables."
+      },
+      "centralized-log-management": {
+        "category": "Monitoreo y trazabilidad",
+        "question": "¿Hay gestión centralizada de logs (infraestructura y aplicación)?",
+        "answer": "Sí. Usamos agregación centralizada de logs (como AWS CloudWatch e integraciones SIEM) para recolectar, indexar y analizar logs operativos y de seguridad de las capas de infraestructura y de aplicación."
+      },
+      "real-time-log-console": {
+        "category": "Monitoreo y trazabilidad",
+        "question": "¿Configuraron una consola de visualización de logs en tiempo real?",
+        "answer": "Sí. Tableros y consolas de logs en tiempo real permiten al personal de ingeniería y seguridad inspeccionar la salud operativa, consultar telemetría y monitorear anomalías a demanda."
+      },
+      "log-retention-period": {
+        "category": "Monitoreo y trazabilidad",
+        "question": "¿Cuál es el período de retención de logs?",
+        "answer": "Los logs operativos y de seguridad se retienen durante un mínimo de un año en almacenamiento cifrado, con períodos de retención extendida configurables para contratos enterprise sensibles."
+      },
+      "security-operations-soc": {
+        "category": "Monitoreo y trazabilidad",
+        "question": "¿Tienen un SOC (Security Operations Center)?",
+        "answer": "Sí. Operamos un modelo híbrido de respuesta de seguridad que combina respuesta a incidentes interna en guardia con herramientas automatizadas de seguridad en la nube y soporte de socios especialistas para el monitoreo continuo de amenazas y el escalamiento."
+      },
+      "data-hosting-locations": {
+        "category": "Seguridad física",
+        "question": "¿Dónde se alojan los datos? Si usan un proveedor, indiquen su nombre.",
+        "answer": "El hosting primario de datos se provisiona en Amazon Web Services (AWS), usando regiones europeas (p. ej. Frankfurt, Irlanda) para alineación GDPR y Sudamérica (São Paulo) para residencia local de datos LATAM. Cloudflare se usa para entrega en el borde y mitigación de DDoS; Google Workspace se usa para la colaboración corporativa."
+      },
+      "physical-datacenter-security": {
+        "category": "Seguridad física",
+        "question": "¿Las ubicaciones de hosting cumplen requisitos de seguridad física? Descríbanlos.",
+        "answer": "Sí. Los centros de datos de AWS mantienen salvaguardas físicas estrictas de varios niveles: perímetro cercado, control de acceso biométrico, monitoreo CCTV, guardias de seguridad 24/7 y redundancias ambientales (energía, refrigeración, supresión de incendios) verificadas bajo auditorías ISO 27001 y SOC 2."
+      },
+      "cabling-transport-security": {
+        "category": "Seguridad física",
+        "question": "¿Están asegurados los cables de energía y telecomunicaciones para el transporte de datos?",
+        "answer": "Sí. Las instalaciones de hosting usan alimentaciones de energía redundantes y conductos asegurados para el cableado de datos y telecomunicaciones, para proteger los caminos físicos de transporte frente a interrupciones y manipulación."
+      },
+      "it-asset-inventory-cmdb": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Tienen un inventario de componentes del sistema de información (p. ej. CMDB)?",
+        "answer": "Mantenemos un registro centralizado de activos que sigue infraestructura crítica, repositorios, dispositivos gestionados, activos de dominio e integraciones SaaS de terceros."
+      },
+      "change-management-process": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Tienen un proceso de gestión de cambios para la seguridad de las actualizaciones técnicas?",
+        "answer": "Sí. Todos los cambios de código e infraestructura requieren validación automatizada de CI, revisión por pares del pull request y aprobación antes del despliegue automatizado a entornos de staging y producción."
+      },
+      "workstation-auto-lock": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Tienen bloqueo automático de sesión en las estaciones de trabajo?",
+        "answer": "Sí. Los dispositivos gestionados por la empresa exigen el bloqueo automático de pantalla tras un breve período de inactividad, con reautenticación biométrica o por contraseña."
+      },
+      "antivirus-edr-workstations": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Usan antivirus o EDR actualizado para asegurar las estaciones de trabajo?",
+        "answer": "Sí. Las estaciones de trabajo combinan protecciones nativas de endpoint de macOS (XProtect, Gatekeeper, System Integrity Protection) con gestión automatizada de parches de seguridad y monitoreo EDR."
+      },
+      "workstation-firewall-logging": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿El firewall de la estación de trabajo está configurado para registrar flujos bloqueados e intrusiones?",
+        "answer": "Sí. Los firewalls locales y los controles de endpoint están activos en los dispositivos gestionados, y los patrones inusuales de tráfico de red se monitorean y se bloquean."
+      },
+      "log-integrity-protection": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Protegen el equipamiento de logging y la información registrada?",
+        "answer": "Sí. Los flujos de logs se protegen con cifrado AES-256 en reposo, políticas IAM de privilegio mínimo estrictas y rastros de auditoría para impedir la alteración o eliminación de logs."
+      },
+      "storage-encryption-at-rest": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Implementaron cifrado para el almacenamiento?",
+        "answer": "Sí. Las estaciones de trabajo exigen cifrado de disco completo vía Apple FileVault (AES-XTS). Las bases de datos en la nube, el almacenamiento de objetos (S3) y los volúmenes de instantáneas se cifran en reposo con AES-256."
+      },
+      "daily-vulnerability-detection": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Hay herramientas de detección de vulnerabilidades y se actualizan a diario?",
+        "answer": "Sí. Escáneres continuos de vulnerabilidad inspeccionan repositorios de código, imágenes de contenedores Docker y dependencias desplegadas contra bases de datos CVE actualizadas a diario."
+      },
+      "patch-management-timeframe": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Se instalan los parches de seguridad dentro de un plazo definido?",
+        "answer": "Las vulnerabilidades de seguridad críticas se priorizan para remediación inmediata (dentro de 24–72 horas), mientras que las actualizaciones de software estándar siguen las cadencias de release establecidas."
+      },
+      "periodic-vulnerability-scans": {
+        "category": "Seguridad relacionada con las operaciones",
+        "question": "¿Realizan escaneos periódicos (al menos mensuales) de vulnerabilidades?",
+        "answer": "Sí. Los escaneos automatizados de dependencias y de seguridad corren en cada pull request, complementados por escaneos mensuales a nivel de sistema y evaluaciones externas de red."
+      },
+      "internet-facing-segmentation": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿Los servicios expuestos a Internet están segmentados del resto del sistema?",
+        "answer": "Sí. El ingreso público se aísla a través de capas de borde (Cloudflare / AWS CloudFront y ALBs), con contenedores de aplicación backend e instancias de bases de datos ubicados en subredes VPC privadas, sin ruta pública directa."
+      },
+      "risk-based-network-segmentation": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿La segmentación de red está basada en riesgo y en vigencia?",
+        "answer": "Sí. Las arquitecturas en la nube emplean nubes privadas virtuales (VPC), security groups estrictos y aislamiento de red de contenedores para separar entornos de producción, entornos de staging y capas de bases de datos."
+      },
+      "encrypted-protocols-transit": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿Usan protocolos cifrados para todo el tráfico interno y externo?",
+        "answer": "Sí. Todas las comunicaciones cliente-servidor y entre servicios internos exigen protocolos cifrados (HTTPS/TLS 1.2+ y túneles SSH/VPC cifrados). El tráfico HTTP sin cifrar se redirige de forma automática a HTTPS."
+      },
+      "secure-internet-gateway-waf": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿Pasarela de Internet segura con firewall y seguridad de proxy?",
+        "answer": "Usamos Cloudflare Web Application Firewall (WAF), limitación de tasa, protección DDoS y firewalls de security groups de AWS en los límites de ingreso."
+      },
+      "filtering-rule-reviews": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿Se realiza una revisión regular de las reglas de filtrado? Si es así, ¿con qué frecuencia?",
+        "answer": "Sí. Las reglas de security groups, las configuraciones WAF y los registros DNS se revisan de forma trimestral y ante despliegues mayores de arquitectura."
+      },
+      "email-antivirus-filtering": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿Se aplica escaneo antivirus aguas arriba de las bandejas de los usuarios?",
+        "answer": "Sí. La seguridad de correo aguas arriba la gestiona Google Workspace, con análisis automatizado de malware, sandbox de adjuntos y escaneo de virus antes de la entrega a la bandeja."
+      },
+      "email-antispam-phishing": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿Tienen un servicio antispam para el correo?",
+        "answer": "Sí. Los filtros de spam impulsados por ML de Google Workspace protegen las cuentas de correo frente a spam entrante, enlaces maliciosos e intentos de phishing."
+      },
+      "email-sender-authenticity": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿Implementaron mecanismos para verificar la autenticidad?",
+        "answer": "Sí. Implementamos y exigimos registros completos de SPF, DKIM y DMARC en todos los dominios de correo corporativos y de producto para proteger la reputación del dominio e impedir la suplantación."
+      },
+      "remote-access-security": {
+        "category": "Seguridad de las comunicaciones",
+        "question": "¿El acceso remoto está asegurado con VPN y MFA?",
+        "answer": "La gestión en la nube y el acceso a producción requieren verificación de identidad autenticada con MFA y claves SSH; se utilizan VPN dedicadas o túneles bastión cuando lo exigen las arquitecturas de los clientes."
+      },
+      "incident-management-procedure": {
+        "category": "Gestión de incidentes",
+        "question": "¿Definieron un procedimiento de gestión de incidentes de seguridad?",
+        "answer": "Sí. Mantenemos un procedimiento documentado de respuesta a incidentes que cubre triaje, contención, investigación forense, análisis de causa raíz (RCA) y notificación a las partes interesadas."
+      },
+      "data-breach-notification": {
+        "category": "Gestión de incidentes",
+        "question": "¿Establecieron procedimientos para notificar brechas de datos personales?",
+        "answer": "Sí. Los protocolos de notificación de brechas de datos están alineados con GDPR, LGPD y los términos contractuales de SLA, y garantizan investigación rápida y notificación a las partes afectadas y a las autoridades regulatorias sin demora indebida."
+      },
+      "password-storage-protection": {
+        "category": "Gestión de incidentes",
+        "question": "¿Protegen las contraseñas almacenadas con soluciones seguras?",
+        "answer": "Sí. Las contraseñas en las aplicaciones se salan y se hashean con algoritmos modernos (Argon2 / bcrypt). Las credenciales del equipo se guardan en bóvedas de contraseñas cifradas con MFA obligatorio."
+      },
+      "cyber-crisis-preparedness": {
+        "category": "Gestión de incidentes",
+        "question": "¿Hay un plan de crisis cibernética y se prueba de forma anual?",
+        "answer": "Mantenemos caminos de escalamiento de incidentes y playbooks de recuperación ante desastres en la nube, y revisamos de forma periódica los procedimientos de recuperación y los protocolos de escalamiento de la dirección."
+      },
+      "incident-response-team-cert": {
+        "category": "Gestión de incidentes",
+        "question": "¿Tienen un CERT (Computer Emergency Response Team)?",
+        "answer": "Mantenemos un equipo interno de respuesta a incidentes de seguridad y nos asociamos con evaluadores de ciberseguridad e incident handlers especializados para necesidades enterprise de alto nivel."
+      },
+      "subcontractor-security-clauses": {
+        "category": "Seguridad de subcontratación",
+        "question": "¿Los contratos de subcontratistas contienen una cláusula específica de seguridad?",
+        "answer": "Sí. Todos los acuerdos con proveedores y contratistas de terceros contienen acuerdos estrictos de confidencialidad (NDA), cláusulas de protección de datos y obligaciones de cumplimiento de seguridad."
+      },
+      "subcontractor-security-verification": {
+        "category": "Seguridad de subcontratación",
+        "question": "¿Se verifica con regularidad la aplicación efectiva de los principios de seguridad?",
+        "answer": "Sí. Las herramientas de subcontratistas y proveedores pasan por controles de debida diligencia antes del alta, evaluando cumplimiento GDPR/LGPD, postura de infraestructura y controles de confidencialidad."
+      },
+      "project-security-risk-evaluation": {
+        "category": "Sistemas de información de proyectos",
+        "question": "¿Se evalúan los riesgos de proyecto contra criterios predefinidos de impacto de seguridad?",
+        "answer": "Sí. Se realizan revisiones de arquitectura y evaluaciones de riesgo antes del kickoff de cada nueva iniciativa de producto e hito de cliente, identificando la clasificación de datos y los vectores de riesgo."
+      },
+      "third-party-maintenance-framing": {
+        "category": "Sistemas de información de proyectos",
+        "question": "¿Las intervenciones de mantenimiento de terceros están enmarcadas?",
+        "answer": "Sí. Cualquier intervención técnica externa se rige por acuerdos de servicio estrictos, credenciales temporales acotadas en el tiempo, alcance de privilegio mínimo y registro de auditoría."
+      },
+      "secure-development-environment": {
+        "category": "Sistemas de información de proyectos",
+        "question": "¿Las tareas de desarrollo se realizan en un entorno seguro?",
+        "answer": "Sí. El código fuente reside en GitHub Enterprise con ramas protegidas, revisiones de código obligatorias, análisis estático automatizado de CI y escaneo automatizado de seguridad de dependencias."
+      },
+      "pre-delivery-security-verification": {
+        "category": "Sistemas de información de proyectos",
+        "question": "¿Verifican la seguridad antes de la entrega (auditoría de código, pentest, etc.)?",
+        "answer": "Sí. Corremos análisis estático de código (SAST), escaneos de dependencias, revisiones de código por pares y pruebas de penetración periódicas antes de los releases a producción."
+      },
+      "backup-policy-implementation": {
+        "category": "Gestión de respaldos",
+        "question": "¿Implementaron una política de respaldos? Si es así, descríbanla.",
+        "answer": "Sí. Se programan instantáneas diarias automatizadas y respaldos incrementales para todas las bases de datos de producción y volúmenes persistentes, con retención y monitoreo automatizados."
+      },
+      "backup-storage-locations": {
+        "category": "Gestión de respaldos",
+        "question": "¿Dónde se ubican los respaldos?",
+        "answer": "Los respaldos se almacenan en buckets dedicados de AWS S3 con capacidad de replicación entre regiones en São Paulo y regiones europeas."
+      },
+      "backup-encryption": {
+        "category": "Gestión de respaldos",
+        "question": "¿Los respaldos están cifrados?",
+        "answer": "Sí. Todos los respaldos de bases de datos y las instantáneas de almacenamiento se cifran en reposo con AES-256 y se protegen en tránsito con TLS."
+      },
+      "backup-durability-protection": {
+        "category": "Gestión de respaldos",
+        "question": "¿Se almacenan de forma segura (frente a degradación, pérdida o robo)?",
+        "answer": "Sí. AWS S3 ofrece 99.999999999% (11 nueves) de durabilidad en múltiples Availability Zones. Usamos versionado de buckets, logging de acceso y políticas WORM (Object Lock) para proteger frente a eliminación accidental o ransomware."
+      },
+      "backup-recovery-drills": {
+        "category": "Gestión de respaldos",
+        "question": "¿El proceso de recuperación se prueba con regularidad? Si es así, ¿con qué frecuencia?",
+        "answer": "Sí. Los ejercicios de restauración y las restauraciones de prueba de instantáneas de bases de datos se realizan de forma trimestral para validar la integridad de los respaldos y medir los objetivos de tiempo de recuperación."
+      },
+      "backup-retention-schedule": {
+        "category": "Gestión de respaldos",
+        "question": "¿Pueden describir su política? (p. ej. retención)",
+        "answer": "La retención de instantáneas de bases de datos es de 90 días por defecto para respaldos operativos, con archivos mensuales y anuales a un punto en el tiempo disponibles para requisitos de cumplimiento regulatorio."
+      },
+      "immutable-backups": {
+        "category": "Gestión de respaldos",
+        "question": "¿Tienen una copia de respaldo offline o inmutable?",
+        "answer": "Sí. Usamos AWS S3 Object Lock (política WORM) para establecer versiones de respaldo inmutables que no pueden ser eliminadas ni modificadas por cuentas no autorizadas."
+      },
+      "dr-bcp-testing": {
+        "category": "Continuidad del negocio",
+        "question": "¿Un plan de continuidad del negocio y DR se prueba de forma anual y cubre lo cibernético?",
+        "answer": "Sí. Nuestros protocolos de recuperación ante desastres aprovechan arquitectura en la nube multi-AZ, restauraciones automatizadas de instantáneas e infraestructura como código para recrear con rapidez los entornos de servicio."
+      },
+      "dr-bcp-process-description": {
+        "category": "Continuidad del negocio",
+        "question": "Describan su proceso de Disaster Recovery y Business Continuity Plan",
+        "answer": "Nuestro plan de recuperación ante desastres combina failover automatizado de bases de datos, respaldos inmutables en la nube en AWS S3, enrutamiento de tráfico en el borde vía Cloudflare y procedimientos claros de escalamiento de emergencia de la dirección."
+      },
+      "rto-rpo-targets": {
+        "category": "Continuidad del negocio",
+        "question": "¿Están definidos MAD y MADL para la continuidad del servicio y la integridad de los datos?",
+        "answer": "Sí. Definimos objetivos explícitos de Recovery Time Objectives (RTO) y Recovery Point Objectives (RPO) según la criticidad de la aplicación, con un objetivo de RTO < 4 horas y RPO < 1 hora para las cargas centrales de bases de datos."
+      },
+      "data-classification-tiers": {
+        "category": "Seguridad de datos",
+        "question": "¿Implementaron clasificación de la información?",
+        "answer": "Sí. Los datos se clasifican en niveles definidos de sensibilidad (Público, Interno, Confidencial, Restringido) para gobernar el cifrado de almacenamiento, los controles de acceso y las reglas de retención."
+      },
+      "secure-media-destruction": {
+        "category": "Seguridad de datos",
+        "question": "¿Implementaron la destrucción segura de medios en desuso?",
+        "answer": "Como nuestra infraestructura está 100% alojada en la nube, los volúmenes de nube dados de baja se borran de forma criptográfica por AWS. El hardware físico se sanea con borrado criptográfico o destrucción física."
+      },
+      "data-loss-prevention": {
+        "category": "Seguridad de datos",
+        "question": "¿Tienen DLP (detección/prevención de fugas) en vigencia?",
+        "answer": "Aplicamos GitHub secret scanning, controles IAM de privilegio mínimo, inspección de egreso de Cloudflare y restricciones de acceso a repositorios para impedir la exfiltración no intencional de datos."
+      },
+      "non-production-anonymization": {
+        "category": "Seguridad de datos",
+        "question": "¿Anonimizan los datos de no producción?",
+        "answer": "Sí. Los entornos de prueba y staging usan datos sintéticos o conjuntos enmascarados. Los datos personales de clientes de producción nunca se copian sin enmascarar a entornos de prueba."
+      },
+      "client-data-reversibility": {
+        "category": "Seguridad de datos",
+        "question": "¿Cómo aseguran la reversibilidad y la restauración de datos para los clientes?",
+        "answer": "Ofrecemos capacidades estandarizadas de exportación de datos (p. ej. dumps SQL, CSV, JSON) al término del contrato o a pedido, asegurando portabilidad plena de los datos del cliente sin vendor lock-in."
+      },
+      "database-encryption-details": {
+        "category": "Seguridad de datos",
+        "question": "¿Cifran las bases de datos? Si es así, ¿qué datos se cifran?",
+        "answer": "Sí. Las instancias AWS RDS PostgreSQL/MySQL exigen cifrado AES-256 en reposo en todas las tablas, índices, logs y respaldos, junto con conexiones de transporte cifradas con TLS."
+      },
+      "data-residency-access": {
+        "category": "Seguridad de datos",
+        "question": "¿Los datos se acceden solo en la UE?",
+        "answer": "La residencia de datos se configura por contrato de proyecto. Las cargas de clientes europeos se alojan en regiones AWS de la UE (Frankfurt, Irlanda), mientras que las cargas LATAM residen en São Paulo (Brasil). El acceso remoto está autenticado y cifrado."
+      },
+      "nis2-directive-compliance": {
+        "category": "Cumplimiento",
+        "question": "¿Cumplen los requisitos de la directiva europea NIS2?",
+        "answer": "UNFLD tiene sede en Brasil y alinea su gestión de riesgo de ciberseguridad, sus procedimientos de reporte de incidentes y sus prácticas de seguridad de la cadena de suministro con estándares europeos modernos, incluidas las recomendaciones de NIS2."
+      },
+      "gdpr-privacy-management": {
+        "category": "Cumplimiento",
+        "question": "Describan la gestión de datos personales y el cumplimiento de privacidad (Europa):",
+        "answer": "Para datos de residentes de la UE, nos adherimos a los requisitos de GDPR: base legal clara para el tratamiento, ejecución de Anexos de Tratamiento de Datos (DPA) con Cláusulas Contractuales Tipo (SCC), minimización de datos y controles estrictos de seguridad."
+      },
+      "isms-review-process": {
+        "category": "Cumplimiento",
+        "question": "Describan su proceso de revisión y auditoría del ISMS:",
+        "answer": "Nuestro Information Security Management System se revisa de forma periódica y ante actualizaciones significativas de infraestructura, incorporando escaneo automatizado de cumplimiento, revisiones internas y auditorías de seguridad de terceros."
+      },
+      "gdpr-compliance-details": {
+        "category": "Cumplimiento",
+        "question": "¿Cómo asegura la organización el cumplimiento de GDPR?",
+        "answer": "1. Seguridad de datos: almacenamiento cifrado en AWS con separación de entornos de producción y de prueba.\\n2. Derechos de los titulares: procedimientos documentados para ejecutar pedidos de acceso, rectificación y eliminación dentro de los plazos legales.\\n3. Privacidad desde el diseño: anonimización, tokenización y acceso a datos con privilegio mínimo.\\n4. Supervisión: capacitación regular de privacidad y mantenimiento de registros de tratamiento."
+      },
+      "reversibility-contract-end": {
+        "category": "Cumplimiento",
+        "question": "Describan cómo se aborda la reversibilidad (fin de contrato):",
+        "answer": "Al concluir el contrato, los clientes reciben exportaciones integrales en formatos estándar legibles por máquina. Tras un período contractual de gracia de transición, los datos residuales se sanitizan y se eliminan de forma permanente de los servidores de producción y de la rotación de respaldos."
+      },
+      "data-retention-policy-details": {
+        "category": "Cumplimiento",
+        "question": "Describan su política de retención de datos:",
+        "answer": "Los datos de producción se retienen durante los contratos activos de suscripción del cliente. Las copias de respaldo se retienen 90 días por defecto (extensible por acuerdo). Los logs se retienen 12 meses."
+      },
+      "hosting-services-overview": {
+        "category": "Hosting",
+        "question": "¿Qué servicios se usan?",
+        "answer": "El hosting central está impulsado por Amazon Web Services (EC2, ECS, Lambda, RDS, S3), con Cloudflare gestionando CDN de borde, DNS y WAF, y Google Workspace para productividad."
+      },
+      "hosting-server-locations": {
+        "category": "Hosting",
+        "question": "¿Dónde están ubicados servidores y datos?",
+        "answer": "Los clústeres primarios de servidores residen en regiones AWS de la UE (Irlanda, Frankfurt) y Sudamérica (São Paulo), con puntos de presencia de borde a nivel global a través de Cloudflare."
+      },
+      "hosting-drp-plan": {
+        "category": "Hosting",
+        "question": "¿Tienen DRP? Si sí, descríbanlo:",
+        "answer": "Sí. Nuestro Disaster Recovery Plan usa replicación automatizada de bases de datos multi-AZ, instantáneas regulares de S3 con capacidad entre regiones y despliegue automatizado de infraestructura."
+      },
+      "hosting-sla-contracts": {
+        "category": "Hosting",
+        "question": "SLA y tipo de contrato entre el hoster y el publicador:",
+        "answer": "Operamos bajo acuerdos de nivel de servicio AWS Enterprise que garantizan hasta 99.99% de disponibilidad de infraestructura, y ofrecemos SLAs contractuales de uptime de hasta 99.9% para los tiers de producto Enterprise."
+      },
+      "switch-back-protocol": {
+        "category": "Hosting",
+        "question": "¿Cuál es el protocolo de retorno (switch back)?",
+        "answer": "Tras cualquier failover regional de emergencia, las sincronizaciones de estado se reconcilian y se verifican antes de que el tráfico vuelva de forma progresiva a las regiones primarias de hosting, vía enrutamiento DNS automatizado con health checks."
+      },
+      "security-certifications-held": {
+        "category": "Hosting",
+        "question": "¿Tienen certificaciones de seguridad sostenidas y demostrables?",
+        "answer": "Nuestra plataforma de nube subyacente (AWS) sostiene acreditaciones certificadas ISO 27001, SOC 1/2/3, PCI DSS Level 1 y FedRAMP. UNFLD se adhiere a estos controles de base en todas las implementaciones de arquitectura."
+      },
+      "code-review-practices": {
+        "category": "Software",
+        "question": "¿Tienen revisión de código en las aplicaciones?",
+        "answer": "Sí. La revisión de código por pares es obligatoria en el 100% de los pull requests, junto con análisis estático automatizado (SAST), chequeos de linter y escaneos automatizados de seguridad antes del merge."
+      },
+      "regular-penetration-testing": {
+        "category": "Software",
+        "question": "¿Hacen pentesting con regularidad?",
+        "answer": "Sí. Realizamos pruebas de penetración y evaluaciones de vulnerabilidad con regularidad en aplicaciones clave y superficies de borde, en alianza con especialistas externos de ciberseguridad."
+      },
+      "services-used-stack": {
+        "category": "Servicios y capas",
+        "question": "¿Qué servicios se usan?",
+        "answer": "Cómputo: AWS ECS, Lambda, EC2; Almacenamiento: AWS S3, Cloudflare R2; Base de datos: AWS RDS (PostgreSQL/MySQL), DynamoDB; Borde y seguridad: Cloudflare WAF y CDN; CI/CD: GitHub Actions."
+      },
+      "application-layers-description": {
+        "category": "Servicios y capas",
+        "question": "Describan las distintas capas de la aplicación:",
+        "answer": "• Capa de presentación: interfaces de cliente rápidas y responsivas, construidas con frameworks web modernos y servidas a nivel global vía Cloudflare / AWS CloudFront.\\n• Capa de aplicación: servicios API modulares y microservicios backend containerizados, construidos en TypeScript/Node.js, Python o Go.\\n• Capa de datos: bases de datos relacionales de alta disponibilidad (AWS RDS PostgreSQL) y almacenes gestionados de documentos/objetos con cifrado automatizado."
+      },
+      "technologies-used-list": {
+        "category": "Servicios y capas",
+        "question": "Listen las tecnologías usadas por la aplicación:",
+        "answer": "• Front-End: React, TanStack, TypeScript, Tailwind CSS\\n• Back-End: Node.js, TypeScript, Python\\n• Bases de datos: PostgreSQL (AWS RDS), DynamoDB, S3\\n• Infraestructura: AWS, Cloudflare, Docker\\n• CI/CD: GitHub Actions\\n• Monitoreo y telemetría: AWS CloudWatch, Datadog/ELK, logs JSON estructurados"
+      },
+      "multi-tenant-data-separation": {
+        "category": "Servicios y capas",
+        "question": "¿Qué tecnología se usa para separar datos entre distintos clientes?",
+        "answer": "La separación de tenants se logra con claves de aislamiento de tenant, segregación de esquemas de bases de datos y políticas estrictas de row-level security (RLS), que impiden la filtración de datos entre tenants."
+      },
+      "software-third-party-interactions": {
+        "category": "Servicios y capas",
+        "question": "Describan las interacciones de software con otros productos (p. ej. servicios en la nube):",
+        "answer": "Las integraciones con proveedores externos (como pasarelas de pago, proveedores de identidad, APIs de mensajería) usan endpoints REST/GraphQL seguros con transmisión cifrada TLS, API keys almacenadas en AWS Secrets Manager y verificación de firma de webhooks."
+      },
+      "hypervisor-os-details": {
+        "category": "Hipervisor y SO",
+        "question": "Listen hipervisor y SO usados, con nombre y versión:",
+        "answer": "• Estaciones de trabajo: Apple macOS (últimas versiones estables) con cifrado FileVault.\\n• Servidores: distribuciones Linux endurecidas (Amazon Linux 2 / Ubuntu LTS) que corren sobre hipervisores de virtualización AWS Nitro / Xen."
+      },
+      "authentication-methods": {
+        "category": "Autenticación",
+        "question": "Listen el tipo de autenticación usada por la aplicación:",
+        "answer": "Implementamos OAuth 2.0, OpenID Connect (OIDC) y SAML 2.0 para inicio de sesión único enterprise, junto con gestión de sesión basada en tokens seguros y autenticación multifactor opcional."
+      },
+      "sso-saml2-integration": {
+        "category": "Autenticación",
+        "question": "¿Podemos usar SSO con integración SAML2?",
+        "answer": "Sí. Soportamos SSO enterprise vía SAML 2.0 y OIDC, lo que permite federación directa con sistemas corporativos de identidad como Microsoft Entra ID (Azure AD), Okta y Google Workspace."
+      },
+      "mfa-requirement-application": {
+        "category": "Autenticación",
+        "question": "¿Se exige MFA para acceder a la aplicación?",
+        "answer": "MFA es obligatorio para todo acceso administrativo y operativo. En las aplicaciones de usuario final, MFA está soportado y puede exigirse según las políticas de seguridad del tenant."
+      }
+    },
+    "categories": {
+      "General and PSSI": {
+        "name": "General y PSSI",
+        "short": "PSSI",
+        "description": "Política de Seguridad de la Información, cadencia de evaluación de riesgo, alineación ISO 27001/27002 y gestión de vulnerabilidades."
+      },
+      "User awareness and training": {
+        "name": "Conciencia y capacitación de usuarios",
+        "short": "Capacitación",
+        "description": "Currículas de conciencia de seguridad, detección de phishing y capacitación de privacidad por rol."
+      },
+      "Access Authorization Management": {
+        "name": "Gestión de autorización de acceso",
+        "short": "Acceso",
+        "description": "Ciclo de vida de identidad, privilegio mínimo, política de contraseñas y autenticación multifactor."
+      },
+      "Monitoring and Traceability": {
+        "name": "Monitoreo y trazabilidad",
+        "short": "Monitoreo",
+        "description": "Agregación centralizada de logs, alertas SIEM, trazado de administradores y respuesta SOC."
+      },
+      "Physical security": {
+        "name": "Seguridad física",
+        "short": "Física",
+        "description": "Salvaguardas de centros de datos, control de acceso biométrico y caminos asegurados de energía y telecomunicaciones."
+      },
+      "Security related to operations": {
+        "name": "Seguridad relacionada con las operaciones",
+        "short": "Operaciones",
+        "description": "Endurecimiento de estaciones de trabajo, gestión de cambios, ventanas de parches y detección diaria de vulnerabilidades."
+      },
+      "Security of communications": {
+        "name": "Seguridad de las comunicaciones",
+        "short": "Comunicaciones",
+        "description": "Segmentación de red, aislamiento VPC, Cloudflare WAF, TLS y autenticación de correo."
+      },
+      "Incident Management": {
+        "name": "Gestión de incidentes",
+        "short": "Incidentes",
+        "description": "Playbooks de respuesta, notificación de brechas, protección de credenciales y escalamiento de crisis."
+      },
+      "Subcontracting Security": {
+        "name": "Seguridad de subcontratación",
+        "short": "Proveedores",
+        "description": "Debida diligencia de proveedores, cláusulas contractuales de seguridad y verificación de cumplimiento de la cadena de suministro."
+      },
+      "Project Information Systems": {
+        "name": "Sistemas de información de proyectos",
+        "short": "Proyectos",
+        "description": "Entornos de desarrollo seguros, acceso acotado de terceros y verificación previa a la entrega."
+      },
+      "Backups Management": {
+        "name": "Gestión de respaldos",
+        "short": "Respaldos",
+        "description": "Política de instantáneas, inmutabilidad WORM, cifrado, retención y ejercicios de recuperación."
+      },
+      "Business Continuity": {
+        "name": "Continuidad del negocio",
+        "short": "Continuidad",
+        "description": "Planificación de recuperación ante desastres, objetivos RTO y RPO, y redundancia entre regiones."
+      },
+      "Data Security": {
+        "name": "Seguridad de datos",
+        "short": "Datos",
+        "description": "Niveles de clasificación, cifrado de bases de datos, datos de no producción anonimizados y DLP."
+      },
+      "Compliance": {
+        "name": "Cumplimiento",
+        "short": "Regulatorio",
+        "description": "Obligaciones GDPR y LGPD, alineación NIS2, revisión del ISMS, retención y reversibilidad."
+      },
+      "Hosting": {
+        "name": "Hosting",
+        "short": "Hosting",
+        "description": "Regiones AWS, borde de Cloudflare, acuerdos de nivel de servicio y protocolo de failover."
+      },
+      "Software": {
+        "name": "Software",
+        "short": "Software",
+        "description": "Estándares de revisión por pares, barreras automatizadas de seguridad y pruebas de penetración."
+      },
+      "Services and layers": {
+        "name": "Servicios y capas",
+        "short": "Arquitectura",
+        "description": "Capas de aplicación, stack tecnológico, separación de tenants e integraciones de terceros."
+      },
+      "Hypervisor & OS": {
+        "name": "Hipervisor y SO",
+        "short": "Hipervisor",
+        "description": "Sistemas operativos de estaciones de trabajo y servidores, y virtualización AWS."
+      },
+      "Authentication": {
+        "name": "Autenticación",
+        "short": "Identidad",
+        "description": "Federación SAML 2.0, OAuth 2.0 y OIDC, seguridad de sesión y MFA."
+      }
+    }
+  },
+  "complianceMeta": {
+    "chapters": {
+      "governance": {
+        "title": "Gobernanza y política",
+        "lede": "La Política de Seguridad de la Información de la que cuelga todo lo demás — cómo se valida, se revisa, se audita y se sostiene frente a ISO 27001, SOC 2, GDPR y LGPD."
+      },
+      "identity": {
+        "title": "Identidad y acceso",
+        "lede": "Quién puede llegar a qué, demostrado en cada frontera. Privilegio mínimo, ciclo de vida de identidad documentado, autenticación multifactor obligatoria y federación enterprise."
+      },
+      "infrastructure": {
+        "title": "Infraestructura y perímetro",
+        "lede": "Dónde está físicamente el cómputo, cómo se corta la red en segmentos y qué hay entre internet pública y una base de datos."
+      },
+      "operations": {
+        "title": "Operaciones y respuesta",
+        "lede": "El día a día: estaciones de trabajo endurecidas, control de cambios, agregación de logs y lo que ocurre en las horas después de que algo sale mal."
+      },
+      "data": {
+        "title": "Datos, respaldo y continuidad",
+        "lede": "Clasificación, cifrado, instantáneas inmutables y los objetivos de recuperación que nos imponemos cuando una región se apaga."
+      },
+      "engineering": {
+        "title": "Ingeniería y cadena de suministro",
+        "lede": "Cómo se construye y se revisa el software antes de publicarse, cómo se mantienen separados los tenants y qué exigimos a cada proveedor que incorporamos."
+      }
+    },
+    "posture": [
+      {
+        "label": "En reposo, en cada capa",
+        "note": "FileVault · RDS · S3"
+      },
+      {
+        "label": "En tránsito, obligatorio",
+        "note": "HTTP redirigido a HTTPS"
+      },
+      {
+        "label": "Objetivo de tiempo de recuperación",
+        "note": "RPO inferior a una hora"
+      },
+      {
+        "label": "Durabilidad de respaldos",
+        "note": "Multi-AZ, bloqueo WORM"
+      }
+    ],
+    "standards": [
+      {
+        "scope": "Práctica UNFLD · certificado AWS",
+        "detail": "Controles del sistema de gestión de seguridad de la información y cadencia de revisión."
+      },
+      {
+        "scope": "Práctica UNFLD",
+        "detail": "Guía de implementación de controles aplicada en toda la PSSI."
+      },
+      {
+        "scope": "Práctica UNFLD · certificado AWS",
+        "detail": "Criterios de seguridad, disponibilidad y confidencialidad."
+      },
+      {
+        "scope": "Contractual",
+        "detail": "Base legal, DPA con Cláusulas Contractuales Tipo y derechos de los titulares."
+      },
+      {
+        "scope": "Contractual",
+        "detail": "Protección de datos personales en Brasil en los productos que operamos."
+      },
+      {
+        "scope": "Alineado",
+        "detail": "Gestión de riesgo, reporte de incidentes y práctica de cadena de suministro."
+      },
+      {
+        "scope": "Certificado AWS",
+        "detail": "Acreditación de plataforma heredada de la capa de hosting."
+      }
+    ],
+    "response": [
+      {
+        "label": "Retención de logs"
+      },
+      {
+        "label": "Ventana de parches críticos"
+      },
+      {
+        "label": "Retención de instantáneas"
+      }
+    ],
+    "regions": [
+      {
+        "country": "Alemania",
+        "role": "Primaria UE",
+        "note": "Cargas con residencia GDPR e instancias RDS cifradas."
+      },
+      {
+        "country": "Irlanda",
+        "role": "Secundaria UE",
+        "note": "Destino de replicación entre regiones para clientes europeos."
+      },
+      {
+        "country": "Brasil",
+        "role": "Primaria LATAM",
+        "note": "Residencia local para datos brasileños y regidos por LGPD."
+      }
+    ],
+    "lifecycle": [
+      {
+        "title": "Revisión por pares",
+        "body": "Cada pull request necesita un revisor humano. Sin excepciones, sin auto-merge a ramas de producción."
+      },
+      {
+        "title": "Barreras automatizadas",
+        "body": "El análisis estático, el escaneo de dependencias y la detección de secretos corren en cada commit antes de que un merge sea posible."
+      },
+      {
+        "title": "Despliegue por etapas",
+        "body": "Los cambios de infraestructura y de aplicación llegan primero a staging, bajo los mismos controles de cifrado y acceso."
+      },
+      {
+        "title": "Evaluación externa",
+        "body": "Pruebas de penetración y evaluaciones de vulnerabilidad con especialistas externos, remediadas por severidad."
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Alineado con ISO 27001 y SOC 2",
+        "desc": "Controles internos calibrados contra criterios ISO 27001/27002 y SOC 2 Type II, sobre infraestructura AWS certificada."
+      },
+      {
+        "title": "Residencia de datos por contrato",
+        "desc": "Cargas europeas en Frankfurt e Irlanda, cargas LATAM en São Paulo. Alineación con GDPR y LGPD en todo el recorrido."
+      },
+      {
+        "title": "Cifrado de extremo a extremo",
+        "desc": "AES-256 en reposo en bases de datos, almacenamiento de objetos e instantáneas. TLS 1.3/1.2 en cada conexión en tránsito."
+      },
+      {
+        "title": "SSO enterprise y MFA",
+        "desc": "Federación SAML 2.0, OAuth 2.0 y OpenID Connect, con autenticación multifactor obligatoria para el acceso privilegiado."
+      },
+      {
+        "title": "Respaldos inmutables",
+        "desc": "Instantáneas S3 Object Lock que no se pueden borrar ni alterar, validadas con ejercicios trimestrales de restauración."
+      },
+      {
+        "title": "Verificación continua",
+        "desc": "Análisis de dependencias y análisis estático en cada pull request, escaneos mensuales del sistema y pruebas de penetración externas periódicas."
+      }
+    ]
+  }
+}

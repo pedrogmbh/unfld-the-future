@@ -2,55 +2,57 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
-import { interview, offices, roles, SITE } from "@/lib/site";
+import { roles, SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeInterview, localizeOffices } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/careers/")({
-  head: () =>
-    buildPageHead({
-      title: "Careers",
-      description:
-        "Do work you can point to. Join UNFLD when you want responsibility to be concrete—not ceremonial.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.careers;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/careers",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: Careers,
 });
 
 function Careers() {
+  const locale = useLocale();
+  const { pages, chrome } = useMessages();
+  const p = pages.careers;
+  const interviewSteps = localizeInterview(locale);
+  const officeList = localizeOffices(locale);
+  const [emptyBefore, emptyAfter] = p.emptyBody.split("{{email}}");
   return (
     <main>
       <PageHero
-        kicker="Careers"
-        title="Do work you can"
-        titleSecond="point to."
-        lede="At UNFLD, a small team moves between field operations, product decisions, code, and customer reality. Join when you want responsibility to be concrete—not ceremonial."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
         actions={
-          <BtnLink to="/careers/open-roles">View open roles</BtnLink>
+          <BtnLink to="/careers/open-roles">{p.viewRoles}</BtnLink>
         }
       />
 
       <Section className="pb-16">
-        <Kicker>Working at UNFLD</Kicker>
+        <Kicker>{p.workKicker}</Kicker>
         <h2 className="max-w-2xl font-display text-3xl font-medium tracking-tight">
-          Responsibility is concrete, not ceremonial
+          {p.workTitle}
         </h2>
         <p className="mt-4 max-w-2xl text-muted">
-          Product work stays close to the people who use it. Engineers, designers, and operators share responsibility for what ships and what happens next.
+          {p.workLede}
         </p>
         <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3">
           {[
-            [
-              "Shared ownership",
-              "The people who build our products and custom systems also run them, measure their impact, and improve them in use.",
-            ],
-            [
-              "Sustainable pace",
-              "Urgency matters. So do sustainable pace, clear priorities, and the ability to stop work that no longer creates value.",
-            ],
-            [
-              "Transparent terms",
-              "Compensation, benefits, work location, and any relocation support are stated transparently on each open role.",
-            ],
+            [p.t1Title, p.t1Body],
+            [p.t2Title, p.t2Body],
+            [p.t3Title, p.t3Body],
           ].map(([t, d]) => (
             <article key={t} className="bg-bg p-7">
               <h3 className="font-medium">{t}</h3>
@@ -63,16 +65,16 @@ function Careers() {
       <Section className="py-16">
         <div className="mb-8 flex items-end justify-between">
           <div>
-            <Kicker>Join us</Kicker>
+            <Kicker>{p.joinKicker}</Kicker>
             <h2 className="font-display text-3xl font-medium tracking-tight">
-              Open roles
+              {p.openRoles}
             </h2>
           </div>
           <Link
             to="/careers/open-roles"
             className="text-[13px] text-muted hover:text-fg"
           >
-            All roles →
+            {chrome.common.allRolesArrow}
           </Link>
         </div>
         {roles.length > 0 ? (
@@ -94,29 +96,29 @@ function Careers() {
         ) : (
           <div className="rounded-xl border border-border p-8 text-center sm:p-12">
             <p className="font-display text-xl font-medium">
-              No open roles right now.
+              {p.emptyTitle}
             </p>
             <p className="mt-3 text-sm text-muted">
-              You can still introduce yourself and share your work at{" "}
+              {emptyBefore}
               <a
                 href={`mailto:${SITE.careers}`}
                 className="text-fg underline-offset-4 hover:underline"
               >
                 {SITE.careers}
               </a>
-              .
+              {emptyAfter}
             </p>
           </div>
         )}
       </Section>
 
       <Section className="py-16">
-        <Kicker>What to expect</Kicker>
+        <Kicker>{p.expectKicker}</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Interview process
+          {p.interviewTitle}
         </h2>
         <ol className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {interview.map((s) => (
+          {interviewSteps.map((s) => (
             <li key={s.n}>
               <p className="font-mono text-[12px] text-subtle">{s.n}</p>
               <h3 className="mt-3 font-display text-lg font-medium">{s.title}</h3>
@@ -127,19 +129,19 @@ function Careers() {
       </Section>
 
       <Section className="py-16 pb-24 sm:pb-32">
-        <Kicker>Office</Kicker>
+        <Kicker>{p.officeKicker}</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          UNFLD in São Paulo
+          {p.officeTitle}
         </h2>
         <div className="mt-10 overflow-hidden rounded-xl">
           <img
             src="/images/office.jpg"
-            alt="UNFLD office in São Paulo"
+            alt={p.officeAlt}
             className="aspect-[16/7] w-full object-cover"
           />
         </div>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {offices.map((o) => (
+          {officeList.map((o) => (
             <div key={o.city}>
               <p className="font-medium">{o.city}</p>
               <p className="text-sm text-muted">{o.role}</p>

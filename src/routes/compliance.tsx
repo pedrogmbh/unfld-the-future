@@ -8,45 +8,70 @@ import { PageHero } from "@/components/site/page-hero";
 import { ParallaxImage, Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
 import {
-  COMPLIANCE_HIGHLIGHTS,
   COMPLIANCE_ITEMS,
-  COMPLIANCE_LIFECYCLE,
-  COMPLIANCE_POSTURE,
   COMPLIANCE_POSTURE_MANIFEST,
-  COMPLIANCE_REGIONS,
-  COMPLIANCE_RESPONSE,
-  COMPLIANCE_STANDARDS,
-  getComplianceCategories,
-  getComplianceChapters,
   getDisclosureOrder,
   type ComplianceCategory,
   type ResolvedChapter,
 } from "@/lib/compliance";
-import { pageTitle, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 import { cn } from "@/lib/utils";
+import { interpolate } from "@/lib/i18n/interpolate";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import {
+  localizeComplianceCategories,
+  localizeComplianceChapters,
+  localizeComplianceHighlights,
+  localizeComplianceItems,
+  localizeComplianceLifecycle,
+  localizeCompliancePosture,
+  localizeComplianceRegions,
+  localizeComplianceResponse,
+  localizeComplianceStandards,
+} from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/compliance")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Compliance & Security Controls") },
-      {
-        name: "description",
-        content:
-          "Institutional compliance disclosures, ISO 27001/27002 alignment, GDPR/LGPD data residency, PSSI security controls, and infrastructure safeguards.",
-      },
-    ],
-  }),
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.compliance;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
+      path: "/compliance",
+      locale: match.context.locale,
+    });
+  },
   component: CompliancePage,
 });
 
-const chapters = getComplianceChapters();
-const categories = getComplianceCategories();
 const order = getDisclosureOrder();
 const TOTAL = COMPLIANCE_ITEMS.length;
 
 type OpenMap = Record<string, boolean>;
 
+function useLocalizedCompliance() {
+  const locale = useLocale();
+  return useMemo(
+    () => ({
+      chapters: localizeComplianceChapters(locale),
+      categories: localizeComplianceCategories(locale),
+      items: localizeComplianceItems(locale),
+      posture: localizeCompliancePosture(locale),
+      highlights: localizeComplianceHighlights(locale),
+      standards: localizeComplianceStandards(locale),
+      regions: localizeComplianceRegions(locale),
+      lifecycle: localizeComplianceLifecycle(locale),
+      response: localizeComplianceResponse(locale),
+    }),
+    [locale],
+  );
+}
+
 function CompliancePage() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
+  const { items, categories } = useLocalizedCompliance();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const [open, setOpen] = useState<OpenMap>({});
@@ -56,7 +81,7 @@ function CompliancePage() {
 
   const results = useMemo(() => {
     if (!filtering) return [];
-    return COMPLIANCE_ITEMS.filter((item) => {
+    return items.filter((item) => {
       if (category !== "all" && item.category !== category) return false;
       if (!query) return true;
       return (
@@ -65,7 +90,7 @@ function CompliancePage() {
         item.category.toLowerCase().includes(query)
       );
     });
-  }, [filtering, query, category]);
+  }, [filtering, query, category, items]);
 
   const toggle = (id: string) =>
     setOpen((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -78,15 +103,15 @@ function CompliancePage() {
   return (
     <main>
       <PageHero
-        kicker="Security & Compliance"
-        title="Compliance & Trust"
-        titleSecond="Institutional controls."
-        lede="Comprehensive compliance disclosures, Information Security Policy (PSSI), ISO 27001/27002 controls, GDPR/LGPD alignment, and infrastructure architecture across UNFLD products and engineering operations."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
         actions={
           <div className="flex flex-wrap items-center gap-3">
-            <BtnLink to="/contact">Contact security & audit team</BtnLink>
+            <BtnLink to="/contact">{p.contactTeam}</BtnLink>
             <BtnLink to="/security" variant="secondary">
-              Security overview
+              {p.securityOverview}
             </BtnLink>
           </div>
         }
@@ -98,7 +123,7 @@ function CompliancePage() {
         <div className="mx-auto w-full max-w-6xl">
           <ParallaxImage
             src="/images/infra.jpg"
-            alt="A hall of compute racks receding into the dark"
+            alt={p.imageAlt}
           />
         </div>
       </section>
@@ -114,6 +139,7 @@ function CompliancePage() {
         filtering={filtering}
         count={results.length}
         onReset={reset}
+        categories={categories}
       />
 
       {filtering ? (
@@ -130,13 +156,14 @@ function CompliancePage() {
 /* ---------------------------------------------------------------- posture */
 
 function PostureBand() {
+  const { posture } = useLocalizedCompliance();
   return (
     <Section className="pb-16 sm:pb-20">
       <Stagger
         className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border lg:grid-cols-4"
         delay={0.06}
       >
-        {COMPLIANCE_POSTURE.map((stat) => (
+        {posture.map((stat) => (
           <StaggerItem key={stat.label}>
             <div className="h-full bg-bg p-6 sm:p-7">
               <p className="font-display text-[clamp(1.6rem,3.5vw,2.25rem)] font-medium tracking-tight tabular-nums">
@@ -153,19 +180,22 @@ function PostureBand() {
 }
 
 function Highlights() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
+  const { highlights } = useLocalizedCompliance();
   return (
     <Section className="pb-20 sm:pb-28">
       <Reveal>
-        <Kicker>What we hold ourselves to</Kicker>
+        <Kicker>{p.highlightsKicker}</Kicker>
         <h2 className="max-w-3xl font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-          Six commitments the rest of this page has to prove.
+          {p.highlightsTitle}
         </h2>
       </Reveal>
       <Stagger
         className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
         delay={0.05}
       >
-        {COMPLIANCE_HIGHLIGHTS.map((h) => (
+        {highlights.map((h) => (
           <StaggerItem key={h.title}>
             <article className="h-full bg-bg p-7 transition-colors duration-200 hover:bg-bg-elevated sm:p-8">
               <GlyphTile icon={h.icon} />
@@ -184,20 +214,21 @@ function Highlights() {
 /* ------------------------------------------------------------------ index */
 
 function Index({ onJump }: { onJump: () => void }) {
+  const { pages } = useMessages();
+  const p = pages.compliance;
+  const { chapters } = useLocalizedCompliance();
   return (
     <Section className="pb-16 sm:pb-20">
       <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
         <Reveal>
-          <Kicker>The repository</Kicker>
+          <Kicker>{p.repoKicker}</Kicker>
           <h2 className="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
-            Six chapters.
+            {p.repoTitle}
             <br />
-            <span className="text-muted">{TOTAL} disclosures.</span>
+            <span className="text-muted">{interpolate(p.repoTitleSecond, { count: TOTAL })}</span>
           </h2>
           <p className="mt-6 max-w-md text-[15px] leading-relaxed text-muted">
-            Everything a vendor risk assessment asks for, grouped the way a
-            reviewer reads it — from the policy at the top to the pipeline that
-            ships the code. Search below to jump straight to an answer.
+            {p.repoLede}
           </p>
         </Reveal>
         <div className="min-w-0">
@@ -254,6 +285,7 @@ function SearchTool({
   filtering,
   count,
   onReset,
+  categories,
 }: {
   search: string;
   setSearch: (v: string) => void;
@@ -262,7 +294,10 @@ function SearchTool({
   filtering: boolean;
   count: number;
   onReset: () => void;
+  categories: ReturnType<typeof localizeComplianceCategories>;
 }) {
+  const { pages } = useMessages();
+  const p = pages.compliance;
   return (
     <Section className="pb-12">
       <Reveal>
@@ -270,12 +305,12 @@ function SearchTool({
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="min-w-0">
               <p className="font-display text-[17px] font-medium tracking-tight">
-                Search every disclosure
+                {p.searchTitle}
               </p>
               <p className="mt-1 text-[13px] text-muted">
                 {filtering
-                  ? `${count} of ${TOTAL} disclosures match.`
-                  : `Filter ${TOTAL} answers across ${categories.length} control domains.`}
+                  ? interpolate(p.searchMatch, { count, total: TOTAL })
+                  : interpolate(p.searchIdle, { total: TOTAL, domains: categories.length })}
               </p>
             </div>
             <div className="flex w-full items-center gap-2 lg:w-auto">
@@ -288,8 +323,8 @@ function SearchTool({
                   type="search"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="ISO 27001, backups, GDPR, MFA…"
-                  aria-label="Search compliance disclosures"
+                  placeholder={p.searchPlaceholder}
+                  aria-label={p.searchAria}
                   className="h-10 w-full rounded-full border border-border-strong bg-bg pr-4 pl-10 text-[13px] text-fg placeholder:text-subtle focus:border-fg/40 focus:outline-none"
                 />
               </div>
@@ -300,7 +335,7 @@ function SearchTool({
                   className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full border border-border-strong px-4 text-[13px] text-muted transition-colors hover:text-fg"
                 >
                   <X className="size-3.5" aria-hidden />
-                  Clear
+                  {p.clear}
                 </button>
               ) : null}
             </div>
@@ -310,7 +345,7 @@ function SearchTool({
             <Pill
               active={category === "all"}
               onClick={() => setCategory("all")}
-              label="All domains"
+              label={p.allDomains}
               count={TOTAL}
             />
             {categories.map((c) => (
@@ -378,23 +413,24 @@ function Results({
   onToggle: (id: string) => void;
   onReset: () => void;
 }) {
+  const { pages } = useMessages();
+  const p = pages.compliance;
   if (items.length === 0) {
     return (
       <Section className="pb-24 sm:pb-32">
         <div className="rounded-xl border border-border bg-bg-elevated p-12 text-center">
           <p className="font-display text-lg font-medium tracking-tight">
-            No disclosure matched that query.
+            {p.emptyTitle}
           </p>
           <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-muted">
-            Try a broader term, or reset the filters to browse the repository by
-            chapter.
+            {p.emptyBody}
           </p>
           <button
             type="button"
             onClick={onReset}
             className="mt-6 inline-flex h-9 items-center rounded-full border border-border-strong px-4 text-[13px] text-fg transition-colors hover:bg-fg/5"
           >
-            Reset filters
+            {p.reset}
           </button>
         </div>
       </Section>
@@ -428,6 +464,7 @@ function Narrative({
   open: OpenMap;
   onToggle: (id: string) => void;
 }) {
+  const { chapters } = useLocalizedCompliance();
   const interludes: Record<string, React.ReactNode> = {
     governance: <StandardsLedger />,
     identity: <FederationBreak />,
@@ -450,11 +487,16 @@ function Narrative({
 }
 
 function ChapterMark({ chapter }: { chapter: ResolvedChapter }) {
+  const { pages } = useMessages();
+  const { chapters } = useLocalizedCompliance();
   return (
     <div className="flex items-center gap-3">
       <GlyphTile icon={chapter.icon} />
       <span className="font-mono text-[12px] text-subtle tabular-nums">
-        Chapter {chapter.n} / {String(chapters.length).padStart(2, "0")}
+        {interpolate(pages.compliance.chapter, {
+          n: chapter.n,
+          total: String(chapters.length).padStart(2, "0"),
+        })}
       </span>
     </div>
   );
@@ -624,24 +666,25 @@ function Chapter({
 /* -------------------------------------------------------------- interludes */
 
 function StandardsLedger() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
+  const { standards } = useLocalizedCompliance();
   return (
     <Section className="pb-20 sm:pb-28">
       <Reveal>
         <div className="rounded-xl border border-border bg-bg-elevated p-6 sm:p-10">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
             <div>
-              <Kicker>The ledger</Kicker>
+              <Kicker>{p.ledgerKicker}</Kicker>
               <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-medium leading-tight tracking-tight">
-                What we are measured against.
+                {p.ledgerTitle}
               </h2>
               <p className="mt-4 text-[14px] leading-relaxed text-muted">
-                UNFLD runs lean. Rather than claim accreditations we do not
-                hold, we state precisely where a certificate exists and where we
-                calibrate our own practice to the criteria.
+                {p.ledgerLede}
               </p>
             </div>
             <ul className="min-w-0 divide-y divide-border border-t border-border">
-              {COMPLIANCE_STANDARDS.map((s) => (
+              {standards.map((s) => (
                 <li
                   key={s.name}
                   className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6"
@@ -668,25 +711,24 @@ function StandardsLedger() {
 }
 
 function FederationBreak() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
   return (
     <Section className="pb-20 sm:pb-28">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <Reveal>
-          <Kicker>Federated by default</Kicker>
+          <Kicker>{p.fedKicker}</Kicker>
           <h2 className="font-display text-[clamp(1.6rem,3.2vw,2.2rem)] font-medium leading-tight tracking-tight">
-            Your directory stays the source of truth.
+            {p.fedTitle}
           </h2>
           <p className="mt-5 text-[15px] leading-relaxed text-muted">
-            Enterprise tenants federate through SAML 2.0, OAuth 2.0, or OpenID
-            Connect against Microsoft Entra ID, Okta, or Google Workspace. When
-            someone leaves your organisation, they leave ours in the same
-            moment — no parallel account list to reconcile.
+            {p.fedLede}
           </p>
           <dl className="mt-8 grid grid-cols-3 gap-6">
             {[
-              ["SAML 2.0", "Assertion"],
-              ["OAuth 2.0", "Delegation"],
-              ["OIDC", "Identity"],
+              ["SAML 2.0", p.assertion],
+              ["OAuth 2.0", p.delegation],
+              ["OIDC", p.identity],
             ].map(([term, role]) => (
               <div key={term}>
                 <dt className="font-mono text-[13px] text-fg">{term}</dt>
@@ -698,7 +740,7 @@ function FederationBreak() {
         <Reveal delay={0.1} className="min-w-0">
           <ParallaxImage
             src="/images/relay.jpg"
-            alt="A constellation of linked nodes on black"
+            alt={p.federationAlt}
           />
         </Reveal>
       </div>
@@ -707,19 +749,22 @@ function FederationBreak() {
 }
 
 function Residency() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
+  const { regions } = useLocalizedCompliance();
   return (
     <Section className="pb-20 sm:pb-28">
       <Reveal>
-        <Kicker>Data residency</Kicker>
+        <Kicker>{p.residencyKicker}</Kicker>
         <h2 className="max-w-2xl font-display text-[clamp(1.6rem,3.2vw,2.2rem)] font-medium leading-tight tracking-tight">
-          Where the data physically sits, by contract.
+          {p.residencyTitle}
         </h2>
       </Reveal>
       <Stagger
         className="mt-10 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3"
         delay={0.08}
       >
-        {COMPLIANCE_REGIONS.map((r) => (
+        {regions.map((r) => (
           <StaggerItem key={r.region}>
             <div className="flex h-full flex-col bg-bg p-7 sm:p-8">
               <p className="font-mono text-[11px] tracking-[0.14em] text-subtle uppercase">
@@ -739,8 +784,7 @@ function Residency() {
       </Stagger>
       <Reveal delay={0.12}>
         <p className="mt-6 font-mono text-[11px] text-subtle">
-          Edge delivery and DDoS mitigation through Cloudflare points of presence
-          worldwide. Origin compute never leaves the contracted region.
+          {p.residencyNote}
         </p>
       </Reveal>
     </Section>
@@ -748,24 +792,22 @@ function Residency() {
 }
 
 function ResponseQuote() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
+  const { response } = useLocalizedCompliance();
   return (
     <Section className="pb-20 sm:pb-28">
       <Reveal>
-        <Kicker>When something goes wrong</Kicker>
+        <Kicker>{p.incidentKicker}</Kicker>
         <blockquote className="max-w-4xl font-display text-[clamp(1.7rem,4vw,3rem)] font-medium leading-[1.08] tracking-tight">
-          An incident is not the moment to invent a process. Triage,
-          containment, root cause, and notification are written down before we
-          ever need them.
+          {p.incidentQuote}
         </blockquote>
         <p className="mt-8 max-w-2xl text-[15px] leading-relaxed text-muted">
-          Breach notification follows GDPR, LGPD, and contractual SLA terms —
-          investigated and communicated to affected parties and regulators
-          without undue delay. Everything an investigation needs is already
-          being retained.
+          {p.incidentLede}
         </p>
       </Reveal>
       <Stagger className="mt-12 grid grid-cols-3 gap-6 sm:max-w-2xl" delay={0.08}>
-        {COMPLIANCE_RESPONSE.map((f) => (
+        {response.map((f) => (
           <StaggerItem key={f.label}>
             <p className="font-display text-[clamp(1.3rem,3vw,2rem)] font-medium tracking-tight tabular-nums">
               {f.value}
@@ -779,20 +821,19 @@ function ResponseQuote() {
 }
 
 function PostureManifest() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
   return (
     <Section className="pb-20 sm:pb-28">
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
         <div className="min-w-0">
           <Reveal>
-            <Kicker>Enforced, not aspirational</Kicker>
+            <Kicker>{p.postureKicker}</Kicker>
             <h2 className="font-display text-[clamp(1.6rem,3.2vw,2.2rem)] font-medium leading-tight tracking-tight">
-              The posture, as configuration.
+              {p.postureTitle}
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-muted">
-              Encryption, credential handling, and retention are not a policy
-              document somebody remembers to apply. They are the defaults every
-              UNFLD environment is provisioned with, and drift from them fails
-              the pipeline.
+              {p.postureLede}
             </p>
           </Reveal>
         </div>
@@ -805,16 +846,19 @@ function PostureManifest() {
 }
 
 function Lifecycle() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
+  const { lifecycle } = useLocalizedCompliance();
   return (
     <Section className="pb-20 sm:pb-28">
       <Reveal>
-        <Kicker>Before anything ships</Kicker>
+        <Kicker>{p.lifeKicker}</Kicker>
         <h2 className="max-w-2xl font-display text-[clamp(1.6rem,3.2vw,2.2rem)] font-medium leading-tight tracking-tight">
-          Four gates between a commit and production.
+          {p.lifeTitle}
         </h2>
       </Reveal>
       <Stagger className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4" delay={0.07}>
-        {COMPLIANCE_LIFECYCLE.map((step) => (
+        {lifecycle.map((step) => (
           <StaggerItem key={step.n}>
             <div className="border-t border-border pt-5">
               <p className="font-mono text-[12px] text-subtle tabular-nums">{step.n}</p>
@@ -833,30 +877,29 @@ function Lifecycle() {
 /* ---------------------------------------------------------------- closing */
 
 function Closing() {
+  const { pages } = useMessages();
+  const p = pages.compliance;
   return (
     <Section className="pb-24 sm:pb-32">
       <Reveal>
         <div className="rounded-xl border border-border bg-bg-elevated p-8 sm:p-12">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <Kicker>Security reviews & enterprise audits</Kicker>
+              <Kicker>{p.closeKicker}</Kicker>
               <h2 className="font-display text-[clamp(1.5rem,3vw,2rem)] font-medium leading-tight tracking-tight">
-                Need a vendor risk assessment or a custom security annex?
+                {p.closeTitle}
               </h2>
               <p className="mt-4 text-[15px] leading-relaxed text-muted">
-                Our legal and security engineering team in São Paulo provides
-                custom vendor questionnaires, SOC 2 alignment mappings, Data
-                Processing Addenda, and architectural reviews for enterprise
-                partners.
+                {p.closeLede}
               </p>
               <p className="mt-5 font-mono text-[12px] text-subtle">
                 {SITE.security} · {SITE.sales}
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col">
-              <BtnLink to="/contact">Request security pack</BtnLink>
+              <BtnLink to="/contact">{p.requestPack}</BtnLink>
               <BtnLink to="/legal/privacy-policy" variant="secondary">
-                Privacy policy
+                {p.privacyPolicy}
               </BtnLink>
             </div>
           </div>

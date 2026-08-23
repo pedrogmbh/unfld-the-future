@@ -382,11 +382,11 @@ export const footer = {
     { label: "Dialogus", to: "/dialogus" },
   ],
   solutions: [
-    { label: "Small business", to: "/solutions/business" },
+    { label: "Small business", to: "/solutions/small-business" },
     { label: "Public missions", to: "/solutions/government" },
     { label: "Operations", to: "/solutions/operations" },
     { label: "Fiscal & risk", to: "/solutions/legal" },
-    { label: "Security", to: "/solutions/security" },
+    { label: "Security", to: "/security" },
   ],
   company: [
     { label: "About", to: "/company" },
@@ -411,6 +411,12 @@ export const footer = {
     { label: "AUP", to: "/legal/acceptable-use-policy" },
     { label: "Brand", to: "/legal/brand-guidelines" },
   ],
+} as const;
+
+/** Footer legal-bar chip. Kept off `footer` so machinePages() still iterates link arrays. */
+export const systemsStatus = {
+  label: "All systems operational.",
+  to: "/status",
 } as const;
 
 export const developerSurface = {

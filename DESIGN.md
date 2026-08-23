@@ -81,6 +81,7 @@ There is **one** action accent: white on black. Kickers may use brass.
 | `accent` | `#ffffff` | Primary buttons, “Try for free” |
 | `accent-fg` | `#000000` | Text on primary buttons |
 | `gold` | `#e3b26a` | Kickers only — same hex as `code-str` |
+| `status` | `#187533` | Operational status dots only |
 
 Gold is type on kickers: `Kicker`, `PageHero` kickers, and the
 sentence-case “For developers” line. Never a fill, never a button, never
@@ -107,6 +108,10 @@ Highlighter: `src/lib/highlight.tsx`. PascalCase + `(` is a **type**
 
 `traffic-red` `#ff5f57` · `traffic-amber` `#febc2e` · `traffic-green` `#28c840`.
 Only on code-window chrome.
+
+Operational status uses `status` `#187533` — an 8px dot (`bg-status`) on
+the footer legal bar and `/status`. No pulse. No Lucide icon. Do not use
+`traffic-green`, `emerald-*`, or gold for status.
 
 ### Selection / focus
 
@@ -254,6 +259,7 @@ Hover intent delay on leave: **90ms**. Chevron rotates 180°.
 - Layout animations that reflow the page (`layout` on large grids).
 - Animating `width`/`height`/`top` — transform and opacity only.
 - Auto-playing loops on hero type.
+- Pulsing status dots.
 
 ---
 
@@ -265,7 +271,7 @@ All under `src/components/site/`.
 |---|---|
 | `logo.tsx` | Mark + wordmark |
 | `header.tsx` | Fixed nav, hover menus, Contact Sales, Try-for-free split, mobile overlay |
-| `footer.tsx` | Five-column sitemap + legal + privacy choices |
+| `footer.tsx` | Five-column sitemap + legal + status chip |
 | `buttons.tsx` | `Btn`, `BtnLink` (primary / secondary / ghost), `TextArrow` |
 | `page-hero.tsx` | Inner-page hero (kicker, WordStagger title, lede, actions) |
 | `section.tsx` | `Section` (max-w-6xl), `Kicker`, `Hairline` |
@@ -275,8 +281,6 @@ All under `src/components/site/`.
 | `product-page.tsx` | Product template (hero + parallax still + feature grid + quote) |
 | `legal-doc.tsx` | Legal article shell |
 | `not-found.tsx` | 404 |
-| `cookie-choices.tsx` | Privacy dialog |
-
 Copy, nav, products, news, plans: **`src/lib/site.ts`**. Don’t scatter
 sitemap links.
 

@@ -118,6 +118,8 @@ News posts: `/news/$slug` + `getNews()`. Do not hardcode
 - Pure black (`bg-bg`). Action accent: white on black. Kickers: `text-gold`.
 - **No hex in JSX.** Tokens only (`text-fg`, `bg-bg`, `border-border`, `text-gold`).
 - Gold (`#e3b26a`) is kickers only. Syntax hues stay inside code.
+- Footer legal bar leads with an 8px `bg-status` dot +
+  “All systems operational.” linking to `/status`. No pulse.
 - Hairline grids: `gap-px … border-border bg-border`, children `bg-bg`.
 - Hero type: `font-display font-medium`, negative tracking, never all-caps.
 - Kickers: uppercase `tracking-[0.18em] text-gold` — except the

@@ -1,9 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
+import { formatLegalContact, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/legal/privacy-policy")({
-  head: () => ({ meta: [{ title: pageTitle("Privacy Policy") }] }),
+  head: () =>
+    buildPageHead({
+      title: "Privacy Policy",
+      description:
+        "How UNFOLDING THE FUTURE LTDA processes personal data for the UNFLD website and applicable products.",
+      path: "/legal/privacy-policy",
+    }),
   component: Page,
 });
 

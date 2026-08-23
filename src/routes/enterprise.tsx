@@ -2,19 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { pageTitle } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/enterprise")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Enterprise") },
-      {
-        name: "description",
-        content:
-          "A contract shaped around the system you actually need. Available controls are confirmed per product and order form.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Enterprise",
+      description:
+        "A contract shaped around the system you actually need. Available controls are confirmed per product and order form.",
+      path: "/enterprise",
+    }),
   component: Enterprise,
 });
 
@@ -25,7 +22,7 @@ const capabilities = [
   ],
   [
     "Isolated environments",
-    "Dedicated data planes, VPC peering, and tenancy isolation when regulatory review requires it.",
+    "Isolation options—including dedicated environments or private connectivity—are confirmed for the proposed architecture and recorded in the order form.",
   ],
   [
     "Audit exports",
@@ -33,7 +30,7 @@ const capabilities = [
   ],
   [
     "Regional hosting",
-    "Data residency within Brazilian cloud regions, meeting domestic compliance and latency requirements.",
+    "Brazilian-region hosting may be defined in the order form to support agreed residency, architecture, and latency requirements.",
   ],
   [
     "Service level commitments",

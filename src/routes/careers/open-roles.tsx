@@ -2,19 +2,17 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { pageTitle, roles, SITE } from "@/lib/site";
+import { roles, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/careers/open-roles")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Open roles") },
-      {
-        name: "description",
-        content:
-          "Open work at UNFLD. Every listed role is approved, funded, and actively reviewed by the team it will join.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Open roles",
+      description:
+        "Open work at UNFLD. Every listed role is approved, funded, and actively reviewed by the team it will join.",
+      path: "/careers/open-roles",
+    }),
   component: OpenRoles,
 });
 

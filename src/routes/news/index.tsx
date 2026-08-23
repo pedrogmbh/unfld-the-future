@@ -1,19 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { news, pageTitle } from "@/lib/site";
+import { news } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/news/")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("News") },
-      {
-        name: "description",
-        content:
-          "What UNFLD is building—and what we are learning from the work. Product releases, field notes, and company announcements.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "News & updates",
+      description:
+        "What UNFLD is building—and what we are learning from the work. Product releases, field notes, and company announcements.",
+      path: "/news",
+    }),
   component: NewsIndex,
 });
 

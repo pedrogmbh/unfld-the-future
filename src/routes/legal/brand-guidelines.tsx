@@ -1,10 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mark } from "@/components/site/logo";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { pageTitle, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/legal/brand-guidelines")({
-  head: () => ({ meta: [{ title: pageTitle("Brand Guidelines") }] }),
+  head: () =>
+    buildPageHead({
+      title: "Brand Guidelines",
+      description:
+        "How to name, write, and visually represent UNFLD and its fold mark.",
+      path: "/legal/brand-guidelines",
+    }),
   component: Page,
 });
 

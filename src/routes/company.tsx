@@ -9,23 +9,20 @@ import {
   news,
   offices,
   ownedProducts,
-  pageTitle,
   SITE,
   timeline,
   values,
 } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/company")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Company") },
-      {
-        name: "description",
-        content:
-          "UNFLD is a product company and technology partner. We turn what should exist next into something people can use now.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Company",
+      description:
+        "UNFLD is a product company and technology partner. We turn what should exist next into something people can use now.",
+      path: "/company",
+    }),
   component: Company,
 });
 

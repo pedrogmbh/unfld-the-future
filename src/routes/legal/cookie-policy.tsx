@@ -1,9 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
+import { formatLegalContact, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/legal/cookie-policy")({
-  head: () => ({ meta: [{ title: pageTitle("Cookie Policy") }] }),
+  head: () =>
+    buildPageHead({
+      title: "Cookie Policy",
+      description:
+        "Cookies and similar technologies used on unfld.com.br and applicable UNFLD product domains.",
+      path: "/legal/cookie-policy",
+    }),
   component: Page,
 });
 

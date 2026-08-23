@@ -2,19 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
-import { pageTitle, plans, SITE } from "@/lib/site";
+import { plans, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/pricing")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Pricing") },
-      {
-        name: "description",
-        content:
-          "A clear next step for every product. Current availability, pricing model, and next steps across UNFLD products.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Pricing & availability",
+      description:
+        "A clear next step for every product. Current availability, pricing model, and next steps across UNFLD products.",
+      path: "/pricing",
+    }),
   component: Pricing,
 });
 

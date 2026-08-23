@@ -2,19 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { ownedProducts, pageTitle } from "@/lib/site";
+import { ownedProducts } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/access")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Access UNFLD products") },
-      {
-        name: "description",
-        content:
-          "Each UNFLD product has its own secure entry point. Choose the product you use.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Access UNFLD products",
+      description:
+        "Each UNFLD product has its own secure entry point. Choose the product you use below to sign in, open the web portal, or install the mobile application.",
+      path: "/access",
+    }),
   component: AccessPage,
 });
 

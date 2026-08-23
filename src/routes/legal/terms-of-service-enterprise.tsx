@@ -1,9 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
+import { formatLegalContact, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/legal/terms-of-service-enterprise")({
-  head: () => ({ meta: [{ title: pageTitle("Enterprise Terms") }] }),
+  head: () =>
+    buildPageHead({
+      title: "Enterprise Terms",
+      description:
+        "Terms for services under an enterprise order form issued by UNFOLDING THE FUTURE LTDA.",
+      path: "/legal/terms-of-service-enterprise",
+    }),
   component: Page,
 });
 

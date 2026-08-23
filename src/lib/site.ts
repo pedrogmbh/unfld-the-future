@@ -388,6 +388,7 @@ export const footer = {
     { label: "Careers", to: "/careers" },
     { label: "News", to: "/news" },
     { label: "Security", to: "/security" },
+    { label: "Compliance", to: "/compliance" },
     { label: "São Paulo", to: "/sao-paulo" },
     { label: "Infrastructure", to: "/infrastructure" },
     { label: "Enterprise", to: "/enterprise" },
@@ -396,6 +397,7 @@ export const footer = {
   ],
   legal: [
     { label: "Legal", to: "/legal" },
+    { label: "Compliance", to: "/compliance" },
     { label: "Terms", to: "/legal/terms-of-service" },
     { label: "Enterprise Terms", to: "/legal/terms-of-service-enterprise" },
     { label: "Privacy", to: "/legal/privacy-policy" },

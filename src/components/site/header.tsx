@@ -17,6 +17,7 @@ function navMenus() {
         { label: "Careers", to: "/careers" },
         { label: "News", to: "/news" },
         { label: "Security", to: "/security" },
+        { label: "Compliance", to: "/compliance" },
         { label: "São Paulo", to: "/sao-paulo" },
         { label: "Infrastructure", to: "/infrastructure" },
         { label: "Enterprise", to: "/enterprise" },

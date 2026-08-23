@@ -36,9 +36,15 @@ function Solution() {
         actions={
           <>
             <BtnLink to="/contact">Talk to UNFLD</BtnLink>
-            <BtnLink to="/build-with-us" variant="secondary">
-              Build with us
-            </BtnLink>
+            {s.slug === "security" ? (
+              <BtnLink to="/compliance" variant="secondary">
+                Compliance disclosures
+              </BtnLink>
+            ) : (
+              <BtnLink to="/build-with-us" variant="secondary">
+                Build with us
+              </BtnLink>
+            )}
           </>
         }
       />

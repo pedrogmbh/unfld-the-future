@@ -56,6 +56,7 @@ function LegalIndex() {
             <ul className="mt-4 space-y-3">
               <Item to="/legal/brand-guidelines" label="UNFLD Brand Guidelines" />
               <Item to="/security" label="Security" />
+              <Item to="/compliance" label="Compliance" />
               <Item to="/contact" label="Legal request" />
             </ul>
           </div>

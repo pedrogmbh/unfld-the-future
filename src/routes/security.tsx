@@ -67,7 +67,14 @@ function Security() {
         kicker="Trust & Security"
         title="Security at UNFLD"
         lede="Security at UNFLD starts with a narrower promise: know what data a product needs, limit who and what can reach it, and make important actions traceable."
-        actions={<BtnLink to="/contact">Contact security</BtnLink>}
+        actions={
+          <>
+            <BtnLink to="/contact">Contact security</BtnLink>
+            <BtnLink to="/compliance" variant="secondary">
+              Compliance disclosures
+            </BtnLink>
+          </>
+        }
       />
 
       <Section className="pb-16">
@@ -100,6 +107,20 @@ function Security() {
               <p className="mt-2 text-sm text-muted">{d}</p>
             </article>
           ))}
+        </div>
+      </Section>
+      <Section className="pb-16">
+        <div className="rounded-xl border border-border bg-bg-elevated p-8 sm:p-10">
+          <Kicker>Compliance disclosures</Kicker>
+          <h2 className="font-display text-2xl font-medium tracking-tight">
+            Standing answers to vendor security review
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
+            The compliance repository holds our standing answers across 19 control domains: information security policy, access management, encryption, data residency, backup and continuity, incident response, and supply chain. It is published rather than sent on request.
+          </p>
+          <div className="mt-6">
+            <BtnLink to="/compliance">Open the compliance repository</BtnLink>
+          </div>
         </div>
       </Section>
 

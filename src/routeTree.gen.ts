@@ -14,6 +14,7 @@ import { Route as AccessRouteImport } from './routes/access'
 import { Route as ApiRouteImport } from './routes/api'
 import { Route as BuildWithUsRouteImport } from './routes/build-with-us'
 import { Route as CompanyRouteImport } from './routes/company'
+import { Route as ComplianceRouteImport } from './routes/compliance'
 import { Route as ConsoleRouteImport } from './routes/console'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DialogusRouteImport } from './routes/dialogus'
@@ -71,6 +72,11 @@ const BuildWithUsRoute = BuildWithUsRouteImport.update({
 const CompanyRoute = CompanyRouteImport.update({
   id: '/company',
   path: '/company',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComplianceRoute = ComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConsoleRoute = ConsoleRouteImport.update({
@@ -247,6 +253,7 @@ export interface FileRoutesByFullPath {
   '/api': typeof ApiRoute
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
+  '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
   '/dialogus': typeof DialogusRoute
@@ -287,6 +294,7 @@ export interface FileRoutesByTo {
   '/api': typeof ApiRoute
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
+  '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
   '/dialogus': typeof DialogusRoute
@@ -328,6 +336,7 @@ export interface FileRoutesById {
   '/api': typeof ApiRoute
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
+  '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
   '/dialogus': typeof DialogusRoute
@@ -370,6 +379,7 @@ export interface FileRouteTypes {
     | '/api'
     | '/build-with-us'
     | '/company'
+    | '/compliance'
     | '/console'
     | '/contact'
     | '/dialogus'
@@ -410,6 +420,7 @@ export interface FileRouteTypes {
     | '/api'
     | '/build-with-us'
     | '/company'
+    | '/compliance'
     | '/console'
     | '/contact'
     | '/dialogus'
@@ -450,6 +461,7 @@ export interface FileRouteTypes {
     | '/api'
     | '/build-with-us'
     | '/company'
+    | '/compliance'
     | '/console'
     | '/contact'
     | '/dialogus'
@@ -491,6 +503,7 @@ export interface RootRouteChildren {
   ApiRoute: typeof ApiRoute
   BuildWithUsRoute: typeof BuildWithUsRoute
   CompanyRoute: typeof CompanyRoute
+  ComplianceRoute: typeof ComplianceRoute
   ConsoleRoute: typeof ConsoleRoute
   ContactRoute: typeof ContactRoute
   DialogusRoute: typeof DialogusRoute
@@ -561,6 +574,13 @@ declare module '@tanstack/react-router' {
       path: '/company'
       fullPath: '/company'
       preLoaderRoute: typeof CompanyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/compliance': {
+      id: '/compliance'
+      path: '/compliance'
+      fullPath: '/compliance'
+      preLoaderRoute: typeof ComplianceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/console': {
@@ -803,6 +823,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiRoute: ApiRoute,
   BuildWithUsRoute: BuildWithUsRoute,
   CompanyRoute: CompanyRoute,
+  ComplianceRoute: ComplianceRoute,
   ConsoleRoute: ConsoleRoute,
   ContactRoute: ContactRoute,
   DialogusRoute: DialogusRoute,

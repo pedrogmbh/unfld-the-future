@@ -65,7 +65,7 @@ jobs:
             | awk 'len + length($0) + 1 > 820 { exit } { print; len += length($0) + 1 }')
           message=$(printf '%s\n\n[full report in the run log]' "$preview")
 
-          curl --fail-with-body -sS -X POST "$PUSHOVER_URL" \
+          curl -v --fail-with-body -sS -X POST "$PUSHOVER_URL" \
             --form-string "token=$PUSHOVER_API_KEY" \
             --form-string "user=$PUSHOVER_GROUP_KEY" \
             --form-string "title=UNFLD Site - Is Agentic Report" \
@@ -97,7 +97,7 @@ jobs:
           message=$(printf 'purge: %s\nis-agentic: %s (100/100: %s)\ncommit: %s on %s' \
             "$PURGE" "${AGENTIC:-skipped}" "${PASSED:-n/a}" "${GITHUB_SHA:0:7}" "$GITHUB_REF_NAME")
 
-          curl --fail-with-body -sS -X POST "$PUSHOVER_URL" \
+          curl -v --fail-with-body -sS -X POST "$PUSHOVER_URL" \
             --form-string "token=$PUSHOVER_API_KEY" \
             --form-string "user=$PUSHOVER_GROUP_KEY" \
             --form-string "title=$title" \

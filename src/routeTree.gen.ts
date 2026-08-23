@@ -38,6 +38,7 @@ import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitecreatorRouteImport } from './routes/sitecreator'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StatusRouteImport } from './routes/status'
+import { Route as ApiIndexRouteImport } from './routes/api.index'
 import { Route as ApiOpenapiDotyamlRouteImport } from './routes/api.openapi[.]yaml'
 import { Route as ApiV1RouteImport } from './routes/api.v1'
 import { Route as ApiVersioningRouteImport } from './routes/api.versioning'
@@ -203,6 +204,11 @@ const StatusRoute = StatusRouteImport.update({
   path: '/status',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiIndexRoute = ApiIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ApiRoute,
+} as any)
 const ApiOpenapiDotyamlRoute = ApiOpenapiDotyamlRouteImport.update({
   id: '/openapi.yaml',
   path: '/openapi.yaml',
@@ -344,6 +350,7 @@ export interface FileRoutesByFullPath {
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/api/': typeof ApiIndexRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
   '/news/': typeof NewsIndexRoute
@@ -355,7 +362,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/access': typeof AccessRoute
   '/agents.md': typeof AgentsDotmdRoute
-  '/api': typeof ApiRouteWithChildren
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/compliance': typeof ComplianceRoute
@@ -394,6 +400,7 @@ export interface FileRoutesByTo {
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/api': typeof ApiIndexRoute
   '/careers': typeof CareersIndexRoute
   '/legal': typeof LegalIndexRoute
   '/news': typeof NewsIndexRoute
@@ -445,6 +452,7 @@ export interface FileRoutesById {
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/api/': typeof ApiIndexRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
   '/news/': typeof NewsIndexRoute
@@ -497,6 +505,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
+    | '/api/'
     | '/careers/'
     | '/legal/'
     | '/news/'
@@ -508,7 +517,6 @@ export interface FileRouteTypes {
     | '/'
     | '/access'
     | '/agents.md'
-    | '/api'
     | '/build-with-us'
     | '/company'
     | '/compliance'
@@ -547,6 +555,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
+    | '/api'
     | '/careers'
     | '/legal'
     | '/news'
@@ -597,6 +606,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
+    | '/api/'
     | '/careers/'
     | '/legal/'
     | '/news/'
@@ -857,6 +867,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StatusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/': {
+      id: '/api/'
+      path: '/'
+      fullPath: '/api/'
+      preLoaderRoute: typeof ApiIndexRouteImport
+      parentRoute: typeof ApiRoute
+    }
     '/api/openapi.yaml': {
       id: '/api/openapi.yaml'
       path: '/openapi.yaml'
@@ -1007,12 +1024,14 @@ interface ApiRouteChildren {
   ApiOpenapiDotyamlRoute: typeof ApiOpenapiDotyamlRoute
   ApiV1Route: typeof ApiV1RouteWithChildren
   ApiVersioningRoute: typeof ApiVersioningRoute
+  ApiIndexRoute: typeof ApiIndexRoute
 }
 
 const ApiRouteChildren: ApiRouteChildren = {
   ApiOpenapiDotyamlRoute: ApiOpenapiDotyamlRoute,
   ApiV1Route: ApiV1RouteWithChildren,
   ApiVersioningRoute: ApiVersioningRoute,
+  ApiIndexRoute: ApiIndexRoute,
 }
 
 const ApiRouteWithChildren = ApiRoute._addFileChildren(ApiRouteChildren)

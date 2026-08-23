@@ -230,7 +230,12 @@ export function WorkCase({ work }: { work: SelectedWork }) {
       </Section>
 
       <Section className="pb-16 sm:pb-24">
-        <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2">
+        <div
+          className={cn(
+            "grid gap-px overflow-hidden rounded-xl border border-border bg-border",
+            prev && next ? "sm:grid-cols-2" : "",
+          )}
+        >
           {prev ? (
             <Link
               to="/work/$slug"
@@ -245,14 +250,12 @@ export function WorkCase({ work }: { work: SelectedWork }) {
               </p>
               <p className="mt-1 text-sm text-muted">{prev.client}</p>
             </Link>
-          ) : (
-            <div className="bg-bg" />
-          )}
+          ) : null}
           {next ? (
             <Link
               to="/work/$slug"
               params={{ slug: next.slug }}
-              className="group bg-bg p-6 text-right transition-colors hover:bg-bg-elevated sm:p-8"
+              className="group bg-bg p-6 transition-colors hover:bg-bg-elevated sm:p-8"
             >
               <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
                 Next
@@ -262,9 +265,7 @@ export function WorkCase({ work }: { work: SelectedWork }) {
               </p>
               <p className="mt-1 text-sm text-muted">{next.client}</p>
             </Link>
-          ) : (
-            <div className="bg-bg" />
-          )}
+          ) : null}
         </div>
       </Section>
 

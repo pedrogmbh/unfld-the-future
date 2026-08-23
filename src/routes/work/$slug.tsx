@@ -13,7 +13,9 @@ export const Route = createFileRoute("/work/$slug")({
       {
         title: pageTitle(
           loaderData
-            ? `${loaderData.client} — ${loaderData.title}`
+            ? loaderData.client === loaderData.title
+              ? loaderData.title
+              : `${loaderData.client} — ${loaderData.title}`
             : "Selected work",
         ),
       },

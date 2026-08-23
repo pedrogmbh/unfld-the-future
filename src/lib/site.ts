@@ -1062,9 +1062,10 @@ export function featuredWork() {
 export function workNeighbors(slug: string) {
   const i = selectedWork.findIndex((w) => w.slug === slug);
   if (i < 0) return { prev: undefined, next: undefined };
-  const prev = selectedWork[(i - 1 + selectedWork.length) % selectedWork.length];
-  const next = selectedWork[(i + 1) % selectedWork.length];
-  return { prev, next };
+  return {
+    prev: i > 0 ? selectedWork[i - 1] : undefined,
+    next: i < selectedWork.length - 1 ? selectedWork[i + 1] : undefined,
+  };
 }
 
 export function workRows(items: readonly SelectedWork[] = selectedWork) {

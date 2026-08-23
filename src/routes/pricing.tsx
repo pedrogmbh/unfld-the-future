@@ -2,71 +2,80 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
-import { plans, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizePlans } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/pricing")({
-  head: () =>
-    buildPageHead({
-      title: "Pricing & availability",
-      description:
-        "A clear next step for every product. Current availability, pricing model, and next steps across UNFLD products.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.pricing;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/pricing",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: Pricing,
 });
 
 function Pricing() {
+  const locale = useLocale();
+  const { pages, chrome } = useMessages();
+  const p = pages.pricing;
+  const planList = localizePlans(locale);
   return (
     <main>
       <PageHero
-        kicker="Pricing & availability"
-        title="A clear next step"
-        titleSecond="for every product."
-        lede="Choose a product below to see its current availability, pricing model, and next step. Custom systems and enterprise configurations begin with a scoped conversation."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
       />
       <Section className="pb-16">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {plans.map((p) => (
+          {planList.map((plan) => (
             <article
-              key={p.name}
+              key={plan.name}
               className="flex flex-col rounded-xl border border-border p-6"
             >
               <h2 className="text-[13px] tracking-[0.16em] text-subtle uppercase">
-                {p.name}
+                {plan.name}
               </h2>
               <p className="mt-4 font-display text-3xl font-medium tracking-tight">
-                {p.price}
+                {plan.price}
                 <span className="text-sm font-normal text-muted">
-                  {p.period}
+                  {plan.period}
                 </span>
               </p>
-              <p className="mt-3 min-h-12 text-sm text-muted">{p.blurb}</p>
+              <p className="mt-3 min-h-12 text-sm text-muted">{plan.blurb}</p>
               <ul className="mt-6 flex-1 space-y-2 text-sm text-muted">
-                {p.features.map((f) => (
+                {plan.features.map((f) => (
                   <li key={f}>{f}</li>
                 ))}
               </ul>
               <BtnLink
-                to={p.external ? undefined : p.href}
-                href={p.external ? p.href : undefined}
-                variant={p.name === "Custom" ? "primary" : "secondary"}
+                to={plan.external ? undefined : plan.href}
+                href={plan.external ? plan.href : undefined}
+                variant={plan.name === "Custom" ? "primary" : "secondary"}
                 className="mt-8 w-full"
-                {...(p.external ? { target: "_blank", rel: "noreferrer" } : {})}
+                {...(plan.external ? { target: "_blank", rel: "noreferrer" } : {})}
               >
-                {p.cta}
+                {plan.cta}
               </BtnLink>
             </article>
           ))}
         </div>
       </Section>
       <Section className="pb-24 sm:pb-32">
-        <Kicker>Custom systems & enterprise</Kicker>
+        <Kicker>{p.customKicker}</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Scope a custom system.
+          {p.customTitle}
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Custom contracts, dedicated infrastructure, SSO, compliance, and volume pricing. Or reach us directly at{" "}
+          {p.customLede}{" "}
           <a
             href={`mailto:${SITE.sales}`}
             className="text-fg underline-offset-4 hover:underline"
@@ -76,7 +85,7 @@ function Pricing() {
           .
         </p>
         <div className="mt-8">
-          <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+          <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
         </div>
       </Section>
     </main>

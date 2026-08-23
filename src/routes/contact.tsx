@@ -5,38 +5,48 @@ import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
 import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeFacts } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/contact")({
-  head: () =>
-    buildPageHead({
-      title: "Contact",
-      description:
-        "Tell us what needs to work differently. Choose a product, propose a partnership, or describe the operation you need to improve.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.contact;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/contact",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: Contact,
 });
 
 function Contact() {
   const [sent, setSent] = useState(false);
+  const locale = useLocale();
+  const { pages } = useMessages();
+  const p = pages.contact;
+  const facts = localizeFacts(locale);
+  const [receivedBefore, receivedAfter] = p.receivedBody.split("{{email}}");
 
   return (
     <main>
       <PageHero
-        kicker="Contact"
-        title="Tell us what needs"
-        titleSecond="to work differently."
-        lede="Choose a product, propose a partnership, or describe the operation you need to improve. Your message will reach the person responsible for the next step."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-16 lg:grid-cols-[1fr_18rem]">
           {sent ? (
             <div className="rounded-xl border border-border p-8">
-              <h2 className="font-display text-2xl font-medium">Received.</h2>
+              <h2 className="font-display text-2xl font-medium">{p.receivedTitle}</h2>
               <p className="mt-3 text-muted">
-                Thank you. A member of the UNFLD team will follow up directly. If this is
-                a vulnerability report, please reach out to {SITE.security} with the subject
-                “Responsible Disclosure.”
+                {receivedBefore}
+                {SITE.security}
+                {receivedAfter}
               </p>
             </div>
           ) : (
@@ -49,17 +59,17 @@ function Contact() {
                 setSent(true);
               }}
             >
-              <Field label="Full name" name="name" className="sm:col-span-1" />
+              <Field label={p.fullName} name="name" className="sm:col-span-1" />
               <Field
-                label="Work email"
+                label={p.workEmail}
                 name="email"
                 type="email"
                 className="sm:col-span-1"
               />
-              <Field label="Company" name="company" />
+              <Field label={p.company} name="company" />
               <label className="block">
                 <span className="mb-1.5 block text-[12px] text-muted">
-                  Company size
+                  {p.companySize}
                 </span>
                 <select
                   name="size"
@@ -68,7 +78,7 @@ function Contact() {
                   required
                 >
                   <option value="" disabled>
-                    Select
+                    {p.select}
                   </option>
                   <option>1–20</option>
                   <option>21–200</option>
@@ -78,7 +88,7 @@ function Contact() {
               </label>
               <label className="block sm:col-span-2">
                 <span className="mb-1.5 block text-[12px] text-muted">
-                  What is happening today, and what needs to be different?
+                  {p.messageLabel}
                 </span>
                 <textarea
                   required
@@ -88,14 +98,14 @@ function Contact() {
                 />
               </label>
               <div className="sm:col-span-2 space-y-3">
-                <Btn type="submit">Send message</Btn>
+                <Btn type="submit">{p.send}</Btn>
                 <p className="text-xs text-muted">
-                  We’ll use these details only to respond to your request, as described in our{" "}
+                  {p.privacyNote}{" "}
                   <Link
                     to="/legal/privacy-policy"
                     className="text-fg underline-offset-4 hover:underline"
                   >
-                    Privacy Policy
+                    {p.privacyPolicy}
                   </Link>
                   .
                 </p>
@@ -105,7 +115,7 @@ function Contact() {
           <aside className="space-y-6 text-sm">
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-                Sales & partnerships
+                {p.sales}
               </p>
               <a href={`mailto:${SITE.sales}`} className="mt-1 block hover:opacity-70">
                 {SITE.sales}
@@ -113,7 +123,7 @@ function Contact() {
             </div>
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-                Press
+                {p.press}
               </p>
               <a href={`mailto:${SITE.press}`} className="mt-1 block hover:opacity-70">
                 {SITE.press}
@@ -121,7 +131,7 @@ function Contact() {
             </div>
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-                Registered entity
+                {p.registered}
               </p>
               <a
                 href={`mailto:${SITE.registeredEmail}`}
@@ -138,7 +148,7 @@ function Contact() {
             </div>
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-                Headquarters
+                {p.headquarters}
               </p>
               <p className="mt-1 leading-relaxed text-muted">
                 {SITE.legal}
@@ -153,12 +163,12 @@ function Contact() {
                 <br />
                 CNPJ {SITE.cnpj}
                 <br />
-                {SITE.status} · {SITE.establishment} · {SITE.porte}
+                {facts.statusValue} · {facts.establishment} · {facts.porte}
               </p>
             </div>
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-                Security
+                {p.security}
               </p>
               <a
                 href={`mailto:${SITE.security}`}

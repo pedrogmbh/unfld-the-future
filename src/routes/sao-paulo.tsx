@@ -2,35 +2,45 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { formatAddress, offices, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { interpolate } from "@/lib/i18n/interpolate";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { formatAddressLocalized, localizeFacts, localizeOffices } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/sao-paulo")({
-  head: () =>
-    buildPageHead({
-      title: "São Paulo",
-      description:
-        "UNFLD in São Paulo. Registered headquarters and meeting point of UNFOLDING THE FUTURE LTDA, in Bela Vista.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.saoPaulo;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/sao-paulo",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: SaoPaulo,
 });
 
 function SaoPaulo() {
-  const hq = offices[0];
+  const locale = useLocale();
+  const { pages, chrome } = useMessages();
+  const p = pages.saoPaulo;
+  const hq = localizeOffices(locale)[0];
+  const facts = localizeFacts(locale);
 
   return (
     <main>
       <PageHero
-        kicker="Headquarters"
-        title="UNFLD in"
-        titleSecond="São Paulo."
-        lede="The registered headquarters and meeting point of UNFOLDING THE FUTURE LTDA, in Bela Vista, minutes from Avenida Paulista."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
         actions={
           <>
-            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
             <BtnLink to="/careers" variant="secondary">
-              Careers
+              {chrome.nav.careers}
             </BtnLink>
           </>
         }
@@ -39,46 +49,46 @@ function SaoPaulo() {
         <div className="mx-auto max-w-6xl overflow-hidden rounded-xl">
           <img
             src="/images/hq.jpg"
-            alt="UNFLD São Paulo location"
+            alt={p.imageAlt}
             className="aspect-[16/8] w-full object-cover"
           />
         </div>
       </section>
       <Section className="py-20 sm:py-28">
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Registered office and meeting point
+          {p.officeTitle}
         </h2>
         <p className="mt-4 max-w-2xl text-muted">
-          Our base for product decisions, client sessions, and company operations in São Paulo.
+          {p.officeLede}
         </p>
         <dl className="mt-12 grid gap-8 sm:grid-cols-2">
           <div>
             <dt className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-              Address
+              {chrome.common.address}
             </dt>
             <dd className="mt-2 text-sm leading-relaxed text-muted">
-              {formatAddress()}
+              {formatAddressLocalized(locale)}
             </dd>
           </div>
           <div>
             <dt className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-              Coordinates
+              {chrome.common.coordinates}
             </dt>
             <dd className="mt-2 font-mono text-sm">{hq.coords}</dd>
           </div>
           <div>
             <dt className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-              Legal entity
+              {chrome.common.legalEntity}
             </dt>
             <dd className="mt-2 text-sm text-muted">
               {SITE.legal} · CNPJ {SITE.cnpj}
               <br />
-              {SITE.status} · {SITE.establishment} · opened {SITE.founded}
+              {facts.statusValue} · {facts.establishment} · {interpolate(chrome.common.opened, { date: facts.founded })}
             </dd>
           </div>
           <div>
             <dt className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-              Contact
+              {chrome.common.contact}
             </dt>
             <dd className="mt-2 text-sm text-muted">
               <a href={`tel:${SITE.phoneHref}`} className="hover:text-fg">

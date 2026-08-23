@@ -4,81 +4,57 @@ import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useMessages } from "@/lib/i18n";
 
 export const Route = createFileRoute("/how-we-work")({
-  head: () =>
-    buildPageHead({
-      title: "How we build custom software",
-      description:
-        "A practical overview of discovery, delivery, ownership, security, and handover for custom systems built with UNFLD.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.howWeWork;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/how-we-work",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: HowWeWorkPage,
 });
 
-const steps = [
-  {
-    step: "01",
-    title: "Discovery & field context",
-    body: "We begin by observing the daily work—mapping user roles, environment constraints (connectivity, devices, channels), and existing data flows. We define success in operational metrics, not vanity deliverables.",
-  },
-  {
-    step: "02",
-    title: "Scoped architecture & prototype",
-    body: "We architect the smallest viable system that solves the core operational problem. We choose infrastructure based on availability, privacy, and compliance requirements rather than generic templates.",
-  },
-  {
-    step: "03",
-    title: "Iterative deployment & evidence",
-    body: "We ship functional software in short, verifiable cycles. Real users test the system in active operations, giving immediate feedback that shapes the next release.",
-  },
-  {
-    step: "04",
-    title: "Governance, security & handover",
-    body: "Depending on contract terms, we either operate the platform with dedicated monitoring and support or execute a clean code and infrastructure handover with full documentation.",
-  },
-] as const;
-
-const deliverables = [
-  {
-    title: "Defined deliverables",
-    body: "Clear milestone agreements, source code repositories, infrastructure definitions as code, and production deployment pipelines.",
-  },
-  {
-    title: "Shared responsibilities",
-    body: "Transparent allocation of domain expertise, acceptance criteria, security reviews, and operational ownership across both teams.",
-  },
-  {
-    title: "Acceptance & validation",
-    body: "Milestones are signed off based on working software in production conditions, verified against the agreed operational outcomes.",
-  },
-  {
-    title: "Security & data controls",
-    body: "Explicit data boundaries, agreed hosting regions, customer-controlled access policies, and audit documentation defined per scope.",
-  },
-] as const;
-
 export function HowWeWorkPage() {
+  const { pages, chrome } = useMessages();
+  const p = pages.howWeWork;
+  const steps = [
+    { step: "01", title: p.step1Title, body: p.step1Body },
+    { step: "02", title: p.step2Title, body: p.step2Body },
+    { step: "03", title: p.step3Title, body: p.step3Body },
+    { step: "04", title: p.step4Title, body: p.step4Body },
+  ];
+  const deliverables = [
+    { title: p.d1Title, body: p.d1Body },
+    { title: p.d2Title, body: p.d2Body },
+    { title: p.d3Title, body: p.d3Body },
+    { title: p.d4Title, body: p.d4Body },
+  ];
   return (
     <main>
       <PageHero
-        kicker="Process & governance"
-        title="How we build."
-        lede="A practical overview of discovery, delivery, ownership, security, and handover for custom systems built with UNFLD."
+        kicker={p.kicker}
+        title={p.title}
+        lede={p.lede}
         actions={
           <>
-            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
             <BtnLink to="/build-with-us" variant="secondary">
-              Build with us
+              {chrome.common.buildWithUs}
             </BtnLink>
           </>
         }
       />
 
       <Section className="pb-16">
-        <Kicker>The lifecycle</Kicker>
+        <Kicker>{p.lifeKicker}</Kicker>
         <h2 className="max-w-2xl font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
-          From operational insight to working system.
+          {p.lifeTitle}
         </h2>
         <div className="mt-12 space-y-0">
           {steps.map((s) => (
@@ -97,9 +73,9 @@ export function HowWeWorkPage() {
       </Section>
 
       <Section className="py-16">
-        <Kicker>Engagement standards</Kicker>
+        <Kicker>{p.standardsKicker}</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Deliverables, ownership & acceptance.
+          {p.standardsTitle}
         </h2>
         <Stagger
           className="mt-10 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2"
@@ -124,17 +100,15 @@ export function HowWeWorkPage() {
         <Reveal>
           <div className="rounded-xl border border-border bg-bg-elevated p-8 sm:p-12">
             <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
-              Ready to scope a custom system?
+              {p.ctaTitle}
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted">
-              Describe the problem your team is facing and the operational
-              constraints involved. We will connect you directly with an
-              engineering lead.
+              {p.ctaLede}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+              <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
               <BtnLink to="/enterprise" variant="secondary">
-                Enterprise options
+                {chrome.common.enterpriseOptions}
               </BtnLink>
             </div>
           </div>

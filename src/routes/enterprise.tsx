@@ -3,70 +3,48 @@ import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useMessages } from "@/lib/i18n";
 
 export const Route = createFileRoute("/enterprise")({
-  head: () =>
-    buildPageHead({
-      title: "Enterprise",
-      description:
-        "A contract shaped around the system you actually need. Available controls are confirmed per product and order form.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.enterprise;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/enterprise",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: Enterprise,
 });
 
-const capabilities = [
-  [
-    "Enterprise identity",
-    "Support for SAML SSO and directory integration where supported by the specific product scope.",
-  ],
-  [
-    "Isolated environments",
-    "Isolation options—including dedicated environments or private connectivity—are confirmed for the proposed architecture and recorded in the order form.",
-  ],
-  [
-    "Audit exports",
-    "Traceable event logs, access reporting, and structured telemetry exportable for enterprise compliance.",
-  ],
-  [
-    "Regional hosting",
-    "Brazilian-region hosting may be defined in the order form to support agreed residency, architecture, and latency requirements.",
-  ],
-  [
-    "Service level commitments",
-    "Contractual availability objectives, scheduled maintenance windows, and prioritized incident escalation.",
-  ],
-  [
-    "Named technical team",
-    "Direct engineering access, structured onboarding, and continuous architecture reviews.",
-  ],
-  [
-    "Contractual privacy basis",
-    "Customer data is used only for the purposes defined in the applicable agreement and privacy documentation. Any model-improvement use requires an explicit contractual basis.",
-  ],
-  [
-    "Commercial flexibility",
-    "Volume-adjusted terms, custom invoicing, and purchase-order workflows tailored to corporate procurement.",
-  ],
-  [
-    "Security documentation",
-    "Comprehensive architecture reviews, security questionnaire support, and contractual data processing agreements.",
-  ],
-];
-
 function Enterprise() {
+  const { pages, chrome } = useMessages();
+  const p = pages.enterprise;
+  const capabilities = [
+    [p.c1Title, p.c1Body],
+    [p.c2Title, p.c2Body],
+    [p.c3Title, p.c3Body],
+    [p.c4Title, p.c4Body],
+    [p.c5Title, p.c5Body],
+    [p.c6Title, p.c6Body],
+    [p.c7Title, p.c7Body],
+    [p.c8Title, p.c8Body],
+    [p.c9Title, p.c9Body],
+  ];
   return (
     <main>
       <PageHero
-        kicker="Enterprise"
-        title="A contract shaped around"
-        titleSecond="the system you actually need."
-        lede="Available controls are confirmed per product and order form. Options may include enterprise identity, isolated environments, audit exports, regional hosting, service levels, and named support."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
         actions={
           <>
-            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
             <BtnLink to="/security" variant="secondary">
-              Security
+              {chrome.nav.security}
             </BtnLink>
           </>
         }

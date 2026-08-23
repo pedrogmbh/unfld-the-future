@@ -2,11 +2,14 @@ import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-route
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { solutions } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { interpolate } from "@/lib/i18n/interpolate";
+import { getMessages } from "@/lib/i18n/messages";
+import { useMessages } from "@/lib/i18n";
+import { localizeSolutions } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/solutions/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params, context }) => {
     if (params.slug === "support") {
       throw redirect({
         to: "/solutions/$slug",
@@ -27,21 +30,24 @@ export const Route = createFileRoute("/solutions/$slug")({
         statusCode: 301,
       });
     }
-    const s = solutions.find((x) => x.slug === params.slug);
+    const s = localizeSolutions(context.locale).find((x) => x.slug === params.slug);
     if (!s) throw notFound();
     return s;
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, match }) => {
+    const p = getMessages(match.context.locale).pages.solutions;
     if (!loaderData) {
       return buildPageHead({
-        title: "Solutions",
+        title: p.metaTitle,
         path: "/solutions",
+        locale: match.context.locale,
       });
     }
     return buildPageHead({
-      title: `${loaderData.name} Solutions`,
+      title: interpolate(p.detailTitle, { name: loaderData.name }),
       description: loaderData.line,
       path: `/solutions/${loaderData.slug}`,
+      locale: match.context.locale,
     });
   },
   component: Solution,
@@ -49,6 +55,8 @@ export const Route = createFileRoute("/solutions/$slug")({
 
 function Solution() {
   const s = Route.useLoaderData();
+  const { pages, chrome } = useMessages();
+  const p = pages.solutions;
   const caps: readonly string[] =
     "capabilities" in s && Array.isArray(s.capabilities) ? s.capabilities : [];
   const audience = "audience" in s && typeof s.audience === "string" ? s.audience : "";
@@ -56,19 +64,19 @@ function Solution() {
   return (
     <main>
       <PageHero
-        kicker="Solutions"
+        kicker={p.kicker}
         title={s.name}
         lede={s.line}
         actions={
           <>
-            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
             {s.slug === "security" ? (
               <BtnLink to="/compliance" variant="secondary">
-                Compliance disclosures
+                {chrome.common.complianceDisclosures}
               </BtnLink>
             ) : (
               <BtnLink to="/build-with-us" variant="secondary">
-                Build with us
+                {chrome.common.buildWithUs}
               </BtnLink>
             )}
           </>
@@ -78,7 +86,7 @@ function Solution() {
         {audience && (
           <div className="mb-8 rounded-xl border border-border bg-bg-elevated p-6 max-w-2xl">
             <p className="text-[11px] font-mono tracking-[0.16em] text-subtle uppercase">
-              Target audience & stakeholders
+              {p.audience}
             </p>
             <p className="mt-2 text-sm text-fg leading-relaxed">{audience}</p>
           </div>
@@ -95,7 +103,7 @@ function Solution() {
         )}
         <p className="mt-12">
           <Link to="/solutions" className="text-sm text-muted hover:text-fg">
-            ← All solutions
+            {chrome.common.allSolutions}
           </Link>
         </p>
       </Section>

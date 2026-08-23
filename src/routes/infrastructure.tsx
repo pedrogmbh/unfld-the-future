@@ -3,50 +3,43 @@ import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useMessages } from "@/lib/i18n";
 
 export const Route = createFileRoute("/infrastructure")({
-  head: () =>
-    buildPageHead({
-      title: "Infrastructure",
-      description:
-        "Infrastructure chosen for the system—not for the slide. Hosting designed around users, data, availability, and contractual controls.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.infrastructure;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/infrastructure",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: Infra,
 });
 
-const pillars = [
-  {
-    title: "Hosting regions",
-    desc: "Hosting regions and data locations vary by product and contract. Brazilian-region deployment is available where the architecture and agreement require it.",
-  },
-  {
-    title: "Recovery objectives",
-    desc: "Automated database backups, point-in-time recovery configurations, and documented recovery objectives tailored to product criticality.",
-  },
-  {
-    title: "Monitoring coverage",
-    desc: "Monitoring coverage is documented per product, including the health checks, logs, alerts, ownership, and escalation paths currently configured.",
-  },
-  {
-    title: "Data-retention model",
-    desc: "Retention windows, deletion workflows, and storage tiers designed in accordance with LGPD obligations and customer agreements.",
-  },
-];
-
 function Infra() {
+  const { pages, chrome } = useMessages();
+  const p = pages.infrastructure;
+  const pillars = [
+    { title: p.p1Title, desc: p.p1Body },
+    { title: p.p2Title, desc: p.p2Body },
+    { title: p.p3Title, desc: p.p3Body },
+    { title: p.p4Title, desc: p.p4Body },
+  ];
   return (
     <main>
       <PageHero
-        kicker="Infrastructure"
-        title="Infrastructure chosen for the system"
-        titleSecond="—not for the slide."
-        lede="UNFLD designs hosting around the product’s users, data, availability needs, integrations, and contractual controls. Architecture varies by product and client scope."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
         actions={
           <>
-            <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
             <BtnLink to="/security" variant="secondary">
-              Security
+              {chrome.nav.security}
             </BtnLink>
           </>
         }
@@ -55,25 +48,25 @@ function Infra() {
         <div className="mx-auto max-w-6xl overflow-hidden rounded-xl">
           <img
             src="/images/infra.jpg"
-            alt="Infrastructure overview"
+            alt={p.imageAlt}
             className="aspect-[16/8] w-full object-cover"
           />
         </div>
       </section>
 
       <Section className="py-20">
-        <Kicker>Operational architecture</Kicker>
+        <Kicker>{p.archKicker}</Kicker>
         <h2 className="font-display text-3xl font-medium tracking-tight">
-          Verifiable infrastructure standards
+          {p.archTitle}
         </h2>
         <div className="mt-10 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {pillars.map((p) => (
-            <article key={p.title} className="bg-bg p-6 sm:p-7">
+          {pillars.map((pillar) => (
+            <article key={pillar.title} className="bg-bg p-6 sm:p-7">
               <h3 className="font-display text-lg font-medium tracking-tight">
-                {p.title}
+                {pillar.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                {p.desc}
+                {pillar.desc}
               </p>
             </article>
           ))}
@@ -81,12 +74,12 @@ function Infra() {
       </Section>
 
       <Section className="pb-24 sm:pb-32">
-        <Kicker>Tailored deployment</Kicker>
+        <Kicker>{p.deployKicker}</Kicker>
         <h2 className="max-w-3xl font-display text-[clamp(1.7rem,3.5vw,2.6rem)] font-medium leading-tight tracking-tight">
-          Architected for accountability.
+          {p.deployTitle}
         </h2>
         <p className="mt-6 max-w-2xl text-sm leading-relaxed text-muted">
-          Whether delivering a high-throughput field intelligence tool like FCR, an instant WhatsApp-first presence engine like SiteCreator, or an enterprise custom system, our infrastructure choices balance operational isolation, observable performance, and compliance requirements.
+          {p.deployLede}
         </p>
       </Section>
     </main>

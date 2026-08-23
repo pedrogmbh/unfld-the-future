@@ -2,66 +2,74 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { ownedProducts } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeOwnedProducts } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/access")({
-  head: () =>
-    buildPageHead({
-      title: "Access UNFLD products",
-      description:
-        "Each UNFLD product has its own secure entry point. Choose the product you use below to sign in, open the web portal, or install the mobile application.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.access;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/access",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: AccessPage,
 });
 
 export function AccessPage() {
+  const locale = useLocale();
+  const { pages, chrome } = useMessages();
+  const p = pages.access;
+  const owned = localizeOwnedProducts(locale);
   return (
     <main>
       <PageHero
-        kicker="Product access"
-        title="Access UNFLD"
-        titleSecond="products."
-        lede="Each UNFLD product has its own secure entry point. Choose the product you use below to sign in, open the web portal, or install the mobile application."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
       />
       <Section className="pb-24 sm:pb-32">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ownedProducts.map((p) => (
+          {owned.map((product) => (
             <article
-              key={p.slug}
+              key={product.slug}
               className="flex flex-col justify-between rounded-xl border border-border p-7 sm:p-8"
             >
               <div>
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                    {p.kicker}
+                    {product.kicker}
                   </p>
                   <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
-                    {p.status}
+                    {product.status}
                   </span>
                 </div>
                 <h2 className="mt-4 font-display text-2xl font-medium tracking-tight">
-                  {p.name}
+                  {product.name}
                 </h2>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {p.line}
+                  {product.line}
                 </p>
               </div>
               <div className="mt-8">
-                {p.url ? (
+                {product.url ? (
                   <BtnLink
-                    href={p.url}
+                    href={product.url}
                     target="_blank"
                     rel="noreferrer"
                     variant="primary"
                     className="w-full"
                   >
-                    {p.primary}
+                    {product.primary}
                   </BtnLink>
                 ) : (
-                  <BtnLink to={p.href} variant="primary" className="w-full">
-                    Learn more
+                  <BtnLink to={product.href} variant="primary" className="w-full">
+                    {chrome.common.learnMore}
                   </BtnLink>
                 )}
               </div>
@@ -70,18 +78,18 @@ export function AccessPage() {
           <article className="flex flex-col justify-between rounded-xl border border-border bg-bg-elevated p-7 sm:p-8">
             <div>
               <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                Custom software
+                {p.customKicker}
               </p>
               <h2 className="mt-4 font-display text-2xl font-medium tracking-tight">
-                Enterprise & custom
+                {p.customTitle}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                Looking for a dedicated instance, enterprise single sign-on, or custom operational software?
+                {p.customBody}
               </p>
             </div>
             <div className="mt-8">
               <BtnLink to="/contact" variant="secondary" className="w-full">
-                Talk to UNFLD
+                {chrome.talkToUnfld}
               </BtnLink>
             </div>
           </article>

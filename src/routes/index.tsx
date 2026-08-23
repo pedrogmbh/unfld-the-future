@@ -10,23 +10,25 @@ import {
   WordStagger,
 } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import {
-  customers,
-  featuredWork,
-  homePrompts,
-  news,
-  ownedProducts,
-} from "@/lib/site";
+import { featuredWork } from "@/lib/site";
 import { homeJsonLd } from "@/lib/jsonld";
 import { buildPageHead } from "@/lib/meta";
+import { useLocale, useMessages } from "@/lib/i18n";
+import {
+  localizeCustomers,
+  localizeHomePrompts,
+  localizeNews,
+  localizeOwnedProducts,
+  localizeWork,
+} from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/")({
-  head: () =>
+  head: ({ match }) =>
     buildPageHead({
       path: "/",
-      description:
-        "Across agronomy, hiring, small business, and workplace health, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
+      description: undefined,
       jsonLd: homeJsonLd(),
+      locale: match.context.locale,
     }),
   component: Home,
 });
@@ -65,25 +67,17 @@ print(spec["info"]["title"], spec["info"]["version"])`,
   },
 ];
 
-const proofItems = [
-  {
-    title: "Offline in the field.",
-    detail:
-      "Capture evidence, conduct evaluations, and record technical facts where work happens—without breaking when connectivity disappears.",
-  },
-  {
-    title: "Traceable in the office.",
-    detail:
-      "Structured data, audit-ready records, and operational visibility that connect field reality to management decisions.",
-  },
-  {
-    title: "Ready for the next decision.",
-    detail:
-      "Clear guidance, producer-ready recommendations, and actionable insights delivered to the people responsible for outcomes.",
-  },
-] as const;
 
 function Home() {
+  const locale = useLocale();
+  const { pages, chrome } = useMessages();
+  const p = pages.home;
+  const owned = localizeOwnedProducts(locale);
+  const prompts = localizeHomePrompts(locale);
+  const work = localizeWork(locale).filter((item) => item.featured);
+  const customerList = localizeCustomers(locale);
+  const posts = localizeNews(locale);
+  const featured = work.length ? work : featuredWork();
   return (
     <main>
       <section className="relative w-full px-5 pt-28 pb-8 sm:px-8 sm:pt-32 lg:px-12">
@@ -95,35 +89,32 @@ function Home() {
               className="inline-flex items-center gap-2 text-[13px] text-muted transition-colors hover:text-fg"
             >
               <span className="rounded-full border border-border-strong px-2 py-0.5 text-[10px] font-medium tracking-[0.14em] text-fg uppercase">
-                New
+                {chrome.new}
               </span>
-              Queravaga · A shorter path from profile to interview
+              {p.newsBanner}
               <span aria-hidden>→</span>
             </Link>
           </Reveal>
 
           <h1 className="mt-8 font-display text-[clamp(2.8rem,9vw,6.8rem)] font-medium leading-[0.95] tracking-[-0.045em]">
-            <WordStagger text="Unfolding the future." />
+            <WordStagger text={p.heroTitle} />
             <br />
             <span className="text-muted">
-              <WordStagger text="One real system at a time." />
+              <WordStagger text={p.heroTitleSecond} />
             </span>
           </h1>
 
           <Reveal delay={0.18}>
             <p className="mt-8 max-w-2xl text-[17px] leading-relaxed text-muted sm:text-lg">
-              Across agronomy, hiring, small business, and workplace health, we
-              turn complex work into technology people can actually use. When
-              the right product does not exist, we build it beside the
-              organization that needs it.
+              {p.lede}
             </p>
           </Reveal>
 
           <Reveal delay={0.28}>
             <div className="mt-10 flex flex-wrap gap-3">
-              <BtnLink to="/products">Our products</BtnLink>
+              <BtnLink to="/products">{p.ourProducts}</BtnLink>
               <BtnLink to="/contact" variant="secondary">
-                Talk to UNFLD
+                {chrome.talkToUnfld}
               </BtnLink>
             </div>
           </Reveal>
@@ -134,50 +125,49 @@ function Home() {
         <div className="mx-auto w-full max-w-6xl">
           <ParallaxImage
             src="/images/hero-fold.jpg"
-            alt="A geometric plane unfolding in a black void"
+            alt={p.heroImageAlt}
           />
         </div>
       </section>
 
       <Section id="products" className="py-20 sm:py-28">
         <Reveal>
-          <Kicker>Products by UNFLD</Kicker>
+          <Kicker>{p.productsKicker}</Kicker>
           <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-            Different markets. The same conviction.
+            {p.productsTitle}
           </h2>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
-            Understand the work, build what should exist next, and stay
-            responsible for what happens after release.
+            {p.productsLede}
           </p>
         </Reveal>
         <Stagger
           className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
           delay={0.06}
         >
-          {ownedProducts.map((p) => (
-            <StaggerItem key={p.slug}>
+          {owned.map((product) => (
+            <StaggerItem key={product.slug}>
               <Link
-                to={p.href as never}
+                to={product.href as never}
                 className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
               >
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                    {p.kicker}
+                    {product.kicker}
                   </p>
                   <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
-                    {p.status}
+                    {product.status}
                   </span>
                 </div>
                 <div className="mt-6 flex items-baseline justify-between gap-4">
                   <h3 className="font-display text-2xl font-medium tracking-tight">
-                    {p.name}
+                    {product.name}
                   </h3>
                   <TextArrow className="text-[13px] text-muted group-hover:text-fg">
-                    {p.explore}
+                    {product.explore}
                   </TextArrow>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {p.line}
+                  {product.line}
                 </p>
               </Link>
             </StaggerItem>
@@ -189,23 +179,22 @@ function Home() {
             >
               <div className="flex items-center justify-between gap-2">
                 <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                  Custom systems
+                  {p.customTileKicker}
                 </p>
                 <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
-                  Scoped
+                  {chrome.common.scoped}
                 </span>
               </div>
               <div className="mt-6 flex items-baseline justify-between gap-4">
                 <h3 className="font-display text-2xl font-medium tracking-tight">
-                  Built with UNFLD
+                  {p.customTileTitle}
                 </h3>
                 <TextArrow className="text-[13px] text-muted group-hover:text-fg">
-                  Explore
+                  {chrome.common.explore}
                 </TextArrow>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                When the product is ours, we operate it. When the mission is
-                yours, we build beside you.
+                {p.customTileBody}
               </p>
             </Link>
           </StaggerItem>
@@ -216,19 +205,19 @@ function Home() {
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <div>
             <Reveal>
-              <Kicker>In practice</Kicker>
+              <Kicker>{p.inPractice}</Kicker>
               <h2 className="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
-                The future becomes practical when a hard problem becomes a usable system.
+                {p.inPracticeTitle}
               </h2>
             </Reveal>
           </div>
           <div className="space-y-8">
-            {homePrompts.map((p, i) => (
-              <Reveal key={p.q} delay={i * 0.08}>
+            {prompts.map((prompt, i) => (
+              <Reveal key={prompt.q} delay={i * 0.08}>
                 <div className="border-t border-border pt-6">
-                  <p className="text-[15px] font-medium">{p.q}</p>
+                  <p className="text-[15px] font-medium">{prompt.q}</p>
                   <p className="mt-3 text-[15px] leading-relaxed text-muted">
-                    {p.a}
+                    {prompt.a}
                   </p>
                 </div>
               </Reveal>
@@ -241,21 +230,19 @@ function Home() {
         <Reveal>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <Kicker>Selected work</Kicker>
+              <Kicker>{p.selectedWorkKicker}</Kicker>
               <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-                Work people actually used.
+                {p.selectedWorkTitle}
               </h2>
               <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
-                Media, aviation, energy, education, sport, and the systems
-                behind them. From the history we carry — named where the
-                relationship and permission are clear.
+                {p.selectedWorkLede}
               </p>
             </div>
             <Link
               to="/work"
               className="text-[13px] font-medium text-muted transition-colors hover:text-fg"
             >
-              All work →
+              {chrome.common.allWorkArrow}
             </Link>
           </div>
         </Reveal>
@@ -263,7 +250,7 @@ function Home() {
           className="mt-12 grid gap-8 sm:grid-cols-2"
           delay={0.08}
         >
-          {featuredWork().map((w) => (
+          {featured.map((w) => (
             <StaggerItem key={w.slug}>
               <WorkTile work={w} variant="half" />
             </StaggerItem>
@@ -273,7 +260,7 @@ function Home() {
           className="mt-16 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
           delay={0.03}
         >
-          {customers.map((c) => (
+          {customerList.map((c) => (
             <StaggerItem key={c.name}>
               {c.workSlug ? (
                 <Link
@@ -304,31 +291,29 @@ function Home() {
           <div className="min-w-0">
             <Reveal>
               <p className="mb-5 text-[13px] font-medium text-muted">
-                Built with UNFLD
+                {p.customKicker}
               </p>
               <h2 className="font-display text-[clamp(2.2rem,5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.035em]">
-                Built beside
+                {p.customTitle}
                 <br />
-                <span className="text-muted">your operation.</span>
+                <span className="text-muted">{p.customTitleSecond}</span>
               </h2>
               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted">
-                We design and ship custom systems beside teams whose operation
-                cannot be reduced to a template. We understand the domain, prove
-                the outcome in use, and operate with you.
+                {p.customLede}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <BtnLink to="/build-with-us">How we build</BtnLink>
+                <BtnLink to="/build-with-us">{chrome.common.howWeBuild}</BtnLink>
                 <BtnLink to="/contact" variant="secondary">
-                  Talk to UNFLD
+                  {chrome.talkToUnfld}
                 </BtnLink>
               </div>
             </Reveal>
             <Stagger className="mt-10 grid max-w-md grid-cols-3 gap-4" delay={0.1}>
               {(
                 [
-                  ["5", "Products by UNFLD"],
-                  ["2019", "Rooted in"],
-                  ["SP", "São Paulo HQ"],
+                  ["5", p.statProducts],
+                  ["2019", p.statRooted],
+                  ["SP", p.statHq],
                 ] as const
               ).map(([v, l]) => (
                 <StaggerItem key={l}>
@@ -342,14 +327,20 @@ function Home() {
           </div>
           <div className="min-w-0">
             <div className="space-y-4">
-              {proofItems.map((item, idx) => (
-                <Reveal key={item.title} delay={idx * 0.08}>
+              {(
+                [
+                  [p.proof1Title, p.proof1Body],
+                  [p.proof2Title, p.proof2Body],
+                  [p.proof3Title, p.proof3Body],
+                ] as const
+              ).map(([title, detail], idx) => (
+                <Reveal key={title} delay={idx * 0.08}>
                   <div className="rounded-xl border border-border bg-bg-elevated p-6 sm:p-7">
                     <h3 className="font-display text-xl font-medium tracking-tight">
-                      {item.title}
+                      {title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">
-                      {item.detail}
+                      {detail}
                     </p>
                   </div>
                 </Reveal>
@@ -363,19 +354,18 @@ function Home() {
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <Reveal>
             <p className="mb-4 text-[13px] font-medium text-muted">
-              For developers
+              {chrome.common.forDevelopers}
             </p>
             <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-              UNFLD developer resources.
+              {p.developersTitle}
             </h2>
             <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">
-              API docs, OpenAPI, versioning, and a public catalog of products,
-              news, work, and company facts. No authentication.
+              {p.developersLede}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <BtnLink to="/developers">UNFLD developer resources</BtnLink>
+              <BtnLink to="/developers">{p.developerResources}</BtnLink>
               <BtnLink href="/openapi.json" variant="secondary">
-                OpenAPI spec
+                {chrome.common.openApiSpec}
               </BtnLink>
             </div>
           </Reveal>
@@ -388,23 +378,23 @@ function Home() {
       <Section className="pb-24 sm:pb-32">
         <div className="mb-10 flex items-end justify-between gap-4">
           <div>
-            <Kicker>Latest news</Kicker>
+            <Kicker>{p.newsKicker}</Kicker>
             <h2 className="font-display text-3xl font-medium tracking-tight">
-              From UNFLD.
+              {p.newsTitle}
             </h2>
           </div>
           <Link
             to="/news"
             className="text-[13px] font-medium text-muted transition-colors hover:text-fg"
           >
-            All posts →
+            {chrome.common.allPostsArrow}
           </Link>
         </div>
         <Stagger
           className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2"
           delay={0.07}
         >
-          {news.slice(0, 4).map((post) => (
+          {posts.slice(0, 4).map((post) => (
             <StaggerItem key={post.slug}>
               <Link
                 to="/news/$slug"

@@ -4,35 +4,42 @@ import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
 import { roles, SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
+import { getMessages } from "@/lib/i18n/messages";
+import { useMessages } from "@/lib/i18n";
 
 export const Route = createFileRoute("/careers/open-roles")({
-  head: () =>
-    buildPageHead({
-      title: "Open roles",
-      description:
-        "Open work at UNFLD. Every listed role is approved, funded, and actively reviewed by the team it will join.",
+  head: ({ match }) => {
+    const p = getMessages(match.context.locale).pages.openRoles;
+    return buildPageHead({
+      title: p.metaTitle,
+      description: p.metaDescription,
       path: "/careers/open-roles",
-    }),
+      locale: match.context.locale,
+    });
+  },
   component: OpenRoles,
 });
 
 function OpenRoles() {
-  const teams = ["All", ...Array.from(new Set(roles.map((r) => r.team)))];
-  const [team, setTeam] = useState("All");
+  const { pages, chrome } = useMessages();
+  const p = pages.openRoles;
+  const teams = [chrome.common.all, ...Array.from(new Set(roles.map((r) => r.team)))];
+  const [team, setTeam] = useState(chrome.common.all);
   const [sent, setSent] = useState<string | null>(null);
+  const [emptyBefore, emptyAfter] = p.emptyBody.split("{{email}}");
 
   const filtered = useMemo(
-    () => (team === "All" ? roles : roles.filter((r) => r.team === team)),
-    [team],
+    () => (team === chrome.common.all ? roles : roles.filter((r) => r.team === team)),
+    [team, chrome.common.all],
   );
 
   return (
     <main>
       <PageHero
-        kicker="Careers"
-        title="Open work"
-        titleSecond="at UNFLD."
-        lede="Every role below is approved, funded, and actively reviewed by the team it will join."
+        kicker={p.kicker}
+        title={p.title}
+        titleSecond={p.titleSecond}
+        lede={p.lede}
       />
       <Section className="pb-24 sm:pb-32">
         {roles.length > 0 ? (
@@ -70,31 +77,31 @@ function OpenRoles() {
                     onClick={() => setSent(r.id)}
                     className="h-10 shrink-0 rounded-full bg-accent px-4 text-[13px] font-medium text-accent-fg"
                   >
-                    {sent === r.id ? "Application noted" : "Apply"}
+                    {sent === r.id ? chrome.common.applicationNoted : chrome.common.apply}
                   </button>
                 </li>
               ))}
             </ul>
             {sent ? (
               <p className="mt-6 text-sm text-muted">
-                This is a preview — we logged your interest in this role.
+                {p.previewNote}
               </p>
             ) : null}
           </>
         ) : (
           <div className="rounded-xl border border-border p-8 text-center sm:p-14">
             <h2 className="font-display text-2xl font-medium tracking-tight">
-              No open roles right now.
+              {p.emptyTitle}
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-muted">
-              We review every introduction personally. You can introduce yourself, describe your background, and share work you are proud of at{" "}
+              {emptyBefore}
               <a
                 href={`mailto:${SITE.careers}`}
                 className="text-fg underline-offset-4 hover:underline"
               >
                 {SITE.careers}
               </a>
-              .
+              {emptyAfter}
             </p>
           </div>
         )}

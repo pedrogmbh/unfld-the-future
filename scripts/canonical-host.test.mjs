@@ -69,11 +69,10 @@ test("forwarded alias wins over rewritten Vercel Host", () => {
   );
 });
 
-test("local, preview, and grok hosts are left alone", () => {
+test("local and grok hosts are left alone", () => {
   const cases = [
     ["http://localhost:8080/compliance", { host: "localhost:8080" }],
     ["http://127.0.0.1:8081/", { host: "127.0.0.1:8081" }],
-    ["https://app.vercel.app/compliance", { host: "app.vercel.app" }],
     [
       "https://guest.grok-sandbox.com/compliance",
       { host: "guest.grok-sandbox.com" },
@@ -83,6 +82,16 @@ test("local, preview, and grok hosts are left alone", () => {
   for (const [url, opts] of cases) {
     assert.equal(canonicalRedirectLocation(request(url, opts)), null, url);
   }
+});
+
+test("production vercel host redirects to canonical", () => {
+  const req = request("https://unfld-the-future.vercel.app/docs?search=api", {
+    host: "unfld-the-future.vercel.app",
+  });
+  assert.equal(
+    canonicalRedirectLocation(req, { VERCEL_ENV: "production" }),
+    "https://www.unfld.com.br/docs?search=api",
+  );
 });
 
 test("GET is 301 and other methods are 308", () => {

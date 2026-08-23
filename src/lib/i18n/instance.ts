@@ -29,14 +29,7 @@ function flattenMessages(
 export function createI18n(lng: Locale) {
   const instance = i18n.createInstance();
   const resources = Object.fromEntries(
-    LOCALES.filter((locale) => {
-      try {
-        getMessages(locale);
-        return true;
-      } catch {
-        return locale === DEFAULT_LOCALE;
-      }
-    }).map((locale) => [
+    LOCALES.map((locale) => [
       locale,
       { translation: flattenMessages(getMessages(locale)) },
     ]),

@@ -13,9 +13,6 @@ import {
 import {
   customers,
   developerSurface,
-  getNews as getNewsEn,
-  getOwnedProduct as getOwnedProductEn,
-  getWork as getWorkEn,
   homePrompts,
   interview,
   news,
@@ -34,6 +31,13 @@ import {
 import { SITE } from "@/lib/site";
 import { getMessages } from "./messages";
 import type { Locale } from "./locales";
+
+function required<T>(value: T | undefined | null, path: string): T {
+  if (value == null) {
+    throw new Error(`Missing i18n value: ${path}`);
+  }
+  return value;
+}
 
 export function localizeOwnedProducts(locale: Locale): OwnedProduct[] {
   const copy = getMessages(locale).products;
@@ -65,14 +69,17 @@ export function localizeOwnedProducts(locale: Locale): OwnedProduct[] {
 }
 
 export function localizeOwnedProduct(slug: string, locale: Locale) {
-  return localizeOwnedProducts(locale).find((product) => product.slug === slug) ?? getOwnedProductEn(slug);
+  return localizeOwnedProducts(locale).find((product) => product.slug === slug);
 }
 
 export function localizeCustomers(locale: Locale) {
   const notes = getMessages(locale).chrome.customerNotes;
   return customers.map((customer) => ({
     ...customer,
-    note: notes[customer.note as keyof typeof notes] ?? customer.note,
+    note: required(
+      notes[customer.note as keyof typeof notes],
+      `chrome.customerNotes.${customer.note}`,
+    ),
   }));
 }
 
@@ -91,7 +98,7 @@ export function localizeNews(locale: Locale): NewsPost[] {
 }
 
 export function localizeNewsPost(slug: string, locale: Locale) {
-  return localizeNews(locale).find((post) => post.slug === slug) ?? getNewsEn(slug);
+  return localizeNews(locale).find((post) => post.slug === slug);
 }
 
 export function localizeWork(locale: Locale): SelectedWork[] {
@@ -101,8 +108,14 @@ export function localizeWork(locale: Locale): SelectedWork[] {
     return {
       ...item,
       title: t.title,
-      field: copy.fields[item.field as keyof typeof copy.fields] ?? item.field,
-      form: copy.forms[item.form as keyof typeof copy.forms] ?? item.form,
+      field: required(
+        copy.fields[item.field as keyof typeof copy.fields],
+        `work.fields.${item.field}`,
+      ),
+      form: required(
+        copy.forms[item.form as keyof typeof copy.forms],
+        `work.forms.${item.form}`,
+      ),
       line: t.line,
       lede: t.lede,
       story: [...t.story],
@@ -112,7 +125,7 @@ export function localizeWork(locale: Locale): SelectedWork[] {
 }
 
 export function localizeWorkItem(slug: string, locale: Locale) {
-  return localizeWork(locale).find((item) => item.slug === slug) ?? getWorkEn(slug);
+  return localizeWork(locale).find((item) => item.slug === slug);
 }
 
 export function localizeWorkNeighbors(slug: string, locale: Locale) {
@@ -199,7 +212,10 @@ export function localizeStats(locale: Locale) {
   const labels = getMessages(locale).catalog.stats;
   return stats.map((stat, index) => ({
     ...stat,
-    label: [labels.experience, labels.products, labels.hq][index] ?? stat.label,
+    label: required(
+      [labels.experience, labels.products, labels.hq][index],
+      `catalog.stats.${index}`,
+    ),
   }));
 }
 
@@ -224,7 +240,7 @@ export function localizeDeveloperSurface(locale: Locale) {
     versioningUpdated: copy.versioningUpdated,
     endpoints: developerSurface.endpoints.map((endpoint, index) => ({
       ...endpoint,
-      body: copy.endpoints[index] ?? endpoint.body,
+      body: required(copy.endpoints[index], `catalog.developer.endpoints.${index}`),
     })),
     rules: copy.rules.map((rule) => ({ title: rule.title, body: rule.body })),
     versioningSections: copy.versioningSections.map((section) => ({
@@ -350,8 +366,7 @@ export function legalVars(locale: Locale) {
 export function localizeComplianceItems(locale: Locale): ComplianceItem[] {
   const copy = getMessages(locale).compliance.items;
   return COMPLIANCE_ITEMS.map((item) => {
-    const t = copy[item.id as keyof typeof copy];
-    if (!t) return item;
+    const t = required(copy[item.id as keyof typeof copy], `compliance.items.${item.id}`);
     return {
       ...item,
       category: t.category,
@@ -365,12 +380,15 @@ export function localizeComplianceCategories(locale: Locale) {
   const cats = getMessages(locale).compliance.categories;
   const items = localizeComplianceItems(locale);
   return getComplianceCategories().map((cat) => {
-    const t = cats[cat.name as keyof typeof cats];
+    const t = required(
+      cats[cat.name as keyof typeof cats],
+      `compliance.categories.${cat.name}`,
+    );
     return {
       ...cat,
-      name: t?.name ?? cat.name,
-      short: t?.short ?? cat.short,
-      description: t?.description ?? cat.description,
+      name: t.name,
+      short: t.short,
+      description: t.description,
       items: items.filter((item) => {
         const source = COMPLIANCE_ITEMS.find((entry) => entry.id === item.id);
         return source?.category === cat.name;
@@ -384,26 +402,33 @@ export function localizeComplianceChapters(locale: Locale) {
   const catsCopy = getMessages(locale).compliance.categories;
   const itemsCopy = getMessages(locale).compliance.items;
   return getComplianceChapters().map((chapter) => {
-    const t = chaptersCopy[chapter.slug as keyof typeof chaptersCopy];
+    const t = required(
+      chaptersCopy[chapter.slug as keyof typeof chaptersCopy],
+      `complianceMeta.chapters.${chapter.slug}`,
+    );
     const categories = chapter.categories.map((cat) => {
-      const ct = catsCopy[cat.name as keyof typeof catsCopy];
+      const ct = required(
+        catsCopy[cat.name as keyof typeof catsCopy],
+        `compliance.categories.${cat.name}`,
+      );
       return {
         ...cat,
-        name: ct?.name ?? cat.name,
-        short: ct?.short ?? cat.short,
-        description: ct?.description ?? cat.description,
+        name: ct.name,
+        short: ct.short,
+        description: ct.description,
         items: cat.items.map((item) => {
-          const it = itemsCopy[item.id as keyof typeof itemsCopy];
-          return it
-            ? { ...item, category: it.category, question: it.question, answer: it.answer }
-            : item;
+          const it = required(
+            itemsCopy[item.id as keyof typeof itemsCopy],
+            `compliance.items.${item.id}`,
+          );
+          return { ...item, category: it.category, question: it.question, answer: it.answer };
         }),
       };
     });
     return {
       ...chapter,
-      title: t?.title ?? chapter.title,
-      lede: t?.lede ?? chapter.lede,
+      title: t.title,
+      lede: t.lede,
       categories,
       items: categories.flatMap((cat) => cat.items),
     };
@@ -414,8 +439,8 @@ export function localizeCompliancePosture(locale: Locale) {
   const copy = getMessages(locale).complianceMeta.posture;
   return COMPLIANCE_POSTURE.map((stat, index) => ({
     ...stat,
-    label: copy[index]?.label ?? stat.label,
-    note: copy[index]?.note ?? stat.note,
+    label: required(copy[index]?.label, `complianceMeta.posture.${index}.label`),
+    note: required(copy[index]?.note, `complianceMeta.posture.${index}.note`),
   }));
 }
 
@@ -423,8 +448,8 @@ export function localizeComplianceHighlights(locale: Locale) {
   const copy = getMessages(locale).complianceMeta.highlights;
   return COMPLIANCE_HIGHLIGHTS.map((highlight, index) => ({
     ...highlight,
-    title: copy[index]?.title ?? highlight.title,
-    desc: copy[index]?.desc ?? highlight.desc,
+    title: required(copy[index]?.title, `complianceMeta.highlights.${index}.title`),
+    desc: required(copy[index]?.desc, `complianceMeta.highlights.${index}.desc`),
   }));
 }
 
@@ -432,8 +457,8 @@ export function localizeComplianceStandards(locale: Locale) {
   const copy = getMessages(locale).complianceMeta.standards;
   return COMPLIANCE_STANDARDS.map((standard, index) => ({
     ...standard,
-    scope: copy[index]?.scope ?? standard.scope,
-    detail: copy[index]?.detail ?? standard.detail,
+    scope: required(copy[index]?.scope, `complianceMeta.standards.${index}.scope`),
+    detail: required(copy[index]?.detail, `complianceMeta.standards.${index}.detail`),
   }));
 }
 
@@ -441,9 +466,9 @@ export function localizeComplianceRegions(locale: Locale) {
   const copy = getMessages(locale).complianceMeta.regions;
   return COMPLIANCE_REGIONS.map((region, index) => ({
     ...region,
-    country: copy[index]?.country ?? region.country,
-    role: copy[index]?.role ?? region.role,
-    note: copy[index]?.note ?? region.note,
+    country: required(copy[index]?.country, `complianceMeta.regions.${index}.country`),
+    role: required(copy[index]?.role, `complianceMeta.regions.${index}.role`),
+    note: required(copy[index]?.note, `complianceMeta.regions.${index}.note`),
   }));
 }
 
@@ -451,8 +476,8 @@ export function localizeComplianceLifecycle(locale: Locale) {
   const copy = getMessages(locale).complianceMeta.lifecycle;
   return COMPLIANCE_LIFECYCLE.map((step, index) => ({
     ...step,
-    title: copy[index]?.title ?? step.title,
-    body: copy[index]?.body ?? step.body,
+    title: required(copy[index]?.title, `complianceMeta.lifecycle.${index}.title`),
+    body: required(copy[index]?.body, `complianceMeta.lifecycle.${index}.body`),
   }));
 }
 
@@ -460,6 +485,6 @@ export function localizeComplianceResponse(locale: Locale) {
   const copy = getMessages(locale).complianceMeta.response;
   return COMPLIANCE_RESPONSE.map((item, index) => ({
     ...item,
-    label: copy[index]?.label ?? item.label,
+    label: required(copy[index]?.label, `complianceMeta.response.${index}.label`),
   }));
 }

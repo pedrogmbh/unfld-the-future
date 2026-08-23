@@ -9,13 +9,9 @@ export const Route = createFileRoute("/legal/terms-of-service")({
 
 function Page() {
   return (
-    <LegalDoc title="Terms of Service" updated="August 1, 2026">
+    <LegalDoc title="Terms of Service" updated="August 22, 2026">
       <p>
-        These Terms of Service (“Terms”) govern access to and use of UNFLD
-        products, including FCR (Ferramenta de Coleta), SiteCreator, Doutor
-        Fiscal, Queravaga, Dialogus Psicossocial, websites, and related
-        services (the “Services”). By using the Services you agree to these
-        Terms.
+        These Terms govern the UNFLD website and any UNFLD service that expressly links to or incorporates them. Additional product, order-form, partner, or enterprise terms may apply. By accessing or using our websites or services, you agree to these Terms.
       </p>
       <H>Who we are</H>
       <p>
@@ -36,15 +32,12 @@ function Page() {
       <p>
         We grant you a limited, non-exclusive, non-transferable right to use the
         Services in accordance with these Terms and your plan. Features, limits,
-        and availability may change. Preview and beta features are provided as
-        is and may be withdrawn.
+        and availability may change. Preview and early-access features are provided
+        as is and may be updated or withdrawn.
       </p>
       <H>Your content</H>
       <p>
-        You retain rights to content you submit. You grant UNFLD a license to
-        host, process, and display that content solely to provide the Services.
-        Company and Enterprise plans do not use your content to train models
-        unless you opt in.
+        You retain all rights to content you submit. UNFLD processes customer content only as described in the applicable service terms, privacy notice, data-processing terms, and order form.
       </p>
       <H>Acceptable use</H>
       <p>
@@ -81,11 +74,11 @@ function Page() {
       <p>
         These Terms are governed by the laws of Brazil, without regard to
         conflict-of-law rules. Courts in São Paulo, SP have exclusive
-        jurisdiction, except where consumer law requires otherwise.
+        jurisdiction, except where consumer protection law requires otherwise.
       </p>
       <H>Contact</H>
       <p>
-        Questions: legal@unfld.com. {formatLegalContact()}
+        Questions: {SITE.legalEmail}. {formatLegalContact()}
       </p>
     </LegalDoc>
   );

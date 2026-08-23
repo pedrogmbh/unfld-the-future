@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CodeTabs } from "@/components/site/code-tabs";
 import { BtnLink, TextArrow } from "@/components/site/buttons";
 import {
   ParallaxImage,
@@ -9,7 +8,13 @@ import {
   WordStagger,
 } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import { customers, homePrompts, news, ownedProducts, pageTitle } from "@/lib/site";
+import {
+  customers,
+  homePrompts,
+  news,
+  ownedProducts,
+  pageTitle,
+} from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,12 +23,30 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "UNFLD is the trading name of UNFOLDING THE FUTURE. A São Paulo software house that also ships its own digital products.",
+          "UNFLD builds and operates technology for the work that shapes what comes next—from agronomy and hiring to small-business operations and workplace health.",
       },
     ],
   }),
   component: Home,
 });
+
+const proofItems = [
+  {
+    title: "Offline in the field.",
+    detail:
+      "Capture evidence, conduct evaluations, and record technical facts where work happens—without breaking when connectivity disappears.",
+  },
+  {
+    title: "Traceable in the office.",
+    detail:
+      "Structured data, audit-ready records, and operational visibility that connect field reality to management decisions.",
+  },
+  {
+    title: "Ready for the next decision.",
+    detail:
+      "Clear guidance, producer-ready recommendations, and actionable insights delivered to the people responsible for outcomes.",
+  },
+] as const;
 
 function Home() {
   return (
@@ -39,22 +62,25 @@ function Home() {
               <span className="rounded-full border border-border-strong px-2 py-0.5 text-[10px] font-medium tracking-[0.14em] text-fg uppercase">
                 New
               </span>
-              Queravaga · Into the job market in minutes
+              Queravaga · A shorter path from profile to interview
               <span aria-hidden>→</span>
             </Link>
           </Reveal>
 
-          <h1 className="mt-8 font-display text-[clamp(3.2rem,11vw,8.4rem)] font-medium leading-[0.9] tracking-[-0.05em]">
-            <WordStagger text="Unfold" />
+          <h1 className="mt-8 font-display text-[clamp(2.8rem,9vw,6.8rem)] font-medium leading-[0.95] tracking-[-0.045em]">
+            <WordStagger text="Unfolding the future." />
             <br />
-            <WordStagger text="the future." />
+            <span className="text-muted">
+              <WordStagger text="One real system at a time." />
+            </span>
           </h1>
 
           <Reveal delay={0.18}>
-            <p className="mt-8 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
-              UNFLD is the trading name of UNFOLDING THE FUTURE. We build for
-              other companies, and we ship products we own — from São Paulo,
-              for the decade ahead.
+            <p className="mt-8 max-w-2xl text-[17px] leading-relaxed text-muted sm:text-lg">
+              Across agronomy, hiring, small business, and workplace health, we
+              turn complex work into technology people can actually use. When
+              the right product does not exist, we build it beside the
+              organization that needs it.
             </p>
           </Reveal>
 
@@ -62,7 +88,7 @@ function Home() {
             <div className="mt-10 flex flex-wrap gap-3">
               <BtnLink to="/products">Our products</BtnLink>
               <BtnLink to="/contact" variant="secondary">
-                Contact Sales
+                Talk to UNFLD
               </BtnLink>
             </div>
           </Reveal>
@@ -80,10 +106,14 @@ function Home() {
 
       <Section id="products" className="py-20 sm:py-28">
         <Reveal>
-          <Kicker>Products we own</Kicker>
+          <Kicker>Products by UNFLD</Kicker>
           <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-            What we ship now.
+            Different markets. The same conviction.
           </h2>
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
+            Understand the work, build what should exist next, and stay
+            responsible for what happens after release.
+          </p>
         </Reveal>
         <Stagger
           className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
@@ -95,9 +125,14 @@ function Home() {
                 to={p.href as never}
                 className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
               >
-                <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                  {p.kicker}
-                </p>
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
+                    {p.kicker}
+                  </p>
+                  <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
+                    {p.status}
+                  </span>
+                </div>
                 <div className="mt-6 flex items-baseline justify-between gap-4">
                   <h3 className="font-display text-2xl font-medium tracking-tight">
                     {p.name}
@@ -114,22 +149,28 @@ function Home() {
           ))}
           <StaggerItem>
             <Link
-              to="/company"
+              to="/build-with-us"
               className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
             >
-              <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                Software house
-              </p>
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
+                  Custom systems
+                </p>
+                <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
+                  Scoped
+                </span>
+              </div>
               <div className="mt-6 flex items-baseline justify-between gap-4">
                 <h3 className="font-display text-2xl font-medium tracking-tight">
-                  Built for others
+                  Built with UNFLD
                 </h3>
                 <TextArrow className="text-[13px] text-muted group-hover:text-fg">
                   Explore
                 </TextArrow>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                SporTV, Netflix, Timac Agro, Embraer, and the rest of the roster.
+                When the product is ours, we operate it. When the mission is
+                yours, we build beside you.
               </p>
             </Link>
           </StaggerItem>
@@ -142,7 +183,7 @@ function Home() {
             <Reveal>
               <Kicker>In practice</Kicker>
               <h2 className="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
-                Questions we built products to answer.
+                The future becomes practical when a hard problem becomes a usable system.
               </h2>
             </Reveal>
           </div>
@@ -163,13 +204,14 @@ function Home() {
 
       <Section id="clients" className="py-16 sm:py-24">
         <Reveal>
-          <Kicker>Clients</Kicker>
+          <Kicker>Experience</Kicker>
           <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-            When we develop as a house.
+            Experience behind the work.
           </h2>
-          <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-muted">
-            Selected companies we have shipped for. Timac Agro is one of the
-            principal partnerships. The list is not complete.
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
+            Our team’s experience spans products and projects delivered
+            directly, through prior companies, and alongside partners. We name
+            organizations only where the relationship and permission are clear.
           </p>
         </Reveal>
         <Stagger
@@ -191,7 +233,7 @@ function Home() {
           <StaggerItem>
             <div className="flex h-full items-center bg-bg px-6 py-5 sm:px-8 sm:py-6">
               <p className="font-display text-lg font-medium tracking-tight text-muted">
-                And others.
+                And partner-led projects.
               </p>
             </div>
           </StaggerItem>
@@ -203,31 +245,31 @@ function Home() {
           <div className="min-w-0">
             <Reveal>
               <p className="mb-5 text-[13px] font-medium text-muted">
-                For developers
+                For developers & operations
               </p>
               <h2 className="font-display text-[clamp(2.2rem,5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.035em]">
-                Field software.
+                Built beside
                 <br />
-                <span className="text-muted">Still a house.</span>
+                <span className="text-muted">your operation.</span>
               </h2>
               <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted">
-                FCR collects agronomy results offline, then syncs. We still
-                sit with operations — Timac Agro, and the rest of the roster
-                — and ship what they actually run.
+                We design and ship custom systems beside teams whose operation
+                cannot be reduced to a template. We understand the domain, prove
+                the outcome in use, and operate with you.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <BtnLink to="/fcr">Open FCR</BtnLink>
+                <BtnLink to="/build-with-us">How we build</BtnLink>
                 <BtnLink to="/contact" variant="secondary">
-                  Contact Sales
+                  Talk to UNFLD
                 </BtnLink>
               </div>
             </Reveal>
             <Stagger className="mt-10 grid max-w-md grid-cols-3 gap-4" delay={0.1}>
               {(
                 [
-                  ["5", "Products we own"],
-                  ["15+", "Companies shipped for"],
-                  ["2019", "Building since"],
+                  ["5", "Products by UNFLD"],
+                  ["2019", "Rooted in"],
+                  ["SP", "São Paulo HQ"],
                 ] as const
               ).map(([v, l]) => (
                 <StaggerItem key={l}>
@@ -240,7 +282,20 @@ function Home() {
             </Stagger>
           </div>
           <div className="min-w-0">
-            <CodeTabs />
+            <div className="space-y-4">
+              {proofItems.map((item, idx) => (
+                <Reveal key={item.title} delay={idx * 0.08}>
+                  <div className="rounded-xl border border-border bg-bg-elevated p-6 sm:p-7">
+                    <h3 className="font-display text-xl font-medium tracking-tight">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">
+                      {item.detail}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </Section>

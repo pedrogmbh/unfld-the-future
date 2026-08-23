@@ -3,6 +3,8 @@
  * catalog API, and agent-instructions. The deployed half lives in
  * server/middleware/agent-surface.ts.
  */
+import { mergeVary } from "./accept.mjs";
+
 export function agentSurfacePlugin() {
   return {
     name: "unfld-agent-surface",
@@ -42,6 +44,17 @@ export function agentSurfacePlugin() {
           const mod = await server.ssrLoadModule("/src/lib/agent-surface.ts");
           const response = mod.handleAgentSurfaceRequest(request);
           if (!response) {
+            const original = res.setHeader.bind(res);
+            res.setHeader = (name, value) => {
+              if (String(name).toLowerCase() === "vary") {
+                return original(
+                  name,
+                  mergeVary(String(value), ["Accept", "Accept-Encoding"]),
+                );
+              }
+              return original(name, value);
+            };
+            res.setHeader("Vary", "Accept, Accept-Encoding");
             next();
             return;
           }

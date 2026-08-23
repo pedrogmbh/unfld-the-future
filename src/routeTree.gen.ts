@@ -18,6 +18,7 @@ import { Route as CompanyRouteImport } from './routes/company'
 import { Route as ComplianceRouteImport } from './routes/compliance'
 import { Route as ConsoleRouteImport } from './routes/console'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as DialogusRouteImport } from './routes/dialogus'
 import { Route as DocsRouteImport } from './routes/docs'
 import { Route as DoutorFiscalRouteImport } from './routes/doutor-fiscal'
@@ -37,8 +38,10 @@ import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitecreatorRouteImport } from './routes/sitecreator'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StatusRouteImport } from './routes/status'
+import { Route as ApiIndexRouteImport } from './routes/api.index'
 import { Route as ApiOpenapiDotyamlRouteImport } from './routes/api.openapi[.]yaml'
 import { Route as ApiV1RouteImport } from './routes/api.v1'
+import { Route as ApiVersioningRouteImport } from './routes/api.versioning'
 import { Route as CareersIndexRouteImport } from './routes/careers/index'
 import { Route as CareersOpenRolesRouteImport } from './routes/careers/open-roles'
 import { Route as LegalIndexRouteImport } from './routes/legal/index'
@@ -99,6 +102,11 @@ const ConsoleRoute = ConsoleRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevelopersRoute = DevelopersRouteImport.update({
+  id: '/developers',
+  path: '/developers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DialogusRoute = DialogusRouteImport.update({
@@ -196,6 +204,11 @@ const StatusRoute = StatusRouteImport.update({
   path: '/status',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiIndexRoute = ApiIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ApiRoute,
+} as any)
 const ApiOpenapiDotyamlRoute = ApiOpenapiDotyamlRouteImport.update({
   id: '/openapi.yaml',
   path: '/openapi.yaml',
@@ -204,6 +217,11 @@ const ApiOpenapiDotyamlRoute = ApiOpenapiDotyamlRouteImport.update({
 const ApiV1Route = ApiV1RouteImport.update({
   id: '/v1',
   path: '/v1',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiVersioningRoute = ApiVersioningRouteImport.update({
+  id: '/versioning',
+  path: '/versioning',
   getParentRoute: () => ApiRoute,
 } as any)
 const CareersIndexRoute = CareersIndexRouteImport.update({
@@ -299,6 +317,7 @@ export interface FileRoutesByFullPath {
   '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
+  '/developers': typeof DevelopersRoute
   '/dialogus': typeof DialogusRoute
   '/docs': typeof DocsRoute
   '/doutor-fiscal': typeof DoutorFiscalRoute
@@ -320,6 +339,7 @@ export interface FileRoutesByFullPath {
   '/status': typeof StatusRoute
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
+  '/api/versioning': typeof ApiVersioningRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -330,6 +350,7 @@ export interface FileRoutesByFullPath {
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/api/': typeof ApiIndexRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
   '/news/': typeof NewsIndexRoute
@@ -341,12 +362,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/access': typeof AccessRoute
   '/agents.md': typeof AgentsDotmdRoute
-  '/api': typeof ApiRouteWithChildren
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
+  '/developers': typeof DevelopersRoute
   '/dialogus': typeof DialogusRoute
   '/docs': typeof DocsRoute
   '/doutor-fiscal': typeof DoutorFiscalRoute
@@ -368,6 +389,7 @@ export interface FileRoutesByTo {
   '/status': typeof StatusRoute
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
+  '/api/versioning': typeof ApiVersioningRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -378,6 +400,7 @@ export interface FileRoutesByTo {
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/api': typeof ApiIndexRoute
   '/careers': typeof CareersIndexRoute
   '/legal': typeof LegalIndexRoute
   '/news': typeof NewsIndexRoute
@@ -396,6 +419,7 @@ export interface FileRoutesById {
   '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
+  '/developers': typeof DevelopersRoute
   '/dialogus': typeof DialogusRoute
   '/docs': typeof DocsRoute
   '/doutor-fiscal': typeof DoutorFiscalRoute
@@ -417,6 +441,7 @@ export interface FileRoutesById {
   '/status': typeof StatusRoute
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
+  '/api/versioning': typeof ApiVersioningRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -427,6 +452,7 @@ export interface FileRoutesById {
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
+  '/api/': typeof ApiIndexRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
   '/news/': typeof NewsIndexRoute
@@ -446,6 +472,7 @@ export interface FileRouteTypes {
     | '/compliance'
     | '/console'
     | '/contact'
+    | '/developers'
     | '/dialogus'
     | '/docs'
     | '/doutor-fiscal'
@@ -467,6 +494,7 @@ export interface FileRouteTypes {
     | '/status'
     | '/api/openapi.yaml'
     | '/api/v1'
+    | '/api/versioning'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -477,6 +505,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
+    | '/api/'
     | '/careers/'
     | '/legal/'
     | '/news/'
@@ -488,12 +517,12 @@ export interface FileRouteTypes {
     | '/'
     | '/access'
     | '/agents.md'
-    | '/api'
     | '/build-with-us'
     | '/company'
     | '/compliance'
     | '/console'
     | '/contact'
+    | '/developers'
     | '/dialogus'
     | '/docs'
     | '/doutor-fiscal'
@@ -515,6 +544,7 @@ export interface FileRouteTypes {
     | '/status'
     | '/api/openapi.yaml'
     | '/api/v1'
+    | '/api/versioning'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -525,6 +555,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
+    | '/api'
     | '/careers'
     | '/legal'
     | '/news'
@@ -542,6 +573,7 @@ export interface FileRouteTypes {
     | '/compliance'
     | '/console'
     | '/contact'
+    | '/developers'
     | '/dialogus'
     | '/docs'
     | '/doutor-fiscal'
@@ -563,6 +595,7 @@ export interface FileRouteTypes {
     | '/status'
     | '/api/openapi.yaml'
     | '/api/v1'
+    | '/api/versioning'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -573,6 +606,7 @@ export interface FileRouteTypes {
     | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
+    | '/api/'
     | '/careers/'
     | '/legal/'
     | '/news/'
@@ -591,6 +625,7 @@ export interface RootRouteChildren {
   ComplianceRoute: typeof ComplianceRoute
   ConsoleRoute: typeof ConsoleRoute
   ContactRoute: typeof ContactRoute
+  DevelopersRoute: typeof DevelopersRoute
   DialogusRoute: typeof DialogusRoute
   DocsRoute: typeof DocsRoute
   DoutorFiscalRoute: typeof DoutorFiscalRoute
@@ -690,6 +725,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developers': {
+      id: '/developers'
+      path: '/developers'
+      fullPath: '/developers'
+      preLoaderRoute: typeof DevelopersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dialogus': {
@@ -825,6 +867,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StatusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/': {
+      id: '/api/'
+      path: '/'
+      fullPath: '/api/'
+      preLoaderRoute: typeof ApiIndexRouteImport
+      parentRoute: typeof ApiRoute
+    }
     '/api/openapi.yaml': {
       id: '/api/openapi.yaml'
       path: '/openapi.yaml'
@@ -837,6 +886,13 @@ declare module '@tanstack/react-router' {
       path: '/v1'
       fullPath: '/api/v1'
       preLoaderRoute: typeof ApiV1RouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/versioning': {
+      id: '/api/versioning'
+      path: '/versioning'
+      fullPath: '/api/versioning'
+      preLoaderRoute: typeof ApiVersioningRouteImport
       parentRoute: typeof ApiRoute
     }
     '/careers/': {
@@ -967,11 +1023,15 @@ const ApiV1RouteWithChildren = ApiV1Route._addFileChildren(ApiV1RouteChildren)
 interface ApiRouteChildren {
   ApiOpenapiDotyamlRoute: typeof ApiOpenapiDotyamlRoute
   ApiV1Route: typeof ApiV1RouteWithChildren
+  ApiVersioningRoute: typeof ApiVersioningRoute
+  ApiIndexRoute: typeof ApiIndexRoute
 }
 
 const ApiRouteChildren: ApiRouteChildren = {
   ApiOpenapiDotyamlRoute: ApiOpenapiDotyamlRoute,
   ApiV1Route: ApiV1RouteWithChildren,
+  ApiVersioningRoute: ApiVersioningRoute,
+  ApiIndexRoute: ApiIndexRoute,
 }
 
 const ApiRouteWithChildren = ApiRoute._addFileChildren(ApiRouteChildren)
@@ -986,6 +1046,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComplianceRoute: ComplianceRoute,
   ConsoleRoute: ConsoleRoute,
   ContactRoute: ContactRoute,
+  DevelopersRoute: DevelopersRoute,
   DialogusRoute: DialogusRoute,
   DocsRoute: DocsRoute,
   DoutorFiscalRoute: DoutorFiscalRoute,

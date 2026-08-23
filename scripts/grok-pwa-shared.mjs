@@ -127,6 +127,7 @@ export function isInstallQuery(url) {
 /** Paths that can carry an app document (vs assets / API / internals). */
 export function isDocumentPath(pathname) {
   const path = String(pathname ?? "");
+  if (path === "/api" || path === "/api/versioning") return true;
   return (
     !path.startsWith("/__grok/") &&
     !path.startsWith("/api/") &&

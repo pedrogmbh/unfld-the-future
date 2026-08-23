@@ -1,6 +1,7 @@
 import { mergeVary, pickAccept, type MediaType } from "@/lib/accept";
 import {
   handleCatalogApi,
+  jsonHeaders,
   renderAgentsMd,
   renderOpenApiJson,
   renderOpenApiYaml,
@@ -32,6 +33,7 @@ const MACHINE_FILES: Record<
 
 function isDocumentPath(pathname: string): boolean {
   const path = pathname || "/";
+  if (path === "/api" || path === "/api/versioning") return true;
   return (
     !path.startsWith("/__grok/") &&
     !path.startsWith("/api/") &&
@@ -88,6 +90,12 @@ export function handleAgentSurfaceRequest(request: Request): Response | null {
       return new Response(null, {
         status: 204,
         headers: withDefaultVary(new Headers({ Allow: "GET, HEAD, OPTIONS" })),
+      });
+    }
+    if (machine.type.startsWith("application/json")) {
+      return new Response(machine.body(), {
+        status: 200,
+        headers: jsonHeaders({ "Cache-Control": "public, max-age=3600" }),
       });
     }
     return textResponse(machine.body(), 200, machine.type);

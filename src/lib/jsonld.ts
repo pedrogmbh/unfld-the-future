@@ -51,7 +51,16 @@ export function organizationJsonLd() {
       },
     ],
     sameAs: ["https://github.com/pedrogmbh/unfld-the-future"],
-    knowsAbout: ownedProducts.map((product) => product.shortName),
+    knowsAbout: [
+      "UNFLD",
+      "UNFLD developer resources",
+      ...ownedProducts.map((product) => product.shortName),
+    ],
+    identifier: [
+      { "@type": "PropertyValue", name: "CNPJ", value: SITE.cnpj },
+      { "@type": "PropertyValue", name: "domain", value: "unfld.com.br" },
+    ],
+    slogan: SITE.tagline,
   };
 }
 
@@ -63,6 +72,7 @@ export function homeJsonLd() {
       "@type": "WebSite",
       "@id": WEBSITE_ID,
       name: SITE.name,
+      alternateName: ["UNFLD", "unfld.com.br", "UNFOLDING THE FUTURE"],
       url: SITE.url,
       description: SITE.tagline,
       inLanguage: ["en", "pt-BR"],
@@ -78,5 +88,36 @@ export function homeJsonLd() {
         description: product.blurb,
       },
     })),
+  };
+}
+
+export function developerResourcesJsonLd(path: "/developers" | "/api") {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "UNFLD developer resources",
+    headline: "UNFLD developer resources",
+    url: `${SITE.url}${path}`,
+    description:
+      "UNFLD developer resources: public catalog API, OpenAPI 3.1, versioning policy, and agent files.",
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": ORG_ID },
+    mainEntity: {
+      "@type": "WebAPI",
+      name: "UNFLD Catalog API",
+      description:
+        "Public read-only catalog of UNFLD products, news, selected work, and company facts.",
+      url: `${SITE.url}/api/v1`,
+      documentation: `${SITE.url}/openapi.json`,
+      provider: { "@id": ORG_ID },
+    },
+    significantLink: [
+      `${SITE.url}/developers`,
+      `${SITE.url}/api`,
+      `${SITE.url}/api/versioning`,
+      `${SITE.url}/openapi.json`,
+      `${SITE.url}/llms.txt`,
+      `${SITE.url}/agents.md`,
+    ],
   };
 }

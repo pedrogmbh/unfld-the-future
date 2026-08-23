@@ -3,6 +3,7 @@ import {
   footer,
   news,
   ownedProducts,
+  selectedWork,
   solutions,
 } from "@/lib/site";
 
@@ -222,6 +223,24 @@ export function machinePages(): MachinePage[] {
       `Tell us what needs to work differently. Sales, partnerships, press, and security. ${SITE.sales}.`,
       "Company",
       { changefreq: "yearly", priority: 0.6 },
+    ),
+    page(
+      "/work",
+      "Selected work",
+      "Selected work from UNFLD’s team history — media, aviation, energy, education, sport, and the systems behind them.",
+      "Company",
+      { changefreq: "monthly", priority: 0.7 },
+    ),
+    ...selectedWork.map((work) =>
+      page(
+        `/work/${work.slug}`,
+        work.client === work.title
+          ? work.title
+          : `${work.client} — ${work.title}`,
+        work.lede,
+        "Company",
+        { changefreq: "yearly", priority: 0.5 },
+      ),
     ),
     page(
       "/legal",

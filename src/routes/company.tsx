@@ -1,10 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
+import { WorkTile } from "@/components/site/work-page";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
 import {
   customers,
+  featuredWork,
   formatAddress,
   news,
   offices,
@@ -116,10 +118,10 @@ function Company() {
               d: "Bela Vista. Registered office.",
             },
             {
-              href: "/dialogus",
-              img: "/images/office.jpg",
-              t: "Dialogus",
-              d: "Psychosocial risk. NR-1.",
+              href: "/work",
+              img: "/images/work/plastic-hero.png",
+              t: "Selected work",
+              d: "Netflix, Embraer, SporTV, and more.",
             },
             {
               href: "/careers",
@@ -186,36 +188,58 @@ function Company() {
       </Section>
 
       <Section id="clients" className="pb-20 sm:pb-28">
-        <Kicker>Experience</Kicker>
-        <h2 className="font-display text-[clamp(1.7rem,3.5vw,2.6rem)] font-medium tracking-tight">
-          Organizations represented in our team’s experience.
-        </h2>
-        <p className="mt-4 max-w-xl text-muted">
-          Relationships include direct UNFLD engagements, work delivered through prior companies, and partner-led projects. Current clients and formal case studies are identified separately.
-        </p>
+        <Kicker>Selected work</Kicker>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="font-display text-[clamp(1.7rem,3.5vw,2.6rem)] font-medium tracking-tight">
+              Work people actually used.
+            </h2>
+            <p className="mt-4 max-w-xl text-muted">
+              Selected work from the history we carry. Direct engagements,
+              prior companies, and projects built beside others.
+            </p>
+          </div>
+          <Link to="/work" className="text-[13px] text-muted hover:text-fg">
+            All work →
+          </Link>
+        </div>
+        <Stagger
+          className="mt-12 grid gap-8 sm:grid-cols-2"
+          delay={0.08}
+        >
+          {featuredWork().map((w) => (
+            <StaggerItem key={w.slug}>
+              <WorkTile work={w} variant="half" />
+            </StaggerItem>
+          ))}
+        </Stagger>
         <Stagger
           className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
           delay={0.04}
         >
           {customers.map((c) => (
             <StaggerItem key={c.name}>
-              <div className="bg-bg p-6 sm:p-8">
-                <p className="font-display text-xl font-medium tracking-tight">
-                  {c.name}
-                </p>
-                {"note" in c && c.note ? (
+              {c.workSlug ? (
+                <Link
+                  to="/work/$slug"
+                  params={{ slug: c.workSlug }}
+                  className="block bg-bg p-6 transition-colors hover:bg-bg-elevated sm:p-8"
+                >
+                  <p className="font-display text-xl font-medium tracking-tight">
+                    {c.name}
+                  </p>
                   <p className="mt-2 text-sm text-muted">{c.note}</p>
-                ) : null}
-              </div>
+                </Link>
+              ) : (
+                <div className="bg-bg p-6 sm:p-8">
+                  <p className="font-display text-xl font-medium tracking-tight">
+                    {c.name}
+                  </p>
+                  <p className="mt-2 text-sm text-muted">{c.note}</p>
+                </div>
+              )}
             </StaggerItem>
           ))}
-          <StaggerItem>
-            <div className="flex h-full items-center bg-bg p-6 sm:p-8">
-              <p className="font-display text-xl font-medium tracking-tight text-muted">
-                And partner-led projects.
-              </p>
-            </div>
-          </StaggerItem>
         </Stagger>
       </Section>
 

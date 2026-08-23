@@ -139,8 +139,11 @@ export function BuildWithUsPage() {
               Start with a conversation about the operation you need to improve.
               We scope engagements realistically, without agency theatrics.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap gap-3">
               <BtnLink to="/contact">Talk to UNFLD</BtnLink>
+              <BtnLink to="/work" variant="secondary">
+                Selected work
+              </BtnLink>
             </div>
           </div>
         </Reveal>

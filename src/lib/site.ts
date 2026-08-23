@@ -322,23 +322,31 @@ export const ownedProducts: readonly OwnedProduct[] = [
   },
 ];
 
-export const customers = [
+export type Customer = {
+  name: string;
+  note: string;
+  workSlug?: string;
+};
+
+export const customers: readonly Customer[] = [
   { name: "Timac Agro", note: "Principal partnership" },
-  { name: "SporTV", note: "Team experience" },
-  { name: "Netflix", note: "Team experience" },
-  { name: "Embraer", note: "Team experience" },
+  { name: "Netflix", note: "Selected work", workSlug: "netflix-tudum-2020" },
+  { name: "Embraer", note: "Selected work", workSlug: "embraer" },
+  { name: "SporTV", note: "Selected work", workSlug: "sportv-album-de-campeao" },
+  { name: "O Boticário", note: "Selected work", workSlug: "o-boticario-planeta-de-plastico" },
+  { name: "Spotify", note: "Selected work", workSlug: "spotify-retrospectiva" },
+  { name: "Omega", note: "Selected work", workSlug: "omega-luz-livre" },
+  { name: "PUCPR", note: "Selected work", workSlug: "pucpr-multiversidade" },
+  { name: "FLAGCX", note: "Selected work", workSlug: "neuronos" },
+  { name: "MatchOne", note: "Selected work", workSlug: "matchone" },
   { name: "L’Oréal Paris", note: "Team experience" },
   { name: "Cartier", note: "Team experience" },
   { name: "Subvrsive", note: "Partner project · WPP" },
   { name: "Siemens GmbH", note: "Team experience" },
   { name: "Aircraft Philipp", note: "Team experience" },
-  { name: "Spotify", note: "Team experience" },
-  { name: "O Boticário", note: "Team experience" },
-  { name: "PUCPR", note: "Partner project" },
-  { name: "FLAGCX", note: "Team experience" },
   { name: "Polenghi", note: "Team experience" },
   { name: "IOHK", note: "Partner project · Input Output Group" },
-] as const;
+];
 
 export const footer = {
   products: [
@@ -385,6 +393,7 @@ export const footer = {
   ],
   company: [
     { label: "About", to: "/company" },
+    { label: "Selected work", to: "/work" },
     { label: "Careers", to: "/careers" },
     { label: "News", to: "/news" },
     { label: "Security", to: "/security" },
@@ -759,6 +768,340 @@ export const plans = [
     ],
   },
 ] as const;
+
+export type SelectedWork = {
+  slug: string;
+  client: string;
+  title: string;
+  year: string;
+  field: string;
+  form: string;
+  line: string;
+  lede: string;
+  story: readonly string[];
+  outcome: string;
+  image: string;
+  gallery: readonly string[];
+  film?: { id: string; hash?: string; title: string };
+  size: "full" | "half";
+  featured?: boolean;
+};
+
+export const selectedWork: readonly SelectedWork[] = [
+  {
+    slug: "netflix-tudum-2020",
+    client: "Netflix",
+    title: "Almanaque Tudum",
+    year: "2020",
+    field: "Entertainment",
+    form: "Web experience",
+    size: "full",
+    featured: true,
+    line: "A digital almanac of slang, series, and the sound of a logo.",
+    lede: "Netflix asked for a surface that treated Tudum as language — internet slang mixed with the films and series people already loved. We built a web almanac: bold type, sharp humor, and a system worth wandering through.",
+    story: [
+      "Tudum is a sound. The brief was to make it a place.",
+      "The almanac gathered popular slang and the catalog into one visual object — graphic, comic, and precise. Something a fan could wander through rather than scan.",
+      "We built an experience that felt like the platform itself: dense, referential, and light on its feet. Fandom, held as language.",
+    ],
+    outcome:
+      "A surface fans could explore. Not a campaign page. An object.",
+    image: "/images/work/tudum-2020-01.png",
+    gallery: [
+      "/images/work/tudum-2020-hero.png",
+      "/images/work/tudum-2020-03.png",
+      "/images/work/tudum-2020-04.png",
+      "/images/work/tudum-2020-05.png",
+      "/images/work/tudum-2020-02.png",
+    ],
+    film: { id: "1010713650", hash: "7fdafb68bc", title: "Almanaque Tudum 2020" },
+  },
+  {
+    slug: "embraer",
+    client: "Embraer",
+    title: "Corporate portal",
+    year: "2021",
+    field: "Aviation",
+    form: "Corporate site",
+    size: "half",
+    featured: true,
+    line: "Aircraft and technology, shown so the next click feels inevitable.",
+    lede: "A corporate portal for one of the world’s aerospace companies. Photography and film in place of brochure language. Serious work, held lightly.",
+    story: [
+      "Aerospace is serious. The portal still had to invite the next click.",
+      "We built Embraer’s corporate surface around the aircraft and the technologies behind them, using photography and film rather than catalog copy. Navigation as a flight path: clear, quiet, exact.",
+      "Heavy industry does not need heavy chrome. The work was to make a complex company readable without making it small.",
+    ],
+    outcome: "A house of aircraft that could be walked, not merely listed.",
+    image: "/images/work/embraer-hero.png",
+    gallery: [
+      "/images/work/embraer-01.png",
+      "/images/work/embraer-02.png",
+    ],
+    film: { id: "1012551597", hash: "8a3db3ea9d", title: "Embraer" },
+  },
+  {
+    slug: "o-boticario-planeta-de-plastico",
+    client: "O Boticário",
+    title: "Planeta de Plástico",
+    year: "2021",
+    field: "Environment",
+    form: "Interactive experience",
+    size: "half",
+    featured: true,
+    line: "A statistic that could be walked through.",
+    lede: "O Boticário needed plastic waste to be felt, not merely cited. We built an interactive reading of familiar rooms buried in waste — data made spatial. At the end, a household calculator. On mobile, the camera entered the story.",
+    story: [
+      "The numbers on plastic waste are known. They do not move people until they occupy a room.",
+      "We built 3D environments of ordinary life, covered. A kitchen, a street, a planet assembled from fragments. Data became space. At the close of the experience, a calculator for a household’s yearly plastic.",
+      "On mobile, the phone’s camera became a second door into the same argument. The brief was not to decorate a cause. It was to make the scale undeniable.",
+    ],
+    outcome: "Waste, made spatial. A cause with a room you could stand in.",
+    image: "/images/work/plastic-hero.png",
+    gallery: [
+      "/images/work/plastic-01.png",
+      "/images/work/plastic-02.png",
+      "/images/work/plastic-03.png",
+      "/images/work/plastic-04.png",
+    ],
+    film: { id: "686120248", title: "Planeta de Plástico" },
+  },
+  {
+    slug: "sportv-album-de-campeao",
+    client: "SporTV",
+    title: "Álbum de Campeão",
+    year: "2021",
+    field: "Sport",
+    form: "Mobile app",
+    size: "full",
+    line: "Tokyo 2020, held in the hand.",
+    lede: "A virtual sticker album of Brazilian athletes at the Tokyo Olympics and Paralympics. Collecting became the event. A live leaderboard of collectors. Daily presence on Ohayo Tokyo.",
+    story: [
+      "The Games asked for a way to hold them when you were not in the stadium.",
+      "With SporTV we built Álbum de Campeão: a virtual sticker album covering most of the Brazilian delegation across the Olympics and Paralympics. Packs, trades, athlete pages, a live ranking of collectors.",
+      "Collecting became its own event. The album lived on social channels and received daily presence on Ohayo Tokyo, the program built to follow the Games. Sport, as something you could keep.",
+    ],
+    outcome: "A second stadium, in the pocket. Athletes as cards people actually hunted.",
+    image: "/images/work/album-hero.png",
+    gallery: [
+      "/images/work/album-01.png",
+      "/images/work/album-02.png",
+      "/images/work/album-03.png",
+    ],
+    film: { id: "708760172", hash: "4cab3966ce", title: "Álbum de Campeão" },
+  },
+  {
+    slug: "spotify-retrospectiva",
+    client: "Spotify",
+    title: "Retrospectiva",
+    year: "2021",
+    field: "Music",
+    form: "Campaign site",
+    size: "half",
+    line: "A year of listening, made tangible.",
+    lede: "When Spotify Wrapped 2021 arrived, the top listeners of three Brazilian artists could claim a shirt of the artist they had lived with all year. We built the page that made that claim feel personal.",
+    story: [
+      "Wrapped is a mirror. This was a gift behind it.",
+      "The top listeners of Luísa Sonza, Juliette, and Matuê were invited to a dedicated page to claim a shirt of the artist they had spent the year with. We built that surface: follow the steps, take the gift, leave without theatre.",
+      "Loyalty is usually a metric. Here it became an object you could wear.",
+    ],
+    outcome: "A claim that felt like recognition, not a form.",
+    image: "/images/work/spotify-01.png",
+    gallery: [
+      "/images/work/spotify-hero.png",
+      "/images/work/spotify-02.png",
+      "/images/work/spotify-03.png",
+      "/images/work/spotify-04.png",
+    ],
+    film: { id: "1010707046", hash: "7d25ce0886", title: "Retrospectiva" },
+  },
+  {
+    slug: "netflix-tudum-2021",
+    client: "Netflix",
+    title: "Almanaque Tudum",
+    year: "2021",
+    field: "Entertainment",
+    form: "Web and mobile",
+    size: "half",
+    line: "The print object, opened onto the screen — then widened.",
+    lede: "The second year brought the physical almanac onto web and mobile, then added an audiobook, a fan-club battle, soundtrack remixes across five genres, and a path into Netflix’s global event.",
+    story: [
+      "The almanac had been an object people wanted to hold. The work was to bring it onto screens without flattening it.",
+      "We built the 2021 edition for web and mobile, then widened it: an audiobook so more people could enter; a fan-club battle for the most loved series; remixes of iconic soundtracks across five genres, carried into social challenges; a path into Netflix’s global event.",
+      "The joke stayed sharp. Slang stayed native. The surface got larger without losing the tone the first year had earned.",
+    ],
+    outcome: "A second year that grew in reach without growing loud.",
+    image: "/images/work/tudum-2021-01.png",
+    gallery: [
+      "/images/work/tudum-2021-hero.png",
+      "/images/work/tudum-2021-02.png",
+      "/images/work/tudum-2021-03.png",
+    ],
+    film: { id: "665731293", hash: "ae60ecfd26", title: "Almanaque Tudum 2021" },
+  },
+  {
+    slug: "omega-luz-livre",
+    client: "Omega",
+    title: "Luz Livre",
+    year: "2022",
+    field: "Energy",
+    form: "Movement site",
+    size: "full",
+    featured: true,
+    line: "The right to choose clean power, argued in public.",
+    lede: "A public argument for opening the free energy market to every Brazilian. Clean power, a simpler bill, the right to choose. Software in service of a choice that should exist.",
+    story: [
+      "The free energy market was still closed to most Brazilians. The work was not a product page. It was a movement.",
+      "Luz Livre made the case for opening that market: clean, affordable, simpler electricity, chosen rather than assigned. We built the surface that carried the argument — clear enough to join, exact enough to trust.",
+      "Energy policy is usually written for specialists. This had to be written for the people who pay the bill.",
+    ],
+    outcome: "A public argument with a door. Choice, given a place to stand.",
+    image: "/images/work/luzlivre-hero.png",
+    gallery: [
+      "/images/work/luzlivre-01.png",
+      "/images/work/luzlivre-02.png",
+      "/images/work/luzlivre-03.png",
+      "/images/work/luzlivre-04.png",
+    ],
+    film: { id: "1010764833", hash: "8b989a72ec", title: "Luz Livre" },
+  },
+  {
+    slug: "pucpr-multiversidade",
+    client: "PUCPR",
+    title: "Multiversidade",
+    year: "2021",
+    field: "Education",
+    form: "University portal",
+    size: "half",
+    line: "The decision to study somewhere, given a door.",
+    lede: "The university’s vestibular as a portal: undergraduate programs, the 4D degrees, and a path to exam results. One surface for the decision to study there.",
+    story: [
+      "Choosing a university is a sequence of unanswered questions. The portal had to hold them without becoming a brochure.",
+      "Multiversidade gathered undergraduate programs — including the 4D degrees — and a path to vestibular results on one surface. Prospective students could see the offer and, later, see themselves in it.",
+      "Education marketing often speaks at the applicant. This had to speak with them: a place you could actually enter.",
+    ],
+    outcome: "A vestibular that felt like an invitation, not a funnel.",
+    image: "/images/work/pucpr-hero.png",
+    gallery: [
+      "/images/work/pucpr-01.png",
+      "/images/work/pucpr-03.png",
+      "/images/work/pucpr-02.png",
+      "/images/work/pucpr-04.png",
+    ],
+    film: { id: "1010749228", title: "Multiversidade" },
+  },
+  {
+    slug: "sportv-doe-gols",
+    client: "SporTV",
+    title: "Doe Gols",
+    year: "2020",
+    field: "Sport",
+    form: "Campaign site",
+    size: "half",
+    line: "Each goal became three pairs of sneakers.",
+    lede: "A hotsite for SporTV that turned every goal in the Brazilian Série A into three pairs of sneakers, given to institutions across Brazil — with Topper and Fundação Abrinq.",
+    story: [
+      "A championship produces goals. This one also produced shoes.",
+      "With SporTV, Topper, and Fundação Abrinq, we built a public ledger for the Brazilian Série A: each goal scored became three pairs of sneakers, given to institutions across the country. The site held the count in the open — goals on one side, pairs on the other.",
+      "Sport as a mechanism, not a slogan. The excitement of the round, converted without being diluted.",
+    ],
+    outcome: "A scoreboard that counted gifts as clearly as it counted goals.",
+    image: "/images/work/doegols-02.png",
+    gallery: [
+      "/images/work/doegols-hero.png",
+      "/images/work/doegols-01.png",
+      "/images/work/doegols-03.png",
+      "/images/work/doegols-04.png",
+    ],
+    film: { id: "397876050", title: "Doe Gols" },
+  },
+  {
+    slug: "matchone",
+    client: "MatchOne",
+    title: "MatchOne",
+    year: "2021",
+    field: "Hiring",
+    form: "Platform",
+    size: "half",
+    line: "Roles and people, matched without a form factory.",
+    lede: "A hiring platform that connects candidates and companies without turning either side into paperwork. Apply. Evaluate. Decide.",
+    story: [
+      "Hiring still asks too much of both sides before a real conversation.",
+      "MatchOne is a platform for open roles and the people who might fill them. Candidates apply without a maze. Companies evaluate without drowning in files. Matching does the quiet work in between.",
+      "The same conviction later lives in Queravaga: shorten the path from profile to interview. Here it was built as a marketplace — clear, fast, respectful of time.",
+    ],
+    outcome: "A shorter path from opening to decision.",
+    image: "/images/work/matchone-02.png",
+    gallery: [
+      "/images/work/matchone-hero.png",
+      "/images/work/matchone-01.png",
+      "/images/work/matchone-03.png",
+      "/images/work/matchone-04.png",
+    ],
+  },
+  {
+    slug: "neuronos",
+    client: "FLAGCX",
+    title: "NeuronOS",
+    year: "2021",
+    field: "Finance",
+    form: "Operations platform",
+    size: "half",
+    line: "Company finance as a structure, not a pile of files.",
+    lede: "A financial control platform built with FLAGCX: chart of accounts, company records, payments, users. Structure for money as it actually moves.",
+    story: [
+      "Company finance is a structure, or it is a mess.",
+      "With FLAGCX we built NeuronOS — a control plane for how money is recorded and released. Chart of accounts. Company registrations. Users and permissions. Payments, visible.",
+      "The interface is quiet on purpose. Finance does not need theatre. It needs a ledger people can trust, and a path from record to payment that does not lose the thread.",
+    ],
+    outcome: "Control, made visible. Accuracy as an operating habit.",
+    image: "/images/work/neuron-01.png",
+    gallery: [
+      "/images/work/neuron-hero.png",
+      "/images/work/neuron-02.png",
+      "/images/work/neuron-03.png",
+    ],
+  },
+];
+
+export function getWork(slug: string) {
+  return selectedWork.find((w) => w.slug === slug);
+}
+
+export function featuredWork() {
+  return selectedWork.filter((w) => w.featured);
+}
+
+export function workNeighbors(slug: string) {
+  const i = selectedWork.findIndex((w) => w.slug === slug);
+  if (i < 0) return { prev: undefined, next: undefined };
+  return {
+    prev: i > 0 ? selectedWork[i - 1] : undefined,
+    next: i < selectedWork.length - 1 ? selectedWork[i + 1] : undefined,
+  };
+}
+
+export function workRows(items: readonly SelectedWork[] = selectedWork) {
+  const rows: Array<SelectedWork | SelectedWork[]> = [];
+  let buffer: SelectedWork[] = [];
+  for (const item of items) {
+    if (item.size === "full") {
+      if (buffer.length) {
+        rows.push(buffer);
+        buffer = [];
+      }
+      rows.push(item);
+    } else {
+      buffer.push(item);
+      if (buffer.length === 2) {
+        rows.push(buffer);
+        buffer = [];
+      }
+    }
+  }
+  if (buffer.length) rows.push(buffer);
+  return rows;
+}
 
 export function getNews(slug: string) {
   return news.find((p) => p.slug === slug);

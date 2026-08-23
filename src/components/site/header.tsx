@@ -14,6 +14,7 @@ function navMenus() {
       label: "Company",
       items: [
         { label: "About", to: "/company" },
+        { label: "Selected work", to: "/work" },
         { label: "Careers", to: "/careers" },
         { label: "News", to: "/news" },
         { label: "Security", to: "/security" },

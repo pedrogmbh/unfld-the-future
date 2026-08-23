@@ -68,21 +68,25 @@ hex in JSX.** No `text-white` / `bg-black` literals — use `text-fg` /
 |---|---|---|
 | `fg` | `#f5f5f5` | Primary text, primary buttons |
 | `muted` | `#8a8a8a` | Body, nav idle, secondary lines |
-| `subtle` | `#5c5c5c` | Kickers’ quieter cousin, captions, footer meta |
+| `subtle` | `#5c5c5c` | Captions, footer meta, category labels |
 | `border` | `#1a1a1a` | Hairlines, card grids |
 | `border-strong` | `#2a2a2a` | Outlined buttons, dropdown chrome |
 
 ### Accent
 
-There is **one** accent: white on black.
+There is **one** action accent: white on black. Kickers may use brass.
 
 | Token | Hex | Use |
 |---|---|---|
 | `accent` | `#ffffff` | Primary buttons, “Try for free” |
 | `accent-fg` | `#000000` | Text on primary buttons |
+| `gold` | `#e3b26a` | Kickers only — same hex as `code-str` |
 
-No purple, gold, blue, or gradient **brand fills**. Syntax highlighting
-(below) is the only place extra hues appear, and only inside code.
+Gold is type on kickers: `Kicker`, `PageHero` kickers, and the
+sentence-case “For developers” line. Never a fill, never a button, never
+the mark, never a status pill, never a rule. Do not substitute a
+brighter gold (`#ffba00`, traffic-amber). No purple, blue, or gradient
+**brand fills**. Other hues stay inside code.
 
 ### Syntax (code only)
 
@@ -132,7 +136,7 @@ wordmark 600.
 | Lede | `17px` / `sm:text-lg` | — | relaxed | 400, `text-muted` |
 | Body | `15px`–`16px` | — | `1.6`–`1.7` | 400, `text-muted` |
 | Nav / button | `13px` | `tracking-wide` on buttons | — | 500 |
-| Kicker | `13px` | `0.18em` | — | 500, **uppercase**, `text-muted` |
+| Kicker | `13px` | `0.18em` | — | 500, **uppercase**, `text-gold` |
 | Footer col title | `11px` | `0.18em` | — | 500, uppercase, `text-subtle` |
 | Code | `12.5px` | — | `1.7` | 400, `font-mono` |
 | Wordmark | `13px` | `0.28em` | — | 600 |
@@ -261,7 +265,7 @@ All under `src/components/site/`.
 |---|---|
 | `logo.tsx` | Mark + wordmark |
 | `header.tsx` | Fixed nav, hover menus, Contact Sales, Try-for-free split, mobile overlay |
-| `footer.tsx` | Six-column sitemap + legal + privacy choices |
+| `footer.tsx` | Five-column sitemap + legal + privacy choices |
 | `buttons.tsx` | `Btn`, `BtnLink` (primary / secondary / ghost), `TextArrow` |
 | `page-hero.tsx` | Inner-page hero (kicker, WordStagger title, lede, actions) |
 | `section.tsx` | `Section` (max-w-6xl), `Kicker`, `Hairline` |
@@ -365,12 +369,12 @@ type must remain visible (WordStagger uses mount `animate`, not
 - Edit tokens in `@theme`, then use utilities.
 - Match x.ai density: lots of black, little chrome, type doing the work.
 - Keep motion cinematic and slow on enter; snappy (150–200ms) on hover.
-- Keep syntax colors only inside code.
+- Keep syntax colors inside code. Gold chrome is kickers only.
 - Leave the grain, the hairline grids, and the fold mark alone.
 
 ## Don’t
 
-- Don’t introduce a brand color (purple buttons, blue links, gold rules).
+- Don’t spread gold past kickers (no gold buttons, pills, rules, or fills).
 - Don’t add Inter / Geist / a third font. Inter Tight + IBM Plex Mono.
 - Don’t drop Framer-style gradient meshes, glassmorphism, or emoji icons.
 - Don’t replace `motion` with CSS-only page enters “to simplify”.

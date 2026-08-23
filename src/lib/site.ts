@@ -356,13 +356,7 @@ export const footer = {
     { label: "Doutor Fiscal", to: "/doutor-fiscal" },
     { label: "Queravaga", to: "/queravaga" },
     { label: "Dialogus", to: "/dialogus" },
-  ],
-  access: [
-    { label: "FCR", to: "/fcr" },
-    { label: "SiteCreator", to: "/sitecreator" },
-    { label: "Doutor Fiscal", to: "/doutor-fiscal" },
-    { label: "Queravaga", to: "/queravaga" },
-    { label: "Dialogus", to: "/dialogus" },
+    { label: "Access", to: "/access" },
   ],
   buildWithUs: [
     { label: "Custom software", to: "/build-with-us" },

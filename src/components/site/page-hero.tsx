@@ -26,7 +26,7 @@ export function PageHero({
       <div className="mx-auto w-full max-w-6xl">
         {kicker ? (
           <Reveal>
-            <p className="mb-6 text-[13px] font-medium tracking-[0.18em] text-muted uppercase">
+            <p className="mb-6 text-[13px] font-medium tracking-[0.18em] text-gold uppercase">
               {kicker}
             </p>
           </Reveal>

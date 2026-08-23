@@ -893,10 +893,12 @@ export function getCategoryMeta(name: string): CategoryMeta | undefined {
 }
 
 /**
- * How a chapter renders its disclosures. Cycling these is what keeps a
- * 98-item repository from reading as one uninterrupted column of cards.
+ * How a chapter presents itself. `aside` pairs a sticky heading column with
+ * roomy cards; `banner` runs a full-width heading over a dense row list.
+ * Alternating the two is what keeps 98 disclosures from reading as one
+ * uninterrupted column.
  */
-export type ChapterLayout = "split" | "stack" | "columns";
+export type ChapterLayout = "aside" | "banner";
 
 export type ComplianceChapter = {
   n: string;
@@ -915,7 +917,7 @@ export const COMPLIANCE_CHAPTERS: readonly ComplianceChapter[] = [
     title: "Governance and policy",
     lede: "The Information Security Policy that everything else hangs from — how it is validated, reviewed, audited, and held against ISO 27001, SOC 2, GDPR, and LGPD.",
     icon: "shield",
-    layout: "split",
+    layout: "aside",
     categoryNames: ["General and PSSI", "User awareness and training", "Compliance"],
   },
   {
@@ -924,7 +926,7 @@ export const COMPLIANCE_CHAPTERS: readonly ComplianceChapter[] = [
     title: "Identity and access",
     lede: "Who can reach what, proven at every boundary. Least privilege, documented identity lifecycle, enforced multi-factor authentication, and enterprise federation.",
     icon: "key",
-    layout: "stack",
+    layout: "banner",
     categoryNames: ["Access Authorization Management", "Authentication"],
   },
   {
@@ -933,7 +935,7 @@ export const COMPLIANCE_CHAPTERS: readonly ComplianceChapter[] = [
     title: "Infrastructure and perimeter",
     lede: "Where the compute physically sits, how the network is cut into segments, and what stands between the public internet and a database.",
     icon: "hosting",
-    layout: "split",
+    layout: "aside",
     categoryNames: [
       "Physical security",
       "Security of communications",
@@ -947,7 +949,7 @@ export const COMPLIANCE_CHAPTERS: readonly ComplianceChapter[] = [
     title: "Operations and response",
     lede: "The day-to-day: hardened workstations, change control, log aggregation, and what happens in the hours after something goes wrong.",
     icon: "operations",
-    layout: "columns",
+    layout: "banner",
     categoryNames: [
       "Monitoring and Traceability",
       "Security related to operations",
@@ -960,7 +962,7 @@ export const COMPLIANCE_CHAPTERS: readonly ComplianceChapter[] = [
     title: "Data, backup, and continuity",
     lede: "Classification, encryption, immutable snapshots, and the recovery objectives we hold ourselves to when a region goes dark.",
     icon: "data",
-    layout: "split",
+    layout: "aside",
     categoryNames: ["Data Security", "Backups Management", "Business Continuity"],
   },
   {
@@ -969,7 +971,7 @@ export const COMPLIANCE_CHAPTERS: readonly ComplianceChapter[] = [
     title: "Engineering and supply chain",
     lede: "How software gets built and reviewed before it ships, how tenants stay separated, and what we require of every vendor we bring in.",
     icon: "sdlc",
-    layout: "stack",
+    layout: "banner",
     categoryNames: [
       "Project Information Systems",
       "Software",

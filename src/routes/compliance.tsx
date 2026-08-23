@@ -3,11 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Search, X } from "lucide-react";
 import { BtnLink } from "@/components/site/buttons";
 import { CodeBlock } from "@/components/site/code-block";
-import {
-  ComplianceGlyph,
-  DisclosureCard,
-  GlyphTile,
-} from "@/components/site/compliance";
+import { ComplianceGlyph, Disclosure, GlyphTile } from "@/components/site/compliance";
 import { PageHero } from "@/components/site/page-hero";
 import { ParallaxImage, Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
@@ -409,12 +405,13 @@ function Results({
     <Section className="pb-24 sm:pb-32">
       <div className="space-y-3">
         {items.map((item) => (
-          <DisclosureCard
+          <Disclosure
             key={item.id}
             item={item}
             index={order.get(item.id) ?? 0}
             open={open[item.id] ?? false}
             onToggle={() => onToggle(item.id)}
+            showCategory
           />
         ))}
       </div>
@@ -452,31 +449,68 @@ function Narrative({
   );
 }
 
-function ChapterHeading({ chapter }: { chapter: ResolvedChapter }) {
+function ChapterMark({ chapter }: { chapter: ResolvedChapter }) {
+  return (
+    <div className="flex items-center gap-3">
+      <GlyphTile icon={chapter.icon} />
+      <span className="font-mono text-[12px] text-subtle tabular-nums">
+        Chapter {chapter.n} / {String(chapters.length).padStart(2, "0")}
+      </span>
+    </div>
+  );
+}
+
+function ChapterContents({ chapter }: { chapter: ResolvedChapter }) {
+  return (
+    <ul className="space-y-2">
+      {chapter.categories.map((c) => (
+        <li key={c.slug} className="flex items-center gap-2.5 text-[12.5px] text-subtle">
+          <ComplianceGlyph icon={c.icon} className="size-3.5 shrink-0" />
+          <span className="min-w-0 flex-1 truncate">{c.name}</span>
+          <span className="font-mono text-[11px] tabular-nums">
+            {String(c.items.length).padStart(2, "0")}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Vertical heading for `aside` chapters: sticks alongside the card column. */
+function ChapterAside({ chapter }: { chapter: ResolvedChapter }) {
   return (
     <>
-      <div className="flex items-center gap-3">
-        <GlyphTile icon={chapter.icon} />
-        <span className="font-mono text-[12px] text-subtle tabular-nums">
-          Chapter {chapter.n} / {String(chapters.length).padStart(2, "0")}
-        </span>
-      </div>
+      <ChapterMark chapter={chapter} />
       <h2 className="mt-5 font-display text-[clamp(1.7rem,3.4vw,2.4rem)] font-medium leading-tight tracking-tight">
         {chapter.title}
       </h2>
       <p className="mt-4 text-[15px] leading-relaxed text-muted">{chapter.lede}</p>
-      <ul className="mt-6 max-w-sm space-y-2 border-t border-border pt-5">
-        {chapter.categories.map((c) => (
-          <li key={c.slug} className="flex items-center gap-2.5 text-[12.5px] text-subtle">
-            <ComplianceGlyph icon={c.icon} className="size-3.5 shrink-0" />
-            <span className="min-w-0 flex-1 truncate">{c.name}</span>
-            <span className="font-mono text-[11px] tabular-nums">
-              {String(c.items.length).padStart(2, "0")}
-            </span>
-          </li>
-        ))}
-      </ul>
+      <div className="mt-6 border-t border-border pt-5">
+        <ChapterContents chapter={chapter} />
+      </div>
     </>
+  );
+}
+
+/** Horizontal heading band for `banner` chapters, above the dense row list. */
+function ChapterBanner({ chapter }: { chapter: ResolvedChapter }) {
+  return (
+    <div className="border-y border-border py-8 sm:py-10">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,17rem)] lg:items-end lg:gap-16">
+        <div className="min-w-0">
+          <ChapterMark chapter={chapter} />
+          <h2 className="mt-5 font-display text-[clamp(1.7rem,3.6vw,2.6rem)] font-medium leading-tight tracking-tight">
+            {chapter.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
+            {chapter.lede}
+          </p>
+        </div>
+        <div className="min-w-0 lg:border-l lg:border-border lg:pl-10">
+          <ChapterContents chapter={chapter} />
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -487,18 +521,25 @@ function ChapterHeading({ chapter }: { chapter: ResolvedChapter }) {
 function CategoryGroup({
   category,
   labelled,
+  variant,
   open,
   onToggle,
 }: {
   category: ComplianceCategory;
   labelled: boolean;
+  variant: "card" | "row";
   open: OpenMap;
   onToggle: (id: string) => void;
 }) {
   return (
-    <section className="space-y-3">
+    <section className={variant === "card" ? "space-y-3" : undefined}>
       {labelled ? (
-        <div className="flex items-center gap-3 pt-2 pb-1">
+        <div
+          className={cn(
+            "flex items-center gap-3",
+            variant === "card" ? "pt-2 pb-1" : "border-b border-border pt-8 pb-3",
+          )}
+        >
           <ComplianceGlyph icon={category.icon} className="size-3.5 shrink-0 text-muted" />
           <h3 className="text-[11px] font-medium tracking-[0.16em] text-muted uppercase">
             {category.name}
@@ -510,29 +551,17 @@ function CategoryGroup({
         </div>
       ) : null}
       {category.items.map((item) => (
-        <DisclosureCard
+        <Disclosure
           key={item.id}
           item={item}
           index={order.get(item.id) ?? 0}
           open={open[item.id] ?? false}
           onToggle={() => onToggle(item.id)}
-          showCategory={false}
+          variant={variant}
         />
       ))}
     </section>
   );
-}
-
-/** Deal whole categories into two columns, keeping order and balancing length. */
-function dealColumns(categories: ComplianceCategory[]) {
-  const cols: [ComplianceCategory[], ComplianceCategory[]] = [[], []];
-  const size = [0, 0];
-  for (const category of categories) {
-    const target = size[0] <= size[1] ? 0 : 1;
-    cols[target].push(category);
-    size[target] += category.items.length;
-  }
-  return cols;
 }
 
 function Chapter({
@@ -544,23 +573,25 @@ function Chapter({
   open: OpenMap;
   onToggle: (id: string) => void;
 }) {
+  const variant = chapter.layout === "aside" ? "card" : "row";
   const labelled = chapter.categories.length > 1;
   const group = (category: ComplianceCategory) => (
     <CategoryGroup
       key={category.slug}
       category={category}
       labelled={labelled}
+      variant={variant}
       open={open}
       onToggle={onToggle}
     />
   );
 
-  if (chapter.layout === "split") {
+  if (chapter.layout === "aside") {
     return (
       <Section id={chapter.slug} className="scroll-mt-24 pb-20 sm:scroll-mt-28 sm:pb-28">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,19rem)_minmax(0,1fr)] lg:gap-14">
           <Reveal className="lg:sticky lg:top-28 lg:self-start">
-            <ChapterHeading chapter={chapter} />
+            <ChapterAside chapter={chapter} />
           </Reveal>
           <div className="min-w-0 space-y-6">{chapter.categories.map(group)}</div>
         </div>
@@ -568,27 +599,12 @@ function Chapter({
     );
   }
 
-  if (chapter.layout === "columns") {
-    const [left, right] = dealColumns(chapter.categories);
-    return (
-      <Section id={chapter.slug} className="scroll-mt-24 pb-20 sm:scroll-mt-28 sm:pb-28">
-        <Reveal className="max-w-2xl">
-          <ChapterHeading chapter={chapter} />
-        </Reveal>
-        <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-5">
-          <div className="min-w-0 space-y-6">{left.map(group)}</div>
-          <div className="min-w-0 space-y-6">{right.map(group)}</div>
-        </div>
-      </Section>
-    );
-  }
-
   return (
     <Section id={chapter.slug} className="scroll-mt-24 pb-20 sm:scroll-mt-28 sm:pb-28">
-      <Reveal className="max-w-2xl">
-        <ChapterHeading chapter={chapter} />
+      <Reveal>
+        <ChapterBanner chapter={chapter} />
       </Reveal>
-      <div className="mt-10 space-y-6">{chapter.categories.map(group)}</div>
+      <div className="mt-2">{chapter.categories.map(group)}</div>
     </Section>
   );
 }

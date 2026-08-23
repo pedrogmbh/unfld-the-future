@@ -1,21 +1,19 @@
 import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Btn } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { pageTitle, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Contact") },
-      {
-        name: "description",
-        content:
-          "Tell us what needs to work differently. Choose a product, propose a partnership, or describe the operation you need to improve.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Contact",
+      description:
+        "Tell us what needs to work differently. Choose a product, propose a partnership, or describe the operation you need to improve.",
+      path: "/contact",
+    }),
   component: Contact,
 });
 
@@ -43,6 +41,8 @@ function Contact() {
             </div>
           ) : (
             <form
+              method="POST"
+              action="/contact"
               className="grid gap-4 sm:grid-cols-2"
               onSubmit={(e) => {
                 e.preventDefault();
@@ -87,8 +87,18 @@ function Contact() {
                   className="w-full rounded-lg border border-border-strong bg-bg-elevated px-3 py-2.5 text-sm outline-none focus:border-fg/40"
                 />
               </label>
-              <div className="sm:col-span-2">
+              <div className="sm:col-span-2 space-y-3">
                 <Btn type="submit">Send message</Btn>
+                <p className="text-xs text-muted">
+                  We’ll use these details only to respond to your request, as described in our{" "}
+                  <Link
+                    to="/legal/privacy-policy"
+                    className="text-fg underline-offset-4 hover:underline"
+                  >
+                    Privacy Policy
+                  </Link>
+                  .
+                </p>
               </div>
             </form>
           )}

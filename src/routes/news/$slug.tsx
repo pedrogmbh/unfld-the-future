@@ -2,7 +2,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CodeBlock } from "@/components/site/code-block";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { getNews, pageTitle } from "@/lib/site";
+import { getNews, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/news/$slug")({
   loader: ({ params }) => {
@@ -10,9 +11,41 @@ export const Route = createFileRoute("/news/$slug")({
     if (!post) throw notFound();
     return post;
   },
-  head: ({ loaderData }) => ({
-    meta: [{ title: pageTitle(loaderData?.title ?? "News") }],
-  }),
+  head: ({ loaderData }) => {
+    if (!loaderData) {
+      return buildPageHead({
+        title: "News",
+        path: "/news",
+      });
+    }
+    return buildPageHead({
+      title: loaderData.title,
+      description: loaderData.standfirst,
+      path: `/news/${loaderData.slug}`,
+      type: "article",
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: loaderData.title,
+        description: loaderData.standfirst,
+        datePublished: loaderData.date,
+        publisher: {
+          "@type": "Organization",
+          name: SITE.name,
+          url: SITE.url,
+          logo: `${SITE.url}/favicon.svg`,
+        },
+        author: {
+          "@type": "Organization",
+          name: SITE.name,
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${SITE.url}/news/${loaderData.slug}`,
+        },
+      },
+    });
+  },
   component: NewsPost,
 });
 

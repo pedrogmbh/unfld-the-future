@@ -2,19 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { formatAddress, offices, pageTitle, SITE } from "@/lib/site";
+import { formatAddress, offices, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/sao-paulo")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("São Paulo") },
-      {
-        name: "description",
-        content:
-          "UNFLD in São Paulo. Registered headquarters of UNFOLDING THE FUTURE LTDA, in Bela Vista.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "São Paulo",
+      description:
+        "UNFLD in São Paulo. Registered headquarters and meeting point of UNFOLDING THE FUTURE LTDA, in Bela Vista.",
+      path: "/sao-paulo",
+    }),
   component: SaoPaulo,
 });
 

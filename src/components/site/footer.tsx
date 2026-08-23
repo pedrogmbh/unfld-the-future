@@ -74,7 +74,7 @@ export function Footer() {
               onClick={() => setPrivacy(true)}
               className="text-[12px] text-subtle transition-colors hover:text-fg"
             >
-              Privacy choices
+              Privacy choices / Escolhas de privacidade
             </button>
           </div>
         </div>

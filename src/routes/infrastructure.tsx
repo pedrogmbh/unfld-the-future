@@ -2,26 +2,23 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
-import { pageTitle } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/infrastructure")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Infrastructure") },
-      {
-        name: "description",
-        content:
-          "Infrastructure chosen for the system—not for the slide. Hosting designed around users, data, availability, and contractual controls.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Infrastructure",
+      description:
+        "Infrastructure chosen for the system—not for the slide. Hosting designed around users, data, availability, and contractual controls.",
+      path: "/infrastructure",
+    }),
   component: Infra,
 });
 
 const pillars = [
   {
     title: "Hosting regions",
-    desc: "Primary services and data planes are deployed in Brazilian cloud regions (São Paulo / South America) with edge routing for low latency.",
+    desc: "Hosting regions and data locations vary by product and contract. Brazilian-region deployment is available where the architecture and agreement require it.",
   },
   {
     title: "Recovery objectives",
@@ -29,7 +26,7 @@ const pillars = [
   },
   {
     title: "Monitoring coverage",
-    desc: "Continuous health checking, synthetic endpoint testing, structured logging, and anomaly alerts managed by product engineering.",
+    desc: "Monitoring coverage is documented per product, including the health checks, logs, alerts, ownership, and escalation paths currently configured.",
   },
   {
     title: "Data-retention model",

@@ -3,19 +3,16 @@ import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import { pageTitle } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/build-with-us")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Build with UNFLD — Custom software") },
-      {
-        name: "description",
-        content:
-          "We design and ship custom systems beside teams whose operation cannot be reduced to a template.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Build with UNFLD — Custom software",
+      description:
+        "We design and ship custom systems beside teams whose operation cannot be reduced to a template.",
+      path: "/build-with-us",
+    }),
   component: BuildWithUsPage,
 });
 
@@ -52,12 +49,12 @@ const engagements = [
   {
     kicker: "Occupational & compliance",
     title: "Documented risk systems",
-    body: "Confidential listening, risk classification, and audit-ready management processes.",
+    body: "Confidential listening, risk classification, and documented evidence designed to support review and management follow-up.",
   },
   {
     kicker: "Enterprise architecture",
     title: "Custom platforms",
-    body: "Tailored software with contractual hosting, role-based access, data residency, and designated team support.",
+    body: "Tailored software with agreed hosting configurations, role-based access, and designated team support recorded in the contract.",
   },
 ] as const;
 

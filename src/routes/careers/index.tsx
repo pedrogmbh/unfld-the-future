@@ -2,19 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BtnLink } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
-import { interview, offices, pageTitle, roles, SITE } from "@/lib/site";
+import { interview, offices, roles, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/careers/")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Careers") },
-      {
-        name: "description",
-        content:
-          "Do work you can point to. Join UNFLD when you want responsibility to be concrete—not ceremonial.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Careers",
+      description:
+        "Do work you can point to. Join UNFLD when you want responsibility to be concrete—not ceremonial.",
+      path: "/careers",
+    }),
   component: Careers,
 });
 

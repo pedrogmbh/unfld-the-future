@@ -1,9 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { H, LegalDoc } from "@/components/site/legal-doc";
-import { formatLegalContact, pageTitle, SITE } from "@/lib/site";
+import { formatLegalContact, SITE } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/legal/acceptable-use-policy")({
-  head: () => ({ meta: [{ title: pageTitle("Acceptable Use Policy") }] }),
+  head: () =>
+    buildPageHead({
+      title: "Acceptable Use Policy",
+      description:
+        "What is permitted on UNFLD services and website surfaces.",
+      path: "/legal/acceptable-use-policy",
+    }),
   component: Page,
 });
 

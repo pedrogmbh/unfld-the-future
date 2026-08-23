@@ -3,10 +3,17 @@ import { ProductPage } from "@/components/site/product-page";
 import { TextArrow } from "@/components/site/buttons";
 import { Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import { ownedProducts, pageTitle } from "@/lib/site";
+import { ownedProducts } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/products")({
-  head: () => ({ meta: [{ title: pageTitle("Products by UNFLD") }] }),
+  head: () =>
+    buildPageHead({
+      title: "Products by UNFLD",
+      description:
+        "Explore FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus—five products by UNFLD across agronomy, small business, hiring, and workplace health.",
+      path: "/products",
+    }),
   component: Products,
 });
 

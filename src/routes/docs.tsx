@@ -1,17 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { HowWeWorkPage } from "@/routes/how-we-work";
-import { pageTitle } from "@/lib/site";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/docs")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("How we build — UNFLD") },
-      {
-        name: "description",
-        content:
-          "A practical overview of discovery, delivery, ownership, security, and handover for custom systems built with UNFLD.",
-      },
-    ],
-  }),
-  component: HowWeWorkPage,
+  beforeLoad: () => {
+    throw redirect({
+      to: "/how-we-work",
+      statusCode: 301,
+    });
+  },
 });

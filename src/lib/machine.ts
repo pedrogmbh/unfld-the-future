@@ -8,8 +8,8 @@ import {
 
 export type MachineSection =
   | "Products"
+  | "Build with us"
   | "Solutions"
-  | "Developers"
   | "Company"
   | "News"
   | "Legal";
@@ -53,94 +53,122 @@ export function siteUrl(path: string): string {
   return `${SITE.url}${path}`;
 }
 
+const canonicalSolutions = solutions.filter((s) =>
+  [
+    "agronomy",
+    "hiring",
+    "small-business",
+    "workplace-health",
+    "custom-systems",
+    "government",
+    "operations",
+    "legal",
+  ].includes(s.slug),
+);
+
 /**
- * Every public HTML page we want crawlers and agents to find.
- * Built from owned products, solutions, news, and the footer sitemap.
+ * Every public canonical HTML page we want crawlers and agents to find.
+ * Excludes legacy duplicate routes (/api, /docs, /console, /download, /solutions/support).
  */
 export function machinePages(): MachinePage[] {
   const pages: MachinePage[] = [
     page(
       "/",
       SITE.name,
-      `${SITE.name} is the trading name of ${SITE.legal}. A São Paulo software house that also ships its own digital products.`,
+      "Across agronomy, hiring, small business, and workplace health, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
       "Company",
       { changefreq: "weekly", priority: 1 },
     ),
     page(
       "/products",
-      "Products",
-      "Owned products in market: FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial.",
+      "Products by UNFLD",
+      "Explore FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus—five products by UNFLD across agronomy, small business, hiring, and workplace health.",
       "Products",
       { changefreq: "weekly", priority: 0.9 },
     ),
     ...ownedProducts.map((product) =>
       page(
         product.href,
-        product.name,
+        `${product.name} — ${product.line}`,
         product.blurb,
         "Products",
         { changefreq: "monthly", priority: 0.8 },
       ),
     ),
     page(
+      "/access",
+      "Access UNFLD products",
+      "Direct, secure entry points for FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus.",
+      "Products",
+      { changefreq: "monthly", priority: 0.7 },
+    ),
+    page(
+      "/build-with-us",
+      "Build with UNFLD",
+      "Custom digital systems designed and shipped beside organizations whose consequential operations cannot be reduced to an off-the-shelf template.",
+      "Build with us",
+      { changefreq: "monthly", priority: 0.8 },
+    ),
+    page(
+      "/how-we-work",
+      "How we build custom software",
+      "A practical overview of discovery, delivery, ownership, security, and handover for custom systems built with UNFLD.",
+      "Build with us",
+      { changefreq: "monthly", priority: 0.7 },
+    ),
+    page(
       "/solutions",
       "Solutions",
-      "How UNFLD works with business, government, operations, legal and fiscal teams, and security reviews.",
+      "Start with the work that needs to change. Purpose-built solutions across agronomy, hiring, small business, workplace health, and custom systems.",
       "Solutions",
       { changefreq: "monthly", priority: 0.7 },
     ),
-    ...solutions.map((solution) =>
+    ...canonicalSolutions.map((solution) =>
       page(
         `/solutions/${solution.slug}`,
-        solution.name,
+        `${solution.name} Solutions`,
         solution.line,
         "Solutions",
         { changefreq: "monthly", priority: 0.6 },
       ),
     ),
     page(
-      "/api",
-      "API",
-      "Developer surface for UNFLD products and software-house work.",
-      "Developers",
-      { changefreq: "monthly", priority: 0.7 },
+      "/status",
+      "Service status",
+      "Operational status and service availability notes for UNFLD corporate and product endpoints.",
+      "Build with us",
+      { changefreq: "weekly", priority: 0.5 },
     ),
-    page("/docs", "Docs", "Documentation and notes for UNFLD products.", "Developers", {
-      changefreq: "monthly",
-      priority: 0.6,
-    }),
-    page("/console", "Console", "Product console entry.", "Developers", {
-      changefreq: "yearly",
-      priority: 0.4,
-    }),
-    page("/status", "Status", "Availability of UNFLD surfaces.", "Developers", {
-      changefreq: "weekly",
-      priority: 0.5,
-    }),
     page(
       "/company",
       "Company",
-      "About UNFLD — a software house that also ships what it owns, from São Paulo.",
+      "UNFLD is a product company and technology partner. We turn what should exist next into something people can use now.",
       "Company",
       { changefreq: "monthly", priority: 0.8 },
     ),
-    page("/careers", "Careers", "Open roles and how UNFLD hires.", "Company", {
-      changefreq: "weekly",
-      priority: 0.6,
-    }),
     page(
-      "/careers/open-roles",
-      "Open roles",
-      "Current openings across products, engineering, design, counsel, and security.",
+      "/careers",
+      "Careers",
+      "Do work you can point to. Join UNFLD when you want responsibility to be concrete—not ceremonial.",
       "Company",
       { changefreq: "weekly", priority: 0.6 },
     ),
-    page("/news", "News", "Notes from UNFLD — product launches and the company story.", "News", {
-      changefreq: "weekly",
-      priority: 0.6,
-    }),
+    page(
+      "/careers/open-roles",
+      "Open roles",
+      "Open work at UNFLD. Introductions and role inquiries.",
+      "Company",
+      { changefreq: "weekly", priority: 0.6 },
+    ),
+    page(
+      "/news",
+      "News & updates",
+      "Product releases, field notes, company decisions, and evidence from the systems we operate.",
+      "News",
+      { changefreq: "weekly", priority: 0.6 },
+    ),
     ...news.map((post) =>
-      page( `/news/${post.slug}`, post.title, post.standfirst, "News", {
+      page(`/news/${post.slug}`, post.title, post.standfirst, "News", {
         lastmod: newsLastmod(post.date),
         changefreq: "yearly",
         priority: 0.5,
@@ -148,10 +176,10 @@ export function machinePages(): MachinePage[] {
     ),
     page(
       "/security",
-      "Security",
-      "How we treat data on products we operate and on software we ship for others.",
-      "Company",
-      { changefreq: "yearly", priority: 0.5 },
+      "Security at UNFLD",
+      "Security at UNFLD starts with a narrower promise: know what data a product needs, limit who and what can reach it, and make important actions traceable.",
+      "Build with us",
+      { changefreq: "yearly", priority: 0.6 },
     ),
     page(
       "/compliance",
@@ -163,83 +191,114 @@ export function machinePages(): MachinePage[] {
     page(
       "/sao-paulo",
       "São Paulo",
-      `Headquarters — ${SITE.address.line1}, ${SITE.address.district}, ${SITE.address.city}.`,
+      `Registered headquarters and meeting point — ${SITE.address.line1}, ${SITE.address.district}, ${SITE.address.city}.`,
       "Company",
       { changefreq: "yearly", priority: 0.4 },
     ),
     page(
       "/infrastructure",
       "Infrastructure",
-      "How we run the products we operate.",
-      "Company",
-      { changefreq: "yearly", priority: 0.4 },
+      "Infrastructure chosen for the system—not for the slide. Hosting designed around users, data, availability, and contractual controls.",
+      "Build with us",
+      { changefreq: "yearly", priority: 0.5 },
     ),
     page(
       "/enterprise",
       "Enterprise",
-      "Seat-level contracts, dedicated planes, and reviews for larger organisations.",
-      "Company",
-      { changefreq: "yearly", priority: 0.5 },
+      "A contract shaped around the system you actually need. Available controls confirmed per product and order form.",
+      "Build with us",
+      { changefreq: "yearly", priority: 0.6 },
     ),
-    page("/pricing", "Pricing", "Plans for SiteCreator, Doutor Fiscal, Dialogus, and custom work.", "Company", {
-      changefreq: "monthly",
-      priority: 0.6,
-    }),
-    page("/contact", "Contact", `Sales, press, and the registered office. ${SITE.sales}.`, "Company", {
-      changefreq: "yearly",
-      priority: 0.6,
-    }),
-    page("/download", "Download", "Where to get UNFLD products on web, iOS, Android, and desktop.", "Company", {
-      changefreq: "yearly",
-      priority: 0.4,
-    }),
-    page("/legal", "Legal", "Terms, privacy, cookies, acceptable use, and brand guidelines.", "Legal", {
-      changefreq: "yearly",
-      priority: 0.4,
-    }),
-    page("/legal/terms-of-service", "Terms of Service", "Terms for UNFLD products and this site.", "Legal", {
-      changefreq: "yearly",
-      priority: 0.3,
-    }),
+    page(
+      "/pricing",
+      "Pricing & availability",
+      "A clear next step for every product: current availability, pricing model, and next steps.",
+      "Company",
+      { changefreq: "monthly", priority: 0.6 },
+    ),
+    page(
+      "/contact",
+      "Contact",
+      `Tell us what needs to work differently. Sales, partnerships, press, and security. ${SITE.sales}.`,
+      "Company",
+      { changefreq: "yearly", priority: 0.6 },
+    ),
+    page(
+      "/legal",
+      "Legal",
+      "The policies that govern UNFLD’s corporate website and the services that expressly incorporate them.",
+      "Legal",
+      { changefreq: "yearly", priority: 0.4 },
+    ),
+    page(
+      "/legal/terms-of-service",
+      "Terms of Service",
+      "Terms governing the UNFLD website and services that expressly incorporate them.",
+      "Legal",
+      { changefreq: "yearly", priority: 0.3 },
+    ),
     page(
       "/legal/terms-of-service-enterprise",
       "Enterprise Terms",
-      "Terms for enterprise contracts.",
+      "Terms for services under an enterprise order form issued by UNFOLDING THE FUTURE LTDA.",
       "Legal",
       { changefreq: "yearly", priority: 0.3 },
     ),
-    page("/legal/privacy-policy", "Privacy Policy", "How UNFLD handles personal data.", "Legal", {
-      changefreq: "yearly",
-      priority: 0.3,
-    }),
-    page("/legal/cookie-policy", "Cookie Policy", "Cookies and similar technologies on unfld.com.", "Legal", {
-      changefreq: "yearly",
-      priority: 0.3,
-    }),
+    page(
+      "/legal/privacy-policy",
+      "Privacy Policy",
+      "How UNFOLDING THE FUTURE LTDA processes personal data for the UNFLD website and applicable products.",
+      "Legal",
+      { changefreq: "yearly", priority: 0.3 },
+    ),
+    page(
+      "/legal/cookie-policy",
+      "Cookie Policy",
+      "Cookies and similar technologies used on unfld.com.br and applicable UNFLD product domains.",
+      "Legal",
+      { changefreq: "yearly", priority: 0.3 },
+    ),
     page(
       "/legal/acceptable-use-policy",
       "Acceptable Use Policy",
-      "What is allowed on UNFLD products and services.",
+      "What is permitted on UNFLD services and website surfaces.",
       "Legal",
       { changefreq: "yearly", priority: 0.3 },
     ),
-    page("/legal/brand-guidelines", "Brand Guidelines", "Name, mark, and how to write UNFLD.", "Legal", {
-      changefreq: "yearly",
-      priority: 0.3,
-    }),
+    page(
+      "/legal/brand-guidelines",
+      "Brand Guidelines",
+      "How to name, write, and visually represent UNFLD and its fold mark.",
+      "Legal",
+      { changefreq: "yearly", priority: 0.3 },
+    ),
   ];
+
+  const legacyRedirects = new Set([
+    "/api",
+    "/docs",
+    "/console",
+    "/download",
+    "/solutions/support",
+    "/solutions/business",
+  ]);
 
   const seen = new Set<string>();
   const unique: MachinePage[] = [];
   for (const entry of pages) {
-    if (seen.has(entry.path)) continue;
+    if (seen.has(entry.path) || legacyRedirects.has(entry.path)) continue;
     seen.add(entry.path);
     unique.push(entry);
   }
 
   for (const group of Object.values(footer)) {
     for (const link of group) {
-      if (link.to.startsWith("http") || seen.has(link.to)) continue;
+      if (
+        link.to.startsWith("http") ||
+        seen.has(link.to) ||
+        legacyRedirects.has(link.to)
+      )
+        continue;
       unique.push(
         page(link.to, link.label, link.label, "Company", {
           changefreq: "monthly",
@@ -286,8 +345,8 @@ export function renderLlmsTxt(pages = machinePages()): string {
 
   const sections: MachineSection[] = [
     "Products",
+    "Build with us",
     "Solutions",
-    "Developers",
     "Company",
     "News",
     "Legal",
@@ -307,16 +366,19 @@ export function renderLlmsTxt(pages = machinePages()): string {
 
   const productSites = ownedProducts
     .filter((product) => product.url)
-    .map((product) => `- [${product.name}](${product.url}): ${product.line}`)
+    .map(
+      (product) =>
+        `- [${product.name}](${product.url}): ${product.line} (Status: ${product.status})`,
+    )
     .join("\n");
 
   return `# ${SITE.name}
 
-> ${SITE.name} is the trading name of ${SITE.legal}. A São Paulo software house that also ships its own digital products.
+> UNFLD builds and operates technology for essential work and builds custom systems beside organizations whose most important problems do not fit an off-the-shelf product.
 
-${SITE.tagline} Pronounced unfold. CNPJ ${SITE.cnpj}. Headquarters at ${SITE.address.line1}, ${SITE.address.district}, ${SITE.address.city}/${SITE.address.region}, ${SITE.address.country}. Contact ${SITE.email}; sales ${SITE.sales}; security ${SITE.security}.
+Unfolding the future. One real system at a time. UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}, headquartered in São Paulo, Brazil (${SITE.address.line1}, ${SITE.address.district}, ${SITE.address.city}/${SITE.address.region}). Contact sales at ${SITE.sales}; security at ${SITE.security}; careers at ${SITE.careers}.
 
-Owned products in market: FCR (Ferramenta de Coleta, with Timac Agro), SiteCreator, Doutor Fiscal, Queravaga, and Dialogus Psicossocial. We still build for other companies.
+Products by UNFLD: FCR (field intelligence for agronomy), SiteCreator (digital presence via WhatsApp), Doutor Fiscal (fiscal routines via WhatsApp), Queravaga (hiring conversations), and Dialogus (workplace health for NR-1). Each product is identified below with its current availability stage. We also design and ship custom software systems beside teams with consequential operations.
 
 This file follows [llmstxt.org](https://llmstxt.org/). The XML sitemap is at ${siteUrl("/sitemap.xml")}.
 
@@ -324,9 +386,11 @@ ${blocks}
 
 ## Optional
 
-- [sitemap.xml](${siteUrl("/sitemap.xml")}): URL list for crawlers.
-- [robots.txt](${siteUrl("/robots.txt")}): crawl rules and sitemap pointer.
-- [llms.txt](${siteUrl("/llms.txt")}): this file.
+- [sitemap.xml](${siteUrl("/sitemap.xml")}): Canonical URL list for search engines and indexers.
+- [robots.txt](${siteUrl("/robots.txt")}): Crawl directives and sitemap reference.
+- [llms.txt](${siteUrl("/llms.txt")}): This curated discovery document.
+
+## External Product Sites
 
 ${productSites}
 `;

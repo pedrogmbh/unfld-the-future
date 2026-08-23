@@ -82,7 +82,12 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="hidden items-center gap-3 lg:flex">
+            <span className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-[11px] font-mono text-muted">
+              <span className="text-fg font-medium">PT-BR</span>
+              <span className="text-subtle">/</span>
+              <span className="text-subtle hover:text-muted cursor-pointer" title="English translation active across canonical pages">EN</span>
+            </span>
             <Link
               to="/contact"
               className="inline-flex h-9 items-center rounded-full bg-accent px-4 text-[13px] font-medium text-accent-fg transition-opacity duration-150 hover:opacity-90 active:scale-[0.96]"
@@ -150,9 +155,15 @@ export function Header() {
               {l.label}
             </Link>
           ))}
+          <div className="py-4 flex items-center gap-2 text-xs font-mono text-muted">
+            <span>Idioma / Language:</span>
+            <span className="text-fg font-medium">Português (BR)</span>
+            <span className="text-subtle">·</span>
+            <span className="text-muted">English</span>
+          </div>
           <Link
             to="/contact"
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-fg"
+            className="mt-4 inline-flex h-12 items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-fg"
           >
             Talk to UNFLD
           </Link>

@@ -1,19 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
-import { pageTitle } from "@/lib/site";
+import { buildPageHead } from "@/lib/meta";
 
 export const Route = createFileRoute("/status")({
-  head: () => ({
-    meta: [
-      { title: pageTitle("Status") },
-      {
-        name: "description",
-        content:
-          "No active incident is currently posted across UNFLD corporate properties and product services.",
-      },
-    ],
-  }),
+  head: () =>
+    buildPageHead({
+      title: "Service status",
+      description:
+        "No active incident has been posted. This page is maintained manually and is not a real-time availability monitor.",
+      path: "/status",
+    }),
   component: Status,
 });
 
@@ -32,14 +29,14 @@ function Status() {
       <PageHero
         kicker="Service status"
         title="No active incident"
-        titleSecond="is currently posted."
-        lede="Current operational status for UNFLD corporate properties, product endpoints, and distribution channels."
+        titleSecond="has been posted."
+        lede="No active incident has been posted as of August 2026. This page is maintained manually and is not a real-time availability monitor."
       />
       <Section className="pb-24 sm:pb-32">
         <div className="rounded-xl border border-border">
           <div className="flex items-center justify-between border-b border-border px-5 py-4">
-            <p className="text-sm font-medium">Service overview</p>
-            <p className="text-[12px] text-subtle">Status active</p>
+            <p className="text-sm font-medium">Monitored endpoints</p>
+            <p className="text-[12px] text-subtle">Manual editorial status</p>
           </div>
           <ul>
             {services.map((s) => (

@@ -4,12 +4,16 @@ import { Logo } from "@/components/site/logo";
 import { CookieChoices } from "@/components/site/cookie-choices";
 import { footer, SITE } from "@/lib/site";
 
+function isFileOrExternal(to: string, external?: boolean) {
+  return Boolean(external) || to.startsWith("http") || /\.[a-z0-9]+$/i.test(to);
+}
+
 function Col({
   title,
   links,
 }: {
   title: string;
-  links: readonly { label: string; to: string }[];
+  links: readonly { label: string; to: string; external?: boolean }[];
 }) {
   return (
     <div>
@@ -19,12 +23,21 @@ function Col({
       <ul className="space-y-2.5">
         {links.map((l) => (
           <li key={l.to + l.label}>
-            <Link
-              to={l.to as never}
-              className="text-[13px] text-muted transition-colors duration-150 hover:text-fg"
-            >
-              {l.label}
-            </Link>
+            {isFileOrExternal(l.to, l.external) ? (
+              <a
+                href={l.to}
+                className="text-[13px] text-muted transition-colors duration-150 hover:text-fg"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                to={l.to as never}
+                className="text-[13px] text-muted transition-colors duration-150 hover:text-fg"
+              >
+                {l.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>
@@ -38,9 +51,10 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-bg">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-6">
           <Col title="Products" links={footer.products} />
           <Col title="Access" links={footer.access} />
+          <Col title="Developers" links={footer.developers} />
           <Col title="Build with us" links={footer.buildWithUs} />
           <Col title="Company" links={footer.company} />
           <Col title="Legal" links={footer.legal} />

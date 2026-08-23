@@ -10,6 +10,8 @@ import { nitro } from "nitro/vite";
 import { grokPwaPlugin } from "./scripts/grok-pwa-plugin.mjs";
 // @ts-expect-error JS plugin alongside the TS vite config
 import { appEnvPlugin } from "./scripts/app-env-plugin.mjs";
+// @ts-expect-error JS plugin alongside the TS vite config
+import { agentSurfacePlugin } from "./scripts/agent-surface-plugin.mjs";
 import { isMigrationFile } from "./scripts/migration-plan.mjs";
 
 /** The files `src/lib/db.ts` globs — same directory, same non-recursive scope. */
@@ -159,6 +161,8 @@ export default defineConfig(({ command, isPreview }) => ({
   resolve: { tsconfigPaths: true },
   plugins: [
     pgliteBootstrapPlugin(),
+    // Markdown negotiation + catalog API, before TanStack Start.
+    agentSurfacePlugin(),
     // Before tanstackStart so /auth/popup never falls through to the SPA.
     authPopupPlugin(),
     // Dev-only /__app-env, read by scripts/check-auth-invariant.mjs.

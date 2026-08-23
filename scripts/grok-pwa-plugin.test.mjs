@@ -101,16 +101,41 @@ test("does not duplicate x:creator tags", () => {
 });
 
 test("platform chrome overwrites share-card metas and always sets og:title", () => {
+  const empty = mkdtempSync(join(tmpdir(), "grok-og-none-"));
   const html =
     '<html><head><title>Hello World</title><meta property="og:title" content="Old"><meta name="twitter:card" content="summary"></head></html>';
-  const out = injectGrokPwaHead(html, { appName: "Wild Race" });
+  const out = injectGrokPwaHead(html, {
+    appName: "Wild Race",
+    site: {},
+    cwd: empty,
+  });
   assert.match(out, /name="twitter:card" content="summary_large_image"/);
   assert.match(out, /property="og:title" content="Hello World"/);
+  assert.match(out, /property="og:type" content="website"/);
   assert.doesNotMatch(out, /content="Old"/);
   assert.doesNotMatch(out, /content="summary"/);
   assert.equal(out.split('name="twitter:card"').length - 1, 1);
   assert.equal(out.split('property="og:title"').length - 1, 1);
   assert.doesNotMatch(out, /property="og:image"/);
+});
+
+test("preserves page og:image when chrome cannot mint a public origin", () => {
+  const empty = mkdtempSync(join(tmpdir(), "grok-og-keep-"));
+  const html =
+    '<html><head><meta property="og:type" content="website"><meta property="og:image" content="https://www.unfld.com.br/og.jpg"></head></html>';
+  const out = injectGrokPwaHead(html, { site: {}, cwd: empty });
+  assert.match(out, /property="og:type" content="website"/);
+  assert.match(out, /property="og:image" content="https:\/\/www\.unfld\.com\.br\/og\.jpg"/);
+});
+
+test("site.url is an origin fallback for og:image", () => {
+  const empty = mkdtempSync(join(tmpdir(), "grok-og-url-"));
+  const out = injectGrokPwaHead("<html><head></head></html>", {
+    cwd: empty,
+    site: { title: "UNFLD", card: "custom", url: "https://www.unfld.com.br" },
+  });
+  assert.match(out, /property="og:type" content="website"/);
+  assert.match(out, /property="og:image" content="https:\/\/www\.unfld\.com\.br\/og\.jpg"/);
 });
 
 test("does not duplicate twitter:card or og:title", () => {

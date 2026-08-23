@@ -367,15 +367,16 @@ export const footer = {
   buildWithUs: [
     { label: "Custom software", to: "/build-with-us" },
     { label: "How we work", to: "/how-we-work" },
+    { label: "UNFLD API", to: "/api" },
     { label: "Enterprise", to: "/enterprise" },
     { label: "Security", to: "/security" },
   ],
-  // Retained alias for backward compatibility
   developers: [
-    { label: "Custom software", to: "/build-with-us" },
-    { label: "How we work", to: "/how-we-work" },
-    { label: "Enterprise", to: "/enterprise" },
-    { label: "Security", to: "/security" },
+    { label: "UNFLD API", to: "/api" },
+    { label: "OpenAPI", to: "/openapi.json", external: true },
+    { label: "Catalog", to: "/api/v1", external: true },
+    { label: "Agent index", to: "/llms.txt", external: true },
+    { label: "When to use UNFLD", to: "/agents.md", external: true },
   ],
   download: [
     { label: "FCR", to: "/fcr" },

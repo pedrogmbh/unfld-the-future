@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AccessRouteImport } from './routes/access'
+import { Route as AgentsDotmdRouteImport } from './routes/agents[.]md'
 import { Route as ApiRouteImport } from './routes/api'
 import { Route as BuildWithUsRouteImport } from './routes/build-with-us'
 import { Route as CompanyRouteImport } from './routes/company'
@@ -26,6 +27,7 @@ import { Route as FcrRouteImport } from './routes/fcr'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as OpenapiDotjsonRouteImport } from './routes/openapi[.]json'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as QueravagaRouteImport } from './routes/queravaga'
@@ -35,6 +37,8 @@ import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitecreatorRouteImport } from './routes/sitecreator'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StatusRouteImport } from './routes/status'
+import { Route as ApiOpenapiDotyamlRouteImport } from './routes/api.openapi[.]yaml'
+import { Route as ApiV1RouteImport } from './routes/api.v1'
 import { Route as CareersIndexRouteImport } from './routes/careers/index'
 import { Route as CareersOpenRolesRouteImport } from './routes/careers/open-roles'
 import { Route as LegalIndexRouteImport } from './routes/legal/index'
@@ -50,6 +54,7 @@ import { Route as SolutionsIndexRouteImport } from './routes/solutions/index'
 import { Route as SolutionsSlugRouteImport } from './routes/solutions/$slug'
 import { Route as WorkIndexRouteImport } from './routes/work/index'
 import { Route as WorkSlugRouteImport } from './routes/work/$slug'
+import { Route as ApiV1SplatRouteImport } from './routes/api.v1.$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -59,6 +64,11 @@ const IndexRoute = IndexRouteImport.update({
 const AccessRoute = AccessRouteImport.update({
   id: '/access',
   path: '/access',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgentsDotmdRoute = AgentsDotmdRouteImport.update({
+  id: '/agents.md',
+  path: '/agents.md',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiRoute = ApiRouteImport.update({
@@ -136,6 +146,11 @@ const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OpenapiDotjsonRoute = OpenapiDotjsonRouteImport.update({
+  id: '/openapi.json',
+  path: '/openapi.json',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -180,6 +195,16 @@ const StatusRoute = StatusRouteImport.update({
   id: '/status',
   path: '/status',
   getParentRoute: () => rootRouteImport,
+} as any)
+const ApiOpenapiDotyamlRoute = ApiOpenapiDotyamlRouteImport.update({
+  id: '/openapi.yaml',
+  path: '/openapi.yaml',
+  getParentRoute: () => ApiRoute,
+} as any)
+const ApiV1Route = ApiV1RouteImport.update({
+  id: '/v1',
+  path: '/v1',
+  getParentRoute: () => ApiRoute,
 } as any)
 const CareersIndexRoute = CareersIndexRouteImport.update({
   id: '/careers/',
@@ -258,11 +283,17 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
   path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiV1SplatRoute = ApiV1SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => ApiV1Route,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/access': typeof AccessRoute
-  '/api': typeof ApiRoute
+  '/agents.md': typeof AgentsDotmdRoute
+  '/api': typeof ApiRouteWithChildren
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/compliance': typeof ComplianceRoute
@@ -277,6 +308,7 @@ export interface FileRoutesByFullPath {
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
@@ -286,6 +318,8 @@ export interface FileRoutesByFullPath {
   '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
+  '/api/v1': typeof ApiV1RouteWithChildren
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -301,11 +335,13 @@ export interface FileRoutesByFullPath {
   '/news/': typeof NewsIndexRoute
   '/solutions/': typeof SolutionsIndexRoute
   '/work/': typeof WorkIndexRoute
+  '/api/v1/$': typeof ApiV1SplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/access': typeof AccessRoute
-  '/api': typeof ApiRoute
+  '/agents.md': typeof AgentsDotmdRoute
+  '/api': typeof ApiRouteWithChildren
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/compliance': typeof ComplianceRoute
@@ -320,6 +356,7 @@ export interface FileRoutesByTo {
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
@@ -329,6 +366,8 @@ export interface FileRoutesByTo {
   '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
+  '/api/v1': typeof ApiV1RouteWithChildren
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -344,12 +383,14 @@ export interface FileRoutesByTo {
   '/news': typeof NewsIndexRoute
   '/solutions': typeof SolutionsIndexRoute
   '/work': typeof WorkIndexRoute
+  '/api/v1/$': typeof ApiV1SplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/access': typeof AccessRoute
-  '/api': typeof ApiRoute
+  '/agents.md': typeof AgentsDotmdRoute
+  '/api': typeof ApiRouteWithChildren
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/compliance': typeof ComplianceRoute
@@ -364,6 +405,7 @@ export interface FileRoutesById {
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
@@ -373,6 +415,8 @@ export interface FileRoutesById {
   '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
+  '/api/v1': typeof ApiV1RouteWithChildren
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -388,12 +432,14 @@ export interface FileRoutesById {
   '/news/': typeof NewsIndexRoute
   '/solutions/': typeof SolutionsIndexRoute
   '/work/': typeof WorkIndexRoute
+  '/api/v1/$': typeof ApiV1SplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/access'
+    | '/agents.md'
     | '/api'
     | '/build-with-us'
     | '/company'
@@ -409,6 +455,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
+    | '/openapi.json'
     | '/pricing'
     | '/products'
     | '/queravaga'
@@ -418,6 +465,8 @@ export interface FileRouteTypes {
     | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
+    | '/api/openapi.yaml'
+    | '/api/v1'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -433,10 +482,12 @@ export interface FileRouteTypes {
     | '/news/'
     | '/solutions/'
     | '/work/'
+    | '/api/v1/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/access'
+    | '/agents.md'
     | '/api'
     | '/build-with-us'
     | '/company'
@@ -452,6 +503,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
+    | '/openapi.json'
     | '/pricing'
     | '/products'
     | '/queravaga'
@@ -461,6 +513,8 @@ export interface FileRouteTypes {
     | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
+    | '/api/openapi.yaml'
+    | '/api/v1'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -476,10 +530,12 @@ export interface FileRouteTypes {
     | '/news'
     | '/solutions'
     | '/work'
+    | '/api/v1/$'
   id:
     | '__root__'
     | '/'
     | '/access'
+    | '/agents.md'
     | '/api'
     | '/build-with-us'
     | '/company'
@@ -495,6 +551,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
+    | '/openapi.json'
     | '/pricing'
     | '/products'
     | '/queravaga'
@@ -504,6 +561,8 @@ export interface FileRouteTypes {
     | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
+    | '/api/openapi.yaml'
+    | '/api/v1'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -519,12 +578,14 @@ export interface FileRouteTypes {
     | '/news/'
     | '/solutions/'
     | '/work/'
+    | '/api/v1/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccessRoute: typeof AccessRoute
-  ApiRoute: typeof ApiRoute
+  AgentsDotmdRoute: typeof AgentsDotmdRoute
+  ApiRoute: typeof ApiRouteWithChildren
   BuildWithUsRoute: typeof BuildWithUsRoute
   CompanyRoute: typeof CompanyRoute
   ComplianceRoute: typeof ComplianceRoute
@@ -539,6 +600,7 @@ export interface RootRouteChildren {
   HowWeWorkRoute: typeof HowWeWorkRoute
   InfrastructureRoute: typeof InfrastructureRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  OpenapiDotjsonRoute: typeof OpenapiDotjsonRoute
   PricingRoute: typeof PricingRoute
   ProductsRoute: typeof ProductsRoute
   QueravagaRoute: typeof QueravagaRoute
@@ -579,6 +641,13 @@ declare module '@tanstack/react-router' {
       path: '/access'
       fullPath: '/access'
       preLoaderRoute: typeof AccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agents.md': {
+      id: '/agents.md'
+      path: '/agents.md'
+      fullPath: '/agents.md'
+      preLoaderRoute: typeof AgentsDotmdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api': {
@@ -686,6 +755,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/openapi.json': {
+      id: '/openapi.json'
+      path: '/openapi.json'
+      fullPath: '/openapi.json'
+      preLoaderRoute: typeof OpenapiDotjsonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pricing': {
       id: '/pricing'
       path: '/pricing'
@@ -748,6 +824,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/status'
       preLoaderRoute: typeof StatusRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/api/openapi.yaml': {
+      id: '/api/openapi.yaml'
+      path: '/openapi.yaml'
+      fullPath: '/api/openapi.yaml'
+      preLoaderRoute: typeof ApiOpenapiDotyamlRouteImport
+      parentRoute: typeof ApiRoute
+    }
+    '/api/v1': {
+      id: '/api/v1'
+      path: '/v1'
+      fullPath: '/api/v1'
+      preLoaderRoute: typeof ApiV1RouteImport
+      parentRoute: typeof ApiRoute
     }
     '/careers/': {
       id: '/careers/'
@@ -854,13 +944,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/v1/$': {
+      id: '/api/v1/$'
+      path: '/$'
+      fullPath: '/api/v1/$'
+      preLoaderRoute: typeof ApiV1SplatRouteImport
+      parentRoute: typeof ApiV1Route
+    }
   }
 }
+
+interface ApiV1RouteChildren {
+  ApiV1SplatRoute: typeof ApiV1SplatRoute
+}
+
+const ApiV1RouteChildren: ApiV1RouteChildren = {
+  ApiV1SplatRoute: ApiV1SplatRoute,
+}
+
+const ApiV1RouteWithChildren = ApiV1Route._addFileChildren(ApiV1RouteChildren)
+
+interface ApiRouteChildren {
+  ApiOpenapiDotyamlRoute: typeof ApiOpenapiDotyamlRoute
+  ApiV1Route: typeof ApiV1RouteWithChildren
+}
+
+const ApiRouteChildren: ApiRouteChildren = {
+  ApiOpenapiDotyamlRoute: ApiOpenapiDotyamlRoute,
+  ApiV1Route: ApiV1RouteWithChildren,
+}
+
+const ApiRouteWithChildren = ApiRoute._addFileChildren(ApiRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccessRoute: AccessRoute,
-  ApiRoute: ApiRoute,
+  AgentsDotmdRoute: AgentsDotmdRoute,
+  ApiRoute: ApiRouteWithChildren,
   BuildWithUsRoute: BuildWithUsRoute,
   CompanyRoute: CompanyRoute,
   ComplianceRoute: ComplianceRoute,
@@ -875,6 +995,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowWeWorkRoute: HowWeWorkRoute,
   InfrastructureRoute: InfrastructureRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  OpenapiDotjsonRoute: OpenapiDotjsonRoute,
   PricingRoute: PricingRoute,
   ProductsRoute: ProductsRoute,
   QueravagaRoute: QueravagaRoute,

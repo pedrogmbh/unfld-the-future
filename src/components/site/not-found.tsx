@@ -8,14 +8,29 @@ export function NotFound() {
         This page folded away.
       </h1>
       <p className="mt-4 max-w-md text-muted">
-        The URL does not match anything we ship. Head home, or browse products.
+        The URL does not match anything we ship. Head home, browse products, or
+        read the agent index.
       </p>
-      <Link
-        to="/"
-        className="mt-8 inline-flex h-11 items-center rounded-full bg-accent px-5 text-sm font-medium text-accent-fg"
-      >
-        Back to UNFLD
-      </Link>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <Link
+          to="/"
+          className="inline-flex h-11 items-center rounded-full bg-accent px-5 text-sm font-medium text-accent-fg"
+        >
+          Back to UNFLD
+        </Link>
+        <Link
+          to="/api"
+          className="inline-flex h-11 items-center rounded-full border border-border-strong px-5 text-sm font-medium"
+        >
+          UNFLD API
+        </Link>
+        <a
+          href="/llms.txt"
+          className="inline-flex h-11 items-center px-2 text-sm text-muted hover:text-fg"
+        >
+          llms.txt
+        </a>
+      </div>
     </main>
   );
 }

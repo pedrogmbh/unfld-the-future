@@ -55,18 +55,20 @@ export function siteUrl(path: string): string {
   return `${SITE.url}${path}`;
 }
 
-const canonicalSolutions = solutions.filter((s) =>
-  [
-    "agronomy",
-    "hiring",
-    "small-business",
-    "workplace-health",
-    "custom-systems",
-    "government",
-    "operations",
-    "legal",
-  ].includes(s.slug),
-);
+function canonicalSolutions() {
+  return solutions.filter((s) =>
+    [
+      "agronomy",
+      "hiring",
+      "small-business",
+      "workplace-health",
+      "custom-systems",
+      "government",
+      "operations",
+      "legal",
+    ].includes(s.slug),
+  );
+}
 
 /**
  * Every public canonical HTML page we want crawlers and agents to find.
@@ -146,7 +148,7 @@ export function machinePages(): MachinePage[] {
       "Solutions",
       { changefreq: "monthly", priority: 0.7 },
     ),
-    ...canonicalSolutions.map((solution) =>
+    ...canonicalSolutions().map((solution) =>
       page(
         `/solutions/${solution.slug}`,
         `${solution.name} Solutions`,

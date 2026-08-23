@@ -5,13 +5,101 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  SITE: www.unfld.com.br
+  PUSHOVER_URL: https://api.pushover.net/1/messages.json
+
 jobs:
   purge:
     runs-on: ubuntu-latest
     environment: Production
     steps:
       - name: Purge cache
+        id: purge
         run: |
           curl --fail-with-body -sS -X POST \
             "https://api.bunny.net/pullzone/${{ vars.BUNNY_PULL_ZONE_ID }}/purgeCache" \
             -H "AccessKey: ${{ secrets.BUNNYCDN_API_KEY }}"
+
+      - name: Wait for edges to settle
+        run: sleep 10
+
+      - name: Check is-agentic score
+        id: agentic
+        env:
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_GROUP_KEY: ${{ secrets.PUSHOVER_GROUP_KEY }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -uo pipefail
+
+          # Capture the output whether the tool exits clean or not.
+          npx -y is-agentic "$SITE" > raw.txt 2>&1 || true
+
+          # Strip ANSI colour so the text is readable in a notification.
+          perl -pe 's/\e\[[0-9;]*[a-zA-Z]//g' raw.txt > report.txt
+          cat report.txt
+
+          if grep -qE '100[[:space:]]*/[[:space:]]*100' report.txt; then
+            echo "passed=true" >> "$GITHUB_OUTPUT"
+            echo "is-agentic reported 100 / 100 - no report sent"
+            exit 0
+          fi
+
+          echo "passed=false" >> "$GITHUB_OUTPUT"
+          echo "::warning::is-agentic did not report 100 / 100 for $SITE"
+
+          # Full report goes to the run log and the job summary.
+          {
+            echo "### is-agentic — $SITE"
+            echo '```'
+            cat report.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          # Pushover caps a message at 1024 chars and the report is several KB,
+          # so send the head of it plus a link to the full output.
+          preview=$(grep -v '^npm notice' report.txt \
+            | awk 'len + length($0) + 1 > 820 { exit } { print; len += length($0) + 1 }')
+          message=$(printf '%s\n\n[full report in the run log]' "$preview")
+
+          curl --fail-with-body -sS -X POST "$PUSHOVER_URL" \
+            --form-string "token=$PUSHOVER_API_KEY" \
+            --form-string "user=$PUSHOVER_GROUP_KEY" \
+            --form-string "title=UNFLD Site - Is Agentic Report" \
+            --form-string "message=$message" \
+            --form-string "url=$RUN_URL" \
+            --form-string "url_title=View full report"
+
+      - name: Notify Pushover
+        if: always()
+        env:
+          PUSHOVER_API_KEY: ${{ secrets.PUSHOVER_API_KEY }}
+          PUSHOVER_GROUP_KEY: ${{ secrets.PUSHOVER_GROUP_KEY }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_STATUS: ${{ job.status }}
+          PURGE: ${{ steps.purge.outcome }}
+          AGENTIC: ${{ steps.agentic.outcome }}
+          PASSED: ${{ steps.agentic.outputs.passed }}
+        run: |
+          set -euo pipefail
+
+          if [ "$JOB_STATUS" = "success" ]; then
+            title="UNFLD - Bunny cache purged"
+            priority=-1
+          else
+            title="UNFLD - Purge workflow $JOB_STATUS"
+            priority=1
+          fi
+
+          message=$(printf 'purge: %s\nis-agentic: %s (100/100: %s)\ncommit: %s on %s' \
+            "$PURGE" "${AGENTIC:-skipped}" "${PASSED:-n/a}" "${GITHUB_SHA:0:7}" "$GITHUB_REF_NAME")
+
+          curl --fail-with-body -sS -X POST "$PUSHOVER_URL" \
+            --form-string "token=$PUSHOVER_API_KEY" \
+            --form-string "user=$PUSHOVER_GROUP_KEY" \
+            --form-string "title=$title" \
+            --form-string "message=$message" \
+            --form-string "priority=$priority" \
+            --form-string "url=$RUN_URL" \
+            --form-string "url_title=View run"

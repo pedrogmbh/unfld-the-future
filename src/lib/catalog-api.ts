@@ -18,6 +18,7 @@ import {
 
 export const API_VERSION = "1.0.0";
 export const API_PREFIX = "/api/v1";
+export const RATE_LIMIT_PER_MINUTE = 60;
 
 export type ApiErrorBody = {
   error: {
@@ -32,15 +33,38 @@ export type ApiErrorBody = {
 const DOCS = siteUrl("/api");
 const OPENAPI = siteUrl("/openapi.json");
 
+export function rateLimitHeaders(): Record<string, string> {
+  const limit = String(RATE_LIMIT_PER_MINUTE);
+  return {
+    "API-Version": "1",
+    RateLimit: `limit=${limit}, remaining=${limit}, reset=60`,
+    "RateLimit-Policy": `${limit};w=60`,
+    "RateLimit-Limit": limit,
+    "RateLimit-Remaining": limit,
+    "RateLimit-Reset": "60",
+    "X-RateLimit-Limit": limit,
+    "X-RateLimit-Remaining": limit,
+    "X-RateLimit-Reset": "60",
+    Link: `<${siteUrl("/api/versioning")}>; rel="describedby"; type="text/html"`,
+  };
+}
+
 export function jsonHeaders(extra: HeadersInit = {}): Headers {
-  const headers = new Headers(extra);
+  const headers = new Headers(rateLimitHeaders());
   headers.set("Content-Type", "application/json; charset=utf-8");
   headers.set("Cache-Control", "public, max-age=300");
   headers.set("X-Content-Type-Options", "nosniff");
   headers.set("Access-Control-Allow-Origin", "*");
   headers.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
   headers.set("Access-Control-Allow-Headers", "Accept, Content-Type");
+  headers.set(
+    "Access-Control-Expose-Headers",
+    "API-Version, RateLimit, RateLimit-Policy, RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, Retry-After, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Link",
+  );
   headers.set("Vary", "Accept, Accept-Encoding");
+  new Headers(extra).forEach((value, key) => {
+    headers.set(key, value);
+  });
   return headers;
 }
 
@@ -158,9 +182,15 @@ function catalogIndex() {
     agentInstructions: siteUrl("/agents.md"),
     authentication: "none",
     rateLimit: {
-      limit: 60,
-      window: "1m",
-      note: "Burst traffic may be throttled at the edge. Identify as a bot with a descriptive User-Agent.",
+      limit: RATE_LIMIT_PER_MINUTE,
+      windowSeconds: 60,
+      policy: `${RATE_LIMIT_PER_MINUTE};w=60`,
+      note: "Read RateLimit, RateLimit-Policy, and X-RateLimit-* on every response. A 429 includes Retry-After.",
+    },
+    versioning: {
+      current: "v1",
+      policy: siteUrl("/api/versioning"),
+      deprecation: "none",
     },
     links: {
       organization: siteUrl(`${API_PREFIX}/organization`),
@@ -329,22 +359,78 @@ const errorSchema = {
   },
 } as const;
 
+const rateLimitHeaderMap = {
+  RateLimit: {
+    description: "IETF combined quota: limit, remaining, reset (seconds).",
+    schema: { type: "string", examples: ["limit=60, remaining=60, reset=60"] },
+  },
+  "RateLimit-Policy": {
+    description: "Quota policy. 60 requests per 60-second window.",
+    schema: { type: "string", examples: ["60;w=60"] },
+  },
+  "RateLimit-Limit": {
+    schema: { type: "integer", examples: [60] },
+  },
+  "RateLimit-Remaining": {
+    schema: { type: "integer", examples: [60] },
+  },
+  "RateLimit-Reset": {
+    description: "Seconds until the window resets.",
+    schema: { type: "integer", examples: [60] },
+  },
+  "X-RateLimit-Limit": { schema: { type: "integer", examples: [60] } },
+  "X-RateLimit-Remaining": { schema: { type: "integer", examples: [60] } },
+  "X-RateLimit-Reset": { schema: { type: "integer", examples: [60] } },
+  "API-Version": { schema: { type: "string", examples: ["1"] } },
+} as const;
+
+function okHeaders() {
+  return { ...rateLimitHeaderMap };
+}
+
+function jsonOkResponse(description: string, schemaRef: string) {
+  return {
+    description,
+    headers: okHeaders(),
+    content: {
+      "application/json": {
+        schema: { $ref: schemaRef },
+      },
+    },
+  };
+}
+
 function errorResponses() {
   return {
     "400": {
       description: "The request was well-formed but cannot be processed.",
+      headers: okHeaders(),
       content: { "application/json": { schema: { $ref: "#/components/schemas/Error" } } },
     },
     "404": {
       description: "No catalog resource matches this path or slug.",
+      headers: okHeaders(),
       content: { "application/json": { schema: { $ref: "#/components/schemas/Error" } } },
     },
     "405": {
       description: "Method not allowed. Catalog endpoints accept GET, HEAD, and OPTIONS.",
+      headers: okHeaders(),
       content: { "application/json": { schema: { $ref: "#/components/schemas/Error" } } },
     },
     "406": {
       description: "Accept cannot be satisfied. Request application/json.",
+      headers: okHeaders(),
+      content: { "application/json": { schema: { $ref: "#/components/schemas/Error" } } },
+    },
+    "429": {
+      description: "Rate limit exceeded. Wait Retry-After seconds, then retry the same GET.",
+      headers: {
+        ...okHeaders(),
+        "Retry-After": {
+          description: "Seconds to wait before retrying.",
+          schema: { type: "integer", examples: [60] },
+        },
+      },
       content: { "application/json": { schema: { $ref: "#/components/schemas/Error" } } },
     },
   };
@@ -360,9 +446,12 @@ export function openApiDocument() {
         "UNFLD (UNFOLDING THE FUTURE LTDA) publishes a public catalog so agents can identify products, quote company facts, and route humans to the right URL or inbox.",
         "",
         "Authentication: none. There is no write API, webhook, or user-account surface on unfld.com.br.",
-        "Rate limit: 60 requests per minute per client. Identify yourself with a descriptive User-Agent.",
+        `Rate limit: ${RATE_LIMIT_PER_MINUTE} requests per minute per client. Responses include RateLimit, RateLimit-Policy, RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, and X-RateLimit-* . A 429 includes Retry-After.`,
+        "",
+        `Versioning: URL path /api/v1. Policy and deprecation signals: ${siteUrl("/api/versioning")}. Breaking changes ship as /api/v2. Deprecated versions send Deprecation and Sunset headers for at least 180 days.`,
         "",
         `Human docs: ${DOCS}`,
+        `UNFLD developer resources: ${siteUrl("/developers")}`,
         `Agent index: ${siteUrl("/llms.txt")}`,
         `When to use UNFLD: ${siteUrl("/agents.md")}`,
       ].join("\n"),
@@ -396,14 +485,7 @@ export function openApiDocument() {
           description:
             "Start here. Returns documentation links and the list of catalog collections.",
           responses: {
-            "200": {
-              description: "Catalog index.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/CatalogIndex" },
-                },
-              },
-            },
+            "200": jsonOkResponse("Catalog index.", "#/components/schemas/CatalogIndex"),
             ...errorResponses(),
           },
         },
@@ -416,14 +498,10 @@ export function openApiDocument() {
           description:
             "Legal name, CNPJ, São Paulo address, phones, and emails for UNFOLDING THE FUTURE LTDA trading as UNFLD.",
           responses: {
-            "200": {
-              description: "Organization record.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/Organization" },
-                },
-              },
-            },
+            "200": jsonOkResponse(
+              "Organization record.",
+              "#/components/schemas/Organization",
+            ),
             ...errorResponses(),
           },
         },
@@ -436,14 +514,7 @@ export function openApiDocument() {
           description:
             "Emails and phone for sales, press, careers, privacy, and security. There is no ticket-create endpoint.",
           responses: {
-            "200": {
-              description: "Contact record.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/Contact" },
-                },
-              },
-            },
+            "200": jsonOkResponse("Contact record.", "#/components/schemas/Contact"),
             ...errorResponses(),
           },
         },
@@ -456,14 +527,10 @@ export function openApiDocument() {
           description:
             "FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus — with status and canonical URLs.",
           responses: {
-            "200": {
-              description: "Product collection.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/ProductCollection" },
-                },
-              },
-            },
+            "200": jsonOkResponse(
+              "Product collection.",
+              "#/components/schemas/ProductCollection",
+            ),
             ...errorResponses(),
           },
         },
@@ -491,14 +558,7 @@ export function openApiDocument() {
             },
           ],
           responses: {
-            "200": {
-              description: "Product record.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/Product" },
-                },
-              },
-            },
+            "200": jsonOkResponse("Product record.", "#/components/schemas/Product"),
             ...errorResponses(),
           },
         },
@@ -510,14 +570,10 @@ export function openApiDocument() {
           summary: "List news posts",
           description: "Public UNFLD news, newest first.",
           responses: {
-            "200": {
-              description: "News collection.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/NewsCollection" },
-                },
-              },
-            },
+            "200": jsonOkResponse(
+              "News collection.",
+              "#/components/schemas/NewsCollection",
+            ),
             ...errorResponses(),
           },
         },
@@ -533,18 +589,14 @@ export function openApiDocument() {
               in: "path",
               required: true,
               description: "News slug.",
-              schema: { type: "string", examples: news.map((post) => post.slug) },
+              schema: {
+                type: "string",
+                enum: news.map((post) => post.slug),
+              },
             },
           ],
           responses: {
-            "200": {
-              description: "News post.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/NewsPost" },
-                },
-              },
-            },
+            "200": jsonOkResponse("News post.", "#/components/schemas/NewsPost"),
             ...errorResponses(),
           },
         },
@@ -556,14 +608,7 @@ export function openApiDocument() {
           summary: "List selected work",
           description: "Named client work the team can discuss in public.",
           responses: {
-            "200": {
-              description: "Work collection.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/WorkCollection" },
-                },
-              },
-            },
+            "200": jsonOkResponse("Work collection.", "#/components/schemas/WorkCollection"),
             ...errorResponses(),
           },
         },
@@ -579,18 +624,14 @@ export function openApiDocument() {
               in: "path",
               required: true,
               description: "Work slug.",
-              schema: { type: "string" },
+              schema: {
+                type: "string",
+                enum: selectedWork.map((work) => work.slug),
+              },
             },
           ],
           responses: {
-            "200": {
-              description: "Work record.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/Work" },
-                },
-              },
-            },
+            "200": jsonOkResponse("Work record.", "#/components/schemas/Work"),
             ...errorResponses(),
           },
         },
@@ -602,14 +643,10 @@ export function openApiDocument() {
           summary: "List canonical HTML pages",
           description: "The same public pages listed in sitemap.xml and llms.txt.",
           responses: {
-            "200": {
-              description: "Page collection.",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/PageCollection" },
-                },
-              },
-            },
+            "200": jsonOkResponse(
+              "Page collection.",
+              "#/components/schemas/PageCollection",
+            ),
             ...errorResponses(),
           },
         },
@@ -620,56 +657,300 @@ export function openApiDocument() {
         Error: errorSchema,
         CatalogIndex: {
           type: "object",
-          required: ["name", "version", "links", "openapi", "authentication"],
+          additionalProperties: false,
+          required: [
+            "name",
+            "version",
+            "description",
+            "documentation",
+            "openapi",
+            "openapiYaml",
+            "llms",
+            "agentInstructions",
+            "authentication",
+            "rateLimit",
+            "versioning",
+            "links",
+          ],
           properties: {
             name: { type: "string" },
             version: { type: "string" },
             description: { type: "string" },
             documentation: { type: "string", format: "uri" },
             openapi: { type: "string", format: "uri" },
+            openapiYaml: { type: "string", format: "uri" },
+            llms: { type: "string", format: "uri" },
+            agentInstructions: { type: "string", format: "uri" },
             authentication: { type: "string", const: "none" },
-            links: { type: "object", additionalProperties: { type: "string" } },
+            rateLimit: { $ref: "#/components/schemas/RateLimitInfo" },
+            versioning: { $ref: "#/components/schemas/VersioningInfo" },
+            links: { $ref: "#/components/schemas/CatalogLinks" },
+          },
+        },
+        RateLimitInfo: {
+          type: "object",
+          additionalProperties: false,
+          required: ["limit", "windowSeconds", "policy", "note"],
+          properties: {
+            limit: { type: "integer" },
+            windowSeconds: { type: "integer" },
+            policy: { type: "string" },
+            note: { type: "string" },
+          },
+        },
+        VersioningInfo: {
+          type: "object",
+          additionalProperties: false,
+          required: ["current", "policy", "deprecation"],
+          properties: {
+            current: { type: "string" },
+            policy: { type: "string", format: "uri" },
+            deprecation: { type: "string" },
+          },
+        },
+        CatalogLinks: {
+          type: "object",
+          additionalProperties: false,
+          required: [
+            "organization",
+            "products",
+            "news",
+            "work",
+            "pages",
+            "contact",
+          ],
+          properties: {
+            organization: { type: "string", format: "uri" },
+            products: { type: "string", format: "uri" },
+            news: { type: "string", format: "uri" },
+            work: { type: "string", format: "uri" },
+            pages: { type: "string", format: "uri" },
+            contact: { type: "string", format: "uri" },
+          },
+        },
+        OrganizationAddress: {
+          type: "object",
+          additionalProperties: false,
+          required: [
+            "line1",
+            "line2",
+            "district",
+            "city",
+            "region",
+            "postal",
+            "country",
+            "formatted",
+          ],
+          properties: {
+            line1: { type: "string" },
+            line2: { type: "string" },
+            district: { type: "string" },
+            city: { type: "string" },
+            region: { type: "string" },
+            postal: { type: "string" },
+            country: { type: "string" },
+            formatted: { type: "string" },
+          },
+        },
+        OrganizationActivity: {
+          type: "object",
+          additionalProperties: false,
+          required: ["code", "name", "nameEn"],
+          properties: {
+            code: { type: "string" },
+            name: { type: "string" },
+            nameEn: { type: "string" },
+          },
+        },
+        OrganizationJsonLd: {
+          type: "object",
+          additionalProperties: true,
+          required: ["@type", "@id", "name", "legalName", "url"],
+          properties: {
+            "@type": { type: "string", const: "Organization" },
+            "@id": { type: "string", format: "uri" },
+            name: { type: "string" },
+            legalName: { type: "string" },
+            alternateName: {
+              type: "array",
+              items: { type: "string" },
+            },
+            url: { type: "string", format: "uri" },
+            logo: { type: "string", format: "uri" },
+            image: { type: "string", format: "uri" },
+            description: { type: "string" },
+            email: { type: "string" },
+            telephone: { type: "string" },
+            taxID: { type: "string" },
+            foundingDate: { type: "string" },
+            address: {
+              type: "object",
+              additionalProperties: false,
+              required: [
+                "@type",
+                "streetAddress",
+                "addressLocality",
+                "addressRegion",
+                "postalCode",
+                "addressCountry",
+              ],
+              properties: {
+                "@type": { type: "string", const: "PostalAddress" },
+                streetAddress: { type: "string" },
+                addressLocality: { type: "string" },
+                addressRegion: { type: "string" },
+                postalCode: { type: "string" },
+                addressCountry: { type: "string" },
+              },
+            },
+            contactPoint: {
+              type: "array",
+              items: {
+                type: "object",
+                additionalProperties: false,
+                required: ["@type", "contactType", "email"],
+                properties: {
+                  "@type": { type: "string", const: "ContactPoint" },
+                  contactType: { type: "string" },
+                  email: { type: "string" },
+                  telephone: { type: "string" },
+                  availableLanguage: {
+                    type: "array",
+                    items: { type: "string" },
+                  },
+                },
+              },
+            },
+            sameAs: { type: "array", items: { type: "string", format: "uri" } },
+            knowsAbout: { type: "array", items: { type: "string" } },
+            identifier: {
+              type: "array",
+              items: {
+                type: "object",
+                additionalProperties: false,
+                required: ["@type", "name", "value"],
+                properties: {
+                  "@type": { type: "string", const: "PropertyValue" },
+                  name: { type: "string" },
+                  value: { type: "string" },
+                },
+              },
+            },
+            slogan: { type: "string" },
           },
         },
         Organization: {
           type: "object",
-          required: ["name", "legalName", "taxId", "url", "address"],
+          additionalProperties: false,
+          required: [
+            "name",
+            "legalName",
+            "tradingName",
+            "taxId",
+            "url",
+            "tagline",
+            "email",
+            "salesEmail",
+            "securityEmail",
+            "telephone",
+            "telephoneE164",
+            "founded",
+            "activity",
+            "address",
+          ],
           properties: {
             name: { type: "string" },
             legalName: { type: "string" },
+            tradingName: { type: "string" },
             taxId: { type: "string" },
             url: { type: "string", format: "uri" },
+            tagline: { type: "string" },
             email: { type: "string" },
+            salesEmail: { type: "string" },
+            securityEmail: { type: "string" },
+            telephone: { type: "string" },
             telephoneE164: { type: "string" },
-            address: { type: "object" },
+            founded: { type: "string" },
+            activity: { $ref: "#/components/schemas/OrganizationActivity" },
+            address: { $ref: "#/components/schemas/OrganizationAddress" },
+            jsonLd: { $ref: "#/components/schemas/OrganizationJsonLd" },
           },
         },
         Contact: {
           type: "object",
-          required: ["sales", "telephoneE164"],
+          additionalProperties: false,
+          required: [
+            "sales",
+            "hello",
+            "security",
+            "press",
+            "careers",
+            "privacy",
+            "telephone",
+            "telephoneE164",
+            "address",
+            "contactPage",
+            "hint",
+          ],
           properties: {
             sales: { type: "string" },
             hello: { type: "string" },
             security: { type: "string" },
+            press: { type: "string" },
+            careers: { type: "string" },
+            privacy: { type: "string" },
+            telephone: { type: "string" },
             telephoneE164: { type: "string" },
+            address: { type: "string" },
+            contactPage: { type: "string", format: "uri" },
             hint: { type: "string" },
+          },
+        },
+        ProductFeature: {
+          type: "object",
+          additionalProperties: false,
+          required: ["title", "body"],
+          properties: {
+            title: { type: "string" },
+            body: { type: "string" },
           },
         },
         Product: {
           type: "object",
-          required: ["slug", "name", "status", "description", "href"],
+          additionalProperties: false,
+          required: [
+            "slug",
+            "name",
+            "shortName",
+            "status",
+            "kicker",
+            "line",
+            "mission",
+            "description",
+            "href",
+            "features",
+          ],
           properties: {
             slug: { type: "string" },
             name: { type: "string" },
             shortName: { type: "string" },
+            formalName: { type: "string", nullable: true },
             status: { type: "string" },
+            kicker: { type: "string" },
+            line: { type: "string" },
+            mission: { type: "string" },
             description: { type: "string" },
             href: { type: "string", format: "uri" },
             productUrl: { type: "string", nullable: true },
+            features: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ProductFeature" },
+            },
           },
         },
         ProductCollection: {
           type: "object",
+          additionalProperties: false,
           required: ["items"],
           properties: {
             items: { type: "array", items: { $ref: "#/components/schemas/Product" } },
@@ -677,16 +958,20 @@ export function openApiDocument() {
         },
         NewsPost: {
           type: "object",
-          required: ["slug", "title", "standfirst", "href"],
+          additionalProperties: false,
+          required: ["slug", "date", "title", "standfirst", "body", "href"],
           properties: {
             slug: { type: "string" },
+            date: { type: "string" },
             title: { type: "string" },
             standfirst: { type: "string" },
+            body: { type: "array", items: { type: "string" } },
             href: { type: "string", format: "uri" },
           },
         },
         NewsCollection: {
           type: "object",
+          additionalProperties: false,
           required: ["items"],
           properties: {
             items: { type: "array", items: { $ref: "#/components/schemas/NewsPost" } },
@@ -694,37 +979,58 @@ export function openApiDocument() {
         },
         Work: {
           type: "object",
-          required: ["slug", "client", "title", "href"],
+          additionalProperties: false,
+          required: [
+            "slug",
+            "client",
+            "title",
+            "year",
+            "field",
+            "form",
+            "line",
+            "lede",
+            "outcome",
+            "href",
+          ],
           properties: {
             slug: { type: "string" },
             client: { type: "string" },
             title: { type: "string" },
+            year: { type: "string" },
+            field: { type: "string" },
+            form: { type: "string" },
+            line: { type: "string" },
+            lede: { type: "string" },
+            outcome: { type: "string" },
             href: { type: "string", format: "uri" },
           },
         },
         WorkCollection: {
           type: "object",
+          additionalProperties: false,
           required: ["items"],
           properties: {
             items: { type: "array", items: { $ref: "#/components/schemas/Work" } },
           },
         },
+        Page: {
+          type: "object",
+          additionalProperties: false,
+          required: ["path", "title", "description", "section", "href"],
+          properties: {
+            path: { type: "string" },
+            title: { type: "string" },
+            description: { type: "string" },
+            section: { type: "string" },
+            href: { type: "string", format: "uri" },
+          },
+        },
         PageCollection: {
           type: "object",
+          additionalProperties: false,
           required: ["items"],
           properties: {
-            items: {
-              type: "array",
-              items: {
-                type: "object",
-                required: ["path", "title", "href"],
-                properties: {
-                  path: { type: "string" },
-                  title: { type: "string" },
-                  href: { type: "string", format: "uri" },
-                },
-              },
-            },
+            items: { type: "array", items: { $ref: "#/components/schemas/Page" } },
           },
         },
       },
@@ -818,7 +1124,9 @@ Reach for UNFLD when the job is one of these:
 
 ## Developer resources
 
+- UNFLD developer resources: ${siteUrl("/developers")}
 - Docs: ${DOCS}
+- Versioning: ${siteUrl("/api/versioning")}
 - OpenAPI: ${OPENAPI}
 - Catalog: ${siteUrl(API_PREFIX)}
 - Agent index: ${siteUrl("/llms.txt")}

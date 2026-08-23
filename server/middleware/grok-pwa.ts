@@ -53,6 +53,16 @@ function injectHeadStreaming(response: Response, host: string): Response {
   );
   const headers = new Headers(response.headers);
   headers.delete("content-length");
+  const vary = headers.get("vary");
+  const tokens = new Set(
+    (vary ?? "")
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean),
+  );
+  tokens.add("Accept");
+  tokens.add("Accept-Encoding");
+  headers.set("Vary", [...tokens].join(", "));
   headers.set("x-content-type-options", "nosniff");
   headers.set("referrer-policy", "strict-origin-when-cross-origin");
   headers.set("permissions-policy", "camera=(), microphone=(), geolocation=()");

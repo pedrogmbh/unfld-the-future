@@ -32,6 +32,7 @@ const MACHINE_FILES: Record<
 
 function isDocumentPath(pathname: string): boolean {
   const path = pathname || "/";
+  if (path === "/api" || path === "/api/versioning") return true;
   return (
     !path.startsWith("/__grok/") &&
     !path.startsWith("/api/") &&

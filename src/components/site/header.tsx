@@ -10,6 +10,7 @@ function navMenus() {
   return [
     { label: "Products", items: footer.products },
     { label: "Build with us", items: footer.buildWithUs },
+    { label: "Developers", items: footer.developers },
     {
       label: "Company",
       items: [

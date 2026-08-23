@@ -68,4 +68,49 @@ test("Organization JSON-LD includes contactPoint phone and address", () => {
   assert.match(src, /@type": "ContactPoint"/);
   assert.match(src, /telephone: SITE.phoneHref/);
   assert.match(src, /email: SITE.sales/);
+  assert.match(src, /UNFLD developer resources/);
+  assert.match(src, /WebAPI/);
+});
+
+test("catalog API advertises rate-limit headers and versioning policy", () => {
+  const src = read("src/lib/catalog-api.ts");
+  for (const header of [
+    "RateLimit",
+    "RateLimit-Policy",
+    "RateLimit-Limit",
+    "RateLimit-Remaining",
+    "RateLimit-Reset",
+    "X-RateLimit-Limit",
+    "Retry-After",
+    "API-Version",
+  ]) {
+    assert.match(src, new RegExp(header.replaceAll("-", "\\-")));
+  }
+  assert.match(src, /\/api\/versioning/);
+  assert.match(src, /Sunset/);
+  assert.match(src, /180 days/);
+});
+
+test("OpenAPI schemas are nested objects with properties, not bare objects", () => {
+  const src = read("src/lib/catalog-api.ts");
+  assert.match(src, /\$ref: "#\/components\/schemas\/RateLimitInfo"/);
+  assert.match(src, /\$ref: "#\/components\/schemas\/VersioningInfo"/);
+  assert.match(src, /\$ref: "#\/components\/schemas\/CatalogLinks"/);
+  assert.match(src, /\$ref: "#\/components\/schemas\/OrganizationAddress"/);
+  assert.match(src, /\$ref: "#\/components\/schemas\/ProductFeature"/);
+  assert.match(src, /\$ref: "#\/components\/schemas\/OrganizationJsonLd"/);
+  assert.match(src, /additionalProperties: false/);
+});
+
+test("developer resources and versioning are registered for agents", () => {
+  const machine = read("src/lib/machine.ts");
+  assert.match(machine, /UNFLD developer resources/);
+  assert.match(machine, /\/developers/);
+  assert.match(machine, /\/api\/versioning/);
+  const pages = read("src/lib/markdown-pages.ts");
+  assert.match(pages, /\/developers/);
+  assert.match(pages, /\/api\/versioning/);
+  const site = read("src/lib/site.ts");
+  assert.match(site, /developerSurface/);
+  assert.match(site, /Deprecation and Sunset/);
 });

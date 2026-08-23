@@ -10,7 +10,12 @@ import {
   selectedWork,
 } from "@/lib/site";
 
-const EXTRA_DOCUMENT_PATHS = new Set(["/api", "/docs"]);
+const EXTRA_DOCUMENT_PATHS = new Set([
+  "/api",
+  "/docs",
+  "/developers",
+  "/api/versioning",
+]);
 
 export function isKnownDocumentPath(pathname: string): boolean {
   const path = normalizePath(pathname);
@@ -108,6 +113,7 @@ ${posts}
 
 - [When to use UNFLD](${siteUrl("/agents.md")})
 - [llms.txt](${siteUrl("/llms.txt")})
+- [UNFLD developer resources](${siteUrl("/developers")})
 - [UNFLD API](${siteUrl("/api")})
 - [OpenAPI](${siteUrl("/openapi.json")})
 - [Catalog](${siteUrl("/api/v1")})
@@ -116,9 +122,9 @@ ${posts}
 }
 
 function apiDocsMarkdown(): string {
-  return `# UNFLD API
+  return `# UNFLD developer resources
 
-Public read-only catalog for products, news, selected work, and company facts. No authentication.
+UNFLD developer resources for the public catalog: products, news, selected work, and company facts. No authentication.
 
 ## When to use this
 
@@ -135,12 +141,32 @@ Use the catalog to identify the right UNFLD product, quote company facts, or rou
 - \`GET /api/v1/pages\` — canonical pages
 - \`GET /api/v1/contact\` — public inboxes
 
+## Policy
+
+- [UNFLD API versioning](${siteUrl("/api/versioning")}) — deprecation and Sunset
+- Rate-limit headers: RateLimit, RateLimit-Policy, X-RateLimit-* . 429 includes Retry-After.
+
 ## Machine documents
 
+- [UNFLD developer resources](${siteUrl("/developers")})
+- [UNFLD API](${siteUrl("/api")})
 - [OpenAPI JSON](${siteUrl("/openapi.json")})
 - [OpenAPI YAML](${siteUrl("/api/openapi.yaml")})
 - [Agent instructions](${siteUrl("/agents.md")})
 - [llms.txt](${siteUrl("/llms.txt")})
+`;
+}
+
+function versioningMarkdown(): string {
+  return `# UNFLD API versioning and deprecation
+
+The public catalog is versioned at /api/v1. Breaking changes ship as /api/v2.
+
+Deprecated versions send \`Deprecation: true\` and a \`Sunset\` HTTP-date header, plus a Link to this page. A deprecated major version stays available for at least 180 days after Sunset is first advertised.
+
+v1 is current. No Sunset is advertised.
+
+[UNFLD developer resources](${siteUrl("/developers")}) · [UNFLD API](${siteUrl("/api")})
 `;
 }
 
@@ -165,7 +191,10 @@ Canonical URL: ${siteUrl(page.path)}
 export function renderDocumentMarkdown(pathname: string): string | null {
   const path = normalizePath(pathname);
   if (path === "/") return homeMarkdown();
-  if (path === "/api" || path === "/docs") return apiDocsMarkdown();
+  if (path === "/api" || path === "/docs" || path === "/developers") {
+    return apiDocsMarkdown();
+  }
+  if (path === "/api/versioning") return versioningMarkdown();
 
   const product = ownedProducts.find((item) => item.href === path);
   if (product) return productMarkdown(product.slug);

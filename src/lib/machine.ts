@@ -119,11 +119,25 @@ export function machinePages(): MachinePage[] {
       { changefreq: "monthly", priority: 0.7 },
     ),
     page(
+      "/developers",
+      "UNFLD developer resources",
+      "UNFLD developer resources: catalog API, OpenAPI spec, versioning policy, agent instructions, and llms.txt. No authentication.",
+      "Developers",
+      { changefreq: "monthly", priority: 0.9 },
+    ),
+    page(
       "/api",
       "UNFLD API — Developer catalog",
       "Public read-only UNFLD catalog API: products, news, selected work, and company facts. OpenAPI at /openapi.json. No authentication.",
       "Developers",
       { changefreq: "monthly", priority: 0.8 },
+    ),
+    page(
+      "/api/versioning",
+      "UNFLD API versioning and deprecation",
+      "Versioning, deprecation, and Sunset policy for the UNFLD catalog API at /api/v1.",
+      "Developers",
+      { changefreq: "yearly", priority: 0.6 },
     ),
     page(
       "/solutions",
@@ -427,10 +441,12 @@ Do not use UNFLD as a general LLM, payment processor, or legal advisor. There is
 
 ## Developer resources
 
+- [UNFLD developer resources](${siteUrl("/developers")}): API docs, OpenAPI, versioning, and agent files for UNFLD — search for this name.
 - [UNFLD API](${siteUrl("/api")}): Human documentation for the public catalog.
-- [OpenAPI JSON](${siteUrl("/openapi.json")}): Machine specification with operationIds and error schemas.
+- [UNFLD API versioning](${siteUrl("/api/versioning")}): Deprecation and Sunset policy for /api/v1.
+- [OpenAPI JSON](${siteUrl("/openapi.json")}): Machine specification with operationIds and typed schemas.
 - [OpenAPI YAML](${siteUrl("/api/openapi.yaml")}): Same specification as YAML.
-- [Catalog index](${siteUrl("/api/v1")}): JSON entry point.
+- [Catalog index](${siteUrl("/api/v1")}): JSON entry point with rate-limit policy.
 - [Agent instructions](${siteUrl("/agents.md")}): When-to-use guidance for agents.
 
 ${blocks}
@@ -441,7 +457,7 @@ ${blocks}
 - [robots.txt](${siteUrl("/robots.txt")}): Crawl directives and sitemap reference.
 - [llms.txt](${siteUrl("/llms.txt")}): This curated discovery document.
 - [agents.md](${siteUrl("/agents.md")}): When to use UNFLD and how to call the catalog.
-- [unfld CLI](${siteUrl("/api")}): Catalog client in this repository (\`cli/\`). Publish to npm as \`unfld\` when releasing.
+- [unfld CLI](${siteUrl("/developers")}): Official catalog client source in this repository (\`cli/\`, package name \`unfld\`). Install from the repo until the npm release is cut.
 
 ## External Product Sites
 

@@ -366,14 +366,14 @@ function Home() {
               For developers
             </p>
             <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-              UNFLD API.
+              UNFLD developer resources.
             </h2>
             <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">
-              A public catalog of products, news, work, and company facts.
-              OpenAPI at /openapi.json. No authentication.
+              API docs, OpenAPI, versioning, and a public catalog of products,
+              news, work, and company facts. No authentication.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <BtnLink to="/api">UNFLD API</BtnLink>
+              <BtnLink to="/developers">UNFLD developer resources</BtnLink>
               <BtnLink href="/openapi.json" variant="secondary">
                 OpenAPI spec
               </BtnLink>

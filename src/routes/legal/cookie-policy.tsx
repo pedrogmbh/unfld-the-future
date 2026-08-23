@@ -38,7 +38,7 @@ function Page() {
       </p>
       <H>Cookie inventory</H>
       <p>
-        The current cookie inventory is generated from the production site and shown in Privacy choices, including purpose, provider, category, and retention period.
+        The current cookie inventory is generated from the production site and listed on this page, including purpose, provider, category, and retention period.
       </p>
       <H>Contact</H>
       <p>

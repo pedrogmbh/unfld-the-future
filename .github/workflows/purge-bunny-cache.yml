@@ -5,108 +5,13 @@ on:
     branches: [main]
   workflow_dispatch:
 
-concurrency:
-  group: purge-bunny-cache
-  cancel-in-progress: false
-
 jobs:
   purge:
-    name: Purge pull zone "${{ vars.BUNNY_PULL_ZONE_NAME || 'unfld' }}"
     runs-on: ubuntu-latest
     environment: Production
     steps:
-      - name: Verify credentials and resolve pull zone
-        id: zone
-        env:
-          BUNNYCDN_API_KEY: ${{ secrets.BUNNYCDN_API_KEY }}
-          ZONE_ID: ${{ vars.BUNNY_PULL_ZONE_ID }}
-          ZONE_NAME: ${{ vars.BUNNY_PULL_ZONE_NAME || 'unfld' }}
-        run: |
-          set -euo pipefail
-
-          # Strip any whitespace/newline picked up when the secret was pasted.
-          key=$(printf '%s' "${BUNNYCDN_API_KEY:-}" | tr -d '[:space:]')
-          if [ -z "$key" ]; then
-            echo "::error::Secret BUNNYCDN_API_KEY is empty or unset in the Production environment."
-            exit 1
-          fi
-          echo "::add-mask::$key"
-          echo "key length: ${#key} chars"
-
-          bad_key() {
-            echo "::error::Bunny rejected the API key (HTTP 401)."
-            echo "  purgeCache accepts ONLY the account API key:"
-            echo "  dash.bunny.net -> Account -> API Keys -> Account API Key."
-            echo "  A pull zone Token Authentication key (Pull Zone -> Security),"
-            echo "  a storage zone password, or a Stream library key all 401 here."
-          }
-
-          body=$(mktemp)
-
-          if [ -n "${ZONE_ID:-}" ]; then
-            code=$(curl -sS -o "$body" -w '%{http_code}' \
-              "https://api.bunny.net/pullzone/$ZONE_ID" \
-              -H "AccessKey: $key" -H 'Accept: application/json')
-
-            case "$code" in
-              200) ;;
-              401) bad_key; exit 1 ;;
-              404) echo "::error::No pull zone with id $ZONE_ID on this account (check repo variable BUNNY_PULL_ZONE_ID)."; exit 1 ;;
-              *)   echo "::error::Pull zone lookup failed with HTTP $code"; cat "$body"; exit 1 ;;
-            esac
-
-            name=$(jq -r '.Name // "?"' "$body")
-            echo "id=$ZONE_ID" >> "$GITHUB_OUTPUT"
-            echo "Verified pull zone \"$name\" (id $ZONE_ID)"
-            exit 0
-          fi
-
-          code=$(curl -sS -o "$body" -w '%{http_code}' -G \
-            --url 'https://api.bunny.net/pullzone' \
-            --data-urlencode "search=$ZONE_NAME" \
-            --data-urlencode 'page=1' \
-            --data-urlencode 'perPage=100' \
-            -H "AccessKey: $key" -H 'Accept: application/json')
-
-          case "$code" in
-            200) ;;
-            401) bad_key; exit 1 ;;
-            *)   echo "::error::Pull zone lookup failed with HTTP $code"; cat "$body"; exit 1 ;;
-          esac
-
-          id=$(jq -r --arg name "$ZONE_NAME" \
-            '(if type == "array" then . else .Items end)
-             | map(select(.Name == $name)) | .[0].Id // empty' "$body")
-
-          if [ -z "$id" ]; then
-            echo "::error::No pull zone named \"$ZONE_NAME\" on this Bunny account."
-            exit 1
-          fi
-
-          echo "id=$id" >> "$GITHUB_OUTPUT"
-          echo "Resolved pull zone \"$ZONE_NAME\" to id $id"
-
       - name: Purge cache
-        env:
-          BUNNYCDN_API_KEY: ${{ secrets.BUNNYCDN_API_KEY }}
-          ZONE_ID: ${{ steps.zone.outputs.id }}
         run: |
-          set -euo pipefail
-
-          key=$(printf '%s' "$BUNNYCDN_API_KEY" | tr -d '[:space:]')
-          echo "::add-mask::$key"
-
-          body=$(mktemp)
-          code=$(curl -sS -o "$body" -w '%{http_code}' -X POST \
-            "https://api.bunny.net/pullzone/$ZONE_ID/purgeCache" \
-            -H "AccessKey: $key")
-
-          if [ "$code" != "200" ] && [ "$code" != "204" ]; then
-            echo "::error::Purge failed with HTTP $code"
-            cat "$body"
-            exit 1
-          fi
-
-          echo "Purged pull zone $ZONE_ID (HTTP $code)"
-          echo "### Bunny CDN cache purged" >> "$GITHUB_STEP_SUMMARY"
-          echo "Pull zone \`$ZONE_ID\` — commit \`${GITHUB_SHA:0:7}\`" >> "$GITHUB_STEP_SUMMARY"
+          curl --fail-with-body -sS -X POST \
+            "https://api.bunny.net/pullzone/${{ vars.BUNNY_PULL_ZONE_ID }}/purgeCache" \
+            -H "AccessKey: ${{ secrets.BUNNYCDN_API_KEY }}"

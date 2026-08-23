@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Btn } from "@/components/site/buttons";
+import { useMessages } from "@/lib/i18n";
 
 export function CookieChoices({
   open,
@@ -33,6 +34,8 @@ export function CookieChoices({
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
+  const { chrome } = useMessages();
+
   if (!open) return null;
 
   const savePreferences = (options: { analytics: boolean; ads: boolean }) => {
@@ -49,7 +52,7 @@ export function CookieChoices({
       <button
         type="button"
         className="absolute inset-0 bg-bg/70"
-        aria-label="Close privacy choices"
+        aria-label={chrome.closePrivacyChoices}
         onClick={onClose}
       />
       <div
@@ -61,31 +64,30 @@ export function CookieChoices({
           id="privacy-choices-title"
           className="font-display text-xl font-medium tracking-tight"
         >
-          Privacy choices
+          {chrome.privacyChoices}
         </p>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          Essential cookies keep the site working securely. Optional cookies help us
-          understand traffic only with your consent. We do not sell personal information.
+          {chrome.cookieIntro}
         </p>
         <ul className="mt-5 space-y-3">
           <Toggle
-            label="Essential"
-            hint="Required for security, authentication, and core functionality."
-            ariaLabel="Essential cookies"
+            label={chrome.cookieEssential}
+            hint={chrome.cookieEssentialHint}
+            ariaLabel={chrome.cookieEssentialAria}
             checked
             locked
           />
           <Toggle
-            label="Analytics"
-            hint="Aggregated usage telemetry to improve performance and products."
-            ariaLabel="Analytics cookies"
+            label={chrome.cookieAnalytics}
+            hint={chrome.cookieAnalyticsHint}
+            ariaLabel={chrome.cookieAnalyticsAria}
             checked={analytics}
             onChange={setAnalytics}
           />
           <Toggle
-            label="Advertising"
-            hint="Off by default. Third-party marketing cookies."
-            ariaLabel="Advertising cookies"
+            label={chrome.cookieAdvertising}
+            hint={chrome.cookieAdvertisingHint}
+            ariaLabel={chrome.cookieAdvertisingAria}
             checked={ads}
             onChange={setAds}
           />
@@ -101,7 +103,7 @@ export function CookieChoices({
                 savePreferences({ analytics: false, ads: false });
               }}
             >
-              Reject optional
+              {chrome.cookieReject}
             </Btn>
             <Btn
               variant="secondary"
@@ -112,12 +114,12 @@ export function CookieChoices({
                 savePreferences({ analytics: true, ads: true });
               }}
             >
-              Accept optional
+              {chrome.cookieAccept}
             </Btn>
           </div>
           <div className="flex justify-end gap-2">
             <Btn variant="secondary" size="sm" onClick={onClose}>
-              Cancel
+              {chrome.cookieCancel}
             </Btn>
             <Btn
               size="sm"
@@ -125,7 +127,7 @@ export function CookieChoices({
                 savePreferences({ analytics, ads });
               }}
             >
-              Save choices
+              {chrome.cookieSave}
             </Btn>
           </div>
         </div>

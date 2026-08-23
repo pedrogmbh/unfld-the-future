@@ -3,42 +3,44 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { Logo } from "@/components/site/logo";
-import { footer } from "@/lib/site";
+import { LanguageSwitcher } from "@/components/site/language-switcher";
+import { localizeFooter } from "@/lib/i18n/localize";
+import { useLocale, useMessages } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-
-function navMenus() {
-  return [
-    { label: "Products", items: footer.products },
-    { label: "Build with us", items: footer.buildWithUs },
-    { label: "Developers", items: footer.developers },
-    {
-      label: "Company",
-      items: [
-        { label: "About", to: "/company" },
-        { label: "Selected work", to: "/work" },
-        { label: "Careers", to: "/careers" },
-        { label: "News", to: "/news" },
-        { label: "Security", to: "/security" },
-        { label: "Compliance", to: "/compliance" },
-        { label: "São Paulo", to: "/sao-paulo" },
-        { label: "Infrastructure", to: "/infrastructure" },
-        { label: "Enterprise", to: "/enterprise" },
-        { label: "Contact", to: "/contact" },
-      ],
-    },
-  ] as const;
-}
-
-const links = [
-  { label: "Pricing", to: "/pricing" },
-  { label: "News", to: "/news" },
-] as const;
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const menus = navMenus();
+  const locale = useLocale();
+  const { chrome } = useMessages();
+  const footer = localizeFooter(locale);
+
+  const menus = [
+    { label: chrome.nav.products, items: footer.products },
+    { label: chrome.nav.buildWithUs, items: footer.buildWithUs },
+    { label: chrome.nav.developers, items: footer.developers },
+    {
+      label: chrome.nav.company,
+      items: [
+        { label: chrome.nav.about, to: "/company" },
+        { label: chrome.nav.selectedWork, to: "/work" },
+        { label: chrome.nav.careers, to: "/careers" },
+        { label: chrome.nav.news, to: "/news" },
+        { label: chrome.nav.security, to: "/security" },
+        { label: chrome.nav.compliance, to: "/compliance" },
+        { label: chrome.nav.saoPaulo, to: "/sao-paulo" },
+        { label: chrome.nav.infrastructure, to: "/infrastructure" },
+        { label: chrome.nav.enterprise, to: "/enterprise" },
+        { label: chrome.nav.contact, to: "/contact" },
+      ],
+    },
+  ] as const;
+
+  const links = [
+    { label: chrome.nav.pricing, to: "/pricing" },
+    { label: chrome.nav.news, to: "/news" },
+  ] as const;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -85,22 +87,18 @@ export function Header() {
             ))}
           </nav>
           <div className="hidden items-center gap-3 lg:flex">
-            <span className="inline-flex items-center gap-1 rounded-full border border-border px-2.5 py-1 text-[11px] font-mono text-muted">
-              <span className="text-fg font-medium">PT-BR</span>
-              <span className="text-subtle">/</span>
-              <span className="text-subtle hover:text-muted cursor-pointer" title="English translation active across canonical pages">EN</span>
-            </span>
+            <LanguageSwitcher compact />
             <Link
               to="/contact"
               className="inline-flex h-9 items-center rounded-full bg-accent px-4 text-[13px] font-medium text-accent-fg transition-opacity duration-150 hover:opacity-90 active:scale-[0.96]"
             >
-              Talk to UNFLD
+              {chrome.talkToUnfld}
             </Link>
           </div>
           <button
             type="button"
             className="relative size-11 lg:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? chrome.closeMenu : chrome.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
@@ -157,17 +155,15 @@ export function Header() {
               {l.label}
             </Link>
           ))}
-          <div className="py-4 flex items-center gap-2 text-xs font-mono text-muted">
-            <span>Idioma / Language:</span>
-            <span className="text-fg font-medium">Português (BR)</span>
-            <span className="text-subtle">·</span>
-            <span className="text-muted">English</span>
+          <div className="py-4 flex flex-wrap items-center gap-3 text-xs font-mono text-muted">
+            <span>{chrome.language}:</span>
+            <LanguageSwitcher />
           </div>
           <Link
             to="/contact"
             className="mt-4 inline-flex h-12 items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-fg"
           >
-            Talk to UNFLD
+            {chrome.talkToUnfld}
           </Link>
         </nav>
       </div>

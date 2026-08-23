@@ -8,11 +8,15 @@ const SKIP_EXACT = new Set([
   "0.0.0.0",
   "[::1]",
   "::1",
+  "vercel.app",
+  "vercel.com",
   "grok.me",
   "grok-sandbox.com",
 ]);
 
 const SKIP_SUFFIXES = [
+  ".vercel.app",
+  ".vercel.com",
   ".grok.me",
   ".grok-sandbox.com",
   ".localhost",

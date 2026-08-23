@@ -1,11 +1,11 @@
 export const pages = {
   home: {
     metaDescription:
-      "Across agronomy, hiring, small business, and workplace health, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
-    newsBanner: "Queravaga · A shorter path from profile to interview",
+      "Across agronomy, hiring, small business, workplace health, drawing, and vehicle retail, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
+    newsBanner: "Unifikar · A marketplace and network for used vehicles",
     heroTitle: "Unfolding the future.",
     heroTitleSecond: "One real system at a time.",
-    lede: "Across agronomy, hiring, small business, and workplace health, we turn complex work into technology people can actually use. When the right product does not exist, we build it beside the organization that needs it.",
+    lede: "Across agronomy, hiring, small business, workplace health, drawing, and vehicle retail, we turn complex work into technology people can actually use. When the right product does not exist, we build it beside the organization that needs it.",
     ourProducts: "Our products",
     heroImageAlt: "A geometric plane unfolding in a black void",
     productsKicker: "Products by UNFLD",
@@ -50,17 +50,17 @@ export const pages = {
   products: {
     metaTitle: "Products by UNFLD",
     metaDescription:
-      "Explore FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus—five products by UNFLD across agronomy, small business, hiring, and workplace health.",
+      "Explore FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar—seven products by UNFLD across agronomy, small business, hiring, workplace health, drawing, and vehicle retail.",
     kicker: "Portfolio",
     title: "Products by",
     titleSecond: "UNFLD.",
-    lede: "Five products, built around five kinds of work that should be simpler: agronomy, digital presence, fiscal operations, hiring, and workplace health.",
+    lede: "Seven products, built around kinds of work that should be simpler: agronomy, digital presence, fiscal operations, hiring, workplace health, drawing, and vehicle retail.",
     primary: "Talk to UNFLD",
     secondary: "How we build",
     imageAlt: "UNFLD products on glass devices in a dark void",
-    feature1Title: "Five products, each at a different stage",
+    feature1Title: "Seven products, each at a different stage",
     feature1Body:
-      "FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus advance across clearly defined stages—from private deployments to live general access.",
+      "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across clearly defined stages—from private deployments to live general access.",
     feature2Title: "Operated with accountability",
     feature2Body:
       "We stay close to the systems we run—maintaining release trains, monitoring reliability, and evolving with customer reality.",
@@ -98,7 +98,7 @@ export const pages = {
     whoBody:
       "We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a Brazilian limited company (sociedade empresária limitada) in Bela Vista, São Paulo, active since {{founded}}. We build and operate products under our own name and build custom systems beside organizations with consequential operations.",
     tileProducts: "Products by UNFLD",
-    tileProductsBody: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus.",
+    tileProductsBody: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
     tileSp: "São Paulo",
     tileSpBody: "Bela Vista. Registered office.",
     tileWork: "Selected work",
@@ -106,7 +106,7 @@ export const pages = {
     tileCareers: "Careers",
     tileCareersBody: "Join the team.",
     portfolioKicker: "The portfolio",
-    portfolioTitle: "Five products shaped by one operating principle.",
+    portfolioTitle: "Seven products shaped by one operating principle.",
     portfolioLede: "Find work that should be simpler. Build the system. Keep improving it in use.",
     workKicker: "Selected work",
     workTitle: "Work people actually used.",
@@ -402,11 +402,11 @@ export const pages = {
   solutions: {
     metaTitle: "Solutions",
     metaDescription:
-      "Start with the work that needs to change. Agronomy, hiring, small business, workplace health, and custom systems.",
+      "Start with the work that needs to change. Agronomy, hiring, small business, workplace health, drawing, vehicle retail, and custom systems.",
     kicker: "Solutions",
     title: "Start with the work",
     titleSecond: "that needs to change.",
-    lede: "Across agronomy, hiring, small business, workplace health, and custom systems, we turn complex work into technology people can actually use.",
+    lede: "Across agronomy, hiring, small business, workplace health, drawing, vehicle retail, and custom systems, we turn complex work into technology people can actually use.",
     detailTitle: "{{name}} Solutions",
     audience: "Target audience & stakeholders",
   },

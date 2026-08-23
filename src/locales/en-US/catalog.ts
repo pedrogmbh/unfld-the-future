@@ -38,7 +38,7 @@ export const catalog = {
     },
     {
       title: "Products by UNFLD",
-      body: "FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus advance across their respective stages, alongside custom systems built beside our partners.",
+      body: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across their respective stages, alongside custom systems built beside our partners.",
     },
   ],
   interview: [
@@ -72,6 +72,14 @@ export const catalog = {
       q: "How do we make psychosocial risk management actionable and compliant?",
       a: "Dialogus by UNFLD integrates structured listening, validated assessment, risk visibility, and action planning into a documented occupational-risk process aligned with NR-1.",
     },
+    {
+      q: "I want to learn to draw without a projector or a surprise subscription.",
+      a: "Oluart projects any image onto paper through the phone camera. Trace, practice, and keep the price you saw: free to start, Premium at R$29.90 a month, or a lifetime plan at R$199.",
+    },
+    {
+      q: "Our lot needs a digital showroom and a way to share stock with partner stores.",
+      a: "Unifikar is a used-vehicle marketplace and a commercial network: a branded vitrine for each store, shared inventory with a confidential floor price, and one inbox for marketplace and storefront leads.",
+    },
   ],
   developer: {
     apiTitle: "UNFLD API — Developer catalog",
@@ -98,8 +106,8 @@ export const catalog = {
     endpoints: [
       "Catalog index, documentation links, rate-limit policy, and collection URLs.",
       "Legal name, CNPJ, São Paulo address, phones, and emails.",
-      "FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus.",
-      "One product. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus.",
+      "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar.",
+      "One product. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
       "Public news posts.",
       "Selected work the team can discuss in public.",
       "Canonical HTML pages from the sitemap.",

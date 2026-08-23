@@ -73,7 +73,9 @@
       "privacy": "Privacidade",
       "cookies": "Cookies",
       "aup": "AUP",
-      "brand": "Marca"
+      "brand": "Marca",
+      "drawing": "Desenho",
+      "vehicleRetail": "Varejo automotivo"
     },
     "notFound": {
       "title": "Esta página se recolheu.",
@@ -168,11 +170,11 @@
   },
   "pages": {
     "home": {
-      "metaDescription": "Na agronomia, na contratação, nos pequenos negócios e na saúde no trabalho, a UNFLD transforma trabalho complexo em tecnologia que as pessoas de fato usam. Também construímos ao lado de organizações cujos problemas mais importantes não cabem em um produto pronto.",
-      "newsBanner": "Queravaga · Um caminho mais curto do perfil à entrevista",
+      "metaDescription": "Na agronomia, na contratação, nos pequenos negócios, na saúde no trabalho, no desenho e no varejo automotivo, a UNFLD transforma trabalho complexo em tecnologia que as pessoas de fato usam. Também construímos ao lado de organizações cujos problemas mais importantes não cabem em um produto pronto.",
+      "newsBanner": "Unifikar · Um marketplace e uma rede de seminovos",
       "heroTitle": "Desdobrando o futuro.",
       "heroTitleSecond": "Um sistema real de cada vez.",
-      "lede": "Na agronomia, na contratação, nos pequenos negócios e na saúde no trabalho, transformamos trabalho complexo em tecnologia que as pessoas de fato usam. Quando o produto certo não existe, nós o construímos ao lado da organização que precisa dele.",
+      "lede": "Na agronomia, na contratação, nos pequenos negócios, na saúde no trabalho, no desenho e no varejo automotivo, transformamos trabalho complexo em tecnologia que as pessoas de fato usam. Quando o produto certo não existe, nós o construímos ao lado da organização que precisa dele.",
       "ourProducts": "Nossos produtos",
       "heroImageAlt": "Um plano geométrico se desdobrando em um vazio preto",
       "productsKicker": "Produtos da UNFLD",
@@ -207,16 +209,16 @@
     },
     "products": {
       "metaTitle": "Produtos da UNFLD",
-      "metaDescription": "Conheça FCR, SiteCreator, Doutor Fiscal, Queravaga e Dialogus — cinco produtos da UNFLD em agronomia, pequenos negócios, contratação e saúde no trabalho.",
+      "metaDescription": "Conheça FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart e Unifikar — sete produtos da UNFLD em agronomia, pequenos negócios, contratação, saúde no trabalho, desenho e varejo automotivo.",
       "kicker": "Portfólio",
       "title": "Produtos da",
       "titleSecond": "UNFLD.",
-      "lede": "Cinco produtos, construídos em torno de cinco tipos de trabalho que deveriam ser mais simples: agronomia, presença digital, operações fiscais, contratação e saúde no trabalho.",
+      "lede": "Sete produtos, construídos em torno de tipos de trabalho que deveriam ser mais simples: agronomia, presença digital, operações fiscais, contratação, saúde no trabalho, desenho e varejo automotivo.",
       "primary": "Fale com a UNFLD",
       "secondary": "Como construímos",
       "imageAlt": "Produtos da UNFLD em dispositivos de vidro em um vazio escuro",
-      "feature1Title": "Cinco produtos, cada um em um estágio diferente",
-      "feature1Body": "FCR, SiteCreator, Doutor Fiscal, Queravaga e Dialogus avançam em estágios claramente definidos — de implantações privadas ao acesso geral em operação.",
+      "feature1Title": "Sete produtos, cada um em um estágio diferente",
+      "feature1Body": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart e Unifikar avançam em estágios claramente definidos — de implantações privadas ao acesso geral em operação.",
       "feature2Title": "Operados com responsabilidade",
       "feature2Body": "Permanecemos perto dos sistemas que rodamos — mantendo trens de release, monitorando confiabilidade e evoluindo com a realidade do cliente.",
       "feature3Title": "Pontos de entrada distintos",
@@ -245,7 +247,7 @@
       "whoTitle": "Cinco letras. Uma razão social completa. Uma casa que constrói.",
       "whoBody": "Operamos como UNFLD. A empresa é a UNFOLDING THE FUTURE LTDA — uma sociedade empresária limitada brasileira em Bela Vista, São Paulo, ativa desde {{founded}}. Construímos e operamos produtos em nosso próprio nome e construímos sistemas sob medida ao lado de organizações com operações de consequência.",
       "tileProducts": "Produtos da UNFLD",
-      "tileProductsBody": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus.",
+      "tileProductsBody": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
       "tileSp": "São Paulo",
       "tileSpBody": "Bela Vista. Sede registrada.",
       "tileWork": "Trabalhos selecionados",
@@ -253,7 +255,7 @@
       "tileCareers": "Carreiras",
       "tileCareersBody": "Junte-se à equipe.",
       "portfolioKicker": "O portfólio",
-      "portfolioTitle": "Cinco produtos moldados por um princípio operacional.",
+      "portfolioTitle": "Sete produtos moldados por um princípio operacional.",
       "portfolioLede": "Encontrar o trabalho que deveria ser mais simples. Construir o sistema. Continuar melhorando-o em uso.",
       "workKicker": "Trabalhos selecionados",
       "workTitle": "Trabalho que as pessoas de fato usaram.",
@@ -489,11 +491,11 @@
     },
     "solutions": {
       "metaTitle": "Soluções",
-      "metaDescription": "Comece pelo trabalho que precisa mudar. Agronomia, contratação, pequenos negócios, saúde no trabalho e sistemas sob medida.",
+      "metaDescription": "Comece pelo trabalho que precisa mudar. Agronomia, contratação, pequenos negócios, saúde no trabalho, desenho, varejo automotivo e sistemas sob medida.",
       "kicker": "Soluções",
       "title": "Comece pelo trabalho",
       "titleSecond": "que precisa mudar.",
-      "lede": "Na agronomia, na contratação, nos pequenos negócios, na saúde no trabalho e nos sistemas sob medida, transformamos trabalho complexo em tecnologia que as pessoas de fato usam.",
+      "lede": "Na agronomia, na contratação, nos pequenos negócios, na saúde no trabalho, no desenho, no varejo automotivo e nos sistemas sob medida, transformamos trabalho complexo em tecnologia que as pessoas de fato usam.",
       "detailTitle": "Soluções de {{name}}",
       "audience": "Público-alvo e partes interessadas"
     },
@@ -677,7 +679,7 @@
       },
       {
         "title": "Produtos da UNFLD",
-        "body": "FCR, SiteCreator, Doutor Fiscal, Queravaga e Dialogus avançam em seus respectivos estágios, ao lado de sistemas sob medida construídos com nossos parceiros."
+        "body": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart e Unifikar avançam em seus respectivos estágios, ao lado de sistemas sob medida construídos com nossos parceiros."
       }
     ],
     "interview": [
@@ -710,6 +712,14 @@
       {
         "q": "Como tornar a gestão de riscos psicossociais acionável e em conformidade?",
         "a": "Dialogus by UNFLD integra escuta estruturada, avaliação validada, visibilidade de risco e planejamento de ação em um processo documentado de risco ocupacional alinhado à NR-1."
+      },
+      {
+        "q": "Quero aprender a desenhar sem projetor e sem assinatura surpresa.",
+        "a": "O Oluart projeta qualquer imagem no papel pela câmera do celular. Trace, pratique e fique com o preço que viu: grátis para começar, Premium a R$29,90 por mês, ou plano vitalício a R$199."
+      },
+      {
+        "q": "Nosso pátio precisa de uma vitrine digital e de um jeito de compartilhar estoque com lojas parceiras.",
+        "a": "A Unifikar é um marketplace de seminovos e uma rede comercial: uma vitrine com a marca de cada loja, estoque compartilhado com preço mínimo confidencial e uma só caixa para leads do marketplace e da vitrine."
       }
     ],
     "developer": {
@@ -731,8 +741,8 @@
       "endpoints": [
         "Índice do catálogo, links de documentação, política de limite de taxa e URLs das coleções.",
         "Razão social, CNPJ, endereço em São Paulo, telefones e e-mails.",
-        "FCR, SiteCreator, Doutor Fiscal, Queravaga e Dialogus.",
-        "Um produto. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus.",
+        "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart e Unifikar.",
+        "Um produto. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
         "Artigos públicos de notícias.",
         "Trabalhos selecionados que a equipe pode discutir em público.",
         "Páginas HTML canônicas do mapa do site.",
@@ -999,9 +1009,115 @@
         "title": "O cuidado se torna crível quando o risco é ouvido, compreendido, tratado e revisitado.",
         "body": "Gestão de riscos psicossociais feita para a NR-1. Software e acompanhamento especializado trabalhando juntos."
       }
+    },
+    "oluart": {
+      "name": "Oluart by UNFLD",
+      "kicker": "Desenho",
+      "status": "Em operação",
+      "explore": "Explorar",
+      "line": "Desenhe no papel com realidade aumentada.",
+      "mission": "Desdobrando o futuro de aprender a desenhar.",
+      "title": "Desdobrando o futuro",
+      "titleSecond": "de aprender a desenhar.",
+      "primary": "Abrir Oluart",
+      "blurb": "O Oluart projeta qualquer imagem no papel pela câmera do celular para que a pessoa trace, pratique e aprenda a desenhar. Preço transparente, um plano gratuito utilizável e suporte em português.",
+      "features": [
+        {
+          "title": "Projeção AR no papel",
+          "body": "Aponte a câmera para a folha. Ajuste opacidade, zoom e rotação e trace a imagem no espaço real."
+        },
+        {
+          "title": "Suas fotos e uma biblioteca que cresce",
+          "body": "Envie uma foto ou escolha entre mais de 800 templates — animais, personagens, carros, natureza, tatuagens — com novas referências toda semana."
+        },
+        {
+          "title": "Preço honesto",
+          "body": "Grátis para começar, com projeção AR completa e menos anúncios. Premium a R$29,90 por mês, ou compra vitalícia a R$199. Três dias de reembolso se não for o que você precisa."
+        },
+        {
+          "title": "Feito por um artista",
+          "body": "Construído no Brasil, para artistas. O suporte responde em português. Sem armadilhas semanais, sem cobrança surpresa."
+        },
+        {
+          "title": "Offline quando precisar",
+          "body": "Os planos Premium e Vitalício baixam templates e tutoriais para usar sem sinal."
+        },
+        {
+          "title": "No iOS e no Android",
+          "body": "Na App Store e no Google Play. iPhone X ou posterior com iOS 15.1+, e celulares Android recentes com Android 13+."
+        }
+      ],
+      "quote": {
+        "kicker": "Oluart",
+        "title": "O preço que você vê é o preço que você paga.",
+        "body": "Projete uma imagem no papel e aprenda a desenhar. Oluart by UNFLD — transparente, brasileiro e grátis para começar."
+      }
+    },
+    "unifikar": {
+      "name": "Unifikar by UNFLD",
+      "kicker": "Varejo automotivo",
+      "status": "Acesso antecipado",
+      "explore": "Explorar",
+      "line": "Um marketplace e uma rede comercial de veículos seminovos.",
+      "mission": "Desdobrando o futuro do varejo de seminovos.",
+      "title": "Desdobrando o futuro",
+      "titleSecond": "do varejo de seminovos.",
+      "primary": "Abrir Unifikar",
+      "blurb": "A Unifikar liga compradores a seminovos de lojas parceiras e de particulares, e dá às lojas uma vitrine whitelabel, uma rede de estoque compartilhado e um só lugar para cuidar dos leads.",
+      "features": [
+        {
+          "title": "Um marketplace central",
+          "body": "Busque seminovos nas lojas parceiras, ou anuncie um veículo com alcance nacional e um caminho claro de volta ao vendedor."
+        },
+        {
+          "title": "Vitrines whitelabel",
+          "body": "Cada loja recebe uma vitrine pública com a sua marca — identidade, domínio e estoque — sem reconstruir um site do zero."
+        },
+        {
+          "title": "Uma rede comercial",
+          "body": "As lojas compartilham estoque, definem um preço mínimo confidencial e republicam veículos de parceiros sob uma política combinada."
+        },
+        {
+          "title": "Leads em um só lugar",
+          "body": "O interesse do marketplace e de cada vitrine chega a uma única caixa de entrada, que a equipe pode atribuir e acompanhar."
+        },
+        {
+          "title": "Planos do tamanho do pátio",
+          "body": "Essencial, Profissional e Rede — da primeira vitrine de 15 veículos à operação com várias unidades e gestão centralizada."
+        },
+        {
+          "title": "Feito para o chão da loja",
+          "body": "O preço público e o mínimo confidencial ficam separados. A loja, o parceiro e o comprador veem o que cada um deve ver."
+        }
+      ],
+      "quote": {
+        "kicker": "Unifikar",
+        "title": "O estoque deve circular numa rede, não numa única vitrine.",
+        "body": "Um marketplace de seminovos e uma rede comercial para as lojas que os vendem. Unifikar by UNFLD."
+      }
     }
   },
   "news": {
+    "unifikar": {
+      "date": "23 de agosto de 2026",
+      "title": "Unifikar abre uma rede para seminovos",
+      "standfirst": "Um marketplace para quem compra e uma rede comercial para as lojas que vendem seminovos.",
+      "body": [
+        "Unifikar é a UNFLD desdobrando o futuro do varejo de seminovos: um marketplace para quem compra, e uma rede comercial compartilhada para lojas que precisam de mais do que uma única vitrine.",
+        "As lojas parceiras publicam uma vitrine com a própria marca, compartilham estoque sob um preço mínimo confidencial e recebem leads do marketplace e da vitrine em um só lugar.",
+        "O acesso antecipado está aberto em unifikar.com para lojas que entram na rede e para quem busca um seminovo."
+      ]
+    },
+    "oluart": {
+      "date": "23 de agosto de 2026",
+      "title": "Oluart coloca a referência na folha",
+      "standfirst": "Um app de desenho com AR que projeta qualquer imagem no papel — com um preço que se lê antes de começar.",
+      "body": [
+        "Oluart é a UNFLD desdobrando o futuro de aprender a desenhar: a câmera vira projetor, a folha continua papel, e o preço continua visível.",
+        "O plano gratuito já inclui a projeção AR completa. O Premium custa R$29,90 por mês. O plano vitalício custa R$199. O suporte responde em português.",
+        "Na App Store e no Google Play, em oluart.com."
+      ]
+    },
     "queravaga": {
       "date": "20 de agosto de 2026",
       "title": "Queravaga começa a encurtar o caminho até o trabalho",
@@ -1019,7 +1135,7 @@
       "body": [
         "UNFLD é a forma curta de UNFOLDING THE FUTURE — e isso é mais do que a razão social. É o trabalho: encontrar o que deveria ser mais simples, construir o sistema e continuar melhorando-o em uso.",
         "A experiência da nossa equipe atravessa produtos e projetos entregues diretamente, por empresas anteriores e ao lado de parceiros na agricultura, na mídia, na indústria e em operações empresariais.",
-        "FCR desdobra o futuro da agronomia. SiteCreator coloca pequenos negócios no ar. Doutor Fiscal simplifica as rotinas fiscais. Queravaga encurta o caminho até o trabalho. Dialogus torna o risco ocupacional visível e acionável. Mercados diferentes; uma mesma convicção operacional."
+        "FCR desdobra o futuro da agronomia. SiteCreator coloca pequenos negócios no ar. Doutor Fiscal simplifica as rotinas fiscais. Queravaga encurta o caminho até o trabalho. Dialogus torna o risco ocupacional visível e acionável. Oluart coloca a referência de desenho na folha. Unifikar abre uma rede para seminovos. Mercados diferentes; uma mesma convicção operacional."
       ]
     }
   },
@@ -1292,6 +1408,28 @@
         "Opções de isolamento de dados",
         "Fronteiras claras de subprocessadores"
       ]
+    },
+    "drawing": {
+      "name": "Desenho",
+      "audience": "Pessoas que aprendem a desenhar, professores de arte e artistas que precisam de uma referência estável para traçar no papel.",
+      "line": "Aprenda a desenhar projetando uma referência na folha.",
+      "body": "O Oluart usa a câmera do celular como um projetor de AR: escolha um template ou uma foto sua, posicione o celular sobre o papel e trace. Feito para um preço honesto e uma sessão de desenho calma — não para um labirinto de cobranças semanais.",
+      "capabilities": [
+        "Projeção AR em tempo real com opacidade, zoom e rotação",
+        "Envio de foto própria e uma biblioteca de templates que cresce toda semana",
+        "Plano gratuito, Premium mensal e compra vitalícia"
+      ]
+    },
+    "vehicles": {
+      "name": "Varejo automotivo",
+      "audience": "Lojas de seminovos, grupos com várias unidades e pessoas que buscam um veículo usado.",
+      "line": "Um marketplace e uma rede de lojas que compartilham estoque, leads e vitrines digitais.",
+      "body": "A Unifikar é um marketplace de seminovos e uma rede comercial whitelabel. Quem compra busca nos pátios parceiros. As lojas publicam a própria vitrine, compartilham estoque sob um preço mínimo protegido e tratam os leads do marketplace e da vitrine em um só lugar.",
+      "capabilities": [
+        "Marketplace nacional de seminovos de lojas parceiras e de particulares",
+        "Vitrines whitelabel com domínio próprio e identidade da marca",
+        "Estoque compartilhado, preço mínimo confidencial e uma caixa de leads unificada"
+      ]
     }
   },
   "plans": {
@@ -1341,6 +1479,30 @@
         "Caminhos diretos dos perfis às conversas de contratação",
         "Portais para candidatos e equipes de contratação",
         "Cadastro gratuito no acesso antecipado"
+      ]
+    },
+    "Oluart": {
+      "price": "Grátis",
+      "period": " · R$29,90 / mês",
+      "blurb": "Desenhe no papel com realidade aumentada. Grátis para começar, Premium a R$29,90 por mês, vitalício a R$199.",
+      "cta": "Abrir Oluart",
+      "features": [
+        "Projeção AR no papel",
+        "Plano gratuito com as ferramentas AR completas",
+        "Premium R$29,90 / mês ou vitalício R$199",
+        "App Store e Google Play"
+      ]
+    },
+    "Unifikar": {
+      "price": "Planos",
+      "period": "",
+      "blurb": "Um marketplace e uma rede comercial de seminovos. Essencial, Profissional e Rede para lojas.",
+      "cta": "Abrir Unifikar",
+      "features": [
+        "Marketplace central de seminovos",
+        "Vitrines whitelabel",
+        "Estoque compartilhado e caixa de leads",
+        "Essencial · Profissional · Rede"
       ]
     },
     "Custom": {

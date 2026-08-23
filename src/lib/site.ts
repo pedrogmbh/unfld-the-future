@@ -320,6 +320,104 @@ export const ownedProducts: readonly OwnedProduct[] = [
       body: "Psychosocial risk management built for NR-1. Software and specialized accompaniment working together.",
     },
   },
+  {
+    slug: "oluart",
+    name: "Oluart by UNFLD",
+    shortName: "Oluart",
+    href: "/oluart",
+    kicker: "Drawing",
+    status: "Live",
+    explore: "Explore",
+    line: "Draw on paper with augmented reality.",
+    mission: "Unfolding the future of learning to draw.",
+    title: "Unfolding the future",
+    titleSecond: "of learning to draw.",
+    primary: "Open Oluart",
+    url: "https://www.oluart.com",
+    blurb:
+      "Oluart projects any image onto paper through the phone camera so people can trace, practice, and learn to draw. Transparent pricing, a usable free tier, and support in Portuguese.",
+    image: "/images/relay.jpg",
+    features: [
+      {
+        title: "AR projection on paper",
+        body: "Point the camera at the page. Adjust opacity, zoom, and rotation, then trace the image in real space.",
+      },
+      {
+        title: "Your photos and a growing library",
+        body: "Upload a photo or choose from more than 800 templates — animals, characters, cars, nature, tattoos — with new references added weekly.",
+      },
+      {
+        title: "Honest pricing",
+        body: "Free to start, with full AR projection and fewer ads. Premium at R$29.90 a month, or a lifetime purchase at R$199. A three-day refund if it is not the right fit.",
+      },
+      {
+        title: "Made by an artist",
+        body: "Built in Brazil, for artists. Support answers in Portuguese. No weekly traps, no surprise charges.",
+      },
+      {
+        title: "Offline when you need it",
+        body: "Premium and lifetime plans download templates and tutorials for use without a signal.",
+      },
+      {
+        title: "On iOS and Android",
+        body: "Available on the App Store and Google Play. iPhone X or later on iOS 15.1+, and recent Android devices on Android 13+.",
+      },
+    ],
+    quote: {
+      kicker: "Oluart",
+      title: "The price you see is the price you pay.",
+      body: "Project an image onto paper and learn to draw. Oluart by UNFLD — transparent, Brazilian, and free to start.",
+    },
+  },
+  {
+    slug: "unifikar",
+    name: "Unifikar by UNFLD",
+    shortName: "Unifikar",
+    href: "/unifikar",
+    kicker: "Vehicle retail",
+    status: "Early access",
+    explore: "Explore",
+    line: "A marketplace and commercial network for used vehicles.",
+    mission: "Unfolding the future of used-vehicle retail.",
+    title: "Unfolding the future",
+    titleSecond: "of used-vehicle retail.",
+    primary: "Open Unifikar",
+    url: "https://www.unifikar.com",
+    blurb:
+      "Unifikar connects buyers to used vehicles from partner dealerships and private sellers, and gives stores a whitelabel showroom, a shared inventory network, and one place to manage leads.",
+    image: "/images/infra.jpg",
+    features: [
+      {
+        title: "A central marketplace",
+        body: "Search used vehicles across partner stores, or list a vehicle with national reach and a clear path back to the seller.",
+      },
+      {
+        title: "Whitelabel showrooms",
+        body: "Each store gets a branded public vitrine — identity, domain, and inventory — without rebuilding a site from scratch.",
+      },
+      {
+        title: "A commercial network",
+        body: "Dealerships share stock, set a confidential floor price, and republish partner vehicles under an agreed policy.",
+      },
+      {
+        title: "Leads in one place",
+        body: "Interest from the marketplace and from each storefront arrives as a single inbox the team can assign and follow.",
+      },
+      {
+        title: "Plans for the size of the lot",
+        body: "Essencial, Profissional, and Rede — from a first storefront of 15 vehicles to multi-unit operations with centralized management.",
+      },
+      {
+        title: "Built for the store floor",
+        body: "Public price and confidential minimum stay apart. The lot, the partner, and the buyer each see what they are meant to see.",
+      },
+    ],
+    quote: {
+      kicker: "Unifikar",
+      title: "Inventory should move through a network, not a single window.",
+      body: "A marketplace for used vehicles and a commercial network for the stores that sell them. Unifikar by UNFLD.",
+    },
+  },
 ];
 
 export type Customer = {
@@ -356,6 +454,8 @@ export const footer = {
     { label: "Doutor Fiscal", to: "/doutor-fiscal" },
     { label: "Queravaga", to: "/queravaga" },
     { label: "Dialogus", to: "/dialogus" },
+    { label: "Oluart", to: "/oluart" },
+    { label: "Unifikar", to: "/unifikar" },
     { label: "Access", to: "/access" },
   ],
   buildWithUs: [
@@ -380,9 +480,13 @@ export const footer = {
     { label: "Doutor Fiscal", to: "/doutor-fiscal" },
     { label: "Queravaga", to: "/queravaga" },
     { label: "Dialogus", to: "/dialogus" },
+    { label: "Oluart", to: "/oluart" },
+    { label: "Unifikar", to: "/unifikar" },
   ],
   solutions: [
     { label: "Small business", to: "/solutions/small-business" },
+    { label: "Drawing", to: "/solutions/drawing" },
+    { label: "Vehicle retail", to: "/solutions/vehicles" },
     { label: "Public missions", to: "/solutions/government" },
     { label: "Operations", to: "/solutions/operations" },
     { label: "Fiscal & risk", to: "/solutions/legal" },
@@ -454,12 +558,12 @@ export const developerSurface = {
     {
       method: "GET",
       path: "/api/v1/products",
-      body: "FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus.",
+      body: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar.",
     },
     {
       method: "GET",
       path: "/api/v1/products/{slug}",
-      body: "One product. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus.",
+      body: "One product. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
     },
     {
       method: "GET",
@@ -531,7 +635,7 @@ export const developerSurface = {
 
 export const stats = [
   { value: "2019", label: "Experience rooted in" },
-  { value: "5", label: "Products by UNFLD" },
+  { value: "7", label: "Products by UNFLD" },
   { value: "SP", label: "Headquarters · São Paulo" },
 ] as const;
 
@@ -547,6 +651,14 @@ export const homePrompts = [
   {
     q: "How do we make psychosocial risk management actionable and compliant?",
     a: "Dialogus by UNFLD integrates structured listening, validated assessment, risk visibility, and action planning into a documented occupational-risk process aligned with NR-1.",
+  },
+  {
+    q: "I want to learn to draw without a projector or a surprise subscription.",
+    a: "Oluart projects any image onto paper through the phone camera. Trace, practice, and keep the price you saw: free to start, Premium at R$29.90 a month, or a lifetime plan at R$199.",
+  },
+  {
+    q: "Our lot needs a digital showroom and a way to share stock with partner stores.",
+    a: "Unifikar is a used-vehicle marketplace and a commercial network: a branded vitrine for each store, shared inventory with a confidential floor price, and one inbox for marketplace and storefront leads.",
   },
 ] as const;
 
@@ -598,7 +710,7 @@ export const timeline = [
   {
     date: "2026",
     title: "Products by UNFLD",
-    body: "FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus advance across their respective stages, alongside custom systems built beside our partners.",
+    body: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across their respective stages, alongside custom systems built beside our partners.",
   },
 ] as const;
 
@@ -612,6 +724,30 @@ export type NewsPost = {
 };
 
 export const news: NewsPost[] = [
+  {
+    slug: "unifikar",
+    date: "Aug 23, 2026",
+    title: "Unifikar opens a network for used vehicles",
+    standfirst:
+      "A marketplace for buyers and a commercial network for the stores that sell used vehicles.",
+    body: [
+      "Unifikar is UNFLD unfolding the future of used-vehicle retail: one marketplace for buyers, and a shared commercial network for dealerships that need more than a single window.",
+      "Partner stores publish a branded showroom, share inventory under a confidential floor price, and receive leads from the marketplace and their own vitrine in one place.",
+      "Early access is open at unifikar.com for stores joining the network and for people looking for a used vehicle.",
+    ],
+  },
+  {
+    slug: "oluart",
+    date: "Aug 23, 2026",
+    title: "Oluart puts the reference on the page",
+    standfirst:
+      "An AR drawing app that projects any image onto paper — with a price you can read before you start.",
+    body: [
+      "Oluart is UNFLD unfolding the future of learning to draw: the phone camera becomes a projector, the page stays paper, and the price stays visible.",
+      "The free tier already includes full AR projection. Premium is R$29.90 a month. A lifetime plan is R$199. Support answers in Portuguese.",
+      "Available on the App Store and Google Play at oluart.com.",
+    ],
+  },
   {
     slug: "queravaga",
     date: "Aug 20, 2026",
@@ -633,7 +769,7 @@ export const news: NewsPost[] = [
     body: [
       "UNFLD is short for UNFOLDING THE FUTURE—and that is more than the legal name. It is the job: find consequential work that should be simpler, build the system, and keep improving it in use.",
       "Our team’s experience spans products and projects delivered directly, through prior companies, and alongside partners across agriculture, media, industry, and enterprise operations.",
-      "FCR unfolds the future of agronomy. SiteCreator brings small businesses online. Doutor Fiscal simplifies fiscal operations. Queravaga shortens the path to work. Dialogus makes workplace risk visible and actionable. Different markets; one operating belief.",
+      "FCR unfolds the future of agronomy. SiteCreator brings small businesses online. Doutor Fiscal simplifies fiscal operations. Queravaga shortens the path to work. Dialogus makes workplace risk visible and actionable. Oluart puts a drawing reference on the page. Unifikar opens a network for used vehicles. Different markets; one operating belief.",
     ],
   },
 ];
@@ -704,6 +840,30 @@ export const solutions = [
       "Instant web presence via SiteCreator with custom domain support",
       "Guided invoice issuance and fiscal organization via Doutor Fiscal",
       "Conversational workflows eliminating complex dashboard overhead",
+    ],
+  },
+  {
+    slug: "drawing",
+    name: "Drawing",
+    audience: "People learning to draw, art teachers, and artists who need a stable tracing reference on paper.",
+    line: "Learn to draw by projecting a reference onto the page.",
+    body: "Oluart uses the phone camera as an AR projector: choose a template or a personal photo, place the phone over the paper, and trace. Built for honest pricing and a calm drawing session — not a maze of weekly charges.",
+    capabilities: [
+      "Real-time AR projection with opacity, zoom, and rotation",
+      "Personal photo upload and a weekly-growing template library",
+      "Free tier, monthly Premium, and a one-time lifetime plan",
+    ],
+  },
+  {
+    slug: "vehicles",
+    name: "Vehicle retail",
+    audience: "Used-car dealerships, multi-store groups, and people looking for a used vehicle.",
+    line: "A marketplace and a store network that share inventory, leads, and digital showrooms.",
+    body: "Unifikar is a used-vehicle marketplace and a whitelabel commercial network. Buyers search partner lots. Stores publish their own vitrine, share stock under a protected floor price, and handle leads from the marketplace and the storefront in one place.",
+    capabilities: [
+      "National marketplace for used vehicles from partner stores and private sellers",
+      "Whitelabel storefronts with custom domain and brand identity",
+      "Shared inventory, confidential floor prices, and a unified lead inbox",
     ],
   },
   {
@@ -863,6 +1023,36 @@ export const plans = [
       "Direct paths from profiles to hiring conversations",
       "Candidate and hiring team portals",
       "Free early access registration",
+    ],
+  },
+  {
+    name: "Oluart",
+    price: "Free",
+    period: " · R$29.90 / month",
+    blurb: "Draw on paper with augmented reality. Free to start, Premium at R$29.90 a month, lifetime at R$199.",
+    cta: "Open Oluart",
+    href: "https://www.oluart.com",
+    external: true,
+    features: [
+      "AR projection on paper",
+      "Free tier with full AR tools",
+      "Premium R$29.90 / month or lifetime R$199",
+      "App Store and Google Play",
+    ],
+  },
+  {
+    name: "Unifikar",
+    price: "Plans",
+    period: "",
+    blurb: "A marketplace and commercial network for used vehicles. Essencial, Profissional, and Rede for stores.",
+    cta: "Open Unifikar",
+    href: "https://www.unifikar.com",
+    external: true,
+    features: [
+      "Central used-vehicle marketplace",
+      "Whitelabel storefronts",
+      "Shared inventory and lead inbox",
+      "Essencial · Profissional · Rede",
     ],
   },
   {

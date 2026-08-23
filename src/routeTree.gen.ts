@@ -28,6 +28,7 @@ import { Route as FcrRouteImport } from './routes/fcr'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
+import { Route as OluartRouteImport } from './routes/oluart'
 import { Route as OpenapiDotjsonRouteImport } from './routes/openapi[.]json'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductsRouteImport } from './routes/products'
@@ -38,6 +39,7 @@ import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitecreatorRouteImport } from './routes/sitecreator'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StatusRouteImport } from './routes/status'
+import { Route as UnifikarRouteImport } from './routes/unifikar'
 import { Route as ApiIndexRouteImport } from './routes/api.index'
 import { Route as ApiOpenapiDotyamlRouteImport } from './routes/api.openapi[.]yaml'
 import { Route as ApiV1RouteImport } from './routes/api.v1'
@@ -154,6 +156,11 @@ const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OluartRoute = OluartRouteImport.update({
+  id: '/oluart',
+  path: '/oluart',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OpenapiDotjsonRoute = OpenapiDotjsonRouteImport.update({
   id: '/openapi.json',
   path: '/openapi.json',
@@ -202,6 +209,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const StatusRoute = StatusRouteImport.update({
   id: '/status',
   path: '/status',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UnifikarRoute = UnifikarRouteImport.update({
+  id: '/unifikar',
+  path: '/unifikar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiIndexRoute = ApiIndexRouteImport.update({
@@ -327,6 +339,7 @@ export interface FileRoutesByFullPath {
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/oluart': typeof OluartRoute
   '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
@@ -337,6 +350,7 @@ export interface FileRoutesByFullPath {
   '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/unifikar': typeof UnifikarRoute
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
   '/api/versioning': typeof ApiVersioningRoute
@@ -377,6 +391,7 @@ export interface FileRoutesByTo {
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/oluart': typeof OluartRoute
   '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
@@ -387,6 +402,7 @@ export interface FileRoutesByTo {
   '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/unifikar': typeof UnifikarRoute
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
   '/api/versioning': typeof ApiVersioningRoute
@@ -429,6 +445,7 @@ export interface FileRoutesById {
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/oluart': typeof OluartRoute
   '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
@@ -439,6 +456,7 @@ export interface FileRoutesById {
   '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/unifikar': typeof UnifikarRoute
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
   '/api/versioning': typeof ApiVersioningRoute
@@ -482,6 +500,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
+    | '/oluart'
     | '/openapi.json'
     | '/pricing'
     | '/products'
@@ -492,6 +511,7 @@ export interface FileRouteTypes {
     | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
+    | '/unifikar'
     | '/api/openapi.yaml'
     | '/api/v1'
     | '/api/versioning'
@@ -532,6 +552,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
+    | '/oluart'
     | '/openapi.json'
     | '/pricing'
     | '/products'
@@ -542,6 +563,7 @@ export interface FileRouteTypes {
     | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
+    | '/unifikar'
     | '/api/openapi.yaml'
     | '/api/v1'
     | '/api/versioning'
@@ -583,6 +605,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
+    | '/oluart'
     | '/openapi.json'
     | '/pricing'
     | '/products'
@@ -593,6 +616,7 @@ export interface FileRouteTypes {
     | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
+    | '/unifikar'
     | '/api/openapi.yaml'
     | '/api/v1'
     | '/api/versioning'
@@ -635,6 +659,7 @@ export interface RootRouteChildren {
   HowWeWorkRoute: typeof HowWeWorkRoute
   InfrastructureRoute: typeof InfrastructureRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  OluartRoute: typeof OluartRoute
   OpenapiDotjsonRoute: typeof OpenapiDotjsonRoute
   PricingRoute: typeof PricingRoute
   ProductsRoute: typeof ProductsRoute
@@ -645,6 +670,7 @@ export interface RootRouteChildren {
   SitecreatorRoute: typeof SitecreatorRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StatusRoute: typeof StatusRoute
+  UnifikarRoute: typeof UnifikarRoute
   CareersOpenRolesRoute: typeof CareersOpenRolesRoute
   LegalAcceptableUsePolicyRoute: typeof LegalAcceptableUsePolicyRoute
   LegalBrandGuidelinesRoute: typeof LegalBrandGuidelinesRoute
@@ -797,6 +823,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oluart': {
+      id: '/oluart'
+      path: '/oluart'
+      fullPath: '/oluart'
+      preLoaderRoute: typeof OluartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/openapi.json': {
       id: '/openapi.json'
       path: '/openapi.json'
@@ -865,6 +898,13 @@ declare module '@tanstack/react-router' {
       path: '/status'
       fullPath: '/status'
       preLoaderRoute: typeof StatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/unifikar': {
+      id: '/unifikar'
+      path: '/unifikar'
+      fullPath: '/unifikar'
+      preLoaderRoute: typeof UnifikarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/': {
@@ -1056,6 +1096,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowWeWorkRoute: HowWeWorkRoute,
   InfrastructureRoute: InfrastructureRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  OluartRoute: OluartRoute,
   OpenapiDotjsonRoute: OpenapiDotjsonRoute,
   PricingRoute: PricingRoute,
   ProductsRoute: ProductsRoute,
@@ -1066,6 +1107,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitecreatorRoute: SitecreatorRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StatusRoute: StatusRoute,
+  UnifikarRoute: UnifikarRoute,
   CareersOpenRolesRoute: CareersOpenRolesRoute,
   LegalAcceptableUsePolicyRoute: LegalAcceptableUsePolicyRoute,
   LegalBrandGuidelinesRoute: LegalBrandGuidelinesRoute,

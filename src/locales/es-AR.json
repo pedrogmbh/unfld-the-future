@@ -3,6 +3,7 @@
     "language": "Idioma",
     "switchTo": "Cambiar el idioma a {{name}}",
     "talkToUnfld": "Hablar con UNFLD",
+    "systemsStatus": "Todos los sistemas operativos.",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
     "homeAria": "Inicio de UNFLD",
@@ -547,7 +548,7 @@
       "title": "No se publicó ningún",
       "titleSecond": "incidente activo.",
       "lede": "No se publicó ningún incidente activo a agosto de 2026. Esta página se mantiene de forma manual y no es un monitor de disponibilidad en tiempo real.",
-      "monitored": "Endpoints monitoreados",
+      "monitored": "Productos",
       "editorial": "Estado editorial manual",
       "operational": "Operativo",
       "corporate": "Sitio corporativo",
@@ -1537,7 +1538,7 @@
         },
         {
           "heading": "Inventario de cookies",
-          "body": "El inventario actual de cookies se genera a partir del sitio de producción y se muestra en Opciones de privacidad, e incluye propósito, proveedor, categoría y período de retención."
+          "body": "El inventario actual de cookies se genera a partir del sitio de producción y se enumera en esta página, e incluye propósito, proveedor, categoría y período de retención."
         },
         {
           "heading": "Contacto",
@@ -1566,7 +1567,7 @@
         },
         {
           "heading": "Sistema de color",
-          "body": "Campo primario: negro puro (#000000). Tipografía primaria: off-white (#F5F5F5). Tipografía atenuada: gris neutro (#8A8A8A). Sin colores de marca extra, púrpura, oro ni manchas de degradé en el chrome. El único acento es blanco nítido sobre negro, o negro sobre blanco."
+          "body": "Campo primario: negro puro (#000000). Tipografía primaria: off-white (#F5F5F5). Tipografía atenuada: gris neutro (#8A8A8A). El acento de acción sigue siendo blanco nítido sobre negro, o negro sobre blanco: botones, la marca fold y los rellenos se quedan ahí. Los kickers de sección usan un latón discreto (#E3B26A), el mismo tono que las strings en el código. Úsenlo solo en esas etiquetas — kickers de sección en mayúsculas, kickers de título de página y la línea en sentence case “Para desarrolladores”. No lo pongan en botones, en la marca, en pastillas de estado, reglas o rellenos. No lo sustituyan por un oro más vivo. El estado operativo usa un punto verde oscuro pequeño (#187533) junto a “Todos los sistemas operativos.” en la barra jurídica del pie y en la página de estado del servicio. No lo hagan pulsar, y no usen ese verde en otro lugar del chrome. El verde más claro de las ventanas de código se queda solo en las ventanas de código. Sin púrpura, azul ni manchas de degradé en el chrome."
         },
         {
           "heading": "Tipografía",

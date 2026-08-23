@@ -352,7 +352,7 @@ function Home() {
       <Section className="py-16 sm:py-24">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <Reveal>
-            <p className="mb-4 text-[13px] font-medium text-muted">
+            <p className="mb-4 text-[13px] font-medium text-gold">
               {chrome.common.forDevelopers}
             </p>
             <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">

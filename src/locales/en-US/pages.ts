@@ -472,7 +472,7 @@ export const pages = {
     title: "No active incident",
     titleSecond: "has been posted.",
     lede: "No active incident has been posted as of August 2026. This page is maintained manually and is not a real-time availability monitor.",
-    monitored: "Monitored endpoints",
+    monitored: "Products",
     editorial: "Manual editorial status",
     operational: "Operational",
     corporate: "Corporate website",

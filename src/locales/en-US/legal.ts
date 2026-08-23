@@ -189,7 +189,7 @@ export const legal = {
       },
       {
         heading: "Cookie inventory",
-        body: "The current cookie inventory is generated from the production site and shown in Privacy choices, including purpose, provider, category, and retention period.",
+        body: "The current cookie inventory is generated from the production site and listed on this page, including purpose, provider, category, and retention period.",
       },
       {
         heading: "Contact",
@@ -219,7 +219,7 @@ export const legal = {
       },
       {
         heading: "Color system",
-        body: "Primary field: pure black (#000000). Primary type: off-white (#F5F5F5). Muted type: neutral gray (#8A8A8A). No extra brand colors, purple, gold, or gradient blobs in chrome. The only accent is crisp white on black, or black on white.",
+        body: "Primary field: pure black (#000000). Primary type: off-white (#F5F5F5). Muted type: neutral gray (#8A8A8A). The action accent remains crisp white on black, or black on white: buttons, the fold mark, and fills stay there. Section kickers use a quiet brass (#E3B26A), the same hue as strings in code. Use it only on those labels — uppercase section kickers, page titles’ kickers, and the sentence-case “For developers” line. Do not put it on buttons, the mark, status pills, rules, or fills. Do not substitute a brighter gold. Operational status uses a small dark green dot (#187533) beside “All systems operational.” in the footer legal bar and on the service status page. Do not pulse it, and do not use that green elsewhere in chrome. The brighter window-chrome green stays on code windows only. No purple, blue, or gradient blobs in chrome.",
       },
       {
         heading: "Typography",

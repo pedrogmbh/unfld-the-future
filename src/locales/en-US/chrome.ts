@@ -11,6 +11,7 @@ export const chrome = {
   step: "Step {{n}}",
   new: "New",
   legalKicker: "Legal",
+  systemsStatus: "All systems operational.",
   privacyChoices: "Privacy choices",
   privacyChoicesBilingual: "Privacy choices",
   closePrivacyChoices: "Close privacy choices",

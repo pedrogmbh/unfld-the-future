@@ -86,7 +86,7 @@ export function ApiDocs({
       />
 
       <Section className="pb-8">
-        <p className="mb-4 text-[13px] font-medium text-muted">
+        <p className="mb-4 text-[13px] font-medium text-gold">
           {chrome.common.forDevelopers}
         </p>
         <h2 className="max-w-2xl font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
@@ -101,7 +101,7 @@ export function ApiDocs({
       </Section>
 
       <Section className="py-16">
-        <p className="mb-4 text-[13px] font-medium tracking-[0.18em] text-muted uppercase">
+        <p className="mb-4 text-[13px] font-medium tracking-[0.18em] text-gold uppercase">
           {chrome.common.endpoints}
         </p>
         <Stagger className="mt-2 divide-y divide-border border-y border-border">

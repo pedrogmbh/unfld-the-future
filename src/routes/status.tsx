@@ -4,7 +4,8 @@ import { Section } from "@/components/site/section";
 import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
 import { getMessages } from "@/lib/i18n/messages";
-import { useMessages } from "@/lib/i18n";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeOwnedProducts } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/status")({
   head: ({ match }) => {
@@ -20,15 +21,15 @@ export const Route = createFileRoute("/status")({
 });
 
 function Status() {
+  const locale = useLocale();
   const { pages } = useMessages();
   const p = pages.status;
   const services = [
-    { domain: "unfld.com.br", role: p.corporate, status: p.operational },
-    { domain: "sitecreator.com.br", role: "SiteCreator", status: p.operational },
-    { domain: "doutorfiscal.com", role: "Doutor Fiscal", status: p.operational },
-    { domain: "dialoguspsicossocial.com.br", role: "Dialogus", status: p.operational },
-    { domain: "queravaga.com", role: "Queravaga", status: p.operational },
-    { domain: "App Store (FCR)", role: p.fcrRole, status: p.operational },
+    { name: SITE.name, role: p.corporate },
+    ...localizeOwnedProducts(locale).map((product) => ({
+      name: product.shortName,
+      role: product.kicker,
+    })),
   ];
   const [contactBefore, contactAfter] = p.contact.split("{{email}}");
   return (
@@ -48,16 +49,19 @@ function Status() {
           <ul>
             {services.map((s) => (
               <li
-                key={s.domain}
+                key={s.name}
                 className="flex items-center justify-between gap-4 border-b border-border px-5 py-4 last:border-0"
               >
                 <div>
-                  <p className="font-mono text-[13px]">{s.domain}</p>
+                  <p className="text-sm text-fg">{s.name}</p>
                   <p className="text-[12px] text-subtle">{s.role}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                  <p className="text-sm text-fg">{s.status}</p>
+                  <span
+                    aria-hidden
+                    className="size-2 rounded-full bg-status"
+                  />
+                  <p className="text-sm text-fg">{p.operational}</p>
                 </div>
               </li>
             ))}

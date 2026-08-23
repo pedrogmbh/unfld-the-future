@@ -3,6 +3,7 @@
     "language": "Idioma",
     "switchTo": "Mudar idioma para {{name}}",
     "talkToUnfld": "Fale com a UNFLD",
+    "systemsStatus": "Todos os sistemas em operação.",
     "openMenu": "Abrir menu",
     "closeMenu": "Fechar menu",
     "homeAria": "Início UNFLD",
@@ -547,7 +548,7 @@
       "title": "Nenhum incidente ativo",
       "titleSecond": "foi publicado.",
       "lede": "Nenhum incidente ativo foi publicado até agosto de 2026. Esta página é mantida manualmente e não é um monitor de disponibilidade em tempo real.",
-      "monitored": "Endpoints monitorados",
+      "monitored": "Produtos",
       "editorial": "Status editorial manual",
       "operational": "Operacional",
       "corporate": "Site corporativo",
@@ -1537,7 +1538,7 @@
         },
         {
           "heading": "Inventário de cookies",
-          "body": "O inventário atual de cookies é gerado a partir do site em produção e exibido em Escolhas de privacidade, inclusive finalidade, provedor, categoria e período de retenção."
+          "body": "O inventário atual de cookies é gerado a partir do site em produção e listado nesta página, inclusive finalidade, provedor, categoria e período de retenção."
         },
         {
           "heading": "Contato",
@@ -1566,7 +1567,7 @@
         },
         {
           "heading": "Sistema de cor",
-          "body": "Campo primário: preto puro (#000000). Tipo primário: off-white (#F5F5F5). Tipo atenuado: cinza neutro (#8A8A8A). Sem cores extras de marca, roxo, dourado ou manchas em degradê no cromo. O único acento é branco nítido sobre preto, ou preto sobre branco."
+          "body": "Campo primário: preto puro (#000000). Tipo primário: off-white (#F5F5F5). Tipo atenuado: cinza neutro (#8A8A8A). O acento de ação permanece branco nítido sobre preto, ou preto sobre branco: botões, a marca fold e os preenchimentos ficam aí. Os kickers de seção usam um latão discreto (#E3B26A), o mesmo tom das strings no código. Use-o só nesses rótulos — kickers de seção em caixa-alta, kickers de título de página e a linha em sentence case “Para desenvolvedores”. Não o coloque em botões, na marca, em pílulas de status, regras ou preenchimentos. Não substitua por um dourado mais vivo. O status operacional usa um ponto verde-escuro pequeno (#187533) ao lado de “Todos os sistemas em operação.” na barra jurídica do rodapé e na página de status do serviço. Não o faça pulsar, e não use esse verde em outro lugar do cromo. O verde mais claro das janelas de código permanece só nas janelas de código. Sem roxo, azul ou manchas em degradê no cromo."
         },
         {
           "heading": "Tipografia",

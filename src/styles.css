@@ -11,6 +11,7 @@
   --color-border-strong: #2a2a2a;
   --color-accent: #ffffff;
   --color-accent-fg: #000000;
+  --color-gold: #e3b26a;
   --font-sans: "Inter Tight", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -27,6 +28,7 @@
   --color-traffic-red: #ff5f57;
   --color-traffic-amber: #febc2e;
   --color-traffic-green: #28c840;
+  --color-status: #187533;
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;

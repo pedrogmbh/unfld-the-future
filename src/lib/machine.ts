@@ -321,6 +321,7 @@ export function machinePages(): MachinePage[] {
     "/download",
     "/solutions/support",
     "/solutions/business",
+    "/solutions/security",
   ]);
 
   const seen = new Set<string>();

@@ -284,6 +284,7 @@ export function localizeFooter(locale: Locale) {
       { label: "Doutor Fiscal", to: "/doutor-fiscal" },
       { label: "Queravaga", to: "/queravaga" },
       { label: "Dialogus", to: "/dialogus" },
+      { label: labels.access, to: "/access" },
     ],
     access: [
       { label: "FCR", to: "/fcr" },

@@ -3,6 +3,7 @@
     "language": "Langue",
     "switchTo": "Passer la langue en {{name}}",
     "talkToUnfld": "Parler à UNFLD",
+    "systemsStatus": "Tous les systèmes sont opérationnels.",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "homeAria": "Accueil UNFLD",
@@ -547,7 +548,7 @@
       "title": "Aucun incident actif",
       "titleSecond": "n’a été publié.",
       "lede": "Aucun incident actif n’a été publié au mois d’août 2026. Cette page est tenue manuellement et n’est pas un moniteur de disponibilité en temps réel.",
-      "monitored": "Points de terminaison supervisés",
+      "monitored": "Produits",
       "editorial": "Statut éditorial manuel",
       "operational": "Opérationnel",
       "corporate": "Site institutionnel",
@@ -1537,7 +1538,7 @@
         },
         {
           "heading": "Inventaire des cookies",
-          "body": "L’inventaire actuel des cookies est généré à partir du site de production et présenté dans les choix de confidentialité, avec finalité, prestataire, catégorie et durée de conservation."
+          "body": "L’inventaire actuel des cookies est généré à partir du site de production et listé sur cette page, avec finalité, prestataire, catégorie et durée de conservation."
         },
         {
           "heading": "Contact",
@@ -1566,7 +1567,7 @@
         },
         {
           "heading": "Système de couleurs",
-          "body": "Champ principal : noir pur (#000000). Typographie principale : blanc cassé (#F5F5F5). Typographie atténuée : gris neutre (#8A8A8A). Pas de couleurs de marque supplémentaires, de violet, d’or ni de taches en dégradé dans le chrome. Le seul accent est un blanc net sur noir, ou un noir sur blanc."
+          "body": "Champ principal : noir pur (#000000). Typographie principale : blanc cassé (#F5F5F5). Typographie atténuée : gris neutre (#8A8A8A). L’accent d’action reste un blanc net sur noir, ou un noir sur blanc : boutons, la marque fold et les aplats restent là. Les kickers de section utilisent un laiton discret (#E3B26A), la même teinte que les chaînes dans le code. Utilisez-le seulement sur ces libellés — kickers de section en capitales, kickers de titre de page et la ligne en sentence case « Pour les développeurs ». Ne le mettez pas sur les boutons, la marque, les pastilles de statut, les règles ou les aplats. Ne le remplacez pas par un or plus vif. Le statut opérationnel utilise un petit point vert foncé (#187533) à côté de « Tous les systèmes sont opérationnels. » dans la barre juridique du pied de page et sur la page de statut du service. Ne le faites pas pulser, et n’utilisez pas ce vert ailleurs dans le chrome. Le vert plus clair des fenêtres de code reste uniquement sur les fenêtres de code. Pas de violet, de bleu ni de taches en dégradé dans le chrome."
         },
         {
           "heading": "Typographie",

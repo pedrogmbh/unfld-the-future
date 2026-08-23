@@ -47,6 +47,8 @@ import { Route as NewsIndexRouteImport } from './routes/news/index'
 import { Route as NewsSlugRouteImport } from './routes/news/$slug'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions/index'
 import { Route as SolutionsSlugRouteImport } from './routes/solutions/$slug'
+import { Route as WorkIndexRouteImport } from './routes/work/index'
+import { Route as WorkSlugRouteImport } from './routes/work/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -240,6 +242,16 @@ const SolutionsSlugRoute = SolutionsSlugRouteImport.update({
   path: '/solutions/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkIndexRoute = WorkIndexRouteImport.update({
+  id: '/work/',
+  path: '/work/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkSlugRoute = WorkSlugRouteImport.update({
+  id: '/work/$slug',
+  path: '/work/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -276,10 +288,12 @@ export interface FileRoutesByFullPath {
   '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
   '/news/': typeof NewsIndexRoute
   '/solutions/': typeof SolutionsIndexRoute
+  '/work/': typeof WorkIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -316,10 +330,12 @@ export interface FileRoutesByTo {
   '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/careers': typeof CareersIndexRoute
   '/legal': typeof LegalIndexRoute
   '/news': typeof NewsIndexRoute
   '/solutions': typeof SolutionsIndexRoute
+  '/work': typeof WorkIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -357,10 +373,12 @@ export interface FileRoutesById {
   '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
   '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
+  '/work/$slug': typeof WorkSlugRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
   '/news/': typeof NewsIndexRoute
   '/solutions/': typeof SolutionsIndexRoute
+  '/work/': typeof WorkIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -399,10 +417,12 @@ export interface FileRouteTypes {
     | '/legal/terms-of-service-enterprise'
     | '/news/$slug'
     | '/solutions/$slug'
+    | '/work/$slug'
     | '/careers/'
     | '/legal/'
     | '/news/'
     | '/solutions/'
+    | '/work/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -439,10 +459,12 @@ export interface FileRouteTypes {
     | '/legal/terms-of-service-enterprise'
     | '/news/$slug'
     | '/solutions/$slug'
+    | '/work/$slug'
     | '/careers'
     | '/legal'
     | '/news'
     | '/solutions'
+    | '/work'
   id:
     | '__root__'
     | '/'
@@ -479,10 +501,12 @@ export interface FileRouteTypes {
     | '/legal/terms-of-service-enterprise'
     | '/news/$slug'
     | '/solutions/$slug'
+    | '/work/$slug'
     | '/careers/'
     | '/legal/'
     | '/news/'
     | '/solutions/'
+    | '/work/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -520,10 +544,12 @@ export interface RootRouteChildren {
   LegalTermsOfServiceEnterpriseRoute: typeof LegalTermsOfServiceEnterpriseRoute
   NewsSlugRoute: typeof NewsSlugRoute
   SolutionsSlugRoute: typeof SolutionsSlugRoute
+  WorkSlugRoute: typeof WorkSlugRoute
   CareersIndexRoute: typeof CareersIndexRoute
   LegalIndexRoute: typeof LegalIndexRoute
   NewsIndexRoute: typeof NewsIndexRoute
   SolutionsIndexRoute: typeof SolutionsIndexRoute
+  WorkIndexRoute: typeof WorkIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -794,6 +820,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SolutionsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/': {
+      id: '/work/'
+      path: '/work'
+      fullPath: '/work/'
+      preLoaderRoute: typeof WorkIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work/$slug': {
+      id: '/work/$slug'
+      path: '/work/$slug'
+      fullPath: '/work/$slug'
+      preLoaderRoute: typeof WorkSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -832,10 +872,12 @@ const rootRouteChildren: RootRouteChildren = {
   LegalTermsOfServiceEnterpriseRoute: LegalTermsOfServiceEnterpriseRoute,
   NewsSlugRoute: NewsSlugRoute,
   SolutionsSlugRoute: SolutionsSlugRoute,
+  WorkSlugRoute: WorkSlugRoute,
   CareersIndexRoute: CareersIndexRoute,
   LegalIndexRoute: LegalIndexRoute,
   NewsIndexRoute: NewsIndexRoute,
   SolutionsIndexRoute: SolutionsIndexRoute,
+  WorkIndexRoute: WorkIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

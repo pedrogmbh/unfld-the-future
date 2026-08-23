@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BtnLink, TextArrow } from "@/components/site/buttons";
+import { WorkTile } from "@/components/site/work-page";
 import {
   ParallaxImage,
   Reveal,
@@ -10,6 +11,7 @@ import {
 import { Kicker, Section } from "@/components/site/section";
 import {
   customers,
+  featuredWork,
   homePrompts,
   news,
   ownedProducts,
@@ -204,39 +206,63 @@ function Home() {
 
       <Section id="clients" className="py-16 sm:py-24">
         <Reveal>
-          <Kicker>Experience</Kicker>
-          <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-            Experience behind the work.
-          </h2>
-          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
-            Our team’s experience spans products and projects delivered
-            directly, through prior companies, and alongside partners. We name
-            organizations only where the relationship and permission are clear.
-          </p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <Kicker>Selected work</Kicker>
+              <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
+                Work people actually used.
+              </h2>
+              <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
+                Media, aviation, energy, education, sport, and the systems
+                behind them. From the history we carry — named where the
+                relationship and permission are clear.
+              </p>
+            </div>
+            <Link
+              to="/work"
+              className="text-[13px] font-medium text-muted transition-colors hover:text-fg"
+            >
+              All work →
+            </Link>
+          </div>
         </Reveal>
         <Stagger
-          className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
-          delay={0.04}
+          className="mt-12 grid gap-8 sm:grid-cols-2"
+          delay={0.08}
+        >
+          {featuredWork().map((w) => (
+            <StaggerItem key={w.slug}>
+              <WorkTile work={w} variant="half" />
+            </StaggerItem>
+          ))}
+        </Stagger>
+        <Stagger
+          className="mt-16 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
+          delay={0.03}
         >
           {customers.map((c) => (
             <StaggerItem key={c.name}>
-              <div className="bg-bg px-6 py-5 sm:px-8 sm:py-6">
-                <p className="font-display text-lg font-medium tracking-tight">
-                  {c.name}
-                </p>
-                {"note" in c && c.note ? (
+              {c.workSlug ? (
+                <Link
+                  to="/work/$slug"
+                  params={{ slug: c.workSlug }}
+                  className="block bg-bg px-6 py-5 transition-colors hover:bg-bg-elevated sm:px-8 sm:py-6"
+                >
+                  <p className="font-display text-lg font-medium tracking-tight">
+                    {c.name}
+                  </p>
                   <p className="mt-1 text-[13px] text-muted">{c.note}</p>
-                ) : null}
-              </div>
+                </Link>
+              ) : (
+                <div className="bg-bg px-6 py-5 sm:px-8 sm:py-6">
+                  <p className="font-display text-lg font-medium tracking-tight">
+                    {c.name}
+                  </p>
+                  <p className="mt-1 text-[13px] text-muted">{c.note}</p>
+                </div>
+              )}
             </StaggerItem>
           ))}
-          <StaggerItem>
-            <div className="flex h-full items-center bg-bg px-6 py-5 sm:px-8 sm:py-6">
-              <p className="font-display text-lg font-medium tracking-tight text-muted">
-                And partner-led projects.
-              </p>
-            </div>
-          </StaggerItem>
         </Stagger>
       </Section>
 

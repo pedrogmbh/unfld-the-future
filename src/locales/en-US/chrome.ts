@@ -4,6 +4,7 @@ export const chrome = {
   talkToUnfld: "Talk to UNFLD",
   openMenu: "Open menu",
   closeMenu: "Close menu",
+  homeAria: "UNFLD home",
   copyCode: "Copy code",
   copied: "Copied",
   lastUpdated: "Last updated {{date}}.",

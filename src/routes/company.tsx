@@ -4,7 +4,7 @@ import { WorkTile } from "@/components/site/work-page";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import { featuredWork, SITE } from "@/lib/site";
+import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
 import { interpolate } from "@/lib/i18n/interpolate";
 import { getMessages } from "@/lib/i18n/messages";
@@ -41,7 +41,7 @@ function Company() {
   const facts = localizeFacts(locale);
   const owned = localizeOwnedProducts(locale);
   const work = localizeWork(locale).filter((item) => item.featured);
-  const featured = work.length ? work : featuredWork();
+  const featured = work;
   const customerList = localizeCustomers(locale);
   const valueList = localizeValues(locale);
   const officeList = localizeOffices(locale);

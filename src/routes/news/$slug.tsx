@@ -5,6 +5,7 @@ import { Section } from "@/components/site/section";
 import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
 import { useMessages } from "@/lib/i18n";
+import { getMessages } from "@/lib/i18n/messages";
 import { localizeNewsPost } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/news/$slug")({
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/news/$slug")({
   head: ({ loaderData, match }) => {
     if (!loaderData) {
       return buildPageHead({
-        title: "News",
+        title: getMessages(match.context.locale).pages.news.metaTitle,
         path: "/news",
         locale: match.context.locale,
       });

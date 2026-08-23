@@ -1,9 +1,13 @@
-import { SITE, ownedProducts } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/lib/i18n/locales";
+import { getMessages } from "@/lib/i18n/messages";
+import { localizeOwnedProducts } from "@/lib/i18n/localize";
 
 const ORG_ID = `${SITE.url}/#organization`;
 const WEBSITE_ID = `${SITE.url}/#website`;
 
-export function organizationJsonLd() {
+export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
+  const messages = getMessages(locale);
   return {
     "@type": "Organization",
     "@id": ORG_ID,
@@ -13,8 +17,7 @@ export function organizationJsonLd() {
     url: SITE.url,
     logo: `${SITE.url}/favicon.svg`,
     image: `${SITE.url}/og.jpg`,
-    description:
-      "UNFLD builds and operates technology for essential work and builds custom systems beside organizations with consequential operations.",
+    description: messages.pages.root.description,
     email: SITE.email,
     telephone: SITE.phoneHref,
     taxID: SITE.cnpj,
@@ -33,52 +36,53 @@ export function organizationJsonLd() {
         contactType: "sales",
         email: SITE.sales,
         telephone: SITE.phoneHref,
-        availableLanguage: ["en", "pt-BR"],
+        availableLanguage: [...LOCALES],
       },
       {
         "@type": "ContactPoint",
         contactType: "customer support",
         email: SITE.email,
         telephone: SITE.phoneHref,
-        availableLanguage: ["en", "pt-BR"],
+        availableLanguage: [...LOCALES],
       },
       {
         "@type": "ContactPoint",
         contactType: "security",
         email: SITE.security,
         telephone: SITE.phoneHref,
-        availableLanguage: ["en", "pt-BR"],
+        availableLanguage: [...LOCALES],
       },
     ],
     sameAs: ["https://github.com/pedrogmbh/unfld-the-future"],
     knowsAbout: [
       "UNFLD",
       "UNFLD developer resources",
-      ...ownedProducts.map((product) => product.shortName),
+      ...localizeOwnedProducts(locale).map((product) => product.name),
     ],
     identifier: [
       { "@type": "PropertyValue", name: "CNPJ", value: SITE.cnpj },
       { "@type": "PropertyValue", name: "domain", value: "unfld.com.br" },
     ],
-    slogan: SITE.tagline,
+    slogan: messages.catalog.tagline,
   };
 }
 
-export function homeJsonLd() {
+export function homeJsonLd(locale: Locale = DEFAULT_LOCALE) {
+  const messages = getMessages(locale);
   return {
     "@context": "https://schema.org",
-    ...organizationJsonLd(),
+    ...organizationJsonLd(locale),
     mainEntityOfPage: {
       "@type": "WebSite",
       "@id": WEBSITE_ID,
       name: SITE.name,
       alternateName: ["UNFLD", "unfld.com.br", "UNFOLDING THE FUTURE"],
       url: SITE.url,
-      description: SITE.tagline,
-      inLanguage: ["en", "pt-BR"],
+      description: messages.catalog.tagline,
+      inLanguage: [...LOCALES],
       publisher: { "@id": ORG_ID },
     },
-    makesOffer: ownedProducts.map((product) => ({
+    makesOffer: localizeOwnedProducts(locale).map((product) => ({
       "@type": "Offer",
       itemOffered: {
         "@type": "SoftwareApplication",
@@ -91,22 +95,28 @@ export function homeJsonLd() {
   };
 }
 
-export function developerResourcesJsonLd(path: "/developers" | "/api") {
+export function developerResourcesJsonLd(
+  path: "/developers" | "/api",
+  locale: Locale = DEFAULT_LOCALE,
+) {
+  const copy = getMessages(locale).catalog.developer;
+  const title = path === "/api" ? copy.apiTitle : copy.developersTitle;
+  const description =
+    path === "/api" ? copy.apiDescription : copy.developersDescription;
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "UNFLD developer resources",
-    headline: "UNFLD developer resources",
+    name: title,
+    headline: title,
     url: `${SITE.url}${path}`,
-    description:
-      "UNFLD developer resources: public catalog API, OpenAPI 3.1, versioning policy, and agent files.",
+    description,
     isPartOf: { "@id": WEBSITE_ID },
     about: { "@id": ORG_ID },
+    inLanguage: locale,
     mainEntity: {
       "@type": "WebAPI",
-      name: "UNFLD Catalog API",
-      description:
-        "Public read-only catalog of UNFLD products, news, selected work, and company facts.",
+      name: copy.apiTitle,
+      description: copy.apiDescription,
       url: `${SITE.url}/api/v1`,
       documentation: `${SITE.url}/openapi.json`,
       provider: { "@id": ORG_ID },

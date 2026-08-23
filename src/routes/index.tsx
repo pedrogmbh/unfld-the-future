@@ -10,7 +10,6 @@ import {
   WordStagger,
 } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
-import { featuredWork } from "@/lib/site";
 import { homeJsonLd } from "@/lib/jsonld";
 import { buildPageHead } from "@/lib/meta";
 import { useLocale, useMessages } from "@/lib/i18n";
@@ -27,7 +26,7 @@ export const Route = createFileRoute("/")({
     buildPageHead({
       path: "/",
       description: undefined,
-      jsonLd: homeJsonLd(),
+      jsonLd: homeJsonLd(match.context.locale),
       locale: match.context.locale,
     }),
   component: Home,
@@ -77,7 +76,7 @@ function Home() {
   const work = localizeWork(locale).filter((item) => item.featured);
   const customerList = localizeCustomers(locale);
   const posts = localizeNews(locale);
-  const featured = work.length ? work : featuredWork();
+  const featured = work;
   return (
     <main>
       <section className="relative w-full px-5 pt-28 pb-8 sm:px-8 sm:pt-32 lg:px-12">

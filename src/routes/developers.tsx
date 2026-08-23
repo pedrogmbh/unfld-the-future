@@ -12,7 +12,7 @@ export const Route = createFileRoute("/developers")({
       title: surface.developersTitle,
       description: surface.developersDescription,
       path: "/developers",
-      jsonLd: developerResourcesJsonLd("/developers"),
+      jsonLd: developerResourcesJsonLd("/developers", match.context.locale),
       locale: match.context.locale,
     });
   },

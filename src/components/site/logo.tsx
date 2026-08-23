@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { useMessages } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export function Mark({ className }: { className?: string }) {
@@ -16,6 +17,7 @@ export function Mark({ className }: { className?: string }) {
 }
 
 export function Logo({ className }: { className?: string }) {
+  const { chrome } = useMessages();
   return (
     <Link
       to="/"
@@ -23,7 +25,7 @@ export function Logo({ className }: { className?: string }) {
         "inline-flex items-center gap-2.5 text-fg transition-opacity duration-150 hover:opacity-70",
         className,
       )}
-      aria-label="UNFLD home"
+      aria-label={chrome.homeAria}
     >
       <Mark />
       <span className="font-display text-[13px] font-semibold tracking-[0.28em]">

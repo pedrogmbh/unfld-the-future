@@ -11,7 +11,7 @@ export const Route = createFileRoute("/api/")({
       title: surface.apiTitle,
       description: surface.apiDescription,
       path: "/api",
-      jsonLd: developerResourcesJsonLd("/api"),
+      jsonLd: developerResourcesJsonLd("/api", match.context.locale),
       locale: match.context.locale,
     });
   },

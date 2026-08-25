@@ -73,7 +73,9 @@
       "privacy": "Privacidad",
       "cookies": "Cookies",
       "aup": "AUP",
-      "brand": "Marca"
+      "brand": "Marca",
+      "drawing": "Dibujo",
+      "vehicleRetail": "Retail automotor"
     },
     "notFound": {
       "title": "Esta página se plegó.",
@@ -168,11 +170,11 @@
   },
   "pages": {
     "home": {
-      "metaDescription": "En agronomía, contratación, pequeños negocios y salud laboral, UNFLD convierte el trabajo complejo en tecnología que las personas pueden usar de verdad. También construimos junto a organizaciones cuyos problemas más importantes no entran en un producto genérico.",
-      "newsBanner": "Queravaga · Un camino más corto del perfil a la entrevista",
+      "metaDescription": "En agronomía, contratación, pequeños negocios, salud laboral, dibujo y retail automotor, UNFLD convierte el trabajo complejo en tecnología que las personas pueden usar de verdad. También construimos junto a organizaciones cuyos problemas más importantes no entran en un producto genérico.",
+      "newsBanner": "Unifikar · Un marketplace y una red de seminuevos",
       "heroTitle": "Desplegando el futuro.",
       "heroTitleSecond": "Un sistema real por vez.",
-      "lede": "En agronomía, contratación, pequeños negocios y salud laboral, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad. Cuando el producto adecuado no existe, lo construimos junto a la organización que lo necesita.",
+      "lede": "En agronomía, contratación, pequeños negocios, salud laboral, dibujo y retail automotor, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad. Cuando el producto adecuado no existe, lo construimos junto a la organización que lo necesita.",
       "ourProducts": "Nuestros productos",
       "heroImageAlt": "Un plano geométrico desplegándose en un vacío negro",
       "productsKicker": "Productos de UNFLD",
@@ -207,16 +209,16 @@
     },
     "products": {
       "metaTitle": "Productos de UNFLD",
-      "metaDescription": "Conozcan FCR, SiteCreator, Doutor Fiscal, Queravaga y Dialogus — cinco productos de UNFLD en agronomía, pequeños negocios, contratación y salud laboral.",
+      "metaDescription": "Conozcan FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar — siete productos de UNFLD en agronomía, pequeños negocios, contratación, salud laboral, dibujo y retail automotor.",
       "kicker": "Portafolio",
       "title": "Productos de",
       "titleSecond": "UNFLD.",
-      "lede": "Cinco productos, construidos alrededor de cinco tipos de trabajo que deberían ser más simples: agronomía, presencia digital, operaciones fiscales, contratación y salud laboral.",
+      "lede": "Siete productos, construidos alrededor de tipos de trabajo que deberían ser más simples: agronomía, presencia digital, operaciones fiscales, contratación, salud laboral, dibujo y retail automotor.",
       "primary": "Hablar con UNFLD",
       "secondary": "Cómo construimos",
       "imageAlt": "Productos de UNFLD en dispositivos de vidrio en un vacío oscuro",
-      "feature1Title": "Cinco productos, cada uno en una etapa distinta",
-      "feature1Body": "FCR, SiteCreator, Doutor Fiscal, Queravaga y Dialogus avanzan por etapas definidas con claridad — desde despliegues privados hasta acceso general en producción.",
+      "feature1Title": "Siete productos, cada uno en una etapa distinta",
+      "feature1Body": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar avanzan por etapas definidas con claridad — desde despliegues privados hasta acceso general en producción.",
       "feature2Title": "Operados con responsabilidad",
       "feature2Body": "Nos mantenemos cerca de los sistemas que corremos — sosteniendo trenes de release, monitoreando confiabilidad y evolucionando con la realidad del cliente.",
       "feature3Title": "Puntos de entrada distintos",
@@ -245,7 +247,7 @@
       "whoTitle": "Cinco letras. Una razón social completa. Una casa que construye.",
       "whoBody": "Operamos como UNFLD. La empresa es UNFOLDING THE FUTURE LTDA — una sociedad brasileña de responsabilidad limitada (sociedade empresária limitada) en Bela Vista, São Paulo, activa desde {{founded}}. Construimos y operamos productos con nuestro propio nombre y construimos sistemas a medida junto a organizaciones con operaciones de peso.",
       "tileProducts": "Productos de UNFLD",
-      "tileProductsBody": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus.",
+      "tileProductsBody": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
       "tileSp": "São Paulo",
       "tileSpBody": "Bela Vista. Sede registrada.",
       "tileWork": "Trabajos seleccionados",
@@ -253,7 +255,7 @@
       "tileCareers": "Carreras",
       "tileCareersBody": "Sumarse al equipo.",
       "portfolioKicker": "El portafolio",
-      "portfolioTitle": "Cinco productos formados por un mismo principio operativo.",
+      "portfolioTitle": "Siete productos formados por un mismo principio operativo.",
       "portfolioLede": "Encontrar el trabajo que debería ser más simple. Construir el sistema. Seguir mejorándolo en uso.",
       "workKicker": "Trabajos seleccionados",
       "workTitle": "Trabajo que la gente usó de verdad.",
@@ -489,11 +491,11 @@
     },
     "solutions": {
       "metaTitle": "Soluciones",
-      "metaDescription": "Empiecen por el trabajo que necesita cambiar. Agronomía, contratación, pequeños negocios, salud laboral y sistemas a medida.",
+      "metaDescription": "Empiecen por el trabajo que necesita cambiar. Agronomía, contratación, pequeños negocios, salud laboral, dibujo, retail automotor y sistemas a medida.",
       "kicker": "Soluciones",
       "title": "Empiecen por el trabajo",
       "titleSecond": "que necesita cambiar.",
-      "lede": "En agronomía, contratación, pequeños negocios, salud laboral y sistemas a medida, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad.",
+      "lede": "En agronomía, contratación, pequeños negocios, salud laboral, dibujo, retail automotor y sistemas a medida, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad.",
       "detailTitle": "Soluciones de {{name}}",
       "audience": "Audiencia y partes interesadas"
     },
@@ -677,7 +679,7 @@
       },
       {
         "title": "Productos de UNFLD",
-        "body": "FCR, SiteCreator, Doutor Fiscal, Queravaga y Dialogus avanzan en sus respectivas etapas, junto a sistemas a medida construidos al lado de nuestros socios."
+        "body": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar avanzan en sus respectivas etapas, junto a sistemas a medida construidos al lado de nuestros socios."
       }
     ],
     "interview": [
@@ -710,6 +712,14 @@
       {
         "q": "Cómo hacemos que la gestión de riesgo psicosocial sea accionable y esté en cumplimiento.",
         "a": "Dialogus by UNFLD integra escucha estructurada, evaluación validada, visibilidad del riesgo y planificación de acciones en un proceso documentado de riesgo ocupacional alineado con NR-1."
+      },
+      {
+        "q": "Quiero aprender a dibujar sin proyector y sin una suscripción sorpresa.",
+        "a": "Oluart proyecta cualquier imagen sobre el papel a través de la cámara del teléfono. Tracen, practiquen y quédense con el precio que vieron: gratis para empezar, Premium a R$29,90 al mes, o plan vitalicio a R$199."
+      },
+      {
+        "q": "Nuestro patio necesita una vitrina digital y una forma de compartir stock con tiendas socias.",
+        "a": "Unifikar es un marketplace de seminuevos y una red comercial: una vitrina con la marca de cada tienda, inventario compartido con un piso confidencial y una sola bandeja para leads del marketplace y de la vitrina."
       }
     ],
     "developer": {
@@ -731,8 +741,8 @@
       "endpoints": [
         "Índice del catálogo, enlaces de documentación, política de rate-limit y URLs de colecciones.",
         "Razón social, CNPJ, dirección en São Paulo, teléfonos y correos.",
-        "FCR, SiteCreator, Doutor Fiscal, Queravaga y Dialogus.",
-        "Un producto. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus.",
+        "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar.",
+        "Un producto. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
         "Notas de novedades públicas.",
         "Trabajos seleccionados que el equipo puede comentar en público.",
         "Páginas HTML canónicas del mapa del sitio.",
@@ -999,9 +1009,115 @@
         "title": "El cuidado se vuelve creíble cuando el riesgo se escucha, se entiende, se actúa y se vuelve a revisar.",
         "body": "Gestión de riesgo psicosocial pensada para NR-1. Software y acompañamiento especializado trabajando juntos."
       }
+    },
+    "oluart": {
+      "name": "Oluart by UNFLD",
+      "kicker": "Dibujo",
+      "status": "En operación",
+      "explore": "Explorar",
+      "line": "Dibujen en papel con realidad aumentada.",
+      "mission": "Desplegando el futuro de aprender a dibujar.",
+      "title": "Desplegando el futuro",
+      "titleSecond": "de aprender a dibujar.",
+      "primary": "Abrir Oluart",
+      "blurb": "Oluart proyecta cualquier imagen sobre el papel a través de la cámara del teléfono para trazar, practicar y aprender a dibujar. Precio transparente, un plan gratuito usable y soporte en portugués.",
+      "features": [
+        {
+          "title": "Proyección AR en el papel",
+          "body": "Apunten la cámara a la hoja. Ajusten opacidad, zoom y rotación, y tracen la imagen en el espacio real."
+        },
+        {
+          "title": "Sus fotos y una biblioteca que crece",
+          "body": "Suban una foto o elijan entre más de 800 plantillas — animales, personajes, autos, naturaleza, tatuajes — con nuevas referencias cada semana."
+        },
+        {
+          "title": "Precio honesto",
+          "body": "Gratis para empezar, con proyección AR completa y menos anuncios. Premium a R$29,90 al mes, o compra vitalicia a R$199. Tres días de reembolso si no es lo que necesitan."
+        },
+        {
+          "title": "Hecho por un artista",
+          "body": "Construido en Brasil, para artistas. El soporte responde en portugués. Sin trampas semanales ni cobros sorpresa."
+        },
+        {
+          "title": "Sin conexión cuando hace falta",
+          "body": "Los planes Premium y vitalicio descargan plantillas y tutoriales para usarlos sin señal."
+        },
+        {
+          "title": "En iOS y Android",
+          "body": "En App Store y Google Play. iPhone X o posterior con iOS 15.1+, y celulares Android recientes con Android 13+."
+        }
+      ],
+      "quote": {
+        "kicker": "Oluart",
+        "title": "El precio que ven es el precio que pagan.",
+        "body": "Proyecten una imagen sobre el papel y aprendan a dibujar. Oluart by UNFLD — transparente, brasileño y gratis para empezar."
+      }
+    },
+    "unifikar": {
+      "name": "Unifikar by UNFLD",
+      "kicker": "Retail automotor",
+      "status": "Acceso anticipado",
+      "explore": "Explorar",
+      "line": "Un marketplace y una red comercial de vehículos seminuevos.",
+      "mission": "Desplegando el futuro del retail de seminuevos.",
+      "title": "Desplegando el futuro",
+      "titleSecond": "del retail de seminuevos.",
+      "primary": "Abrir Unifikar",
+      "blurb": "Unifikar conecta compradores con seminuevos de agencias socias y de particulares, y da a las tiendas una vitrina whitelabel, una red de stock compartido y un solo lugar para gestionar leads.",
+      "features": [
+        {
+          "title": "Un marketplace central",
+          "body": "Busquen seminuevos en las tiendas socias, o publiquen un vehículo con alcance nacional y un camino claro de vuelta al vendedor."
+        },
+        {
+          "title": "Vitrinas whitelabel",
+          "body": "Cada tienda recibe una vitrina pública con su marca — identidad, dominio e inventario — sin reconstruir un sitio desde cero."
+        },
+        {
+          "title": "Una red comercial",
+          "body": "Las agencias comparten stock, fijan un piso confidencial y republican vehículos de socios bajo una política acordada."
+        },
+        {
+          "title": "Leads en un solo lugar",
+          "body": "El interés del marketplace y de cada vitrina llega a una sola bandeja, que el equipo puede asignar y seguir."
+        },
+        {
+          "title": "Planes del tamaño del patio",
+          "body": "Essencial, Profissional y Rede — de la primera vitrina de 15 vehículos a una operación multiunidad con gestión centralizada."
+        },
+        {
+          "title": "Hecho para el piso de la tienda",
+          "body": "El precio público y el mínimo confidencial quedan separados. La tienda, el socio y el comprador ven lo que cada uno debe ver."
+        }
+      ],
+      "quote": {
+        "kicker": "Unifikar",
+        "title": "El inventario debe circular en una red, no en una sola ventana.",
+        "body": "Un marketplace de seminuevos y una red comercial para las tiendas que los venden. Unifikar by UNFLD."
+      }
     }
   },
   "news": {
+    "unifikar": {
+      "date": "23 de agosto de 2026",
+      "title": "Unifikar abre una red para seminuevos",
+      "standfirst": "Un marketplace para quien compra y una red comercial para las tiendas que venden seminuevos.",
+      "body": [
+        "Unifikar es UNFLD desplegando el futuro del retail de seminuevos: un marketplace para quien compra, y una red comercial compartida para agencias que necesitan más que una sola vitrina.",
+        "Las tiendas socias publican una vitrina con su marca, comparten inventario bajo un piso confidencial y reciben leads del marketplace y de su propia vitrina en un solo lugar.",
+        "El acceso anticipado está abierto en unifikar.com para tiendas que se suman a la red y para quien busca un seminuevo."
+      ]
+    },
+    "oluart": {
+      "date": "23 de agosto de 2026",
+      "title": "Oluart pone la referencia en la hoja",
+      "standfirst": "Una app de dibujo con AR que proyecta cualquier imagen sobre el papel — con un precio que se lee antes de empezar.",
+      "body": [
+        "Oluart es UNFLD desplegando el futuro de aprender a dibujar: la cámara se vuelve proyector, la hoja sigue siendo papel, y el precio sigue a la vista.",
+        "El plan gratuito ya incluye la proyección AR completa. Premium cuesta R$29,90 al mes. El plan vitalicio cuesta R$199. El soporte responde en portugués.",
+        "En App Store y Google Play, en oluart.com."
+      ]
+    },
     "queravaga": {
       "date": "20 ago. 2026",
       "title": "Queravaga empieza a acortar el camino al trabajo",
@@ -1019,7 +1135,7 @@
       "body": [
         "UNFLD es la forma corta de UNFOLDING THE FUTURE — y eso es más que la razón social. Es el trabajo: encontrar el trabajo que importa y que debería ser más simple, construir el sistema y seguir mejorándolo en uso.",
         "La experiencia de nuestro equipo abarca productos y proyectos entregados de forma directa, a través de empresas anteriores y junto a socios en agricultura, medios, industria y operaciones empresariales.",
-        "FCR despliega el futuro de la agronomía. SiteCreator pone a los pequeños negocios en línea. Doutor Fiscal simplifica las operaciones fiscales. Queravaga acorta el camino al trabajo. Dialogus hace visible y accionable el riesgo laboral. Mercados distintos; una misma convicción operativa."
+        "FCR despliega el futuro de la agronomía. SiteCreator pone a los pequeños negocios en línea. Doutor Fiscal simplifica las operaciones fiscales. Queravaga acorta el camino al trabajo. Dialogus hace visible y accionable el riesgo laboral. Oluart pone la referencia de dibujo en la hoja. Unifikar abre una red para seminuevos. Mercados distintos; una misma convicción operativa."
       ]
     }
   },
@@ -1292,6 +1408,28 @@
         "Opciones de aislamiento de datos",
         "Límites claros de subprocesadores"
       ]
+    },
+    "drawing": {
+      "name": "Dibujo",
+      "audience": "Personas que aprenden a dibujar, docentes de arte y artistas que necesitan una referencia estable para trazar en papel.",
+      "line": "Aprendan a dibujar proyectando una referencia sobre la hoja.",
+      "body": "Oluart usa la cámara del teléfono como un proyector de AR: elijan una plantilla o una foto propia, coloquen el teléfono sobre el papel y tracen. Hecho para un precio honesto y una sesión de dibujo calmada — no para un laberinto de cobros semanales.",
+      "capabilities": [
+        "Proyección AR en tiempo real con opacidad, zoom y rotación",
+        "Carga de foto propia y una biblioteca de plantillas que crece cada semana",
+        "Plan gratuito, Premium mensual y compra vitalicia"
+      ]
+    },
+    "vehicles": {
+      "name": "Retail automotor",
+      "audience": "Agencias de seminuevos, grupos con varias sucursales y personas que buscan un vehículo usado.",
+      "line": "Un marketplace y una red de tiendas que comparten inventario, leads y vitrinas digitales.",
+      "body": "Unifikar es un marketplace de seminuevos y una red comercial whitelabel. Quien compra busca en los patios socios. Las tiendas publican su propia vitrina, comparten stock bajo un piso protegido y atienden los leads del marketplace y de la vitrina en un solo lugar.",
+      "capabilities": [
+        "Marketplace nacional de seminuevos de tiendas socias y de particulares",
+        "Vitrinas whitelabel con dominio propio e identidad de marca",
+        "Inventario compartido, piso confidencial y una bandeja unificada de leads"
+      ]
     }
   },
   "plans": {
@@ -1341,6 +1479,30 @@
         "Caminos directos de los perfiles a conversaciones de contratación",
         "Portales para candidatos y equipos de contratación",
         "Registro gratuito de acceso anticipado"
+      ]
+    },
+    "Oluart": {
+      "price": "Gratis",
+      "period": " · R$29,90 / mes",
+      "blurb": "Dibujen en papel con realidad aumentada. Gratis para empezar, Premium a R$29,90 al mes, vitalicio a R$199.",
+      "cta": "Abrir Oluart",
+      "features": [
+        "Proyección AR en el papel",
+        "Plan gratuito con las herramientas AR completas",
+        "Premium R$29,90 / mes o vitalicio R$199",
+        "App Store y Google Play"
+      ]
+    },
+    "Unifikar": {
+      "price": "Planes",
+      "period": "",
+      "blurb": "Un marketplace y una red comercial de seminuevos. Essencial, Profissional y Rede para tiendas.",
+      "cta": "Abrir Unifikar",
+      "features": [
+        "Marketplace central de seminuevos",
+        "Vitrinas whitelabel",
+        "Inventario compartido y bandeja de leads",
+        "Essencial · Profissional · Rede"
       ]
     },
     "Custom": {

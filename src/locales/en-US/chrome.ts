@@ -65,6 +65,8 @@ export const chrome = {
     whenToUse: "When to use UNFLD",
     developerResources: "UNFLD developer resources",
     smallBusiness: "Small business",
+    drawing: "Drawing",
+    vehicleRetail: "Vehicle retail",
     publicMissions: "Public missions",
     operations: "Operations",
     fiscalRisk: "Fiscal & risk",

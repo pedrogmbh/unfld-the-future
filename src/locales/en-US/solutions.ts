@@ -32,6 +32,28 @@ export const solutions = {
       "Conversational workflows eliminating complex dashboard overhead",
     ],
   },
+  drawing: {
+    name: "Drawing",
+    audience: "People learning to draw, art teachers, and artists who need a stable tracing reference on paper.",
+    line: "Learn to draw by projecting a reference onto the page.",
+    body: "Oluart uses the phone camera as an AR projector: choose a template or a personal photo, place the phone over the paper, and trace. Built for honest pricing and a calm drawing session — not a maze of weekly charges.",
+    capabilities: [
+      "Real-time AR projection with opacity, zoom, and rotation",
+      "Personal photo upload and a weekly-growing template library",
+      "Free tier, monthly Premium, and a one-time lifetime plan",
+    ],
+  },
+  vehicles: {
+    name: "Vehicle retail",
+    audience: "Used-car dealerships, multi-store groups, and people looking for a used vehicle.",
+    line: "A marketplace and a store network that share inventory, leads, and digital showrooms.",
+    body: "Unifikar is a used-vehicle marketplace and a whitelabel commercial network. Buyers search partner lots. Stores publish their own vitrine, share stock under a protected floor price, and handle leads from the marketplace and the storefront in one place.",
+    capabilities: [
+      "National marketplace for used vehicles from partner stores and private sellers",
+      "Whitelabel storefronts with custom domain and brand identity",
+      "Shared inventory, confidential floor prices, and a unified lead inbox",
+    ],
+  },
   "workplace-health": {
     name: "Workplace health",
     audience: "HR directors, SESMT leaders, occupational health coordinators, and legal compliance officers.",

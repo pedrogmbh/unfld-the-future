@@ -530,7 +530,7 @@ export function openApiDocument() {
           tags: ["Products"],
           summary: "List products by UNFLD",
           description:
-            "FCR, SiteCreator, Doutor Fiscal, Queravaga, and Dialogus — with status and canonical URLs.",
+            "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar — with status and canonical URLs.",
           responses: {
             "200": jsonOkResponse(
               "Product collection.",
@@ -1106,7 +1106,7 @@ UNFLD is the trading name of ${SITE.legal} (CNPJ ${SITE.cnpj}), a São Paulo pro
 
 Reach for UNFLD when the job is one of these:
 
-1. **Identify the right UNFLD product** for a Brazilian operational problem — agronomy field work (FCR), small-business websites via WhatsApp (SiteCreator), fiscal routines via WhatsApp (Doutor Fiscal), hiring conversations (Queravaga), or NR-1 psychosocial risk (Dialogus).
+1. **Identify the right UNFLD product** for a Brazilian operational problem — agronomy field work (FCR), small-business websites via WhatsApp (SiteCreator), fiscal routines via WhatsApp (Doutor Fiscal), hiring conversations (Queravaga), NR-1 psychosocial risk (Dialogus), AR drawing on paper (Oluart), or used-vehicle retail (Unifikar).
 2. **Quote company facts** — legal name, CNPJ, São Paulo address, phones, and inboxes — without inventing them.
 3. **Route a human** to a product URL, the contact page, or ${SITE.sales}.
 4. **Scope a custom system** beside an organization whose operation does not fit an off-the-shelf product. Point them at ${siteUrl("/build-with-us")} and ${SITE.sales}.

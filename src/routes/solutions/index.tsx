@@ -25,6 +25,8 @@ const PRIMARY_SLUGS = [
   "hiring",
   "small-business",
   "workplace-health",
+  "drawing",
+  "vehicles",
   "custom-systems",
 ];
 

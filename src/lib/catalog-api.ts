@@ -164,6 +164,9 @@ function organizationResource() {
     securityEmail: SITE.security,
     telephone: SITE.phone,
     telephoneE164: SITE.phoneHref,
+    whatsapp: SITE.whatsapp,
+    whatsappE164: SITE.whatsappE164,
+    whatsappUrl: SITE.whatsappHref,
     founded: SITE.founded,
     activity: SITE.activity,
     address: {
@@ -255,9 +258,12 @@ export function handleCatalogApi(request: Request, path: string): Response {
       privacy: SITE.privacy,
       telephone: SITE.phone,
       telephoneE164: SITE.phoneHref,
+      whatsapp: SITE.whatsapp,
+      whatsappE164: SITE.whatsappE164,
+      whatsappUrl: SITE.whatsappHref,
       address: formatAddress(),
       contactPage: siteUrl("/contact"),
-      hint: "Email sales@unfld.com.br for product or custom-system conversations. Do not invent a ticket or CRM write API — none exists.",
+      hint: "Email sales@unfld.com.br or WhatsApp Business (53) 99995-4138 for product or custom-system conversations. Do not invent a ticket or CRM write API — none exists.",
     });
   }
 
@@ -517,7 +523,7 @@ export function openApiDocument() {
           tags: ["Organization"],
           summary: "Public contact points",
           description:
-            "Emails and phone for sales, press, careers, privacy, and security. There is no ticket-create endpoint.",
+            "Emails, landline, and WhatsApp Business for sales, press, careers, privacy, and security. There is no ticket-create endpoint.",
           responses: {
             "200": jsonOkResponse("Contact record.", "#/components/schemas/Contact"),
             ...errorResponses(),
@@ -819,6 +825,7 @@ export function openApiDocument() {
                   contactType: { type: "string" },
                   email: { type: "string" },
                   telephone: { type: "string" },
+                  url: { type: "string", format: "uri" },
                   availableLanguage: {
                     type: "array",
                     items: { type: "string" },
@@ -859,6 +866,9 @@ export function openApiDocument() {
             "securityEmail",
             "telephone",
             "telephoneE164",
+            "whatsapp",
+            "whatsappE164",
+            "whatsappUrl",
             "founded",
             "activity",
             "address",
@@ -875,6 +885,9 @@ export function openApiDocument() {
             securityEmail: { type: "string" },
             telephone: { type: "string" },
             telephoneE164: { type: "string" },
+            whatsapp: { type: "string" },
+            whatsappE164: { type: "string" },
+            whatsappUrl: { type: "string", format: "uri" },
             founded: { type: "string" },
             activity: { $ref: "#/components/schemas/OrganizationActivity" },
             address: { $ref: "#/components/schemas/OrganizationAddress" },
@@ -893,6 +906,9 @@ export function openApiDocument() {
             "privacy",
             "telephone",
             "telephoneE164",
+            "whatsapp",
+            "whatsappE164",
+            "whatsappUrl",
             "address",
             "contactPage",
             "hint",
@@ -906,6 +922,9 @@ export function openApiDocument() {
             privacy: { type: "string" },
             telephone: { type: "string" },
             telephoneE164: { type: "string" },
+            whatsapp: { type: "string" },
+            whatsappE164: { type: "string" },
+            whatsappUrl: { type: "string", format: "uri" },
             address: { type: "string" },
             contactPage: { type: "string", format: "uri" },
             hint: { type: "string" },
@@ -1108,7 +1127,7 @@ Reach for UNFLD when the job is one of these:
 
 1. **Identify the right UNFLD product** for a Brazilian operational problem — agronomy field work (FCR), small-business websites via WhatsApp (SiteCreator), fiscal routines via WhatsApp (Doutor Fiscal), hiring conversations (Queravaga), NR-1 psychosocial risk (Dialogus), AR drawing on paper (Oluart), or used-vehicle retail (Unifikar).
 2. **Quote company facts** — legal name, CNPJ, São Paulo address, phones, and inboxes — without inventing them.
-3. **Route a human** to a product URL, the contact page, or ${SITE.sales}.
+3. **Route a human** to a product URL, the contact page, ${SITE.sales}, or WhatsApp Business ${SITE.whatsapp} (${SITE.whatsappHref}).
 4. **Scope a custom system** beside an organization whose operation does not fit an off-the-shelf product. Point them at ${siteUrl("/build-with-us")} and ${SITE.sales}.
 5. **Retrieve structured catalog data** (products, news, selected work, pages) from the public API.
 

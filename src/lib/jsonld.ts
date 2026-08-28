@@ -40,7 +40,16 @@ export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
         "@type": "ContactPoint",
         contactType: "sales",
         email: SITE.sales,
-        telephone: SITE.phoneHref,
+        telephone: SITE.whatsappE164,
+        url: SITE.whatsappHref,
+        availableLanguage: [...LOCALES],
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "WhatsApp Business",
+        email: SITE.sales,
+        telephone: SITE.whatsappE164,
+        url: SITE.whatsappHref,
         availableLanguage: [...LOCALES],
       },
       {
@@ -58,7 +67,10 @@ export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
         availableLanguage: [...LOCALES],
       },
     ],
-    sameAs: ["https://github.com/pedrogmbh/unfld-the-future"],
+    sameAs: [
+      "https://github.com/pedrogmbh/unfld-the-future",
+      SITE.whatsappHref,
+    ],
     knowsAbout: [
       "UNFLD",
       "UNFLD developer resources",
@@ -67,6 +79,11 @@ export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
     identifier: [
       { "@type": "PropertyValue", name: "CNPJ", value: SITE.cnpj },
       { "@type": "PropertyValue", name: "domain", value: "unfld.com.br" },
+      {
+        "@type": "PropertyValue",
+        name: "WhatsApp Business",
+        value: SITE.whatsapp,
+      },
     ],
     slogan: messages.catalog.tagline,
   };

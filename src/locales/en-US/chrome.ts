@@ -2,6 +2,8 @@ export const chrome = {
   language: "Language",
   switchTo: "Switch language to {{name}}",
   talkToUnfld: "Talk to UNFLD",
+  whatsapp: "WhatsApp",
+  whatsappAria: "WhatsApp Business {{number}}",
   openMenu: "Open menu",
   closeMenu: "Close menu",
   homeAria: "UNFLD home",

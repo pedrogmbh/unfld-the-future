@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Btn } from "@/components/site/buttons";
+import { Btn, WhatsAppBtn } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Section } from "@/components/site/section";
 import { SITE } from "@/lib/site";
 import { buildPageHead } from "@/lib/meta";
 import { getMessages } from "@/lib/i18n/messages";
-import { useLocale, useMessages } from "@/lib/i18n";
+import { interpolate, useLocale, useMessages } from "@/lib/i18n";
 import { localizeFacts } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/contact")({
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/contact")({
 function Contact() {
   const [sent, setSent] = useState(false);
   const locale = useLocale();
-  const { pages } = useMessages();
+  const { pages, chrome } = useMessages();
   const p = pages.contact;
   const facts = localizeFacts(locale);
   const [receivedBefore, receivedAfter] = p.receivedBody.split("{{email}}");
@@ -98,7 +98,16 @@ function Contact() {
                 />
               </label>
               <div className="sm:col-span-2 space-y-3">
-                <Btn type="submit">{p.send}</Btn>
+                <div className="flex flex-wrap gap-3">
+                  <Btn type="submit">{p.send}</Btn>
+                  <WhatsAppBtn
+                    aria-label={interpolate(chrome.whatsappAria, {
+                      number: SITE.whatsapp,
+                    })}
+                  >
+                    {chrome.whatsapp} {SITE.whatsapp}
+                  </WhatsAppBtn>
+                </div>
                 <p className="text-xs text-muted">
                   {p.privacyNote}{" "}
                   <Link
@@ -113,6 +122,22 @@ function Contact() {
             </form>
           )}
           <aside className="space-y-6 text-sm">
+            <div>
+              <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
+                {p.whatsapp}
+              </p>
+              <a
+                href={SITE.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 block hover:opacity-70"
+              >
+                {SITE.whatsapp}
+              </a>
+              <p className="mt-1 text-[12px] leading-relaxed text-muted">
+                {p.whatsappHint}
+              </p>
+            </div>
             <div>
               <p className="text-[12px] tracking-[0.16em] text-subtle uppercase">
                 {p.sales}

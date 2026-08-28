@@ -96,6 +96,15 @@ function SaoPaulo() {
               </a>
               <br />
               <a
+                href={SITE.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-fg"
+              >
+                {chrome.whatsapp} {SITE.whatsapp}
+              </a>
+              <br />
+              <a
                 href={`mailto:${SITE.registeredEmail}`}
                 className="hover:text-fg"
               >

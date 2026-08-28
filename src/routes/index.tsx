@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BtnLink, TextArrow } from "@/components/site/buttons";
+import { BtnLink, TextArrow, WhatsAppBtn } from "@/components/site/buttons";
 import { CodeTabs, type CodeSample } from "@/components/site/code-tabs";
 import { WorkTile } from "@/components/site/work-page";
 import {
@@ -13,6 +13,7 @@ import { Kicker, Section } from "@/components/site/section";
 import { homeJsonLd } from "@/lib/jsonld";
 import { buildPageHead } from "@/lib/meta";
 import { useLocale, useMessages } from "@/lib/i18n";
+import { SITE } from "@/lib/site";
 import {
   localizeCustomers,
   localizeHomePrompts,
@@ -115,6 +116,9 @@ function Home() {
               <BtnLink to="/contact" variant="secondary">
                 {chrome.talkToUnfld}
               </BtnLink>
+              <WhatsAppBtn>
+                {chrome.whatsapp} {SITE.whatsapp}
+              </WhatsAppBtn>
             </div>
           </Reveal>
         </div>
@@ -305,6 +309,9 @@ function Home() {
                 <BtnLink to="/contact" variant="secondary">
                   {chrome.talkToUnfld}
                 </BtnLink>
+                <WhatsAppBtn>
+                  {chrome.whatsapp} {SITE.whatsapp}
+                </WhatsAppBtn>
               </div>
             </Reveal>
             <Stagger className="mt-10 grid max-w-md grid-cols-3 gap-4" delay={0.1}>

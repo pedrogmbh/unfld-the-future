@@ -246,7 +246,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/contact",
       "Contact",
-      `Tell us what needs to work differently. Sales, partnerships, press, and security. ${SITE.sales}.`,
+      `Tell us what needs to work differently. Sales, partnerships, press, and security. ${SITE.sales}. WhatsApp Business ${SITE.whatsapp}.`,
       "Company",
       { changefreq: "yearly", priority: 0.6 },
     ),
@@ -425,7 +425,7 @@ export function renderLlmsTxt(pages = machinePages()): string {
 
 > UNFLD builds and operates technology for essential work and builds custom systems beside organizations whose most important problems do not fit an off-the-shelf product.
 
-Unfolding the future. One real system at a time. UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}, headquartered in São Paulo, Brazil (${SITE.address.line1}, ${SITE.address.district}, ${SITE.address.city}/${SITE.address.region}). Contact sales at ${SITE.sales}; security at ${SITE.security}; careers at ${SITE.careers}.
+Unfolding the future. One real system at a time. UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}, headquartered in São Paulo, Brazil (${SITE.address.line1}, ${SITE.address.district}, ${SITE.address.city}/${SITE.address.region}). Contact sales at ${SITE.sales}; WhatsApp Business ${SITE.whatsapp} (${SITE.whatsappHref}); security at ${SITE.security}; careers at ${SITE.careers}.
 
 Products by UNFLD: FCR (field intelligence for agronomy), SiteCreator (digital presence via WhatsApp), Doutor Fiscal (fiscal routines via WhatsApp), Queravaga (hiring conversations), Dialogus (workplace health for NR-1), Oluart (AR drawing on paper), and Unifikar (used-vehicle marketplace and store network). Each product is identified below with its current availability stage. We also design and ship custom software systems beside teams with consequential operations.
 

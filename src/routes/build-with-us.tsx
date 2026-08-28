@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BtnLink } from "@/components/site/buttons";
+import { BtnLink, WhatsAppBtn } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
 import { buildPageHead } from "@/lib/meta";
 import { getMessages } from "@/lib/i18n/messages";
 import { useMessages } from "@/lib/i18n";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/build-with-us")({
   head: ({ match }) => {
@@ -44,6 +45,9 @@ export function BuildWithUsPage() {
         actions={
           <>
             <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
+            <WhatsAppBtn>
+              {chrome.whatsapp} {SITE.whatsapp}
+            </WhatsAppBtn>
             <BtnLink to="/how-we-work" variant="secondary">
               {chrome.common.howWeWork}
             </BtnLink>
@@ -116,6 +120,9 @@ export function BuildWithUsPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
+              <WhatsAppBtn>
+                {chrome.whatsapp} {SITE.whatsapp}
+              </WhatsAppBtn>
               <BtnLink to="/work" variant="secondary">
                 {chrome.common.selectedWork}
               </BtnLink>

@@ -271,7 +271,7 @@ export function formatAddressLocalized(locale: Locale) {
 }
 
 export function formatLegalContactLocalized(locale: Locale) {
-  return `${SITE.legal}, ${formatAddressLocalized(locale)}. CNPJ ${SITE.cnpj}. ${SITE.phone}. ${SITE.registeredEmail}.`;
+  return `${SITE.legal}, ${formatAddressLocalized(locale)}. CNPJ ${SITE.cnpj}. ${SITE.phone}. WhatsApp Business ${SITE.whatsapp}. ${SITE.registeredEmail}.`;
 }
 
 export function localizeFooter(locale: Locale) {

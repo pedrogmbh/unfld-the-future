@@ -125,7 +125,7 @@ export const pages = {
   contact: {
     metaTitle: "Contact",
     metaDescription:
-      "Tell us what needs to work differently. Choose a product, propose a partnership, or describe the operation you need to improve.",
+      "Tell us what needs to work differently. Choose a product, propose a partnership, or describe the operation you need to improve. WhatsApp Business (53) 99995-4138.",
     kicker: "Contact",
     title: "Tell us what needs",
     titleSecond: "to work differently.",
@@ -143,6 +143,8 @@ export const pages = {
     privacyNote: "We’ll use these details only to respond to your request, as described in our",
     privacyPolicy: "Privacy Policy",
     sales: "Sales & partnerships",
+    whatsapp: "WhatsApp Business",
+    whatsappHint: "The UNFLD WhatsApp Business number for sales and operations.",
     press: "Press",
     registered: "Registered entity",
     headquarters: "Headquarters",

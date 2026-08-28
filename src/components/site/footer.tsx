@@ -73,6 +73,14 @@ export function Footer() {
               <span className="mt-1 block font-mono text-[11px]">
                 {SITE.phone} · {SITE.registeredEmail}
               </span>
+              <a
+                href={SITE.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 block font-mono text-[11px] transition-colors hover:text-fg"
+              >
+                {chrome.whatsapp} {SITE.whatsapp}
+              </a>
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">

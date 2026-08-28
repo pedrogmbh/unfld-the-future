@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BtnLink } from "@/components/site/buttons";
+import { BtnLink, WhatsAppBtn } from "@/components/site/buttons";
 import { PageHero } from "@/components/site/page-hero";
 import { Kicker, Section } from "@/components/site/section";
 import { SITE } from "@/lib/site";
@@ -84,8 +84,11 @@ function Pricing() {
           </a>
           .
         </p>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap gap-3">
           <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
+          <WhatsAppBtn>
+            {chrome.whatsapp} {SITE.whatsapp}
+          </WhatsAppBtn>
         </div>
       </Section>
     </main>

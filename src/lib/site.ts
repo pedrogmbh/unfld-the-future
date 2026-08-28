@@ -18,6 +18,9 @@ export const SITE = {
   dpo: "dpo@unfld.com.br",
   phone: "(43) 3422-8348",
   phoneHref: "+554334228348",
+  whatsapp: "(53) 99995-4138",
+  whatsappHref: "https://wa.link/03wpz4",
+  whatsappE164: "+5553999954138",
   year: 2026,
   founded: "Sep 23, 2025",
   status: "Ativa",
@@ -1424,5 +1427,5 @@ export function formatAddress() {
 }
 
 export function formatLegalContact() {
-  return `${SITE.legal}, ${formatAddress()}. CNPJ ${SITE.cnpj}. ${SITE.phone}. ${SITE.registeredEmail}.`;
+  return `${SITE.legal}, ${formatAddress()}. CNPJ ${SITE.cnpj}. ${SITE.phone}. WhatsApp Business ${SITE.whatsapp}. ${SITE.registeredEmail}.`;
 }

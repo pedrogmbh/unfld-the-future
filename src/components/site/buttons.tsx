@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const base =
@@ -63,6 +64,26 @@ export function BtnLink({
   }
   return (
     <a href={href} className={cls} {...rest}>
+      {children}
+    </a>
+  );
+}
+
+export function WhatsAppBtn({
+  className,
+  children,
+  variant = "secondary",
+  size = "md",
+  ...rest
+}: Common & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
+  return (
+    <a
+      href={SITE.whatsappHref}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn(base, variants[variant], sizes[size], className)}
+      {...rest}
+    >
       {children}
     </a>
   );

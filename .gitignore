@@ -21,6 +21,7 @@ artifacts/
 attachments/
 screenshots/
 public/__grok/
+public/design.md
 
 # os / editor
 .DS_Store

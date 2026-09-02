@@ -12,6 +12,8 @@ import { grokPwaPlugin } from "./scripts/grok-pwa-plugin.mjs";
 import { appEnvPlugin } from "./scripts/app-env-plugin.mjs";
 // @ts-expect-error JS plugin alongside the TS vite config
 import { agentSurfacePlugin } from "./scripts/agent-surface-plugin.mjs";
+// @ts-expect-error JS plugin alongside the TS vite config
+import { copyDesignPlugin } from "./scripts/copy-design.mjs";
 import { isMigrationFile } from "./scripts/migration-plan.mjs";
 
 /** The files `src/lib/db.ts` globs — same directory, same non-recursive scope. */
@@ -161,6 +163,8 @@ export default defineConfig(({ command, isPreview }) => ({
   resolve: { tsconfigPaths: true },
   plugins: [
     pgliteBootstrapPlugin(),
+    // DESIGN.md → public/design.md so /design.md is a static URL.
+    copyDesignPlugin(),
     // Markdown negotiation + catalog API, before TanStack Start.
     agentSurfacePlugin(),
     // Before tanstackStart so /auth/popup never falls through to the SPA.
@@ -179,6 +183,15 @@ export default defineConfig(({ command, isPreview }) => ({
             // manifest + head-tag middleware). Nitro v3 defaults serverDir to
             // false, so removing this silently unwires /?install=1 on deploys.
             serverDir: "./server",
+            routeRules: {
+              "/design.md": {
+                headers: {
+                  "Content-Type": "text/markdown; charset=utf-8",
+                  "Cache-Control": "public, max-age=3600",
+                  "X-Content-Type-Options": "nosniff",
+                },
+              },
+            },
           }),
         ]
       : []),

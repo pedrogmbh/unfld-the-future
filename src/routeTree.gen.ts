@@ -34,6 +34,7 @@ import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as QueravagaRouteImport } from './routes/queravaga'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
+import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as SaoPauloRouteImport } from './routes/sao-paulo'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitecreatorRouteImport } from './routes/sitecreator'
@@ -44,6 +45,9 @@ import { Route as ApiIndexRouteImport } from './routes/api.index'
 import { Route as ApiOpenapiDotyamlRouteImport } from './routes/api.openapi[.]yaml'
 import { Route as ApiV1RouteImport } from './routes/api.v1'
 import { Route as ApiVersioningRouteImport } from './routes/api.versioning'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as BlogSentinelaCveRouteImport } from './routes/blog/sentinela-cve'
 import { Route as CareersIndexRouteImport } from './routes/careers/index'
 import { Route as CareersOpenRolesRouteImport } from './routes/careers/open-roles'
 import { Route as LegalIndexRouteImport } from './routes/legal/index'
@@ -186,6 +190,11 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
   path: '/robots.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RssDotxmlRoute = RssDotxmlRouteImport.update({
+  id: '/rss.xml',
+  path: '/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SaoPauloRoute = SaoPauloRouteImport.update({
   id: '/sao-paulo',
   path: '/sao-paulo',
@@ -235,6 +244,21 @@ const ApiVersioningRoute = ApiVersioningRouteImport.update({
   id: '/versioning',
   path: '/versioning',
   getParentRoute: () => ApiRoute,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSentinelaCveRoute = BlogSentinelaCveRouteImport.update({
+  id: '/blog/sentinela-cve',
+  path: '/blog/sentinela-cve',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const CareersIndexRoute = CareersIndexRouteImport.update({
   id: '/careers/',
@@ -345,6 +369,7 @@ export interface FileRoutesByFullPath {
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
@@ -354,6 +379,8 @@ export interface FileRoutesByFullPath {
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
   '/api/versioning': typeof ApiVersioningRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -365,6 +392,7 @@ export interface FileRoutesByFullPath {
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/api/': typeof ApiIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
   '/news/': typeof NewsIndexRoute
@@ -397,6 +425,7 @@ export interface FileRoutesByTo {
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
@@ -406,6 +435,8 @@ export interface FileRoutesByTo {
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
   '/api/versioning': typeof ApiVersioningRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -417,6 +448,7 @@ export interface FileRoutesByTo {
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/api': typeof ApiIndexRoute
+  '/blog': typeof BlogIndexRoute
   '/careers': typeof CareersIndexRoute
   '/legal': typeof LegalIndexRoute
   '/news': typeof NewsIndexRoute
@@ -451,6 +483,7 @@ export interface FileRoutesById {
   '/products': typeof ProductsRoute
   '/queravaga': typeof QueravagaRoute
   '/robots.txt': typeof RobotsDottxtRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitecreator': typeof SitecreatorRoute
@@ -460,6 +493,8 @@ export interface FileRoutesById {
   '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
   '/api/v1': typeof ApiV1RouteWithChildren
   '/api/versioning': typeof ApiVersioningRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
   '/legal/brand-guidelines': typeof LegalBrandGuidelinesRoute
@@ -471,6 +506,7 @@ export interface FileRoutesById {
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/api/': typeof ApiIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
   '/news/': typeof NewsIndexRoute
@@ -506,6 +542,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/queravaga'
     | '/robots.txt'
+    | '/rss.xml'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
@@ -515,6 +552,8 @@ export interface FileRouteTypes {
     | '/api/openapi.yaml'
     | '/api/v1'
     | '/api/versioning'
+    | '/blog/$slug'
+    | '/blog/sentinela-cve'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -526,6 +565,7 @@ export interface FileRouteTypes {
     | '/solutions/$slug'
     | '/work/$slug'
     | '/api/'
+    | '/blog/'
     | '/careers/'
     | '/legal/'
     | '/news/'
@@ -558,6 +598,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/queravaga'
     | '/robots.txt'
+    | '/rss.xml'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
@@ -567,6 +608,8 @@ export interface FileRouteTypes {
     | '/api/openapi.yaml'
     | '/api/v1'
     | '/api/versioning'
+    | '/blog/$slug'
+    | '/blog/sentinela-cve'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -578,6 +621,7 @@ export interface FileRouteTypes {
     | '/solutions/$slug'
     | '/work/$slug'
     | '/api'
+    | '/blog'
     | '/careers'
     | '/legal'
     | '/news'
@@ -611,6 +655,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/queravaga'
     | '/robots.txt'
+    | '/rss.xml'
     | '/sao-paulo'
     | '/security'
     | '/sitecreator'
@@ -620,6 +665,8 @@ export interface FileRouteTypes {
     | '/api/openapi.yaml'
     | '/api/v1'
     | '/api/versioning'
+    | '/blog/$slug'
+    | '/blog/sentinela-cve'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
     | '/legal/brand-guidelines'
@@ -631,6 +678,7 @@ export interface FileRouteTypes {
     | '/solutions/$slug'
     | '/work/$slug'
     | '/api/'
+    | '/blog/'
     | '/careers/'
     | '/legal/'
     | '/news/'
@@ -665,12 +713,15 @@ export interface RootRouteChildren {
   ProductsRoute: typeof ProductsRoute
   QueravagaRoute: typeof QueravagaRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
+  RssDotxmlRoute: typeof RssDotxmlRoute
   SaoPauloRoute: typeof SaoPauloRoute
   SecurityRoute: typeof SecurityRoute
   SitecreatorRoute: typeof SitecreatorRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StatusRoute: typeof StatusRoute
   UnifikarRoute: typeof UnifikarRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogSentinelaCveRoute: typeof BlogSentinelaCveRoute
   CareersOpenRolesRoute: typeof CareersOpenRolesRoute
   LegalAcceptableUsePolicyRoute: typeof LegalAcceptableUsePolicyRoute
   LegalBrandGuidelinesRoute: typeof LegalBrandGuidelinesRoute
@@ -681,6 +732,7 @@ export interface RootRouteChildren {
   NewsSlugRoute: typeof NewsSlugRoute
   SolutionsSlugRoute: typeof SolutionsSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   CareersIndexRoute: typeof CareersIndexRoute
   LegalIndexRoute: typeof LegalIndexRoute
   NewsIndexRoute: typeof NewsIndexRoute
@@ -865,6 +917,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RobotsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rss.xml': {
+      id: '/rss.xml'
+      path: '/rss.xml'
+      fullPath: '/rss.xml'
+      preLoaderRoute: typeof RssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sao-paulo': {
       id: '/sao-paulo'
       path: '/sao-paulo'
@@ -934,6 +993,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/versioning'
       preLoaderRoute: typeof ApiVersioningRouteImport
       parentRoute: typeof ApiRoute
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/sentinela-cve': {
+      id: '/blog/sentinela-cve'
+      path: '/blog/sentinela-cve'
+      fullPath: '/blog/sentinela-cve'
+      preLoaderRoute: typeof BlogSentinelaCveRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/careers/': {
       id: '/careers/'
@@ -1102,12 +1182,15 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsRoute: ProductsRoute,
   QueravagaRoute: QueravagaRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
+  RssDotxmlRoute: RssDotxmlRoute,
   SaoPauloRoute: SaoPauloRoute,
   SecurityRoute: SecurityRoute,
   SitecreatorRoute: SitecreatorRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StatusRoute: StatusRoute,
   UnifikarRoute: UnifikarRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogSentinelaCveRoute: BlogSentinelaCveRoute,
   CareersOpenRolesRoute: CareersOpenRolesRoute,
   LegalAcceptableUsePolicyRoute: LegalAcceptableUsePolicyRoute,
   LegalBrandGuidelinesRoute: LegalBrandGuidelinesRoute,
@@ -1118,6 +1201,7 @@ const rootRouteChildren: RootRouteChildren = {
   NewsSlugRoute: NewsSlugRoute,
   SolutionsSlugRoute: SolutionsSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
   CareersIndexRoute: CareersIndexRoute,
   LegalIndexRoute: LegalIndexRoute,
   NewsIndexRoute: NewsIndexRoute,

@@ -41,6 +41,7 @@
       "selectedWork": "Trabajos seleccionados",
       "careers": "Carreras",
       "news": "Novedades",
+      "blog": "Blog",
       "security": "Seguridad",
       "compliance": "Cumplimiento",
       "saoPaulo": "São Paulo",
@@ -471,6 +472,18 @@
       "previewNote": "Esto es una vista previa — registramos su interés en este rol.",
       "emptyTitle": "No hay roles abiertos en este momento.",
       "emptyBody": "Revisamos cada presentación de forma personal. Pueden presentarse, describir su trayectoria y compartir trabajo del que estén orgullosos en {{email}}."
+    },
+    "blog": {
+      "metaTitle": "Blog",
+      "metaDescription": "Páginas de UNFLD sobre los sistemas que construimos y operamos. Cada una está escrita para el tema.",
+      "kicker": "Blog",
+      "title": "Del trabajo.",
+      "lede": "Cómo construimos y operamos nuestros sistemas, una página a la vez, escrita para el tema.",
+      "featured": "Más reciente",
+      "read": "Leer",
+      "backToBlog": "Blog",
+      "next": "Siguiente",
+      "by": "Por"
     },
     "news": {
       "metaTitle": "Novedades y actualizaciones",

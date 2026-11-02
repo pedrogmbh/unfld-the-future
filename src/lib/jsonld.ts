@@ -3,8 +3,12 @@ import { DEFAULT_LOCALE, LOCALES, type Locale } from "@/lib/i18n/locales";
 import { getMessages } from "@/lib/i18n/messages";
 import { localizeOwnedProducts } from "@/lib/i18n/localize";
 
-function orgId() {
+export function organizationId() {
   return `${SITE.url}/#organization`;
+}
+
+function orgId() {
+  return organizationId();
 }
 
 function websiteId() {
@@ -67,10 +71,7 @@ export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
         availableLanguage: [...LOCALES],
       },
     ],
-    sameAs: [
-      "https://github.com/pedrogmbh/unfld-the-future",
-      SITE.whatsappHref,
-    ],
+    sameAs: ["https://github.com/pedrogmbh/unfld-the-future", SITE.whatsappHref],
     knowsAbout: [
       "UNFLD",
       "UNFLD developer resources",
@@ -123,8 +124,7 @@ export function developerResourcesJsonLd(
 ) {
   const copy = getMessages(locale).catalog.developer;
   const title = path === "/api" ? copy.apiTitle : copy.developersTitle;
-  const description =
-    path === "/api" ? copy.apiDescription : copy.developersDescription;
+  const description = path === "/api" ? copy.apiDescription : copy.developersDescription;
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",

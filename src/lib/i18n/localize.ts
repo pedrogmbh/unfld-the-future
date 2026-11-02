@@ -112,10 +112,7 @@ export function localizeWork(locale: Locale): SelectedWork[] {
         copy.fields[item.field as keyof typeof copy.fields],
         `work.fields.${item.field}`,
       ),
-      form: required(
-        copy.forms[item.form as keyof typeof copy.forms],
-        `work.forms.${item.form}`,
-      ),
+      form: required(copy.forms[item.form as keyof typeof copy.forms], `work.forms.${item.form}`),
       line: t.line,
       lede: t.lede,
       story: [...t.story],
@@ -319,6 +316,7 @@ export function localizeFooter(locale: Locale) {
       { label: getMessages(locale).chrome.nav.selectedWork, to: "/work" },
       { label: getMessages(locale).chrome.nav.careers, to: "/careers" },
       { label: getMessages(locale).chrome.nav.news, to: "/news" },
+      { label: getMessages(locale).chrome.nav.blog, to: "/blog" },
       { label: getMessages(locale).chrome.nav.security, to: "/security" },
       { label: getMessages(locale).chrome.nav.compliance, to: "/compliance" },
       { label: getMessages(locale).chrome.nav.saoPaulo, to: "/sao-paulo" },
@@ -379,10 +377,7 @@ export function localizeComplianceCategories(locale: Locale) {
   const cats = getMessages(locale).compliance.categories;
   const items = localizeComplianceItems(locale);
   return getComplianceCategories().map((cat) => {
-    const t = required(
-      cats[cat.name as keyof typeof cats],
-      `compliance.categories.${cat.name}`,
-    );
+    const t = required(cats[cat.name as keyof typeof cats], `compliance.categories.${cat.name}`);
     return {
       ...cat,
       name: t.name,

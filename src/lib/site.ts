@@ -51,6 +51,7 @@ export const headerNav: NavLink[] = [
   { label: "Build with us", to: "/build-with-us" },
   { label: "Company", to: "/company" },
   { label: "News", to: "/news" },
+  { label: "Blog", to: "/blog" },
   { label: "Pricing", to: "/pricing" },
 ];
 
@@ -500,6 +501,7 @@ export const footer = {
     { label: "Selected work", to: "/work" },
     { label: "Careers", to: "/careers" },
     { label: "News", to: "/news" },
+    { label: "Blog", to: "/blog" },
     { label: "Security", to: "/security" },
     { label: "Compliance", to: "/compliance" },
     { label: "São Paulo", to: "/sao-paulo" },

@@ -29,6 +29,7 @@ export function Header() {
         { label: chrome.nav.selectedWork, to: "/work" },
         { label: chrome.nav.careers, to: "/careers" },
         { label: chrome.nav.news, to: "/news" },
+        { label: chrome.nav.blog, to: "/blog" },
         { label: chrome.nav.security, to: "/security" },
         { label: chrome.nav.compliance, to: "/compliance" },
         { label: chrome.nav.saoPaulo, to: "/sao-paulo" },
@@ -42,6 +43,7 @@ export function Header() {
   const links = [
     { label: chrome.nav.pricing, to: "/pricing" },
     { label: chrome.nav.news, to: "/news" },
+    { label: chrome.nav.blog, to: "/blog" },
   ] as const;
 
   useEffect(() => {
@@ -131,18 +133,14 @@ export function Header() {
       <div
         className={cn(
           "fixed inset-0 z-40 overflow-y-auto bg-bg pt-16 transition-opacity duration-300 lg:hidden",
-          open
-            ? "opacity-100"
-            : "pointer-events-none invisible opacity-0",
+          open ? "opacity-100" : "pointer-events-none invisible opacity-0",
         )}
         aria-hidden={!open}
       >
         <nav className="flex flex-col px-6 pb-16 pt-4">
           {menus.map((m) => (
             <div key={m.label} className="border-b border-border py-4">
-              <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                {m.label}
-              </p>
+              <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">{m.label}</p>
               <div className="mt-2 flex flex-col">
                 {m.items.map((item) => (
                   <Link
@@ -157,11 +155,7 @@ export function Header() {
             </div>
           ))}
           {links.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className="border-b border-border py-5 text-xl font-medium"
-            >
+            <Link key={l.to} to={l.to} className="border-b border-border py-5 text-xl font-medium">
               {l.label}
             </Link>
           ))}
@@ -218,10 +212,7 @@ function HoverMenu({
       >
         {label}
         <ChevronDown
-          className={cn(
-            "size-3.5 transition-transform duration-200",
-            open && "rotate-180",
-          )}
+          className={cn("size-3.5 transition-transform duration-200", open && "rotate-180")}
         />
       </button>
       <AnimatePresence>

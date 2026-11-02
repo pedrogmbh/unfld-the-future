@@ -1,9 +1,4 @@
-import {
-  createRootRouteWithContext,
-  HeadContent,
-  Outlet,
-  Scripts,
-} from "@tanstack/react-router";
+import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Header } from "@/components/site/header";
@@ -48,6 +43,12 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       links: [
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
+        {
+          rel: "alternate",
+          type: "application/rss+xml",
+          href: "/rss.xml",
+          title: "UNFLD Blog",
+        },
         { rel: "stylesheet", href: appCss },
         { rel: "manifest", href: "/__grok/manifest.webmanifest" },
         { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
@@ -70,11 +71,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 function Root() {
   const { locale } = Route.useRouteContext();
   return (
-    <html
-      lang={LOCALE_META[locale].html}
-      className="dark antialiased"
-      suppressHydrationWarning
-    >
+    <html lang={LOCALE_META[locale].html} className="dark antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

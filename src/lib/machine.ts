@@ -81,10 +81,13 @@ export function machinePages(): MachinePage[] {
       { changefreq: "weekly", priority: 0.9 },
     ),
     ...ownedProducts.map((product) =>
-      page(product.href, `${product.name} — ${product.line}`, product.blurb, "Products", {
-        changefreq: "monthly",
-        priority: 0.8,
-      }),
+      page(
+        product.href,
+        `${product.name} — ${product.line}`,
+        product.blurb,
+        "Products",
+        { changefreq: "monthly", priority: 0.8 },
+      ),
     ),
     page(
       "/access",
@@ -259,7 +262,9 @@ export function machinePages(): MachinePage[] {
     ...selectedWork.map((work) =>
       page(
         `/work/${work.slug}`,
-        work.client === work.title ? work.title : `${work.client} — ${work.title}`,
+        work.client === work.title
+          ? work.title
+          : `${work.client} — ${work.title}`,
         work.lede,
         "Company",
         { changefreq: "yearly", priority: 0.5 },

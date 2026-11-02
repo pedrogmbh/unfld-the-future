@@ -18,7 +18,7 @@ const ROWS = [
   ["GNOME Epiphany", "GNOME"],
   ["json-glib", "RHEL"],
   ["WebDyne", "Perl"],
-  ["konflux-ci", "8.0–8.8"],
+  ["konflux-ci", "8.0 a 8.8"],
   ["Project Manager", "weDevs"],
   ["SimpleForm", "WordPress"],
   ["Uncanny Toolkit", "9.8"],
@@ -26,7 +26,7 @@ const ROWS = [
   ["GNOME Epiphany", "GNOME"],
   ["json-glib", "RHEL"],
   ["WebDyne", "Perl"],
-  ["konflux-ci", "8.0–8.8"],
+  ["konflux-ci", "8.0 a 8.8"],
   ["Project Manager", "weDevs"],
   ["SimpleForm", "WordPress"],
   ["Uncanny Toolkit", "9.8"],
@@ -70,7 +70,7 @@ function html(width, height) {
       <div class="brand">${MARK}<span>UNFLD</span></div>
       <p class="kicker" style="margin-top: ${width > 1400 ? 72 : 48}px">Sentinela CVE</p>
       <h1>A CVE é publicada.<span>O Sentinela já a leu.</span></h1>
-      <p class="sub">Cada CVE nova no @CVEnew. O registro oficial. Evidência — ou silêncio.</p>
+      <p class="sub">Cada CVE nova no @CVEnew. O registro oficial. Evidência. Ou silêncio.</p>
     </div>
     <p class="by">Pedro Viana, CEO da UNFLD · 2 de novembro de 2026</p>
   </div>

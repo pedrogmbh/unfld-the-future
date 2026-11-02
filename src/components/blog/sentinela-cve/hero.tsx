@@ -8,7 +8,7 @@ const STREAM = [
   ["GNOME Epiphany", "GNOME"],
   ["json-glib", "RHEL"],
   ["WebDyne", "Perl"],
-  ["konflux-ci", "8.0–8.8"],
+  ["konflux-ci", "8.0 a 8.8"],
   ["Project Manager", "weDevs"],
   ["SimpleForm", "WordPress"],
   ["Uncanny Toolkit", "9.8"],

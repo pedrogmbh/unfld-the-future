@@ -25,14 +25,14 @@ Default branch: `main`.
 
 ## Stack (do not switch)
 
-| Layer  | Choice                                                      |
-| ------ | ----------------------------------------------------------- |
-| App    | TanStack Start (`src/router.tsx` exports **`getRouter()`**) |
-| UI     | React 19                                                    |
-| Style  | Tailwind v4 — tokens in `src/styles.css` `@theme`           |
-| Motion | `motion/react` (Framer Motion)                              |
-| Icons  | `lucide-react`                                              |
-| Fonts  | Inter Tight + IBM Plex Mono (loaded in `__root.tsx`)        |
+| Layer | Choice |
+|---|---|
+| App | TanStack Start (`src/router.tsx` exports **`getRouter()`**) |
+| UI | React 19 |
+| Style | Tailwind v4 — tokens in `src/styles.css` `@theme` |
+| Motion | `motion/react` (Framer Motion) |
+| Icons | `lucide-react` |
+| Fonts | Inter Tight + IBM Plex Mono (loaded in `__root.tsx`) |
 
 Do **not** migrate to Next.js, Framer, or another CSS framework.
 
@@ -192,7 +192,7 @@ UI. CTAs: “Our products”, “Contact Sales”, “Open SiteCreator”,
 ## Blog posts
 
 No CMS. No MDX. Every post is a hand-built page at its own URL, with its
-own layout. `/news` stays as it is — do not fold the blog into it.
+own layout. `/news` stays as it is. Do not fold the blog into it.
 
 | Piece              | Where                                                  |
 | ------------------ | ------------------------------------------------------ |
@@ -220,7 +220,7 @@ A new post:
 
 1. Add one registry entry. Slugs are unique.
 2. Add `src/routes/blog/<slug>.tsx` with `head: () => buildPostHead("<slug>")` and `PostShell`.
-3. Build the layout under `src/components/blog/<slug>/`. The shell supplies the back link, the byline, and the next post. Inside it, the layout is free — do not reuse another post as a template.
+3. Build the layout under `src/components/blog/<slug>/`. The shell supplies the back link, the byline, and the next post. Inside it, the layout is free. Do not reuse another post as a template.
 4. Put the cover and the OG image in `public/blog/<slug>/`. OG is 1200×630. Raster images are AVIF or WebP, with `width` and `height` on the `<img>`.
 5. Shell strings live in `pages.blog` and `chrome.nav.blog`, in all four locales. `npm run check:i18n` must pass. The post body stays in `inLanguage` on every site locale.
 

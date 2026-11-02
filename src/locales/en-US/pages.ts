@@ -382,7 +382,7 @@ export const pages = {
       "Pages from UNFLD on the systems we build and operate. Each one is written for the subject.",
     kicker: "Blog",
     title: "From the work.",
-    lede: "How we build and operate our own systems — one page at a time, written for the subject.",
+    lede: "How we build and operate our own systems, one page at a time, written for the subject.",
     featured: "Latest",
     read: "Read",
     backToBlog: "Blog",

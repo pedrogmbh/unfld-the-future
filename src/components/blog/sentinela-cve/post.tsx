@@ -130,7 +130,7 @@ export function SentinelaPost() {
             <H2 id="pitch-title">A equipe não fica de plantão.</H2>
             <Prose>
               <p>
-                A UNFLD constrói e opera agentes de IA. Persistentes, com rotina, no Grok Bot — a
+                A UNFLD constrói e opera agentes de IA. Persistentes, com rotina, no Grok Bot: a
                 plataforma em que um bot fica de pé e repete um trabalho. O Sentinela CVE é o agente
                 com que olhamos a nossa própria stack: produtos, repositórios, Workers, Pages.
               </p>
@@ -180,7 +180,7 @@ export function SentinelaPost() {
               <Feed
                 meta="@CVEnew · rodada de 8"
                 lines={[
-                  ["konflux-ci", "quatro CVEs · HIGH 8.0–8.8"],
+                  ["konflux-ci", "quatro CVEs · HIGH 8.0 a 8.8"],
                   ["plugins WordPress", "quatro CVEs"],
                 ]}
                 foot={'Busca por "konflux" na organização. Nenhum arquivo.'}
@@ -318,8 +318,8 @@ export function SentinelaPost() {
             </p>
             <Prose>
               <p>
-                Dentro: resumo, CVSS, link, exposição e evidência — repositório, arquivo, versão,
-                recurso Cloudflare. Se houver exposição, entram uma correção sugerida, a urgência
+                Dentro: resumo, CVSS, link, exposição e evidência (repositório, arquivo, versão,
+                recurso Cloudflare). Se houver exposição, entram uma correção sugerida, a urgência
                 (crítica, alta, média ou baixa, com justificativa) e um prompt em inglês, pronto
                 para colar, para quem desenvolve ou para um agente de código.
               </p>
@@ -410,7 +410,7 @@ export function SentinelaPost() {
               <HourTicks mode="dense" />
             </div>
             <div className="bg-bg p-6 sm:p-8">
-              <p className="font-mono text-[12px] text-subtle">Agora · seg–sex · Brasília</p>
+              <p className="font-mono text-[12px] text-subtle">Agora · seg a sex · Brasília</p>
               <p className="mt-4 font-display text-3xl font-medium tracking-tight">9h e 17h</p>
               <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
                 Segunda às 9h lê o fim de semana, porque a rodada parte do último post processado. A
@@ -474,7 +474,7 @@ export function SentinelaPost() {
             <Round
               n="29"
               title="De 4.3 a 9.8. Fora."
-              body="Vinte e nove CVEs de plugins WordPress, de 4.3 MEDIUM a 9.8 CRITICAL. Entre elas, weDevs Project Manager, SimpleForm e Uncanny Toolkit for LearnDash — esta a 9.8. Todas não expostas."
+              body="Vinte e nove CVEs de plugins WordPress, de 4.3 MEDIUM a 9.8 CRITICAL. Entre elas, weDevs Project Manager, SimpleForm e Uncanny Toolkit for LearnDash (esta a 9.8). Todas não expostas."
             />
           </div>
         </div>
@@ -491,7 +491,7 @@ export function SentinelaPost() {
                 @tanstack/react-start 1.168.48 tinha uma CVE de XSS conhecida: CVE-2026-102989.
               </p>
               <p>
-                Quem achou foi outro bot nosso — o que mantém o site. Não foi o Sentinela. O pull
+                Quem achou foi outro bot nosso, o que mantém o site. Não foi o Sentinela. O pull
                 request corrigido do Dependabot entrou com a aprovação do CEO. Produção voltou em
                 minutos. Os outros pull requests de dependência foram rebaseados e entraram depois
                 que as previews passaram.

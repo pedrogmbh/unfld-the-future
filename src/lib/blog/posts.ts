@@ -29,8 +29,9 @@ export const posts: readonly BlogPost[] = [
     slug: "sentinela-cve",
     title: "Quem lê a CVE quando ninguém tem tempo?",
     description:
-      "Vulnerabilidades novas surgem mais rápido do que qualquer time consegue ler. Esta é a história de como a UNFLD colocou um agente no Grok Bot para ler cada CVE, conferir o registro oficial e procurar nos nossos repositórios.",
+      "Vulnerabilidades novas surgem mais rápido do que qualquer time consegue ler. Esta é a história do agente que a UNFLD colocou para confirmar cada uma em fontes oficiais, cruzar com o que roda em produção e preparar a correção para revisão humana.",
     date: "2026-11-02",
+    updated: "2026-11-02",
     cover: "/blog/sentinela-cve/cover.webp",
     ogImage: "/blog/sentinela-cve/og.png",
     coverAlt:

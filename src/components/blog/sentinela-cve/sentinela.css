@@ -1,0 +1,17 @@
+.sentinela-mask {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+}
+
+.sentinela-stream {
+  animation: sentinela-rise 36s linear infinite;
+}
+
+@keyframes sentinela-rise {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}

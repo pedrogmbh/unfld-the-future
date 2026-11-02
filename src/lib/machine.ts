@@ -1,20 +1,8 @@
-import {
-  SITE,
-  footer,
-  news,
-  ownedProducts,
-  selectedWork,
-  solutions,
-} from "@/lib/site";
+import { publishedPosts } from "@/lib/blog/posts";
+import { SITE, footer, news, ownedProducts, selectedWork, solutions } from "@/lib/site";
 
 export type MachineSection =
-  | "Products"
-  | "Build with us"
-  | "Developers"
-  | "Solutions"
-  | "Company"
-  | "News"
-  | "Legal";
+  "Products" | "Build with us" | "Developers" | "Solutions" | "Company" | "News" | "Blog" | "Legal";
 
 export type MachinePage = {
   path: string;
@@ -40,7 +28,7 @@ function newsLastmod(date: string): string | undefined {
   return parsed.toISOString().slice(0, 10);
 }
 
-function xmlEscape(value: string): string {
+export function xmlEscape(value: string): string {
   return value
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
@@ -93,13 +81,10 @@ export function machinePages(): MachinePage[] {
       { changefreq: "weekly", priority: 0.9 },
     ),
     ...ownedProducts.map((product) =>
-      page(
-        product.href,
-        `${product.name} — ${product.line}`,
-        product.blurb,
-        "Products",
-        { changefreq: "monthly", priority: 0.8 },
-      ),
+      page(product.href, `${product.name} — ${product.line}`, product.blurb, "Products", {
+        changefreq: "monthly",
+        priority: 0.8,
+      }),
     ),
     page(
       "/access",
@@ -202,6 +187,20 @@ export function machinePages(): MachinePage[] {
       }),
     ),
     page(
+      "/blog",
+      "Blog",
+      "Bespoke pages from UNFLD on the systems we build and operate. Each post is its own layout.",
+      "Blog",
+      { changefreq: "weekly", priority: 0.7 },
+    ),
+    ...publishedPosts().map((post) =>
+      page(`/blog/${post.slug}`, post.title, post.description, "Blog", {
+        lastmod: (post.updated ?? post.date).slice(0, 10),
+        changefreq: "yearly",
+        priority: 0.6,
+      }),
+    ),
+    page(
       "/security",
       "Security at UNFLD",
       "Security at UNFLD starts with a narrower promise: know what data a product needs, limit who and what can reach it, and make important actions traceable.",
@@ -260,9 +259,7 @@ export function machinePages(): MachinePage[] {
     ...selectedWork.map((work) =>
       page(
         `/work/${work.slug}`,
-        work.client === work.title
-          ? work.title
-          : `${work.client} — ${work.title}`,
+        work.client === work.title ? work.title : `${work.client} — ${work.title}`,
         work.lede,
         "Company",
         { changefreq: "yearly", priority: 0.5 },
@@ -398,6 +395,7 @@ export function renderLlmsTxt(pages = machinePages()): string {
     "Solutions",
     "Company",
     "News",
+    "Blog",
     "Legal",
   ];
 
@@ -459,6 +457,7 @@ ${blocks}
 ## Optional
 
 - [sitemap.xml](${siteUrl("/sitemap.xml")}): Canonical URL list for search engines and indexers.
+- [rss.xml](${siteUrl("/rss.xml")}): Blog feed. One item per published post.
 - [robots.txt](${siteUrl("/robots.txt")}): Crawl directives and sitemap reference.
 - [llms.txt](${siteUrl("/llms.txt")}): This curated discovery document.
 - [agents.md](${siteUrl("/agents.md")}): When to use UNFLD and how to call the catalog.

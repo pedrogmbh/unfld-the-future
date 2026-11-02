@@ -17,8 +17,7 @@ export const pages = {
     customTileBody:
       "When the product is ours, we operate it. When the mission is yours, we build beside you.",
     inPractice: "In practice",
-    inPracticeTitle:
-      "The future becomes practical when a hard problem becomes a usable system.",
+    inPracticeTitle: "The future becomes practical when a hard problem becomes a usable system.",
     selectedWorkKicker: "Selected work",
     selectedWorkTitle: "Work people actually used.",
     selectedWorkLede:
@@ -377,6 +376,19 @@ export const pages = {
     emptyBody:
       "We review every introduction personally. You can introduce yourself, describe your background, and share work you are proud of at {{email}}.",
   },
+  blog: {
+    metaTitle: "Blog",
+    metaDescription:
+      "Pages from UNFLD on the systems we build and operate. Each one is written for the subject.",
+    kicker: "Blog",
+    title: "From the work.",
+    lede: "How we build and operate our own systems — one page at a time, written for the subject.",
+    featured: "Latest",
+    read: "Read",
+    backToBlog: "Blog",
+    next: "Next",
+    by: "By",
+  },
   news: {
     metaTitle: "News & updates",
     metaDescription:
@@ -479,8 +491,7 @@ export const pages = {
     operational: "Operational",
     corporate: "Corporate website",
     fcrRole: "FCR mobile distribution",
-    contact:
-      "For incident reporting or urgent operational inquiries, contact {{email}}.",
+    contact: "For incident reporting or urgent operational inquiries, contact {{email}}.",
   },
   legalIndex: {
     metaTitle: "Legal",

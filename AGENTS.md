@@ -16,7 +16,7 @@ Owned products in market: **FCR** (Ferramenta de Coleta, with Timac Agro),
 
 North star: [x.ai](https://x.ai) visual/motion language (black field,
 Inter Tight, IBM Plex Mono, grain, blur+y, stacked code windows). Copy
-the *language*, not their name or products.
+the _language_, not their name or products.
 
 Public repo: [pedrogmbh/unfld-the-future](https://github.com/pedrogmbh/unfld-the-future).
 Default branch: `main`.
@@ -25,14 +25,14 @@ Default branch: `main`.
 
 ## Stack (do not switch)
 
-| Layer | Choice |
-|---|---|
-| App | TanStack Start (`src/router.tsx` exports **`getRouter()`**) |
-| UI | React 19 |
-| Style | Tailwind v4 — tokens in `src/styles.css` `@theme` |
-| Motion | `motion/react` (Framer Motion) |
-| Icons | `lucide-react` |
-| Fonts | Inter Tight + IBM Plex Mono (loaded in `__root.tsx`) |
+| Layer  | Choice                                                      |
+| ------ | ----------------------------------------------------------- |
+| App    | TanStack Start (`src/router.tsx` exports **`getRouter()`**) |
+| UI     | React 19                                                    |
+| Style  | Tailwind v4 — tokens in `src/styles.css` `@theme`           |
+| Motion | `motion/react` (Framer Motion)                              |
+| Icons  | `lucide-react`                                              |
+| Fonts  | Inter Tight + IBM Plex Mono (loaded in `__root.tsx`)        |
 
 Do **not** migrate to Next.js, Framer, or another CSS framework.
 
@@ -80,18 +80,18 @@ DESIGN.md                      visual / motion / type contract
 
 ### Reuse, don’t rebuild
 
-| Need | Use |
-|---|---|
-| Page title + lede | `PageHero` |
-| Width + padding | `Section`, `Kicker` |
-| Enter animation | `Reveal`, `Stagger`/`StaggerItem`, `WordStagger` |
-| Product still | `ParallaxImage` |
-| Product marketing page | `ProductPage` |
-| Legal article | `LegalDoc` |
-| API showcase | `CodeTabs` |
-| Docs / news snippet | `CodeBlock` |
-| CTA | `Btn` / `BtnLink` / `TextArrow` |
-| Copy / sitemap | `src/lib/site.ts` |
+| Need                   | Use                                              |
+| ---------------------- | ------------------------------------------------ |
+| Page title + lede      | `PageHero`                                       |
+| Width + padding        | `Section`, `Kicker`                              |
+| Enter animation        | `Reveal`, `Stagger`/`StaggerItem`, `WordStagger` |
+| Product still          | `ParallaxImage`                                  |
+| Product marketing page | `ProductPage`                                    |
+| Legal article          | `LegalDoc`                                       |
+| API showcase           | `CodeTabs`                                       |
+| Docs / news snippet    | `CodeBlock`                                      |
+| CTA                    | `Btn` / `BtnLink` / `TextArrow`                  |
+| Copy / sitemap         | `src/lib/site.ts`                                |
 
 ---
 
@@ -186,6 +186,55 @@ UI. CTAs: “Our products”, “Contact Sales”, “Open SiteCreator”,
 3. Register in `src/lib/site.ts` footer (and header if needed).
 4. Products → `ProductPage`. Legal → `LegalDoc`.
 5. Typecheck. Eyeball desktop and mobile.
+
+---
+
+## Blog posts
+
+No CMS. No MDX. Every post is a hand-built page at its own URL, with its
+own layout. `/news` stays as it is — do not fold the blog into it.
+
+| Piece              | Where                                                  |
+| ------------------ | ------------------------------------------------------ |
+| Registry           | `src/lib/blog/posts.ts`                                |
+| Head + BlogPosting | `src/lib/blog/head.ts` (`buildPostHead`)               |
+| RSS                | `src/lib/blog/rss.ts`, route `src/routes/rss[.]xml.ts` |
+| Index              | `src/routes/blog/index.tsx`                            |
+| Post route         | `src/routes/blog/<slug>.tsx`                           |
+| Unknown slug       | `src/routes/blog/$slug.tsx` throws not-found           |
+| Shell              | `src/components/blog/post-shell.tsx`                   |
+| Post UI            | `src/components/blog/<slug>/`                          |
+| Assets             | `public/blog/<slug>/`                                  |
+
+Registry fields: `slug`, `title`, `description`, `date` (ISO `YYYY-MM-DD`),
+optional `updated`, `cover`, `ogImage` (1200×630), `tags`, `author`
+`{ name, role }`, `inLanguage`, optional `draft`, optional `byline`,
+optional `coverAlt`.
+
+`draft: true` hides the post from the index, sitemap, RSS, and llms.txt.
+The route file still has to exist. `publishedPosts()` is what
+`machinePages()` reads, so a published post lands in `sitemap.xml`,
+`llms.txt`, and `agents.md` with `lastmod`.
+
+A new post:
+
+1. Add one registry entry. Slugs are unique.
+2. Add `src/routes/blog/<slug>.tsx` with `head: () => buildPostHead("<slug>")` and `PostShell`.
+3. Build the layout under `src/components/blog/<slug>/`. The shell supplies the back link, the byline, and the next post. Inside it, the layout is free — do not reuse another post as a template.
+4. Put the cover and the OG image in `public/blog/<slug>/`. OG is 1200×630. Raster images are AVIF or WebP, with `width` and `height` on the `<img>`.
+5. Shell strings live in `pages.blog` and `chrome.nav.blog`, in all four locales. `npm run check:i18n` must pass. The post body stays in `inLanguage` on every site locale.
+
+Performance and access, on every post:
+
+- Route JS stays around 50 KB gzipped beyond the shared chunks.
+- LCP under 2.5s. CLS near 0. Animate transform and opacity, not layout.
+- Respect `prefers-reduced-motion`. The static frame has to carry the same facts. Animation is not the only place a fact appears.
+- One `h1`. Semantic sections. Alt text. The global focus ring. Contrast from the tokens in `DESIGN.md`.
+- Tokens only. No hex in JSX. Gold is kickers only.
+
+`node --test scripts/blog-registry.test.mjs` checks that every registry
+slug has a route file, a cover, and an OG image, and that slugs are unique.
+PNG OG images must be 1200×630.
 
 ---
 

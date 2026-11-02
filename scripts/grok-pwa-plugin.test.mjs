@@ -81,14 +81,8 @@ test("injects x:creator tags when both creator values are set", () => {
 
 test("escapes x:creator values", () => {
   const tags = grokXCreatorHeadTags('"><script>', '1" onclick="alert(1)');
-  assert.equal(
-    tags[0],
-    '<meta property="x:creator" content="&quot;&gt;&lt;script&gt;">',
-  );
-  assert.equal(
-    tags[1],
-    '<meta property="x:creator:id" content="1&quot; onclick=&quot;alert(1)">',
-  );
+  assert.equal(tags[0], '<meta property="x:creator" content="&quot;&gt;&lt;script&gt;">');
+  assert.equal(tags[1], '<meta property="x:creator:id" content="1&quot; onclick=&quot;alert(1)">');
 });
 
 test("does not duplicate x:creator tags", () => {
@@ -117,6 +111,36 @@ test("platform chrome overwrites share-card metas and always sets og:title", () 
   assert.equal(out.split('name="twitter:card"').length - 1, 1);
   assert.equal(out.split('property="og:title"').length - 1, 1);
   assert.doesNotMatch(out, /property="og:image"/);
+});
+
+test("keeps article title and type on an article page", () => {
+  const empty = mkdtempSync(join(tmpdir(), "grok-og-article-"));
+  const html =
+    '<html><head><title>Post | UNFLD</title><meta property="og:title" content="Post | UNFLD"><meta property="og:type" content="article"></head></html>';
+  const out = injectGrokPwaHead(html, {
+    cwd: empty,
+    site: { title: "UNFLD", card: "custom", url: "https://www.unfld.com.br" },
+  });
+  assert.match(out, /property="og:title" content="Post \| UNFLD"/);
+  assert.match(out, /property="og:type" content="article"/);
+  assert.equal(out.split('property="og:type"').length - 1, 1);
+  assert.match(out, /property="og:image" content="https:\/\/www\.unfld\.com\.br\/og\.jpg"/);
+});
+
+test("keeps a page-specific og:image instead of the site card", () => {
+  const empty = mkdtempSync(join(tmpdir(), "grok-og-own-"));
+  const html =
+    '<html><head><meta property="og:image" content="https://www.unfld.com.br/blog/sentinela-cve/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"></head></html>';
+  const out = injectGrokPwaHead(html, {
+    cwd: empty,
+    site: { title: "UNFLD", card: "custom", url: "https://www.unfld.com.br" },
+  });
+  assert.match(
+    out,
+    /property="og:image" content="https:\/\/www\.unfld\.com\.br\/blog\/sentinela-cve\/og\.png"/,
+  );
+  assert.equal(out.split('property="og:image"').length - 1, 1);
+  assert.doesNotMatch(out, /property="og:image" content="https:\/\/www\.unfld\.com\.br\/og\.jpg"/);
 });
 
 test("preserves page og:image when chrome cannot mint a public origin", () => {
@@ -191,7 +215,7 @@ test("snapshotOgIdentity stamps banner from public/x-banner.jpg", () => {
 });
 
 test("emits x:game:image for a public host when site.banner is set", () => {
-  const html = "<html><head><meta property=\"x:game:image\" content=\"old\"></head></html>";
+  const html = '<html><head><meta property="x:game:image" content="old"></head></html>';
   const out = injectGrokPwaHead(html, {
     host: "wild-race.grok.me",
     site: { title: "Wild Race", type: "x:game", card: "custom", banner: "/x-banner.jpg" },
@@ -278,9 +302,7 @@ test("placeholder og:image appends site.color when it is 6-digit hex", () => {
 });
 
 test("document title entities are not double-escaped on og:title", () => {
-  const out = injectGrokPwaHead(
-    "<html><head><title>Cats &amp; Dogs</title></head></html>",
-  );
+  const out = injectGrokPwaHead("<html><head><title>Cats &amp; Dogs</title></head></html>");
   assert.match(out, /property="og:title" content="Cats &amp; Dogs"/);
   assert.doesNotMatch(out, /Cats &amp;amp; Dogs/);
 });
@@ -434,4 +456,3 @@ test("vite plugin bakes og identity as a virtual module", () => {
   assert.match(plugin, /virtual:grok-og-identity/);
   assert.match(plugin, /snapshotOgIdentity/);
 });
-

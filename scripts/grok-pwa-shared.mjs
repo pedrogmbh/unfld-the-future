@@ -111,9 +111,7 @@ export function publicAppHost(hostHeader) {
  * app — Envoy rewrites it to `*.vercel.app`.
  */
 export function resolvePublicHost(hostHeader) {
-  return (
-    publicAppHost(process.env?.VITE_PUBLIC_HOSTNAME) || publicAppHost(hostHeader)
-  );
+  return publicAppHost(process.env?.VITE_PUBLIC_HOSTNAME) || publicAppHost(hostHeader);
 }
 
 export function isInstallQuery(url) {
@@ -344,7 +342,9 @@ function applyCustomCardFromFs(site, cwd) {
 function publicOrigin(host = "", site = {}) {
   const publicHost = resolvePublicHost(host);
   if (publicHost) return `https://${publicHost}`;
-  const fromSite = String(site.url ?? "").trim().replace(/\/+$/, "");
+  const fromSite = String(site.url ?? "")
+    .trim()
+    .replace(/\/+$/, "");
   if (/^https?:\/\//i.test(fromSite)) return fromSite;
   return "";
 }
@@ -439,11 +439,7 @@ function insertBeforeHeadClose(html, snippet) {
 export function normalizeHeadContext(ctx = {}) {
   const cwd = ctx.cwd;
   const site =
-    ctx.site !== undefined
-      ? ctx.site
-      : cwd !== undefined
-        ? snapshotOgIdentity(cwd).site
-        : {};
+    ctx.site !== undefined ? ctx.site : cwd !== undefined ? snapshotOgIdentity(cwd).site : {};
   const appName = resolveOgTitle(site, ctx.appName ?? DEFAULT_APP_NAME, ctx.host ?? "");
   return {
     appName,
@@ -456,20 +452,48 @@ export function normalizeHeadContext(ctx = {}) {
   };
 }
 
+/** True when the document is an article and should keep its own title and type. */
+export function pageDeclaresArticle(html) {
+  const tags = String(html).match(/<meta\b[^>]*>/gi) ?? [];
+  for (const tag of tags) {
+    if (!/\bproperty\s*=\s*["']og:type["']/i.test(tag)) continue;
+    const content = tag.match(/\bcontent\s*=\s*["']([^"']+)["']/i);
+    if (content && content[1].toLowerCase() === "article") return true;
+  }
+  return false;
+}
+
+/** True when the page already names an og:image other than the site card. */
+export function pageOwnsOgImage(html) {
+  const tags = String(html).match(/<meta\b[^>]*>/gi) ?? [];
+  for (const tag of tags) {
+    if (!/\bproperty\s*=\s*["']og:image["']/i.test(tag)) continue;
+    const content = tag.match(/\bcontent\s*=\s*["']([^"']+)["']/i);
+    if (!content) continue;
+    if (/\/og\.jpg(?:[?#]|$)/i.test(content[1])) continue;
+    return true;
+  }
+  return false;
+}
+
 export function injectGrokPwaHead(html, ctx = {}) {
   if (typeof html !== "string") return html;
   const { site, projectId, creator, creatorId, host, cwd } = normalizeHeadContext(ctx);
   const documentTitle = titleFromDocument(html);
-  const appName = resolveOgTitle(
-    site,
-    ctx.appName ?? DEFAULT_APP_NAME,
-    host,
-    documentTitle,
-  );
-  let next = stripShareMetaTags(
-    html,
-    replacedShareMetaKeys({ site, host, cwd }),
-  );
+  const appName = resolveOgTitle(site, ctx.appName ?? DEFAULT_APP_NAME, host, documentTitle);
+  const keepOwnImage = pageOwnsOgImage(html);
+  const keepArticle = pageDeclaresArticle(html);
+  const keys = replacedShareMetaKeys({ site, host, cwd });
+  if (keepOwnImage) {
+    keys.delete("og:image");
+    keys.delete("og:image:width");
+    keys.delete("og:image:height");
+  }
+  if (keepArticle) {
+    keys.delete("og:title");
+    keys.delete("og:type");
+  }
+  let next = stripShareMetaTags(html, keys);
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
@@ -479,10 +503,12 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  next = insertAfterHeadOpen(
-    next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
-  );
+  const ogTags = grokOgHeadTags({ host, appName, site, documentTitle, cwd }).filter((tag) => {
+    if (keepOwnImage && /property="og:image/.test(tag)) return false;
+    if (keepArticle && /property="og:(?:title|type)"/.test(tag)) return false;
+    return true;
+  });
+  next = insertAfterHeadOpen(next, ogTags.join(""));
 
   if (!next.includes("/grok-app-builder/extensions.js")) {
     missing.push(...grokExtensionsHeadTags(projectId));

@@ -41,6 +41,7 @@ export const chrome = {
     selectedWork: "Selected work",
     careers: "Careers",
     news: "News",
+    blog: "Blog",
     security: "Security",
     compliance: "Compliance",
     saoPaulo: "São Paulo",

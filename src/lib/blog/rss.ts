@@ -29,7 +29,7 @@ export function renderRss(entries = publishedPosts()): string {
   <channel>
     <title>${xmlEscape(`${SITE.name} Blog`)}</title>
     <link>${xmlEscape(`${SITE.url}/blog`)}</link>
-    <description>${xmlEscape("Pages from UNFLD on the systems we build and operate.")}</description>
+    <description>${xmlEscape("Stories from inside UNFLD: the problem, the system we built, and what happened when it ran.")}</description>
     <language>pt-BR</language>
     <atom:link href="${self}" rel="self" type="application/rss+xml"/>
 ${items}

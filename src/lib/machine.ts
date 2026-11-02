@@ -192,7 +192,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/blog",
       "Blog",
-      "Bespoke pages from UNFLD on the systems we build and operate. Each post is its own layout.",
+      "Stories from inside UNFLD: the problem nobody had time for, the system we built for it, and what happened when it ran.",
       "Blog",
       { changefreq: "weekly", priority: 0.7 },
     ),

@@ -379,12 +379,12 @@ export const pages = {
   blog: {
     metaTitle: "Blog",
     metaDescription:
-      "Pages from UNFLD on the systems we build and operate. Each one is written for the subject.",
+      "Stories from inside UNFLD. The problem nobody had time for, the system we built for it, and what happened when it ran.",
     kicker: "Blog",
-    title: "From the work.",
-    lede: "How we build and operate our own systems, one page at a time, written for the subject.",
-    featured: "Latest",
-    read: "Read",
+    title: "Stories from the work.",
+    lede: "Every system we run started with a problem nobody had time for. These are those stories: what we built, why, and what happened when it went live. Told by the people who did it.",
+    featured: "Latest story",
+    read: "Read the story",
     backToBlog: "Blog",
     next: "Next",
     by: "By",

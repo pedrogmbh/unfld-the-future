@@ -489,11 +489,12 @@ export function SentinelaPost() {
               <p>
                 Quem percebeu não foi o Sentinela. Foi outro agente, o que cuida deste site. Ele
                 achou o bloqueio. O pull request corrigido do Dependabot entrou com a minha
-                aprovação, e a produção voltou em minutos. Os outros pull requests de dependência
-                foram rebaseados e entraram depois que as previews passaram. Tudo na mesma noite.
+                aprovação, e a produção voltou assim que ele entrou. Os outros pull requests de
+                dependência foram rebaseados e entraram depois que as previews passaram. Tudo no
+                mesmo dia.
               </p>
               <p>Não foi sorte. É o desenho. Um agente por trabalho, cada um no seu pedaço.</p>
-              <Lead>A noite, em quatro tempos.</Lead>
+              <Lead>O dia, em quatro tempos.</Lead>
             </Prose>
           </Reveal>
           <ol className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
@@ -505,8 +506,8 @@ export function SentinelaPost() {
                 "Achou o bloqueio. O patch do Dependabot entrou com a minha aprovação.",
               ],
               [
-                "A mesma noite",
-                "Produção de volta em minutos. O resto entrou com as previews no verde.",
+                "O mesmo dia",
+                "A produção voltou assim que o patch entrou. O resto entrou com as previews no verde.",
               ],
             ].map(([title, body]) => (
               <li key={title} className="min-w-0 bg-bg p-6">

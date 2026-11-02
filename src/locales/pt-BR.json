@@ -475,12 +475,12 @@
     },
     "blog": {
       "metaTitle": "Blog",
-      "metaDescription": "Páginas da UNFLD sobre os sistemas que construímos e operamos. Cada uma é escrita para o assunto.",
+      "metaDescription": "Histórias de dentro da UNFLD. O problema que ninguém tinha tempo de resolver, o sistema que construímos para ele e o que aconteceu quando entrou no ar.",
       "kicker": "Blog",
-      "title": "Do trabalho.",
-      "lede": "Como construímos e operamos os nossos sistemas, uma página de cada vez, escrita para o assunto.",
-      "featured": "Mais recente",
-      "read": "Ler",
+      "title": "Histórias do trabalho.",
+      "lede": "Todo sistema que operamos começou com um problema que ninguém tinha tempo de resolver. Estas são essas histórias: o que construímos, por quê e o que aconteceu quando entrou no ar. Contadas por quem fez.",
+      "featured": "História mais recente",
+      "read": "Ler a história",
       "backToBlog": "Blog",
       "next": "Próximo",
       "by": "Por"

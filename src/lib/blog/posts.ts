@@ -27,14 +27,14 @@ export type BlogPost = {
 export const posts: readonly BlogPost[] = [
   {
     slug: "sentinela-cve",
-    title: "A CVE é publicada. O Sentinela já a leu.",
+    title: "Quem lê a CVE quando ninguém tem tempo?",
     description:
-      "O Sentinela CVE lê cada CVE publicada no @CVEnew, abre o registro oficial e diz, com evidência, se a UNFLD está exposta. Duas vezes por dia útil.",
+      "Vulnerabilidades novas surgem mais rápido do que qualquer time consegue ler. Esta é a história de como a UNFLD colocou um agente no Grok Bot para ler cada CVE, conferir o registro oficial e procurar nos nossos repositórios.",
     date: "2026-11-02",
     cover: "/blog/sentinela-cve/cover.webp",
     ogImage: "/blog/sentinela-cve/og.png",
     coverAlt:
-      "Composição em preto do Sentinela CVE: nomes de componentes passam por uma linha de varredura, com a marca UNFLD.",
+      "Capa do Sentinela CVE. À esquerda, a pergunta: quem lê a CVE quando ninguém tem tempo? À direita, nomes de componentes das rodadas reais passam por um painel de varredura com a marca UNFLD.",
     tags: ["Sentinela CVE", "Grok Bot", "CVE", "Segurança"],
     author: { name: "Pedro Viana", role: "CEO" },
     byline: "Pedro Viana, CEO da UNFLD",

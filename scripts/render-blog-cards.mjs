@@ -52,8 +52,8 @@ function html(width, height) {
   .copy { padding: ${Math.round(height * 0.11)}px ${Math.round(width * 0.055)}px; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
   .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; letter-spacing: 0.28em; font-size: 15px; }
   .kicker { color: #e3b26a; letter-spacing: 0.18em; text-transform: uppercase; font-size: 15px; font-weight: 500; }
-  h1 { margin-top: 22px; font-weight: 500; font-size: ${width > 1400 ? 76 : 54}px; line-height: 0.95; letter-spacing: -0.045em; }
-  h1 span { display: block; color: #8a8a8a; }
+  h1 { margin-top: 22px; font-weight: 500; font-size: ${width > 1400 ? 56 : 44}px; line-height: 0.95; letter-spacing: -0.045em; }
+  h1 span { display: block; color: #8a8a8a; white-space: nowrap; }
   .sub { margin-top: 28px; max-width: 34rem; color: #8a8a8a; font-size: ${width > 1400 ? 22 : 18}px; line-height: 1.45; font-weight: 400; }
   .by { font-family: "IBM Plex Mono", ui-monospace, monospace; color: #8a8a8a; font-size: 14px; }
   .stage { position: relative; margin: ${Math.round(height * 0.08)}px ${Math.round(width * 0.04)}px ${Math.round(height * 0.08)}px 0; border: 1px solid #1a1a1a; background: #0f0f0f; overflow: hidden; display: flex; flex-direction: column; }
@@ -69,8 +69,8 @@ function html(width, height) {
     <div>
       <div class="brand">${MARK}<span>UNFLD</span></div>
       <p class="kicker" style="margin-top: ${width > 1400 ? 72 : 48}px">Sentinela CVE</p>
-      <h1>A CVE é publicada.<span>O Sentinela já a leu.</span></h1>
-      <p class="sub">Cada CVE nova no @CVEnew. O registro oficial. Evidência. Ou silêncio.</p>
+      <h1>Quem lê a CVE<span>quando ninguém tem tempo?</span></h1>
+      <p class="sub">Vulnerabilidades novas chegam mais rápido do que qualquer time consegue ler. Colocamos um agente para ler por nós.</p>
     </div>
     <p class="by">Pedro Viana, CEO da UNFLD · 2 de novembro de 2026</p>
   </div>

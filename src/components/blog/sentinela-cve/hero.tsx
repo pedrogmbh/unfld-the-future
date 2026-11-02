@@ -23,15 +23,15 @@ export function SentinelaHero() {
           <p className="text-[13px] font-medium tracking-[0.18em] text-gold uppercase">
             Sentinela CVE
           </p>
-          <h1 className="mt-6 font-display text-[clamp(2.6rem,7vw,5.6rem)] font-medium leading-[0.95] tracking-[-0.045em] text-fg">
-            <WordStagger text="A CVE é publicada." />
+          <h1 className="mt-6 font-display text-[clamp(2.5rem,5.2vw,4.5rem)] font-medium leading-[0.95] tracking-[-0.045em] text-fg">
+            <WordStagger text="Quem lê a CVE" />
             <br />
-            <WordStagger className="text-muted" text="O Sentinela já a leu." />
+            <WordStagger className="text-muted" text="quando ninguém tem tempo?" />
           </h1>
           <p className="mt-8 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
-            Um agente que a UNFLD opera no Grok Bot. Ele segue o @CVEnew, abre o registro oficial e
-            responde uma pergunta: isto toca o que nós rodamos? Duas vezes por dia útil. Sem CVSS
-            inventado, sem versão inventada, sem prova inventada.
+            Vulnerabilidades novas são publicadas o tempo todo, mais rápido do que qualquer time
+            consegue ler. Cada uma pede alguém para abrir o registro, procurar nos repositórios e
+            decidir se é grave. Na UNFLD, demos esse trabalho a um agente. Esta é a história dele.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <BtnLink to="/contact" size="lg">
@@ -69,8 +69,8 @@ export function SentinelaHero() {
             <span className="crop-mark right-0 bottom-0" />
           </div>
           <figcaption className="mt-4 max-w-md text-[13px] leading-relaxed text-subtle">
-            Composição com componentes de rodadas reais, no fim de outubro e no início de novembro
-            de 2026. Não é um feed ao vivo. Onde há identificador CVE, ele está no texto.
+            Nomes de componentes das rodadas reais do fim de outubro e do começo de novembro de
+            2026. Não é um feed ao vivo. Os identificadores CVE, quando existem, estão no texto.
           </figcaption>
         </figure>
       </div>

@@ -164,7 +164,6 @@
       "Waitlist": "Lista de espera"
     },
     "customerNotes": {
-      "Principal partnership": "Alianza principal",
       "Selected work": "Trabajo seleccionado",
       "Team experience": "Experiencia del equipo",
       "Partner project · WPP": "Proyecto con socio · WPP",
@@ -173,11 +172,11 @@
   },
   "pages": {
     "home": {
-      "metaDescription": "En agronomía, contratación, pequeños negocios, salud laboral, dibujo y retail automotor, UNFLD convierte el trabajo complejo en tecnología que las personas pueden usar de verdad. También construimos junto a organizaciones cuyos problemas más importantes no entran en un producto genérico.",
+      "metaDescription": "En contratación, pequeños negocios, salud laboral, dibujo y retail automotor, UNFLD convierte el trabajo complejo en tecnología que las personas pueden usar de verdad. También construimos junto a organizaciones cuyos problemas más importantes no entran en un producto genérico.",
       "newsBanner": "Unifikar · Un marketplace y una red de seminuevos",
       "heroTitle": "Desplegando el futuro.",
       "heroTitleSecond": "Un sistema real por vez.",
-      "lede": "En agronomía, contratación, pequeños negocios, salud laboral, dibujo y retail automotor, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad. Cuando el producto adecuado no existe, lo construimos junto a la organización que lo necesita.",
+      "lede": "En contratación, pequeños negocios, salud laboral, dibujo y retail automotor, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad. Cuando el producto adecuado no existe, lo construimos junto a la organización que lo necesita.",
       "ourProducts": "Nuestros productos",
       "heroImageAlt": "Un plano geométrico desplegándose en un vacío negro",
       "productsKicker": "Productos de UNFLD",
@@ -198,12 +197,12 @@
       "statProducts": "Productos de UNFLD",
       "statRooted": "Con raíces en",
       "statHq": "Sede São Paulo",
-      "proof1Title": "Sin conexión en el campo.",
-      "proof1Body": "Capturen evidencia, realicen evaluaciones y registren hechos técnicos donde ocurre el trabajo — sin romperse cuando desaparece la conectividad.",
-      "proof2Title": "Trazable en la oficina.",
-      "proof2Body": "Datos estructurados, registros listos para auditoría y visibilidad operativa que conectan la realidad del campo con las decisiones de gestión.",
-      "proof3Title": "Listo para la siguiente decisión.",
-      "proof3Body": "Guía clara, recomendaciones listas para el productor e insights accionables, entregados a las personas responsables de los resultados.",
+      "proof1Title": "En el canal que ya está en uso.",
+      "proof1Body": "WhatsApp, el navegador o el teléfono. El producto encuentra el trabajo donde ya ocurre.",
+      "proof2Title": "Un registro en el que el equipo confía.",
+      "proof2Body": "Datos estructurados y un próximo paso claro — para un sitio, una rutina fiscal, una contratación, un plan de riesgo o un anuncio.",
+      "proof3Title": "Sigue siendo nuestro después del release.",
+      "proof3Body": "Operamos lo que entregamos. El release es el comienzo del trabajo, no el final.",
       "developersTitle": "Recursos para desarrolladores de UNFLD.",
       "developersLede": "Documentación de API, OpenAPI, versionado y un catálogo público de productos, novedades, trabajos y datos de la empresa. Sin autenticación.",
       "developerResources": "Recursos para desarrolladores de UNFLD",
@@ -212,24 +211,24 @@
     },
     "products": {
       "metaTitle": "Productos de UNFLD",
-      "metaDescription": "Conozcan FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar — siete productos de UNFLD en agronomía, pequeños negocios, contratación, salud laboral, dibujo y retail automotor.",
+      "metaDescription": "Conozcan SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar — seis productos de UNFLD en pequeños negocios, contratación, salud laboral, dibujo y retail automotor.",
       "kicker": "Portafolio",
       "title": "Productos de",
       "titleSecond": "UNFLD.",
-      "lede": "Siete productos, construidos alrededor de tipos de trabajo que deberían ser más simples: agronomía, presencia digital, operaciones fiscales, contratación, salud laboral, dibujo y retail automotor.",
+      "lede": "Seis productos, construidos alrededor de tipos de trabajo que deberían ser más simples: presencia digital, operaciones fiscales, contratación, salud laboral, dibujo y retail automotor.",
       "primary": "Hablar con UNFLD",
       "secondary": "Cómo construimos",
       "imageAlt": "Productos de UNFLD en dispositivos de vidrio en un vacío oscuro",
-      "feature1Title": "Siete productos, cada uno en una etapa distinta",
-      "feature1Body": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar avanzan por etapas definidas con claridad — desde despliegues privados hasta acceso general en producción.",
+      "feature1Title": "Seis productos, cada uno en una etapa distinta",
+      "feature1Body": "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar avanzan por etapas definidas con claridad — desde el acceso anticipado hasta el acceso general en producción.",
       "feature2Title": "Operados con responsabilidad",
       "feature2Body": "Nos mantenemos cerca de los sistemas que corremos — sosteniendo trenes de release, monitoreando confiabilidad y evolucionando con la realidad del cliente.",
       "feature3Title": "Puntos de entrada distintos",
-      "feature3Body": "Cada producto ofrece un punto de entrada dedicado y seguro, adaptado a cómo trabajan las personas — en el celular en el campo, en WhatsApp o en el navegador.",
+      "feature3Body": "Cada producto ofrece un punto de entrada dedicado y seguro, adecuado a cómo trabajan las personas — en WhatsApp, en el navegador o en una aplicación.",
       "feature4Title": "WhatsApp donde crea velocidad",
       "feature4Body": "SiteCreator y Doutor Fiscal encuentran a los pequeños negocios en el canal que ya usan todos los días, reduciendo fricción y pasos de alta.",
-      "feature5Title": "Profundidad de campo y enterprise",
-      "feature5Body": "FCR y Dialogus entregan lógica de dominio profunda para equipos de agronomía y gestores de riesgo organizacional, respaldando rutinas operativas con datos verificables.",
+      "feature5Title": "Profundidad de dominio",
+      "feature5Body": "Dialogus y Unifikar llevan lógica de dominio para el riesgo laboral y el retail de seminuevos, respaldando rutinas operativas con datos verificables.",
       "feature6Title": "Compromiso de largo plazo",
       "feature6Body": "Construimos sistemas pensados para durar. El estándar es consistente: entender el trabajo, entregar lo que importa y seguir siendo responsables.",
       "quoteKicker": "Principio operativo",
@@ -250,7 +249,7 @@
       "whoTitle": "Cinco letras. Una razón social completa. Una casa que construye.",
       "whoBody": "Operamos como UNFLD. La empresa es UNFOLDING THE FUTURE LTDA — una sociedad brasileña de responsabilidad limitada (sociedade empresária limitada) en Bela Vista, São Paulo, activa desde {{founded}}. Construimos y operamos productos con nuestro propio nombre y construimos sistemas a medida junto a organizaciones con operaciones de peso.",
       "tileProducts": "Productos de UNFLD",
-      "tileProductsBody": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
+      "tileProductsBody": "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
       "tileSp": "São Paulo",
       "tileSpBody": "Bela Vista. Sede registrada.",
       "tileWork": "Trabajos seleccionados",
@@ -258,7 +257,7 @@
       "tileCareers": "Carreras",
       "tileCareersBody": "Sumarse al equipo.",
       "portfolioKicker": "El portafolio",
-      "portfolioTitle": "Siete productos formados por un mismo principio operativo.",
+      "portfolioTitle": "Seis productos formados por un mismo principio operativo.",
       "portfolioLede": "Encontrar el trabajo que debería ser más simple. Construir el sistema. Seguir mejorándolo en uso.",
       "workKicker": "Trabajos seleccionados",
       "workTitle": "Trabajo que la gente usó de verdad.",
@@ -330,9 +329,9 @@
       "pillar3Body": "Probamos y validamos en operaciones activas con equipos reales, reuniendo evidencia directa antes de ampliar el alcance.",
       "pillar4Title": "Operar o transferir",
       "pillar4Body": "Podemos operar el sistema bajo SLAs definidos o ejecutar una entrega estructurada con documentación y capacitación.",
-      "eng1Kicker": "Inteligencia de campo",
-      "eng1Title": "Agronomía y operaciones",
-      "eng1Body": "Herramientas móviles sin conexión, sincronización operativa y motores de recomendación adaptados a protocolos de campo complejos.",
+      "eng1Kicker": "Contratación",
+      "eng1Title": "Un camino más corto al trabajo",
+      "eng1Body": "Perfiles claros y conversaciones directas para candidatos y equipos de contratación, sin un ritual de formularios.",
       "eng2Kicker": "Flujos conversacionales",
       "eng2Title": "Sistemas con WhatsApp primero",
       "eng2Body": "Rutinas guiadas, ingreso de documentos y flujos transaccionales que encuentran a las personas donde ya trabajan.",
@@ -508,11 +507,11 @@
     },
     "solutions": {
       "metaTitle": "Soluciones",
-      "metaDescription": "Empiecen por el trabajo que necesita cambiar. Agronomía, contratación, pequeños negocios, salud laboral, dibujo, retail automotor y sistemas a medida.",
+      "metaDescription": "Empiecen por el trabajo que necesita cambiar. Contratación, pequeños negocios, salud laboral, dibujo, retail automotor y sistemas a medida.",
       "kicker": "Soluciones",
       "title": "Empiecen por el trabajo",
       "titleSecond": "que necesita cambiar.",
-      "lede": "En agronomía, contratación, pequeños negocios, salud laboral, dibujo, retail automotor y sistemas a medida, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad.",
+      "lede": "En contratación, pequeños negocios, salud laboral, dibujo, retail automotor y sistemas a medida, convertimos el trabajo complejo en tecnología que las personas pueden usar de verdad.",
       "detailTitle": "Soluciones de {{name}}",
       "audience": "Audiencia y partes interesadas"
     },
@@ -539,7 +538,7 @@
       "archTitle": "Estándares de infraestructura verificables",
       "deployKicker": "Despliegue a medida",
       "deployTitle": "Arquitecturado para la responsabilidad.",
-      "deployLede": "Ya sea al entregar una herramienta de inteligencia de campo de alto volumen como FCR, un motor de presencia instantánea con WhatsApp primero como SiteCreator, o un sistema a medida enterprise, nuestras decisiones de infraestructura equilibran aislamiento operativo, desempeño observable y requisitos de cumplimiento.",
+      "deployLede": "Ya sea al entregar un producto con WhatsApp primero como SiteCreator, un sistema de dominio como Dialogus, o un sistema a medida enterprise, nuestras decisiones de infraestructura equilibran aislamiento operativo, desempeño observable y requisitos de cumplimiento.",
       "p1Title": "Regiones de hosting",
       "p1Body": "Las regiones de hosting y las ubicaciones de datos varían por producto y por contrato. El despliegue en la región de Brasil está disponible cuando la arquitectura y el acuerdo lo requieren.",
       "p2Title": "Objetivos de recuperación",
@@ -571,7 +570,6 @@
       "editorial": "Estado editorial manual",
       "operational": "Operativo",
       "corporate": "Sitio corporativo",
-      "fcrRole": "Distribución móvil de FCR",
       "contact": "Para reportar un incidente o consultas operativas urgentes, contacten a {{email}}."
     },
     "legalIndex": {
@@ -696,7 +694,7 @@
       },
       {
         "title": "Productos de UNFLD",
-        "body": "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar avanzan en sus respectivas etapas, junto a sistemas a medida construidos al lado de nuestros socios."
+        "body": "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar avanzan en sus respectivas etapas, junto a sistemas a medida construidos al lado de nuestros socios."
       }
     ],
     "interview": [
@@ -718,10 +716,6 @@
       }
     ],
     "homePrompts": [
-      {
-        "q": "Los equipos de agronomía deciden en el campo. Su software también debería funcionar ahí.",
-        "a": "FCR es inteligencia de campo para equipos de agronomía: capturar evidencia sin conexión, sincronizar operaciones, convertir datos agronómicos en recomendaciones y dar a la gestión una vista trazable de lo que ocurre en el lote. Construido y evolucionado con Timac Agro."
-      },
       {
         "q": "Somos MEI y un pequeño negocio. Necesitamos un sitio real, no una agencia.",
         "a": "SiteCreator reúne la información pública de su negocio a partir del CNPJ y publica un sitio web real en minutos a través de WhatsApp, con hosting, SSL y enlaces de chat directos."
@@ -758,8 +752,8 @@
       "endpoints": [
         "Índice del catálogo, enlaces de documentación, política de rate-limit y URLs de colecciones.",
         "Razón social, CNPJ, dirección en São Paulo, teléfonos y correos.",
-        "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar.",
-        "Un producto. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
+        "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart y Unifikar.",
+        "Un producto. Slugs: sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
         "Notas de novedades públicas.",
         "Trabajos seleccionados que el equipo puede comentar en público.",
         "Páginas HTML canónicas del mapa del sitio.",
@@ -812,49 +806,6 @@
     }
   },
   "products": {
-    "fcr": {
-      "name": "FCR by UNFLD",
-      "kicker": "Agronomía",
-      "status": "Despliegue privado",
-      "explore": "Explorar",
-      "line": "Inteligencia de campo para equipos de agronomía.",
-      "mission": "Desplegando el futuro de la agronomía.",
-      "title": "FCR by UNFLD",
-      "titleSecond": "Desplegando el futuro de la agronomía.",
-      "primary": "App Store",
-      "blurb": "FCR es inteligencia de campo para equipos de agronomía: capturar evidencia sin conexión, sincronizar operaciones, convertir datos agronómicos en recomendaciones y dar a la gestión una vista trazable de lo que ocurre en el lote. Construido y evolucionado con Timac Agro.",
-      "features": [
-        {
-          "title": "Inteligencia de campo",
-          "body": "Trabajan desde el contexto de la propiedad y el cultivo, pasando por lotes, recolecciones, datos de suelo, recomendaciones, aprobaciones e informes listos para el productor — sin romperse cuando desaparece la conectividad."
-        },
-        {
-          "title": "El campo primero",
-          "body": "Capturen resultados técnicos sin conexión. Sincronicen cuando vuelva la señal. El informe no debería esperar cobertura."
-        },
-        {
-          "title": "Evolucionado con Timac Agro",
-          "body": "Construido por UNFLD, evolucionado con Timac Agro. El brief vino de agrónomos. El sistema es cómo lo respondimos."
-        },
-        {
-          "title": "Para equipos de agronomía",
-          "body": "No es un formulario de campo genérico. El ritmo, el contexto y las recomendaciones coinciden con cómo trabajan de verdad los equipos de agronomía en el lote."
-        },
-        {
-          "title": "Informes que impulsan decisiones",
-          "body": "La evidencia de campo se vuelve guía técnica, informes listos para el cliente, oportunidad comercial y datos de gestión. La recolección es el comienzo, no el producto."
-        },
-        {
-          "title": "Construido por UNFLD",
-          "body": "Construido por UNFLD, evolucionado con Timac Agro. Diseñamos, entregamos y operamos la plataforma juntos."
-        }
-      ],
-      "quote": {
-        "kicker": "FCR",
-        "title": "El lote no es una planilla.",
-        "body": "Inteligencia de campo para equipos de agronomía. Construido por UNFLD, evolucionado con Timac Agro."
-      }
-    },
     "sitecreator": {
       "name": "SiteCreator by UNFLD",
       "kicker": "Presencia digital",
@@ -1152,7 +1103,7 @@
       "body": [
         "UNFLD es la forma corta de UNFOLDING THE FUTURE — y eso es más que la razón social. Es el trabajo: encontrar el trabajo que importa y que debería ser más simple, construir el sistema y seguir mejorándolo en uso.",
         "La experiencia de nuestro equipo abarca productos y proyectos entregados de forma directa, a través de empresas anteriores y junto a socios en agricultura, medios, industria y operaciones empresariales.",
-        "FCR despliega el futuro de la agronomía. SiteCreator pone a los pequeños negocios en línea. Doutor Fiscal simplifica las operaciones fiscales. Queravaga acorta el camino al trabajo. Dialogus hace visible y accionable el riesgo laboral. Oluart pone la referencia de dibujo en la hoja. Unifikar abre una red para seminuevos. Mercados distintos; una misma convicción operativa."
+        "SiteCreator pone a los pequeños negocios en línea. Doutor Fiscal simplifica las operaciones fiscales. Queravaga acorta el camino al trabajo. Dialogus hace visible y accionable el riesgo laboral. Oluart pone la referencia de dibujo en la hoja. Unifikar abre una red para seminuevos. Mercados distintos; una misma convicción operativa."
       ]
     }
   },
@@ -1305,17 +1256,6 @@
     }
   },
   "solutions": {
-    "agronomy": {
-      "name": "Agronomía",
-      "audience": "Equipos de ingeniería agronómica, consultores agrícolas y responsables de operaciones en el campo.",
-      "line": "Inteligencia de campo para equipos de agronomía: capturar evidencia sin conexión y convertir datos de campo en recomendaciones.",
-      "body": "Trabajan desde el contexto de la propiedad y el cultivo, pasando por lotes, recolecciones, datos de suelo, recomendaciones, aprobaciones e informes listos para el productor — sin romperse cuando desaparece la conectividad en el campo. Impulsado por FCR, construido y evolucionado con Timac Agro.",
-      "capabilities": [
-        "Recolección sin conexión en el campo, con sincronización en segundo plano",
-        "Flujos de gestión trazables que conectan técnicos con coordinadores",
-        "Motor de recomendación agronómica que genera informes listos para el productor"
-      ]
-    },
     "hiring": {
       "name": "Contratación",
       "audience": "Candidatos que buscan una colocación directa y equipos de contratación que necesitan candidatos verificados.",
@@ -1374,12 +1314,12 @@
     "operations": {
       "name": "Operaciones",
       "audience": "Gerentes de cadena de suministro, directores de servicio de campo y ejecutivos de operaciones.",
-      "line": "Pongan el software donde el trabajo ocurre de verdad — en el campo, en la conversación y en las decisiones que la gestión necesita tomar después.",
-      "body": "La eficiencia operativa aparece cuando la tecnología quita fricción en el borde. Desde inteligencia agronómica sin conexión hasta rutinas fiscales conversacionales y sistemas de seguimiento a medida, UNFLD construye sistemas que reflejan las restricciones operativas reales.",
+      "line": "Pongan el software donde el trabajo ocurre de verdad — en la conversación, en el teléfono y en las decisiones que la gestión necesita tomar después.",
+      "body": "La eficiencia operativa aparece cuando la tecnología quita fricción donde está el trabajo. De las rutinas fiscales conversacionales a los sistemas de seguimiento a medida, UNFLD construye sistemas que reflejan las restricciones operativas reales.",
       "capabilities": [
-        "Interfaces móviles y conversacionales resilientes, con prioridad offline",
+        "Interfaces móviles y conversacionales resilientes",
         "Sincronización de estado en tiempo real y alertas de excepción",
-        "Datos de decisión trazables que conectan acciones de campo con reportes ejecutivos"
+        "Datos de decisión trazables que conectan el trabajo diario con reportes ejecutivos"
       ]
     },
     "legal": {
@@ -1407,10 +1347,10 @@
     "support": {
       "name": "Operaciones",
       "audience": "Equipos de operaciones y líderes de campo.",
-      "line": "Pongan el software donde el trabajo ocurre de verdad — en el campo, en la conversación y en las decisiones que la gestión necesita tomar después.",
-      "body": "Pongan el software donde el trabajo ocurre de verdad — en el campo, en la conversación y en las decisiones que la gestión necesita tomar después.",
+      "line": "Pongan el software donde el trabajo ocurre de verdad — en la conversación, en el teléfono y en las decisiones que la gestión necesita tomar después.",
+      "body": "Pongan el software donde el trabajo ocurre de verdad — en la conversación, en el teléfono y en las decisiones que la gestión necesita tomar después.",
       "capabilities": [
-        "Flujos de campo con prioridad offline",
+        "Flujos que siguen la operación",
         "Canales de comunicación en tiempo real",
         "Datos para decisiones de gestión"
       ]
@@ -1529,7 +1469,7 @@
       "cta": "Hablar con UNFLD",
       "features": [
         "Sistemas de software a medida",
-        "Despliegues de agronomía FCR",
+        "Despliegues privados",
         "Configuraciones enterprise",
         "Alcance y entrega dedicados"
       ]

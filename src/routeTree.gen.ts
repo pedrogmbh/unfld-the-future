@@ -24,7 +24,6 @@ import { Route as DocsRouteImport } from './routes/docs'
 import { Route as DoutorFiscalRouteImport } from './routes/doutor-fiscal'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
-import { Route as FcrRouteImport } from './routes/fcr'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
@@ -138,11 +137,6 @@ const DownloadRoute = DownloadRouteImport.update({
 const EnterpriseRoute = EnterpriseRouteImport.update({
   id: '/enterprise',
   path: '/enterprise',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FcrRoute = FcrRouteImport.update({
-  id: '/fcr',
-  path: '/fcr',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowWeWorkRoute = HowWeWorkRouteImport.update({
@@ -359,7 +353,6 @@ export interface FileRoutesByFullPath {
   '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
-  '/fcr': typeof FcrRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
@@ -415,7 +408,6 @@ export interface FileRoutesByTo {
   '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
-  '/fcr': typeof FcrRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
@@ -473,7 +465,6 @@ export interface FileRoutesById {
   '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
-  '/fcr': typeof FcrRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
@@ -532,7 +523,6 @@ export interface FileRouteTypes {
     | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
-    | '/fcr'
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
@@ -588,7 +578,6 @@ export interface FileRouteTypes {
     | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
-    | '/fcr'
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
@@ -645,7 +634,6 @@ export interface FileRouteTypes {
     | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
-    | '/fcr'
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
@@ -703,7 +691,6 @@ export interface RootRouteChildren {
   DoutorFiscalRoute: typeof DoutorFiscalRoute
   DownloadRoute: typeof DownloadRoute
   EnterpriseRoute: typeof EnterpriseRoute
-  FcrRoute: typeof FcrRoute
   HowWeWorkRoute: typeof HowWeWorkRoute
   InfrastructureRoute: typeof InfrastructureRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
@@ -845,13 +832,6 @@ declare module '@tanstack/react-router' {
       path: '/enterprise'
       fullPath: '/enterprise'
       preLoaderRoute: typeof EnterpriseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fcr': {
-      id: '/fcr'
-      path: '/fcr'
-      fullPath: '/fcr'
-      preLoaderRoute: typeof FcrRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-we-work': {
@@ -1172,7 +1152,6 @@ const rootRouteChildren: RootRouteChildren = {
   DoutorFiscalRoute: DoutorFiscalRoute,
   DownloadRoute: DownloadRoute,
   EnterpriseRoute: EnterpriseRoute,
-  FcrRoute: FcrRoute,
   HowWeWorkRoute: HowWeWorkRoute,
   InfrastructureRoute: InfrastructureRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,

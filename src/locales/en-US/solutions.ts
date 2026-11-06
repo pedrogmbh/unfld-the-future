@@ -1,15 +1,4 @@
 export const solutions = {
-  agronomy: {
-    name: "Agronomy",
-    audience: "Agronomy engineering teams, agricultural consultants, and farm operations managers.",
-    line: "Field intelligence for agronomy teams: capture evidence offline and turn field data into recommendations.",
-    body: "Work from property and crop context through plots, collections, soil data, recommendations, approvals, and producer-ready reports—without breaking when connectivity disappears in the field. Powered by FCR, built and evolved with Timac Agro.",
-    capabilities: [
-      "Offline collection in the field with background synchronization",
-      "Traceable management workflows connecting technicians to coordinators",
-      "Agronomic recommendation engine generating producer-ready reports",
-    ],
-  },
   hiring: {
     name: "Hiring",
     audience: "Candidates seeking straightforward job placement and hiring teams needing verified candidates.",
@@ -90,12 +79,12 @@ export const solutions = {
   operations: {
     name: "Operations",
     audience: "Supply chain managers, field service directors, and operations executives.",
-    line: "Put software where the work actually happens—in the field, in the conversation, and in the decisions managers need to make next.",
-    body: "Operational efficiency happens when technology removes friction at the edge. From offline agronomic intelligence to conversational fiscal routines and custom tracking systems, UNFLD builds systems that reflect real operational constraints.",
+    line: "Put software where the work actually happens—in the conversation, on the phone, and in the decisions managers need to make next.",
+    body: "Operational efficiency happens when technology removes friction where the work is. From conversational fiscal routines to custom tracking systems, UNFLD builds systems that reflect real operational constraints.",
     capabilities: [
-      "Resilient offline-first mobile and conversational interfaces",
+      "Resilient mobile and conversational interfaces",
       "Real-time status synchronization and exception alerts",
-      "Traceable decision data connecting field actions to executive reporting",
+      "Traceable decision data connecting daily work to executive reporting",
     ],
   },
   legal: {
@@ -123,10 +112,10 @@ export const solutions = {
   support: {
     name: "Operations",
     audience: "Operations teams and field leaders.",
-    line: "Put software where the work actually happens—in the field, in the conversation, and in the decisions managers need to make next.",
-    body: "Put software where the work actually happens—in the field, in the conversation, and in the decisions managers need to make next.",
+    line: "Put software where the work actually happens—in the conversation, on the phone, and in the decisions managers need to make next.",
+    body: "Put software where the work actually happens—in the conversation, on the phone, and in the decisions managers need to make next.",
     capabilities: [
-      "Field-level offline workflows",
+      "Workflows that follow the operation",
       "Real-time communication channels",
       "Management decision data",
     ],

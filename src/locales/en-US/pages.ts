@@ -1,11 +1,11 @@
 export const pages = {
   home: {
     metaDescription:
-      "Across agronomy, hiring, small business, workplace health, drawing, and vehicle retail, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
+      "Across hiring, small business, workplace health, drawing, and vehicle retail, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
     newsBanner: "Unifikar · A marketplace and network for used vehicles",
     heroTitle: "Unfolding the future.",
     heroTitleSecond: "One real system at a time.",
-    lede: "Across agronomy, hiring, small business, workplace health, drawing, and vehicle retail, we turn complex work into technology people can actually use. When the right product does not exist, we build it beside the organization that needs it.",
+    lede: "Across hiring, small business, workplace health, drawing, and vehicle retail, we turn complex work into technology people can actually use. When the right product does not exist, we build it beside the organization that needs it.",
     ourProducts: "Our products",
     heroImageAlt: "A geometric plane unfolding in a black void",
     productsKicker: "Products by UNFLD",
@@ -30,15 +30,15 @@ export const pages = {
     statProducts: "Products by UNFLD",
     statRooted: "Rooted in",
     statHq: "São Paulo HQ",
-    proof1Title: "Offline in the field.",
+    proof1Title: "In the channel already in use.",
     proof1Body:
-      "Capture evidence, conduct evaluations, and record technical facts where work happens—without breaking when connectivity disappears.",
-    proof2Title: "Traceable in the office.",
+      "WhatsApp, the browser, or a phone. The product meets the work where it already happens.",
+    proof2Title: "A record the team can trust.",
     proof2Body:
-      "Structured data, audit-ready records, and operational visibility that connect field reality to management decisions.",
-    proof3Title: "Ready for the next decision.",
+      "Structured data and a clear next step — for a site, a fiscal routine, a hire, a risk plan, or a listing.",
+    proof3Title: "Still ours after release.",
     proof3Body:
-      "Clear guidance, producer-ready recommendations, and actionable insights delivered to the people responsible for outcomes.",
+      "We operate what we ship. The release is the start of the work, not the end of it.",
     developersTitle: "UNFLD developer resources.",
     developersLede:
       "API docs, OpenAPI, versioning, and a public catalog of products, news, work, and company facts. No authentication.",
@@ -49,29 +49,29 @@ export const pages = {
   products: {
     metaTitle: "Products by UNFLD",
     metaDescription:
-      "Explore FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar—seven products by UNFLD across agronomy, small business, hiring, workplace health, drawing, and vehicle retail.",
+      "Explore SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar—six products by UNFLD across small business, hiring, workplace health, drawing, and vehicle retail.",
     kicker: "Portfolio",
     title: "Products by",
     titleSecond: "UNFLD.",
-    lede: "Seven products, built around kinds of work that should be simpler: agronomy, digital presence, fiscal operations, hiring, workplace health, drawing, and vehicle retail.",
+    lede: "Six products, built around kinds of work that should be simpler: digital presence, fiscal operations, hiring, workplace health, drawing, and vehicle retail.",
     primary: "Talk to UNFLD",
     secondary: "How we build",
     imageAlt: "UNFLD products on glass devices in a dark void",
-    feature1Title: "Seven products, each at a different stage",
+    feature1Title: "Six products, each at a different stage",
     feature1Body:
-      "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across clearly defined stages—from private deployments to live general access.",
+      "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across clearly defined stages—from early access to live general access.",
     feature2Title: "Operated with accountability",
     feature2Body:
       "We stay close to the systems we run—maintaining release trains, monitoring reliability, and evolving with customer reality.",
     feature3Title: "Distinct entry points",
     feature3Body:
-      "Each product offers a dedicated, secure entry point tailored to how users work—whether on mobile in the field, on WhatsApp, or in the browser.",
+      "Each product offers a dedicated, secure entry point tailored to how users work—on WhatsApp, in the browser, or in a mobile app.",
     feature4Title: "WhatsApp where it creates speed",
     feature4Body:
       "SiteCreator and Doutor Fiscal meet small businesses in the channel they already use daily, reducing friction and onboarding steps.",
-    feature5Title: "Field and enterprise depth",
+    feature5Title: "Domain depth",
     feature5Body:
-      "FCR and Dialogus deliver deep domain logic for agronomy teams and organizational risk managers, backing operational routines with verifiable data.",
+      "Dialogus and Unifikar carry domain logic for workplace risk and used-vehicle retail, backing operational routines with verifiable data.",
     feature6Title: "Long-term commitment",
     feature6Body:
       "We build systems intended to endure. The standard is consistent: understand the work, ship what matters, and remain accountable.",
@@ -97,7 +97,7 @@ export const pages = {
     whoBody:
       "We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a Brazilian limited company (sociedade empresária limitada) in Bela Vista, São Paulo, active since {{founded}}. We build and operate products under our own name and build custom systems beside organizations with consequential operations.",
     tileProducts: "Products by UNFLD",
-    tileProductsBody: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
+    tileProductsBody: "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
     tileSp: "São Paulo",
     tileSpBody: "Bela Vista. Registered office.",
     tileWork: "Selected work",
@@ -105,7 +105,7 @@ export const pages = {
     tileCareers: "Careers",
     tileCareersBody: "Join the team.",
     portfolioKicker: "The portfolio",
-    portfolioTitle: "Seven products shaped by one operating principle.",
+    portfolioTitle: "Six products shaped by one operating principle.",
     portfolioLede: "Find work that should be simpler. Build the system. Keep improving it in use.",
     workKicker: "Selected work",
     workTitle: "Work people actually used.",
@@ -189,10 +189,10 @@ export const pages = {
     pillar4Title: "Operate or transition",
     pillar4Body:
       "We can operate the system under defined SLAs or execute a structured handover with documentation and training.",
-    eng1Kicker: "Field intelligence",
-    eng1Title: "Agronomy & operations",
+    eng1Kicker: "Hiring",
+    eng1Title: "A shorter path to work",
     eng1Body:
-      "Offline mobile tools, operational sync, and recommendation engines tailored to complex field protocols.",
+      "Clear profiles and direct conversations for candidates and hiring teams, without a form-filling ritual.",
     eng2Kicker: "Conversational workflows",
     eng2Title: "WhatsApp-first systems",
     eng2Body:
@@ -416,11 +416,11 @@ export const pages = {
   solutions: {
     metaTitle: "Solutions",
     metaDescription:
-      "Start with the work that needs to change. Agronomy, hiring, small business, workplace health, drawing, vehicle retail, and custom systems.",
+      "Start with the work that needs to change. Hiring, small business, workplace health, drawing, vehicle retail, and custom systems.",
     kicker: "Solutions",
     title: "Start with the work",
     titleSecond: "that needs to change.",
-    lede: "Across agronomy, hiring, small business, workplace health, drawing, vehicle retail, and custom systems, we turn complex work into technology people can actually use.",
+    lede: "Across hiring, small business, workplace health, drawing, vehicle retail, and custom systems, we turn complex work into technology people can actually use.",
     detailTitle: "{{name}} Solutions",
     audience: "Target audience & stakeholders",
   },
@@ -451,7 +451,7 @@ export const pages = {
     deployKicker: "Tailored deployment",
     deployTitle: "Architected for accountability.",
     deployLede:
-      "Whether delivering a high-throughput field intelligence tool like FCR, an instant WhatsApp-first presence engine like SiteCreator, or an enterprise custom system, our infrastructure choices balance operational isolation, observable performance, and compliance requirements.",
+      "Whether delivering a WhatsApp-first product like SiteCreator, a domain system like Dialogus, or an enterprise custom system, our infrastructure choices balance operational isolation, observable performance, and compliance requirements.",
     p1Title: "Hosting regions",
     p1Body:
       "Hosting regions and data locations vary by product and contract. Brazilian-region deployment is available where the architecture and agreement require it.",
@@ -490,7 +490,6 @@ export const pages = {
     editorial: "Manual editorial status",
     operational: "Operational",
     corporate: "Corporate website",
-    fcrRole: "FCR mobile distribution",
     contact: "For incident reporting or urgent operational inquiries, contact {{email}}.",
   },
   legalIndex: {

@@ -21,7 +21,6 @@ export const Route = createFileRoute("/solutions/")({
 });
 
 const PRIMARY_SLUGS = [
-  "agronomy",
   "hiring",
   "small-business",
   "workplace-health",

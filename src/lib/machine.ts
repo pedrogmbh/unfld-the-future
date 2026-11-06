@@ -46,7 +46,6 @@ export function siteUrl(path: string): string {
 function canonicalSolutions() {
   return solutions.filter((s) =>
     [
-      "agronomy",
       "hiring",
       "small-business",
       "workplace-health",
@@ -69,14 +68,14 @@ export function machinePages(): MachinePage[] {
     page(
       "/",
       SITE.name,
-      "Across agronomy, hiring, small business, workplace health, drawing, and vehicle retail, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
+      "Across hiring, small business, workplace health, drawing, and vehicle retail, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
       "Company",
       { changefreq: "weekly", priority: 1 },
     ),
     page(
       "/products",
       "Products by UNFLD",
-      "Explore FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar—seven products by UNFLD across agronomy, small business, hiring, workplace health, drawing, and vehicle retail.",
+      "Explore SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar—six products by UNFLD across small business, hiring, workplace health, drawing, and vehicle retail.",
       "Products",
       { changefreq: "weekly", priority: 0.9 },
     ),
@@ -92,7 +91,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/access",
       "Access UNFLD products",
-      "Direct, secure entry points for FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar.",
+      "Direct, secure entry points for SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar.",
       "Products",
       { changefreq: "monthly", priority: 0.7 },
     ),
@@ -134,7 +133,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/solutions",
       "Solutions",
-      "Start with the work that needs to change. Purpose-built solutions across agronomy, hiring, small business, workplace health, drawing, vehicle retail, and custom systems.",
+      "Start with the work that needs to change. Purpose-built solutions across hiring, small business, workplace health, drawing, vehicle retail, and custom systems.",
       "Solutions",
       { changefreq: "monthly", priority: 0.7 },
     ),
@@ -430,7 +429,7 @@ export function renderLlmsTxt(pages = machinePages()): string {
 
 Unfolding the future. One real system at a time. UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}, headquartered in São Paulo, Brazil (${SITE.address.line1}, ${SITE.address.district}, ${SITE.address.city}/${SITE.address.region}). Contact sales at ${SITE.sales}; WhatsApp Business ${SITE.whatsapp} (${SITE.whatsappHref}); security at ${SITE.security}; careers at ${SITE.careers}.
 
-Products by UNFLD: FCR (field intelligence for agronomy), SiteCreator (digital presence via WhatsApp), Doutor Fiscal (fiscal routines via WhatsApp), Queravaga (hiring conversations), Dialogus (workplace health for NR-1), Oluart (AR drawing on paper), and Unifikar (used-vehicle marketplace and store network). Each product is identified below with its current availability stage. We also design and ship custom software systems beside teams with consequential operations.
+Products by UNFLD: SiteCreator (digital presence via WhatsApp), Doutor Fiscal (fiscal routines via WhatsApp), Queravaga (hiring conversations), Dialogus (workplace health for NR-1), Oluart (AR drawing on paper), and Unifikar (used-vehicle marketplace and store network). Each product is identified below with its current availability stage. We also design and ship custom software systems beside teams with consequential operations.
 
 This file follows [llmstxt.org](https://llmstxt.org/). The XML sitemap is at ${siteUrl("/sitemap.xml")}.
 

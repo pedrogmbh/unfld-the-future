@@ -19,36 +19,32 @@ export const HOUSE_SAMPLES: CodeSample[] = [
     id: "python",
     label: "Python",
     code: `record = {
-    "tool": "Ferramenta de Coleta",
-    "partner": "Timac Agro",
-    "engineer": "agronomo.01",
-    "crop": "soja",
-    "plot": "talhao-14",
-    "offline": True,
+    "product": "SiteCreator",
+    "channel": "whatsapp",
+    "cnpj": "00.000.000/0001-00",
+    "site": "padaria.live.sitecreator.com.br",
+    "minutes": 5,
 }
 
-# Sync when the signal returns.
-print(record["plot"], record["crop"])`,
+print(record["site"], record["channel"])`,
   },
   {
     id: "ts",
     label: "TypeScript",
-    code: `type Collection = {
-  tool: "Ferramenta de Coleta";
-  partner: "Timac Agro";
-  engineer: string;
-  crop: string;
-  plot: string;
-  offline: boolean;
+    code: `type Presence = {
+  product: "SiteCreator";
+  channel: "whatsapp";
+  cnpj: string;
+  site: string;
+  minutes: number;
 };
 
-const record: Collection = {
-  tool: "Ferramenta de Coleta",
-  partner: "Timac Agro",
-  engineer: "agronomo.01",
-  crop: "soja",
-  plot: "talhao-14",
-  offline: true,
+const record: Presence = {
+  product: "SiteCreator",
+  channel: "whatsapp",
+  cnpj: "00.000.000/0001-00",
+  site: "padaria.live.sitecreator.com.br",
+  minutes: 5,
 };`,
   },
   {

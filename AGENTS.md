@@ -10,9 +10,9 @@ Do not invent a second UI, stack, or brand.
 
 Institutional site for UNFLD, a product company and software house
 trading as **UNFLD** (legal name **UNFOLDING THE FUTURE LTDA**).
-Owned products in market: **FCR** (Ferramenta de Coleta, with Timac Agro),
-**SiteCreator**, **Doutor Fiscal**, **Queravaga**, **Dialogus Psicossocial**,
-**Oluart**, **Unifikar**.
+Owned products in market: **SiteCreator**, **Doutor Fiscal**, **Queravaga**,
+**Dialogus Psicossocial**, **Oluart**, **Unifikar**. Do not add FCR,
+Ferramenta de Coleta, or Timac Agro back to the public site.
 
 North star: [x.ai](https://x.ai) visual/motion language (black field,
 Inter Tight, IBM Plex Mono, grain, blur+y, stacked code windows). Copy

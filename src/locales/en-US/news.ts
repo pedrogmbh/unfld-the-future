@@ -40,7 +40,7 @@ export const news = {
     body: [
       "UNFLD is short for UNFOLDING THE FUTURE—and that is more than the legal name. It is the job: find consequential work that should be simpler, build the system, and keep improving it in use.",
       "Our team’s experience spans products and projects delivered directly, through prior companies, and alongside partners across agriculture, media, industry, and enterprise operations.",
-      "FCR unfolds the future of agronomy. SiteCreator brings small businesses online. Doutor Fiscal simplifies fiscal operations. Queravaga shortens the path to work. Dialogus makes workplace risk visible and actionable. Oluart puts a drawing reference on the page. Unifikar opens a network for used vehicles. Different markets; one operating belief.",
+      "SiteCreator brings small businesses online. Doutor Fiscal simplifies fiscal operations. Queravaga shortens the path to work. Dialogus makes workplace risk visible and actionable. Oluart puts a drawing reference on the page. Unifikar opens a network for used vehicles. Different markets; one operating belief.",
     ],
   },
 } as const;

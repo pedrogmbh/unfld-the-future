@@ -1,48 +1,4 @@
 export const products = {
-  fcr: {
-    name: "FCR by UNFLD",
-    kicker: "Agronomy",
-    status: "Private deployment",
-    explore: "Explore",
-    line: "Field intelligence for agronomy teams.",
-    mission: "Unfolding the future of agronomy.",
-    title: "FCR by UNFLD",
-    titleSecond: "Unfolding the future of agronomy.",
-    primary: "App Store",
-    blurb:
-      "FCR is field intelligence for agronomy teams: capture evidence offline, synchronize operations, turn agronomic data into recommendations, and give managers a traceable view of what happens in the field. Built and evolved with Timac Agro.",
-    features: [
-      {
-        title: "Field intelligence",
-        body: "Work from property and crop context through plots, collections, soil data, recommendations, approvals, and producer-ready reports—without breaking when connectivity disappears.",
-      },
-      {
-        title: "Field first",
-        body: "Capture technical results offline. Sync when the signal returns. The report should not wait on coverage.",
-      },
-      {
-        title: "Evolved with Timac Agro",
-        body: "Built by UNFLD, evolved with Timac Agro. The brief came from agronomists. The system is how we answered it.",
-      },
-      {
-        title: "For agronomy teams",
-        body: "Not a generic field form. The cadence, context, and recommendations match how agronomy teams actually work in the plot.",
-      },
-      {
-        title: "Reports that drive decisions",
-        body: "Field evidence becomes technical guidance, customer-ready reporting, commercial opportunity, and management data. Collection is the beginning, not the product.",
-      },
-      {
-        title: "Built by UNFLD",
-        body: "Built by UNFLD, evolved with Timac Agro. We design, ship, and operate the platform together.",
-      },
-    ],
-    quote: {
-      kicker: "FCR",
-      title: "The plot is not a spreadsheet.",
-      body: "Field intelligence for agronomy teams. Built by UNFLD, evolved with Timac Agro.",
-    },
-  },
   sitecreator: {
     name: "SiteCreator by UNFLD",
     kicker: "Digital presence",

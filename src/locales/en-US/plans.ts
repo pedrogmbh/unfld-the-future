@@ -78,7 +78,7 @@ export const plans = {
     cta: "Talk to UNFLD",
     features: [
       "Custom software systems",
-      "FCR agronomy deployments",
+      "Private deployments",
       "Enterprise configurations",
       "Dedicated scoping & delivery",
     ],

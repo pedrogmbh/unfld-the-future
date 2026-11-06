@@ -164,7 +164,6 @@ export const chrome = {
     Waitlist: "Waitlist",
   },
   customerNotes: {
-    "Principal partnership": "Principal partnership",
     "Selected work": "Selected work",
     "Team experience": "Team experience",
     "Partner project · WPP": "Partner project · WPP",

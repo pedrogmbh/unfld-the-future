@@ -38,7 +38,7 @@ export const catalog = {
     },
     {
       title: "Products by UNFLD",
-      body: "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across their respective stages, alongside custom systems built beside our partners.",
+      body: "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across their respective stages, alongside custom systems built beside our partners.",
     },
   ],
   interview: [
@@ -60,10 +60,6 @@ export const catalog = {
     },
   ],
   homePrompts: [
-    {
-      q: "Agronomy teams make decisions in the field. Their software should work there too.",
-      a: "FCR is field intelligence for agronomy teams: capture evidence offline, synchronize operations, turn agronomic data into recommendations, and give managers a traceable view of what happens in the field. Built and evolved with Timac Agro.",
-    },
     {
       q: "We are MEI and small business. We need a real site, not an agency.",
       a: "SiteCreator gathers public business information from your CNPJ and publishes a real website in minutes through WhatsApp, complete with hosting, SSL, and direct chat links.",
@@ -106,8 +102,8 @@ export const catalog = {
     endpoints: [
       "Catalog index, documentation links, rate-limit policy, and collection URLs.",
       "Legal name, CNPJ, São Paulo address, phones, and emails.",
-      "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar.",
-      "One product. Slugs: fcr, sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
+      "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar.",
+      "One product. Slugs: sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
       "Public news posts.",
       "Selected work the team can discuss in public.",
       "Canonical HTML pages from the sitemap.",

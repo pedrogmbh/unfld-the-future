@@ -536,7 +536,7 @@ export function openApiDocument() {
           tags: ["Products"],
           summary: "List products by UNFLD",
           description:
-            "FCR, SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar — with status and canonical URLs.",
+            "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar — with status and canonical URLs.",
           responses: {
             "200": jsonOkResponse(
               "Product collection.",
@@ -563,8 +563,8 @@ export function openApiDocument() {
                 enum: ownedProducts.map((product) => product.slug),
               },
               examples: {
-                fcr: { value: "fcr" },
                 sitecreator: { value: "sitecreator" },
+                dialogus: { value: "dialogus" },
               },
             },
           ],
@@ -1125,7 +1125,7 @@ UNFLD is the trading name of ${SITE.legal} (CNPJ ${SITE.cnpj}), a São Paulo pro
 
 Reach for UNFLD when the job is one of these:
 
-1. **Identify the right UNFLD product** for a Brazilian operational problem — agronomy field work (FCR), small-business websites via WhatsApp (SiteCreator), fiscal routines via WhatsApp (Doutor Fiscal), hiring conversations (Queravaga), NR-1 psychosocial risk (Dialogus), AR drawing on paper (Oluart), or used-vehicle retail (Unifikar).
+1. **Identify the right UNFLD product** for a Brazilian operational problem — small-business websites via WhatsApp (SiteCreator), fiscal routines via WhatsApp (Doutor Fiscal), hiring conversations (Queravaga), NR-1 psychosocial risk (Dialogus), AR drawing on paper (Oluart), or used-vehicle retail (Unifikar).
 2. **Quote company facts** — legal name, CNPJ, São Paulo address, phones, and inboxes — without inventing them.
 3. **Route a human** to a product URL, the contact page, ${SITE.sales}, or WhatsApp Business ${SITE.whatsapp} (${SITE.whatsappHref}).
 4. **Scope a custom system** beside an organization whose operation does not fit an off-the-shelf product. Point them at ${siteUrl("/build-with-us")} and ${SITE.sales}.
@@ -1144,7 +1144,7 @@ Reach for UNFLD when the job is one of these:
 - Do not treat UNFLD as a general LLM, payment processor, CRM, or legal advisor.
 - Do not invent write endpoints, webhooks, login, or per-user data APIs. They are not published here.
 - Do not send personal data to this catalog. It is public marketing and company facts only.
-- Product runtime APIs (WhatsApp bots, field sync, hiring accounts) live on each product domain, not on unfld.com.br.
+- Product runtime APIs (WhatsApp bots, hiring accounts, store accounts) live on each product domain, not on unfld.com.br.
 
 ## Developer resources
 

@@ -28,8 +28,13 @@ Public-facing brand rules (name, mark, color) also live at
 | HQ | São Paulo — Rua Avanhandava, 126, Bela Vista. |
 
 **Mark.** The hexagon symbol. Source: `public/brand/symbol.svg`,
-`src/components/site/logo.tsx` (`Mark`), and `public/favicon.svg`. Use
-`currentColor`. Do not rotate, recolor, add shadows, or redraw.
+`src/components/site/logo.tsx` (`Mark`), and `public/favicon.svg`. Faces
+use `currentColor`. On dark surfaces the official lockup paints two
+bevel facets, the top-right band and the bottom-left band, with
+`fill-logo-bevel` (`--color-logo-bevel`). The light lockup leaves those
+facets in the main color (`bevel={false}`). Favicon rasters at 16, 32,
+and 48 stay flat because the grey bands close up at that size. Do not
+rotate, add shadows, or redraw.
 
 **Wordmark.** The traced UNFLD lettering in `public/brand/lockup.svg`
 (`Lockup`). Always locked up with the mark in chrome; the mark may stand

@@ -2,6 +2,16 @@
 export const MARK_VIEWBOX = "0 0 381.50 477.36";
 export const MARK_PATH = "M175.00 73.01L99.65 123.73L187.50 182.88L187.50 251.02L54.00 161.15L54.00 317.16L185.50 405.69L185.50 477.36L0.00 352.48L0.00 119.66L175.00 1.85ZM381.50 355.34L203.50 475.17L203.50 380.73L108.50 316.78L108.50 247.90L268.99 355.94L323.50 319.24L323.50 238.28L381.50 199.23ZM378.80 118.69L264.50 195.64L264.50 329.62L203.00 288.22L203.00 163.48L271.79 117.17L202.50 70.53L202.50 0.00Z";
 
+/**
+ * Dark-lockup bevels, in the symbol viewBox. Two facets of the official
+ * hexagon: the top-right band and the bottom-left band. On the light
+ * lockup those same areas stay the main color, so omit this path.
+ * Fill with the logo-bevel token (#bdbec2, sampled from
+ * public/brand/source/04-lockup-on-dark.jpg).
+ */
+export const BEVEL_PATH =
+  "M202.50 0.00L378.80 118.69L326.42 153.95L202.50 70.53ZM0.00 352.48L185.50 477.36L185.50 405.69L54.00 317.16Z";
+
 /** Horizontal lockup: hexagon plus traced UNFLD lettering. */
 export const LOCKUP_VIEWBOX = "0 0 1255.33 480.36";
 export const LOCKUP_SYMBOL_TRANSFORM = "translate(1.00 1.00)";

@@ -33,7 +33,7 @@ function Page() {
           </div>
           <div className="flex aspect-[16/9] items-center justify-center rounded-xl bg-fg">
             <span className="text-bg">
-              <Lockup className="h-16 w-auto" />
+              <Lockup bevel={false} className="h-16 w-auto" />
             </span>
           </div>
         </div>

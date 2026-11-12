@@ -55,13 +55,6 @@ export const Route = createRootRouteWithContext<RouterContext>()({
         { rel: "stylesheet", href: appCss },
         { rel: "manifest", href: "/__grok/manifest.webmanifest" },
         { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
-        {
-          rel: "preload",
-          href: "/fonts/NGSwv5HMAFg6IuGlBNMjxLsH8ag.woff2",
-          as: "font",
-          type: "font/woff2",
-          crossOrigin: "anonymous",
-        },
       ],
     };
   },
@@ -74,6 +67,16 @@ function Root() {
     <html lang={LOCALE_META[locale].html} className="dark antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <link id="font-faces" rel="stylesheet" href="/fonts/faces.css" media="print" />
+        <noscript>
+          <link rel="stylesheet" href="/fonts/faces.css" />
+        </noscript>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              '(function(){function apply(){var l=document.getElementById("font-faces");if(l)l.media="all";}requestAnimationFrame(function(){requestAnimationFrame(apply);});})();',
+          }}
+        />
       </head>
       <body className="bg-bg text-fg">
         <PreviewHostBridge />

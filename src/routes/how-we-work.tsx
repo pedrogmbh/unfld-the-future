@@ -5,7 +5,8 @@ import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { Kicker, Section } from "@/components/site/section";
 import { buildPageHead } from "@/lib/meta";
 import { getMessages } from "@/lib/i18n/messages";
-import { useMessages } from "@/lib/i18n";
+import { useLocale, useMessages } from "@/lib/i18n";
+import { localizeStats } from "@/lib/i18n/localize";
 
 export const Route = createFileRoute("/how-we-work")({
   head: ({ match }) => {
@@ -21,8 +22,16 @@ export const Route = createFileRoute("/how-we-work")({
 });
 
 export function HowWeWorkPage() {
+  const locale = useLocale();
   const { pages, chrome } = useMessages();
   const p = pages.howWeWork;
+  const home = pages.home;
+  const statList = localizeStats(locale);
+  const proofs = [
+    [home.proof1Title, home.proof1Body],
+    [home.proof2Title, home.proof2Body],
+    [home.proof3Title, home.proof3Body],
+  ] as const;
   const steps = [
     { step: "01", title: p.step1Title, body: p.step1Body },
     { step: "02", title: p.step2Title, body: p.step2Body },
@@ -70,6 +79,41 @@ export function HowWeWorkPage() {
             </div>
           ))}
         </div>
+      </Section>
+
+      <Section className="pb-8">
+        <Reveal>
+          <p className="mb-5 text-[13px] font-medium text-muted">{home.customKicker}</p>
+          <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-medium leading-[1.05] tracking-[-0.035em]">
+            {home.customTitle}
+            <br />
+            <span className="text-muted">{home.customTitleSecond}</span>
+          </h2>
+          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
+            {home.customLede}
+          </p>
+        </Reveal>
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {proofs.map(([title, detail]) => (
+            <div
+              key={title}
+              className="rounded-xl border border-border bg-bg-elevated p-6 sm:p-7"
+            >
+              <h3 className="font-display text-xl font-medium tracking-tight">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{detail}</p>
+            </div>
+          ))}
+        </div>
+        <dl className="mt-10 grid max-w-lg grid-cols-3 gap-4">
+          {statList.map((stat) => (
+            <div key={stat.label}>
+              <dt className="font-display text-xl font-medium tracking-tight tabular-nums sm:text-2xl">
+                {stat.value}
+              </dt>
+              <dd className="mt-1 text-[11px] leading-snug text-muted">{stat.label}</dd>
+            </div>
+          ))}
+        </dl>
       </Section>
 
       <Section className="py-16">

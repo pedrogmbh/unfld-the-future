@@ -1,449 +1,213 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BtnLink, TextArrow, WhatsAppBtn } from "@/components/site/buttons";
-import { CodeTabs, type CodeSample } from "@/components/site/code-tabs";
-import { WorkTile } from "@/components/site/work-page";
-import {
-  ParallaxImage,
-  Reveal,
-  Stagger,
-  StaggerItem,
-  WordStagger,
-} from "@/components/site/reveal";
+import { BtnLink } from "@/components/site/buttons";
 import { Kicker, Section } from "@/components/site/section";
 import { homeJsonLd } from "@/lib/jsonld";
 import { buildPageHead } from "@/lib/meta";
 import { useLocale, useMessages } from "@/lib/i18n";
-import { SITE } from "@/lib/site";
-import {
-  localizeCustomers,
-  localizeHomePrompts,
-  localizeNews,
-  localizeOwnedProducts,
-  localizeWork,
-} from "@/lib/i18n/localize";
+import { localizeOwnedProducts, localizeWork } from "@/lib/i18n/localize";
 
-const HERO_IMAGE_SIZES = "(min-width: 72rem) 72rem, 100vw";
-const HERO_WEBP =
-  "/images/hero-fold-960.webp 960w, /images/hero-fold-1600.webp 1600w";
+const PROOF_SLUGS = ["netflix-tudum-2020", "embraer"] as const;
+
+const PROOF_IMAGE: Record<(typeof PROOF_SLUGS)[number], string> = {
+  "netflix-tudum-2020": "tudum",
+  embraer: "embraer",
+};
 
 export const Route = createFileRoute("/")({
-  head: ({ match }) => {
-    const head = buildPageHead({
+  head: ({ match }) =>
+    buildPageHead({
       path: "/",
       description: undefined,
       jsonLd: homeJsonLd(match.context.locale),
       locale: match.context.locale,
-    });
-    return {
-      ...head,
-      links: [
-        ...head.links,
-        {
-          rel: "preload",
-          as: "image",
-          type: "image/webp",
-          href: "/images/hero-fold-960.webp",
-          imageSrcSet: HERO_WEBP,
-          imageSizes: HERO_IMAGE_SIZES,
-          fetchPriority: "high",
-        },
-      ],
-    };
-  },
+    }),
   component: Home,
 });
-
-const apiSamples: CodeSample[] = [
-  {
-    id: "curl",
-    label: "cURL",
-    code: `curl https://www.unfld.com.br/api/v1/products \\
-  -H "Accept: application/json"
-
-# Spec:  GET /openapi.json
-# Docs:  GET /api
-# Agent: GET /llms.txt`,
-  },
-  {
-    id: "ts",
-    label: "TypeScript",
-    code: `const res = await fetch("https://www.unfld.com.br/api/v1", {
-  headers: { Accept: "application/json" },
-});
-const catalog = await res.json();
-console.log(catalog.links.products);`,
-  },
-  {
-    id: "python",
-    label: "Python",
-    code: `import urllib.request, json
-
-req = urllib.request.Request(
-    "https://www.unfld.com.br/openapi.json",
-    headers={"Accept": "application/json"},
-)
-spec = json.load(urllib.request.urlopen(req))
-print(spec["info"]["title"], spec["info"]["version"])`,
-  },
-];
-
 
 function Home() {
   const locale = useLocale();
   const { pages, chrome } = useMessages();
-  const p = pages.home;
+  const home = pages.home;
+  const company = pages.company;
   const owned = localizeOwnedProducts(locale);
-  const prompts = localizeHomePrompts(locale);
-  const work = localizeWork(locale).filter((item) => item.featured);
-  const customerList = localizeCustomers(locale);
-  const posts = localizeNews(locale);
-  const featured = work;
+  const work = new Map(localizeWork(locale).map((item) => [item.slug, item]));
+  const proof = PROOF_SLUGS.map((slug) => work.get(slug)).filter(
+    (item) => item != null,
+  );
+  const fronts = [
+    {
+      to: "/products" as const,
+      label: home.frontProduct,
+      body: company.portfolioLede,
+    },
+    {
+      to: "/build-with-us" as const,
+      label: home.frontDesign,
+      body: pages.buildWithUs.metaDescription,
+    },
+    {
+      to: "/company" as const,
+      label: home.frontConsulting,
+      body: chrome.facts.activityName,
+    },
+  ];
+
   return (
     <main>
-      <section className="relative w-full px-5 pt-28 pb-8 sm:px-8 sm:pt-32 lg:px-12">
-        <div className="mx-auto w-full max-w-6xl">
-          <Reveal>
-            <Link
-              to="/news/$slug"
-              params={{ slug: "unifikar" }}
-              className="inline-flex items-center gap-2 text-[13px] text-muted transition-colors hover:text-fg"
-            >
-              <span className="rounded-full border border-border-strong px-2 py-0.5 text-[10px] font-medium tracking-[0.14em] text-fg uppercase">
-                {chrome.new}
-              </span>
-              {p.newsBanner}
-              <span aria-hidden>→</span>
-            </Link>
-          </Reveal>
-
-          <h1 className="mt-8 font-display text-[clamp(2.8rem,9vw,6.8rem)] font-medium leading-[0.95] tracking-[-0.045em]">
-            <WordStagger text={p.heroTitle} />
-            <br />
-            <span className="text-muted">
-              <WordStagger text={p.heroTitleSecond} />
-            </span>
-          </h1>
-
-          <Reveal delay={0.18}>
-            <p className="mt-8 max-w-2xl text-[17px] leading-relaxed text-muted sm:text-lg">
-              {p.lede}
+      <section className="flex min-h-[100dvh] w-full flex-col justify-end px-5 pt-28 pb-16 sm:px-8 sm:pb-20 lg:px-12 lg:pb-24">
+        <div className="mx-auto grid w-full max-w-6xl items-end gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-16">
+          <div className="min-w-0">
+            <h1 className="home-hero text-[clamp(2.6rem,7.2vw,5.75rem)] font-medium leading-[0.96] tracking-[-0.045em]">
+              {home.heroTitle}
+              <br />
+              <span className="text-muted">{home.heroTitleSecond}</span>
+            </h1>
+            <p className="mt-8 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
+              {`${company.title} ${company.titleSecond}`}
             </p>
-          </Reveal>
-
-          <Reveal delay={0.28}>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <BtnLink to="/products">{p.ourProducts}</BtnLink>
-              <BtnLink to="/contact" variant="secondary">
-                {chrome.talkToUnfld}
-              </BtnLink>
-              <WhatsAppBtn>
-                {chrome.whatsapp} {SITE.whatsapp}
-              </WhatsAppBtn>
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
+              <Link
+                to="/products"
+                className="rounded-full text-[13px] font-medium text-muted transition-colors hover:text-fg"
+              >
+                {home.ourProducts}
+              </Link>
             </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="w-full px-5 pb-6 sm:px-8 lg:px-12">
-        <div className="mx-auto w-full max-w-6xl">
-          <ParallaxImage
-            src="/images/hero-fold.jpg"
-            webpSrcSet={HERO_WEBP}
-            sizes={HERO_IMAGE_SIZES}
-            width={1792}
-            height={1008}
-            fetchPriority="high"
-            alt={p.heroImageAlt}
+          </div>
+          <div
+            role="img"
+            aria-label={home.heroImageAlt}
+            className="hero-still hidden aspect-video w-full overflow-hidden rounded-xl outline outline-1 -outline-offset-1 outline-fg/10 lg:block"
           />
         </div>
       </section>
 
-      <Section id="products" className="py-20 sm:py-28">
-        <Reveal>
-          <Kicker>{p.productsKicker}</Kicker>
-          <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-            {p.productsTitle}
+      <Section className="py-20 sm:py-28">
+        <div className="home-rise">
+          <h2 className="text-[13px] font-medium tracking-[0.18em] text-gold uppercase">
+            {home.frontsTitle}
           </h2>
-          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
-            {p.productsLede}
-          </p>
-        </Reveal>
-        <Stagger
-          className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
-          delay={0.06}
-        >
-          {owned.map((product) => (
-            <StaggerItem key={product.slug}>
-              <Link
-                to={product.href as never}
-                className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                    {product.kicker}
+          <ol className="mt-8 grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-3">
+            {fronts.map((front, index) => (
+              <li key={front.to} className="min-w-0 bg-bg">
+                <Link
+                  to={front.to}
+                  className="group block h-full p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
+                >
+                  <p className="font-mono text-[12px] text-muted">
+                    {String(index + 1).padStart(2, "0")}
                   </p>
-                  <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
-                    {product.status}
-                  </span>
-                </div>
-                <div className="mt-6 flex items-baseline justify-between gap-4">
-                  <h3 className="font-display text-2xl font-medium tracking-tight">
-                    {product.name}
+                  <h3 className="mt-6 font-display text-2xl font-medium tracking-tight">
+                    {front.label}
                   </h3>
-                  <TextArrow className="text-[13px] text-muted group-hover:text-fg">
-                    {product.explore}
-                  </TextArrow>
-                </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {product.line}
-                </p>
-              </Link>
-            </StaggerItem>
-          ))}
-          <StaggerItem>
-            <Link
-              to="/build-with-us"
-              className="group block h-full bg-bg p-6 transition-colors duration-200 hover:bg-bg-elevated sm:p-8"
-            >
-              <div className="flex items-center justify-between gap-2">
-                <p className="text-[11px] tracking-[0.16em] text-subtle uppercase">
-                  {p.customTileKicker}
-                </p>
-                <span className="rounded-full border border-border px-2 py-0.5 text-[10px] font-mono text-subtle">
-                  {chrome.common.scoped}
-                </span>
-              </div>
-              <div className="mt-6 flex items-baseline justify-between gap-4">
-                <h3 className="font-display text-2xl font-medium tracking-tight">
-                  {p.customTileTitle}
-                </h3>
-                <TextArrow className="text-[13px] text-muted group-hover:text-fg">
-                  {chrome.common.explore}
-                </TextArrow>
-              </div>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {p.customTileBody}
-              </p>
-            </Link>
-          </StaggerItem>
-        </Stagger>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
+                    {front.body}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
       </Section>
 
-      <Section className="py-8 sm:py-12">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div>
-            <Reveal>
-              <Kicker>{p.inPractice}</Kicker>
-              <h2 className="font-display text-[clamp(1.8rem,4vw,2.8rem)] font-medium leading-tight tracking-tight">
-                {p.inPracticeTitle}
+      <Section id="products" className="pb-20 sm:pb-28">
+        <div className="home-rise">
+          <h2 className="text-[13px] font-medium tracking-[0.18em] text-gold uppercase">
+            {home.productsKicker}
+          </h2>
+          <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-4 border-t border-border pt-8">
+            {owned.map((product) => (
+              <li key={product.slug}>
+                <Link
+                  to={product.href as never}
+                  className="rounded-sm font-display text-lg font-medium tracking-tight transition-colors hover:text-muted sm:text-xl"
+                >
+                  {product.shortName}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      <Section id="clients" className="pb-20 sm:pb-28">
+        <div className="home-rise">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <Kicker>{home.selectedWorkKicker}</Kicker>
+              <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
+                {home.selectedWorkTitle}
               </h2>
-            </Reveal>
+            </div>
+            <Link
+              to="/work"
+              className="rounded-sm text-[13px] font-medium text-muted transition-colors hover:text-fg"
+            >
+              {chrome.common.allWorkArrow}
+            </Link>
           </div>
-          <div className="space-y-8">
-            {prompts.map((prompt, i) => (
-              <Reveal key={prompt.q} delay={i * 0.08}>
-                <div className="border-t border-border pt-6">
-                  <p className="text-[15px] font-medium">{prompt.q}</p>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted">
-                    {prompt.a}
-                  </p>
-                </div>
-              </Reveal>
+          <div className="mt-12 grid gap-10 sm:grid-cols-2">
+            {proof.map((item) => (
+              <Link
+                key={item.slug}
+                to="/work/$slug"
+                params={{ slug: item.slug }}
+                className="group block min-w-0"
+              >
+                <ProofImage
+                  id={PROOF_IMAGE[item.slug as (typeof PROOF_SLUGS)[number]]}
+                />
+                <p className="mt-4 text-[11px] font-medium tracking-[0.16em] text-muted uppercase">
+                  {item.client}
+                  <span> · {item.year}</span>
+                </p>
+                <h3 className="mt-2 font-display text-xl font-medium tracking-tight sm:text-2xl">
+                  {item.title}
+                </h3>
+                <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
+                  {item.line}
+                </p>
+              </Link>
             ))}
           </div>
         </div>
       </Section>
 
-      <Section id="clients" className="py-16 sm:py-24">
-        <Reveal>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <Kicker>{p.selectedWorkKicker}</Kicker>
-              <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-                {p.selectedWorkTitle}
-              </h2>
-              <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
-                {p.selectedWorkLede}
-              </p>
-            </div>
-            <Link
-              to="/work"
-              className="text-[13px] font-medium text-muted transition-colors hover:text-fg"
-            >
-              {chrome.common.allWorkArrow}
-            </Link>
-          </div>
-        </Reveal>
-        <Stagger
-          className="mt-12 grid gap-8 sm:grid-cols-2"
-          delay={0.08}
-        >
-          {featured.map((w) => (
-            <StaggerItem key={w.slug}>
-              <WorkTile work={w} variant="half" />
-            </StaggerItem>
-          ))}
-        </Stagger>
-        <Stagger
-          className="mt-16 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3"
-          delay={0.03}
-        >
-          {customerList.map((c) => (
-            <StaggerItem key={c.name}>
-              {c.workSlug ? (
-                <Link
-                  to="/work/$slug"
-                  params={{ slug: c.workSlug }}
-                  className="block bg-bg px-6 py-5 transition-colors hover:bg-bg-elevated sm:px-8 sm:py-6"
-                >
-                  <p className="font-display text-lg font-medium tracking-tight">
-                    {c.name}
-                  </p>
-                  <p className="mt-1 text-[13px] text-muted">{c.note}</p>
-                </Link>
-              ) : (
-                <div className="bg-bg px-6 py-5 sm:px-8 sm:py-6">
-                  <p className="font-display text-lg font-medium tracking-tight">
-                    {c.name}
-                  </p>
-                  <p className="mt-1 text-[13px] text-muted">{c.note}</p>
-                </div>
-              )}
-            </StaggerItem>
-          ))}
-        </Stagger>
-      </Section>
-
-      <Section className="py-16 sm:py-24">
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-8">
-          <div className="min-w-0">
-            <Reveal>
-              <p className="mb-5 text-[13px] font-medium text-muted">
-                {p.customKicker}
-              </p>
-              <h2 className="font-display text-[clamp(2.2rem,5vw,3.75rem)] font-medium leading-[1.05] tracking-[-0.035em]">
-                {p.customTitle}
-                <br />
-                <span className="text-muted">{p.customTitleSecond}</span>
-              </h2>
-              <p className="mt-5 max-w-md text-[15px] leading-relaxed text-muted">
-                {p.customLede}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <BtnLink to="/build-with-us">{chrome.common.howWeBuild}</BtnLink>
-                <BtnLink to="/contact" variant="secondary">
-                  {chrome.talkToUnfld}
-                </BtnLink>
-                <WhatsAppBtn>
-                  {chrome.whatsapp} {SITE.whatsapp}
-                </WhatsAppBtn>
-              </div>
-            </Reveal>
-            <Stagger className="mt-10 grid max-w-md grid-cols-3 gap-4" delay={0.1}>
-              {(
-                [
-                  ["5", p.statProducts],
-                  ["2019", p.statRooted],
-                  ["SP", p.statHq],
-                ] as const
-              ).map(([v, l]) => (
-                <StaggerItem key={l}>
-                  <p className="font-display text-xl font-medium tracking-tight tabular-nums sm:text-2xl">
-                    {v}
-                  </p>
-                  <p className="mt-1 text-[11px] leading-snug text-subtle">{l}</p>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-          <div className="min-w-0">
-            <div className="space-y-4">
-              {(
-                [
-                  [p.proof1Title, p.proof1Body],
-                  [p.proof2Title, p.proof2Body],
-                  [p.proof3Title, p.proof3Body],
-                ] as const
-              ).map(([title, detail], idx) => (
-                <Reveal key={title} delay={idx * 0.08}>
-                  <div className="rounded-xl border border-border bg-bg-elevated p-6 sm:p-7">
-                    <h3 className="font-display text-xl font-medium tracking-tight">
-                      {title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted">
-                      {detail}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section className="py-16 sm:py-24">
-        <div className="grid items-start gap-12 lg:grid-cols-2">
-          <Reveal>
-            <p className="mb-4 text-[13px] font-medium text-gold">
-              {chrome.common.forDevelopers}
-            </p>
-            <h2 className="font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
-              {p.developersTitle}
-            </h2>
-            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted">
-              {p.developersLede}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <BtnLink to="/developers">{p.developerResources}</BtnLink>
-              <BtnLink href="/openapi.json" variant="secondary">
-                {chrome.common.openApiSpec}
-              </BtnLink>
-            </div>
-          </Reveal>
-          <div className="min-w-0">
-            <CodeTabs samples={apiSamples} />
-          </div>
-        </div>
-      </Section>
-
       <Section className="pb-24 sm:pb-32">
-        <div className="mb-10 flex items-end justify-between gap-4">
-          <div>
-            <Kicker>{p.newsKicker}</Kicker>
-            <h2 className="font-display text-3xl font-medium tracking-tight">
-              {p.newsTitle}
-            </h2>
+        <div className="home-rise border-t border-border pt-16 sm:pt-20">
+          <h2 className="max-w-2xl font-display text-[clamp(1.8rem,4vw,3rem)] font-medium leading-tight tracking-tight">
+            {`${pages.contact.title} ${pages.contact.titleSecond}`}
+          </h2>
+          <div className="mt-8">
+            <BtnLink to="/contact">{chrome.talkToUnfld}</BtnLink>
           </div>
-          <Link
-            to="/news"
-            className="text-[13px] font-medium text-muted transition-colors hover:text-fg"
-          >
-            {chrome.common.allPostsArrow}
-          </Link>
         </div>
-        <Stagger
-          className="grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2"
-          delay={0.07}
-        >
-          {posts.slice(0, 4).map((post) => (
-            <StaggerItem key={post.slug}>
-              <Link
-                to="/news/$slug"
-                params={{ slug: post.slug }}
-                className="group block h-full bg-bg p-6 transition-colors hover:bg-bg-elevated sm:p-8"
-              >
-                <p className="text-[12px] text-subtle">{post.date}</p>
-                <h3 className="mt-3 font-display text-xl font-medium tracking-tight group-hover:opacity-80">
-                  {post.title}
-                </h3>
-                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted">
-                  {post.standfirst}
-                </p>
-              </Link>
-            </StaggerItem>
-          ))}
-        </Stagger>
       </Section>
     </main>
+  );
+}
+
+function ProofImage({ id }: { id: string }) {
+  const widths = [640, 960, 1280];
+  const sizes = "(min-width: 1024px) 540px, (min-width: 640px) 46vw, 100vw";
+  const srcSet = (ext: "avif" | "webp") =>
+    widths.map((width) => `/images/home/${id}-${width}.${ext} ${width}w`).join(", ");
+
+  return (
+    <picture>
+      <source type="image/avif" srcSet={srcSet("avif")} sizes={sizes} />
+      <source type="image/webp" srcSet={srcSet("webp")} sizes={sizes} />
+      <img
+        src={`/images/home/${id}-960.webp`}
+        alt=""
+        width={1600}
+        height={900}
+        loading="lazy"
+        decoding="async"
+        sizes={sizes}
+        className="aspect-video w-full rounded-xl object-cover outline outline-1 -outline-offset-1 outline-fg/10"
+      />
+    </picture>
   );
 }

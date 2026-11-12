@@ -1,0 +1,173 @@
+/* Install tutorial for the preview host. Device classes on <html> pick the layout. */
+
+:root {
+  color-scheme: dark;
+  --bg: #000;
+  --fg: #f5f5f5;
+  --muted: #8a8a8a;
+  --line: #1a1a1a;
+  --gold: #e3b26a;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.powered {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 20px 0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.powered-by {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.grok-logo {
+  display: block;
+  height: 16px;
+  width: auto;
+}
+
+.content,
+.content-desktop {
+  flex: 1;
+  width: min(440px, 100%);
+  margin: 0 auto;
+  padding: 12px 24px 48px;
+}
+
+.copy h1 {
+  margin: 8px 0 0;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.steps {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.ob {
+  flex: 0 0 72px;
+  height: 72px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.ob-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.muted { color: var(--muted); }
+
+.glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #111;
+  font-size: 13px;
+}
+
+.glass--icon img {
+  width: 22px;
+  height: 22px;
+}
+
+.loc {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.add-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.plus-icon { width: 18px; height: 18px; }
+
+.desktop-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.desktop-open {
+  display: inline-flex;
+  margin-top: 20px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+html.device-desktop .content { display: none; }
+html.device-phone .content-desktop,
+html.device-tablet .content-desktop { display: none; }
+
+html.device-phone .ob-ipad,
+html.device-phone .loc-ipad { display: none; }
+html.device-tablet .ob-phone,
+html.device-tablet .loc-phone { display: none; }
+
+html.ios-27-plus .step-ios-legacy { display: none; }
+html.ios-below-27 .step-ios27 { display: none; }
+html:not(.ios-27-plus):not(.ios-below-27) .step-ios27 { display: none; }

@@ -1,4 +1,4 @@
-import { mkdirSync } from "node:fs";
+import { mkdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
@@ -7,11 +7,14 @@ import sharp from "sharp";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "public/blog/sentinela-cve");
 
-const MARK = `<svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
-  <path fill="#f5f5f5" d="M6 24 L16 6 L18.4 6 L8.4 24 Z"/>
-  <path fill="#f5f5f5" opacity="0.55" d="M16 6 L26 24 L23.2 24 L16 10.2 Z"/>
-  <path fill="#f5f5f5" opacity="0.28" d="M11.2 24 H20.8 L16 14.8 Z"/>
-</svg>`;
+function brandSvg(file, height) {
+  return readFileSync(join(root, "public/brand", file), "utf8")
+    .replaceAll('fill="currentColor"', 'fill="#f5f5f5"')
+    .replace("<svg ", `<svg height="${height}" width="auto" `);
+}
+
+const MARK = brandSvg("symbol.svg", 18);
+const LOCKUP = brandSvg("lockup.svg", 28);
 
 const ROWS = [
   ["Ninja Forms", "WordPress"],
@@ -45,7 +48,7 @@ function html(width, height) {
   @font-face { font-family: "Inter Tight"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); font-weight: 500; }
   @font-face { font-family: "Inter Tight"; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); font-weight: 600; }
   @font-face { font-family: "Inter Tight"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); font-weight: 400; }
-  @font-face { font-family: "IBM Plex Mono"; src: url("file:///tmp/IBMPlexMono-Regular.ttf") format("truetype"); font-weight: 400; }
+  @font-face { font-family: "IBM Plex Mono"; src: url("file://${join(root, "public/fonts/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2")}") format("woff2"); font-weight: 400; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: ${width}px; height: ${height}px; background: #000; color: #f5f5f5; overflow: hidden; }
   body { font-family: "Inter Tight", Inter, sans-serif; display: grid; grid-template-columns: 1.15fr 0.85fr; }
@@ -67,7 +70,7 @@ function html(width, height) {
 <body>
   <div class="copy">
     <div>
-      <div class="brand">${MARK}<span>UNFLD</span></div>
+      <div class="brand">${LOCKUP}</div>
       <p class="kicker" style="margin-top: ${width > 1400 ? 72 : 48}px">Sentinela CVE</p>
       <h1>Quem lê a CVE<span>quando ninguém tem tempo?</span></h1>
       <p class="sub">Vulnerabilidades novas chegam mais rápido do que qualquer time consegue ler. Colocamos um agente para ler por nós.</p>

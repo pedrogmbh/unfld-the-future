@@ -22,14 +22,34 @@ import {
   localizeWork,
 } from "@/lib/i18n/localize";
 
+const HERO_IMAGE_SIZES = "(min-width: 72rem) 72rem, 100vw";
+const HERO_WEBP =
+  "/images/hero-fold-960.webp 960w, /images/hero-fold-1600.webp 1600w";
+
 export const Route = createFileRoute("/")({
-  head: ({ match }) =>
-    buildPageHead({
+  head: ({ match }) => {
+    const head = buildPageHead({
       path: "/",
       description: undefined,
       jsonLd: homeJsonLd(match.context.locale),
       locale: match.context.locale,
-    }),
+    });
+    return {
+      ...head,
+      links: [
+        ...head.links,
+        {
+          rel: "preload",
+          as: "image",
+          type: "image/webp",
+          href: "/images/hero-fold-960.webp",
+          imageSrcSet: HERO_WEBP,
+          imageSizes: HERO_IMAGE_SIZES,
+          fetchPriority: "high",
+        },
+      ],
+    };
+  },
   component: Home,
 });
 
@@ -128,6 +148,11 @@ function Home() {
         <div className="mx-auto w-full max-w-6xl">
           <ParallaxImage
             src="/images/hero-fold.jpg"
+            webpSrcSet={HERO_WEBP}
+            sizes={HERO_IMAGE_SIZES}
+            width={1792}
+            height={1008}
+            fetchPriority="high"
             alt={p.heroImageAlt}
           />
         </div>

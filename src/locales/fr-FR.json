@@ -1667,7 +1667,7 @@
     },
     "brand": {
       "metaTitle": "Charte de marque",
-      "metaDescription": "Comment nommer, écrire et représenter visuellement UNFLD et son sigle du pli.",
+      "metaDescription": "Comment nommer, écrire et représenter visuellement UNFLD et son sigle.",
       "kicker": "Marque",
       "title": "Charte de marque UNFLD",
       "intro": "UNFLD signifie UNFOLDING THE FUTURE : la conviction que le progrès utile se construit en transformant un travail difficile en systèmes que l’on peut utiliser. La marque doit sembler précise, calme, pratique et en mouvement. Utilisez ces lignes directrices lorsque vous faites référence à UNFLD, à nos produits ou à des missions partenaires.",
@@ -1681,16 +1681,16 @@
           "body": "Écrire avec des verbes concrets, des preuves précises et des phrases courtes. Préférer ce que le produit change à ce que l’entreprise prétend être. Éviter le futurisme emprunté, les superlatifs inexpliqués, l’agressivité théâtrale et les affirmations que le produit ne peut pas démontrer."
         },
         {
-          "heading": "Le sigle du pli",
-          "body": "Le sigle du pli est trois polygones suggérant un plan qui se déplie. Utilisez-le avec le wordmark, ou seul lorsque le nom de marque est déjà établi sur la surface. Espace libre : la largeur d’une aile de pli de tous les côtés. Ne pas le faire tourner, le recolorer, le déformer ni y ajouter des ombres décoratives."
+          "heading": "Le sigle",
+          "body": "Le sigle est le symbole hexagonal. Utilisez-le avec le wordmark UNFLD, ou seul lorsque le nom est déjà sur la surface. Ne le faites pas tourner, ne le recolorez pas, ne le déformez pas et n’y ajoutez pas d’ombres décoratives."
         },
         {
           "heading": "Système de couleurs",
-          "body": "Champ principal : noir pur (#000000). Typographie principale : blanc cassé (#F5F5F5). Typographie atténuée : gris neutre (#8A8A8A). L’accent d’action reste un blanc net sur noir, ou un noir sur blanc : boutons, la marque fold et les aplats restent là. Les kickers de section utilisent un laiton discret (#E3B26A), la même teinte que les chaînes dans le code. Utilisez-le seulement sur ces libellés — kickers de section en capitales, kickers de titre de page et la ligne en sentence case « Pour les développeurs ». Ne le mettez pas sur les boutons, la marque, les pastilles de statut, les règles ou les aplats. Ne le remplacez pas par un or plus vif. Le statut opérationnel utilise un petit point vert foncé (#187533) à côté de « Tous les systèmes sont opérationnels. » dans la barre juridique du pied de page et sur la page de statut du service. Ne le faites pas pulser, et n’utilisez pas ce vert ailleurs dans le chrome. Le vert plus clair des fenêtres de code reste uniquement sur les fenêtres de code. Pas de violet, de bleu ni de taches en dégradé dans le chrome."
+          "body": "Champ principal : noir pur (#000000). Typographie principale : blanc cassé (#F5F5F5). Typographie atténuée : gris neutre (#8A8A8A). L’accent d’action reste un blanc net sur noir, ou un noir sur blanc : boutons, la marque et les aplats restent là. Les kickers de section utilisent un laiton discret (#E3B26A), la même teinte que les chaînes dans le code. Utilisez-le seulement sur ces libellés — kickers de section en capitales, kickers de titre de page et la ligne en sentence case « Pour les développeurs ». Ne le mettez pas sur les boutons, la marque, les pastilles de statut, les règles ou les aplats. Ne le remplacez pas par un or plus vif. Le statut opérationnel utilise un petit point vert foncé (#187533) à côté de « Tous les systèmes sont opérationnels. » dans la barre juridique du pied de page et sur la page de statut du service. Ne le faites pas pulser, et n’utilisez pas ce vert ailleurs dans le chrome. Le vert plus clair des fenêtres de code reste uniquement sur les fenêtres de code. Pas de violet, de bleu ni de taches en dégradé dans le chrome."
         },
         {
           "heading": "Typographie",
-          "body": "Inter Tight pour les titres d’affichage et les éléments d’interface. IBM Plex Mono pour le code, les coordonnées, les horodatages et les métadonnées techniques. Les titres sont serrés, légèrement suivis en négatif, jamais tout en capitales pour les phrases longues. Le wordmark lui-même est élargi."
+          "body": "Inter Tight pour les titres d’affichage et les éléments d’interface. IBM Plex Mono pour le code, les coordonnées, les horodatages et les métadonnées techniques. Les titres sont serrés, légèrement suivis en négatif, jamais tout en capitales pour les phrases longues. Le wordmark est le lettrage UNFLD du lockup horizontal."
         },
         {
           "heading": "Restrictions",

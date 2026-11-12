@@ -199,7 +199,7 @@ export const legal = {
   },
   brand: {
     metaTitle: "Brand Guidelines",
-    metaDescription: "How to name, write, and visually represent UNFLD and its fold mark.",
+    metaDescription: "How to name, write, and visually represent UNFLD and its mark.",
     kicker: "Brand",
     title: "UNFLD Brand Guidelines",
     intro:
@@ -214,16 +214,16 @@ export const legal = {
         body: "Write with concrete verbs, specific proof, and short sentences. Prefer what the product changes over what the company claims to be. Avoid borrowed futurism, unexplained superlatives, theatrical aggression, and claims the product cannot evidence.",
       },
       {
-        heading: "The fold mark",
-        body: "The fold mark is three polygons suggesting a plane unfolding. Use it with the wordmark, or alone when the brand name is already established on the surface. Clear space: the width of one fold wing on all sides. Do not rotate, recolor, distort, or add decorative shadows.",
+        heading: "The mark",
+        body: "The mark is the hexagon symbol. Use it with the UNFLD wordmark, or alone when the name is already on the surface. Do not rotate, recolor, distort, or add decorative shadows.",
       },
       {
         heading: "Color system",
-        body: "Primary field: pure black (#000000). Primary type: off-white (#F5F5F5). Muted type: neutral gray (#8A8A8A). The action accent remains crisp white on black, or black on white: buttons, the fold mark, and fills stay there. Section kickers use a quiet brass (#E3B26A), the same hue as strings in code. Use it only on those labels — uppercase section kickers, page titles’ kickers, and the sentence-case “For developers” line. Do not put it on buttons, the mark, status pills, rules, or fills. Do not substitute a brighter gold. Operational status uses a small dark green dot (#187533) beside “All systems operational.” in the footer legal bar and on the service status page. Do not pulse it, and do not use that green elsewhere in chrome. The brighter window-chrome green stays on code windows only. No purple, blue, or gradient blobs in chrome.",
+        body: "Primary field: pure black (#000000). Primary type: off-white (#F5F5F5). Muted type: neutral gray (#8A8A8A). The action accent remains crisp white on black, or black on white: buttons, the mark, and fills stay there. Section kickers use a quiet brass (#E3B26A), the same hue as strings in code. Use it only on those labels — uppercase section kickers, page titles’ kickers, and the sentence-case “For developers” line. Do not put it on buttons, the mark, status pills, rules, or fills. Do not substitute a brighter gold. Operational status uses a small dark green dot (#187533) beside “All systems operational.” in the footer legal bar and on the service status page. Do not pulse it, and do not use that green elsewhere in chrome. The brighter window-chrome green stays on code windows only. No purple, blue, or gradient blobs in chrome.",
       },
       {
         heading: "Typography",
-        body: "Inter Tight for display titles and interface elements. IBM Plex Mono for code, coordinates, timestamps, and technical metadata. Headlines are tight, slightly negatively tracked, never all-caps for long sentences. The wordmark itself is tracked out.",
+        body: "Inter Tight for display titles and interface elements. IBM Plex Mono for code, coordinates, timestamps, and technical metadata. Headlines are tight, slightly negatively tracked, never all-caps for long sentences. The wordmark is the UNFLD lettering in the horizontal lockup.",
       },
       {
         heading: "Restrictions",

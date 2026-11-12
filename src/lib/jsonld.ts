@@ -24,7 +24,7 @@ export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
     legalName: SITE.legal,
     alternateName: [SITE.trading, "UNFOLDING THE FUTURE", "Unfolding the Future"],
     url: SITE.url,
-    logo: `${SITE.url}/favicon.svg`,
+    logo: `${SITE.url}/logo.svg`,
     image: `${SITE.url}/og.jpg`,
     description: messages.pages.root.description,
     email: SITE.email,

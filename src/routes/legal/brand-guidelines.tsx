@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mark } from "@/components/site/logo";
+import { Lockup } from "@/components/site/logo";
 import { LegalFromMessages } from "@/components/site/legal-doc";
 import { buildPageHead } from "@/lib/meta";
 import { getMessages } from "@/lib/i18n/messages";
@@ -27,19 +27,13 @@ function Page() {
       afterIntro={
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="flex aspect-[16/9] items-center justify-center rounded-xl bg-bg-subtle">
-            <span className="inline-flex items-center gap-3 text-fg">
-              <Mark className="size-8" />
-              <span className="font-display text-2xl font-semibold tracking-[0.28em]">
-                UNFLD
-              </span>
+            <span className="text-fg">
+              <Lockup className="h-16 w-auto" />
             </span>
           </div>
           <div className="flex aspect-[16/9] items-center justify-center rounded-xl bg-fg">
-            <span className="inline-flex items-center gap-3 text-bg">
-              <Mark className="size-8" />
-              <span className="font-display text-2xl font-semibold tracking-[0.28em]">
-                UNFLD
-              </span>
+            <span className="text-bg">
+              <Lockup className="h-16 w-auto" />
             </span>
           </div>
         </div>

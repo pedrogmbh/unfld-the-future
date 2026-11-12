@@ -73,7 +73,7 @@ src/routes/                    file routes
 src/routes/__root.tsx          fonts, grain, Header, Footer
 src/router.tsx                 getRouter() + NotFound
 public/images/                 cinematic stills
-public/favicon.svg             fold mark
+public/favicon.svg             hexagon mark
 public/og.jpg                  OG image
 DESIGN.md                      visual / motion / type contract
 ```
@@ -127,14 +127,15 @@ News posts: `/news/$slug` + `getNews()`. Do not hardcode
   developer section kicker, which is sentence case (“For developers”).
 - Buttons are pills. Primary fill white; secondary outlined.
   Press scale `0.96`.
-- Name is **UNFLD** (five capitals). Mark from `logo.tsx` — do not redraw.
+- Name is **UNFLD** (five capitals). Mark and lockup from `logo.tsx` and `public/brand/`. Do not redraw.
 
 ### Motion
 
 Easing `[0.22, 1, 0.36, 1]`. Respect `prefers-reduced-motion`.
 
 - `Reveal` — scroll enter (block elements only).
-- `WordStagger` — **`animate` on mount**, never `whileInView` on inline
+- `WordStagger`: CSS rise on mount, text stays opaque in the SSR HTML.
+  Never start it at `opacity: 0`, and never use `whileInView` on inline
   spans (IntersectionObserver misses them; hero text stays invisible).
 - Header menus: 180ms blur+y+scale; 90ms hover-intent delay on leave.
 - Code stack: mouse-only parallax/tilt; skip on touch and reduced motion.

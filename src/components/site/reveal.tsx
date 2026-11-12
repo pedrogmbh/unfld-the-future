@@ -81,33 +81,19 @@ export function WordStagger({
   text: string;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
   const words = text.split(" ");
-  if (reduce) return <span className={className}>{text}</span>;
   return (
-    <motion.span
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: 0.07 } },
-      }}
-      className={cn("inline-block", className)}
-    >
+    <span className={cn("inline-block", className)}>
       {words.map((w, i) => (
-        <motion.span
+        <span
           key={`${w}-${i}`}
-          className="inline-block"
-          variants={{
-            hidden: { opacity: 0, y: 22, filter: "blur(10px)" },
-            visible: { opacity: 1, y: 0, filter: "blur(0px)" },
-          }}
-          transition={{ duration: 0.75, ease }}
+          className="word-stagger-word"
+          style={{ animationDelay: `${i * 70}ms` }}
         >
           {i < words.length - 1 ? `${w}\u00a0` : w}
-        </motion.span>
+        </span>
       ))}
-    </motion.span>
+    </span>
   );
 }
 
@@ -115,10 +101,20 @@ export function ParallaxImage({
   src,
   alt,
   className,
+  fetchPriority,
+  width,
+  height,
+  webpSrcSet,
+  sizes,
 }: {
   src: string;
   alt: string;
   className?: string;
+  fetchPriority?: "high" | "low" | "auto";
+  width?: number;
+  height?: number;
+  webpSrcSet?: string;
+  sizes?: string;
 }) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
@@ -131,12 +127,21 @@ export function ParallaxImage({
 
   return (
     <div ref={ref} className={cn("overflow-hidden rounded-xl", className)}>
-      <motion.img
-        src={src}
-        alt={alt}
-        style={reduce ? undefined : { y, scale }}
-        className="aspect-[16/8] w-full object-cover outline outline-1 -outline-offset-1 outline-fg/10"
-      />
+      <picture>
+        {webpSrcSet ? (
+          <source type="image/webp" srcSet={webpSrcSet} sizes={sizes} />
+        ) : null}
+        <motion.img
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          sizes={sizes}
+          fetchPriority={fetchPriority}
+          style={reduce ? undefined : { y, scale }}
+          className="aspect-[16/8] w-full object-cover outline outline-1 -outline-offset-1 outline-fg/10"
+        />
+      </picture>
     </div>
   );
 }

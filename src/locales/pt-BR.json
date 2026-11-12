@@ -1667,7 +1667,7 @@
     },
     "brand": {
       "metaTitle": "Diretrizes de Marca",
-      "metaDescription": "Como nomear, escrever e representar visualmente a UNFLD e a sua marca de dobra.",
+      "metaDescription": "Como nomear, escrever e representar visualmente a UNFLD e a sua marca.",
       "kicker": "Marca",
       "title": "Diretrizes de Marca UNFLD",
       "intro": "UNFLD significa UNFOLDING THE FUTURE: a convicção de que o progresso significativo se constrói ao transformar trabalho difícil em sistemas que as pessoas podem usar. A marca deve parecer precisa, calma, prática e em movimento. Use estas diretrizes ao se referir à UNFLD, aos nossos produtos ou a engajamentos com parceiros.",
@@ -1681,16 +1681,16 @@
           "body": "Escreva com verbos concretos, prova específica e frases curtas. Prefira o que o produto muda ao que a empresa afirma ser. Evite futurismo emprestado, superlativos sem explicação, agressividade teatral e afirmações que o produto não possa evidenciar."
         },
         {
-          "heading": "A marca de dobra",
-          "body": "A marca de dobra são três polígonos que sugerem um plano se desdobrando. Use-a com o wordmark, ou sozinha quando o nome da marca já estiver estabelecido na superfície. Espaço livre: a largura de uma asa da dobra em todos os lados. Não gire, recolora, distorça nem acrescente sombras decorativas."
+          "heading": "A marca",
+          "body": "A marca é o símbolo hexagonal. Use-a com o wordmark UNFLD, ou sozinha quando o nome já estiver na superfície. Não gire, recolora, distorça nem acrescente sombras decorativas."
         },
         {
           "heading": "Sistema de cor",
-          "body": "Campo primário: preto puro (#000000). Tipo primário: off-white (#F5F5F5). Tipo atenuado: cinza neutro (#8A8A8A). O acento de ação permanece branco nítido sobre preto, ou preto sobre branco: botões, a marca fold e os preenchimentos ficam aí. Os kickers de seção usam um latão discreto (#E3B26A), o mesmo tom das strings no código. Use-o só nesses rótulos — kickers de seção em caixa-alta, kickers de título de página e a linha em sentence case “Para desenvolvedores”. Não o coloque em botões, na marca, em pílulas de status, regras ou preenchimentos. Não substitua por um dourado mais vivo. O status operacional usa um ponto verde-escuro pequeno (#187533) ao lado de “Todos os sistemas em operação.” na barra jurídica do rodapé e na página de status do serviço. Não o faça pulsar, e não use esse verde em outro lugar do cromo. O verde mais claro das janelas de código permanece só nas janelas de código. Sem roxo, azul ou manchas em degradê no cromo."
+          "body": "Campo primário: preto puro (#000000). Tipo primário: off-white (#F5F5F5). Tipo atenuado: cinza neutro (#8A8A8A). O acento de ação permanece branco nítido sobre preto, ou preto sobre branco: botões, a marca e os preenchimentos ficam aí. Os kickers de seção usam um latão discreto (#E3B26A), o mesmo tom das strings no código. Use-o só nesses rótulos — kickers de seção em caixa-alta, kickers de título de página e a linha em sentence case “Para desenvolvedores”. Não o coloque em botões, na marca, em pílulas de status, regras ou preenchimentos. Não substitua por um dourado mais vivo. O status operacional usa um ponto verde-escuro pequeno (#187533) ao lado de “Todos os sistemas em operação.” na barra jurídica do rodapé e na página de status do serviço. Não o faça pulsar, e não use esse verde em outro lugar do cromo. O verde mais claro das janelas de código permanece só nas janelas de código. Sem roxo, azul ou manchas em degradê no cromo."
         },
         {
           "heading": "Tipografia",
-          "body": "Inter Tight para títulos de display e elementos de interface. IBM Plex Mono para código, coordenadas, carimbos de tempo e metadados técnicos. Os títulos são justos, com tracking levemente negativo, nunca em caixa-alta em frases longas. O próprio wordmark é trackeado para fora."
+          "body": "Inter Tight para títulos de display e elementos de interface. IBM Plex Mono para código, coordenadas, carimbos de tempo e metadados técnicos. Os títulos são justos, com tracking levemente negativo, nunca em caixa-alta em frases longas. O wordmark é o lettering UNFLD do lockup horizontal."
         },
         {
           "heading": "Restrições",

@@ -1,6 +1,6 @@
 import { CodeBlock } from "@/components/site/code-block";
 import { BtnLink } from "@/components/site/buttons";
-import { Mark } from "@/components/site/logo";
+import { Lockup } from "@/components/site/logo";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal";
 import { SentinelaHero } from "./hero";
 
@@ -812,8 +812,7 @@ function EmailFrame({
   return (
     <article className="min-w-0 overflow-hidden rounded-xl border border-border bg-bg">
       <div className="flex items-center gap-3 border-b border-border px-5 py-4 sm:px-6">
-        <Mark className="size-4" />
-        <span className="font-display text-[13px] font-semibold tracking-[0.28em]">UNFLD</span>
+        <Lockup className="h-5" />
         <span className="ml-auto font-mono text-[11px] text-subtle">{eyebrow}</span>
       </div>
       <div className="px-5 py-6 sm:px-6">

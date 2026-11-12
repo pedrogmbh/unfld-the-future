@@ -1667,7 +1667,7 @@
     },
     "brand": {
       "metaTitle": "Guía de marca",
-      "metaDescription": "Cómo nombrar, escribir y representar visualmente a UNFLD y su marca de pliegue.",
+      "metaDescription": "Cómo nombrar, escribir y representar visualmente a UNFLD y su marca.",
       "kicker": "Marca",
       "title": "Guía de marca UNFLD",
       "intro": "UNFLD significa UNFOLDING THE FUTURE: la convicción de que el progreso que importa se construye al convertir el trabajo difícil en sistemas que las personas pueden usar. La marca debería sentirse precisa, calma, práctica y en movimiento. Usen estas pautas al referirse a UNFLD, a nuestros productos o a encargos con socios.",
@@ -1681,16 +1681,16 @@
           "body": "Escriban con verbos concretos, prueba específica y oraciones cortas. Prefieran lo que el producto cambia a lo que la empresa dice ser. Eviten futurismo prestado, superlativos sin explicación, agresividad teatral y afirmaciones que el producto no pueda evidenciar."
         },
         {
-          "heading": "La marca de pliegue",
-          "body": "La marca de pliegue son tres polígonos que sugieren un plano desplegándose. Úsenla con el wordmark, o sola cuando el nombre de la marca ya está establecido en la superficie. Espacio libre: el ancho de un ala del pliegue en todos los lados. No la roten, recoloreen, distorsionen ni le agreguen sombras decorativas."
+          "heading": "La marca",
+          "body": "La marca es el símbolo hexagonal. Úsenla con el wordmark UNFLD, o sola cuando el nombre ya está en la superficie. No la roten, recoloreen, distorsionen ni le agreguen sombras decorativas."
         },
         {
           "heading": "Sistema de color",
-          "body": "Campo primario: negro puro (#000000). Tipografía primaria: off-white (#F5F5F5). Tipografía atenuada: gris neutro (#8A8A8A). El acento de acción sigue siendo blanco nítido sobre negro, o negro sobre blanco: botones, la marca fold y los rellenos se quedan ahí. Los kickers de sección usan un latón discreto (#E3B26A), el mismo tono que las strings en el código. Úsenlo solo en esas etiquetas — kickers de sección en mayúsculas, kickers de título de página y la línea en sentence case “Para desarrolladores”. No lo pongan en botones, en la marca, en pastillas de estado, reglas o rellenos. No lo sustituyan por un oro más vivo. El estado operativo usa un punto verde oscuro pequeño (#187533) junto a “Todos los sistemas operativos.” en la barra jurídica del pie y en la página de estado del servicio. No lo hagan pulsar, y no usen ese verde en otro lugar del chrome. El verde más claro de las ventanas de código se queda solo en las ventanas de código. Sin púrpura, azul ni manchas de degradé en el chrome."
+          "body": "Campo primario: negro puro (#000000). Tipografía primaria: off-white (#F5F5F5). Tipografía atenuada: gris neutro (#8A8A8A). El acento de acción sigue siendo blanco nítido sobre negro, o negro sobre blanco: botones, la marca y los rellenos se quedan ahí. Los kickers de sección usan un latón discreto (#E3B26A), el mismo tono que las strings en el código. Úsenlo solo en esas etiquetas — kickers de sección en mayúsculas, kickers de título de página y la línea en sentence case “Para desarrolladores”. No lo pongan en botones, en la marca, en pastillas de estado, reglas o rellenos. No lo sustituyan por un oro más vivo. El estado operativo usa un punto verde oscuro pequeño (#187533) junto a “Todos los sistemas operativos.” en la barra jurídica del pie y en la página de estado del servicio. No lo hagan pulsar, y no usen ese verde en otro lugar del chrome. El verde más claro de las ventanas de código se queda solo en las ventanas de código. Sin púrpura, azul ni manchas de degradé en el chrome."
         },
         {
           "heading": "Tipografía",
-          "body": "Inter Tight para títulos de display y elementos de interfaz. IBM Plex Mono para código, coordenadas, marcas de tiempo y metadatos técnicos. Los titulares son compactos, con tracking levemente negativo, nunca en mayúsculas para oraciones largas. El wordmark mismo va con tracking abierto."
+          "body": "Inter Tight para títulos de display y elementos de interfaz. IBM Plex Mono para código, coordenadas, marcas de tiempo y metadatos técnicos. Los titulares son compactos, con tracking levemente negativo, nunca en mayúsculas para oraciones largas. El wordmark es el lettering UNFLD del lockup horizontal."
         },
         {
           "heading": "Restricciones",

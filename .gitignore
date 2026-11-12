@@ -20,7 +20,11 @@ startup.sh
 artifacts/
 attachments/
 screenshots/
-public/__grok/
+public/__grok/*
+!public/__grok/icon-180.png
+!public/__grok/install/
+public/__grok/install/*
+!public/__grok/install/styles.css
 public/design.md
 
 # os / editor

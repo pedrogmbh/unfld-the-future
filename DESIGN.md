@@ -27,15 +27,13 @@ Public-facing brand rules (name, mark, color) also live at
 | Products | Owned (in market): SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial, Oluart, Unifikar. |
 | HQ | São Paulo — Rua Avanhandava, 126, Bela Vista. |
 
-**Mark** — three polygons suggesting a plane unfolding. Source:
-`src/components/site/logo.tsx` (`Mark`) and `public/favicon.svg`. Use
-`currentColor`. Clear space: one fold-wing on all sides. Do not rotate,
-recolor, add shadows, or redraw.
+**Mark.** The hexagon symbol. Source: `public/brand/symbol.svg`,
+`src/components/site/logo.tsx` (`Mark`), and `public/favicon.svg`. Use
+`currentColor`. Do not rotate, recolor, add shadows, or redraw.
 
-**Wordmark** — `UNFLD` in Inter Tight, `font-semibold`,
-`tracking-[0.28em]`, 13px in the header. Always locked up with the mark
-in chrome; mark may stand alone only when the name is already on the
-surface.
+**Wordmark.** The traced UNFLD lettering in `public/brand/lockup.svg`
+(`Lockup`). Always locked up with the mark in chrome; the mark may stand
+alone only when the name is already on the surface.
 
 **Tone** — calm, precise, first-person plural. Short sentences. No hype,
 no emoji, no exclamation marks in product UI. Prefer “we ship” over
@@ -269,7 +267,7 @@ All under `src/components/site/`.
 
 | File | Role |
 |---|---|
-| `logo.tsx` | Mark + wordmark |
+| `logo.tsx` | Hexagon mark + UNFLD lockup |
 | `header.tsx` | Fixed nav, hover menus, Contact Sales, Try-for-free split, mobile overlay |
 | `footer.tsx` | Five-column sitemap + legal + status chip |
 | `buttons.tsx` | `Btn`, `BtnLink` (primary / secondary / ghost), `TextArrow` |
@@ -374,7 +372,7 @@ type must remain visible (WordStagger uses mount `animate`, not
 - Match x.ai density: lots of black, little chrome, type doing the work.
 - Keep motion cinematic and slow on enter; snappy (150–200ms) on hover.
 - Keep syntax colors inside code. Gold chrome is kickers only.
-- Leave the grain, the hairline grids, and the fold mark alone.
+- Leave the grain, the hairline grids, and the hexagon mark alone.
 
 ## Don’t
 
@@ -399,6 +397,6 @@ src/components/site/*          chrome + primitives
 src/routes/__root.tsx          fonts, grain, header/footer shell
 src/routes/index.tsx           home (reference composition)
 public/images/                 cinematic stills
-public/favicon.svg             fold mark
+public/favicon.svg             hexagon mark
 public/og.jpg                  share card
 ```

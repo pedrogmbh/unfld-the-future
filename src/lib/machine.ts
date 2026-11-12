@@ -314,7 +314,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/legal/brand-guidelines",
       "Brand Guidelines",
-      "How to name, write, and visually represent UNFLD and its fold mark.",
+      "How to name, write, and visually represent UNFLD and its mark.",
       "Legal",
       { changefreq: "yearly", priority: 0.3 },
     ),

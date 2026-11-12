@@ -38,7 +38,7 @@ export const Route = createFileRoute("/news/$slug")({
           "@type": "Organization",
           name: SITE.name,
           url: SITE.url,
-          logo: `${SITE.url}/favicon.svg`,
+          logo: `${SITE.url}/logo.svg`,
         },
         author: {
           "@type": "Organization",

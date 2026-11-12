@@ -13,6 +13,7 @@ import {
   formatAddressLocalized,
   localizeCustomers,
   localizeFacts,
+  localizeHomePrompts,
   localizeNews,
   localizeOffices,
   localizeOwnedProducts,
@@ -47,6 +48,8 @@ function Company() {
   const officeList = localizeOffices(locale);
   const timelineList = localizeTimeline(locale);
   const posts = localizeNews(locale);
+  const prompts = localizeHomePrompts(locale);
+  const home = pages.home;
 
   return (
     <main>
@@ -210,6 +213,21 @@ function Company() {
             </StaggerItem>
           ))}
         </Stagger>
+      </Section>
+
+      <Section className="pb-20 sm:pb-28">
+        <Kicker>{home.inPractice}</Kicker>
+        <h2 className="max-w-3xl font-display text-[clamp(1.7rem,3.5vw,2.6rem)] font-medium leading-tight tracking-tight">
+          {home.inPracticeTitle}
+        </h2>
+        <div className="mt-12 max-w-3xl space-y-8">
+          {prompts.map((prompt) => (
+            <div key={prompt.q} className="border-t border-border pt-6">
+              <h3 className="text-[15px] font-medium">{prompt.q}</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-muted">{prompt.a}</p>
+            </div>
+          ))}
+        </div>
       </Section>
 
       <Section id="clients" className="pb-20 sm:pb-28">

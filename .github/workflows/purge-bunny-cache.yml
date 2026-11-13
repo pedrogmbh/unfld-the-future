@@ -44,16 +44,17 @@ jobs:
           jq --arg description "$rule_name" \
             --slurpfile config vercel.json '
             (.EdgeRules // [] | map(select(.Description == $description)) | first) as $existing |
+            ([$config[0].redirects[].has[] |
+              select(.type == "header" and .key == "cdn-host") |
+              .value.inc[]] | unique | map("*://" + . + "/*")) as $patterns |
             {
               ActionType: 12,
               ActionParameter1: "",
               ActionParameter2: "",
-              Triggers: [{
+              Triggers: [range(0; ($patterns | length); 5) as $start | {
                 Type: 0,
                 PatternMatchingType: 0,
-                PatternMatches: ([$config[0].redirects[].has[] |
-                  select(.type == "header" and .key == "cdn-host") |
-                  .value.inc[]] | unique | map("*://" + . + "/*"))
+                PatternMatches: $patterns[$start:($start + 5)]
               }],
               TriggerMatchingType: 0,
               Description: $description,

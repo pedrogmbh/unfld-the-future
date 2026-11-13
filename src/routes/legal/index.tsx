@@ -39,10 +39,6 @@ function LegalIndex() {
             </h2>
             <ul className="mt-4 space-y-3">
               <Item to="/legal/terms-of-service" label={p.tos} />
-              <Item
-                to="/legal/terms-of-service-enterprise"
-                label={p.enterprise}
-              />
             </ul>
           </div>
           <div>

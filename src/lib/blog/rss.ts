@@ -27,7 +27,7 @@ export function renderRss(entries = publishedPosts()): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${xmlEscape(`${SITE.name} Blog`)}</title>
+    <title>${xmlEscape(`${SITE.name} — What's new?`)}</title>
     <link>${xmlEscape(`${SITE.url}/blog`)}</link>
     <description>${xmlEscape("Stories from inside UNFLD: the problem, the system we built, and what happened when it ran.")}</description>
     <language>pt-BR</language>

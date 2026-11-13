@@ -2,7 +2,7 @@ import { publishedPosts } from "@/lib/blog/posts";
 import { SITE, formatAddress, footer, ownedProducts, selectedWork, solutions } from "@/lib/site";
 
 export type MachineSection =
-  "Products" | "Build with us" | "Solutions" | "Company" | "Blog" | "Legal";
+  "Products" | "Build with us" | "Solutions" | "Company" | "What's new?" | "Legal";
 
 export type MachinePage = {
   path: string;
@@ -149,13 +149,13 @@ export function machinePages(): MachinePage[] {
     ),
     page(
       "/blog",
-      "Blog",
+      "What's new?",
       "Stories from inside UNFLD: the problem nobody had time for, the system we built for it, and what happened when it ran.",
-      "Blog",
+      "What's new?",
       { changefreq: "weekly", priority: 0.7 },
     ),
     ...publishedPosts().map((post) =>
-      page(`/blog/${post.slug}`, post.title, post.description, "Blog", {
+      page(`/blog/${post.slug}`, post.title, post.description, "What's new?", {
         lastmod: (post.updated ?? post.date).slice(0, 10),
         changefreq: "yearly",
         priority: 0.6,
@@ -224,13 +224,7 @@ export function machinePages(): MachinePage[] {
       "Legal",
       { changefreq: "yearly", priority: 0.3 },
     ),
-    page(
-      "/legal/terms-of-service-enterprise",
-      "Enterprise Terms",
-      "Terms for services under an enterprise order form issued by UNFOLDING THE FUTURE LTDA.",
-      "Legal",
-      { changefreq: "yearly", priority: 0.3 },
-    ),
+
     page(
       "/legal/privacy-policy",
       "Privacy Policy",
@@ -336,7 +330,7 @@ export function renderLlmsTxt(pages = machinePages()): string {
     "Build with us",
     "Solutions",
     "Company",
-    "Blog",
+    "What's new?",
     "Legal",
   ];
 
@@ -381,7 +375,7 @@ ${blocks}
 ## Optional
 
 - [sitemap.xml](${siteUrl("/sitemap.xml")}): Canonical URL list for search engines and indexers.
-- [rss.xml](${siteUrl("/rss.xml")}): Blog feed. One item per published post.
+- [rss.xml](${siteUrl("/rss.xml")}): What’s new? feed. One item per published post.
 - [robots.txt](${siteUrl("/robots.txt")}): Crawl directives and sitemap reference.
 - [llms.txt](${siteUrl("/llms.txt")}): This curated discovery document.
 - [agents.md](${siteUrl("/agents.md")}): Company information and contact guidance.

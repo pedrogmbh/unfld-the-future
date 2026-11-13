@@ -39,7 +39,7 @@
       "about": "Acerca de",
       "selectedWork": "Trabajos seleccionados",
       "careers": "Carreras",
-      "blog": "Blog",
+      "blog": "¿Qué hay de nuevo?",
       "security": "Seguridad",
       "compliance": "Cumplimiento",
       "enterprise": "Empresas",
@@ -61,7 +61,6 @@
       "operations": "Operaciones",
       "fiscalRisk": "Fiscal y riesgo",
       "terms": "Términos",
-      "enterpriseTerms": "Términos Enterprise",
       "privacy": "Privacidad",
       "cookies": "Cookies",
       "aup": "AUP",
@@ -439,14 +438,14 @@
       "emptyBody": "Revisamos cada presentación de forma personal. Pueden presentarse, describir su trayectoria y compartir trabajo del que estén orgullosos en {{email}}."
     },
     "blog": {
-      "metaTitle": "Blog",
+      "metaTitle": "¿Qué hay de nuevo?",
       "metaDescription": "Historias desde adentro de UNFLD. El problema que nadie tenía tiempo de resolver, el sistema que construimos para eso y lo que pasó cuando salió al aire.",
-      "kicker": "Blog",
-      "title": "Historias del trabajo.",
+      "kicker": "¿Qué hay de nuevo?",
+      "title": "¿Qué hay de nuevo?",
       "lede": "Cada sistema que operamos empezó con un problema que nadie tenía tiempo de resolver. Estas son esas historias: qué construimos, por qué y qué pasó cuando salió al aire. Contadas por quienes lo hicieron.",
       "featured": "Historia más reciente",
       "read": "Leer la historia",
-      "backToBlog": "Blog",
+      "backToBlog": "¿Qué hay de nuevo?",
       "next": "Siguiente",
       "by": "Por"
     },
@@ -508,7 +507,6 @@
       "other": "Otros",
       "quick": "Enlaces rápidos",
       "tos": "Términos de servicio",
-      "enterprise": "Términos Enterprise",
       "aup": "Política de uso aceptable",
       "privacy": "Política de privacidad",
       "cookies": "Política de cookies",
@@ -993,7 +991,7 @@
       "metaTitle": "Términos de servicio",
       "metaDescription": "Términos que rigen el sitio de UNFLD y los servicios que los incorporan de forma expresa.",
       "title": "Términos de servicio",
-      "intro": "Estos Términos rigen el sitio de UNFLD y cualquier servicio de UNFLD que los enlace o los incorpore de forma expresa. Pueden aplicar términos adicionales de producto, orden de compra, socio o enterprise. Al acceder o usar nuestros sitios o servicios, aceptan estos Términos.",
+      "intro": "Estos Términos rigen el sitio de UNFLD y cualquier servicio de UNFLD que los enlace o los incorpore de forma expresa. Pueden aplicar términos adicionales de producto, orden de compra o socio. Al acceder o usar nuestros sitios o servicios, aceptan estos Términos.",
       "sections": [
         {
           "heading": "Quiénes somos",
@@ -1102,46 +1100,6 @@
         {
           "heading": "Contacto",
           "body": "Reporten presuntas violaciones o consultas: {{aup}}. {{contact}}"
-        }
-      ]
-    },
-    "enterprise": {
-      "metaTitle": "Términos Enterprise",
-      "metaDescription": "Términos para servicios bajo una orden de compra enterprise emitida por UNFOLDING THE FUTURE LTDA.",
-      "title": "Términos Enterprise",
-      "intro": "Estos Términos Enterprise aplican cuando compran servicios bajo una orden de compra enterprise emitida por UNFOLDING THE FUTURE LTDA. Complementan los Términos de servicio. Si hay conflicto, prevalece la orden de compra, luego estos Términos Enterprise y después los Términos de servicio.",
-      "sections": [
-        {
-          "heading": "Órdenes de compra",
-          "body": "Cada orden de compra indica productos, alcance, plazo, honorarios, residencia y cualquier capacidad dedicada o compromiso de nivel de servicio. Los servicios empiezan en la fecha de vigencia de la orden de compra, salvo que se indique otra cosa."
-        },
-        {
-          "heading": "Tratamiento de datos",
-          "body": "UNFLD trata los datos del cliente como encargado del tratamiento para prestar los Servicios acordados. Un Anexo de Tratamiento de Datos (DPA) alineado con LGPD está disponible y se incorpora cuando se firma. Las restricciones de hosting regional aplican según se defina en la orden de compra."
-        },
-        {
-          "heading": "Seguridad",
-          "body": "Mantenemos salvaguardas administrativas, técnicas y físicas adecuadas al alcance del servicio, incluido cifrado en tránsito y en reposo, control de acceso y registro de auditoría estructurado. La documentación de seguridad vigente y cualquier atestación independiente aplicable se identifican durante la revisión y pueden entregarse bajo NDA."
-        },
-        {
-          "heading": "Contenido del cliente y privacidad",
-          "body": "Los datos del cliente se tratan únicamente para cumplir los servicios especificados en el acuerdo. No usamos datos del cliente para entrenar modelos externos o generales sin una base contractual explícita."
-        },
-        {
-          "heading": "Soporte y SLA",
-          "body": "Los contratos enterprise pueden incluir contactos técnicos designados, onboarding estructurado y ventanas de respuesta por nivel de severidad durante el horario hábil de Brasil, según se especifique en la orden de compra aplicable."
-        },
-        {
-          "heading": "Indemnidad",
-          "body": "Los defenderemos frente a reclamos de terceros que sostengan que los Servicios, tal como los prestamos, infringen derechos de propiedad intelectual, y pagaremos los daños finalmente concedidos, siempre que nos notifiquen con prontitud y nos otorguen el control de la defensa."
-        },
-        {
-          "heading": "Publicidad",
-          "body": "No usaremos su nombre ni sus marcas en listas de clientes ni en materiales de marketing sin permiso previo por escrito, salvo cuando la ley lo exija."
-        },
-        {
-          "heading": "Contacto",
-          "body": "Consultas enterprise: {{legalEmail}}. {{contact}}"
         }
       ]
     },

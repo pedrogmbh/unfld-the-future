@@ -39,7 +39,7 @@
       "about": "Sobre",
       "selectedWork": "Trabalhos selecionados",
       "careers": "Carreiras",
-      "blog": "Blog",
+      "blog": "Novidades?",
       "security": "Segurança",
       "compliance": "Conformidade",
       "enterprise": "Empresarial",
@@ -61,7 +61,6 @@
       "operations": "Operações",
       "fiscalRisk": "Fiscal e riscos",
       "terms": "Termos",
-      "enterpriseTerms": "Termos empresariais",
       "privacy": "Privacidade",
       "cookies": "Cookies",
       "aup": "AUP",
@@ -439,14 +438,14 @@
       "emptyBody": "Analisamos cada apresentação pessoalmente. Você pode se apresentar, descrever sua trajetória e compartilhar um trabalho de que se orgulha em {{email}}."
     },
     "blog": {
-      "metaTitle": "Blog",
+      "metaTitle": "Novidades?",
       "metaDescription": "Histórias de dentro da UNFLD. O problema que ninguém tinha tempo de resolver, o sistema que construímos para ele e o que aconteceu quando entrou no ar.",
-      "kicker": "Blog",
-      "title": "Histórias do trabalho.",
+      "kicker": "Novidades?",
+      "title": "Novidades?",
       "lede": "Todo sistema que operamos começou com um problema que ninguém tinha tempo de resolver. Estas são essas histórias: o que construímos, por quê e o que aconteceu quando entrou no ar. Contadas por quem fez.",
       "featured": "História mais recente",
       "read": "Ler a história",
-      "backToBlog": "Blog",
+      "backToBlog": "Novidades?",
       "next": "Próximo",
       "by": "Por"
     },
@@ -508,7 +507,6 @@
       "other": "Outros",
       "quick": "Links rápidos",
       "tos": "Termos de Serviço",
-      "enterprise": "Termos empresariais",
       "aup": "Política de Uso Aceitável",
       "privacy": "Política de Privacidade",
       "cookies": "Política de Cookies",
@@ -993,7 +991,7 @@
       "metaTitle": "Termos de Serviço",
       "metaDescription": "Termos que regem o site da UNFLD e os serviços que os incorporam de forma expressa.",
       "title": "Termos de Serviço",
-      "intro": "Estes Termos regem o site da UNFLD e qualquer serviço UNFLD que a eles se vincule ou os incorpore de forma expressa. Termos adicionais de produto, pedido, parceiro ou empresariais podem se aplicar. Ao acessar ou usar nossos sites ou serviços, você concorda com estes Termos.",
+      "intro": "Estes Termos regem o site da UNFLD e qualquer serviço UNFLD que a eles se vincule ou os incorpore de forma expressa. Termos adicionais de produto, pedido ou parceiro podem se aplicar. Ao acessar ou usar nossos sites ou serviços, você concorda com estes Termos.",
       "sections": [
         {
           "heading": "Quem somos",
@@ -1102,46 +1100,6 @@
         {
           "heading": "Contato",
           "body": "Relate violações suspeitas ou envie consultas: {{aup}}. {{contact}}"
-        }
-      ]
-    },
-    "enterprise": {
-      "metaTitle": "Termos empresariais",
-      "metaDescription": "Termos para serviços sob um pedido empresarial emitido pela UNFOLDING THE FUTURE LTDA.",
-      "title": "Termos empresariais",
-      "intro": "Estes Termos empresariais aplicam-se quando você contrata serviços sob um pedido empresarial emitido pela UNFOLDING THE FUTURE LTDA. Eles complementam os Termos de Serviço. Em caso de conflito, prevalece o pedido, depois estes Termos empresariais, depois os Termos de Serviço.",
-      "sections": [
-        {
-          "heading": "Pedidos",
-          "body": "Cada pedido declara produtos, escopo, prazo, valores, residência e qualquer capacidade dedicada ou compromisso de nível de serviço. Os serviços começam na data de vigência do pedido, salvo indicação em contrário."
-        },
-        {
-          "heading": "Tratamento de dados",
-          "body": "A UNFLD trata dados do cliente como operadora para prestar os Serviços acordados. Um Aditivo de Processamento de Dados (DPA) alinhado à LGPD está disponível e é incorporado quando firmado. Restrições de hospedagem regional aplicam-se conforme definido no pedido."
-        },
-        {
-          "heading": "Segurança",
-          "body": "Mantemos salvaguardas administrativas, técnicas e físicas adequadas ao escopo do serviço, inclusive criptografia em trânsito e em repouso, controle de acesso e registro estruturado de auditoria. A documentação de segurança atual e quaisquer atestações independentes aplicáveis são identificadas na revisão e podem ser fornecidas sob NDA."
-        },
-        {
-          "heading": "Conteúdo do cliente e privacidade",
-          "body": "Os dados do cliente são tratados somente para cumprir os serviços especificados no acordo. Não usamos dados do cliente para treinar modelos externos ou gerais sem base contratual explícita."
-        },
-        {
-          "heading": "Suporte e SLA",
-          "body": "Contratos empresariais podem incluir contatos técnicos designados, onboarding estruturado e janelas definidas de resposta por gravidade no horário comercial brasileiro, conforme especificado no pedido aplicável."
-        },
-        {
-          "heading": "Indenização",
-          "body": "Defenderemos você contra reclamações de terceiros de que os Serviços, tal como por nós prestados, infringem direitos de propriedade intelectual, e pagaremos os danos finalmente arbitrados, desde que você nos notifique com presteza e nos conceda o controle da defesa."
-        },
-        {
-          "heading": "Publicidade",
-          "body": "Não usaremos o seu nome ou as suas marcas em listas de clientes ou materiais de marketing sem permissão prévia por escrito, salvo quando a lei o exigir."
-        },
-        {
-          "heading": "Contato",
-          "body": "Consultas empresariais: {{legalEmail}}. {{contact}}"
         }
       ]
     },

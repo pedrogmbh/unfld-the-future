@@ -6,7 +6,7 @@ export const legal = {
       "Terms governing the UNFLD website and services that expressly incorporate them.",
     title: "Terms of Service",
     intro:
-      "These Terms govern the UNFLD website and any UNFLD service that expressly links to or incorporates them. Additional product, order-form, partner, or enterprise terms may apply. By accessing or using our websites or services, you agree to these Terms.",
+      "These Terms govern the UNFLD website and any UNFLD service that expressly links to or incorporates them. Additional product, order-form, or partner terms may apply. By accessing or using our websites or services, you agree to these Terms.",
     sections: [
       {
         heading: "Who we are",
@@ -118,48 +118,6 @@ export const legal = {
       {
         heading: "Contact",
         body: "Report suspected violations or inquiries: {{aup}}. {{contact}}",
-      },
-    ],
-  },
-  enterprise: {
-    metaTitle: "Enterprise Terms",
-    metaDescription:
-      "Terms for services under an enterprise order form issued by UNFOLDING THE FUTURE LTDA.",
-    title: "Enterprise Terms",
-    intro:
-      "These Enterprise Terms apply when you purchase services under an enterprise order form issued by UNFOLDING THE FUTURE LTDA. They supplement the Terms of Service. If they conflict, the order form wins, then these Enterprise Terms, then the Terms of Service.",
-    sections: [
-      {
-        heading: "Order forms",
-        body: "Each order form states products, scope, term, fees, residency, and any dedicated capacity or service level commitments. Services start on the effective date of the order form unless otherwise specified.",
-      },
-      {
-        heading: "Data processing",
-        body: "UNFLD processes customer data as a data processor to provide the agreed Services. A Data Processing Addendum (DPA) aligned with LGPD is available and incorporated when executed. Regional hosting constraints apply as defined in the order form.",
-      },
-      {
-        heading: "Security",
-        body: "We maintain administrative, technical, and physical safeguards appropriate to the service scope, including encryption in transit and at rest, access control, and structured audit logging. Current security documentation and any applicable independent attestations are identified during review and may be provided under NDA.",
-      },
-      {
-        heading: "Customer content & privacy",
-        body: "Customer data is processed solely to fulfill the services specified in the agreement. We do not use customer data to train external or general models without an explicit contractual basis.",
-      },
-      {
-        heading: "Support & SLA",
-        body: "Enterprise contracts may include designated technical contacts, structured onboarding, and defined severity-level response windows during Brazilian business hours, as specified in the applicable order form.",
-      },
-      {
-        heading: "Indemnity",
-        body: "We will defend you against third-party claims that the Services, as provided by us, infringe intellectual property rights, and pay damages finally awarded, provided you notify us promptly and grant us control of the defense.",
-      },
-      {
-        heading: "Publicity",
-        body: "We will not use your name or trademarks in customer lists or marketing materials without prior written permission, except as required by law.",
-      },
-      {
-        heading: "Contact",
-        body: "Enterprise inquiries: {{legalEmail}}. {{contact}}",
       },
     ],
   },

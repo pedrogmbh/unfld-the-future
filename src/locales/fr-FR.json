@@ -39,7 +39,7 @@
       "about": "À propos",
       "selectedWork": "Travaux choisis",
       "careers": "Carrières",
-      "blog": "Blog",
+      "blog": "Quoi de neuf ?",
       "security": "Sécurité",
       "compliance": "Conformité",
       "enterprise": "Entreprise",
@@ -61,7 +61,6 @@
       "operations": "Opérations",
       "fiscalRisk": "Fiscal et risques",
       "terms": "Conditions",
-      "enterpriseTerms": "Conditions entreprise",
       "privacy": "Confidentialité",
       "cookies": "Cookies",
       "aup": "AUP",
@@ -439,14 +438,14 @@
       "emptyBody": "Nous examinons chaque présentation en personne. Vous pouvez vous présenter, décrire votre parcours et partager un travail dont vous êtes fier à {{email}}."
     },
     "blog": {
-      "metaTitle": "Blog",
+      "metaTitle": "Quoi de neuf ?",
       "metaDescription": "Des histoires vécues chez UNFLD. Le problème que personne n’avait le temps de traiter, le système que nous avons construit pour lui et ce qui s’est passé une fois en service.",
-      "kicker": "Blog",
-      "title": "Histoires de terrain.",
+      "kicker": "Quoi de neuf ?",
+      "title": "Quoi de neuf ?",
       "lede": "Chaque système que nous opérons est né d’un problème que personne n’avait le temps de traiter. Voici ces histoires : ce que nous avons construit, pourquoi, et ce qui s’est passé une fois en service. Racontées par ceux qui l’ont fait.",
       "featured": "Dernière histoire",
       "read": "Lire l’histoire",
-      "backToBlog": "Blog",
+      "backToBlog": "Quoi de neuf ?",
       "next": "Suivant",
       "by": "Par"
     },
@@ -508,7 +507,6 @@
       "other": "Autre",
       "quick": "Liens rapides",
       "tos": "Conditions d’utilisation",
-      "enterprise": "Conditions entreprise",
       "aup": "Politique d’utilisation acceptable",
       "privacy": "Politique de confidentialité",
       "cookies": "Politique relative aux cookies",
@@ -993,7 +991,7 @@
       "metaTitle": "Conditions d’utilisation",
       "metaDescription": "Conditions régissant le site UNFLD et les services qui les incorporent expressément.",
       "title": "Conditions d’utilisation",
-      "intro": "Ces conditions régissent le site UNFLD et tout service UNFLD qui y renvoie ou les incorpore expressément. Des conditions supplémentaires de produit, de bon de commande, de partenaire ou d’entreprise peuvent s’appliquer. En accédant à nos sites ou services, ou en les utilisant, vous acceptez ces conditions.",
+      "intro": "Ces conditions régissent le site UNFLD et tout service UNFLD qui y renvoie ou les incorpore expressément. Des conditions supplémentaires de produit, de bon de commande ou de partenaire peuvent s’appliquer. En accédant à nos sites ou services, ou en les utilisant, vous acceptez ces conditions.",
       "sections": [
         {
           "heading": "Qui nous sommes",
@@ -1102,46 +1100,6 @@
         {
           "heading": "Contact",
           "body": "Signaler des manquements ou adresser une question : {{aup}}. {{contact}}"
-        }
-      ]
-    },
-    "enterprise": {
-      "metaTitle": "Conditions entreprise",
-      "metaDescription": "Conditions des services sous un bon de commande entreprise émis par UNFOLDING THE FUTURE LTDA.",
-      "title": "Conditions entreprise",
-      "intro": "Ces conditions entreprise s’appliquent lorsque vous achetez des services sous un bon de commande entreprise émis par UNFOLDING THE FUTURE LTDA. Elles complètent les conditions d’utilisation. En cas de conflit, le bon de commande prévaut, puis ces conditions entreprise, puis les conditions d’utilisation.",
-      "sections": [
-        {
-          "heading": "Bons de commande",
-          "body": "Chaque bon de commande indique les produits, le périmètre, la durée, les tarifs, la résidence et toute capacité dédiée ou engagement de niveau de service. Les services commencent à la date d’effet du bon de commande, sauf indication contraire."
-        },
-        {
-          "heading": "Traitement des données",
-          "body": "UNFLD traite les données clients en qualité de sous-traitant pour fournir les services convenus. Un avenant de traitement des données (DPA) aligné sur la LGPD est disponible et incorporé lorsqu’il est signé. Les contraintes d’hébergement régional s’appliquent comme défini dans le bon de commande."
-        },
-        {
-          "heading": "Sécurité",
-          "body": "Nous tenons des protections administratives, techniques et physiques adaptées au périmètre du service, y compris le chiffrement en transit et au repos, le contrôle d’accès et une journalisation d’audit structurée. La documentation de sécurité actuelle et toute attestation indépendante applicable sont identifiées pendant la revue et peuvent être fournies sous NDA."
-        },
-        {
-          "heading": "Contenus client et confidentialité",
-          "body": "Les données clients sont traitées uniquement pour fournir les services spécifiés dans l’accord. Nous n’utilisons pas les données clients pour entraîner des modèles externes ou généraux sans base contractuelle explicite."
-        },
-        {
-          "heading": "Support et SLA",
-          "body": "Les contrats entreprise peuvent inclure des contacts techniques désignés, une intégration structurée et des fenêtres de réponse par niveau de gravité pendant les heures ouvrables brésiliennes, comme spécifié dans le bon de commande applicable."
-        },
-        {
-          "heading": "Indemnisation",
-          "body": "Nous vous défendrons contre les réclamations de tiers selon lesquelles les services, tels que fournis par nous, portent atteinte à des droits de propriété intellectuelle, et paierons les dommages-intérêts définitivement accordés, sous réserve d’une notification rapide et du contrôle de la défense."
-        },
-        {
-          "heading": "Publicité",
-          "body": "Nous n’utiliserons pas votre nom ni vos marques dans des listes de clients ou des supports marketing sans autorisation écrite préalable, sauf obligation légale."
-        },
-        {
-          "heading": "Contact",
-          "body": "Demandes entreprise : {{legalEmail}}. {{contact}}"
         }
       ]
     },

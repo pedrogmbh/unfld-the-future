@@ -41,7 +41,6 @@ import { Route as LegalBrandGuidelinesRouteImport } from './routes/legal/brand-g
 import { Route as LegalCookiePolicyRouteImport } from './routes/legal/cookie-policy'
 import { Route as LegalPrivacyPolicyRouteImport } from './routes/legal/privacy-policy'
 import { Route as LegalTermsOfServiceRouteImport } from './routes/legal/terms-of-service'
-import { Route as LegalTermsOfServiceEnterpriseRouteImport } from './routes/legal/terms-of-service-enterprise'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions/index'
 import { Route as SolutionsSlugRouteImport } from './routes/solutions/$slug'
 import { Route as WorkIndexRouteImport } from './routes/work/index'
@@ -208,12 +207,6 @@ const LegalTermsOfServiceRoute = LegalTermsOfServiceRouteImport.update({
   path: '/legal/terms-of-service',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LegalTermsOfServiceEnterpriseRoute =
-  LegalTermsOfServiceEnterpriseRouteImport.update({
-    id: '/legal/terms-of-service-enterprise',
-    path: '/legal/terms-of-service-enterprise',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
   id: '/solutions/',
   path: '/solutions/',
@@ -265,7 +258,6 @@ export interface FileRoutesByFullPath {
   '/legal/cookie-policy': typeof LegalCookiePolicyRoute
   '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
   '/legal/terms-of-service': typeof LegalTermsOfServiceRoute
-  '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -304,7 +296,6 @@ export interface FileRoutesByTo {
   '/legal/cookie-policy': typeof LegalCookiePolicyRoute
   '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
   '/legal/terms-of-service': typeof LegalTermsOfServiceRoute
-  '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/blog': typeof BlogIndexRoute
@@ -344,7 +335,6 @@ export interface FileRoutesById {
   '/legal/cookie-policy': typeof LegalCookiePolicyRoute
   '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
   '/legal/terms-of-service': typeof LegalTermsOfServiceRoute
-  '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/blog/': typeof BlogIndexRoute
@@ -385,7 +375,6 @@ export interface FileRouteTypes {
     | '/legal/cookie-policy'
     | '/legal/privacy-policy'
     | '/legal/terms-of-service'
-    | '/legal/terms-of-service-enterprise'
     | '/solutions/$slug'
     | '/work/$slug'
     | '/blog/'
@@ -424,7 +413,6 @@ export interface FileRouteTypes {
     | '/legal/cookie-policy'
     | '/legal/privacy-policy'
     | '/legal/terms-of-service'
-    | '/legal/terms-of-service-enterprise'
     | '/solutions/$slug'
     | '/work/$slug'
     | '/blog'
@@ -463,7 +451,6 @@ export interface FileRouteTypes {
     | '/legal/cookie-policy'
     | '/legal/privacy-policy'
     | '/legal/terms-of-service'
-    | '/legal/terms-of-service-enterprise'
     | '/solutions/$slug'
     | '/work/$slug'
     | '/blog/'
@@ -503,7 +490,6 @@ export interface RootRouteChildren {
   LegalCookiePolicyRoute: typeof LegalCookiePolicyRoute
   LegalPrivacyPolicyRoute: typeof LegalPrivacyPolicyRoute
   LegalTermsOfServiceRoute: typeof LegalTermsOfServiceRoute
-  LegalTermsOfServiceEnterpriseRoute: typeof LegalTermsOfServiceEnterpriseRoute
   SolutionsSlugRoute: typeof SolutionsSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -739,13 +725,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalTermsOfServiceRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/legal/terms-of-service-enterprise': {
-      id: '/legal/terms-of-service-enterprise'
-      path: '/legal/terms-of-service-enterprise'
-      fullPath: '/legal/terms-of-service-enterprise'
-      preLoaderRoute: typeof LegalTermsOfServiceEnterpriseRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/solutions/': {
       id: '/solutions/'
       path: '/solutions'
@@ -807,7 +786,6 @@ const rootRouteChildren: RootRouteChildren = {
   LegalCookiePolicyRoute: LegalCookiePolicyRoute,
   LegalPrivacyPolicyRoute: LegalPrivacyPolicyRoute,
   LegalTermsOfServiceRoute: LegalTermsOfServiceRoute,
-  LegalTermsOfServiceEnterpriseRoute: LegalTermsOfServiceEnterpriseRoute,
   SolutionsSlugRoute: SolutionsSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
   BlogIndexRoute: BlogIndexRoute,

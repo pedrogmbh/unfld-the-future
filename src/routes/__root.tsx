@@ -50,7 +50,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
           rel: "alternate",
           type: "application/rss+xml",
           href: "/rss.xml",
-          title: "UNFLD Blog",
+          title: "UNFLD — What's new?",
         },
         { rel: "stylesheet", href: appCss },
         { rel: "stylesheet", href: "/fonts/faces.css" },

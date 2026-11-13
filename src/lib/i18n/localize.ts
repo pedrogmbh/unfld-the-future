@@ -226,6 +226,7 @@ export function localizeFooter(locale: Locale) {
       { label: labels.howWeWork, to: "/how-we-work" },
       { label: getMessages(locale).chrome.nav.enterprise, to: "/enterprise" },
       { label: getMessages(locale).chrome.nav.security, to: "/security" },
+      { label: getMessages(locale).chrome.nav.contact, to: "/contact" },
     ],
     solutions: [
       { label: labels.smallBusiness, to: "/solutions/business" },
@@ -243,13 +244,11 @@ export function localizeFooter(locale: Locale) {
       { label: getMessages(locale).chrome.nav.security, to: "/security" },
       { label: getMessages(locale).chrome.nav.compliance, to: "/compliance" },
       { label: getMessages(locale).chrome.nav.enterprise, to: "/enterprise" },
-      { label: getMessages(locale).chrome.nav.contact, to: "/contact" },
     ],
     legal: [
       { label: labels.legal, to: "/legal" },
       { label: getMessages(locale).chrome.nav.compliance, to: "/compliance" },
       { label: labels.terms, to: "/legal/terms-of-service" },
-      { label: labels.enterpriseTerms, to: "/legal/terms-of-service-enterprise" },
       { label: labels.privacy, to: "/legal/privacy-policy" },
       { label: labels.cookies, to: "/legal/cookie-policy" },
       { label: labels.aup, to: "/legal/acceptable-use-policy" },

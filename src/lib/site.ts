@@ -52,7 +52,7 @@ export const headerNav: NavLink[] = [
   { label: "Products", to: "/products" },
   { label: "Build with us", to: "/build-with-us" },
   { label: "Company", to: "/company" },
-  { label: "Blog", to: "/blog" },
+  { label: "What's new?", to: "/blog" },
 ];
 
 export type OwnedProduct = {
@@ -274,6 +274,7 @@ export const footer = {
     { label: "How we work", to: "/how-we-work" },
     { label: "Enterprise", to: "/enterprise" },
     { label: "Security", to: "/security" },
+    { label: "Contact", to: "/contact" },
   ],
   download: [
     { label: "Dialogus", to: "/dialogus" },
@@ -292,17 +293,15 @@ export const footer = {
   company: [
     { label: "About", to: "/company" },
     { label: "Selected work", to: "/work" },
-    { label: "Blog", to: "/blog" },
+    { label: "What's new?", to: "/blog" },
     { label: "Security", to: "/security" },
     { label: "Compliance", to: "/compliance" },
     { label: "Enterprise", to: "/enterprise" },
-    { label: "Contact", to: "/contact" },
   ],
   legal: [
     { label: "Legal", to: "/legal" },
     { label: "Compliance", to: "/compliance" },
     { label: "Terms", to: "/legal/terms-of-service" },
-    { label: "Enterprise Terms", to: "/legal/terms-of-service-enterprise" },
     { label: "Privacy", to: "/legal/privacy-policy" },
     { label: "Cookies", to: "/legal/cookie-policy" },
     { label: "AUP", to: "/legal/acceptable-use-policy" },

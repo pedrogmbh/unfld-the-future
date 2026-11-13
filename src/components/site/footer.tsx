@@ -61,37 +61,63 @@ export function Footer() {
           <Col title={chrome.footer.legal} links={footer.legal} />
         </div>
 
-        <div className="mt-16 flex flex-col gap-6 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+        <div className="mt-16 border-t border-border pt-10">
+          <div className="grid items-center gap-8 md:grid-cols-[auto_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)_auto]">
             <Logo />
-            <p className="text-[12px] leading-relaxed text-subtle">
-              © {SITE.year} {SITE.legal}
-              <span className="mt-1 block font-mono text-[11px]">
+            <div className="min-w-0 md:border-l md:border-border md:pl-8">
+              <p className="text-sm font-semibold leading-relaxed text-fg">
+                {SITE.legal}
+              </p>
+              <p className="mt-2 font-mono text-xs leading-relaxed text-muted">
                 CNPJ {SITE.cnpj}
-              </span>
-              <span className="mt-1 block font-mono text-[11px]">
-                {SITE.phone} · {SITE.registeredEmail}
-              </span>
+              </p>
+            </div>
+            <nav
+              aria-label={chrome.nav.contact}
+              className="flex min-w-0 flex-col items-start md:col-span-2 lg:col-span-1 lg:items-end"
+            >
               <a
-                href={SITE.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 block font-mono text-[11px] transition-colors hover:text-fg"
+                href={`mailto:${SITE.registeredEmail}`}
+                className="inline-flex min-h-11 items-center text-sm text-fg underline-offset-4 transition-colors hover:text-gold hover:underline"
               >
-                {chrome.whatsapp} {SITE.whatsapp}
+                {SITE.registeredEmail}
               </a>
-            </p>
+              <div className="flex flex-wrap gap-x-6">
+                <a
+                  href={`tel:${SITE.phoneHref}`}
+                  className="inline-flex min-h-11 items-center text-sm text-muted underline-offset-4 transition-colors hover:text-gold hover:underline"
+                >
+                  {SITE.phone}
+                </a>
+                <a
+                  href={SITE.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center text-sm text-muted underline-offset-4 transition-colors hover:text-gold hover:underline"
+                >
+                  {chrome.whatsapp} {SITE.whatsapp}
+                </a>
+              </div>
+            </nav>
           </div>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            {footer.legal.slice(1).map((l) => (
-              <Link
-                key={l.to}
-                to={l.to as never}
-                className="text-[12px] text-subtle transition-colors hover:text-fg"
-              >
-                {l.label}
-              </Link>
-            ))}
+          <div className="mt-8 flex flex-col gap-4 border-t border-border pt-6 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+            <p className="shrink-0 text-xs text-muted">
+              © {SITE.year} {SITE.name}
+            </p>
+            <nav
+              aria-label={chrome.footer.legal}
+              className="flex flex-wrap gap-x-5 gap-y-1"
+            >
+              {footer.legal.slice(1).map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to as never}
+                  className="inline-flex min-h-11 items-center text-[13px] text-muted underline-offset-4 transition-colors hover:text-gold hover:underline"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
           </div>
         </div>
       </div>

@@ -53,3 +53,15 @@ export function localeFromAcceptLanguage(header: string | null | undefined): Loc
   }
   return DEFAULT_LOCALE;
 }
+
+/**
+ * Client-side locale for navigations after hydration. The cookie wins when the
+ * visitor chose a language; otherwise keep the locale the server rendered
+ * (`<html lang>`), which came from Accept-Language and is never stored.
+ */
+export function localeFromClientHints(
+  cookie: string | null | undefined,
+  documentLang: string | null | undefined,
+): Locale {
+  return parseLocale(cookie) ?? parseLocale(documentLang) ?? DEFAULT_LOCALE;
+}

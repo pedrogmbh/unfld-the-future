@@ -1,7 +1,7 @@
 import { createIsomorphicFn } from "@tanstack/react-start";
 import {
-  DEFAULT_LOCALE,
   LOCALE_COOKIE,
+  localeFromClientHints,
   parseLocale,
   type Locale,
 } from "./locales";
@@ -15,7 +15,9 @@ export function localeFromSearch(search: unknown): Locale | undefined {
 }
 
 const localeFromHints = createIsomorphicFn()
-  .client(() => parseLocale(readClientCookie(LOCALE_COOKIE)) ?? DEFAULT_LOCALE)
+  .client(() =>
+    localeFromClientHints(readClientCookie(LOCALE_COOKIE), document.documentElement.lang),
+  )
   .server(() => peekRequestLocale());
 
 export async function resolveRequestLocale(search?: unknown): Promise<Locale> {

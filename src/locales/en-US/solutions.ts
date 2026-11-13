@@ -3,7 +3,7 @@ export const solutions = {
     name: "Hiring",
     audience: "Candidates seeking straightforward job placement and hiring teams needing verified candidates.",
     line: "A shorter path from profile to interview: clear profiles, faster conversations, less friction.",
-    body: "Queravaga helps candidates present their experience clearly in minutes and helps hiring teams find candidates ready for real conversations—without turning either side into a form-filling machine.",
+    body: "We build custom hiring systems beside teams that need clear candidate profiles, practical evaluation steps, and direct paths to relevant conversations.",
     capabilities: [
       "Clear candidate profiles generated in minutes without complex formatting",
       "Direct communication pathways between hiring managers and applicants",
@@ -14,12 +14,12 @@ export const solutions = {
     name: "Small business",
     audience: "MEIs (microempreendedores individuais), microenterprises, and Brazilian SMB owners.",
     line: "Digital presence and fiscal routines handled through WhatsApp.",
-    body: "Small businesses in Brazil operate inside WhatsApp. SiteCreator delivers an approved, verified website with hosting and SSL in minutes from a CNPJ. Doutor Fiscal streamlines invoice issuance, Simples Nacional tracking, and routine fiscal compliance without interrupting daily sales.",
+    body: "We build custom digital systems for small businesses, connecting web presence, internal routines, and customer conversations around the operation.",
     capabilities: [
-      "Instant web presence via SiteCreator with custom domain support",
-      "Guided invoice issuance and fiscal organization via Doutor Fiscal",
-      "Conversational workflows eliminating complex dashboard overhead",
-    ],
+  "Web presence with custom domain support",
+  "Custom systems for administrative routines",
+  "Conversational workflows eliminating complex dashboard overhead"
+],
   },
   drawing: {
     name: "Drawing",
@@ -91,7 +91,7 @@ export const solutions = {
     name: "Fiscal & workplace operations",
     audience: "Corporate controllers, compliance officers, HR leaders, and legal operations teams.",
     line: "Software for documented fiscal and workplace-risk routines in Brazil.",
-    body: "Brazilian regulatory environments require rigorous documentation. UNFLD provides specialized software tools—such as Doutor Fiscal for invoice issuance and Dialogus for NR-1 psychosocial risk management—that generate auditable records and streamline routine compliance without substituting for legal counsel.",
+    body: "Brazilian regulatory environments require documented routines. Dialogus supports NR-1 psychosocial risk management. We also build custom systems for auditable operational records.",
     capabilities: [
       "Documented fiscal routines and automated draft validation",
       "Continuous NR-1 occupational risk integration and evidence generation",
@@ -102,7 +102,7 @@ export const solutions = {
     name: "Business",
     audience: "Small business owners and enterprise operators.",
     line: "Use a product already built for the problem—or build the system your operation uniquely requires.",
-    body: "SiteCreator and Doutor Fiscal provide WhatsApp-first presence and fiscal workflows for MEIs and small businesses. Custom systems when your operation requires tailored workflows.",
+    body: "We build custom systems beside small businesses whose operation requires tailored workflows.",
     capabilities: [
       "WhatsApp-first workflows",
       "Product-specific capabilities",

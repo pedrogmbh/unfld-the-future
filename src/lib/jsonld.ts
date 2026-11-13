@@ -117,39 +117,3 @@ export function homeJsonLd(locale: Locale = DEFAULT_LOCALE) {
     })),
   };
 }
-
-export function developerResourcesJsonLd(
-  path: "/developers" | "/api",
-  locale: Locale = DEFAULT_LOCALE,
-) {
-  const copy = getMessages(locale).catalog.developer;
-  const title = path === "/api" ? copy.apiTitle : copy.developersTitle;
-  const description = path === "/api" ? copy.apiDescription : copy.developersDescription;
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: title,
-    headline: title,
-    url: `${SITE.url}${path}`,
-    description,
-    isPartOf: { "@id": websiteId() },
-    about: { "@id": orgId() },
-    inLanguage: locale,
-    mainEntity: {
-      "@type": "WebAPI",
-      name: copy.apiTitle,
-      description: copy.apiDescription,
-      url: `${SITE.url}/api/v1`,
-      documentation: `${SITE.url}/openapi.json`,
-      provider: { "@id": orgId() },
-    },
-    significantLink: [
-      `${SITE.url}/developers`,
-      `${SITE.url}/api`,
-      `${SITE.url}/api/versioning`,
-      `${SITE.url}/openapi.json`,
-      `${SITE.url}/llms.txt`,
-      `${SITE.url}/agents.md`,
-    ],
-  };
-}

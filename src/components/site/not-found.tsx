@@ -18,10 +18,10 @@ export function NotFound() {
           {chrome.notFound.home}
         </Link>
         <Link
-          to="/api"
+          to="/products"
           className="inline-flex h-11 items-center rounded-full border border-border-strong px-5 text-sm font-medium"
         >
-          {chrome.notFound.api}
+          {chrome.common.allProducts}
         </Link>
         <a
           href="/llms.txt"

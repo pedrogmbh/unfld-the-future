@@ -35,12 +35,10 @@
     "nav": {
       "products": "Produtos",
       "buildWithUs": "Construa conosco",
-      "developers": "Desenvolvedores",
       "company": "Empresa",
       "about": "Sobre",
       "selectedWork": "Trabalhos selecionados",
       "careers": "Carreiras",
-      "news": "Notícias",
       "blog": "Blog",
       "security": "Segurança",
       "compliance": "Conformidade",
@@ -53,20 +51,14 @@
     "footer": {
       "products": "Produtos",
       "access": "Acesso",
-      "developers": "Desenvolvedores",
       "buildWithUs": "Construa conosco",
       "company": "Empresa",
       "legal": "Legal",
       "allProducts": "Todos os produtos",
       "customSoftware": "Software sob medida",
       "howWeWork": "Como trabalhamos",
-      "unfldApi": "UNFLD API",
-      "versioning": "Versionamento",
-      "openapi": "OpenAPI",
-      "catalog": "Catálogo",
       "agentIndex": "Índice para agentes",
       "whenToUse": "Quando usar a UNFLD",
-      "developerResources": "Recursos para desenvolvedores UNFLD",
       "smallBusiness": "Pequenos negócios",
       "publicMissions": "Missões públicas",
       "operations": "Operações",
@@ -83,8 +75,7 @@
     "notFound": {
       "title": "Esta página se recolheu.",
       "body": "O URL não corresponde a nada que entregamos. Volte ao início, veja os produtos ou leia o índice para agentes.",
-      "home": "Voltar à UNFLD",
-      "api": "UNFLD API"
+      "home": "Voltar à UNFLD"
     },
     "error": {
       "kicker": "Erro",
@@ -115,16 +106,11 @@
       "scoped": "Com escopo",
       "customSystems": "Sistemas sob medida",
       "builtWithUnfld": "Construído com a UNFLD",
-      "forDevelopers": "Para desenvolvedores",
-      "openApiSpec": "Especificação OpenAPI",
-      "catalogIndex": "Índice do catálogo",
-      "versioning": "Versionamento",
       "endpoints": "Endpoints",
       "howWeBuild": "Como construímos",
       "howWeWork": "Como trabalhamos",
       "selectedWork": "Trabalhos selecionados",
       "careers": "Carreiras",
-      "news": "Notícias",
       "security": "Segurança",
       "contactSecurity": "Contatar segurança",
       "complianceDisclosures": "Divulgações de conformidade",
@@ -173,7 +159,6 @@
   "pages": {
     "home": {
       "metaDescription": "Na contratação, nos pequenos negócios, na saúde no trabalho, no desenho e no varejo automotivo, a UNFLD transforma trabalho complexo em tecnologia que as pessoas de fato usam. Também construímos ao lado de organizações cujos problemas mais importantes não cabem em um produto pronto.",
-      "newsBanner": "Unifikar · Um marketplace e uma rede de seminovos",
       "heroTitle": "Desdobrando o futuro.",
       "heroTitleSecond": "Um sistema real de cada vez.",
       "lede": "Na contratação, nos pequenos negócios, na saúde no trabalho, no desenho e no varejo automotivo, transformamos trabalho complexo em tecnologia que as pessoas de fato usam. Quando o produto certo não existe, nós o construímos ao lado da organização que precisa dele.",
@@ -206,31 +191,26 @@
       "proof2Title": "Um registro em que a equipe confia.",
       "proof2Body": "Dados estruturados e um próximo passo claro — para um site, uma rotina fiscal, uma contratação, um plano de risco ou um anúncio.",
       "proof3Title": "Continua nosso depois da release.",
-      "proof3Body": "Operamos o que entregamos. A release é o começo do trabalho, não o fim.",
-      "developersTitle": "Recursos para desenvolvedores UNFLD.",
-      "developersLede": "Documentação da API, OpenAPI, versionamento e um catálogo público de produtos, notícias, trabalhos e dados da empresa. Sem autenticação.",
-      "developerResources": "Recursos para desenvolvedores UNFLD",
-      "newsKicker": "Últimas notícias",
-      "newsTitle": "Da UNFLD."
+      "proof3Body": "Operamos o que entregamos. A release é o começo do trabalho, não o fim."
     },
     "products": {
       "metaTitle": "Produtos da UNFLD",
-      "metaDescription": "Conheça SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart e Unifikar — seis produtos da UNFLD em pequenos negócios, contratação, saúde no trabalho, desenho e varejo automotivo.",
+      "metaDescription": "Conheça Dialogus, Oluart e Unifikar, produtos para saúde no trabalho, desenho e varejo automotivo.",
       "kicker": "Portfólio",
       "title": "Produtos da",
       "titleSecond": "UNFLD.",
-      "lede": "Seis produtos, construídos em torno de tipos de trabalho que deveriam ser mais simples: presença digital, operações fiscais, contratação, saúde no trabalho, desenho e varejo automotivo.",
+      "lede": "Três produtos construídos em torno da saúde no trabalho, do desenho e do varejo automotivo.",
       "primary": "Fale com a UNFLD",
       "secondary": "Como construímos",
       "imageAlt": "Produtos da UNFLD em dispositivos de vidro em um vazio escuro",
-      "feature1Title": "Seis produtos, cada um em um estágio diferente",
-      "feature1Body": "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart e Unifikar avançam em estágios claramente definidos — do acesso antecipado ao acesso geral em operação.",
+      "feature1Title": "Três produtos, cada um em um estágio diferente",
+      "feature1Body": "Dialogus, Oluart e Unifikar avançam em estágios definidos, do acesso antecipado à operação.",
       "feature2Title": "Operados com responsabilidade",
       "feature2Body": "Permanecemos perto dos sistemas que rodamos — mantendo trens de release, monitorando confiabilidade e evoluindo com a realidade do cliente.",
       "feature3Title": "Pontos de entrada distintos",
       "feature3Body": "Cada produto oferece um ponto de entrada dedicado e seguro, adequado ao modo como as pessoas trabalham — no WhatsApp, no navegador ou em um aplicativo.",
       "feature4Title": "WhatsApp onde isso cria velocidade",
-      "feature4Body": "SiteCreator e Doutor Fiscal encontram os pequenos negócios no canal que eles já usam todos os dias, reduzindo atrito e etapas de entrada.",
+      "feature4Body": "Conversas fazem parte da operação. Projetamos pontos de entrada em torno de como as pessoas já trabalham.",
       "feature5Title": "Profundidade de domínio",
       "feature5Body": "Dialogus e Unifikar carregam lógica de domínio para risco no trabalho e varejo de seminovos, sustentando rotinas operacionais com dados verificáveis.",
       "feature6Title": "Compromisso de longo prazo",
@@ -253,7 +233,7 @@
       "whoTitle": "Cinco letras. Uma razão social completa. Uma casa que constrói.",
       "whoBody": "Operamos como UNFLD. A empresa é a UNFOLDING THE FUTURE LTDA — uma sociedade empresária limitada brasileira em Jardim Paulistano, São Paulo, ativa desde {{founded}}. Construímos e operamos produtos em nosso próprio nome e construímos sistemas sob medida ao lado de organizações com operações de consequência.",
       "tileProducts": "Produtos da UNFLD",
-      "tileProductsBody": "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
+      "tileProductsBody": "Dialogus, Oluart, Unifikar.",
       "tileSp": "São Paulo",
       "tileSpBody": "Jardim Paulistano. Sede registrada.",
       "tileWork": "Trabalhos selecionados",
@@ -261,7 +241,7 @@
       "tileCareers": "Carreiras",
       "tileCareersBody": "Junte-se à equipe.",
       "portfolioKicker": "O portfólio",
-      "portfolioTitle": "Seis produtos moldados por um princípio operacional.",
+      "portfolioTitle": "Três produtos moldados por um princípio operacional.",
       "portfolioLede": "Encontrar o trabalho que deveria ser mais simples. Construir o sistema. Continuar melhorando-o em uso.",
       "workKicker": "Trabalhos selecionados",
       "workTitle": "Trabalho que as pessoas de fato usaram.",
@@ -272,8 +252,7 @@
       "officeTitle": "A UNFLD em São Paulo.",
       "officeLede": "A sede registrada da UNFLD na Avenida Brigadeiro Faria Lima, no Jardim Paulistano, São Paulo.",
       "pathKicker": "Nosso caminho de progresso",
-      "pathTitle": "Experiência com raízes em 2019.",
-      "latestNews": "Últimas notícias"
+      "pathTitle": "Experiência com raízes em 2019."
     },
     "contact": {
       "metaTitle": "Contato",
@@ -488,14 +467,6 @@
       "next": "Próximo",
       "by": "Por"
     },
-    "news": {
-      "metaTitle": "Notícias e atualizações",
-      "metaDescription": "O que a UNFLD está construindo — e o que estamos aprendendo com o trabalho. Lançamentos de produto, notas de campo e comunicados da empresa.",
-      "kicker": "Notícias e atualizações",
-      "title": "O que a UNFLD está construindo",
-      "titleSecond": "— e o que estamos aprendendo.",
-      "lede": "Lançamentos de produto, notas de campo, decisões da empresa e evidências dos sistemas que operamos."
-    },
     "work": {
       "metaTitle": "Trabalhos selecionados",
       "metaDescription": "Trabalhos selecionados da história da equipe UNFLD — mídia, aviação, energia, educação, esporte e os sistemas por trás deles.",
@@ -542,7 +513,7 @@
       "archTitle": "Padrões verificáveis de infraestrutura",
       "deployKicker": "Implantação sob medida",
       "deployTitle": "Arquitetada para responsabilização.",
-      "deployLede": "Seja na entrega de um produto com WhatsApp em primeiro lugar como o SiteCreator, de um sistema de domínio como o Dialogus, ou de um sistema empresarial sob medida, nossas escolhas de infraestrutura equilibram isolamento operacional, desempenho observável e requisitos de conformidade.",
+      "deployLede": "Em produtos como o Dialogus e em sistemas empresariais sob medida, as escolhas de infraestrutura equilibram isolamento operacional, desempenho observável e requisitos contratuais.",
       "p1Title": "Regiões de hospedagem",
       "p1Body": "As regiões de hospedagem e os locais de dados variam por produto e por contrato. A implantação em região brasileira está disponível quando a arquitetura e o acordo a exigem.",
       "p2Title": "Objetivos de recuperação",
@@ -595,10 +566,6 @@
       "security": "Segurança",
       "compliance": "Conformidade",
       "legalRequest": "Solicitação jurídica"
-    },
-    "developers": {
-      "salesLine": "Vendas e escopo: {{sales}}. Segurança: {{security}}.",
-      "versioningTitle": "Versionamento e descontinuação."
     },
     "compliance": {
       "metaTitle": "Conformidade e controles de segurança",
@@ -658,287 +625,7 @@
       "description": "UNFLD é o nome fantasia de UNFOLDING THE FUTURE. Uma casa de software em São Paulo que também entrega os seus próprios produtos digitais."
     }
   },
-  "catalog": {
-    "tagline": "Desdobrando o futuro. Um sistema real de cada vez.",
-    "offices": {
-      "role": "Sede",
-      "region": "Brasil"
-    },
-    "stats": {
-      "experience": "Experiência com raízes em",
-      "products": "Produtos da UNFLD",
-      "hq": "Sede · São Paulo"
-    },
-    "values": [
-      {
-        "title": "Entender o trabalho real.",
-        "body": "Começamos pelas pessoas, pelas restrições e pelas decisões que já existem na operação. A tecnologia vem depois do entendimento."
-      },
-      {
-        "title": "Tornar o progresso visível.",
-        "body": "Entregamos em passos pequenos e verificáveis. Cada release deve reduzir incerteza ou melhorar o trabalho."
-      },
-      {
-        "title": "Permanecer responsáveis pelo resultado.",
-        "body": "A entrega não é a linha de chegada. Medimos o que mudou, corrigimos o que não mudou e continuamos a merecer o direito de expandir."
-      }
-    ],
-    "timeline": [
-      {
-        "title": "Experiência com raízes em 2019",
-        "body": "A história da equipe em construção de produtos começa em 2019, com aplicativos e sistemas entregues em mídia, indústria, luxo, agronegócio e aviação."
-      },
-      {
-        "title": "Operações complexas",
-        "body": "Parceria direta com equipes técnicas e operacionais para resolver problemas de domínio em que o software pronto não chega."
-      },
-      {
-        "title": "UNFOLDING THE FUTURE LTDA",
-        "body": "Em 23 de setembro de 2025, a UNFOLDING THE FUTURE LTDA é constituída em São Paulo (CNPJ 62.855.761/0001-82), com nome fantasia UNFLD, levando a experiência anterior para uma nova estrutura societária."
-      },
-      {
-        "title": "Produtos da UNFLD",
-        "body": "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart e Unifikar avançam em seus respectivos estágios, ao lado de sistemas sob medida construídos com nossos parceiros."
-      }
-    ],
-    "interview": [
-      {
-        "title": "Envie uma apresentação",
-        "body": "Compartilhe sua trajetória e exemplos de trabalho real em careers@unfld.com.br. Analisamos os envios diretamente."
-      },
-      {
-        "title": "Conversa inicial",
-        "body": "Uma conversa direta para entender sua trajetória, seus interesses e como você aborda problemas complexos."
-      },
-      {
-        "title": "Revisão técnica e de domínio",
-        "body": "Imersão em resolução de problemas, desenho de sistemas e execução prática com a equipe."
-      },
-      {
-        "title": "Proposta e próximos passos",
-        "body": "Termos claros e transparentes, com escopo, remuneração e expectativas definidos."
-      }
-    ],
-    "homePrompts": [
-      {
-        "q": "Somos MEI e pequeno negócio. Precisamos de um site de verdade, não de uma agência.",
-        "a": "O SiteCreator reúne as informações públicas do seu CNPJ e publica um site de verdade em minutos pelo WhatsApp, com hospedagem, SSL e links diretos para conversa."
-      },
-      {
-        "q": "Como tornar a gestão de riscos psicossociais acionável e em conformidade?",
-        "a": "Dialogus by UNFLD integra escuta estruturada, avaliação validada, visibilidade de risco e planejamento de ação em um processo documentado de risco ocupacional alinhado à NR-1."
-      },
-      {
-        "q": "Quero aprender a desenhar sem projetor e sem assinatura surpresa.",
-        "a": "O Oluart projeta qualquer imagem no papel pela câmera do celular. Trace, pratique e fique com o preço que viu: grátis para começar, Premium a R$29,90 por mês, ou plano vitalício a R$199."
-      },
-      {
-        "q": "Nosso pátio precisa de uma vitrine digital e de um jeito de compartilhar estoque com lojas parceiras.",
-        "a": "A Unifikar é um marketplace de seminovos e uma rede comercial: uma vitrine com a marca de cada loja, estoque compartilhado com preço mínimo confidencial e uma só caixa para leads do marketplace e da vitrine."
-      }
-    ],
-    "developer": {
-      "apiTitle": "UNFLD API — Catálogo para desenvolvedores",
-      "apiDescription": "Recursos para desenvolvedores UNFLD: API pública de catálogo, OpenAPI 3.1, política de versionamento e llms.txt. Sem autenticação.",
-      "developersTitle": "Recursos para desenvolvedores UNFLD",
-      "developersDescription": "Recursos para desenvolvedores UNFLD, para agentes e integradores: API de catálogo, especificação OpenAPI, política de versionamento, código-fonte da CLI e llms.txt.",
-      "versioningTitle": "Versionamento e descontinuação da UNFLD API",
-      "versioningDescription": "Versionamento, descontinuação e política de Sunset da API de catálogo da UNFLD (/api/v1).",
-      "heroTitle": "UNFLD API.",
-      "heroTitleSecond": "Um catálogo público.",
-      "heroLede": "JSON somente leitura para produtos, notícias, trabalhos selecionados e dados da empresa. Sem conta. Sem superfície de escrita. A OpenAPI é publicada em /openapi.json.",
-      "developersHeroTitle": "Recursos para desenvolvedores UNFLD.",
-      "developersHeroTitleSecond": "API, OpenAPI, agentes.",
-      "developersHeroLede": "A API de catálogo da UNFLD, o documento OpenAPI, a política de versionamento e o texto legível por máquina — publicados em www.unfld.com.br para que uma busca por recursos para desenvolvedores UNFLD chegue aqui.",
-      "howTitle": "Como um agente deve chamar a UNFLD.",
-      "howLede": "Busque o documento OpenAPI, associe ferramentas a cada operationId e faça GET da coleção de que precisa. Em caso de erro, leia a dica. Para prosa, solicite a mesma página com Accept: text/markdown.",
-      "versioningUpdated": "23 de agosto de 2026",
-      "endpoints": [
-        "Índice do catálogo, links de documentação, política de limite de taxa e URLs das coleções.",
-        "Razão social, CNPJ, endereço em São Paulo, telefones e e-mails.",
-        "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart e Unifikar.",
-        "Um produto. Slugs: sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
-        "Artigos públicos de notícias.",
-        "Trabalhos selecionados que a equipe pode discutir em público.",
-        "Páginas HTML canônicas do mapa do site.",
-        "Caixas de entrada públicas. Não há endpoint de criação de ticket."
-      ],
-      "rules": [
-        {
-          "title": "Sem autenticação",
-          "body": "O catálogo é público e somente leitura. Não envie chaves de API, cookies nem dados pessoais."
-        },
-        {
-          "title": "Erros em JSON",
-          "body": "Falhas retornam application/json com error.code, error.message e error.hint. Agentes devem seguir a dica em vez de repetir a tentativa às cegas."
-        },
-        {
-          "title": "Limites de taxa",
-          "body": "Toda resposta do catálogo inclui RateLimit, RateLimit-Policy, RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset e X-RateLimit-*. Um 429 inclui Retry-After."
-        },
-        {
-          "title": "Versionamento",
-          "body": "O catálogo é versionado em /api/v1. Mudanças incompatíveis saem como /api/v2. Versões descontinuadas enviam cabeçalhos Deprecation e Sunset. Política: /api/versioning."
-        },
-        {
-          "title": "Páginas em Markdown",
-          "body": "Páginas HTML também falam text/markdown via Accept. Arquivos para máquinas ficam em /openapi.json, /llms.txt e /agents.md."
-        },
-        {
-          "title": "Quando chamar",
-          "body": "Use esta API para identificar um produto, citar dados da empresa ou encaminhar uma pessoa para vendas. As APIs de execução de cada produto ficam no respectivo domínio."
-        }
-      ],
-      "versioningSections": [
-        {
-          "heading": "Versão atual",
-          "body": "O catálogo público fica em /api/v1. As respostas incluem API-Version: 1. O caminho /api sem versão é documentação humana, não um recurso JSON. Não alteraremos em silêncio campos JSON documentados na v1."
-        },
-        {
-          "heading": "Como versionamos",
-          "body": "Mudanças incompatíveis saem com um novo prefixo de URL (/api/v2) e um novo documento OpenAPI. Campos aditivos em objetos existentes não são incompatíveis. Remover um campo, renomear uma chave ou mudar um tipo é incompatível e exige uma nova versão maior."
-        },
-        {
-          "heading": "Sinal de descontinuação",
-          "body": "Quando uma versão ou um campo é descontinuado, enviamos Deprecation: true e um cabeçalho Sunset (HTTP-date) nas respostas afetadas, além de uma relação Link para /api/versioning. O corpo JSON pode incluir deprecation.sunset e deprecation.successor. Mantemos uma versão maior descontinuada disponível por pelo menos 180 dias após o Sunset ser anunciado pela primeira vez."
-        },
-        {
-          "heading": "Situação da v1",
-          "body": "A v1 é a versão atual. Nenhum Sunset está anunciado. Os cabeçalhos de limite de taxa (RateLimit, RateLimit-Policy, X-RateLimit-*) fazem parte do contrato da v1 e não são sinal de descontinuação."
-        }
-      ]
-    }
-  },
   "products": {
-    "sitecreator": {
-      "name": "SiteCreator by UNFLD",
-      "kicker": "Presença digital",
-      "status": "Em operação",
-      "explore": "Explorar",
-      "line": "O seu negócio no ar em minutos, pelo WhatsApp.",
-      "mission": "Desdobrando o futuro dos pequenos negócios online.",
-      "title": "Desdobrando o futuro",
-      "titleSecond": "dos pequenos negócios online.",
-      "primary": "Abrir SiteCreator",
-      "blurb": "Envie o CNPJ. O SiteCreator reúne as informações públicas do negócio que você aprova, prepara a primeira versão e publica um site de verdade com hospedagem, SSL e um caminho direto de volta ao WhatsApp.",
-      "features": [
-        {
-          "title": "O WhatsApp é o ponto de entrada",
-          "body": "O número autentica. Sem senha, sem painel administrativo complicado. Abra o WhatsApp e comece."
-        },
-        {
-          "title": "Envie o CNPJ",
-          "body": "O SiteCreator reúne as informações públicas do negócio que você aprova, preparando uma presença estruturada sob medida para a sua empresa."
-        },
-        {
-          "title": "No ar em minutos",
-          "body": "A primeira versão pode estar no ar em minutos, com hospedagem, SSL e um caminho direto de volta ao WhatsApp."
-        },
-        {
-          "title": "Grátis para começar",
-          "body": "Um site de verdade com hospedagem, subdomínio gratuito, botão de WhatsApp e atualizações pelo chat. Domínio próprio a partir de R$49 / mês."
-        },
-        {
-          "title": "Atualize pelo chat",
-          "body": "Novo horário, novas fotos, novos serviços: envie uma mensagem. O site permanece atual sem o custo de uma agência."
-        },
-        {
-          "title": "Para MEI e pequenos negócios",
-          "body": "Feito para padarias, salões, oficinas, clínicas e operadores independentes em todo o Brasil."
-        }
-      ],
-      "quote": {
-        "kicker": "SiteCreator",
-        "title": "Nem todo site precisa de uma agência.",
-        "body": "O seu negócio no ar em minutos, pelo WhatsApp. Isso é SiteCreator by UNFLD."
-      }
-    },
-    "doutor-fiscal": {
-      "name": "Doutor Fiscal by UNFLD",
-      "kicker": "Operações fiscais",
-      "status": "Lista de espera",
-      "explore": "Explorar",
-      "line": "Rotinas fiscais resolvidas pelo WhatsApp.",
-      "mission": "Desdobrando o futuro das operações fiscais.",
-      "title": "Desdobrando o futuro",
-      "titleSecond": "das operações fiscais.",
-      "primary": "Abrir Doutor Fiscal",
-      "blurb": "Um serviço de operações fiscais com WhatsApp em primeiro lugar para MEIs e pequenos negócios, combinando fluxos guiados, automação e revisão humana quando o trabalho exige.",
-      "features": [
-        {
-          "title": "WhatsApp em primeiro lugar",
-          "body": "O número que chama é a empresa. Fluxos guiados, áudio, texto ou envio de documentos — o produto pede apenas o que falta."
-        },
-        {
-          "title": "Emissão estruturada",
-          "body": "Transforma o pedido em um rascunho estruturado, valida os dados necessários, aplica as regras fiscais configuradas e devolve o documento emitido quando a operação é elegível."
-        },
-        {
-          "title": "Uma caixa de entrada fiscal",
-          "body": "Cada empresa recebe uma caixa de entrada fiscal dedicada que organiza notas, extrai detalhes e avisa você direto no WhatsApp."
-        },
-        {
-          "title": "Rotinas sem atrito",
-          "body": "Emitir uma nota de rotina não deveria interromper o dia de trabalho. Fluxos enxutos mantêm o foco nos seus clientes."
-        },
-        {
-          "title": "Preços da lista de espera",
-          "body": "MEI a partir de R$59 / mês. Micro a partir de R$159. Pequena empresa a partir de R$349. Cancele a qualquer momento no WhatsApp."
-        },
-        {
-          "title": "Feito para a operação diária",
-          "body": "O Doutor Fiscal cuida da emissão de rotina e da organização fiscal com clareza e precisão."
-        }
-      ],
-      "quote": {
-        "kicker": "Doutor Fiscal",
-        "title": "Emitir uma nota de rotina não deveria interromper o dia de trabalho.",
-        "body": "Rotinas fiscais que começam — e terminam — no WhatsApp. doutorfiscal.com — lista de espera aberta."
-      }
-    },
-    "queravaga": {
-      "name": "Queravaga by UNFLD",
-      "kicker": "Contratação",
-      "status": "Acesso antecipado",
-      "explore": "Explorar",
-      "line": "Um caminho mais curto do perfil à entrevista.",
-      "mission": "Desdobrando o futuro da contratação.",
-      "title": "Desdobrando o futuro",
-      "titleSecond": "da contratação.",
-      "primary": "Abrir Queravaga",
-      "blurb": "Queravaga ajuda as pessoas a apresentar a experiência com clareza e ajuda as equipes de contratação a encontrar candidatos prontos para uma conversa real — sem transformar nenhum dos lados em uma máquina de preencher formulários.",
-      "features": [
-        {
-          "title": "Um perfil, pronto",
-          "body": "Apresente sua experiência com clareza e concisão, sem navegar por formulários complexos ou formatação interminável."
-        },
-        {
-          "title": "Um caminho mais curto até as entrevistas",
-          "body": "O produto encurta o caminho entre um perfil crível e uma entrevista relevante."
-        },
-        {
-          "title": "Rápido e respeitoso",
-          "body": "Velocidade com dignidade: crie seu perfil em minutos e conecte-se a oportunidades com rapidez."
-        },
-        {
-          "title": "Dois lados",
-          "body": "Feito para candidatos prontos para trabalhar e para equipes de contratação que buscam pessoas motivadas."
-        },
-        {
-          "title": "Acesso antecipado",
-          "body": "Lançado em agosto de 2026 e agora evoluindo com os primeiros candidatos e equipes de contratação."
-        },
-        {
-          "title": "Conexão direta",
-          "body": "Encurtando a distância entre o talento e o trabalho real."
-        }
-      ],
-      "quote": {
-        "kicker": "Queravaga",
-        "title": "Um caminho mais curto do perfil à entrevista.",
-        "body": "Queravaga é a UNFLD desdobrando o futuro da contratação: perfis claros, conversas mais rápidas e menos atrito."
-      }
-    },
     "dialogus": {
       "name": "Dialogus by UNFLD",
       "kicker": "Saúde no trabalho",
@@ -1067,48 +754,6 @@
         "title": "O estoque deve circular numa rede, não numa única vitrine.",
         "body": "Um marketplace de seminovos e uma rede comercial para as lojas que os vendem. Unifikar by UNFLD."
       }
-    }
-  },
-  "news": {
-    "unifikar": {
-      "date": "23 de agosto de 2026",
-      "title": "Unifikar abre uma rede para seminovos",
-      "standfirst": "Um marketplace para quem compra e uma rede comercial para as lojas que vendem seminovos.",
-      "body": [
-        "Unifikar é a UNFLD desdobrando o futuro do varejo de seminovos: um marketplace para quem compra, e uma rede comercial compartilhada para lojas que precisam de mais do que uma única vitrine.",
-        "As lojas parceiras publicam uma vitrine com a própria marca, compartilham estoque sob um preço mínimo confidencial e recebem leads do marketplace e da vitrine em um só lugar.",
-        "O acesso antecipado está aberto em unifikar.com para lojas que entram na rede e para quem busca um seminovo."
-      ]
-    },
-    "oluart": {
-      "date": "23 de agosto de 2026",
-      "title": "Oluart coloca a referência na folha",
-      "standfirst": "Um app de desenho com AR que projeta qualquer imagem no papel — com um preço que se lê antes de começar.",
-      "body": [
-        "Oluart é a UNFLD desdobrando o futuro de aprender a desenhar: a câmera vira projetor, a folha continua papel, e o preço continua visível.",
-        "O plano gratuito já inclui a projeção AR completa. O Premium custa R$29,90 por mês. O plano vitalício custa R$199. O suporte responde em português.",
-        "Na App Store e no Google Play, em oluart.com."
-      ]
-    },
-    "queravaga": {
-      "date": "20 de agosto de 2026",
-      "title": "Queravaga começa a encurtar o caminho até o trabalho",
-      "standfirst": "Um caminho mais curto do perfil à entrevista — para quem busca trabalho e para equipes prontas para contratar.",
-      "body": [
-        "Queravaga é a UNFLD desdobrando o futuro da contratação: um perfil mais claro para candidatos, uma rota mais rápida até conversas relevantes e menos atrito para equipes prontas para contratar.",
-        "A promessa é simples: apresentar a experiência com clareza em minutos, sem burocracia nem rituais complexos de formatação.",
-        "Lançado em agosto de 2026 e agora evoluindo com os primeiros candidatos e equipes de contratação em queravaga.com."
-      ]
-    },
-    "the-unfold": {
-      "date": "23 de setembro de 2025",
-      "title": "UNFLD, UNFOLDING THE FUTURE",
-      "standfirst": "UNFLD é a forma curta de UNFOLDING THE FUTURE. Transformamos o que deveria existir em seguida em algo que as pessoas já podem usar.",
-      "body": [
-        "UNFLD é a forma curta de UNFOLDING THE FUTURE — e isso é mais do que a razão social. É o trabalho: encontrar o que deveria ser mais simples, construir o sistema e continuar melhorando-o em uso.",
-        "A experiência da nossa equipe atravessa produtos e projetos entregues diretamente, por empresas anteriores e ao lado de parceiros na agricultura, na mídia, na indústria e em operações empresariais.",
-        "SiteCreator coloca pequenos negócios no ar. Doutor Fiscal simplifica as rotinas fiscais. Queravaga encurta o caminho até o trabalho. Dialogus torna o risco ocupacional visível e acionável. Oluart coloca a referência de desenho na folha. Unifikar abre uma rede para seminovos. Mercados diferentes; uma mesma convicção operacional."
-      ]
     }
   },
   "work": {
@@ -1241,8 +886,7 @@
         "lede": "Uma plataforma de contratação que liga candidatos e empresas sem transformar nenhum dos lados em papelada. Candidatar-se. Avaliar. Decidir.",
         "story": [
           "A contratação ainda pede demais dos dois lados antes de uma conversa real.",
-          "MatchOne é uma plataforma para vagas abertas e para as pessoas que podem ocupá-las. Candidatos se inscrevem sem um labirinto. Empresas avaliam sem se afogar em arquivos. A combinação faz o trabalho quieto no meio.",
-          "A mesma convicção vive depois no Queravaga: encurtar o caminho do perfil à entrevista. Aqui foi construída como um marketplace — claro, rápido, respeitoso com o tempo."
+          "MatchOne é uma plataforma para vagas abertas e para as pessoas que podem ocupá-las. Candidatos se inscrevem sem um labirinto. Empresas avaliam sem se afogar em arquivos. A combinação faz o trabalho quieto no meio."
         ],
         "outcome": "Um caminho mais curto da abertura à decisão."
       },
@@ -1264,7 +908,7 @@
       "name": "Contratação",
       "audience": "Candidatos que buscam colocação direta e equipes de contratação que precisam de candidatos verificados.",
       "line": "Um caminho mais curto do perfil à entrevista: perfis claros, conversas mais rápidas, menos atrito.",
-      "body": "Queravaga ajuda candidatos a apresentar a experiência com clareza em minutos e ajuda equipes de contratação a encontrar candidatos prontos para conversas reais — sem transformar nenhum dos lados em uma máquina de preencher formulários.",
+      "body": "Construímos sistemas de contratação sob medida com equipes que precisam de perfis claros, etapas práticas de avaliação e caminhos diretos para conversas relevantes.",
       "capabilities": [
         "Perfis claros de candidatos gerados em minutos, sem formatação complexa",
         "Caminhos de comunicação direta entre gestores de contratação e candidatos",
@@ -1275,10 +919,10 @@
       "name": "Pequenos negócios",
       "audience": "MEIs (microempreendedores individuais), microempresas e donos de PMEs brasileiras.",
       "line": "Presença digital e rotinas fiscais resolvidas pelo WhatsApp.",
-      "body": "Pequenos negócios no Brasil operam dentro do WhatsApp. O SiteCreator entrega um site aprovado e verificado, com hospedagem e SSL, em minutos a partir de um CNPJ. O Doutor Fiscal organiza a emissão de notas, o acompanhamento do Simples Nacional e a conformidade fiscal de rotina sem interromper as vendas do dia.",
+      "body": "Construímos sistemas digitais sob medida para pequenos negócios, conectando presença digital, rotinas internas e conversas com clientes em torno da operação.",
       "capabilities": [
-        "Presença na web imediata via SiteCreator, com suporte a domínio próprio",
-        "Emissão guiada de notas e organização fiscal via Doutor Fiscal",
+        "Presença digital com suporte a domínio próprio",
+        "Sistemas sob medida para rotinas administrativas",
         "Fluxos conversacionais que eliminam o peso de painéis complexos"
       ]
     },
@@ -1330,7 +974,7 @@
       "name": "Operações fiscais e no trabalho",
       "audience": "Controllers corporativos, oficiais de conformidade, líderes de RH e equipes de operações jurídicas.",
       "line": "Software para rotinas documentadas de fiscalidade e risco no trabalho no Brasil.",
-      "body": "O ambiente regulatório brasileiro exige documentação rigorosa. A UNFLD oferece ferramentas especializadas — como o Doutor Fiscal para emissão de notas e o Dialogus para gestão de riscos psicossociais da NR-1 — que geram registros auditáveis e organizam a conformidade de rotina, sem substituir assessoria jurídica.",
+      "body": "O ambiente regulatório brasileiro exige rotinas documentadas. O Dialogus apoia a gestão de riscos psicossociais da NR-1. Também construímos sistemas sob medida para registros operacionais auditáveis.",
       "capabilities": [
         "Rotinas fiscais documentadas e validação automatizada de rascunhos",
         "Integração contínua do risco ocupacional da NR-1 e geração de evidências",
@@ -1341,7 +985,7 @@
       "name": "Negócios",
       "audience": "Donos de pequenos negócios e operadores empresariais.",
       "line": "Use um produto já construído para o problema — ou construa o sistema que a sua operação exige de forma única.",
-      "body": "SiteCreator e Doutor Fiscal oferecem presença e fluxos fiscais com WhatsApp em primeiro lugar para MEIs e pequenos negócios. Sistemas sob medida quando a operação exige fluxos próprios.",
+      "body": "Construímos sistemas sob medida com pequenos negócios cuja operação exige fluxos próprios.",
       "capabilities": [
         "Fluxos com WhatsApp em primeiro lugar",
         "Capacidades específicas de cada produto",
@@ -1394,30 +1038,6 @@
     }
   },
   "plans": {
-    "SiteCreator": {
-      "price": "Grátis",
-      "period": " · R$49 / domínio",
-      "blurb": "O seu negócio no ar em minutos, pelo WhatsApp. Para MEI e pequenos negócios.",
-      "cta": "Abrir SiteCreator",
-      "features": [
-        "WhatsApp como ponto de entrada",
-        "Configuração a partir do CNPJ",
-        "Gratuito em *.live.sitecreator.com.br",
-        "Domínio próprio a partir de R$49 / mês"
-      ]
-    },
-    "Doutor Fiscal": {
-      "price": "R$59",
-      "period": "/mês",
-      "blurb": "Lista de espera aberta. Rotinas fiscais resolvidas pelo WhatsApp, para MEI e pequenos negócios.",
-      "cta": "Abrir Doutor Fiscal",
-      "features": [
-        "Emissão de rotina no WhatsApp",
-        "Caixa de entrada fiscal dedicada",
-        "MEI R$59 · Micro R$159 · Pequena R$349",
-        "Cancele a qualquer momento no WhatsApp"
-      ]
-    },
     "Dialogus": {
       "price": "Planos",
       "period": "",
@@ -1428,18 +1048,6 @@
         "Métodos de avaliação validados",
         "Painéis executivos e planos de ação",
         "Documentação contínua da NR-1"
-      ]
-    },
-    "Queravaga": {
-      "price": "Acesso antecipado",
-      "period": "",
-      "blurb": "Um caminho mais curto do perfil à entrevista. Para candidatos e equipes de contratação.",
-      "cta": "Abrir Queravaga",
-      "features": [
-        "Perfil claro em minutos",
-        "Caminhos diretos dos perfis às conversas de contratação",
-        "Portais para candidatos e equipes de contratação",
-        "Cadastro gratuito no acesso antecipado"
       ]
     },
     "Oluart": {
@@ -2445,6 +2053,82 @@
       {
         "title": "Verificação contínua",
         "desc": "Análise de dependências e análise estática em cada pull request, varreduras mensais do sistema e testes de penetração externos periódicos."
+      }
+    ]
+  },
+  "catalog": {
+    "tagline": "Desdobrando o futuro. Um sistema real de cada vez.",
+    "offices": {
+      "role": "Sede",
+      "region": "Brasil"
+    },
+    "stats": {
+      "experience": "Experiência com raízes em",
+      "products": "Produtos da UNFLD",
+      "hq": "Sede · São Paulo"
+    },
+    "values": [
+      {
+        "title": "Entender o trabalho real.",
+        "body": "Começamos pelas pessoas, pelas restrições e pelas decisões que já existem na operação. A tecnologia vem depois do entendimento."
+      },
+      {
+        "title": "Tornar o progresso visível.",
+        "body": "Entregamos em passos pequenos e verificáveis. Cada release deve reduzir incerteza ou melhorar o trabalho."
+      },
+      {
+        "title": "Permanecer responsáveis pelo resultado.",
+        "body": "A entrega não é a linha de chegada. Medimos o que mudou, corrigimos o que não mudou e continuamos a merecer o direito de expandir."
+      }
+    ],
+    "timeline": [
+      {
+        "title": "Experiência com raízes em 2019",
+        "body": "A história da equipe em construção de produtos começa em 2019, com aplicativos e sistemas entregues em mídia, indústria, luxo, agronegócio e aviação."
+      },
+      {
+        "title": "Operações complexas",
+        "body": "Parceria direta com equipes técnicas e operacionais para resolver problemas de domínio em que o software pronto não chega."
+      },
+      {
+        "title": "UNFOLDING THE FUTURE LTDA",
+        "body": "Em 23 de setembro de 2025, a UNFOLDING THE FUTURE LTDA é constituída em São Paulo (CNPJ 62.855.761/0001-82), com nome fantasia UNFLD, levando a experiência anterior para uma nova estrutura societária."
+      },
+      {
+        "title": "Produtos da UNFLD",
+        "body": "Dialogus, Oluart e Unifikar avançam em seus respectivos estágios, ao lado de sistemas sob medida construídos com nossos parceiros."
+      }
+    ],
+    "interview": [
+      {
+        "title": "Envie uma apresentação",
+        "body": "Compartilhe sua trajetória e exemplos de trabalho real em careers@unfld.com.br. Analisamos os envios diretamente."
+      },
+      {
+        "title": "Conversa inicial",
+        "body": "Uma conversa direta para entender sua trajetória, seus interesses e como você aborda problemas complexos."
+      },
+      {
+        "title": "Revisão técnica e de domínio",
+        "body": "Imersão em resolução de problemas, desenho de sistemas e execução prática com a equipe."
+      },
+      {
+        "title": "Proposta e próximos passos",
+        "body": "Termos claros e transparentes, com escopo, remuneração e expectativas definidos."
+      }
+    ],
+    "homePrompts": [
+      {
+        "q": "Como tornar a gestão de riscos psicossociais acionável e em conformidade?",
+        "a": "Dialogus by UNFLD integra escuta estruturada, avaliação validada, visibilidade de risco e planejamento de ação em um processo documentado de risco ocupacional alinhado à NR-1."
+      },
+      {
+        "q": "Quero aprender a desenhar sem projetor e sem assinatura surpresa.",
+        "a": "O Oluart projeta qualquer imagem no papel pela câmera do celular. Trace, pratique e fique com o preço que viu: grátis para começar, Premium a R$29,90 por mês, ou plano vitalício a R$199."
+      },
+      {
+        "q": "Nosso pátio precisa de uma vitrine digital e de um jeito de compartilhar estoque com lojas parceiras.",
+        "a": "A Unifikar é um marketplace de seminovos e uma rede comercial: uma vitrine com a marca de cada loja, estoque compartilhado com preço mínimo confidencial e uma só caixa para leads do marketplace e da vitrine."
       }
     ]
   }

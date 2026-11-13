@@ -52,7 +52,6 @@ export const headerNav: NavLink[] = [
   { label: "Products", to: "/products" },
   { label: "Build with us", to: "/build-with-us" },
   { label: "Company", to: "/company" },
-  { label: "News", to: "/news" },
   { label: "Blog", to: "/blog" },
   { label: "Pricing", to: "/pricing" },
 ];
@@ -79,153 +78,6 @@ export type OwnedProduct = {
 };
 
 export const ownedProducts: readonly OwnedProduct[] = [
-  {
-    slug: "sitecreator",
-    name: "SiteCreator by UNFLD",
-    shortName: "SiteCreator",
-    href: "/sitecreator",
-    kicker: "Digital presence",
-    status: "Live",
-    explore: "Explore",
-    line: "Your business online in minutes, through WhatsApp.",
-    mission: "Unfolding the future of small business online.",
-    title: "Unfolding the future",
-    titleSecond: "of small business online.",
-    primary: "Open SiteCreator",
-    url: "https://www.sitecreator.com.br",
-    blurb:
-      "Send your CNPJ. SiteCreator gathers the public business information you approve, prepares the first version, and publishes a real website with hosting, SSL, and a direct path back to WhatsApp.",
-    image: "/images/studio.jpg",
-    features: [
-      {
-        title: "WhatsApp is the entry point",
-        body: "The number authenticates. No password, no complicated admin panel. Open WhatsApp and start.",
-      },
-      {
-        title: "Send the CNPJ",
-        body: "SiteCreator gathers the public business information you approve, preparing a structured presence tailored to your business.",
-      },
-      {
-        title: "Online in minutes",
-        body: "Your first version can be online in minutes with hosting, SSL, and a direct path back to WhatsApp.",
-      },
-      {
-        title: "Free to start",
-        body: "A real website with hosting, free subdomain, WhatsApp button, and updates via chat. Custom domain from R$49 / month.",
-      },
-      {
-        title: "Update through chat",
-        body: "New hours, new photos, new services: send a message. The site stays fresh without agency overhead.",
-      },
-      {
-        title: "For MEI and small business",
-        body: "Tailored for bakeries, salons, workshops, clinics, and independent operators across Brazil.",
-      },
-    ],
-    quote: {
-      kicker: "SiteCreator",
-      title: "Not every site needs an agency.",
-      body: "Your business online in minutes, through WhatsApp. That is SiteCreator by UNFLD.",
-    },
-  },
-  {
-    slug: "doutor-fiscal",
-    name: "Doutor Fiscal by UNFLD",
-    shortName: "Doutor Fiscal",
-    href: "/doutor-fiscal",
-    kicker: "Fiscal operations",
-    status: "Waitlist",
-    explore: "Explore",
-    line: "Fiscal routines handled through WhatsApp.",
-    mission: "Unfolding the future of fiscal operations.",
-    title: "Unfolding the future",
-    titleSecond: "of fiscal operations.",
-    primary: "Open Doutor Fiscal",
-    url: "https://www.doutorfiscal.com",
-    blurb:
-      "A WhatsApp-first fiscal operations service for MEIs and small businesses, combining guided workflows, automation, and human review where the work requires it.",
-    image: "/images/build.jpg",
-    features: [
-      {
-        title: "WhatsApp first",
-        body: "The number that calls is the company. Guided workflows, audio, text, or document uploads—the product asks only for what is missing.",
-      },
-      {
-        title: "Structured issuance",
-        body: "It turns the request into a structured draft, validates the required data, applies the configured fiscal rules, and returns the issued document when the transaction is eligible.",
-      },
-      {
-        title: "A fiscal inbox",
-        body: "Each company gets a dedicated fiscal inbox that organizes invoices, extracts details, and notifies you directly on WhatsApp.",
-      },
-      {
-        title: "Frictionless routines",
-        body: "Issuing a routine invoice should not interrupt the business day. Streamlined workflows keep your focus on your customers.",
-      },
-      {
-        title: "Waitlist pricing",
-        body: "MEI from R$59 / month. Micro from R$159. Small company from R$349. Cancel anytime in WhatsApp.",
-      },
-      {
-        title: "Made for daily operations",
-        body: "Doutor Fiscal manages routine issuance and fiscal organisation with clarity and precision.",
-      },
-    ],
-    quote: {
-      kicker: "Doutor Fiscal",
-      title: "Issuing a routine invoice should not interrupt the business day.",
-      body: "Fiscal routines that start—and finish—on WhatsApp. doutorfiscal.com — waitlist open.",
-    },
-  },
-  {
-    slug: "queravaga",
-    name: "Queravaga by UNFLD",
-    shortName: "Queravaga",
-    href: "/queravaga",
-    kicker: "Hiring",
-    status: "Early access",
-    explore: "Explore",
-    line: "A shorter path from profile to interview.",
-    mission: "Unfolding the future of hiring.",
-    title: "Unfolding the future",
-    titleSecond: "of hiring.",
-    primary: "Open Queravaga",
-    url: "https://www.queravaga.com",
-    blurb:
-      "Queravaga helps people present their experience clearly and helps hiring teams find candidates who are ready for a real conversation—without turning either side into a form-filling machine.",
-    image: "/images/forge.jpg",
-    features: [
-      {
-        title: "A profile, ready",
-        body: "Present your experience clearly and concisely without navigating complex forms or endless formatting.",
-      },
-      {
-        title: "A shorter path to interviews",
-        body: "The product shortens the path between a credible profile and a relevant interview.",
-      },
-      {
-        title: "Fast and respectful",
-        body: "Speed with dignity: create your profile in minutes and connect with opportunities quickly.",
-      },
-      {
-        title: "Two sides",
-        body: "Built for candidates ready to work and hiring teams looking for motivated people.",
-      },
-      {
-        title: "Early access",
-        body: "Launched in August 2026 and now evolving with its first candidates and hiring teams.",
-      },
-      {
-        title: "Direct connection",
-        body: "Shortening the distance between talent and real work.",
-      },
-    ],
-    quote: {
-      kicker: "Queravaga",
-      title: "A shorter path from profile to interview.",
-      body: "Queravaga is UNFLD unfolding the future of hiring: clear profiles, faster conversations, and less friction.",
-    },
-  },
   {
     slug: "dialogus",
     name: "Dialogus by UNFLD",
@@ -404,9 +256,6 @@ export const customers: readonly Customer[] = [
 export const footer = {
   products: [
     { label: "All products", to: "/products" },
-    { label: "SiteCreator", to: "/sitecreator" },
-    { label: "Doutor Fiscal", to: "/doutor-fiscal" },
-    { label: "Queravaga", to: "/queravaga" },
     { label: "Dialogus", to: "/dialogus" },
     { label: "Oluart", to: "/oluart" },
     { label: "Unifikar", to: "/unifikar" },
@@ -415,23 +264,10 @@ export const footer = {
   buildWithUs: [
     { label: "Custom software", to: "/build-with-us" },
     { label: "How we work", to: "/how-we-work" },
-    { label: "UNFLD API", to: "/api" },
     { label: "Enterprise", to: "/enterprise" },
     { label: "Security", to: "/security" },
   ],
-  developers: [
-    { label: "UNFLD developer resources", to: "/developers" },
-    { label: "UNFLD API", to: "/api" },
-    { label: "Versioning", to: "/api/versioning" },
-    { label: "OpenAPI", to: "/openapi.json", external: true },
-    { label: "Catalog", to: "/api/v1", external: true },
-    { label: "Agent index", to: "/llms.txt", external: true },
-    { label: "When to use UNFLD", to: "/agents.md", external: true },
-  ],
   download: [
-    { label: "SiteCreator", to: "/sitecreator" },
-    { label: "Doutor Fiscal", to: "/doutor-fiscal" },
-    { label: "Queravaga", to: "/queravaga" },
     { label: "Dialogus", to: "/dialogus" },
     { label: "Oluart", to: "/oluart" },
     { label: "Unifikar", to: "/unifikar" },
@@ -449,7 +285,6 @@ export const footer = {
     { label: "About", to: "/company" },
     { label: "Selected work", to: "/work" },
     { label: "Careers", to: "/careers" },
-    { label: "News", to: "/news" },
     { label: "Blog", to: "/blog" },
     { label: "Security", to: "/security" },
     { label: "Compliance", to: "/compliance" },
@@ -477,127 +312,13 @@ export const systemsStatus = {
   to: "/status",
 } as const;
 
-export const developerSurface = {
-  apiTitle: "UNFLD API — Developer catalog",
-  apiDescription:
-    "UNFLD developer resources: public catalog API, OpenAPI 3.1, versioning policy, and llms.txt. No authentication.",
-  developersTitle: "UNFLD developer resources",
-  developersDescription:
-    "UNFLD developer resources for agents and integrators: catalog API, OpenAPI spec, versioning policy, CLI source, and llms.txt.",
-  versioningTitle: "UNFLD API versioning and deprecation",
-  versioningDescription:
-    "Versioning, deprecation, and Sunset policy for the UNFLD catalog API (/api/v1).",
-  heroTitle: "UNFLD API.",
-  heroTitleSecond: "A public catalog.",
-  heroLede:
-    "Read-only JSON for products, news, selected work, and company facts. No account. No write surface. OpenAPI is published at /openapi.json.",
-  developersHeroTitle: "UNFLD developer resources.",
-  developersHeroTitleSecond: "API, OpenAPI, agents.",
-  developersHeroLede:
-    "The UNFLD catalog API, OpenAPI document, versioning policy, and machine-readable copy — published at www.unfld.com.br so a search for UNFLD developer resources lands here.",
-  howTitle: "How an agent should call UNFLD.",
-  howLede:
-    "Fetch the OpenAPI document, bind tools to each operationId, then GET the collection you need. On error, read the hint. For prose, request the same page with Accept: text/markdown.",
-  endpoints: [
-    {
-      method: "GET",
-      path: "/api/v1",
-      body: "Catalog index, documentation links, rate-limit policy, and collection URLs.",
-    },
-    {
-      method: "GET",
-      path: "/api/v1/organization",
-      body: "Legal name, CNPJ, São Paulo address, phones, and emails.",
-    },
-    {
-      method: "GET",
-      path: "/api/v1/products",
-      body: "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar.",
-    },
-    {
-      method: "GET",
-      path: "/api/v1/products/{slug}",
-      body: "One product. Slugs: sitecreator, doutor-fiscal, queravaga, dialogus, oluart, unifikar.",
-    },
-    {
-      method: "GET",
-      path: "/api/v1/news",
-      body: "Public news posts.",
-    },
-    {
-      method: "GET",
-      path: "/api/v1/work",
-      body: "Selected work the team can discuss in public.",
-    },
-    {
-      method: "GET",
-      path: "/api/v1/pages",
-      body: "Canonical HTML pages from the sitemap.",
-    },
-    {
-      method: "GET",
-      path: "/api/v1/contact",
-      body: "Public inboxes. There is no ticket-create endpoint.",
-    },
-  ],
-  rules: [
-    {
-      title: "No authentication",
-      body: "The catalog is public and read-only. Do not send API keys, cookies, or personal data.",
-    },
-    {
-      title: "JSON errors",
-      body: "Failures return application/json with error.code, error.message, and error.hint. Agents should follow the hint instead of retrying blindly.",
-    },
-    {
-      title: "Rate limits",
-      body: "Every catalog response includes RateLimit, RateLimit-Policy, RateLimit-Limit, RateLimit-Remaining, RateLimit-Reset, and X-RateLimit-*. A 429 includes Retry-After.",
-    },
-    {
-      title: "Versioning",
-      body: "The catalog is versioned at /api/v1. Breaking changes ship as /api/v2. Deprecated versions send Deprecation and Sunset headers. Policy: /api/versioning.",
-    },
-    {
-      title: "Markdown pages",
-      body: "HTML pages also speak text/markdown via Accept. Machine files live at /openapi.json, /llms.txt, and /agents.md.",
-    },
-    {
-      title: "When to call",
-      body: "Use this API to identify a product, quote company facts, or route a human to sales. Product runtime APIs live on each product domain.",
-    },
-  ],
-  versioningUpdated: "23 August 2026",
-  versioningSections: [
-    {
-      heading: "Current version",
-      body: "The public catalog lives at /api/v1. Responses include API-Version: 1. The unversioned /api path is human documentation, not a JSON resource. We will not silently change documented JSON fields on v1.",
-    },
-    {
-      heading: "How we version",
-      body: "Breaking changes ship as a new URL prefix (/api/v2) with a new OpenAPI document. Additive fields on existing objects are not breaking. Removing a field, renaming a key, or changing a type is breaking and requires a new major version.",
-    },
-    {
-      heading: "Deprecation signal",
-      body: "When a version or field is deprecated we send Deprecation: true and a Sunset header (HTTP-date) on affected responses, plus a Link relation to /api/versioning. The JSON body may include deprecation.sunset and deprecation.successor. We keep a deprecated major version available for at least 180 days after Sunset is first advertised.",
-    },
-    {
-      heading: "v1 status",
-      body: "v1 is current. No Sunset is advertised. Rate-limit headers (RateLimit, RateLimit-Policy, X-RateLimit-*) are part of the v1 contract and are not a deprecation signal.",
-    },
-  ],
-} as const;
-
 export const stats = [
   { value: "2019", label: "Experience rooted in" },
-  { value: "6", label: "Products by UNFLD" },
+  { value: "3", label: "Products by UNFLD" },
   { value: "SP", label: "Headquarters · São Paulo" },
 ] as const;
 
 export const homePrompts = [
-  {
-    q: "We are MEI and small business. We need a real site, not an agency.",
-    a: "SiteCreator gathers public business information from your CNPJ and publishes a real website in minutes through WhatsApp, complete with hosting, SSL, and direct chat links.",
-  },
   {
     q: "How do we make psychosocial risk management actionable and compliant?",
     a: "Dialogus by UNFLD integrates structured listening, validated assessment, risk visibility, and action planning into a documented occupational-risk process aligned with NR-1.",
@@ -660,69 +381,9 @@ export const timeline = [
   {
     date: "2026",
     title: "Products by UNFLD",
-    body: "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across their respective stages, alongside custom systems built beside our partners.",
+    body: "Dialogus, Oluart, and Unifikar advance across their respective stages, alongside custom systems built beside our partners.",
   },
 ] as const;
-
-export type NewsPost = {
-  slug: string;
-  date: string;
-  title: string;
-  standfirst: string;
-  body: string[];
-  code?: { filename: string; content: string };
-};
-
-export const news: NewsPost[] = [
-  {
-    slug: "unifikar",
-    date: "Aug 23, 2026",
-    title: "Unifikar opens a network for used vehicles",
-    standfirst:
-      "A marketplace for buyers and a commercial network for the stores that sell used vehicles.",
-    body: [
-      "Unifikar is UNFLD unfolding the future of used-vehicle retail: one marketplace for buyers, and a shared commercial network for dealerships that need more than a single window.",
-      "Partner stores publish a branded showroom, share inventory under a confidential floor price, and receive leads from the marketplace and their own vitrine in one place.",
-      "Early access is open at unifikar.com for stores joining the network and for people looking for a used vehicle.",
-    ],
-  },
-  {
-    slug: "oluart",
-    date: "Aug 23, 2026",
-    title: "Oluart puts the reference on the page",
-    standfirst:
-      "An AR drawing app that projects any image onto paper — with a price you can read before you start.",
-    body: [
-      "Oluart is UNFLD unfolding the future of learning to draw: the phone camera becomes a projector, the page stays paper, and the price stays visible.",
-      "The free tier already includes full AR projection. Premium is R$29.90 a month. A lifetime plan is R$199. Support answers in Portuguese.",
-      "Available on the App Store and Google Play at oluart.com.",
-    ],
-  },
-  {
-    slug: "queravaga",
-    date: "Aug 20, 2026",
-    title: "Queravaga begins shortening the path to work",
-    standfirst:
-      "A shorter path from profile to interview — for people looking for work and teams ready to hire.",
-    body: [
-      "Queravaga is UNFLD unfolding the future of hiring: a clearer profile for candidates, a faster route to relevant conversations, and less friction for teams ready to hire.",
-      "The promise is simple: present experience clearly in minutes without bureaucracy or complex formatting rituals.",
-      "Launched in August 2026 and now evolving with its first candidates and hiring teams at queravaga.com.",
-    ],
-  },
-  {
-    slug: "the-unfold",
-    date: "Sep 23, 2025",
-    title: "UNFLD, UNFOLDING THE FUTURE",
-    standfirst:
-      "UNFLD is short for UNFOLDING THE FUTURE. We turn what should exist next into something people can use now.",
-    body: [
-      "UNFLD is short for UNFOLDING THE FUTURE—and that is more than the legal name. It is the job: find consequential work that should be simpler, build the system, and keep improving it in use.",
-      "Our team’s experience spans products and projects delivered directly, through prior companies, and alongside partners across agriculture, media, industry, and enterprise operations.",
-      "SiteCreator brings small businesses online. Doutor Fiscal simplifies fiscal operations. Queravaga shortens the path to work. Dialogus makes workplace risk visible and actionable. Oluart puts a drawing reference on the page. Unifikar opens a network for used vehicles. Different markets; one operating belief.",
-    ],
-  },
-];
 
 export const roles: readonly {
   id: string;
@@ -761,7 +422,7 @@ export const solutions = [
     name: "Hiring",
     audience: "Candidates seeking straightforward job placement and hiring teams needing verified candidates.",
     line: "A shorter path from profile to interview: clear profiles, faster conversations, less friction.",
-    body: "Queravaga helps candidates present their experience clearly in minutes and helps hiring teams find candidates ready for real conversations—without turning either side into a form-filling machine.",
+    body: "We build custom hiring systems beside teams that need clear candidate profiles, practical evaluation steps, and direct paths to relevant conversations.",
     capabilities: [
       "Clear candidate profiles generated in minutes without complex formatting",
       "Direct communication pathways between hiring managers and applicants",
@@ -773,10 +434,10 @@ export const solutions = [
     name: "Small business",
     audience: "MEIs (microempreendedores individuais), microenterprises, and Brazilian SMB owners.",
     line: "Digital presence and fiscal routines handled through WhatsApp.",
-    body: "Small businesses in Brazil operate inside WhatsApp. SiteCreator delivers an approved, verified website with hosting and SSL in minutes from a CNPJ. Doutor Fiscal streamlines invoice issuance, Simples Nacional tracking, and routine fiscal compliance without interrupting daily sales.",
+    body: "We build custom digital systems for small businesses, connecting web presence, internal routines, and customer conversations around the operation.",
     capabilities: [
-      "Instant web presence via SiteCreator with custom domain support",
-      "Guided invoice issuance and fiscal organization via Doutor Fiscal",
+      "Web presence with custom domain support",
+      "Custom systems for administrative routines",
       "Conversational workflows eliminating complex dashboard overhead",
     ],
   },
@@ -857,7 +518,7 @@ export const solutions = [
     name: "Fiscal & workplace operations",
     audience: "Corporate controllers, compliance officers, HR leaders, and legal operations teams.",
     line: "Software for documented fiscal and workplace-risk routines in Brazil.",
-    body: "Brazilian regulatory environments require rigorous documentation. UNFLD provides specialized software tools—such as Doutor Fiscal for invoice issuance and Dialogus for NR-1 psychosocial risk management—that generate auditable records and streamline routine compliance without substituting for legal counsel.",
+    body: "Brazilian regulatory environments require documented routines. Dialogus supports NR-1 psychosocial risk management. We also build custom systems for auditable operational records.",
     capabilities: [
       "Documented fiscal routines and automated draft validation",
       "Continuous NR-1 occupational risk integration and evidence generation",
@@ -869,7 +530,7 @@ export const solutions = [
     name: "Business",
     audience: "Small business owners and enterprise operators.",
     line: "Use a product already built for the problem—or build the system your operation uniquely requires.",
-    body: "SiteCreator and Doutor Fiscal provide WhatsApp-first presence and fiscal workflows for MEIs and small businesses. Custom systems when your operation requires tailored workflows.",
+    body: "We build custom systems beside small businesses whose operation requires tailored workflows.",
     capabilities: [
       "WhatsApp-first workflows",
       "Product-specific capabilities",
@@ -904,36 +565,6 @@ export const solutions = [
 
 export const plans = [
   {
-    name: "SiteCreator",
-    price: "Free",
-    period: " · R$49 / domain",
-    blurb: "Your business online in minutes, through WhatsApp. For MEI and small business.",
-    cta: "Open SiteCreator",
-    href: "https://www.sitecreator.com.br",
-    external: true,
-    features: [
-      "WhatsApp as entry point",
-      "CNPJ-based setup",
-      "Free *.live.sitecreator.com.br",
-      "Custom domain from R$49 / month",
-    ],
-  },
-  {
-    name: "Doutor Fiscal",
-    price: "R$59",
-    period: "/month",
-    blurb: "Waitlist open. Fiscal routines handled through WhatsApp, for MEI and small businesses.",
-    cta: "Open Doutor Fiscal",
-    href: "https://www.doutorfiscal.com",
-    external: true,
-    features: [
-      "Routine issuance on WhatsApp",
-      "Dedicated fiscal inbox",
-      "MEI R$59 · Micro R$159 · Small R$349",
-      "Cancel anytime in WhatsApp",
-    ],
-  },
-  {
     name: "Dialogus",
     price: "Plans",
     period: "",
@@ -946,21 +577,6 @@ export const plans = [
       "Validated assessment methods",
       "Executive dashboards and action plans",
       "Continuous NR-1 documentation",
-    ],
-  },
-  {
-    name: "Queravaga",
-    price: "Early access",
-    period: "",
-    blurb: "A shorter path from profile to interview. For candidates and hiring teams.",
-    cta: "Open Queravaga",
-    href: "https://www.queravaga.com",
-    external: true,
-    features: [
-      "Clear profile in minutes",
-      "Direct paths from profiles to hiring conversations",
-      "Candidate and hiring team portals",
-      "Free early access registration",
     ],
   },
   {
@@ -1269,7 +885,6 @@ export const selectedWork: readonly SelectedWork[] = [
     story: [
       "Hiring still asks too much of both sides before a real conversation.",
       "MatchOne is a platform for open roles and the people who might fill them. Candidates apply without a maze. Companies evaluate without drowning in files. Matching does the quiet work in between.",
-      "The same conviction later lives in Queravaga: shorten the path from profile to interview. Here it was built as a marketplace — clear, fast, respectful of time.",
     ],
     outcome: "A shorter path from opening to decision.",
     image: "/images/work/matchone-02.png",
@@ -1342,10 +957,6 @@ export function workRows(items: readonly SelectedWork[] = selectedWork) {
   }
   if (buffer.length) rows.push(buffer);
   return rows;
-}
-
-export function getNews(slug: string) {
-  return news.find((p) => p.slug === slug);
 }
 
 export function getOwnedProduct(slug: string) {

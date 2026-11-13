@@ -59,13 +59,13 @@ test("apex domain redirects to www", () => {
 });
 
 test("forwarded alias wins over rewritten Vercel Host", () => {
-  const req = request("https://project.vercel.app/news/queravaga", {
+  const req = request("https://project.vercel.app/blog/sentinela-cve", {
     host: "project.vercel.app",
     forwardedHost: "unfld.dev",
   });
   assert.equal(
     canonicalRedirectLocation(req),
-    "https://www.unfld.com.br/news/queravaga",
+    "https://www.unfld.com.br/blog/sentinela-cve",
   );
 });
 
@@ -87,16 +87,16 @@ test("local, preview, and grok hosts are left alone", () => {
 
 test("GET is 301 and other methods are 308", () => {
   const get = canonicalHostRedirect(
-    request("https://unfld.dev/api", { host: "unfld.dev" }),
+    request("https://unfld.dev/contact", { host: "unfld.dev" }),
   );
   assert.equal(get?.status, 301);
-  assert.equal(get?.headers.get("location"), "https://www.unfld.com.br/api");
+  assert.equal(get?.headers.get("location"), "https://www.unfld.com.br/contact");
 
   const post = canonicalHostRedirect(
-    request("https://unfld.dev/api", { host: "unfld.dev", method: "POST" }),
+    request("https://unfld.dev/contact", { host: "unfld.dev", method: "POST" }),
   );
   assert.equal(post?.status, 308);
-  assert.equal(post?.headers.get("location"), "https://www.unfld.com.br/api");
+  assert.equal(post?.headers.get("location"), "https://www.unfld.com.br/contact");
 });
 
 test("Vercel preview deploys do not redirect", () => {

@@ -1,8 +1,8 @@
 import { publishedPosts } from "@/lib/blog/posts";
-import { SITE, formatAddress, footer, news, ownedProducts, selectedWork, solutions } from "@/lib/site";
+import { SITE, formatAddress, footer, ownedProducts, selectedWork, solutions } from "@/lib/site";
 
 export type MachineSection =
-  "Products" | "Build with us" | "Developers" | "Solutions" | "Company" | "News" | "Blog" | "Legal";
+  "Products" | "Build with us" | "Solutions" | "Company" | "Blog" | "Legal";
 
 export type MachinePage = {
   path: string;
@@ -21,12 +21,6 @@ const page = (
   section: MachineSection,
   extra: Pick<MachinePage, "lastmod" | "changefreq" | "priority"> = {},
 ): MachinePage => ({ path, title, description, section, ...extra });
-
-function newsLastmod(date: string): string | undefined {
-  const parsed = new Date(date);
-  if (Number.isNaN(parsed.getTime())) return undefined;
-  return parsed.toISOString().slice(0, 10);
-}
 
 export function xmlEscape(value: string): string {
   return value
@@ -61,7 +55,7 @@ function canonicalSolutions() {
 
 /**
  * Every public canonical HTML page we want crawlers and agents to find.
- * Excludes legacy duplicate routes (/api, /docs, /console, /download, /solutions/support).
+ * Excludes legacy duplicate routes.
  */
 export function machinePages(): MachinePage[] {
   const pages: MachinePage[] = [
@@ -75,7 +69,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/products",
       "Products by UNFLD",
-      "Explore SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar—six products by UNFLD across small business, hiring, workplace health, drawing, and vehicle retail.",
+      "Explore Dialogus, Oluart, and Unifikar: products for workplace health, drawing, and vehicle retail.",
       "Products",
       { changefreq: "weekly", priority: 0.9 },
     ),
@@ -91,7 +85,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/access",
       "Access UNFLD products",
-      "Direct, secure entry points for SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar.",
+      "Direct, secure entry points for Dialogus, Oluart, and Unifikar.",
       "Products",
       { changefreq: "monthly", priority: 0.7 },
     ),
@@ -108,27 +102,6 @@ export function machinePages(): MachinePage[] {
       "A practical overview of discovery, delivery, ownership, security, and handover for custom systems built with UNFLD.",
       "Build with us",
       { changefreq: "monthly", priority: 0.7 },
-    ),
-    page(
-      "/developers",
-      "UNFLD developer resources",
-      "UNFLD developer resources: catalog API, OpenAPI spec, versioning policy, agent instructions, and llms.txt. No authentication.",
-      "Developers",
-      { changefreq: "monthly", priority: 0.9 },
-    ),
-    page(
-      "/api",
-      "UNFLD API — Developer catalog",
-      "Public read-only UNFLD catalog API: products, news, selected work, and company facts. OpenAPI at /openapi.json. No authentication.",
-      "Developers",
-      { changefreq: "monthly", priority: 0.8 },
-    ),
-    page(
-      "/api/versioning",
-      "UNFLD API versioning and deprecation",
-      "Versioning, deprecation, and Sunset policy for the UNFLD catalog API at /api/v1.",
-      "Developers",
-      { changefreq: "yearly", priority: 0.6 },
     ),
     page(
       "/solutions",
@@ -173,20 +146,6 @@ export function machinePages(): MachinePage[] {
       "Open work at UNFLD. Introductions and role inquiries.",
       "Company",
       { changefreq: "weekly", priority: 0.6 },
-    ),
-    page(
-      "/news",
-      "News & updates",
-      "Product releases, field notes, company decisions, and evidence from the systems we operate.",
-      "News",
-      { changefreq: "weekly", priority: 0.6 },
-    ),
-    ...news.map((post) =>
-      page(`/news/${post.slug}`, post.title, post.standfirst, "News", {
-        lastmod: newsLastmod(post.date),
-        changefreq: "yearly",
-        priority: 0.5,
-      }),
     ),
     page(
       "/blog",
@@ -321,7 +280,6 @@ export function machinePages(): MachinePage[] {
   ];
 
   const legacyRedirects = new Set([
-    "/docs",
     "/console",
     "/download",
     "/solutions/support",
@@ -341,7 +299,6 @@ export function machinePages(): MachinePage[] {
     for (const link of group) {
       if (
         link.to.startsWith("http") ||
-        link.to.startsWith("/api/v1") ||
         /\.[a-z0-9]+$/i.test(link.to) ||
         ("external" in link && link.external) ||
         seen.has(link.to) ||
@@ -395,10 +352,8 @@ export function renderLlmsTxt(pages = machinePages()): string {
   const sections: MachineSection[] = [
     "Products",
     "Build with us",
-    "Developers",
     "Solutions",
     "Company",
-    "News",
     "Blog",
     "Legal",
   ];
@@ -429,32 +384,15 @@ export function renderLlmsTxt(pages = machinePages()): string {
 
 Unfolding the future. One real system at a time. UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}, headquartered in São Paulo, Brazil (${formatAddress()}). Registered contact: ${SITE.registeredEmail}. Contact sales at ${SITE.sales}; WhatsApp Business ${SITE.whatsapp} (${SITE.whatsappHref}); security at ${SITE.security}; careers at ${SITE.careers}.
 
-Products by UNFLD: SiteCreator (digital presence via WhatsApp), Doutor Fiscal (fiscal routines via WhatsApp), Queravaga (hiring conversations), Dialogus (workplace health for NR-1), Oluart (AR drawing on paper), and Unifikar (used-vehicle marketplace and store network). Each product is identified below with its current availability stage. We also design and ship custom software systems beside teams with consequential operations.
+Products by UNFLD: Dialogus (workplace health), Oluart (AR drawing on paper), and Unifikar (used-vehicle marketplace and store network). We also design and ship custom software systems.
 
 This file follows [llmstxt.org](https://llmstxt.org/). The XML sitemap is at ${siteUrl("/sitemap.xml")}.
 
 ## When to use this
 
-Use UNFLD when you need to identify the right UNFLD product for a Brazilian operational problem, quote company facts (legal name, CNPJ, São Paulo address, phones), route a human to a product URL or ${SITE.sales}, or retrieve structured catalog data.
+Use UNFLD when you need to identify the right UNFLD product for a Brazilian operational problem, quote company facts (legal name, CNPJ, São Paulo address, phones), route a human to a product URL or ${SITE.sales}, or find information about custom software delivery.
 
-How an agent should call UNFLD:
-
-1. Read this file, then ${siteUrl("/agents.md")} for job-level guidance.
-2. Fetch ${siteUrl("/openapi.json")} and bind tools to each operationId.
-3. Call GET ${siteUrl("/api/v1")} with Accept: application/json. No API key.
-4. For page prose, request the same URL with Accept: text/markdown.
-
-Do not use UNFLD as a general LLM, payment processor, or legal advisor. There is no write, login, or webhook API on unfld.com.br.
-
-## Developer resources
-
-- [UNFLD developer resources](${siteUrl("/developers")}): API docs, OpenAPI, versioning, and agent files for UNFLD — search for this name.
-- [UNFLD API](${siteUrl("/api")}): Human documentation for the public catalog.
-- [UNFLD API versioning](${siteUrl("/api/versioning")}): Deprecation and Sunset policy for /api/v1.
-- [OpenAPI JSON](${siteUrl("/openapi.json")}): Machine specification with operationIds and typed schemas.
-- [OpenAPI YAML](${siteUrl("/api/openapi.yaml")}): Same specification as YAML.
-- [Catalog index](${siteUrl("/api/v1")}): JSON entry point with rate-limit policy.
-- [Agent instructions](${siteUrl("/agents.md")}): When-to-use guidance for agents.
+Read the relevant pages below for product availability, company facts, and contact details. Request text/markdown for page prose.
 
 ${blocks}
 
@@ -464,8 +402,7 @@ ${blocks}
 - [rss.xml](${siteUrl("/rss.xml")}): Blog feed. One item per published post.
 - [robots.txt](${siteUrl("/robots.txt")}): Crawl directives and sitemap reference.
 - [llms.txt](${siteUrl("/llms.txt")}): This curated discovery document.
-- [agents.md](${siteUrl("/agents.md")}): When to use UNFLD and how to call the catalog.
-- [unfld CLI](${siteUrl("/developers")}): Official catalog client source in this repository (\`cli/\`, package name \`unfld\`). Install from the repo until the npm release is cut.
+- [agents.md](${siteUrl("/agents.md")}): Company information and contact guidance.
 
 ## External Product Sites
 
@@ -475,7 +412,7 @@ ${productSites}
 
 export function renderRobotsTxt(): string {
   return `# ${SITE.name} — ${SITE.url}
-# Machine indexes: /sitemap.xml · /llms.txt · /openapi.json · /agents.md
+# Machine indexes: /sitemap.xml · /llms.txt · /agents.md
 
 User-agent: *
 Allow: /
@@ -490,4 +427,23 @@ export function machineHeaders(contentType: string): HeadersInit {
     "Cache-Control": "public, max-age=3600",
     "X-Content-Type-Options": "nosniff",
   };
+}
+
+
+export function renderAgentsMd(): string {
+  return `# When to use UNFLD
+
+UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}.
+
+Use the corporate site to find information about Dialogus, Oluart, Unifikar, custom software services, and company contacts.
+
+- Read [llms.txt](${siteUrl("/llms.txt")}) for the current page index.
+- Read [Company](${siteUrl("/company")}) for legal identity and the registered address.
+- Read [Products](${siteUrl("/products")}) for product information.
+- Read [Build with UNFLD](${siteUrl("/build-with-us")}) for custom systems.
+- Request text/markdown for page prose.
+- Contact ${SITE.sales} for sales or ${SITE.registeredEmail} for registered company matters.
+
+Registered headquarters: ${formatAddress()}.
+`;
 }

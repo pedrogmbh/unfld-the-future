@@ -14,7 +14,6 @@ import {
   localizeCustomers,
   localizeFacts,
   localizeHomePrompts,
-  localizeNews,
   localizeOffices,
   localizeOwnedProducts,
   localizeTimeline,
@@ -47,7 +46,6 @@ function Company() {
   const valueList = localizeValues(locale);
   const officeList = localizeOffices(locale);
   const timelineList = localizeTimeline(locale);
-  const posts = localizeNews(locale);
   const prompts = localizeHomePrompts(locale);
   const home = pages.home;
 
@@ -61,9 +59,6 @@ function Company() {
         actions={
           <>
             <BtnLink to="/careers">{chrome.nav.careers}</BtnLink>
-            <BtnLink to="/news" variant="secondary">
-              {chrome.nav.news}
-            </BtnLink>
           </>
         }
       />
@@ -348,22 +343,6 @@ function Company() {
         </ol>
       </Section>
 
-      <Section className="pb-24 sm:pb-32">
-        <div className="mb-8 flex items-end justify-between">
-          <h2 className="font-display text-2xl font-medium">{p.latestNews}</h2>
-          <Link to="/news" className="text-[13px] text-muted hover:text-fg">
-            {chrome.common.allPostsArrow}
-          </Link>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2">
-          {posts.slice(0, 4).map((post) => (
-            <Link key={post.slug} to="/news/$slug" params={{ slug: post.slug }}>
-              <p className="text-[12px] text-subtle">{post.date}</p>
-              <p className="mt-2 font-medium">{post.title}</p>
-            </Link>
-          ))}
-        </div>
-      </Section>
     </main>
   );
 }

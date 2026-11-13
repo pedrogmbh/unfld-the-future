@@ -1,11 +1,5 @@
 import { mergeVary, pickAccept, type MediaType } from "@/lib/accept";
-import {
-  handleCatalogApi,
-  jsonHeaders,
-  renderAgentsMd,
-  renderOpenApiJson,
-  renderOpenApiYaml,
-} from "@/lib/catalog-api";
+import { renderAgentsMd } from "@/lib/machine";
 import {
   isKnownDocumentPath,
   normalizePath,
@@ -17,14 +11,6 @@ const MACHINE_FILES: Record<
   string,
   { body: () => string; type: string }
 > = {
-  "/openapi.json": {
-    body: renderOpenApiJson,
-    type: "application/json; charset=utf-8",
-  },
-  "/api/openapi.yaml": {
-    body: renderOpenApiYaml,
-    type: "application/yaml; charset=utf-8",
-  },
   "/agents.md": {
     body: renderAgentsMd,
     type: "text/markdown; charset=utf-8",
@@ -33,10 +19,8 @@ const MACHINE_FILES: Record<
 
 function isDocumentPath(pathname: string): boolean {
   const path = pathname || "/";
-  if (path === "/api" || path === "/api/versioning") return true;
   return (
     !path.startsWith("/__grok/") &&
-    !path.startsWith("/api/") &&
     !path.startsWith("/@") &&
     !path.startsWith("/node_modules") &&
     !/\.[a-z0-9]+$/i.test(path)
@@ -72,7 +56,7 @@ function markdownResponse(body: string, status: number): Response {
 
 /**
  * Intercept GETs that must not fall through to the HTML app:
- * OpenAPI, agent instructions, catalog API, and Accept: text/markdown.
+ * Agent instructions and Accept: text/markdown.
  * Returns null when the React document should render.
  */
 export function handleAgentSurfaceRequest(request: Request): Response | null {
@@ -92,18 +76,7 @@ export function handleAgentSurfaceRequest(request: Request): Response | null {
         headers: withDefaultVary(new Headers({ Allow: "GET, HEAD, OPTIONS" })),
       });
     }
-    if (machine.type.startsWith("application/json")) {
-      return new Response(machine.body(), {
-        status: 200,
-        headers: jsonHeaders({ "Cache-Control": "public, max-age=3600" }),
-      });
-    }
     return textResponse(machine.body(), 200, machine.type);
-  }
-
-  if (path === "/api/v1" || path.startsWith("/api/v1/")) {
-    const suffix = path === "/api/v1" ? "" : path.slice("/api/v1/".length);
-    return handleCatalogApi(request, suffix);
   }
 
   if (!isDocumentPath(path)) return null;
@@ -111,8 +84,9 @@ export function handleAgentSurfaceRequest(request: Request): Response | null {
   const offered: MediaType[] = ["text/html", "text/markdown"];
   const chosen = pickAccept(request.headers.get("accept"), offered);
 
+  const known = isKnownDocumentPath(path);
+
   if (chosen === "text/markdown") {
-    const known = isKnownDocumentPath(path);
     const body = known
       ? (renderDocumentMarkdown(path) ?? renderNotFoundMarkdown(path))
       : renderNotFoundMarkdown(path);
@@ -125,7 +99,7 @@ export function handleAgentSurfaceRequest(request: Request): Response | null {
         "does not match anything UNFLD publishes.",
         "cannot be served in a type listed in Accept. Request text/html or text/markdown.",
       ),
-      406,
+      known ? 406 : 404,
     );
   }
 

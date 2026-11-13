@@ -10,8 +10,7 @@ Do not invent a second UI, stack, or brand.
 
 Institutional site for UNFLD, a product company and software house
 trading as **UNFLD** (legal name **UNFOLDING THE FUTURE LTDA**).
-Owned products in market: **SiteCreator**, **Doutor Fiscal**, **Queravaga**,
-**Dialogus Psicossocial**, **Oluart**, **Unifikar**. Do not add FCR,
+Owned products in market: **Dialogus Psicossocial**, **Oluart**, **Unifikar**. Do not add FCR,
 Ferramenta de Coleta, or Timac Agro back to the public site.
 
 The approved identity is **Célula aberta**. Honey on Ink, custom UNFLD
@@ -65,7 +64,7 @@ Verify yourself.
 
 ```
 src/styles.css                 tokens, grain, code-stage
-src/lib/site.ts                copy, nav, products, news, plans, offices
+src/lib/site.ts                copy, nav, products, plans, offices
 src/lib/highlight.tsx          syntax highlighter (code only)
 src/lib/og/site.json           share-card identity { title: "UNFLD", card: "custom" }
 src/components/site/           chrome + primitives (reuse these)
@@ -88,8 +87,7 @@ DESIGN.md                      visual / motion / type contract
 | Product still          | `ParallaxImage`                                  |
 | Product marketing page | `ProductPage`                                    |
 | Legal article          | `LegalDoc`                                       |
-| API showcase           | `CodeTabs`                                       |
-| Docs / news snippet    | `CodeBlock`                                      |
+| Code snippet           | `CodeBlock`                                      |
 | CTA                    | `Btn` / `BtnLink` / `TextArrow`                  |
 | Copy / sitemap         | `src/lib/site.ts`                                |
 
@@ -109,8 +107,6 @@ export const Route = createFileRoute("/path")({
 Wrap content in `<main>`. Link new pages from `footer` in `site.ts`
 (and the header menu if they belong there).
 
-News posts: `/news/$slug` + `getNews()`. Do not hardcode
-`/news/queravaga` as a typed route — use `params={{ slug: "queravaga" }}`.
 
 ---
 
@@ -123,8 +119,7 @@ News posts: `/news/$slug` + `getNews()`. Do not hardcode
 - Footer omits the operational status indicator.
 - Hairline grids: `gap-px … border-border bg-border`, children `bg-bg`.
 - Hero type: `font-display font-semibold`, Barlow Condensed, slight negative tracking.
-- Kickers: uppercase `tracking-[0.18em] text-gold` — except the
-  developer section kicker, which is sentence case (“For developers”).
+- Kickers: uppercase `tracking-[0.18em] text-gold`.
 - Buttons have restrained 4px corners. Primary fill Honey with Ink text; secondary outlined.
   Press scale `0.96`.
 - Name is **UNFLD** (five capitals). Approved Célula aberta mark and custom lettering from `logo.tsx` and `public/brand/`. Keep ¼ of the mark width as clear space. The legacy `bevel={false}` prop selects one-color rendering.
@@ -155,8 +150,7 @@ fill + white type, not a white pill.
 Edit copy in `src/lib/site.ts`, not scattered through routes.
 
 Calm, precise, first-person plural. No hype, no emoji, no `!` in product
-UI. CTAs: “Our products”, “Contact Sales”, “Open SiteCreator”,
-“Try for free”.
+UI. CTAs: “Our products”, “Contact Sales”, “Open product”.
 
 ---
 
@@ -193,7 +187,7 @@ UI. CTAs: “Our products”, “Contact Sales”, “Open SiteCreator”,
 ## Blog posts
 
 No CMS. No MDX. Every post is a hand-built page at its own URL, with its
-own layout. `/news` stays as it is. Do not fold the blog into it.
+own layout.
 
 | Piece              | Where                                                  |
 | ------------------ | ------------------------------------------------------ |
@@ -248,4 +242,4 @@ PNG OG images must be 1200×630.
 - Don’t commit `node_modules`, `.vercel`, `.grok`, `screenshots/`,
   `attachments/`, or secrets.
 
-When unsure, copy `/` or `/api` and check `DESIGN.md`.
+When unsure, copy `/` and check `DESIGN.md`.

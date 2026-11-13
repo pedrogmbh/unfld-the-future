@@ -18,14 +18,12 @@ export function Header() {
   const menus = [
     { label: chrome.nav.products, items: footer.products },
     { label: chrome.nav.buildWithUs, items: footer.buildWithUs },
-    { label: chrome.nav.developers, items: footer.developers },
     {
       label: chrome.nav.company,
       items: [
         { label: chrome.nav.about, to: "/company" },
         { label: chrome.nav.selectedWork, to: "/work" },
         { label: chrome.nav.careers, to: "/careers" },
-        { label: chrome.nav.news, to: "/news" },
         { label: chrome.nav.blog, to: "/blog" },
         { label: chrome.nav.security, to: "/security" },
         { label: chrome.nav.compliance, to: "/compliance" },
@@ -39,7 +37,6 @@ export function Header() {
 
   const links = [
     { label: chrome.nav.pricing, to: "/pricing" },
-    { label: chrome.nav.news, to: "/news" },
     { label: chrome.nav.blog, to: "/blog" },
   ] as const;
 

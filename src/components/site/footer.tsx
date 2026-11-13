@@ -53,9 +53,8 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-bg">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-4">
           <Col title={chrome.footer.products} links={footer.products} />
-          <Col title={chrome.footer.developers} links={footer.developers} />
           <Col title={chrome.footer.buildWithUs} links={footer.buildWithUs} />
           <Col title={chrome.footer.company} links={footer.company} />
           <Col title={chrome.footer.legal} links={footer.legal} />

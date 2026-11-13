@@ -12,38 +12,27 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AccessRouteImport } from './routes/access'
 import { Route as AgentsDotmdRouteImport } from './routes/agents[.]md'
-import { Route as ApiRouteImport } from './routes/api'
 import { Route as BuildWithUsRouteImport } from './routes/build-with-us'
 import { Route as CompanyRouteImport } from './routes/company'
 import { Route as ComplianceRouteImport } from './routes/compliance'
 import { Route as ConsoleRouteImport } from './routes/console'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as DevelopersRouteImport } from './routes/developers'
 import { Route as DialogusRouteImport } from './routes/dialogus'
-import { Route as DocsRouteImport } from './routes/docs'
-import { Route as DoutorFiscalRouteImport } from './routes/doutor-fiscal'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as OluartRouteImport } from './routes/oluart'
-import { Route as OpenapiDotjsonRouteImport } from './routes/openapi[.]json'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductsRouteImport } from './routes/products'
-import { Route as QueravagaRouteImport } from './routes/queravaga'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as SaoPauloRouteImport } from './routes/sao-paulo'
 import { Route as SecurityRouteImport } from './routes/security'
-import { Route as SitecreatorRouteImport } from './routes/sitecreator'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StatusRouteImport } from './routes/status'
 import { Route as UnifikarRouteImport } from './routes/unifikar'
-import { Route as ApiIndexRouteImport } from './routes/api.index'
-import { Route as ApiOpenapiDotyamlRouteImport } from './routes/api.openapi[.]yaml'
-import { Route as ApiV1RouteImport } from './routes/api.v1'
-import { Route as ApiVersioningRouteImport } from './routes/api.versioning'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as BlogSentinelaCveRouteImport } from './routes/blog/sentinela-cve'
@@ -56,13 +45,10 @@ import { Route as LegalCookiePolicyRouteImport } from './routes/legal/cookie-pol
 import { Route as LegalPrivacyPolicyRouteImport } from './routes/legal/privacy-policy'
 import { Route as LegalTermsOfServiceRouteImport } from './routes/legal/terms-of-service'
 import { Route as LegalTermsOfServiceEnterpriseRouteImport } from './routes/legal/terms-of-service-enterprise'
-import { Route as NewsIndexRouteImport } from './routes/news/index'
-import { Route as NewsSlugRouteImport } from './routes/news/$slug'
 import { Route as SolutionsIndexRouteImport } from './routes/solutions/index'
 import { Route as SolutionsSlugRouteImport } from './routes/solutions/$slug'
 import { Route as WorkIndexRouteImport } from './routes/work/index'
 import { Route as WorkSlugRouteImport } from './routes/work/$slug'
-import { Route as ApiV1SplatRouteImport } from './routes/api.v1.$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -77,11 +63,6 @@ const AccessRoute = AccessRouteImport.update({
 const AgentsDotmdRoute = AgentsDotmdRouteImport.update({
   id: '/agents.md',
   path: '/agents.md',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiRoute = ApiRouteImport.update({
-  id: '/api',
-  path: '/api',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BuildWithUsRoute = BuildWithUsRouteImport.update({
@@ -109,24 +90,9 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DevelopersRoute = DevelopersRouteImport.update({
-  id: '/developers',
-  path: '/developers',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DialogusRoute = DialogusRouteImport.update({
   id: '/dialogus',
   path: '/dialogus',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsRoute = DocsRouteImport.update({
-  id: '/docs',
-  path: '/docs',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DoutorFiscalRoute = DoutorFiscalRouteImport.update({
-  id: '/doutor-fiscal',
-  path: '/doutor-fiscal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DownloadRoute = DownloadRouteImport.update({
@@ -159,11 +125,6 @@ const OluartRoute = OluartRouteImport.update({
   path: '/oluart',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OpenapiDotjsonRoute = OpenapiDotjsonRouteImport.update({
-  id: '/openapi.json',
-  path: '/openapi.json',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -172,11 +133,6 @@ const PricingRoute = PricingRouteImport.update({
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const QueravagaRoute = QueravagaRouteImport.update({
-  id: '/queravaga',
-  path: '/queravaga',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -199,11 +155,6 @@ const SecurityRoute = SecurityRouteImport.update({
   path: '/security',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SitecreatorRoute = SitecreatorRouteImport.update({
-  id: '/sitecreator',
-  path: '/sitecreator',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -218,26 +169,6 @@ const UnifikarRoute = UnifikarRouteImport.update({
   id: '/unifikar',
   path: '/unifikar',
   getParentRoute: () => rootRouteImport,
-} as any)
-const ApiIndexRoute = ApiIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => ApiRoute,
-} as any)
-const ApiOpenapiDotyamlRoute = ApiOpenapiDotyamlRouteImport.update({
-  id: '/openapi.yaml',
-  path: '/openapi.yaml',
-  getParentRoute: () => ApiRoute,
-} as any)
-const ApiV1Route = ApiV1RouteImport.update({
-  id: '/v1',
-  path: '/v1',
-  getParentRoute: () => ApiRoute,
-} as any)
-const ApiVersioningRoute = ApiVersioningRouteImport.update({
-  id: '/versioning',
-  path: '/versioning',
-  getParentRoute: () => ApiRoute,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
@@ -301,16 +232,6 @@ const LegalTermsOfServiceEnterpriseRoute =
     path: '/legal/terms-of-service-enterprise',
     getParentRoute: () => rootRouteImport,
   } as any)
-const NewsIndexRoute = NewsIndexRouteImport.update({
-  id: '/news/',
-  path: '/news/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsSlugRoute = NewsSlugRouteImport.update({
-  id: '/news/$slug',
-  path: '/news/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SolutionsIndexRoute = SolutionsIndexRouteImport.update({
   id: '/solutions/',
   path: '/solutions/',
@@ -331,47 +252,32 @@ const WorkSlugRoute = WorkSlugRouteImport.update({
   path: '/work/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiV1SplatRoute = ApiV1SplatRouteImport.update({
-  id: '/$',
-  path: '/$',
-  getParentRoute: () => ApiV1Route,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/access': typeof AccessRoute
   '/agents.md': typeof AgentsDotmdRoute
-  '/api': typeof ApiRouteWithChildren
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
-  '/developers': typeof DevelopersRoute
   '/dialogus': typeof DialogusRoute
-  '/docs': typeof DocsRoute
-  '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
-  '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
-  '/queravaga': typeof QueravagaRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
-  '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
   '/unifikar': typeof UnifikarRoute
-  '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
-  '/api/v1': typeof ApiV1RouteWithChildren
-  '/api/versioning': typeof ApiVersioningRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
@@ -381,17 +287,13 @@ export interface FileRoutesByFullPath {
   '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
   '/legal/terms-of-service': typeof LegalTermsOfServiceRoute
   '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
-  '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
-  '/api/': typeof ApiIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
-  '/news/': typeof NewsIndexRoute
   '/solutions/': typeof SolutionsIndexRoute
   '/work/': typeof WorkIndexRoute
-  '/api/v1/$': typeof ApiV1SplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -402,31 +304,22 @@ export interface FileRoutesByTo {
   '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
-  '/developers': typeof DevelopersRoute
   '/dialogus': typeof DialogusRoute
-  '/docs': typeof DocsRoute
-  '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
-  '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
-  '/queravaga': typeof QueravagaRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
-  '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
   '/unifikar': typeof UnifikarRoute
-  '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
-  '/api/v1': typeof ApiV1RouteWithChildren
-  '/api/versioning': typeof ApiVersioningRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
@@ -436,54 +329,40 @@ export interface FileRoutesByTo {
   '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
   '/legal/terms-of-service': typeof LegalTermsOfServiceRoute
   '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
-  '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
-  '/api': typeof ApiIndexRoute
   '/blog': typeof BlogIndexRoute
   '/careers': typeof CareersIndexRoute
   '/legal': typeof LegalIndexRoute
-  '/news': typeof NewsIndexRoute
   '/solutions': typeof SolutionsIndexRoute
   '/work': typeof WorkIndexRoute
-  '/api/v1/$': typeof ApiV1SplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/access': typeof AccessRoute
   '/agents.md': typeof AgentsDotmdRoute
-  '/api': typeof ApiRouteWithChildren
   '/build-with-us': typeof BuildWithUsRoute
   '/company': typeof CompanyRoute
   '/compliance': typeof ComplianceRoute
   '/console': typeof ConsoleRoute
   '/contact': typeof ContactRoute
-  '/developers': typeof DevelopersRoute
   '/dialogus': typeof DialogusRoute
-  '/docs': typeof DocsRoute
-  '/doutor-fiscal': typeof DoutorFiscalRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
-  '/openapi.json': typeof OpenapiDotjsonRoute
   '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
-  '/queravaga': typeof QueravagaRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
-  '/sitecreator': typeof SitecreatorRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
   '/unifikar': typeof UnifikarRoute
-  '/api/openapi.yaml': typeof ApiOpenapiDotyamlRoute
-  '/api/v1': typeof ApiV1RouteWithChildren
-  '/api/versioning': typeof ApiVersioningRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
@@ -493,17 +372,13 @@ export interface FileRoutesById {
   '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
   '/legal/terms-of-service': typeof LegalTermsOfServiceRoute
   '/legal/terms-of-service-enterprise': typeof LegalTermsOfServiceEnterpriseRoute
-  '/news/$slug': typeof NewsSlugRoute
   '/solutions/$slug': typeof SolutionsSlugRoute
   '/work/$slug': typeof WorkSlugRoute
-  '/api/': typeof ApiIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/careers/': typeof CareersIndexRoute
   '/legal/': typeof LegalIndexRoute
-  '/news/': typeof NewsIndexRoute
   '/solutions/': typeof SolutionsIndexRoute
   '/work/': typeof WorkIndexRoute
-  '/api/v1/$': typeof ApiV1SplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -511,37 +386,27 @@ export interface FileRouteTypes {
     | '/'
     | '/access'
     | '/agents.md'
-    | '/api'
     | '/build-with-us'
     | '/company'
     | '/compliance'
     | '/console'
     | '/contact'
-    | '/developers'
     | '/dialogus'
-    | '/docs'
-    | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
     | '/oluart'
-    | '/openapi.json'
     | '/pricing'
     | '/products'
-    | '/queravaga'
     | '/robots.txt'
     | '/rss.xml'
     | '/sao-paulo'
     | '/security'
-    | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
     | '/unifikar'
-    | '/api/openapi.yaml'
-    | '/api/v1'
-    | '/api/versioning'
     | '/blog/$slug'
     | '/blog/sentinela-cve'
     | '/careers/open-roles'
@@ -551,17 +416,13 @@ export interface FileRouteTypes {
     | '/legal/privacy-policy'
     | '/legal/terms-of-service'
     | '/legal/terms-of-service-enterprise'
-    | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
-    | '/api/'
     | '/blog/'
     | '/careers/'
     | '/legal/'
-    | '/news/'
     | '/solutions/'
     | '/work/'
-    | '/api/v1/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -572,31 +433,22 @@ export interface FileRouteTypes {
     | '/compliance'
     | '/console'
     | '/contact'
-    | '/developers'
     | '/dialogus'
-    | '/docs'
-    | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
     | '/oluart'
-    | '/openapi.json'
     | '/pricing'
     | '/products'
-    | '/queravaga'
     | '/robots.txt'
     | '/rss.xml'
     | '/sao-paulo'
     | '/security'
-    | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
     | '/unifikar'
-    | '/api/openapi.yaml'
-    | '/api/v1'
-    | '/api/versioning'
     | '/blog/$slug'
     | '/blog/sentinela-cve'
     | '/careers/open-roles'
@@ -606,53 +458,39 @@ export interface FileRouteTypes {
     | '/legal/privacy-policy'
     | '/legal/terms-of-service'
     | '/legal/terms-of-service-enterprise'
-    | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
-    | '/api'
     | '/blog'
     | '/careers'
     | '/legal'
-    | '/news'
     | '/solutions'
     | '/work'
-    | '/api/v1/$'
   id:
     | '__root__'
     | '/'
     | '/access'
     | '/agents.md'
-    | '/api'
     | '/build-with-us'
     | '/company'
     | '/compliance'
     | '/console'
     | '/contact'
-    | '/developers'
     | '/dialogus'
-    | '/docs'
-    | '/doutor-fiscal'
     | '/download'
     | '/enterprise'
     | '/how-we-work'
     | '/infrastructure'
     | '/llms.txt'
     | '/oluart'
-    | '/openapi.json'
     | '/pricing'
     | '/products'
-    | '/queravaga'
     | '/robots.txt'
     | '/rss.xml'
     | '/sao-paulo'
     | '/security'
-    | '/sitecreator'
     | '/sitemap.xml'
     | '/status'
     | '/unifikar'
-    | '/api/openapi.yaml'
-    | '/api/v1'
-    | '/api/versioning'
     | '/blog/$slug'
     | '/blog/sentinela-cve'
     | '/careers/open-roles'
@@ -662,48 +500,37 @@ export interface FileRouteTypes {
     | '/legal/privacy-policy'
     | '/legal/terms-of-service'
     | '/legal/terms-of-service-enterprise'
-    | '/news/$slug'
     | '/solutions/$slug'
     | '/work/$slug'
-    | '/api/'
     | '/blog/'
     | '/careers/'
     | '/legal/'
-    | '/news/'
     | '/solutions/'
     | '/work/'
-    | '/api/v1/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccessRoute: typeof AccessRoute
   AgentsDotmdRoute: typeof AgentsDotmdRoute
-  ApiRoute: typeof ApiRouteWithChildren
   BuildWithUsRoute: typeof BuildWithUsRoute
   CompanyRoute: typeof CompanyRoute
   ComplianceRoute: typeof ComplianceRoute
   ConsoleRoute: typeof ConsoleRoute
   ContactRoute: typeof ContactRoute
-  DevelopersRoute: typeof DevelopersRoute
   DialogusRoute: typeof DialogusRoute
-  DocsRoute: typeof DocsRoute
-  DoutorFiscalRoute: typeof DoutorFiscalRoute
   DownloadRoute: typeof DownloadRoute
   EnterpriseRoute: typeof EnterpriseRoute
   HowWeWorkRoute: typeof HowWeWorkRoute
   InfrastructureRoute: typeof InfrastructureRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OluartRoute: typeof OluartRoute
-  OpenapiDotjsonRoute: typeof OpenapiDotjsonRoute
   PricingRoute: typeof PricingRoute
   ProductsRoute: typeof ProductsRoute
-  QueravagaRoute: typeof QueravagaRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   RssDotxmlRoute: typeof RssDotxmlRoute
   SaoPauloRoute: typeof SaoPauloRoute
   SecurityRoute: typeof SecurityRoute
-  SitecreatorRoute: typeof SitecreatorRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StatusRoute: typeof StatusRoute
   UnifikarRoute: typeof UnifikarRoute
@@ -716,13 +543,11 @@ export interface RootRouteChildren {
   LegalPrivacyPolicyRoute: typeof LegalPrivacyPolicyRoute
   LegalTermsOfServiceRoute: typeof LegalTermsOfServiceRoute
   LegalTermsOfServiceEnterpriseRoute: typeof LegalTermsOfServiceEnterpriseRoute
-  NewsSlugRoute: typeof NewsSlugRoute
   SolutionsSlugRoute: typeof SolutionsSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CareersIndexRoute: typeof CareersIndexRoute
   LegalIndexRoute: typeof LegalIndexRoute
-  NewsIndexRoute: typeof NewsIndexRoute
   SolutionsIndexRoute: typeof SolutionsIndexRoute
   WorkIndexRoute: typeof WorkIndexRoute
 }
@@ -748,13 +573,6 @@ declare module '@tanstack/react-router' {
       path: '/agents.md'
       fullPath: '/agents.md'
       preLoaderRoute: typeof AgentsDotmdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api': {
-      id: '/api'
-      path: '/api'
-      fullPath: '/api'
-      preLoaderRoute: typeof ApiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/build-with-us': {
@@ -792,32 +610,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/developers': {
-      id: '/developers'
-      path: '/developers'
-      fullPath: '/developers'
-      preLoaderRoute: typeof DevelopersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/dialogus': {
       id: '/dialogus'
       path: '/dialogus'
       fullPath: '/dialogus'
       preLoaderRoute: typeof DialogusRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs': {
-      id: '/docs'
-      path: '/docs'
-      fullPath: '/docs'
-      preLoaderRoute: typeof DocsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/doutor-fiscal': {
-      id: '/doutor-fiscal'
-      path: '/doutor-fiscal'
-      fullPath: '/doutor-fiscal'
-      preLoaderRoute: typeof DoutorFiscalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/download': {
@@ -862,13 +659,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OluartRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/openapi.json': {
-      id: '/openapi.json'
-      path: '/openapi.json'
-      fullPath: '/openapi.json'
-      preLoaderRoute: typeof OpenapiDotjsonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/pricing': {
       id: '/pricing'
       path: '/pricing'
@@ -881,13 +671,6 @@ declare module '@tanstack/react-router' {
       path: '/products'
       fullPath: '/products'
       preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/queravaga': {
-      id: '/queravaga'
-      path: '/queravaga'
-      fullPath: '/queravaga'
-      preLoaderRoute: typeof QueravagaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -918,13 +701,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SecurityRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sitecreator': {
-      id: '/sitecreator'
-      path: '/sitecreator'
-      fullPath: '/sitecreator'
-      preLoaderRoute: typeof SitecreatorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -945,34 +721,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/unifikar'
       preLoaderRoute: typeof UnifikarRouteImport
       parentRoute: typeof rootRouteImport
-    }
-    '/api/': {
-      id: '/api/'
-      path: '/'
-      fullPath: '/api/'
-      preLoaderRoute: typeof ApiIndexRouteImport
-      parentRoute: typeof ApiRoute
-    }
-    '/api/openapi.yaml': {
-      id: '/api/openapi.yaml'
-      path: '/openapi.yaml'
-      fullPath: '/api/openapi.yaml'
-      preLoaderRoute: typeof ApiOpenapiDotyamlRouteImport
-      parentRoute: typeof ApiRoute
-    }
-    '/api/v1': {
-      id: '/api/v1'
-      path: '/v1'
-      fullPath: '/api/v1'
-      preLoaderRoute: typeof ApiV1RouteImport
-      parentRoute: typeof ApiRoute
-    }
-    '/api/versioning': {
-      id: '/api/versioning'
-      path: '/versioning'
-      fullPath: '/api/versioning'
-      preLoaderRoute: typeof ApiVersioningRouteImport
-      parentRoute: typeof ApiRoute
     }
     '/blog/': {
       id: '/blog/'
@@ -1058,20 +806,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalTermsOfServiceEnterpriseRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/news/': {
-      id: '/news/'
-      path: '/news'
-      fullPath: '/news/'
-      preLoaderRoute: typeof NewsIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news/$slug': {
-      id: '/news/$slug'
-      path: '/news/$slug'
-      fullPath: '/news/$slug'
-      preLoaderRoute: typeof NewsSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/solutions/': {
       id: '/solutions/'
       path: '/solutions'
@@ -1100,71 +834,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/v1/$': {
-      id: '/api/v1/$'
-      path: '/$'
-      fullPath: '/api/v1/$'
-      preLoaderRoute: typeof ApiV1SplatRouteImport
-      parentRoute: typeof ApiV1Route
-    }
   }
 }
-
-interface ApiV1RouteChildren {
-  ApiV1SplatRoute: typeof ApiV1SplatRoute
-}
-
-const ApiV1RouteChildren: ApiV1RouteChildren = {
-  ApiV1SplatRoute: ApiV1SplatRoute,
-}
-
-const ApiV1RouteWithChildren = ApiV1Route._addFileChildren(ApiV1RouteChildren)
-
-interface ApiRouteChildren {
-  ApiOpenapiDotyamlRoute: typeof ApiOpenapiDotyamlRoute
-  ApiV1Route: typeof ApiV1RouteWithChildren
-  ApiVersioningRoute: typeof ApiVersioningRoute
-  ApiIndexRoute: typeof ApiIndexRoute
-}
-
-const ApiRouteChildren: ApiRouteChildren = {
-  ApiOpenapiDotyamlRoute: ApiOpenapiDotyamlRoute,
-  ApiV1Route: ApiV1RouteWithChildren,
-  ApiVersioningRoute: ApiVersioningRoute,
-  ApiIndexRoute: ApiIndexRoute,
-}
-
-const ApiRouteWithChildren = ApiRoute._addFileChildren(ApiRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccessRoute: AccessRoute,
   AgentsDotmdRoute: AgentsDotmdRoute,
-  ApiRoute: ApiRouteWithChildren,
   BuildWithUsRoute: BuildWithUsRoute,
   CompanyRoute: CompanyRoute,
   ComplianceRoute: ComplianceRoute,
   ConsoleRoute: ConsoleRoute,
   ContactRoute: ContactRoute,
-  DevelopersRoute: DevelopersRoute,
   DialogusRoute: DialogusRoute,
-  DocsRoute: DocsRoute,
-  DoutorFiscalRoute: DoutorFiscalRoute,
   DownloadRoute: DownloadRoute,
   EnterpriseRoute: EnterpriseRoute,
   HowWeWorkRoute: HowWeWorkRoute,
   InfrastructureRoute: InfrastructureRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   OluartRoute: OluartRoute,
-  OpenapiDotjsonRoute: OpenapiDotjsonRoute,
   PricingRoute: PricingRoute,
   ProductsRoute: ProductsRoute,
-  QueravagaRoute: QueravagaRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   RssDotxmlRoute: RssDotxmlRoute,
   SaoPauloRoute: SaoPauloRoute,
   SecurityRoute: SecurityRoute,
-  SitecreatorRoute: SitecreatorRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StatusRoute: StatusRoute,
   UnifikarRoute: UnifikarRoute,
@@ -1177,13 +871,11 @@ const rootRouteChildren: RootRouteChildren = {
   LegalPrivacyPolicyRoute: LegalPrivacyPolicyRoute,
   LegalTermsOfServiceRoute: LegalTermsOfServiceRoute,
   LegalTermsOfServiceEnterpriseRoute: LegalTermsOfServiceEnterpriseRoute,
-  NewsSlugRoute: NewsSlugRoute,
   SolutionsSlugRoute: SolutionsSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   CareersIndexRoute: CareersIndexRoute,
   LegalIndexRoute: LegalIndexRoute,
-  NewsIndexRoute: NewsIndexRoute,
   SolutionsIndexRoute: SolutionsIndexRoute,
   WorkIndexRoute: WorkIndexRoute,
 }

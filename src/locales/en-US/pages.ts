@@ -2,7 +2,6 @@ export const pages = {
   home: {
     metaDescription:
       "Across hiring, small business, workplace health, drawing, and vehicle retail, UNFLD turns complex work into technology people can actually use. We also build beside organizations whose most important problems do not fit an off-the-shelf product.",
-    newsBanner: "Unifikar · A marketplace and network for used vehicles",
     heroTitle: "Unfolding the future.",
     heroTitleSecond: "One real system at a time.",
     lede: "Across hiring, small business, workplace health, drawing, and vehicle retail, we turn complex work into technology people can actually use. When the right product does not exist, we build it beside the organization that needs it.",
@@ -43,27 +42,21 @@ export const pages = {
     proof3Title: "Still ours after release.",
     proof3Body:
       "We operate what we ship. The release is the start of the work, not the end of it.",
-    developersTitle: "UNFLD developer resources.",
-    developersLede:
-      "API docs, OpenAPI, versioning, and a public catalog of products, news, work, and company facts. No authentication.",
-    developerResources: "UNFLD developer resources",
-    newsKicker: "Latest news",
-    newsTitle: "From UNFLD.",
   },
   products: {
     metaTitle: "Products by UNFLD",
     metaDescription:
-      "Explore SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar—six products by UNFLD across small business, hiring, workplace health, drawing, and vehicle retail.",
+      "Explore Dialogus, Oluart, and Unifikar: products for workplace health, drawing, and vehicle retail.",
     kicker: "Portfolio",
     title: "Products by",
     titleSecond: "UNFLD.",
-    lede: "Six products, built around kinds of work that should be simpler: digital presence, fiscal operations, hiring, workplace health, drawing, and vehicle retail.",
+    lede: "Three products built around workplace health, drawing, and vehicle retail.",
     primary: "Talk to UNFLD",
     secondary: "How we build",
     imageAlt: "UNFLD products on glass devices in a dark void",
-    feature1Title: "Six products, each at a different stage",
+    feature1Title: "Three products, each at a different stage",
     feature1Body:
-      "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, and Unifikar advance across clearly defined stages—from early access to live general access.",
+      "Dialogus, Oluart, and Unifikar advance through clearly defined stages, from early access to live availability.",
     feature2Title: "Operated with accountability",
     feature2Body:
       "We stay close to the systems we run—maintaining release trains, monitoring reliability, and evolving with customer reality.",
@@ -72,7 +65,7 @@ export const pages = {
       "Each product offers a dedicated, secure entry point tailored to how users work—on WhatsApp, in the browser, or in a mobile app.",
     feature4Title: "WhatsApp where it creates speed",
     feature4Body:
-      "SiteCreator and Doutor Fiscal meet small businesses in the channel they already use daily, reducing friction and onboarding steps.",
+      "Conversations are part of the workflow. We design entry points around how people already work.",
     feature5Title: "Domain depth",
     feature5Body:
       "Dialogus and Unifikar carry domain logic for workplace risk and used-vehicle retail, backing operational routines with verifiable data.",
@@ -101,7 +94,7 @@ export const pages = {
     whoBody:
       "We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a Brazilian limited company (sociedade empresária limitada) in Jardim Paulistano, São Paulo, active since {{founded}}. We build and operate products under our own name and build custom systems beside organizations with consequential operations.",
     tileProducts: "Products by UNFLD",
-    tileProductsBody: "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
+    tileProductsBody: "Dialogus, Oluart, Unifikar.",
     tileSp: "São Paulo",
     tileSpBody: "Jardim Paulistano. Registered office.",
     tileWork: "Selected work",
@@ -109,7 +102,7 @@ export const pages = {
     tileCareers: "Careers",
     tileCareersBody: "Join the team.",
     portfolioKicker: "The portfolio",
-    portfolioTitle: "Six products shaped by one operating principle.",
+    portfolioTitle: "Three products shaped by one operating principle.",
     portfolioLede: "Find work that should be simpler. Build the system. Keep improving it in use.",
     workKicker: "Selected work",
     workTitle: "Work people actually used.",
@@ -123,7 +116,6 @@ export const pages = {
       "UNFLD’s registered headquarters on Avenida Brigadeiro Faria Lima, in Jardim Paulistano, São Paulo.",
     pathKicker: "Our path of progress",
     pathTitle: "Experience rooted in 2019.",
-    latestNews: "Latest news",
   },
   contact: {
     metaTitle: "Contact",
@@ -393,15 +385,6 @@ export const pages = {
     next: "Next",
     by: "By",
   },
-  news: {
-    metaTitle: "News & updates",
-    metaDescription:
-      "What UNFLD is building—and what we are learning from the work. Product releases, field notes, and company announcements.",
-    kicker: "News & updates",
-    title: "What UNFLD is building",
-    titleSecond: "—and what we are learning.",
-    lede: "Product releases, field notes, company decisions, and evidence from the systems we operate.",
-  },
   work: {
     metaTitle: "Selected work",
     metaDescription:
@@ -455,7 +438,7 @@ export const pages = {
     deployKicker: "Tailored deployment",
     deployTitle: "Architected for accountability.",
     deployLede:
-      "Whether delivering a WhatsApp-first product like SiteCreator, a domain system like Dialogus, or an enterprise custom system, our infrastructure choices balance operational isolation, observable performance, and compliance requirements.",
+      "For products like Dialogus and enterprise custom systems, infrastructure choices balance operational isolation, observable performance, and contractual requirements.",
     p1Title: "Hosting regions",
     p1Body:
       "Hosting regions and data locations vary by product and contract. Brazilian-region deployment is available where the architecture and agreement require it.",
@@ -516,10 +499,6 @@ export const pages = {
     security: "Security",
     compliance: "Compliance",
     legalRequest: "Legal request",
-  },
-  developers: {
-    salesLine: "Sales and scoping: {{sales}}. Security: {{security}}.",
-    versioningTitle: "Versioning and deprecation.",
   },
   compliance: {
     metaTitle: "Compliance & Security Controls",

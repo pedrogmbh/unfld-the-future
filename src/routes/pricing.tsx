@@ -35,7 +35,7 @@ function Pricing() {
         lede={p.lede}
       />
       <Section className="pb-16">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {planList.map((plan) => (
             <article
               key={plan.name}

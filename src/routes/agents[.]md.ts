@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { renderAgentsMd } from "@/lib/catalog-api";
+import { renderAgentsMd } from "@/lib/machine";
 
 export const Route = createFileRoute("/agents.md")({
   server: {

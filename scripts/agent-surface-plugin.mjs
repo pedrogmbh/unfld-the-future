@@ -1,6 +1,6 @@
 /**
- * Dev/preview half of the agent surface: markdown negotiation, OpenAPI,
- * catalog API, and agent-instructions. The deployed half lives in
+ * Dev/preview half of the agent surface: markdown negotiation and
+ * agent instructions. The deployed half lives in
  * server/middleware/agent-surface.ts.
  */
 import { mergeVary } from "./accept.mjs";

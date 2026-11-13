@@ -127,10 +127,9 @@ export const work = {
       line: "Roles and people, matched without a form factory.",
       lede: "A hiring platform that connects candidates and companies without turning either side into paperwork. Apply. Evaluate. Decide.",
       story: [
-        "Hiring still asks too much of both sides before a real conversation.",
-        "MatchOne is a platform for open roles and the people who might fill them. Candidates apply without a maze. Companies evaluate without drowning in files. Matching does the quiet work in between.",
-        "The same conviction later lives in Queravaga: shorten the path from profile to interview. Here it was built as a marketplace — clear, fast, respectful of time.",
-      ],
+  "Hiring still asks too much of both sides before a real conversation.",
+  "MatchOne is a platform for open roles and the people who might fill them. Candidates apply without a maze. Companies evaluate without drowning in files. Matching does the quiet work in between."
+],
       outcome: "A shorter path from opening to decision.",
     },
     neuronos: {

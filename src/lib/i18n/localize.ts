@@ -12,10 +12,8 @@ import {
 } from "@/lib/compliance";
 import {
   customers,
-  developerSurface,
   homePrompts,
   interview,
-  news,
   offices,
   ownedProducts,
   plans,
@@ -24,7 +22,6 @@ import {
   stats,
   timeline,
   values,
-  type NewsPost,
   type OwnedProduct,
   type SelectedWork,
 } from "@/lib/site";
@@ -81,24 +78,6 @@ export function localizeCustomers(locale: Locale) {
       `chrome.customerNotes.${customer.note}`,
     ),
   }));
-}
-
-export function localizeNews(locale: Locale): NewsPost[] {
-  const copy = getMessages(locale).news;
-  return news.map((post) => {
-    const t = copy[post.slug as keyof typeof copy];
-    return {
-      ...post,
-      date: t.date,
-      title: t.title,
-      standfirst: t.standfirst,
-      body: [...t.body],
-    };
-  });
-}
-
-export function localizeNewsPost(slug: string, locale: Locale) {
-  return localizeNews(locale).find((post) => post.slug === slug);
 }
 
 export function localizeWork(locale: Locale): SelectedWork[] {
@@ -216,37 +195,6 @@ export function localizeStats(locale: Locale) {
   }));
 }
 
-export function localizeDeveloperSurface(locale: Locale) {
-  const copy = getMessages(locale).catalog.developer;
-  return {
-    ...developerSurface,
-    apiTitle: copy.apiTitle,
-    apiDescription: copy.apiDescription,
-    developersTitle: copy.developersTitle,
-    developersDescription: copy.developersDescription,
-    versioningTitle: copy.versioningTitle,
-    versioningDescription: copy.versioningDescription,
-    heroTitle: copy.heroTitle,
-    heroTitleSecond: copy.heroTitleSecond,
-    heroLede: copy.heroLede,
-    developersHeroTitle: copy.developersHeroTitle,
-    developersHeroTitleSecond: copy.developersHeroTitleSecond,
-    developersHeroLede: copy.developersHeroLede,
-    howTitle: copy.howTitle,
-    howLede: copy.howLede,
-    versioningUpdated: copy.versioningUpdated,
-    endpoints: developerSurface.endpoints.map((endpoint, index) => ({
-      ...endpoint,
-      body: required(copy.endpoints[index], `catalog.developer.endpoints.${index}`),
-    })),
-    rules: copy.rules.map((rule) => ({ title: rule.title, body: rule.body })),
-    versioningSections: copy.versioningSections.map((section) => ({
-      heading: section.heading,
-      body: section.body,
-    })),
-  };
-}
-
 export function localizeFacts(locale: Locale) {
   const facts = getMessages(locale).chrome.facts;
   return {
@@ -289,18 +237,8 @@ export function localizeFooter(locale: Locale) {
     buildWithUs: [
       { label: labels.customSoftware, to: "/build-with-us" },
       { label: labels.howWeWork, to: "/how-we-work" },
-      { label: labels.unfldApi, to: "/api" },
       { label: getMessages(locale).chrome.nav.enterprise, to: "/enterprise" },
       { label: getMessages(locale).chrome.nav.security, to: "/security" },
-    ],
-    developers: [
-      { label: labels.developerResources, to: "/developers" },
-      { label: labels.unfldApi, to: "/api" },
-      { label: labels.versioning, to: "/api/versioning" },
-      { label: labels.openapi, to: "/openapi.json", external: true },
-      { label: labels.catalog, to: "/api/v1", external: true },
-      { label: labels.agentIndex, to: "/llms.txt", external: true },
-      { label: labels.whenToUse, to: "/agents.md", external: true },
     ],
     solutions: [
       { label: labels.smallBusiness, to: "/solutions/business" },
@@ -315,7 +253,6 @@ export function localizeFooter(locale: Locale) {
       { label: getMessages(locale).chrome.nav.about, to: "/company" },
       { label: getMessages(locale).chrome.nav.selectedWork, to: "/work" },
       { label: getMessages(locale).chrome.nav.careers, to: "/careers" },
-      { label: getMessages(locale).chrome.nav.news, to: "/news" },
       { label: getMessages(locale).chrome.nav.blog, to: "/blog" },
       { label: getMessages(locale).chrome.nav.security, to: "/security" },
       { label: getMessages(locale).chrome.nav.compliance, to: "/compliance" },

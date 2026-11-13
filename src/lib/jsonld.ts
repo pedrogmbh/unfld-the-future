@@ -74,7 +74,7 @@ export function organizationJsonLd(locale: Locale = DEFAULT_LOCALE) {
     sameAs: ["https://github.com/pedrogmbh/unfld-the-future", SITE.whatsappHref],
     knowsAbout: [
       "UNFLD",
-      "UNFLD developer resources",
+      "Telemedicine and health benefits",
       ...localizeOwnedProducts(locale).map((product) => product.name),
     ],
     identifier: [

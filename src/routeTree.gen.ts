@@ -29,6 +29,7 @@ import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StatusRouteImport } from './routes/status'
+import { Route as TelemedicinaRouteImport } from './routes/telemedicina'
 import { Route as UnifikarRouteImport } from './routes/unifikar'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
@@ -146,6 +147,11 @@ const StatusRoute = StatusRouteImport.update({
   path: '/status',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TelemedicinaRoute = TelemedicinaRouteImport.update({
+  id: '/telemedicina',
+  path: '/telemedicina',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UnifikarRoute = UnifikarRouteImport.update({
   id: '/unifikar',
   path: '/unifikar',
@@ -249,6 +255,7 @@ export interface FileRoutesByFullPath {
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/telemedicina': typeof TelemedicinaRoute
   '/unifikar': typeof UnifikarRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
@@ -287,6 +294,7 @@ export interface FileRoutesByTo {
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/telemedicina': typeof TelemedicinaRoute
   '/unifikar': typeof UnifikarRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
@@ -326,6 +334,7 @@ export interface FileRoutesById {
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
+  '/telemedicina': typeof TelemedicinaRoute
   '/unifikar': typeof UnifikarRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
@@ -366,6 +375,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/sitemap.xml'
     | '/status'
+    | '/telemedicina'
     | '/unifikar'
     | '/blog/$slug'
     | '/blog/sentinela-cve'
@@ -404,6 +414,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/sitemap.xml'
     | '/status'
+    | '/telemedicina'
     | '/unifikar'
     | '/blog/$slug'
     | '/blog/sentinela-cve'
@@ -442,6 +453,7 @@ export interface FileRouteTypes {
     | '/security'
     | '/sitemap.xml'
     | '/status'
+    | '/telemedicina'
     | '/unifikar'
     | '/blog/$slug'
     | '/blog/sentinela-cve'
@@ -481,6 +493,7 @@ export interface RootRouteChildren {
   SecurityRoute: typeof SecurityRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StatusRoute: typeof StatusRoute
+  TelemedicinaRoute: typeof TelemedicinaRoute
   UnifikarRoute: typeof UnifikarRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogSentinelaCveRoute: typeof BlogSentinelaCveRoute
@@ -641,6 +654,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StatusRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/telemedicina': {
+      id: '/telemedicina'
+      path: '/telemedicina'
+      fullPath: '/telemedicina'
+      preLoaderRoute: typeof TelemedicinaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/unifikar': {
       id: '/unifikar'
       path: '/unifikar'
@@ -777,6 +797,7 @@ const rootRouteChildren: RootRouteChildren = {
   SecurityRoute: SecurityRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StatusRoute: StatusRoute,
+  TelemedicinaRoute: TelemedicinaRoute,
   UnifikarRoute: UnifikarRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogSentinelaCveRoute: BlogSentinelaCveRoute,

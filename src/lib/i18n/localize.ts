@@ -12,7 +12,6 @@ import {
 } from "@/lib/compliance";
 import {
   customers,
-  externalProducts,
   homePrompts,
   interview,
   offices,
@@ -43,6 +42,7 @@ export function localizeOwnedProducts(locale: Locale): OwnedProduct[] {
     return {
       ...product,
       name: t.name,
+      shortName: t.shortName,
       kicker: t.kicker,
       status: t.status as OwnedProduct["status"],
       explore: t.explore,
@@ -209,14 +209,13 @@ export function localizeFooter(locale: Locale) {
   return {
     products: [
       { label: labels.allProducts, to: "/products" },
-      ...ownedProducts.map((product) => ({
+      ...localizeOwnedProducts(locale).map((product) => ({
         label: product.shortName,
         to: product.href,
       })),
-      ...externalProducts,
       { label: labels.access, to: "/access" },
     ],
-    access: ownedProducts.map((product) => ({
+    access: localizeOwnedProducts(locale).map((product) => ({
       label: product.shortName,
       to: product.href,
     })),

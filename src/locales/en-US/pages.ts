@@ -46,17 +46,17 @@ export const pages = {
   products: {
     metaTitle: "Products by UNFLD",
     metaDescription:
-      "Explore Dialogus, Oluart, and Unifikar: products for workplace health, drawing, and vehicle retail.",
+      "Four products built around telemedicine, workplace health, drawing, and vehicle retail. Dialogus, Oluart, Unifikar, Telemedicine.",
     kicker: "Portfolio",
     title: "Products by",
     titleSecond: "UNFLD.",
-    lede: "Three products built around workplace health, drawing, and vehicle retail.",
+    lede: "Four products built around telemedicine, workplace health, drawing, and vehicle retail.",
     primary: "Talk to UNFLD",
     secondary: "How we build",
     imageAlt: "UNFLD products on glass devices in a dark void",
-    feature1Title: "Three products, each at a different stage",
+    feature1Title: "Four products, each at a different stage",
     feature1Body:
-      "Dialogus, Oluart, and Unifikar advance through clearly defined stages, from early access to live availability.",
+      "Telemedicine, Dialogus, Oluart, and Unifikar advance through clearly defined stages, from early access to live availability.",
     feature2Title: "Operated with accountability",
     feature2Body:
       "We stay close to the systems we run—maintaining release trains, monitoring reliability, and evolving with customer reality.",
@@ -94,13 +94,13 @@ export const pages = {
     whoBody:
       "We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a Brazilian limited company (sociedade empresária limitada) in Jardim Paulistano, São Paulo, active since {{founded}}. We build and operate products under our own name and build custom systems beside organizations with consequential operations.",
     tileProducts: "Products by UNFLD",
-    tileProductsBody: "Dialogus, Oluart, Unifikar.",
+    tileProductsBody: "Dialogus, Oluart, Unifikar, Telemedicine.",
     tileWork: "Selected work",
     tileWorkBody: "Netflix, Embraer, SporTV, and more.",
     tileCareers: "Careers",
     tileCareersBody: "Join the team.",
     portfolioKicker: "The portfolio",
-    portfolioTitle: "Three products shaped by one operating principle.",
+    portfolioTitle: "Four products shaped by one operating principle.",
     portfolioLede: "Find work that should be simpler. Build the system. Keep improving it in use.",
     workKicker: "Selected work",
     workTitle: "Work people actually used.",
@@ -510,4 +510,64 @@ export const pages = {
     description:
       "UNFLD is the trading name of UNFOLDING THE FUTURE. A São Paulo software house that also ships its own digital products.",
   },
+  telemedicine: {
+  "metaTitle": "Telemedicine",
+  "metaDescription": "One UNFLD telemedicine and health-benefits platform, four audience-focused brands. Meet MedAgro, TaxiMed, SinistroMed, and Lux Health.",
+  "kicker": "Telemedicine by UNFLD",
+  "title": "Health, closer.",
+  "titleSecond": "To every routine.",
+  "lede": "One platform for telemedicine and health benefits. Four brands built around the people who use it, from rural work and city streets to insurance offices and independent lives.",
+  "choose": "Find your brand",
+  "brandsLabel": "Four brands. One care platform.",
+  "screensNote": "Screenshots show the original Brazilian websites in Portuguese.",
+  "foundationTitle": "The same foundation of care.",
+  "foundationBody": "The four clubs bring together the same seven benefits. The language, identity, and experience reflect each audience’s daily life.",
+  "benefits": [
+    {
+      "title": "A doctor, online, 24/7",
+      "body": "Medical consultations by video, accessible from a phone wherever there is an internet connection."
+    },
+    {
+      "title": "Psychology and nutrition",
+      "body": "Online consultations for emotional well-being and nutritional support."
+    },
+    {
+      "title": "Care beyond the screen",
+      "body": "Health appointment scheduling and an annual check-up."
+    },
+    {
+      "title": "Support at the pharmacy",
+      "body": "Discounts on medicines and a medication subsidy."
+    }
+  ],
+  "closeTitle": "A platform that meets people where they are.",
+  "closeBody": "Choose the brand that fits your routine. Its website explains membership, available benefits, and how to get started.",
+  "viewBenefits": "Explore the benefits",
+  "brands": {
+    "medagro": {
+      "audience": "Rural producers",
+      "description": "Health support for people who work the land. MedAgro brings online care and health benefits closer to the farm, the field, and the rural producer’s routine.",
+      "visit": "Visit MedAgro",
+      "alt": "MedAgro website for rural producers, with green branding and a rural landscape."
+    },
+    "taximed": {
+      "audience": "Taxi drivers",
+      "description": "Care that fits around life on the road. TaxiMed speaks directly to taxi drivers, connecting health benefits with a working day spent serving the city.",
+      "visit": "Visit TaxiMed",
+      "alt": "TaxiMed website for taxi drivers, showing its yellow branding and driver-focused presentation."
+    },
+    "sinistromed": {
+      "audience": "Car-insurance brokers",
+      "description": "Support for the people who spend their days protecting others. SinistroMed adapts the shared health-benefits platform to car-insurance brokers and their teams.",
+      "visit": "Visit SinistroMed",
+      "alt": "SinistroMed website for car-insurance brokers, with its broker-focused headline and brand identity."
+    },
+    "lux-health": {
+      "audience": "Adult escorts · 18+",
+      "description": "A health-benefits club for adult escorts, with an emphasis on privacy, discretion, and care that respects their routine. The same foundation, presented through Lux Health.",
+      "visit": "Visit Lux Health",
+      "alt": "Lux Health website for adult escorts, with pink branding and a focus on discretion."
+    }
+  }
+},
 } as const;

@@ -1,5 +1,5 @@
 import { publishedPosts } from "@/lib/blog/posts";
-import { SITE, formatAddress, footer, ownedProducts, selectedWork, solutions } from "@/lib/site";
+import { SITE, formatAddress, footer, ownedProducts, telemedicineBrands, selectedWork, solutions } from "@/lib/site";
 
 export type MachineSection =
   "Products" | "Build with us" | "Solutions" | "Company" | "What's new?" | "Legal";
@@ -69,7 +69,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/products",
       "Products by UNFLD",
-      "Explore Dialogus, Oluart, and Unifikar: products for workplace health, drawing, and vehicle retail.",
+      "Explore Dialogus, Oluart, Unifikar, and Telemedicine: products for workplace health, drawing, and vehicle retail, alongside UNFLD’s telemedicine platform.",
       "Products",
       { changefreq: "weekly", priority: 0.9 },
     ),
@@ -85,7 +85,7 @@ export function machinePages(): MachinePage[] {
     page(
       "/access",
       "Access UNFLD products",
-      "Direct, secure entry points for Dialogus, Oluart, and Unifikar.",
+      "Direct entry points for Dialogus, Oluart, Unifikar, and the telemedicine platform.",
       "Products",
       { changefreq: "monthly", priority: 0.7 },
     ),
@@ -346,13 +346,18 @@ export function renderLlmsTxt(pages = machinePages()): string {
     .filter(Boolean)
     .join("\n\n");
 
-  const productSites = ownedProducts
-    .filter((product) => product.url)
-    .map(
-      (product) =>
-        `- [${product.name}](${product.url}): ${product.line} (Status: ${product.status})`,
-    )
-    .join("\n");
+  const productSites = [
+    ...ownedProducts
+      .filter((product) => product.url)
+      .map(
+        (product) =>
+          `- [${product.name}](${product.url}): ${product.line} (Status: ${product.status})`,
+      ),
+    ...telemedicineBrands.map(
+      (brand) =>
+        `- [${brand.name}](${brand.url}): Part of UNFLD’s telemedicine and health-benefits platform.`,
+    ),
+  ].join("\n");
 
   return `# ${SITE.name}
 
@@ -360,7 +365,7 @@ export function renderLlmsTxt(pages = machinePages()): string {
 
 Unfolding the future. One real system at a time. UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}, headquartered in São Paulo, Brazil (${formatAddress()}). Registered contact: ${SITE.registeredEmail}. Contact sales at ${SITE.sales}; WhatsApp Business ${SITE.whatsapp} (${SITE.whatsappHref}); security at ${SITE.security}; careers at ${SITE.careers}.
 
-Products by UNFLD: Dialogus (workplace health), Oluart (AR drawing on paper), and Unifikar (used-vehicle marketplace and store network). We also design and ship custom software systems.
+Products by UNFLD: Telemedicine (health-benefits clubs MedAgro, TaxiMed, SinistroMed, and Lux Health), Dialogus (workplace health), Oluart (AR drawing on paper), and Unifikar (used-vehicle marketplace and store network). We also design and ship custom software systems.
 
 This file follows [llmstxt.org](https://llmstxt.org/). The XML sitemap is at ${siteUrl("/sitemap.xml")}.
 
@@ -411,7 +416,7 @@ export function renderAgentsMd(): string {
 
 UNFLD is the trading name of ${SITE.legal}, CNPJ ${SITE.cnpj}.
 
-Use the corporate site to find information about Dialogus, Oluart, Unifikar, custom software services, and company contacts.
+Use the corporate site to find information about the telemedicine platform, Dialogus, Oluart, Unifikar, custom software services, and company contacts.
 
 - Read [llms.txt](${siteUrl("/llms.txt")}) for the current page index.
 - Read [Company](${siteUrl("/company")}) for legal identity and the registered address.

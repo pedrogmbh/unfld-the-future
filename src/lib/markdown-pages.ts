@@ -1,3 +1,4 @@
+import { getMessages } from "@/lib/i18n/messages";
 import { siteUrl, machinePages } from "@/lib/machine";
 import {
   SITE,
@@ -6,6 +7,7 @@ import {
   getWork,
   ownedProducts,
   selectedWork,
+  telemedicineBrands,
 } from "@/lib/site";
 
 export function isKnownDocumentPath(pathname: string): boolean {
@@ -103,6 +105,25 @@ Canonical URL: ${siteUrl(page.path)}
 export function renderDocumentMarkdown(pathname: string): string | null {
   const path = normalizePath(pathname);
   if (path === "/") return homeMarkdown();
+  if (path === "/telemedicina") {
+    const copy = getMessages("en-US").pages.telemedicine;
+    return `# ${copy.metaTitle}
+
+${copy.lede}
+
+${telemedicineBrands.map((brand) => `## ${brand.name}
+
+${copy.brands[brand.slug].audience}
+
+${copy.brands[brand.slug].description}
+
+[${copy.brands[brand.slug].visit}](${brand.url})`).join("\n\n")}
+
+## ${copy.foundationTitle}
+
+${copy.benefits.map((benefit) => `- ${benefit.title}: ${benefit.body}`).join("\n")}
+`;
+  }
   const product = ownedProducts.find((item) => item.href === path);
   if (product) return productMarkdown(product.slug);
 

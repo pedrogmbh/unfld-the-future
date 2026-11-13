@@ -190,16 +190,16 @@
     },
     "products": {
       "metaTitle": "Produtos da UNFLD",
-      "metaDescription": "Conheça Dialogus, Oluart e Unifikar, produtos para saúde no trabalho, desenho e varejo automotivo.",
+      "metaDescription": "Quatro produtos construídos em torno de telemedicina, saúde no trabalho, desenho e varejo automotivo. Dialogus, Oluart, Unifikar, Telemedicina.",
       "kicker": "Portfólio",
       "title": "Produtos da",
       "titleSecond": "UNFLD.",
-      "lede": "Três produtos construídos em torno da saúde no trabalho, do desenho e do varejo automotivo.",
+      "lede": "Quatro produtos construídos em torno de telemedicina, saúde no trabalho, desenho e varejo automotivo.",
       "primary": "Fale com a UNFLD",
       "secondary": "Como construímos",
       "imageAlt": "Produtos da UNFLD em dispositivos de vidro em um vazio escuro",
-      "feature1Title": "Três produtos, cada um em um estágio diferente",
-      "feature1Body": "Dialogus, Oluart e Unifikar avançam em estágios definidos, do acesso antecipado à operação.",
+      "feature1Title": "Quatro produtos, cada um em um estágio diferente",
+      "feature1Body": "Telemedicina, Dialogus, Oluart e Unifikar avançam em estágios definidos, do acesso antecipado à operação.",
       "feature2Title": "Operados com responsabilidade",
       "feature2Body": "Permanecemos perto dos sistemas que rodamos — mantendo trens de release, monitorando confiabilidade e evoluindo com a realidade do cliente.",
       "feature3Title": "Pontos de entrada distintos",
@@ -228,13 +228,13 @@
       "whoTitle": "Cinco letras. Uma razão social completa. Uma casa que constrói.",
       "whoBody": "Operamos como UNFLD. A empresa é a UNFOLDING THE FUTURE LTDA — uma sociedade empresária limitada brasileira em Jardim Paulistano, São Paulo, ativa desde {{founded}}. Construímos e operamos produtos em nosso próprio nome e construímos sistemas sob medida ao lado de organizações com operações de consequência.",
       "tileProducts": "Produtos da UNFLD",
-      "tileProductsBody": "Dialogus, Oluart, Unifikar.",
+      "tileProductsBody": "Dialogus, Oluart, Unifikar, Telemedicina.",
       "tileWork": "Trabalhos selecionados",
       "tileWorkBody": "Netflix, Embraer, SporTV e mais.",
       "tileCareers": "Carreiras",
       "tileCareersBody": "Junte-se à equipe.",
       "portfolioKicker": "O portfólio",
-      "portfolioTitle": "Três produtos moldados por um princípio operacional.",
+      "portfolioTitle": "Quatro produtos moldados por um princípio operacional.",
       "portfolioLede": "Encontrar o trabalho que deveria ser mais simples. Construir o sistema. Continuar melhorando-o em uso.",
       "workKicker": "Trabalhos selecionados",
       "workTitle": "Trabalho que as pessoas de fato usaram.",
@@ -571,6 +571,66 @@
     },
     "root": {
       "description": "UNFLD é o nome fantasia de UNFOLDING THE FUTURE. Uma casa de software em São Paulo que também entrega os seus próprios produtos digitais."
+    },
+    "telemedicine": {
+      "metaTitle": "Telemedicina",
+      "metaDescription": "Uma plataforma de telemedicina e benefícios em saúde da UNFLD, quatro marcas para públicos distintos. Conheça MedAgro, TaxiMed, SinistroMed e Lux Health.",
+      "kicker": "Telemedicina da UNFLD",
+      "title": "Saúde mais perto.",
+      "titleSecond": "De cada rotina.",
+      "lede": "Uma plataforma de telemedicina e benefícios em saúde. Quatro marcas construídas em torno de quem usa, do trabalho no campo e nas ruas à rotina das corretoras e de profissionais independentes.",
+      "choose": "Encontre a sua marca",
+      "brandsLabel": "Quatro marcas. Uma plataforma de cuidado.",
+      "screensNote": "As capturas mostram os sites brasileiros originais em português.",
+      "foundationTitle": "A mesma base de cuidado.",
+      "foundationBody": "Os quatro clubes reúnem os mesmos sete benefícios. A linguagem, a identidade e a experiência acompanham o dia a dia de cada público.",
+      "benefits": [
+        {
+          "title": "Médico online, 24 horas",
+          "body": "Consultas médicas por vídeo, pelo celular, de onde houver conexão com a internet."
+        },
+        {
+          "title": "Psicologia e nutrição",
+          "body": "Consultas online para apoio ao bem-estar emocional e acompanhamento nutricional."
+        },
+        {
+          "title": "Cuidado além da tela",
+          "body": "Agendamento de saúde e check-up anual."
+        },
+        {
+          "title": "Apoio na farmácia",
+          "body": "Descontos em medicamentos e subsídio para a compra de remédios."
+        }
+      ],
+      "closeTitle": "Uma plataforma que acompanha a vida real.",
+      "closeBody": "Escolha a marca que combina com sua rotina. No site de cada uma, você encontra os detalhes da assinatura, dos benefícios disponíveis e de como começar.",
+      "viewBenefits": "Conheça os benefícios",
+      "brands": {
+        "medagro": {
+          "audience": "Produtores rurais",
+          "description": "Saúde para quem vive do campo. A MedAgro aproxima as consultas online e os benefícios em saúde da propriedade, da lavoura e da rotina do produtor rural.",
+          "visit": "Acessar MedAgro",
+          "alt": "Site da MedAgro para produtores rurais, com identidade verde e paisagem do campo."
+        },
+        "taximed": {
+          "audience": "Taxistas",
+          "description": "Cuidado que cabe na rotina de quem roda a cidade. A TaxiMed conecta os benefícios em saúde ao dia de trabalho do taxista, com uma experiência voltada para sua realidade.",
+          "visit": "Acessar TaxiMed",
+          "alt": "Site da TaxiMed para taxistas, com identidade amarela e apresentação voltada a quem trabalha no táxi."
+        },
+        "sinistromed": {
+          "audience": "Corretores de seguros de automóveis",
+          "description": "Apoio para quem passa o dia protegendo outras pessoas. A SinistroMed adapta a plataforma de benefícios em saúde à rotina dos corretores de seguros de automóveis e suas equipes.",
+          "visit": "Acessar SinistroMed",
+          "alt": "Site da SinistroMed para corretores de seguros de automóveis, com apresentação e identidade próprias."
+        },
+        "lux-health": {
+          "audience": "Acompanhantes adultas · 18+",
+          "description": "Um clube de benefícios em saúde para acompanhantes adultas, com foco em privacidade, discrição e cuidado que respeita sua rotina. A mesma base, apresentada pela Lux Health.",
+          "visit": "Acessar Lux Health",
+          "alt": "Site da Lux Health para acompanhantes adultas, com identidade rosa e foco em discrição."
+        }
+      }
     }
   },
   "products": {
@@ -615,7 +675,8 @@
         "kicker": "Dialogus",
         "title": "O cuidado se torna crível quando o risco é ouvido, compreendido, tratado e revisitado.",
         "body": "Gestão de riscos psicossociais feita para a NR-1. Software e acompanhamento especializado trabalhando juntos."
-      }
+      },
+      "shortName": "Dialogus"
     },
     "oluart": {
       "name": "Oluart by UNFLD",
@@ -658,7 +719,8 @@
         "kicker": "Oluart",
         "title": "O preço que você vê é o preço que você paga.",
         "body": "Projete uma imagem no papel e aprenda a desenhar. Oluart by UNFLD — transparente, brasileiro e grátis para começar."
-      }
+      },
+      "shortName": "Oluart"
     },
     "unifikar": {
       "name": "Unifikar by UNFLD",
@@ -701,6 +763,43 @@
         "kicker": "Unifikar",
         "title": "O estoque deve circular numa rede, não numa única vitrine.",
         "body": "Um marketplace de seminovos e uma rede comercial para as lojas que os vendem. Unifikar by UNFLD."
+      },
+      "shortName": "Unifikar"
+    },
+    "telemedicina": {
+      "shortName": "Telemedicina",
+      "name": "Telemedicina da UNFLD",
+      "kicker": "Telemedicina",
+      "status": "Em operação",
+      "explore": "Explorar",
+      "line": "Quatro marcas. Uma plataforma de cuidado.",
+      "mission": "Telemedicina da UNFLD",
+      "title": "Saúde mais perto.",
+      "titleSecond": "De cada rotina.",
+      "primary": "Encontre a sua marca",
+      "blurb": "Uma plataforma de telemedicina e benefícios em saúde da UNFLD, quatro marcas para públicos distintos. Conheça MedAgro, TaxiMed, SinistroMed e Lux Health.",
+      "features": [
+        {
+          "title": "Médico online, 24 horas",
+          "body": "Consultas médicas por vídeo, pelo celular, de onde houver conexão com a internet."
+        },
+        {
+          "title": "Psicologia e nutrição",
+          "body": "Consultas online para apoio ao bem-estar emocional e acompanhamento nutricional."
+        },
+        {
+          "title": "Cuidado além da tela",
+          "body": "Agendamento de saúde e check-up anual."
+        },
+        {
+          "title": "Apoio na farmácia",
+          "body": "Descontos em medicamentos e subsídio para a compra de remédios."
+        }
+      ],
+      "quote": {
+        "kicker": "Telemedicina",
+        "title": "A mesma base de cuidado.",
+        "body": "Os quatro clubes reúnem os mesmos sete benefícios. A linguagem, a identidade e a experiência acompanham o dia a dia de cada público."
       }
     }
   },

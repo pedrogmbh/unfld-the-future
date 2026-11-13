@@ -225,6 +225,45 @@ export const ownedProducts: readonly OwnedProduct[] = [
       body: "A marketplace for used vehicles and a commercial network for the stores that sell them. Unifikar by UNFLD.",
     },
   },
+  {
+  "slug": "telemedicina",
+  "name": "Telemedicine by UNFLD",
+  "shortName": "Telemedicine",
+  "href": "/telemedicina",
+  "kicker": "Telemedicine",
+  "status": "Live",
+  "explore": "Explore",
+  "line": "Four brands. One care platform.",
+  "mission": "Telemedicine by UNFLD",
+  "title": "Health, closer.",
+  "titleSecond": "To every routine.",
+  "primary": "Find your brand",
+  "blurb": "One UNFLD telemedicine and health-benefits platform, four audience-focused brands. Meet MedAgro, TaxiMed, SinistroMed, and Lux Health.",
+  "image": "/images/telemedicina/medagro-1280.webp",
+  "features": [
+    {
+      "title": "A doctor, online, 24/7",
+      "body": "Medical consultations by video, accessible from a phone wherever there is an internet connection."
+    },
+    {
+      "title": "Psychology and nutrition",
+      "body": "Online consultations for emotional well-being and nutritional support."
+    },
+    {
+      "title": "Care beyond the screen",
+      "body": "Health appointment scheduling and an annual check-up."
+    },
+    {
+      "title": "Support at the pharmacy",
+      "body": "Discounts on medicines and a medication subsidy."
+    }
+  ],
+  "quote": {
+    "kicker": "Telemedicine",
+    "title": "The same foundation of care.",
+    "body": "The four clubs bring together the same seven benefits. The language, identity, and experience reflect each audience’s daily life."
+  }
+},
 ];
 
 export type Customer = {
@@ -252,11 +291,27 @@ export const customers: readonly Customer[] = [
   { name: "IOHK", note: "Partner project · Input Output Group" },
 ];
 
-export const externalProducts = [
-  { label: "MedAgro", to: "https://www.medagro.com.br", external: true },
-  { label: "TaxiMed", to: "https://www.taximed.com.br", external: true },
-  { label: "SinistroMed", to: "https://www.sinistromed.com.br", external: true },
-  { label: "Lux Health", to: "https://www.luxhealth.com.br", external: true },
+export const telemedicineBrands = [
+  {
+    "slug": "medagro",
+    "name": "MedAgro",
+    "url": "https://www.medagro.com.br"
+  },
+  {
+    "slug": "taximed",
+    "name": "TaxiMed",
+    "url": "https://www.taximed.com.br"
+  },
+  {
+    "slug": "sinistromed",
+    "name": "SinistroMed",
+    "url": "https://www.sinistromed.com.br"
+  },
+  {
+    "slug": "lux-health",
+    "name": "Lux Health",
+    "url": "https://www.luxhealth.com.br"
+  }
 ] as const;
 
 export const footer = {
@@ -265,7 +320,7 @@ export const footer = {
     { label: "Dialogus", to: "/dialogus" },
     { label: "Oluart", to: "/oluart" },
     { label: "Unifikar", to: "/unifikar" },
-    ...externalProducts,
+    { label: "Telemedicine", to: "/telemedicina" },
     { label: "Access", to: "/access" },
   ],
   buildWithUs: [
@@ -280,6 +335,7 @@ export const footer = {
     { label: "Dialogus", to: "/dialogus" },
     { label: "Oluart", to: "/oluart" },
     { label: "Unifikar", to: "/unifikar" },
+    { label: "Telemedicine", to: "/telemedicina" },
   ],
   solutions: [
     { label: "Small business", to: "/solutions/small-business" },
@@ -317,7 +373,7 @@ export const systemsStatus = {
 
 export const stats = [
   { value: "2019", label: "Experience rooted in" },
-  { value: "3", label: "Products by UNFLD" },
+  { value: "4", label: "Products by UNFLD" },
   { value: "SP", label: "Headquarters · São Paulo" },
 ] as const;
 

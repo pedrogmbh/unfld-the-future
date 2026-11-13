@@ -1,5 +1,6 @@
 export const products = {
   dialogus: {
+    shortName: "Dialogus",
     name: "Dialogus by UNFLD",
     kicker: "Workplace health",
     status: "Live",
@@ -44,6 +45,7 @@ export const products = {
     },
   },
   oluart: {
+    shortName: "Oluart",
     name: "Oluart by UNFLD",
     kicker: "Drawing",
     status: "Live",
@@ -88,6 +90,7 @@ export const products = {
     },
   },
   unifikar: {
+    shortName: "Unifikar",
     name: "Unifikar by UNFLD",
     kicker: "Vehicle retail",
     status: "Early access",
@@ -131,4 +134,40 @@ export const products = {
       body: "A marketplace for used vehicles and a commercial network for the stores that sell them. Unifikar by UNFLD.",
     },
   },
+  telemedicina: {
+  "shortName": "Telemedicine",
+  "name": "Telemedicine by UNFLD",
+  "kicker": "Telemedicine",
+  "status": "Live",
+  "explore": "Explore",
+  "line": "Four brands. One care platform.",
+  "mission": "Telemedicine by UNFLD",
+  "title": "Health, closer.",
+  "titleSecond": "To every routine.",
+  "primary": "Find your brand",
+  "blurb": "One UNFLD telemedicine and health-benefits platform, four audience-focused brands. Meet MedAgro, TaxiMed, SinistroMed, and Lux Health.",
+  "features": [
+    {
+      "title": "A doctor, online, 24/7",
+      "body": "Medical consultations by video, accessible from a phone wherever there is an internet connection."
+    },
+    {
+      "title": "Psychology and nutrition",
+      "body": "Online consultations for emotional well-being and nutritional support."
+    },
+    {
+      "title": "Care beyond the screen",
+      "body": "Health appointment scheduling and an annual check-up."
+    },
+    {
+      "title": "Support at the pharmacy",
+      "body": "Discounts on medicines and a medication subsidy."
+    }
+  ],
+  "quote": {
+    "kicker": "Telemedicine",
+    "title": "The same foundation of care.",
+    "body": "The four clubs bring together the same seven benefits. The language, identity, and experience reflect each audience’s daily life."
+  }
+},
 } as const;

@@ -114,7 +114,7 @@ pointer-transparent. Avoid autoplay loops or moving status dots.
 ## Content and implementation
 
 Use calm, precise language, concrete verbs and supported claims. Product names
-are proper nouns. Company-owned products are Dialogus Psicossocial, Oluart and Unifikar.
+are proper nouns. Company-owned products are Dialogus Psicossocial, Oluart, Unifikar and Telemedicina.
 
 Keep navigation and company data in `src/lib/site.ts` and localized copy in the
 four message bundles. Brand guidance is translated in all four locales.

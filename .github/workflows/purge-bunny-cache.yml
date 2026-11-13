@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Wait for Vercel to finish deploying
         run: sleep 20
       - name: Separate CDN cache by hostname
@@ -41,6 +44,21 @@ jobs:
           curl -v --fail-with-body -sS -X POST \
             "https://api.bunny.net/pullzone/${{ vars.BUNNY_PULL_ZONE_ID }}/purgeCache" \
             -H "AccessKey: ${{ secrets.BUNNYCDN_API_KEY }}"
+
+      - name: Purge alternate hostname snapshots
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNYCDN_API_KEY }}
+        run: |
+          set -euo pipefail
+          jq -r '[.redirects[].has[] | select(.type == "header" and .key == "cdn-host") | .value.inc[]] | unique[]' vercel.json |
+          while IFS= read -r hostname; do
+            curl --fail-with-body -sS -X POST --get \
+              'https://api.bunny.net/purge' \
+              --data-urlencode "url=https://$hostname/" \
+              --data-urlencode 'async=false' \
+              --data-urlencode 'exactPath=false' \
+              -H "AccessKey: $BUNNY_API_KEY"
+          done
 
       - name: Purge localized social previews
         env:

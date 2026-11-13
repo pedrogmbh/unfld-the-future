@@ -230,7 +230,6 @@ export const govtech = {
       D15: "FGTS regularity",
       D09: "Labor debts",
       D19: "Municipal registry (CCM)",
-      D24: "2025 financial statements",
       D10: "Bankruptcy and judicial recovery",
       D07: "Federal sanctions registries",
       D41: "Minas Gerais debarment registry",

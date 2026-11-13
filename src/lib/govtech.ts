@@ -181,15 +181,6 @@ export const HAB_DOCS: readonly HabDoc[] = [
     expires: "2027-02-05",
   },
   {
-    id: "D24",
-    category: "economic",
-    official: "Demonstrações Contábeis · ECD 2025",
-    issuer: "SPED · SERPRO",
-    path: "04_Juridico_e_Contabil/D24_Demonstracoes_Contabeis_ECD_2025.pdf",
-    issued: "2026-11-03",
-    expires: null,
-  },
-  {
     id: "D10",
     category: "economic",
     official: "Certidão de Falência e Recuperação Judicial",

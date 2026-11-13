@@ -1,0 +1,53 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "header",
+          "key": "cdn-host",
+          "value": {
+            "inc": [
+              "unfld.com.br",
+              "unfolding.cx",
+              "www.unfolding.cx",
+              "www.unfolding.com.br",
+              "unfolding.com.br",
+              "unfld.dev",
+              "www.unfld.dev",
+              "unfld.cx",
+              "unfld.b-cdn.net"
+            ]
+          }
+        }
+      ],
+      "destination": "https://www.unfld.com.br/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": {
+            "inc": [
+              "unfld.com.br",
+              "unfolding.cx",
+              "www.unfolding.cx",
+              "www.unfolding.com.br",
+              "unfolding.com.br",
+              "unfld.dev",
+              "www.unfld.dev",
+              "unfld.cx",
+              "unfld.b-cdn.net"
+            ]
+          }
+        }
+      ],
+      "missing": [{ "type": "header", "key": "cdn-host" }],
+      "destination": "https://www.unfld.com.br/:path*",
+      "statusCode": 301
+    }
+  ]
+}

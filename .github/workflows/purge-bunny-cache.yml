@@ -16,6 +16,25 @@ jobs:
     steps:
       - name: Wait for Vercel to finish deploying
         run: sleep 20
+      - name: Separate CDN cache by hostname
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNYCDN_API_KEY }}
+          BUNNY_ZONE_ID: ${{ vars.BUNNY_PULL_ZONE_ID }}
+        run: |
+          set -euo pipefail
+          zone_url="https://api.bunny.net/pullzone/$BUNNY_ZONE_ID"
+          # CDN-Host redirects must not share cached responses with the canonical host.
+          curl --fail-with-body -sS "$zone_url" \
+            -H "AccessKey: $BUNNY_API_KEY" -o zone.json
+          if ! jq -e '.EnableHostnameVary == true' zone.json > /dev/null; then
+            curl --fail-with-body -sS -X POST "$zone_url" \
+              -H "AccessKey: $BUNNY_API_KEY" \
+              -H 'Content-Type: application/json' \
+              --data '{"EnableHostnameVary":true}' -o /dev/null
+          fi
+          curl --fail-with-body -sS "$zone_url" \
+            -H "AccessKey: $BUNNY_API_KEY" -o zone.json
+          jq -e '.EnableHostnameVary == true' zone.json
       - name: Purge cache
         id: purge
         run: |

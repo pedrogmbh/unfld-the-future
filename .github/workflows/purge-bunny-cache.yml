@@ -42,11 +42,9 @@ jobs:
           # Match only the aliases declared in vercel.json; preserve all other rules.
           rule_name='UNFLD redirect aliases bypass Optimizer'
           jq --arg description "$rule_name" \
-            --arg guid "$(cat /proc/sys/kernel/random/uuid)" \
             --slurpfile config vercel.json '
             (.EdgeRules // [] | map(select(.Description == $description)) | first) as $existing |
             {
-              Guid: ($existing.Guid // $guid),
               ActionType: 12,
               ActionParameter1: "",
               ActionParameter2: "",
@@ -61,11 +59,15 @@ jobs:
               Description: $description,
               Enabled: true,
               OrderIndex: ($existing.OrderIndex // 0)
-            }' zone.json > alias-optimizer-rule.json
-          curl --fail-with-body -sS -X POST "$zone_url/edgerules/addOrUpdate" \
+            } + (if $existing.Guid then {Guid: $existing.Guid} else {} end)
+            ' zone.json > alias-optimizer-rule.json
+          if ! curl --fail-with-body -sS -X POST "$zone_url/edgerules/addOrUpdate" \
             -H "AccessKey: $BUNNY_API_KEY" \
             -H 'Content-Type: application/json' \
-            --data-binary @alias-optimizer-rule.json -o /dev/null
+            --data-binary @alias-optimizer-rule.json -o alias-rule-response.json; then
+            jq '{Message, ErrorKey, Errors}' alias-rule-response.json
+            exit 1
+          fi
           curl --fail-with-body -sS "$zone_url" \
             -H "AccessKey: $BUNNY_API_KEY" -o zone.json
           jq -e --arg description "$rule_name" \

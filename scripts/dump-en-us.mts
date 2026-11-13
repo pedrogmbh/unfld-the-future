@@ -4,7 +4,6 @@ import { compliance } from "../src/locales/en-US/compliance-items.ts";
 import { complianceMeta } from "../src/locales/en-US/compliance-meta.ts";
 import { legal } from "../src/locales/en-US/legal.ts";
 import { pages } from "../src/locales/en-US/pages.ts";
-import { plans } from "../src/locales/en-US/plans.ts";
 import { products } from "../src/locales/en-US/products.ts";
 import { solutions } from "../src/locales/en-US/solutions.ts";
 import { work } from "../src/locales/en-US/work.ts";
@@ -16,7 +15,6 @@ const enUS = {
   products,
   work,
   solutions,
-  plans,
   legal,
   compliance,
   complianceMeta,

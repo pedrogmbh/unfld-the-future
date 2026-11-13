@@ -42,11 +42,8 @@
       "blog": "Blog",
       "security": "Segurança",
       "compliance": "Conformidade",
-      "saoPaulo": "São Paulo",
-      "infrastructure": "Infraestrutura",
       "enterprise": "Empresarial",
-      "contact": "Contato",
-      "pricing": "Preços"
+      "contact": "Contato"
     },
     "footer": {
       "products": "Produtos",
@@ -123,8 +120,7 @@
       "opened": "aberta em {{date}}",
       "apply": "Candidatar-se",
       "applicationNoted": "Candidatura registrada",
-      "all": "Todos",
-      "directions": "Como chegar"
+      "all": "Todos"
     },
     "facts": {
       "tradingName": "Nome fantasia",
@@ -234,8 +230,6 @@
       "whoBody": "Operamos como UNFLD. A empresa é a UNFOLDING THE FUTURE LTDA — uma sociedade empresária limitada brasileira em Jardim Paulistano, São Paulo, ativa desde {{founded}}. Construímos e operamos produtos em nosso próprio nome e construímos sistemas sob medida ao lado de organizações com operações de consequência.",
       "tileProducts": "Produtos da UNFLD",
       "tileProductsBody": "Dialogus, Oluart, Unifikar.",
-      "tileSp": "São Paulo",
-      "tileSpBody": "Jardim Paulistano. Sede registrada.",
       "tileWork": "Trabalhos selecionados",
       "tileWorkBody": "Netflix, Embraer, SporTV e mais.",
       "tileCareers": "Carreiras",
@@ -279,17 +273,6 @@
       "registered": "Entidade registrada",
       "headquarters": "Sede",
       "security": "Segurança"
-    },
-    "pricing": {
-      "metaTitle": "Preços e disponibilidade",
-      "metaDescription": "Um próximo passo claro para cada produto. Disponibilidade atual, modelo de preço e próximos passos nos produtos da UNFLD.",
-      "kicker": "Preços e disponibilidade",
-      "title": "Um próximo passo claro",
-      "titleSecond": "para cada produto.",
-      "lede": "Escolha um produto abaixo para ver a disponibilidade atual, o modelo de preço e o próximo passo. Sistemas sob medida e configurações empresariais começam com uma conversa de escopo.",
-      "customKicker": "Sistemas sob medida e empresariais",
-      "customTitle": "Defina o escopo de um sistema sob medida.",
-      "customLede": "Contratos sob medida, infraestrutura dedicada, SSO, conformidade e preços por volume. Ou fale conosco diretamente em"
     },
     "buildWithUs": {
       "metaTitle": "Construa com a UNFLD — Software sob medida",
@@ -489,39 +472,6 @@
       "lede": "Na contratação, nos pequenos negócios, na saúde no trabalho, no desenho, no varejo automotivo e nos sistemas sob medida, transformamos trabalho complexo em tecnologia que as pessoas de fato usam.",
       "detailTitle": "Soluções de {{name}}",
       "audience": "Público-alvo e partes interessadas"
-    },
-    "saoPaulo": {
-      "metaTitle": "São Paulo",
-      "metaDescription": "A UNFLD em São Paulo. Sede registrada da UNFOLDING THE FUTURE LTDA na Avenida Brigadeiro Faria Lima, no Jardim Paulistano.",
-      "kicker": "Sede",
-      "title": "A UNFLD em",
-      "titleSecond": "São Paulo.",
-      "lede": "A sede registrada da UNFOLDING THE FUTURE LTDA na Avenida Brigadeiro Faria Lima, no Jardim Paulistano.",
-      "imageAlt": "Localização da UNFLD em São Paulo",
-      "officeTitle": "Sede registrada",
-      "officeLede": "Nosso endereço cadastral em São Paulo, no bairro Jardim Paulistano."
-    },
-    "infrastructure": {
-      "metaTitle": "Infraestrutura",
-      "metaDescription": "Infraestrutura escolhida para o sistema — não para o slide. Hospedagem desenhada em torno de usuários, dados, disponibilidade e controles contratuais.",
-      "kicker": "Infraestrutura",
-      "title": "Infraestrutura escolhida para o sistema",
-      "titleSecond": "— não para o slide.",
-      "lede": "A UNFLD desenha a hospedagem em torno dos usuários do produto, dos dados, das necessidades de disponibilidade, das integrações e dos controles contratuais. A arquitetura varia por produto e por escopo de cliente.",
-      "imageAlt": "Visão geral da infraestrutura",
-      "archKicker": "Arquitetura operacional",
-      "archTitle": "Padrões verificáveis de infraestrutura",
-      "deployKicker": "Implantação sob medida",
-      "deployTitle": "Arquitetada para responsabilização.",
-      "deployLede": "Em produtos como o Dialogus e em sistemas empresariais sob medida, as escolhas de infraestrutura equilibram isolamento operacional, desempenho observável e requisitos contratuais.",
-      "p1Title": "Regiões de hospedagem",
-      "p1Body": "As regiões de hospedagem e os locais de dados variam por produto e por contrato. A implantação em região brasileira está disponível quando a arquitetura e o acordo a exigem.",
-      "p2Title": "Objetivos de recuperação",
-      "p2Body": "Backups automatizados de banco de dados, configurações de recuperação pontual e objetivos de recuperação documentados, adequados à criticidade do produto.",
-      "p3Title": "Cobertura de monitoramento",
-      "p3Body": "A cobertura de monitoramento é documentada por produto, inclusive as verificações de saúde, os logs, os alertas, a titularidade e os caminhos de escalonamento atualmente configurados.",
-      "p4Title": "Modelo de retenção de dados",
-      "p4Body": "Janelas de retenção, fluxos de exclusão e camadas de armazenamento desenhados de acordo com as obrigações da LGPD e com os acordos com o cliente."
     },
     "access": {
       "metaTitle": "Acessar produtos da UNFLD",
@@ -1034,56 +984,6 @@
         "Marketplace nacional de seminovos de lojas parceiras e de particulares",
         "Vitrines whitelabel com domínio próprio e identidade da marca",
         "Estoque compartilhado, preço mínimo confidencial e uma caixa de leads unificada"
-      ]
-    }
-  },
-  "plans": {
-    "Dialogus": {
-      "price": "Planos",
-      "period": "",
-      "blurb": "Gestão de riscos psicossociais feita para a NR-1. Planos Essencial, Avançar e Integral.",
-      "cta": "Abrir Dialogus",
-      "features": [
-        "Escuta estruturada com a Lis",
-        "Métodos de avaliação validados",
-        "Painéis executivos e planos de ação",
-        "Documentação contínua da NR-1"
-      ]
-    },
-    "Oluart": {
-      "price": "Grátis",
-      "period": " · R$29,90 / mês",
-      "blurb": "Desenhe no papel com realidade aumentada. Grátis para começar, Premium a R$29,90 por mês, vitalício a R$199.",
-      "cta": "Abrir Oluart",
-      "features": [
-        "Projeção AR no papel",
-        "Plano gratuito com as ferramentas AR completas",
-        "Premium R$29,90 / mês ou vitalício R$199",
-        "App Store e Google Play"
-      ]
-    },
-    "Unifikar": {
-      "price": "Planos",
-      "period": "",
-      "blurb": "Um marketplace e uma rede comercial de seminovos. Essencial, Profissional e Rede para lojas.",
-      "cta": "Abrir Unifikar",
-      "features": [
-        "Marketplace central de seminovos",
-        "Vitrines whitelabel",
-        "Estoque compartilhado e caixa de leads",
-        "Essencial · Profissional · Rede"
-      ]
-    },
-    "Custom": {
-      "price": "Fale com a UNFLD",
-      "period": "",
-      "blurb": "Sistemas sob medida construídos ao lado da sua equipe. Escopo definido em conversa.",
-      "cta": "Fale com a UNFLD",
-      "features": [
-        "Sistemas de software sob medida",
-        "Implantações privadas",
-        "Configurações empresariais",
-        "Escopo e entrega dedicados"
       ]
     }
   },

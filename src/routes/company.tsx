@@ -135,12 +135,6 @@ function Company() {
               d: p.tileProductsBody,
             },
             {
-              href: "/sao-paulo",
-              img: "/images/hq.jpg",
-              t: p.tileSp,
-              d: p.tileSpBody,
-            },
-            {
               href: "/work",
               img: "/images/work/plastic-hero.png",
               t: p.tileWork,
@@ -308,15 +302,17 @@ function Company() {
         </p>
         <div className="mt-10 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
           {officeList.map((o) => (
-            <Link
+            <a
               key={o.city}
-              to={o.href as never}
+              href={o.mapHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-bg p-6 transition-colors hover:bg-bg-elevated lg:col-span-2"
             >
               <p className="font-display text-xl font-medium">{o.city}</p>
               <p className="mt-1 text-sm text-muted">{o.role}</p>
               <p className="mt-2 text-sm text-muted">{o.detail}</p>
-            </Link>
+            </a>
           ))}
         </div>
       </Section>

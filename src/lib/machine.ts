@@ -175,20 +175,8 @@ export function machinePages(): MachinePage[] {
       "Company",
       { changefreq: "monthly", priority: 0.7 },
     ),
-    page(
-      "/sao-paulo",
-      "São Paulo",
-      `Registered headquarters — ${formatAddress()}.`,
-      "Company",
-      { changefreq: "yearly", priority: 0.4 },
-    ),
-    page(
-      "/infrastructure",
-      "Infrastructure",
-      "Infrastructure chosen for the system—not for the slide. Hosting designed around users, data, availability, and contractual controls.",
-      "Build with us",
-      { changefreq: "yearly", priority: 0.5 },
-    ),
+
+
     page(
       "/enterprise",
       "Enterprise",
@@ -196,13 +184,7 @@ export function machinePages(): MachinePage[] {
       "Build with us",
       { changefreq: "yearly", priority: 0.6 },
     ),
-    page(
-      "/pricing",
-      "Pricing & availability",
-      "A clear next step for every product: current availability, pricing model, and next steps.",
-      "Company",
-      { changefreq: "monthly", priority: 0.6 },
-    ),
+
     page(
       "/contact",
       "Contact",

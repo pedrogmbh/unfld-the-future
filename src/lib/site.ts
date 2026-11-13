@@ -53,7 +53,6 @@ export const headerNav: NavLink[] = [
   { label: "Build with us", to: "/build-with-us" },
   { label: "Company", to: "/company" },
   { label: "Blog", to: "/blog" },
-  { label: "Pricing", to: "/pricing" },
 ];
 
 export type OwnedProduct = {
@@ -253,15 +252,24 @@ export const customers: readonly Customer[] = [
   { name: "IOHK", note: "Partner project · Input Output Group" },
 ];
 
+export const externalProducts = [
+  { label: "MedAgro", to: "https://www.medagro.com.br", external: true },
+  { label: "TaxiMed", to: "https://www.taximed.com.br", external: true },
+  { label: "SinistroMed", to: "https://www.sinistromed.com.br", external: true },
+  { label: "Lux Health", to: "https://www.luxhealth.com.br", external: true },
+] as const;
+
 export const footer = {
   products: [
     { label: "All products", to: "/products" },
     { label: "Dialogus", to: "/dialogus" },
     { label: "Oluart", to: "/oluart" },
     { label: "Unifikar", to: "/unifikar" },
+    ...externalProducts,
     { label: "Access", to: "/access" },
   ],
   buildWithUs: [
+    { label: "Careers", to: "/careers" },
     { label: "Custom software", to: "/build-with-us" },
     { label: "How we work", to: "/how-we-work" },
     { label: "Enterprise", to: "/enterprise" },
@@ -284,14 +292,10 @@ export const footer = {
   company: [
     { label: "About", to: "/company" },
     { label: "Selected work", to: "/work" },
-    { label: "Careers", to: "/careers" },
     { label: "Blog", to: "/blog" },
     { label: "Security", to: "/security" },
     { label: "Compliance", to: "/compliance" },
-    { label: "São Paulo", to: "/sao-paulo" },
-    { label: "Infrastructure", to: "/infrastructure" },
     { label: "Enterprise", to: "/enterprise" },
-    { label: "Pricing", to: "/pricing" },
     { label: "Contact", to: "/contact" },
   ],
   legal: [
@@ -337,7 +341,6 @@ export const offices = [
   {
     city: "São Paulo",
     region: "Brazil",
-    href: "/sao-paulo",
     role: "Headquarters",
     detail: `${SITE.address.line1}, ${SITE.address.line2} · ${SITE.address.district}`,
     mapHref: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formatAddress())}`,
@@ -559,69 +562,6 @@ export const solutions = [
       "Product-specific controls",
       "Data isolation options",
       "Clear subprocessor boundaries",
-    ],
-  },
-] as const;
-
-export const plans = [
-  {
-    name: "Dialogus",
-    price: "Plans",
-    period: "",
-    blurb: "Psychosocial risk management built for NR-1. Essencial, Avançar, and Integral plans.",
-    cta: "Open Dialogus",
-    href: "https://www.dialoguspsicossocial.com.br",
-    external: true,
-    features: [
-      "Structured listening with Lis",
-      "Validated assessment methods",
-      "Executive dashboards and action plans",
-      "Continuous NR-1 documentation",
-    ],
-  },
-  {
-    name: "Oluart",
-    price: "Free",
-    period: " · R$29.90 / month",
-    blurb: "Draw on paper with augmented reality. Free to start, Premium at R$29.90 a month, lifetime at R$199.",
-    cta: "Open Oluart",
-    href: "https://www.oluart.com",
-    external: true,
-    features: [
-      "AR projection on paper",
-      "Free tier with full AR tools",
-      "Premium R$29.90 / month or lifetime R$199",
-      "App Store and Google Play",
-    ],
-  },
-  {
-    name: "Unifikar",
-    price: "Plans",
-    period: "",
-    blurb: "A marketplace and commercial network for used vehicles. Essencial, Profissional, and Rede for stores.",
-    cta: "Open Unifikar",
-    href: "https://www.unifikar.com",
-    external: true,
-    features: [
-      "Central used-vehicle marketplace",
-      "Whitelabel storefronts",
-      "Shared inventory and lead inbox",
-      "Essencial · Profissional · Rede",
-    ],
-  },
-  {
-    name: "Custom",
-    price: "Talk to UNFLD",
-    period: "",
-    blurb: "Custom systems built beside your team. Scoped by conversation.",
-    cta: "Talk to UNFLD",
-    href: "/contact",
-    external: false,
-    features: [
-      "Custom software systems",
-      "Private deployments",
-      "Enterprise configurations",
-      "Dedicated scoping & delivery",
     ],
   },
 ] as const;

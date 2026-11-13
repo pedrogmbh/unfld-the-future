@@ -95,8 +95,6 @@ export const pages = {
       "We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a Brazilian limited company (sociedade empresária limitada) in Jardim Paulistano, São Paulo, active since {{founded}}. We build and operate products under our own name and build custom systems beside organizations with consequential operations.",
     tileProducts: "Products by UNFLD",
     tileProductsBody: "Dialogus, Oluart, Unifikar.",
-    tileSp: "São Paulo",
-    tileSpBody: "Jardim Paulistano. Registered office.",
     tileWork: "Selected work",
     tileWorkBody: "Netflix, Embraer, SporTV, and more.",
     tileCareers: "Careers",
@@ -144,19 +142,6 @@ export const pages = {
     registered: "Registered entity",
     headquarters: "Headquarters",
     security: "Security",
-  },
-  pricing: {
-    metaTitle: "Pricing & availability",
-    metaDescription:
-      "A clear next step for every product. Current availability, pricing model, and next steps across UNFLD products.",
-    kicker: "Pricing & availability",
-    title: "A clear next step",
-    titleSecond: "for every product.",
-    lede: "Choose a product below to see its current availability, pricing model, and next step. Custom systems and enterprise configurations begin with a scoped conversation.",
-    customKicker: "Custom systems & enterprise",
-    customTitle: "Scope a custom system.",
-    customLede:
-      "Custom contracts, dedicated infrastructure, SSO, compliance, and volume pricing. Or reach us directly at",
   },
   buildWithUs: {
     metaTitle: "Build with UNFLD — Custom software",
@@ -410,47 +395,6 @@ export const pages = {
     lede: "Across hiring, small business, workplace health, drawing, vehicle retail, and custom systems, we turn complex work into technology people can actually use.",
     detailTitle: "{{name}} Solutions",
     audience: "Target audience & stakeholders",
-  },
-  saoPaulo: {
-    metaTitle: "São Paulo",
-    metaDescription:
-      "UNFLD in São Paulo. Registered headquarters of UNFOLDING THE FUTURE LTDA on Avenida Brigadeiro Faria Lima, in Jardim Paulistano.",
-    kicker: "Headquarters",
-    title: "UNFLD in",
-    titleSecond: "São Paulo.",
-    lede: "The registered headquarters of UNFOLDING THE FUTURE LTDA on Avenida Brigadeiro Faria Lima, in Jardim Paulistano.",
-    imageAlt: "UNFLD São Paulo location",
-    officeTitle: "Registered headquarters",
-    officeLede:
-      "Our registered address in São Paulo, in the Jardim Paulistano district.",
-  },
-  infrastructure: {
-    metaTitle: "Infrastructure",
-    metaDescription:
-      "Infrastructure chosen for the system—not for the slide. Hosting designed around users, data, availability, and contractual controls.",
-    kicker: "Infrastructure",
-    title: "Infrastructure chosen for the system",
-    titleSecond: "—not for the slide.",
-    lede: "UNFLD designs hosting around the product’s users, data, availability needs, integrations, and contractual controls. Architecture varies by product and client scope.",
-    imageAlt: "Infrastructure overview",
-    archKicker: "Operational architecture",
-    archTitle: "Verifiable infrastructure standards",
-    deployKicker: "Tailored deployment",
-    deployTitle: "Architected for accountability.",
-    deployLede:
-      "For products like Dialogus and enterprise custom systems, infrastructure choices balance operational isolation, observable performance, and contractual requirements.",
-    p1Title: "Hosting regions",
-    p1Body:
-      "Hosting regions and data locations vary by product and contract. Brazilian-region deployment is available where the architecture and agreement require it.",
-    p2Title: "Recovery objectives",
-    p2Body:
-      "Automated database backups, point-in-time recovery configurations, and documented recovery objectives tailored to product criticality.",
-    p3Title: "Monitoring coverage",
-    p3Body:
-      "Monitoring coverage is documented per product, including the health checks, logs, alerts, ownership, and escalation paths currently configured.",
-    p4Title: "Data-retention model",
-    p4Body:
-      "Retention windows, deletion workflows, and storage tiers designed in accordance with LGPD obligations and customer agreements.",
   },
   access: {
     metaTitle: "Access UNFLD products",

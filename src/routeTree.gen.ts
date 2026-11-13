@@ -21,14 +21,11 @@ import { Route as DialogusRouteImport } from './routes/dialogus'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
-import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as OluartRouteImport } from './routes/oluart'
-import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
-import { Route as SaoPauloRouteImport } from './routes/sao-paulo'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StatusRouteImport } from './routes/status'
@@ -110,11 +107,6 @@ const HowWeWorkRoute = HowWeWorkRouteImport.update({
   path: '/how-we-work',
   getParentRoute: () => rootRouteImport,
 } as any)
-const InfrastructureRoute = InfrastructureRouteImport.update({
-  id: '/infrastructure',
-  path: '/infrastructure',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
   path: '/llms.txt',
@@ -123,11 +115,6 @@ const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
 const OluartRoute = OluartRouteImport.update({
   id: '/oluart',
   path: '/oluart',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductsRoute = ProductsRouteImport.update({
@@ -143,11 +130,6 @@ const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
 const RssDotxmlRoute = RssDotxmlRouteImport.update({
   id: '/rss.xml',
   path: '/rss.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SaoPauloRoute = SaoPauloRouteImport.update({
-  id: '/sao-paulo',
-  path: '/sao-paulo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SecurityRoute = SecurityRouteImport.update({
@@ -266,14 +248,11 @@ export interface FileRoutesByFullPath {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/how-we-work': typeof HowWeWorkRoute
-  '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
-  '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/rss.xml': typeof RssDotxmlRoute
-  '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
@@ -308,14 +287,11 @@ export interface FileRoutesByTo {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/how-we-work': typeof HowWeWorkRoute
-  '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
-  '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/rss.xml': typeof RssDotxmlRoute
-  '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
@@ -351,14 +327,11 @@ export interface FileRoutesById {
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
   '/how-we-work': typeof HowWeWorkRoute
-  '/infrastructure': typeof InfrastructureRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
-  '/pricing': typeof PricingRoute
   '/products': typeof ProductsRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/rss.xml': typeof RssDotxmlRoute
-  '/sao-paulo': typeof SaoPauloRoute
   '/security': typeof SecurityRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/status': typeof StatusRoute
@@ -395,14 +368,11 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/how-we-work'
-    | '/infrastructure'
     | '/llms.txt'
     | '/oluart'
-    | '/pricing'
     | '/products'
     | '/robots.txt'
     | '/rss.xml'
-    | '/sao-paulo'
     | '/security'
     | '/sitemap.xml'
     | '/status'
@@ -437,14 +407,11 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/how-we-work'
-    | '/infrastructure'
     | '/llms.txt'
     | '/oluart'
-    | '/pricing'
     | '/products'
     | '/robots.txt'
     | '/rss.xml'
-    | '/sao-paulo'
     | '/security'
     | '/sitemap.xml'
     | '/status'
@@ -479,14 +446,11 @@ export interface FileRouteTypes {
     | '/download'
     | '/enterprise'
     | '/how-we-work'
-    | '/infrastructure'
     | '/llms.txt'
     | '/oluart'
-    | '/pricing'
     | '/products'
     | '/robots.txt'
     | '/rss.xml'
-    | '/sao-paulo'
     | '/security'
     | '/sitemap.xml'
     | '/status'
@@ -522,14 +486,11 @@ export interface RootRouteChildren {
   DownloadRoute: typeof DownloadRoute
   EnterpriseRoute: typeof EnterpriseRoute
   HowWeWorkRoute: typeof HowWeWorkRoute
-  InfrastructureRoute: typeof InfrastructureRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OluartRoute: typeof OluartRoute
-  PricingRoute: typeof PricingRoute
   ProductsRoute: typeof ProductsRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   RssDotxmlRoute: typeof RssDotxmlRoute
-  SaoPauloRoute: typeof SaoPauloRoute
   SecurityRoute: typeof SecurityRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StatusRoute: typeof StatusRoute
@@ -638,13 +599,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowWeWorkRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/infrastructure': {
-      id: '/infrastructure'
-      path: '/infrastructure'
-      fullPath: '/infrastructure'
-      preLoaderRoute: typeof InfrastructureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/llms.txt': {
       id: '/llms.txt'
       path: '/llms.txt'
@@ -657,13 +611,6 @@ declare module '@tanstack/react-router' {
       path: '/oluart'
       fullPath: '/oluart'
       preLoaderRoute: typeof OluartRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/products': {
@@ -685,13 +632,6 @@ declare module '@tanstack/react-router' {
       path: '/rss.xml'
       fullPath: '/rss.xml'
       preLoaderRoute: typeof RssDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sao-paulo': {
-      id: '/sao-paulo'
-      path: '/sao-paulo'
-      fullPath: '/sao-paulo'
-      preLoaderRoute: typeof SaoPauloRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/security': {
@@ -850,14 +790,11 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadRoute: DownloadRoute,
   EnterpriseRoute: EnterpriseRoute,
   HowWeWorkRoute: HowWeWorkRoute,
-  InfrastructureRoute: InfrastructureRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   OluartRoute: OluartRoute,
-  PricingRoute: PricingRoute,
   ProductsRoute: ProductsRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   RssDotxmlRoute: RssDotxmlRoute,
-  SaoPauloRoute: SaoPauloRoute,
   SecurityRoute: SecurityRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StatusRoute: StatusRoute,

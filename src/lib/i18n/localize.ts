@@ -12,11 +12,11 @@ import {
 } from "@/lib/compliance";
 import {
   customers,
+  externalProducts,
   homePrompts,
   interview,
   offices,
   ownedProducts,
-  plans,
   selectedWork,
   solutions,
   stats,
@@ -129,21 +129,6 @@ export function localizeSolutions(locale: Locale) {
   });
 }
 
-export function localizePlans(locale: Locale) {
-  const copy = getMessages(locale).plans;
-  return plans.map((plan) => {
-    const t = copy[plan.name as keyof typeof copy];
-    return {
-      ...plan,
-      price: t.price,
-      period: t.period,
-      blurb: t.blurb,
-      cta: t.cta,
-      features: [...t.features],
-    };
-  });
-}
-
 export function localizeValues(locale: Locale) {
   return values.map((value, index) => ({
     ...value,
@@ -228,6 +213,7 @@ export function localizeFooter(locale: Locale) {
         label: product.shortName,
         to: product.href,
       })),
+      ...externalProducts,
       { label: labels.access, to: "/access" },
     ],
     access: ownedProducts.map((product) => ({
@@ -235,6 +221,7 @@ export function localizeFooter(locale: Locale) {
       to: product.href,
     })),
     buildWithUs: [
+      { label: getMessages(locale).chrome.nav.careers, to: "/careers" },
       { label: labels.customSoftware, to: "/build-with-us" },
       { label: labels.howWeWork, to: "/how-we-work" },
       { label: getMessages(locale).chrome.nav.enterprise, to: "/enterprise" },
@@ -252,14 +239,10 @@ export function localizeFooter(locale: Locale) {
     company: [
       { label: getMessages(locale).chrome.nav.about, to: "/company" },
       { label: getMessages(locale).chrome.nav.selectedWork, to: "/work" },
-      { label: getMessages(locale).chrome.nav.careers, to: "/careers" },
       { label: getMessages(locale).chrome.nav.blog, to: "/blog" },
       { label: getMessages(locale).chrome.nav.security, to: "/security" },
       { label: getMessages(locale).chrome.nav.compliance, to: "/compliance" },
-      { label: getMessages(locale).chrome.nav.saoPaulo, to: "/sao-paulo" },
-      { label: getMessages(locale).chrome.nav.infrastructure, to: "/infrastructure" },
       { label: getMessages(locale).chrome.nav.enterprise, to: "/enterprise" },
-      { label: getMessages(locale).chrome.nav.pricing, to: "/pricing" },
       { label: getMessages(locale).chrome.nav.contact, to: "/contact" },
     ],
     legal: [

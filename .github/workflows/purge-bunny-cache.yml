@@ -19,7 +19,7 @@ jobs:
           persist-credentials: false
       - name: Wait for Vercel to finish deploying
         run: sleep 20
-      - name: Separate CDN cache by hostname
+      - name: Configure CDN handling for canonical redirects
         env:
           BUNNY_API_KEY: ${{ secrets.BUNNYCDN_API_KEY }}
           BUNNY_ZONE_ID: ${{ vars.BUNNY_PULL_ZONE_ID }}
@@ -38,6 +38,38 @@ jobs:
           curl --fail-with-body -sS "$zone_url" \
             -H "AccessKey: $BUNNY_API_KEY" -o zone.json
           jq -e '.EnableHostnameVary == true' zone.json
+          # Optimizer prerender must not turn an origin 301 into a rendered 200.
+          # Match only the aliases declared in vercel.json; preserve all other rules.
+          rule_name='UNFLD redirect aliases bypass Optimizer'
+          jq --arg description "$rule_name" \
+            --arg guid "$(cat /proc/sys/kernel/random/uuid)" \
+            --slurpfile config vercel.json '
+            (.EdgeRules // [] | map(select(.Description == $description)) | first) as $existing |
+            {
+              Guid: ($existing.Guid // $guid),
+              ActionType: 12,
+              ActionParameter1: "",
+              ActionParameter2: "",
+              Triggers: [{
+                Type: 0,
+                PatternMatchingType: 0,
+                PatternMatches: ([$config[0].redirects[].has[] |
+                  select(.type == "header" and .key == "cdn-host") |
+                  .value.inc[]] | unique | map("*://" + . + "/*"))
+              }],
+              TriggerMatchingType: 0,
+              Description: $description,
+              Enabled: true,
+              OrderIndex: ($existing.OrderIndex // 0)
+            }' zone.json > alias-optimizer-rule.json
+          curl --fail-with-body -sS -X POST "$zone_url/edgerules/addOrUpdate" \
+            -H "AccessKey: $BUNNY_API_KEY" \
+            -H 'Content-Type: application/json' \
+            --data-binary @alias-optimizer-rule.json -o /dev/null
+          curl --fail-with-body -sS "$zone_url" \
+            -H "AccessKey: $BUNNY_API_KEY" -o zone.json
+          jq -e --arg description "$rule_name" \
+            'any(.EdgeRules[]; .Description == $description and .ActionType == 12 and .Enabled == true)' zone.json
       - name: Purge cache
         id: purge
         run: |
@@ -45,7 +77,7 @@ jobs:
             "https://api.bunny.net/pullzone/${{ vars.BUNNY_PULL_ZONE_ID }}/purgeCache" \
             -H "AccessKey: ${{ secrets.BUNNYCDN_API_KEY }}"
 
-      - name: Purge alternate hostname snapshots
+      - name: Purge alternate hostname cache
         env:
           BUNNY_API_KEY: ${{ secrets.BUNNYCDN_API_KEY }}
         run: |

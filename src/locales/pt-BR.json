@@ -43,7 +43,8 @@
       "security": "Segurança",
       "compliance": "Conformidade",
       "enterprise": "Empresarial",
-      "contact": "Contato"
+      "contact": "Contato",
+      "govtech": "GovTech"
     },
     "footer": {
       "products": "Produtos",
@@ -2088,5 +2089,387 @@
         "a": "A Unifikar é um marketplace de seminovos e uma rede comercial: uma vitrine com a marca de cada loja, estoque compartilhado com preço mínimo confidencial e uma só caixa para leads do marketplace e da vitrine."
       }
     ]
+  },
+  "govtech": {
+    "metaTitle": "GovTech",
+    "metaDescription": "A UNFLD projeta, desenvolve e opera sistemas digitais para órgãos federais, estaduais e municipais. Cadastros de fornecedor, certidões e registros societários estão públicos em docs.unfld.com.br.",
+    "hero": {
+      "kicker": "GovTech · Setor público brasileiro",
+      "title": "Serviço público,",
+      "titleSecond": "desdobrado.",
+      "lede": "Projetamos, desenvolvemos e operamos sistemas digitais para órgãos federais, estaduais e municipais. Cadastrados como fornecedor, com a documentação de habilitação aberta e responsáveis muito depois da implantação.",
+      "primary": "Falar com Vendas",
+      "secondary": "Ver documentação",
+      "mapLabel": "Brasil por unidade federativa. Selecione um estado para ver nossa situação nele.",
+      "legendHq": "Sede",
+      "legendRegistered": "Cadastro de fornecedor",
+      "legendProgress": "Cadastro em análise",
+      "legendRemote": "Atendimento remoto",
+      "remoteDetail": "Atendimento remoto, com visitas presenciais quando o contrato exigir.",
+      "portalsLink": "Portais de compras em {{uf}}"
+    },
+    "stats": {
+      "documents": "documentos na nossa central pública de habilitação",
+      "registrations": "cadastros de fornecedor em sistemas federais e estaduais",
+      "ufs": "unidades federativas atendidas com entrega remota",
+      "spheres": "esferas de governo: federal, estadual e municipal"
+    },
+    "spheres": {
+      "kicker": "Para quem trabalhamos",
+      "title": "Todas as esferas da federação.",
+      "lede": "O serviço público no Brasil funciona em três níveis ao mesmo tempo. Cada um compra de um jeito, trabalha com equipes diferentes e merece software do tamanho da sua realidade.",
+      "federalCount": "União",
+      "stateCount": "estados e o Distrito Federal",
+      "municipalCount": "municípios",
+      "federalName": "Federal",
+      "federalBody": "Ministérios, autarquias, fundações, agências reguladoras e empresas estatais. Cadastrada no SICAF e no cadastro de fornecedores da Petrobras.",
+      "stateName": "Estadual",
+      "stateBody": "Secretarias, redes de saúde e educação, segurança pública e empresas estaduais. Cadastros de fornecedor em Minas Gerais e Santa Catarina, com o Paraná em análise.",
+      "municipalName": "Municipal",
+      "municipalBody": "Prefeituras, câmaras municipais e consórcios públicos. Equipes enxutas que precisam de software que caiba no orçamento, que entendam e que consigam manter funcionando.",
+      "also": "Também atendemos casas legislativas, tribunais de contas, consórcios públicos e sociedades de economia mista."
+    },
+    "capabilities": {
+      "kicker": "O que construímos",
+      "title": "Software para o balcão, o campo e o escritório.",
+      "lede": "A maioria dos sistemas públicos falha nas passagens: entre cidadão e servidor, campo e escritório, um setor e o próximo. Projetamos primeiro para essas passagens.",
+      "items": [
+        {
+          "title": "Serviços ao cidadão",
+          "body": "Serviços digitais com formulários em linguagem simples, acompanhamento de status e login gov.br quando o órgão estiver habilitado."
+        },
+        {
+          "title": "Atendimento conversacional",
+          "body": "Canais no WhatsApp e na web para agendamento, lembretes e triagem, com transferência para atendimento humano e histórico registrado."
+        },
+        {
+          "title": "Gestão de processos",
+          "body": "Protocolo digital, fluxos com prazos, assinatura eletrônica e trilha de auditoria da entrada à decisão."
+        },
+        {
+          "title": "Transparência e dados abertos",
+          "body": "Portais e APIs de dados abertos que apoiam a transparência ativa prevista na Lei de Acesso à Informação."
+        },
+        {
+          "title": "Painéis de gestão",
+          "body": "Indicadores para secretários e prefeitos, construídos sobre dados que o órgão já tem, com definições e regras de atualização claras."
+        },
+        {
+          "title": "Saúde pública",
+          "body": "Telemedicina, agendamento e acompanhamento para atenção primária, saúde ocupacional e programas de saúde pública."
+        },
+        {
+          "title": "Bem-estar das equipes",
+          "body": "Escuta de riscos psicossociais e planos de ação para equipes públicas sob pressão, com evidências documentadas."
+        },
+        {
+          "title": "Modernização de legados",
+          "body": "APIs em torno de sistemas legados, migração de dados cuidadosa e substituição gradual sem interromper o serviço."
+        }
+      ]
+    },
+    "products": {
+      "kicker": "Prontos para implantar",
+      "title": "Produtos já no mercado.",
+      "lede": "Quando um produto pronto resolve, o órgão começa antes e paga menos do que por um desenvolvimento sob medida. Quando não resolve, dizemos isso.",
+      "dialogusContext": "Equipes públicas e empresas estatais",
+      "dialogusBody": "Gestão de riscos psicossociais alinhada à NR-1: escuta confidencial, avaliação estruturada, painéis e planos de ação para equipes de saúde, educação e segurança pública.",
+      "telemedicineContext": "Programas de saúde e servidores",
+      "telemedicineBody": "Telemedicina e benefícios de saúde em uma só plataforma, adaptável a programas que precisam alcançar pessoas longe de uma unidade de saúde.",
+      "oluartContext": "Escolas públicas e programas culturais",
+      "oluartBody": "Prática de desenho com realidade aumentada nos celulares que os alunos já carregam. Sem projetor e sem equipamento extra.",
+      "open": "Conhecer produto"
+    },
+    "principles": {
+      "kicker": "Dinheiro público, padrão público",
+      "title": "Compromissos que colocamos no contrato.",
+      "items": [
+        {
+          "title": "O órgão é dono do que paga",
+          "body": "Código-fonte, dados e documentação entregues conforme o contrato, com transferência de conhecimento para a sua equipe."
+        },
+        {
+          "title": "Dados no Brasil",
+          "body": "Região de hospedagem e residência de dados definidas em contrato, com papéis de controlador e operador da LGPD desde o primeiro dia."
+        },
+        {
+          "title": "Acessível por padrão",
+          "body": "Interfaces construídas segundo a WCAG 2.2 AA e o eMAG, testadas com navegação por teclado e leitores de tela."
+        },
+        {
+          "title": "Toda ação deixa rastro",
+          "body": "Acesso por perfil, logs de auditoria e registros prontos para o controle interno e os tribunais de contas."
+        },
+        {
+          "title": "Sem aprisionamento",
+          "body": "Padrões abertos, APIs documentadas e dados exportáveis. O órgão pode trocar de fornecedor sem perder o sistema."
+        },
+        {
+          "title": "O pagamento acompanha o que funciona",
+          "body": "Entregas pequenas e verificáveis, ligadas a critérios de aceite, para que cada medição reflita algo que funciona."
+        }
+      ]
+    },
+    "paths": {
+      "kicker": "Como nos contratar",
+      "title": "Cinco caminhos legais. Um só padrão de entrega.",
+      "lede": "A Lei 14.133/2021 e a LC 182/2021 oferecem aos órgãos várias formas de contratar tecnologia. Escolha a que se ajusta ao problema; nós adaptamos a proposta a ela.",
+      "fitLabel": "Indicado para",
+      "items": [
+        {
+          "name": "Pregão eletrônico",
+          "law": "Lei 14.133/2021",
+          "body": "A modalidade padrão para serviços comuns com especificações objetivas. Participamos pelo Compras.gov.br e pela plataforma indicada no edital.",
+          "fit": "Escopo definido, entregas mensuráveis, serviços continuados."
+        },
+        {
+          "name": "Dispensa eletrônica",
+          "law": "Lei 14.133/2021, art. 75",
+          "body": "Contratação direta dentro dos limites de valor da lei, ainda competitiva e publicada integralmente no PNCP. Ágil para necessidades pontuais.",
+          "fit": "Pilotos, diagnósticos, auditorias de acessibilidade, módulos menores."
+        },
+        {
+          "name": "CPSI",
+          "law": "LC 182/2021",
+          "body": "O Contrato Público para Solução Inovadora permite testar uma solução por até 12 meses, prorrogáveis uma vez, antes de assinar o contrato de fornecimento.",
+          "fit": "Problemas sem resposta conhecida no mercado, em que testar vem primeiro."
+        },
+        {
+          "name": "Registro de preços",
+          "law": "Lei 14.133/2021, arts. 82 a 86",
+          "body": "A ata de registro de preços permite que um ou vários órgãos contratem sob demanda. Quando a ata permite, outros órgãos podem aderir a ela.",
+          "fit": "Necessidades compartilhadas entre secretarias ou consórcios de municípios."
+        },
+        {
+          "name": "Diálogo competitivo",
+          "law": "Lei 14.133/2021, art. 32",
+          "body": "Para objetos complexos em que a solução ainda não está definida. Os fornecedores desenvolvem alternativas com o órgão antes das propostas finais.",
+          "fit": "Grandes programas de modernização e redesenhos estruturais."
+        }
+      ]
+    },
+    "delivery": {
+      "kicker": "Do edital à operação",
+      "title": "Como um projeto público acontece com a gente.",
+      "lede": "Cada fase produz algo que o gestor do contrato pode verificar. Sem caixas-pretas entre a assinatura e a implantação.",
+      "steps": [
+        {
+          "title": "Pesquisa de mercado",
+          "body": "Respondemos a pesquisas de preços e consultas públicas com cotações itemizadas, comparáveis e com validade informada."
+        },
+        {
+          "title": "Proposta e habilitação",
+          "body": "Proposta alinhada ao termo de referência, com todos os documentos de habilitação já públicos e atualizados."
+        },
+        {
+          "title": "Kickoff e plano de trabalho",
+          "body": "Planejamento conjunto com o gestor do contrato: escopo, marcos, critérios de aceite, riscos e regras de comunicação."
+        },
+        {
+          "title": "Entrega incremental",
+          "body": "Versões a cada poucas semanas, demonstradas ao gestor do contrato e medidas pelos critérios de aceite."
+        },
+        {
+          "title": "Transferência",
+          "body": "Código-fonte, documentação técnica e capacitação para que a sua equipe opere e evolua o sistema."
+        },
+        {
+          "title": "Sustentação e níveis de serviço",
+          "body": "Monitoramento, resposta a incidentes e melhoria contínua dentro dos níveis de serviço definidos em contrato."
+        }
+      ]
+    },
+    "docs": {
+      "kicker": "Documentação pública",
+      "title": "Nossa habilitação é aberta.",
+      "lede": "Certidões, cadastros e registros societários são publicados como os PDFs originais dos emissores. Uma rotina automática verifica as certidões a vencer toda segunda e quinta-feira. Qualquer pessoa pode abri-los, antes ou depois da sessão.",
+      "hub": "Abrir central de documentos",
+      "live": "Ao vivo de docs.unfld.com.br",
+      "snapshot": "Retrato de {{date}}",
+      "issued": "Emitido em",
+      "validUntil": "Válido até",
+      "noExpiry": "Sem validade impressa",
+      "calculated": "calculada",
+      "open": "Abrir PDF",
+      "openAria": "Abrir {{name}} (PDF, nova aba)",
+      "statusValid": "Válida",
+      "statusSoon": "Renova em breve",
+      "statusDue": "Renovação pendente",
+      "verify": "Confirme a autenticidade junto a cada emissor antes de usar. Um documento na nossa central é evidência, não substitui as exigências do seu edital.",
+      "categories": {
+        "legal": "Habilitação jurídica",
+        "fiscal": "Regularidade fiscal, social e trabalhista",
+        "economic": "Qualificação econômico-financeira",
+        "integrity": "Integridade"
+      },
+      "items": {
+        "D16": "Cartão CNPJ e situação cadastral",
+        "D21": "Sócios e administradores",
+        "D12": "Certidão simplificada da Junta Comercial",
+        "D13": "Contrato social consolidado",
+        "D34": "Tributos federais e Dívida Ativa da União",
+        "D08": "Tributos estaduais de São Paulo",
+        "D25": "Tributos estaduais do Paraná",
+        "D35": "Tributos municipais de São Paulo",
+        "D15": "Regularidade do FGTS",
+        "D09": "Débitos trabalhistas",
+        "D19": "Cadastro municipal (CCM)",
+        "D24": "Demonstrações contábeis de 2025",
+        "D10": "Falência e recuperação judicial",
+        "D07": "Cadastros federais de sanções",
+        "D41": "Cadastro de impedidos de Minas Gerais",
+        "D11": "Certidões cível e criminal"
+      }
+    },
+    "record": {
+      "kicker": "Ficha cadastral",
+      "title": "Tudo o que um formulário de cadastro pede.",
+      "lede": "Copie os campos de que precisar. Cada um confere com os documentos de registro acima.",
+      "legalName": "Razão social",
+      "tradingName": "Nome fantasia",
+      "cnpj": "CNPJ",
+      "nire": "NIRE",
+      "ccm": "CCM · São Paulo",
+      "nature": "Natureza jurídica",
+      "size": "Porte",
+      "sizeValue": "ME · microempresa",
+      "primaryCnae": "CNAE principal",
+      "primaryCnaeName": "Consultoria em TI",
+      "secondaryCnae": "CNAEs secundários (seleção)",
+      "hq": "Sede",
+      "signature": "Representação",
+      "signatureValue": "Sócio-administrador único, assina isoladamente",
+      "email": "Licitações e propostas",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "copyAria": "Copiar {{field}}"
+    },
+    "registrations": {
+      "kicker": "Cadastros de fornecedor",
+      "title": "Já estamos onde o comprador público procura.",
+      "lede": "Cadastro não ganha contrato, mas remove o primeiro obstáculo. Estes são os sistemas em que a UNFLD está cadastrada hoje.",
+      "active": "Ativo",
+      "inReview": "Em andamento",
+      "validUntil": "Válido até {{date}}",
+      "open": "Abrir certificado",
+      "items": {
+        "sicaf": {
+          "name": "SICAF",
+          "detail": "Cadastro federal de fornecedores usado pelo Compras.gov.br e pelos órgãos que o adotam."
+        },
+        "petrobras": {
+          "name": "Petrobras",
+          "detail": "Cadastro de fornecedores. Critério técnico aprovado para licenciamento e manutenção de software."
+        },
+        "mg": {
+          "name": "CAGEF · Minas Gerais",
+          "detail": "Cadastro estadual de fornecedor pela Lei 14.133/2021, ativo, sem registros no CAFIMP ou no CADIN."
+        },
+        "sc": {
+          "name": "e-LIC · Santa Catarina",
+          "detail": "Certificado de cadastro de fornecedor no sistema estadual de compras."
+        },
+        "pr": {
+          "name": "GMS · Paraná",
+          "detail": "Cadastro simplificado emitido para linhas de serviços de TIC, aguardando avaliação do estado."
+        },
+        "caixa": {
+          "name": "Licitações CAIXA",
+          "detail": "Adesão de licitante enviada para os certames da CAIXA e dos órgãos conveniados."
+        }
+      },
+      "portalsTitle": "Portais de compras por estado",
+      "portalsLede": "Do catálogo que mantemos na nossa central de documentos. Municípios podem usar outros sistemas: confirme sempre o endereço no edital.",
+      "selectLabel": "Estado",
+      "national": "Nacional",
+      "loading": "Carregando o catálogo de portais…",
+      "error": "Não foi possível carregar o catálogo agora.",
+      "openCatalog": "Abrir o catálogo completo",
+      "sourceNote": "Nomes e descrições dos portais estão em português, como publicados por cada operador.",
+      "visit": "Acessar"
+    },
+    "laws": {
+      "kicker": "Construído dentro da lei",
+      "title": "O marco legal em que trabalhamos.",
+      "lede": "Tecnologia pública é tecnologia regulada. Estas são as normas que orientam como propomos, construímos e operamos.",
+      "items": [
+        {
+          "code": "Lei 14.133/2021",
+          "name": "Lei de Licitações e Contratos",
+          "body": "Modalidades, contratação direta, habilitação, gestão de contratos e pagamento por entrega medida."
+        },
+        {
+          "code": "LC 182/2021",
+          "name": "Marco Legal das Startups",
+          "body": "O CPSI permite ao órgão testar uma solução inovadora antes de contratá-la em escala."
+        },
+        {
+          "code": "LC 123/2006",
+          "name": "Estatuto da Microempresa",
+          "body": "Como microempresa, a UNFLD pode usar cotas exclusivas e reservadas quando o edital as prevê."
+        },
+        {
+          "code": "Lei 13.709/2018",
+          "name": "LGPD",
+          "body": "Papéis de controlador e operador, registro das operações, medidas de segurança e resposta a incidentes definidos em contrato."
+        },
+        {
+          "code": "Lei 14.129/2021",
+          "name": "Lei do Governo Digital",
+          "body": "Serviços digitais, interoperabilidade e dados abertos como forma padrão de atender o cidadão."
+        },
+        {
+          "code": "Lei 12.527/2011",
+          "name": "Lei de Acesso à Informação",
+          "body": "Transparência ativa e dados publicados em formatos abertos e legíveis por máquina."
+        },
+        {
+          "code": "Lei 13.146/2015",
+          "name": "Lei Brasileira de Inclusão",
+          "body": "Acessibilidade digital como obrigação, verificada segundo o eMAG e a WCAG."
+        }
+      ]
+    },
+    "faq": {
+      "kicker": "Perguntas de equipes de compras",
+      "title": "Respostas antes da sessão.",
+      "items": [
+        {
+          "q": "A UNFLD pode participar de licitações exclusivas para microempresas?",
+          "a": "Sim. A UNFLD está cadastrada como microempresa (ME) na Receita Federal e pode usar o tratamento diferenciado da LC 123/2006 quando o edital o prevê."
+        },
+        {
+          "q": "Onde encontramos as certidões atualizadas?",
+          "a": "Em docs.unfld.com.br. Uma rotina automática verifica as certidões a vencer toda segunda e quinta-feira e publica o PDF do emissor. Confirme sempre a autenticidade junto ao emissor."
+        },
+        {
+          "q": "Vocês atendem órgãos fora de São Paulo?",
+          "a": "Sim. A entrega é remota por padrão nas 27 unidades federativas, com visitas presenciais quando o contrato exigir."
+        },
+        {
+          "q": "Vocês respondem a pesquisas de preços?",
+          "a": "Sim. Envie o termo de referência ou a descrição do item para sales@unfld.com.br e devolvemos uma cotação itemizada com validade e condições."
+        },
+        {
+          "q": "De quem é o código-fonte e os dados?",
+          "a": "Do órgão contratante, conforme o contrato. Entregamos código-fonte, documentação e exportação de dados, e capacitamos a sua equipe para operar o sistema."
+        },
+        {
+          "q": "Vocês aceitam prova de conceito ou CPSI?",
+          "a": "Sim. Uma prova de conceito nas regras do edital, ou um contrato de inovação pela LC 182/2021, é uma forma sólida de testar antes de escalar."
+        },
+        {
+          "q": "Quais CNAEs a empresa possui?",
+          "a": "Principal 6204-0/00, consultoria em tecnologia da informação. Entre as secundárias estão 6201-5/02 web design, 6202-3/00 desenvolvimento e licenciamento de programas customizáveis e 6399-2/00 outros serviços de informação."
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Comece uma conversa",
+      "title": "Traga o serviço que precisa funcionar melhor.",
+      "body": "Conte sobre o problema, as pessoas envolvidas e o caminho de contratação que está considerando. Respondemos com um escopo claro, ou com um não honesto.",
+      "primary": "Falar com Vendas",
+      "docs": "Ver documentação"
+    }
   }
 }

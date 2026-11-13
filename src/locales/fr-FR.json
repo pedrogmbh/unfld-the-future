@@ -43,7 +43,8 @@
       "security": "Sécurité",
       "compliance": "Conformité",
       "enterprise": "Entreprise",
-      "contact": "Contact"
+      "contact": "Contact",
+      "govtech": "GovTech"
     },
     "footer": {
       "products": "Produits",
@@ -2088,5 +2089,387 @@
         "a": "Unifikar est une place de marché de véhicules d’occasion et un réseau commercial : une vitrine à la marque de chaque magasin, un stock partagé avec un prix plancher confidentiel, et une seule boîte pour les leads de la place de marché et de la vitrine."
       }
     ]
+  },
+  "govtech": {
+    "metaTitle": "GovTech",
+    "metaDescription": "UNFLD conçoit, développe et exploite des systèmes numériques pour les organismes fédéraux, des États et des municipalités au Brésil. Inscriptions fournisseur, attestations et documents sociaux sont publics sur docs.unfld.com.br.",
+    "hero": {
+      "kicker": "GovTech · Secteur public brésilien",
+      "title": "Le service public,",
+      "titleSecond": "déplié.",
+      "lede": "Nous concevons, développons et exploitons des systèmes numériques pour les organismes fédéraux, des États et des municipalités au Brésil. Inscrits comme fournisseur, avec notre dossier de candidature ouvert, et responsables bien après la mise en service.",
+      "primary": "Contacter l’équipe commerciale",
+      "secondary": "Voir la documentation",
+      "mapLabel": "Le Brésil par unité fédérative. Sélectionnez un État pour voir notre situation sur place.",
+      "legendHq": "Siège",
+      "legendRegistered": "Inscription fournisseur",
+      "legendProgress": "Inscription en cours d’examen",
+      "legendRemote": "Prestation à distance",
+      "remoteDetail": "Prestation à distance, avec des déplacements sur site lorsque le contrat l’exige.",
+      "portalsLink": "Portails d’achat en {{uf}}"
+    },
+    "stats": {
+      "documents": "documents dans notre centre public de documentation",
+      "registrations": "inscriptions fournisseur dans des systèmes fédéraux et des États",
+      "ufs": "unités fédératives servies à distance",
+      "spheres": "niveaux de gouvernement : fédéral, des États et municipal"
+    },
+    "spheres": {
+      "kicker": "Pour qui nous travaillons",
+      "title": "Tous les niveaux de la fédération.",
+      "lede": "Au Brésil, le service public fonctionne sur trois niveaux à la fois. Chacun achète différemment, travaille avec des équipes différentes et mérite un logiciel à la mesure de sa réalité.",
+      "federalCount": "Union",
+      "stateCount": "États et le District fédéral",
+      "municipalCount": "municipalités",
+      "federalName": "Fédéral",
+      "federalBody": "Ministères, établissements publics, fondations, agences de régulation et entreprises publiques. Inscrite au SICAF et au registre des fournisseurs de Petrobras.",
+      "stateName": "États",
+      "stateBody": "Secrétariats, réseaux de santé et d’éducation, sécurité publique et entreprises des États. Inscriptions fournisseur au Minas Gerais et à Santa Catarina, le Paraná étant en cours d’examen.",
+      "municipalName": "Municipal",
+      "municipalBody": "Mairies, conseils municipaux et groupements de communes. De petites équipes qui ont besoin d’un logiciel abordable, compréhensible et durable.",
+      "also": "Nous travaillons aussi avec des assemblées législatives, des cours des comptes, des groupements publics et des sociétés d’économie mixte."
+    },
+    "capabilities": {
+      "kicker": "Ce que nous construisons",
+      "title": "Du logiciel pour le guichet, le terrain et le bureau.",
+      "lede": "La plupart des systèmes publics échouent aux points de passage : entre usager et agent, terrain et bureau, un service et le suivant. Nous concevons d’abord pour ces passages.",
+      "items": [
+        {
+          "title": "Services aux usagers",
+          "body": "Démarches en ligne avec des formulaires en langage clair, un suivi d’avancement et la connexion gov.br lorsque l’organisme y est habilité."
+        },
+        {
+          "title": "Accueil conversationnel",
+          "body": "Canaux WhatsApp et web pour les rendez-vous, les rappels et l’orientation, avec relais vers un agent et historique conservé."
+        },
+        {
+          "title": "Gestion des dossiers",
+          "body": "Enregistrement numérique, circuits avec échéances, signature électronique et piste d’audit de la réception à la décision."
+        },
+        {
+          "title": "Transparence et données ouvertes",
+          "body": "Portails et API de données ouvertes au service de la transparence active prévue par la loi d’accès à l’information."
+        },
+        {
+          "title": "Tableaux de pilotage",
+          "body": "Indicateurs pour les secrétaires et les maires, fondés sur les données que l’organisme détient déjà, avec des définitions et des règles de mise à jour claires."
+        },
+        {
+          "title": "Santé publique",
+          "body": "Télémédecine, prise de rendez-vous et suivi pour les soins primaires, la santé au travail et les programmes de santé publique."
+        },
+        {
+          "title": "Bien-être des équipes",
+          "body": "Écoute des risques psychosociaux et plans d’action pour les équipes publiques sous pression, avec des preuves documentées."
+        },
+        {
+          "title": "Modernisation de l’existant",
+          "body": "API autour des systèmes existants, migration de données soignée et remplacement progressif sans interruption du service."
+        }
+      ]
+    },
+    "products": {
+      "kicker": "Prêts à déployer",
+      "title": "Des produits déjà sur le marché.",
+      "lede": "Quand un produit existant convient, l’organisme démarre plus tôt et paie moins qu’un développement sur mesure. Quand il ne convient pas, nous le disons.",
+      "dialogusContext": "Équipes publiques et entreprises publiques",
+      "dialogusBody": "Gestion des risques psychosociaux alignée sur la NR-1 : écoute confidentielle, évaluation structurée, tableaux de bord et plans d’action pour les équipes de santé, d’éducation et de sécurité publique.",
+      "telemedicineContext": "Programmes de santé et agents publics",
+      "telemedicineBody": "Télémédecine et prestations santé sur une seule plateforme, adaptable aux programmes qui doivent atteindre des personnes éloignées d’un centre de soins.",
+      "oluartContext": "Écoles publiques et programmes culturels",
+      "oluartBody": "Pratique du dessin en réalité augmentée sur les téléphones que les élèves ont déjà. Sans projecteur ni équipement supplémentaire.",
+      "open": "Voir le produit"
+    },
+    "principles": {
+      "kicker": "Argent public, exigences publiques",
+      "title": "Des engagements que nous mettons par écrit.",
+      "items": [
+        {
+          "title": "Ce que vous payez vous appartient",
+          "body": "Code source, données et documentation livrés selon le contrat, avec transfert de compétences à votre équipe."
+        },
+        {
+          "title": "Les données restent au Brésil",
+          "body": "Région d’hébergement et résidence des données fixées au contrat, avec les rôles de responsable et de sous-traitant LGPD définis dès le premier jour."
+        },
+        {
+          "title": "Accessible par défaut",
+          "body": "Interfaces conçues selon les WCAG 2.2 AA et le référentiel eMAG, testées au clavier et avec des lecteurs d’écran."
+        },
+        {
+          "title": "Chaque action laisse une trace",
+          "body": "Accès par rôle, journaux d’audit et registres prêts pour le contrôle interne et les cours des comptes."
+        },
+        {
+          "title": "Aucune dépendance",
+          "body": "Standards ouverts, API documentées et données exportables. Vous pouvez changer de fournisseur sans perdre le système."
+        },
+        {
+          "title": "Le paiement suit le logiciel qui fonctionne",
+          "body": "Des livraisons courtes et vérifiables, liées à des critères de recette, pour que chaque mesure reflète quelque chose qui fonctionne."
+        }
+      ]
+    },
+    "paths": {
+      "kicker": "Comment nous contracter",
+      "title": "Cinq voies légales. Une seule exigence de livraison.",
+      "lede": "La Lei 14.133/2021 et la LC 182/2021 offrent aux organismes brésiliens plusieurs façons d’acheter de la technologie. Choisissez celle qui correspond au problème ; nous y adaptons notre offre.",
+      "fitLabel": "Idéal pour",
+      "items": [
+        {
+          "name": "Pregão eletrônico",
+          "law": "Lei 14.133/2021",
+          "body": "L’enchère électronique de référence pour les services courants aux spécifications objectives. Nous soumissionnons sur Compras.gov.br et sur la plateforme indiquée dans l’avis.",
+          "fit": "Périmètre défini, livrables mesurables, services récurrents."
+        },
+        {
+          "name": "Dispensa eletrônica",
+          "law": "Lei 14.133/2021, art. 75",
+          "body": "Marché direct dans les seuils prévus par la loi, toujours concurrentiel et intégralement publié sur le PNCP. Rapide pour des besoins ciblés.",
+          "fit": "Pilotes, diagnostics, audits d’accessibilité, petits modules."
+        },
+        {
+          "name": "CPSI",
+          "law": "LC 182/2021",
+          "body": "Le contrat public pour solution innovante permet de tester une solution jusqu’à 12 mois, renouvelable une fois, avant de signer un contrat de fourniture.",
+          "fit": "Problèmes sans réponse connue sur le marché, où l’on teste d’abord."
+        },
+        {
+          "name": "Registro de preços",
+          "law": "Lei 14.133/2021, art. 82 à 86",
+          "body": "L’accord-cadre de prix permet à un ou plusieurs organismes de commander à la demande. Lorsque l’accord le permet, d’autres organismes peuvent y adhérer.",
+          "fit": "Besoins partagés entre secrétariats ou groupements de communes."
+        },
+        {
+          "name": "Diálogo competitivo",
+          "law": "Lei 14.133/2021, art. 32",
+          "body": "Pour les objets complexes dont la solution n’est pas encore définie. Les fournisseurs développent des alternatives avec l’organisme avant les offres finales.",
+          "fit": "Grands programmes de modernisation et refontes structurelles."
+        }
+      ]
+    },
+    "delivery": {
+      "kicker": "De l’avis à l’exploitation",
+      "title": "Comment se déroule un projet public avec nous.",
+      "lede": "Chaque phase produit quelque chose que le gestionnaire du contrat peut vérifier. Aucune boîte noire entre la signature et la mise en service.",
+      "steps": [
+        {
+          "title": "Étude de marché",
+          "body": "Nous répondons aux demandes de prix et aux consultations publiques avec des devis détaillés, comparables et datés."
+        },
+        {
+          "title": "Offre et candidature",
+          "body": "Une offre alignée sur le cahier des charges, avec chaque pièce de candidature déjà publique et à jour."
+        },
+        {
+          "title": "Lancement et plan de travail",
+          "body": "Planification commune avec le gestionnaire du contrat : périmètre, jalons, critères de recette, risques et règles de communication."
+        },
+        {
+          "title": "Livraison incrémentale",
+          "body": "Des versions toutes les quelques semaines, présentées au gestionnaire du contrat et mesurées au regard des critères de recette."
+        },
+        {
+          "title": "Transfert",
+          "body": "Code source, documentation technique et formation pour que votre équipe exploite et fasse évoluer le système."
+        },
+        {
+          "title": "Maintenance et niveaux de service",
+          "body": "Supervision, réponse aux incidents et amélioration continue selon les niveaux de service fixés au contrat."
+        }
+      ]
+    },
+    "docs": {
+      "kicker": "Documentation publique",
+      "title": "Notre dossier de candidature est ouvert.",
+      "lede": "Attestations, inscriptions et documents sociaux sont publiés tels que les PDF originaux des émetteurs. Une routine automatique vérifie les attestations arrivant à échéance chaque lundi et jeudi. Chacun peut les consulter, avant ou après la séance.",
+      "hub": "Ouvrir le centre de documentation",
+      "live": "En direct de docs.unfld.com.br",
+      "snapshot": "Instantané du {{date}}",
+      "issued": "Délivré le",
+      "validUntil": "Valable jusqu’au",
+      "noExpiry": "Sans échéance imprimée",
+      "calculated": "calculée",
+      "open": "Ouvrir le PDF",
+      "openAria": "Ouvrir {{name}} (PDF, nouvel onglet)",
+      "statusValid": "Valide",
+      "statusSoon": "Renouvellement proche",
+      "statusDue": "Renouvellement à faire",
+      "verify": "Vérifiez l’authenticité auprès de chaque émetteur avant usage. Un document de notre centre est une preuve, il ne remplace pas les exigences de votre avis.",
+      "categories": {
+        "legal": "Situation juridique",
+        "fiscal": "Régularité fiscale, sociale et du travail",
+        "economic": "Capacité économique et financière",
+        "integrity": "Intégrité"
+      },
+      "items": {
+        "D16": "Inscription et situation au CNPJ",
+        "D21": "Associés et dirigeants",
+        "D12": "Extrait du registre du commerce",
+        "D13": "Statuts consolidés",
+        "D34": "Impôts fédéraux et dette fédérale",
+        "D08": "Impôts de l’État de São Paulo",
+        "D25": "Impôts de l’État du Paraná",
+        "D35": "Impôts municipaux de São Paulo",
+        "D15": "Régularité FGTS",
+        "D09": "Dettes sociales",
+        "D19": "Registre municipal (CCM)",
+        "D24": "Comptes annuels 2025",
+        "D10": "Faillite et redressement judiciaire",
+        "D07": "Registres fédéraux de sanctions",
+        "D41": "Registre des exclusions du Minas Gerais",
+        "D11": "Casiers civil et pénal"
+      }
+    },
+    "record": {
+      "kicker": "Fiche entreprise",
+      "title": "Tout ce que demande un formulaire d’inscription.",
+      "lede": "Copiez les champs dont vous avez besoin. Chacun correspond aux documents d’immatriculation ci-dessus.",
+      "legalName": "Raison sociale",
+      "tradingName": "Nom commercial",
+      "cnpj": "CNPJ",
+      "nire": "NIRE",
+      "ccm": "CCM · São Paulo",
+      "nature": "Forme juridique",
+      "size": "Taille",
+      "sizeValue": "ME · micro-entreprise",
+      "primaryCnae": "CNAE principal",
+      "primaryCnaeName": "Conseil en informatique",
+      "secondaryCnae": "CNAE secondaires (sélection)",
+      "hq": "Siège",
+      "signature": "Représentation",
+      "signatureValue": "Associé-gérant unique, signature seule",
+      "email": "Appels d’offres et propositions",
+      "copy": "Copier",
+      "copied": "Copié",
+      "copyAria": "Copier {{field}}"
+    },
+    "registrations": {
+      "kicker": "Inscriptions fournisseur",
+      "title": "Déjà là où les acheteurs publics regardent.",
+      "lede": "Une inscription ne gagne pas un marché, mais elle lève le premier obstacle. Voici les systèmes où UNFLD est inscrite aujourd’hui.",
+      "active": "Active",
+      "inReview": "En cours",
+      "validUntil": "Valable jusqu’au {{date}}",
+      "open": "Ouvrir le certificat",
+      "items": {
+        "sicaf": {
+          "name": "SICAF",
+          "detail": "Registre fédéral des fournisseurs utilisé par Compras.gov.br et les organismes qui l’adoptent."
+        },
+        "petrobras": {
+          "name": "Petrobras",
+          "detail": "Registre des fournisseurs. Critère technique approuvé pour la licence et la maintenance de logiciels."
+        },
+        "mg": {
+          "name": "CAGEF · Minas Gerais",
+          "detail": "Inscription fournisseur de l’État selon la Lei 14.133/2021, active, sans mention au CAFIMP ni au CADIN."
+        },
+        "sc": {
+          "name": "e-LIC · Santa Catarina",
+          "detail": "Certificat d’inscription fournisseur dans le système d’achats de l’État."
+        },
+        "pr": {
+          "name": "GMS · Paraná",
+          "detail": "Inscription simplifiée délivrée pour des lignes de services TIC, en attente d’évaluation par l’État."
+        },
+        "caixa": {
+          "name": "Licitações CAIXA",
+          "detail": "Adhésion de soumissionnaire déposée pour les achats de la CAIXA et de ses organismes partenaires."
+        }
+      },
+      "portalsTitle": "Portails d’achat par État",
+      "portalsLede": "Issus du catalogue que nous tenons dans notre centre de documentation. Les municipalités peuvent utiliser d’autres systèmes : vérifiez toujours l’adresse dans l’avis.",
+      "selectLabel": "État",
+      "national": "National",
+      "loading": "Chargement du catalogue des portails…",
+      "error": "Le catalogue n’a pas pu être chargé pour le moment.",
+      "openCatalog": "Ouvrir le catalogue complet",
+      "sourceNote": "Les noms et descriptions des portails sont en portugais, tels que publiés par chaque opérateur.",
+      "visit": "Consulter"
+    },
+    "laws": {
+      "kicker": "Conçu dans le cadre de la loi",
+      "title": "Le cadre juridique dans lequel nous travaillons.",
+      "lede": "La technologie publique est une technologie réglementée. Voici les normes brésiliennes qui encadrent notre manière de proposer, construire et exploiter.",
+      "items": [
+        {
+          "code": "Lei 14.133/2021",
+          "name": "Loi sur les marchés publics",
+          "body": "Procédures, marchés directs, candidature, gestion des contrats et paiement à la livraison mesurée."
+        },
+        {
+          "code": "LC 182/2021",
+          "name": "Cadre juridique des startups",
+          "body": "Le CPSI permet à un organisme de tester une solution innovante avant de l’acheter à grande échelle."
+        },
+        {
+          "code": "LC 123/2006",
+          "name": "Statut des micro et petites entreprises",
+          "body": "En tant que micro-entreprise, UNFLD peut bénéficier des lots réservés lorsque l’avis les prévoit."
+        },
+        {
+          "code": "Lei 13.709/2018",
+          "name": "LGPD",
+          "body": "Rôles de responsable et de sous-traitant, registre des traitements, mesures de sécurité et réponse aux incidents définis par contrat."
+        },
+        {
+          "code": "Lei 14.129/2021",
+          "name": "Loi sur le gouvernement numérique",
+          "body": "Services numériques, interopérabilité et données ouvertes comme mode de service par défaut."
+        },
+        {
+          "code": "Lei 12.527/2011",
+          "name": "Loi d’accès à l’information",
+          "body": "Transparence active et données publiées dans des formats ouverts et lisibles par machine."
+        },
+        {
+          "code": "Lei 13.146/2015",
+          "name": "Loi brésilienne d’inclusion",
+          "body": "L’accessibilité numérique comme obligation, vérifiée selon l’eMAG et les WCAG."
+        }
+      ]
+    },
+    "faq": {
+      "kicker": "Questions des acheteurs publics",
+      "title": "Des réponses avant la séance.",
+      "items": [
+        {
+          "q": "UNFLD peut-elle participer aux marchés réservés aux micro-entreprises ?",
+          "a": "Oui. UNFLD est enregistrée comme micro-entreprise (ME) auprès de la Receita Federal et peut bénéficier du traitement différencié de la LC 123/2006 lorsque l’avis le prévoit."
+        },
+        {
+          "q": "Où trouver vos attestations à jour ?",
+          "a": "Sur docs.unfld.com.br. Une routine automatique vérifie chaque lundi et jeudi les attestations arrivant à échéance et publie le PDF de l’émetteur. Vérifiez toujours l’authenticité auprès de l’émetteur."
+        },
+        {
+          "q": "Travaillez-vous avec des organismes hors de São Paulo ?",
+          "a": "Oui. La prestation est à distance par défaut dans les 27 unités fédératives, avec des déplacements sur site lorsque le contrat l’exige."
+        },
+        {
+          "q": "Pouvez-vous répondre à une demande de prix ?",
+          "a": "Oui. Envoyez le cahier des charges ou la description de l’article à sales@unfld.com.br et nous renvoyons un devis détaillé avec durée de validité et conditions."
+        },
+        {
+          "q": "À qui appartiennent le code source et les données ?",
+          "a": "À l’organisme contractant, selon le contrat. Nous livrons le code source, la documentation et l’export des données, et nous formons votre équipe à l’exploitation du système."
+        },
+        {
+          "q": "Acceptez-vous une preuve de concept ou un CPSI ?",
+          "a": "Oui. Une preuve de concept selon les règles de l’avis, ou un contrat d’innovation au titre de la LC 182/2021, est un bon moyen de tester avant de passer à l’échelle."
+        },
+        {
+          "q": "Quels codes CNAE détenez-vous ?",
+          "a": "Principal 6204-0/00, conseil en technologies de l’information. Parmi les activités secondaires : 6201-5/02 conception web, 6202-3/00 développement et licence de logiciels personnalisables, et 6399-2/00 autres services d’information."
+        }
+      ]
+    },
+    "cta": {
+      "kicker": "Engager la conversation",
+      "title": "Confiez-nous le service qui doit mieux fonctionner.",
+      "body": "Parlez-nous du problème, des personnes concernées et de la voie d’achat envisagée. Nous répondons par un périmètre clair, ou par un non honnête.",
+      "primary": "Contacter l’équipe commerciale",
+      "docs": "Voir la documentation"
+    }
   }
 }

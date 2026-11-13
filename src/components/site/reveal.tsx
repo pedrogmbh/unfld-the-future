@@ -10,15 +10,23 @@ type Props = {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+// Reduced motion keeps the motion element and snaps it visible. Swapping in a
+// plain <div> left the server-rendered `opacity:0` style in place after hydration.
+const shown = { opacity: 1, y: 0, filter: "blur(0px)" };
+const instant = { duration: 0 };
+
 export function Reveal({ delay = 0, className, children }: Props) {
   const reduce = useReducedMotion();
-  if (reduce) return <div className={className}>{children}</div>;
   return (
     <motion.div
       initial={{ opacity: 0, y: 22, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, amount: 0.15, margin: "-8%" }}
-      transition={{ duration: 0.8, delay, ease }}
+      {...(reduce
+        ? { animate: shown, transition: instant }
+        : {
+            whileInView: shown,
+            viewport: { once: true, amount: 0.15, margin: "-8%" },
+            transition: { duration: 0.8, delay, ease },
+          })}
       className={cn(className)}
     >
       {children}
@@ -36,15 +44,15 @@ export function Stagger({
   delay?: number;
 }) {
   const reduce = useReducedMotion();
-  if (reduce) return <div className={className}>{children}</div>;
   return (
     <motion.div
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.12, margin: "-8%" }}
+      {...(reduce
+        ? { animate: "visible" }
+        : { whileInView: "visible", viewport: { once: true, amount: 0.12, margin: "-8%" } })}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: delay } },
+        visible: { transition: { staggerChildren: reduce ? 0 : delay } },
       }}
       className={className}
     >
@@ -60,13 +68,14 @@ export function StaggerItem({
   children: React.ReactNode;
   className?: string;
 }) {
+  const reduce = useReducedMotion();
   return (
     <motion.div
       variants={{
         hidden: { opacity: 0, y: 18, filter: "blur(8px)" },
-        visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+        visible: shown,
       }}
-      transition={{ duration: 0.7, ease }}
+      transition={reduce ? instant : { duration: 0.7, ease }}
       className={cn("h-full", className)}
     >
       {children}

@@ -239,6 +239,7 @@ export function localizeFooter(locale: Locale) {
     company: [
       { label: getMessages(locale).chrome.nav.about, to: "/company" },
       { label: getMessages(locale).chrome.nav.selectedWork, to: "/work" },
+      { label: getMessages(locale).chrome.nav.govtech, to: "/govtech" },
       { label: getMessages(locale).chrome.nav.blog, to: "/blog" },
       { label: getMessages(locale).chrome.nav.security, to: "/security" },
       { label: getMessages(locale).chrome.nav.compliance, to: "/compliance" },

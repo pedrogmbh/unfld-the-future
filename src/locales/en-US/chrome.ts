@@ -44,6 +44,7 @@ export const chrome = {
     compliance: "Compliance",
     enterprise: "Enterprise",
     contact: "Contact",
+    govtech: "GovTech",
   },
   footer: {
     products: "Products",

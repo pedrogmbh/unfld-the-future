@@ -52,6 +52,7 @@ export const headerNav: NavLink[] = [
   { label: "Products", to: "/products" },
   { label: "Build with us", to: "/build-with-us" },
   { label: "Company", to: "/company" },
+  { label: "GovTech", to: "/govtech" },
   { label: "What's new?", to: "/blog" },
 ];
 
@@ -349,6 +350,7 @@ export const footer = {
   company: [
     { label: "About", to: "/company" },
     { label: "Selected work", to: "/work" },
+    { label: "GovTech", to: "/govtech" },
     { label: "What's new?", to: "/blog" },
     { label: "Security", to: "/security" },
     { label: "Compliance", to: "/compliance" },

@@ -178,6 +178,13 @@ export function machinePages(): MachinePage[] {
 
 
     page(
+      "/govtech",
+      "GovTech",
+      "Digital systems for federal, state, and municipal bodies in Brazil. Supplier registrations in SICAF, Petrobras, Minas Gerais, and Santa Catarina; habilitação certificates published at docs.unfld.com.br.",
+      "Build with us",
+      { changefreq: "monthly", priority: 0.8 },
+    ),
+    page(
       "/enterprise",
       "Enterprise",
       "A contract shaped around the system you actually need. Available controls confirmed per product and order form.",

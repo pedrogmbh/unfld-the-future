@@ -20,6 +20,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DialogusRouteImport } from './routes/dialogus'
 import { Route as DownloadRouteImport } from './routes/download'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
+import { Route as GovtechRouteImport } from './routes/govtech'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as OluartRouteImport } from './routes/oluart'
@@ -101,6 +102,11 @@ const DownloadRoute = DownloadRouteImport.update({
 const EnterpriseRoute = EnterpriseRouteImport.update({
   id: '/enterprise',
   path: '/enterprise',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GovtechRoute = GovtechRouteImport.update({
+  id: '/govtech',
+  path: '/govtech',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HowWeWorkRoute = HowWeWorkRouteImport.update({
@@ -252,6 +258,7 @@ export interface FileRoutesByFullPath {
   '/dialogus': typeof DialogusRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
+  '/govtech': typeof GovtechRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
@@ -292,6 +299,7 @@ export interface FileRoutesByTo {
   '/dialogus': typeof DialogusRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
+  '/govtech': typeof GovtechRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
@@ -333,6 +341,7 @@ export interface FileRoutesById {
   '/dialogus': typeof DialogusRoute
   '/download': typeof DownloadRoute
   '/enterprise': typeof EnterpriseRoute
+  '/govtech': typeof GovtechRoute
   '/how-we-work': typeof HowWeWorkRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/oluart': typeof OluartRoute
@@ -375,6 +384,7 @@ export interface FileRouteTypes {
     | '/dialogus'
     | '/download'
     | '/enterprise'
+    | '/govtech'
     | '/how-we-work'
     | '/llms.txt'
     | '/oluart'
@@ -415,6 +425,7 @@ export interface FileRouteTypes {
     | '/dialogus'
     | '/download'
     | '/enterprise'
+    | '/govtech'
     | '/how-we-work'
     | '/llms.txt'
     | '/oluart'
@@ -455,6 +466,7 @@ export interface FileRouteTypes {
     | '/dialogus'
     | '/download'
     | '/enterprise'
+    | '/govtech'
     | '/how-we-work'
     | '/llms.txt'
     | '/oluart'
@@ -496,6 +508,7 @@ export interface RootRouteChildren {
   DialogusRoute: typeof DialogusRoute
   DownloadRoute: typeof DownloadRoute
   EnterpriseRoute: typeof EnterpriseRoute
+  GovtechRoute: typeof GovtechRoute
   HowWeWorkRoute: typeof HowWeWorkRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   OluartRoute: typeof OluartRoute
@@ -602,6 +615,13 @@ declare module '@tanstack/react-router' {
       path: '/enterprise'
       fullPath: '/enterprise'
       preLoaderRoute: typeof EnterpriseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/govtech': {
+      id: '/govtech'
+      path: '/govtech'
+      fullPath: '/govtech'
+      preLoaderRoute: typeof GovtechRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-we-work': {
@@ -808,6 +828,7 @@ const rootRouteChildren: RootRouteChildren = {
   DialogusRoute: DialogusRoute,
   DownloadRoute: DownloadRoute,
   EnterpriseRoute: EnterpriseRoute,
+  GovtechRoute: GovtechRoute,
   HowWeWorkRoute: HowWeWorkRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   OluartRoute: OluartRoute,

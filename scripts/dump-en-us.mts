@@ -2,6 +2,7 @@ import { catalog } from "../src/locales/en-US/catalog.ts";
 import { chrome } from "../src/locales/en-US/chrome.ts";
 import { compliance } from "../src/locales/en-US/compliance-items.ts";
 import { complianceMeta } from "../src/locales/en-US/compliance-meta.ts";
+import { govtech } from "../src/locales/en-US/govtech.ts";
 import { legal } from "../src/locales/en-US/legal.ts";
 import { pages } from "../src/locales/en-US/pages.ts";
 import { products } from "../src/locales/en-US/products.ts";
@@ -18,6 +19,7 @@ const enUS = {
   legal,
   compliance,
   complianceMeta,
+  govtech,
 };
 
 process.stdout.write(JSON.stringify(enUS));

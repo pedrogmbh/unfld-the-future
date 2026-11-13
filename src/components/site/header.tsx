@@ -22,6 +22,7 @@ export function Header() {
   ] as const;
 
   const links = [
+    { label: chrome.nav.govtech, to: "/govtech" },
     { label: chrome.nav.blog, to: "/blog" },
   ] as const;
 

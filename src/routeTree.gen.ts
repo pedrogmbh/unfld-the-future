@@ -33,6 +33,7 @@ import { Route as TelemedicinaRouteImport } from './routes/telemedicina'
 import { Route as UnifikarRouteImport } from './routes/unifikar'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as BlogHiveMindRouteImport } from './routes/blog/hive-mind'
 import { Route as BlogSentinelaCveRouteImport } from './routes/blog/sentinela-cve'
 import { Route as CareersIndexRouteImport } from './routes/careers/index'
 import { Route as CareersOpenRolesRouteImport } from './routes/careers/open-roles'
@@ -167,6 +168,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogHiveMindRoute = BlogHiveMindRouteImport.update({
+  id: '/blog/hive-mind',
+  path: '/blog/hive-mind',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSentinelaCveRoute = BlogSentinelaCveRouteImport.update({
   id: '/blog/sentinela-cve',
   path: '/blog/sentinela-cve',
@@ -258,6 +264,7 @@ export interface FileRoutesByFullPath {
   '/telemedicina': typeof TelemedicinaRoute
   '/unifikar': typeof UnifikarRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/hive-mind': typeof BlogHiveMindRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
@@ -297,6 +304,7 @@ export interface FileRoutesByTo {
   '/telemedicina': typeof TelemedicinaRoute
   '/unifikar': typeof UnifikarRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/hive-mind': typeof BlogHiveMindRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
@@ -337,6 +345,7 @@ export interface FileRoutesById {
   '/telemedicina': typeof TelemedicinaRoute
   '/unifikar': typeof UnifikarRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/blog/hive-mind': typeof BlogHiveMindRoute
   '/blog/sentinela-cve': typeof BlogSentinelaCveRoute
   '/careers/open-roles': typeof CareersOpenRolesRoute
   '/legal/acceptable-use-policy': typeof LegalAcceptableUsePolicyRoute
@@ -378,6 +387,7 @@ export interface FileRouteTypes {
     | '/telemedicina'
     | '/unifikar'
     | '/blog/$slug'
+    | '/blog/hive-mind'
     | '/blog/sentinela-cve'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
@@ -417,6 +427,7 @@ export interface FileRouteTypes {
     | '/telemedicina'
     | '/unifikar'
     | '/blog/$slug'
+    | '/blog/hive-mind'
     | '/blog/sentinela-cve'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
@@ -456,6 +467,7 @@ export interface FileRouteTypes {
     | '/telemedicina'
     | '/unifikar'
     | '/blog/$slug'
+    | '/blog/hive-mind'
     | '/blog/sentinela-cve'
     | '/careers/open-roles'
     | '/legal/acceptable-use-policy'
@@ -496,6 +508,7 @@ export interface RootRouteChildren {
   TelemedicinaRoute: typeof TelemedicinaRoute
   UnifikarRoute: typeof UnifikarRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  BlogHiveMindRoute: typeof BlogHiveMindRoute
   BlogSentinelaCveRoute: typeof BlogSentinelaCveRoute
   CareersOpenRolesRoute: typeof CareersOpenRolesRoute
   LegalAcceptableUsePolicyRoute: typeof LegalAcceptableUsePolicyRoute
@@ -682,6 +695,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/hive-mind': {
+      id: '/blog/hive-mind'
+      path: '/blog/hive-mind'
+      fullPath: '/blog/hive-mind'
+      preLoaderRoute: typeof BlogHiveMindRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/sentinela-cve': {
       id: '/blog/sentinela-cve'
       path: '/blog/sentinela-cve'
@@ -800,6 +820,7 @@ const rootRouteChildren: RootRouteChildren = {
   TelemedicinaRoute: TelemedicinaRoute,
   UnifikarRoute: UnifikarRoute,
   BlogSlugRoute: BlogSlugRoute,
+  BlogHiveMindRoute: BlogHiveMindRoute,
   BlogSentinelaCveRoute: BlogSentinelaCveRoute,
   CareersOpenRolesRoute: CareersOpenRolesRoute,
   LegalAcceptableUsePolicyRoute: LegalAcceptableUsePolicyRoute,

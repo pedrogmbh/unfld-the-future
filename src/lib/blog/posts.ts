@@ -26,6 +26,20 @@ export type BlogPost = {
 
 export const posts: readonly BlogPost[] = [
   {
+    slug: "hive-mind",
+    title: "O espaço entre duas ideias",
+    description:
+      "Meu mentor chamava de hive mind as vezes em que chegávamos à mesma conclusão antes de conversar. Essa lembrança deu forma à nova marca da UNFLD.",
+    date: "2026-11-13",
+    cover: "/blog/hive-mind/cover.webp",
+    ogImage: "/blog/hive-mind/hive-mind-1200x630.jpg",
+    coverAlt: "O espaço entre duas ideias, de Pedro Viana. A assinatura UNFLD ao lado de duas dobras cor de mel.",
+    tags: ["Identidade visual", "Hive Mind", "Célula aberta"],
+    author: { name: "Pedro Viana", role: "CEO" },
+    byline: "Pedro Viana, fundador da UNFLD",
+    inLanguage: "pt-BR",
+  },
+  {
     slug: "sentinela-cve",
     title: "Quem lê a CVE quando ninguém tem tempo?",
     description:

@@ -1,11 +1,11 @@
-import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { createRootRouteWithContext, HeadContent, Outlet, retainSearchParams, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import appCss from "../styles.css?url";
 import { LocaleProvider } from "@/lib/i18n/provider";
-import { resolveRequestLocale } from "@/lib/i18n/resolve";
+import { localeFromSearch, resolveRequestLocale } from "@/lib/i18n/resolve";
 import { setCurrentLocale } from "@/lib/i18n/runtime";
 import { getDefaultI18n } from "@/lib/i18n/instance";
 import { getMessages } from "@/lib/i18n/messages";
@@ -18,6 +18,9 @@ export type RouterContext = {
 };
 
 export const Route = createRootRouteWithContext<RouterContext>()({
+  validateSearch: (search): { hl?: string } =>
+    localeFromSearch(search) ? { hl: search.hl as string } : {},
+  search: { middlewares: [retainSearchParams(["hl"])] },
   beforeLoad: async ({ location }) => {
     try {
       const locale = await resolveRequestLocale(location.search);
@@ -86,7 +89,7 @@ function Root() {
       <body className="bg-bg text-fg">
         <PreviewHostBridge />
         <div className="grain" aria-hidden="true" />
-        <LocaleProvider initialLocale={locale}>
+        <LocaleProvider key={locale} initialLocale={locale}>
           <AuthProvider>
             <Header />
             <Outlet />

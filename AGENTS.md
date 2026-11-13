@@ -217,7 +217,7 @@ A new post:
 2. Add `src/routes/blog/<slug>.tsx` with `head: () => buildPostHead("<slug>")` and `PostShell`.
 3. Build the layout under `src/components/blog/<slug>/`. The shell supplies the back link, the byline, and the next post. Inside it, the layout is free. Do not reuse another post as a template.
 4. Put the cover and the OG image in `public/blog/<slug>/`. OG is 1200×630. Raster images are AVIF or WebP, with `width` and `height` on the `<img>`.
-5. Shell strings live in `pages.blog` and `chrome.nav.blog`, in all four locales. `npm run check:i18n` must pass. The post body stays in `inLanguage` on every site locale.
+5. Shell strings live in `pages.blog` and `chrome.nav.blog`, in all four locales. `npm run check:i18n` must pass. Translated posts follow the resolved site locale in the body and metadata. Single-language posts use their original `inLanguage`.
 
 Performance and access, on every post:
 

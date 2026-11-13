@@ -2,14 +2,15 @@ import { Link } from "@tanstack/react-router";
 import { useInView } from "motion/react";
 import { RotateCcw } from "lucide-react";
 import { useRef, useState } from "react";
+import { useLocale } from "@/lib/i18n";
+import { hiveMindCopy } from "./copy";
 import { getPost } from "@/lib/blog/posts";
 import { MARK_INNER_PATH, MARK_OUTER_PATH } from "@/components/site/brand-mark";
 import { Section } from "@/components/site/section";
 import "./story.css";
 
-const post = getPost("hive-mind");
-
 function FoldStudy() {
+  const copy = hiveMindCopy[useLocale()];
   const stage = useRef<HTMLDivElement>(null);
   const visible = useInView(stage, { once: true, amount: 0.45 });
   const [replay, setReplay] = useState(0);
@@ -23,7 +24,7 @@ function FoldStudy() {
           key={replay}
           viewBox="-32 -30 160 156"
           role="img"
-          aria-label="Duas dobras paralelas, inclinadas a 30 graus. O vão entre elas forma a letra U."
+          aria-label={copy.studyAlt}
           className={`h-64 w-full sm:h-80 ${visible ? "hive-assemble" : ""}`}
           fill="currentColor"
         >
@@ -35,17 +36,20 @@ function FoldStudy() {
           className="absolute right-4 bottom-3 inline-flex min-h-11 items-center gap-2 px-3 text-sm font-semibold underline-offset-4 hover:underline focus-visible:outline-current motion-reduce:hidden"
           onClick={() => setReplay((value) => value + 1)}
         >
-          <RotateCcw size={15} aria-hidden="true" /> Rever o movimento
+          <RotateCcw size={15} aria-hidden="true" /> {copy.replay}
         </button>
       </div>
       <figcaption className="mt-3 text-sm text-muted">
-        Célula aberta. As duas dobras seguem o mesmo ângulo de 30°.
+        {copy.studyCaption}
       </figcaption>
     </figure>
   );
 }
 
 export function HiveMindStory() {
+  const locale = useLocale();
+  const copy = hiveMindCopy[locale];
+  const post = getPost("hive-mind", locale);
   return (
     <>
       <Section className="pt-8 pb-16 sm:pt-12 sm:pb-24">
@@ -55,9 +59,7 @@ export function HiveMindStory() {
             <h1 className="mt-5 max-w-[14ch] font-display text-[clamp(3.4rem,7.2vw,6.9rem)] leading-[0.94] tracking-[-0.025em]">
               {post.title}
             </h1>
-            <p className="mt-7 max-w-md text-xl leading-relaxed text-muted">
-              Tem uma pessoa de quem eu me lembro toda vez que olho para o nosso símbolo.
-            </p>
+            <p className="mt-7 max-w-md text-xl leading-relaxed text-muted">{copy.opening}</p>
           </div>
           <picture>
             <source
@@ -72,7 +74,7 @@ export function HiveMindStory() {
               width={1600}
               height={1067}
               fetchPriority="high"
-              alt="Duas dobras cor de mel avançam em paralelo sobre um fundo escuro."
+              alt={copy.leadAlt}
               className="aspect-[4/3] w-full object-cover lg:aspect-[5/4]"
             />
           </picture>
@@ -81,25 +83,10 @@ export function HiveMindStory() {
 
       <Section className="pb-16 sm:pb-24">
         <div className="hive-reading">
-          <p>
-            Meu antigo CTO foi também meu mentor e meu grande parceiro de trabalho. Às vezes, cada
-            um pensava por conta própria sobre o que a gente devia fazer a seguir. Quando finalmente
-            conversávamos, descobríamos que os dois já tinham chegado à mesma conclusão.
-          </p>
-          <p>
-            Ele tinha uma expressão para isso. Chamava de <em lang="en">hive mind</em>.
-          </p>
-          <p>
-            O detalhe de que mais gosto nessa lembrança é que, até a conversa acontecer, eu só
-            conhecia a minha metade da história. Ele tinha feito um percurso inteiro por conta
-            própria. Descobrir por onde ele tinha ido era tão interessante quanto descobrir que
-            tínhamos chegado ao mesmo lugar.
-          </p>
-          <p>
-            Quando comecei a pensar numa nova identidade para a UNFLD, foi essa relação que eu quis
-            colocar no desenho. Se o símbolo fosse aparecer sozinho na tela de um celular, sem as
-            cinco letras ao lado, eu queria poder apontar para ele e contar de onde veio.
-          </p>
+          <p>{copy.mentor}</p>
+          <p>{copy.expression}</p>
+          <p>{copy.journey}</p>
+          <p>{copy.identity}</p>
         </div>
       </Section>
 
@@ -112,72 +99,50 @@ export function HiveMindStory() {
               height={960}
               loading="lazy"
               decoding="async"
-              alt="Estudo de duas tiras de papel cor de mel, dobradas lado a lado sobre uma superfície clara."
+              alt={copy.paperAlt}
               className="aspect-[3/2] w-full object-cover"
             />
-            <figcaption className="mt-3 text-sm text-shale">
-              Estudo visual das dobras em Mel e Papel.
-            </figcaption>
+            <figcaption className="mt-3 text-sm text-shale">{copy.paperCaption}</figcaption>
           </figure>
           <div>
             <h2 className="max-w-sm font-display text-[clamp(2.8rem,5.3vw,4.8rem)] leading-[0.99]">
-              O que cabe num intervalo
+              {copy.interval}
             </h2>
-            <p className="mt-6 text-lg leading-relaxed">
-              A colmeia me interessava pelo jeito como uma célula encontra a outra. Uma parede pode
-              pertencer a duas células. Pensei na nossa parceria e no quanto a forma de trabalhar de
-              um acabava dando contorno ao trabalho do outro.
-            </p>
-            <p className="mt-4 text-lg leading-relaxed">
-              Havia uma segunda pista no próprio nome da empresa.{" "}
-              <em lang="en">Unfolding the Future</em> carrega o gesto de desdobrar. Uma dobra de
-              papel podia reunir essas duas ideias num desenho que coubesse na palma da mão.
-            </p>
+            <p className="mt-6 text-lg leading-relaxed">{copy.wall}</p>
+            <p className="mt-4 text-lg leading-relaxed">{copy.fold}</p>
           </div>
         </div>
       </section>
 
       <Section className="py-16 sm:py-24">
         <div className="hive-reading">
-          <h2>A letra está no vão</h2>
-          <p>
-            Olhe primeiro para as duas faixas. A de dentro faz a curva antes da de fora. As duas
-            saem da curva na mesma direção. Agora acompanhe com o olhar a faixa vazia entre elas. É
-            ali que aparece o U de UNFLD.
-          </p>
+          <h2>{copy.uTitle}</h2>
+          <p>{copy.look}</p>
         </div>
         <FoldStudy />
         <div className="hive-reading">
-          <p>
-            Chamamos o símbolo de <strong>Célula aberta</strong>. Gosto de conseguir ver cada dobra
-            separadamente e ainda assim reconhecer o que as duas formam juntas. É a parte do desenho
-            em que reconheço meu mentor.
-          </p>
-          <p>
-            Também havia algo da marca anterior que valia levar adiante. O hexágono já estava lá. Na
-            nova assinatura, aquele contorno se abre e o mel entra no campo escuro que já era nosso.
-            Quem conhece a UNFLD encontra um parentesco entre as duas.
-          </p>
+          <p>{copy.recognition}</p>
+          <p>{copy.heritage}</p>
         </div>
         <figure className="mx-auto mt-12 grid max-w-4xl gap-px border border-border bg-border sm:grid-cols-2">
           <div className="grid h-48 content-between bg-bg-subtle p-6 sm:h-56 sm:p-8">
-            <span className="text-sm text-muted">Assinatura anterior</span>
+            <span className="text-sm text-muted">{copy.oldLabel}</span>
             <img
               src="/blog/hive-mind/anterior.webp"
               width={600}
               height={230}
-              alt="Assinatura anterior da UNFLD com o símbolo hexagonal em branco."
+              alt={copy.oldAlt}
               className="h-16 w-auto max-w-full object-contain object-left"
               loading="lazy"
             />
           </div>
           <div className="grid h-48 content-between bg-bg p-6 sm:h-56 sm:p-8">
-            <span className="text-sm text-muted">Célula aberta</span>
+            <span className="text-sm text-muted">{copy.newLabel}</span>
             <img
               src="/brand/lockup.svg"
               width={427}
               height={96}
-              alt="Nova assinatura da UNFLD, com a célula aberta em mel e o lettering em papel."
+              alt={copy.newAlt}
               className="h-16 w-auto max-w-full object-contain object-left"
               loading="lazy"
             />
@@ -187,25 +152,15 @@ export function HiveMindStory() {
 
       <Section className="pb-20 sm:pb-28">
         <div className="hive-reading border-t border-border pt-12">
-          <h2>Daqui para a frente</h2>
-          <p>
-            Hoje, penso nessa história quando pessoas diferentes precisam construir um sistema
-            juntas. Quem desenha uma tela precisa entender o que acontece com a pessoa que vai
-            usá-la. Quem programa uma regra precisa saber por que aquela regra existe. Quando esse
-            entendimento circula, cada um consegue tomar decisões que ajudam o trabalho do outro,
-            inclusive quando os dois estão longe.
-          </p>
-          <p>
-            É o tipo de empresa que quero construir. E é por isso que um dia, se alguém me perguntar
-            o que significam aquelas duas dobras no canto da tela, vou começar a resposta falando de
-            uma pessoa.
-          </p>
+          <h2>{copy.future}</h2>
+          <p>{copy.team}</p>
+          <p>{copy.ending}</p>
           <p className="hive-signature">Pedro Viana</p>
           <Link
             to="/legal/brand-guidelines"
             className="mt-6 inline-flex min-h-11 items-center gap-2 text-base font-semibold text-gold underline underline-offset-4"
           >
-            Consultar o manual da marca <span aria-hidden="true">→</span>
+            {copy.guide} <span aria-hidden="true">→</span>
           </Link>
         </div>
       </Section>

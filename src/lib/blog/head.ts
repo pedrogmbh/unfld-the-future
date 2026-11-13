@@ -1,11 +1,11 @@
-import { isLocale, type Locale } from "@/lib/i18n/locales";
+import { LOCALES, isLocale, type Locale } from "@/lib/i18n/locales";
 import { organizationId } from "@/lib/jsonld";
 import { buildPageHead } from "@/lib/meta";
 import { SITE } from "@/lib/site";
 import { getPost } from "./posts";
 
-export function postPath(slug: string): string {
-  return `/blog/${slug}`;
+export function postPath(slug: string, locale?: Locale): string {
+  return `/blog/${slug}${locale ? `?hl=${locale}` : ""}`;
 }
 
 export function absoluteAsset(path: string): string {
@@ -16,9 +16,9 @@ function articleLocale(code: string): Locale | undefined {
   return isLocale(code) ? code : undefined;
 }
 
-export function blogPostingJsonLd(slug: string) {
-  const post = getPost(slug);
-  const url = `${SITE.url}${postPath(post.slug)}`;
+export function blogPostingJsonLd(slug: string, locale?: Locale) {
+  const post = getPost(slug, locale);
+  const url = `${SITE.url}${postPath(post.slug, post.editions ? locale : undefined)}`;
   const modified = post.updated ?? post.date;
   return {
     "@context": "https://schema.org",
@@ -44,16 +44,16 @@ export function blogPostingJsonLd(slug: string) {
   };
 }
 
-export function buildPostHead(slug: string) {
-  const post = getPost(slug);
+export function buildPostHead(slug: string, locale?: Locale) {
+  const post = getPost(slug, locale);
   const modified = post.updated ?? post.date;
   const head = buildPageHead({
     title: post.title,
     description: post.description,
-    path: postPath(post.slug),
+    path: postPath(post.slug, post.editions ? locale : undefined),
     type: "article",
     image: absoluteAsset(post.ogImage),
-    jsonLd: blogPostingJsonLd(slug),
+    jsonLd: blogPostingJsonLd(slug, locale),
     locale: articleLocale(post.inLanguage),
   });
 
@@ -64,5 +64,16 @@ export function buildPostHead(slug: string) {
     { property: "og:image:alt", content: post.coverAlt },
   );
 
+  if (post.editions && locale) {
+    head.links = [
+      { rel: "canonical", href: absoluteAsset(postPath(slug, locale)) },
+      ...LOCALES.map((code) => ({
+        rel: "alternate",
+        hrefLang: code,
+        href: absoluteAsset(postPath(slug, code)),
+      })),
+      { rel: "alternate", hrefLang: "x-default", href: absoluteAsset(postPath(slug)) },
+    ];
+  }
   return head;
 }

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/blog/")({
   head: ({ match }) => {
     const locale = match.context.locale;
     const p = getMessages(locale).pages.blog;
-    const entries = publishedPosts();
+    const entries = publishedPosts(locale);
     return buildPageHead({
       title: p.metaTitle,
       description: p.metaDescription,
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/blog/")({
           datePublished: post.date,
           dateModified: post.updated ?? post.date,
           inLanguage: post.inLanguage,
-          url: `${SITE.url}/blog/${post.slug}`,
+          url: `${SITE.url}/blog/${post.slug}${post.editions ? `?hl=${locale}` : ""}`,
           image: `${SITE.url}${post.ogImage}`,
         })),
       },
@@ -46,7 +46,7 @@ function BlogIndex() {
   const locale = useLocale();
   const { pages } = useMessages();
   const t = pages.blog;
-  const [featured, ...rest] = publishedPosts();
+  const [featured, ...rest] = publishedPosts(locale);
 
   return (
     <main>

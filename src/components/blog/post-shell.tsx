@@ -1,10 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { useMessages } from "@/lib/i18n";
+import { useLocale, useMessages } from "@/lib/i18n";
 import { formatBlogDate, getPost, nextPost, postByline } from "@/lib/blog/posts";
 
 export function PostShell({ slug, children }: { slug: string; children: React.ReactNode }) {
-  const post = getPost(slug);
-  const next = nextPost(slug);
+  const locale = useLocale();
+  const post = getPost(slug, locale);
+  const next = nextPost(slug, locale);
   const { pages } = useMessages();
   const t = pages.blog;
   const dateLabel = formatBlogDate(post.date, post.inLanguage);

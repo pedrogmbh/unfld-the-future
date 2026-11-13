@@ -37,7 +37,7 @@ test("blog registry slugs are unique and each post is wired", () => {
   for (const post of posts) {
     const route = join(root, "src/routes/blog", `${post.slug}.tsx`);
     assert.equal(existsSync(route), true, `missing route for ${post.slug}`);
-    assert.match(readFileSync(route, "utf8"), new RegExp(`buildPostHead\\("${post.slug}"\\)`));
+    assert.match(readFileSync(route, "utf8"), new RegExp(`buildPostHead\\("${post.slug}"(?:,|\\))`));
 
     for (const rel of [post.cover, post.ogImage]) {
       assert.ok(rel.startsWith(`/blog/${post.slug}/`), `${rel} is outside the post folder`);

@@ -4,7 +4,7 @@ import { PostShell } from "@/components/blog/post-shell";
 import { buildPostHead } from "@/lib/blog/head";
 
 export const Route = createFileRoute("/blog/hive-mind")({
-  head: () => buildPostHead("hive-mind"),
+  head: ({ match }) => buildPostHead("hive-mind", match.context.locale),
   component: HiveMindPage,
 });
 

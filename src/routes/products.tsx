@@ -36,8 +36,12 @@ function Products() {
       primaryTo="/contact"
       secondary={p.secondary}
       secondaryTo="/how-we-work"
-      image="/images/forge.jpg"
+      image="/images/editorial/products-ecosystem-1600.webp"
       imageAlt={p.imageAlt}
+      imageWidth={1600}
+      imageHeight={800}
+      imageWebpSrcSet="/images/editorial/products-ecosystem-800.webp 800w, /images/editorial/products-ecosystem-1600.webp 1600w"
+      imageSizes="(min-width: 1248px) 1152px, calc(100vw - 40px)"
       features={[
         { title: p.feature1Title, body: p.feature1Body },
         { title: p.feature2Title, body: p.feature2Body },

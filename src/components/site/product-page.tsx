@@ -15,6 +15,10 @@ export function ProductPage({
   secondaryTo,
   image,
   imageAlt,
+  imageWidth,
+  imageHeight,
+  imageWebpSrcSet,
+  imageSizes,
   features,
   quote,
   children,
@@ -30,6 +34,10 @@ export function ProductPage({
   secondaryTo?: string;
   image: string;
   imageAlt: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageWebpSrcSet?: string;
+  imageSizes?: string;
   features: { title: string; body: string }[];
   quote?: { kicker: string; title: string; body: string };
   children?: React.ReactNode;
@@ -60,7 +68,14 @@ export function ProductPage({
       />
       <section className="px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl">
-          <ParallaxImage src={image} alt={imageAlt} />
+          <ParallaxImage
+            src={image}
+            alt={imageAlt}
+            width={imageWidth}
+            height={imageHeight}
+            webpSrcSet={imageWebpSrcSet}
+            sizes={imageSizes}
+          />
         </div>
       </section>
       <Section className="py-20 sm:py-28">

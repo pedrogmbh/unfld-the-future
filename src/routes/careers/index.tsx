@@ -135,9 +135,15 @@ function Careers() {
         </h2>
         <div className="mt-10 overflow-hidden rounded-xl">
           <img
-            src="/images/office.jpg"
+            src="/images/editorial/careers-hive-mind-1600.webp"
+            srcSet="/images/editorial/careers-hive-mind-800.webp 800w, /images/editorial/careers-hive-mind-1600.webp 1600w"
+            sizes="(min-width: 1248px) 1152px, calc(100vw - 40px)"
             alt={p.officeAlt}
-            className="aspect-[16/7] w-full object-cover"
+            width={1600}
+            height={800}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[2/1] w-full object-cover"
           />
         </div>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

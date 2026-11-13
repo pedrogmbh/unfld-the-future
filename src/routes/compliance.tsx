@@ -123,6 +123,7 @@ function CompliancePage() {
         <div className="mx-auto w-full max-w-6xl">
           <ParallaxImage
             src="/images/editorial/compliance-evidence-1600.webp"
+            parallax={false}
             alt={p.imageAlt}
             width={1600}
             height={800}
@@ -720,7 +721,7 @@ function FederationBreak() {
   return (
     <Section className="pb-20 sm:pb-28">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-        <Reveal>
+        <div>
           <Kicker>{p.fedKicker}</Kicker>
           <h2 className="font-display text-[clamp(1.6rem,3.2vw,2.2rem)] font-medium leading-tight tracking-tight">
             {p.fedTitle}
@@ -740,17 +741,18 @@ function FederationBreak() {
               </div>
             ))}
           </dl>
-        </Reveal>
-        <Reveal delay={0.1} className="min-w-0">
+        </div>
+        <div className="min-w-0">
           <ParallaxImage
             src="/images/editorial/compliance-identity-1600.webp"
+            parallax={false}
             alt={p.federationAlt}
             width={1600}
             height={800}
             webpSrcSet="/images/editorial/compliance-identity-800.webp 800w, /images/editorial/compliance-identity-1600.webp 1600w"
             sizes="(min-width: 1248px) 548px, (min-width: 1024px) 45vw, calc(100vw - 40px)"
           />
-        </Reveal>
+        </div>
       </div>
     </Section>
   );

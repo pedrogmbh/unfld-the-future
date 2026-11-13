@@ -106,6 +106,7 @@ export function ParallaxImage({
   height,
   webpSrcSet,
   sizes,
+  parallax = true,
 }: {
   src: string;
   alt: string;
@@ -115,6 +116,7 @@ export function ParallaxImage({
   height?: number;
   webpSrcSet?: string;
   sizes?: string;
+  parallax?: boolean;
 }) {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
@@ -138,7 +140,7 @@ export function ParallaxImage({
           height={height}
           sizes={sizes}
           fetchPriority={fetchPriority}
-          style={reduce ? undefined : { y, scale }}
+          style={reduce || !parallax ? undefined : { y, scale }}
           className="aspect-[16/8] w-full object-cover outline outline-1 -outline-offset-1 outline-fg/10"
         />
       </picture>

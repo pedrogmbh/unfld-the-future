@@ -19,6 +19,7 @@ export function ProductPage({
   imageHeight,
   imageWebpSrcSet,
   imageSizes,
+  imageParallax,
   features,
   quote,
   children,
@@ -38,6 +39,7 @@ export function ProductPage({
   imageHeight?: number;
   imageWebpSrcSet?: string;
   imageSizes?: string;
+  imageParallax?: boolean;
   features: { title: string; body: string }[];
   quote?: { kicker: string; title: string; body: string };
   children?: React.ReactNode;
@@ -75,6 +77,7 @@ export function ProductPage({
             height={imageHeight}
             webpSrcSet={imageWebpSrcSet}
             sizes={imageSizes}
+            parallax={imageParallax}
           />
         </div>
       </section>

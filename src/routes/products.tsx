@@ -42,6 +42,7 @@ function Products() {
       imageHeight={800}
       imageWebpSrcSet="/images/editorial/products-ecosystem-800.webp 800w, /images/editorial/products-ecosystem-1600.webp 1600w"
       imageSizes="(min-width: 1248px) 1152px, calc(100vw - 40px)"
+      imageParallax={false}
       features={[
         { title: p.feature1Title, body: p.feature1Body },
         { title: p.feature2Title, body: p.feature2Body },

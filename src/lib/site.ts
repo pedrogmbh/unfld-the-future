@@ -1,3 +1,5 @@
+// Registered details checked against D16 (Receita, 10/11/2026) and D19 (CCM).
+// Source: https://docs.unfld.com.br/Resumo.txt
 export const SITE = {
   name: "UNFLD",
   url: "https://www.unfld.com.br",
@@ -6,7 +8,7 @@ export const SITE = {
   cnpj: "62.855.761/0001-82",
   tagline: "Unfolding the future. One real system at a time.",
   email: "hello@unfld.com.br",
-  registeredEmail: "admin@unfolding.com.br",
+  registeredEmail: "admin@unfld.com.br",
   sales: "sales@unfld.com.br",
   security: "security@unfld.com.br",
   press: "press@unfld.com.br",
@@ -34,12 +36,12 @@ export const SITE = {
     nameEn: "Information technology consultancy",
   },
   address: {
-    line1: "Rua Avanhandava, 126",
-    line2: "10º andar, Edifício Cambuí",
-    district: "Bela Vista",
+    line1: "Avenida Brigadeiro Faria Lima, 1811",
+    line2: "Sala 1119",
+    district: "Jardim Paulistano",
     city: "São Paulo",
     region: "SP",
-    postal: "01306-901",
+    postal: "01452-001",
     country: "Brazil",
   },
 } as const;
@@ -614,10 +616,10 @@ export const offices = [
   {
     city: "São Paulo",
     region: "Brazil",
-    coords: "23.5554°S, 46.6468°W",
     href: "/sao-paulo",
     role: "Headquarters",
-    detail: "Rua Avanhandava, 126 · Bela Vista",
+    detail: `${SITE.address.line1}, ${SITE.address.line2} · ${SITE.address.district}`,
+    mapHref: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(formatAddress())}`,
   },
 ] as const;
 

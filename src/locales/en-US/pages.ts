@@ -99,11 +99,11 @@ export const pages = {
     whoKicker: "Who we are",
     whoTitle: "Five letters. A full legal name. A house that builds.",
     whoBody:
-      "We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a Brazilian limited company (sociedade empresária limitada) in Bela Vista, São Paulo, active since {{founded}}. We build and operate products under our own name and build custom systems beside organizations with consequential operations.",
+      "We trade as UNFLD. The company is UNFOLDING THE FUTURE LTDA — a Brazilian limited company (sociedade empresária limitada) in Jardim Paulistano, São Paulo, active since {{founded}}. We build and operate products under our own name and build custom systems beside organizations with consequential operations.",
     tileProducts: "Products by UNFLD",
     tileProductsBody: "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
     tileSp: "São Paulo",
-    tileSpBody: "Bela Vista. Registered office.",
+    tileSpBody: "Jardim Paulistano. Registered office.",
     tileWork: "Selected work",
     tileWorkBody: "Netflix, Embraer, SporTV, and more.",
     tileCareers: "Careers",
@@ -120,7 +120,7 @@ export const pages = {
     officeKicker: "Office",
     officeTitle: "UNFLD in São Paulo.",
     officeLede:
-      "Registered office and meeting point for UNFLD in São Paulo, in Bela Vista, minutes from Avenida Paulista.",
+      "UNFLD’s registered headquarters on Avenida Brigadeiro Faria Lima, in Jardim Paulistano, São Paulo.",
     pathKicker: "Our path of progress",
     pathTitle: "Experience rooted in 2019.",
     latestNews: "Latest news",
@@ -431,15 +431,15 @@ export const pages = {
   saoPaulo: {
     metaTitle: "São Paulo",
     metaDescription:
-      "UNFLD in São Paulo. Registered headquarters and meeting point of UNFOLDING THE FUTURE LTDA, in Bela Vista.",
+      "UNFLD in São Paulo. Registered headquarters of UNFOLDING THE FUTURE LTDA on Avenida Brigadeiro Faria Lima, in Jardim Paulistano.",
     kicker: "Headquarters",
     title: "UNFLD in",
     titleSecond: "São Paulo.",
-    lede: "The registered headquarters and meeting point of UNFOLDING THE FUTURE LTDA, in Bela Vista, minutes from Avenida Paulista.",
+    lede: "The registered headquarters of UNFOLDING THE FUTURE LTDA on Avenida Brigadeiro Faria Lima, in Jardim Paulistano.",
     imageAlt: "UNFLD São Paulo location",
-    officeTitle: "Registered office and meeting point",
+    officeTitle: "Registered headquarters",
     officeLede:
-      "Our base for product decisions, client sessions, and company operations in São Paulo.",
+      "Our registered address in São Paulo, in the Jardim Paulistano district.",
   },
   infrastructure: {
     metaTitle: "Infrastructure",

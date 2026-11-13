@@ -145,7 +145,7 @@ function Careers() {
             <div key={o.city}>
               <p className="font-medium">{o.city}</p>
               <p className="text-sm text-muted">{o.role}</p>
-              <p className="font-mono text-[11px] text-subtle">{o.coords}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{o.detail}</p>
             </div>
           ))}
         </div>

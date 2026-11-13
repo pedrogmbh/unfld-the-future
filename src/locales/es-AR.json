@@ -132,13 +132,13 @@
       "buildWithUs": "Construir con nosotros",
       "headquarters": "Sede",
       "address": "Dirección",
-      "coordinates": "Coordenadas",
       "legalEntity": "Entidad legal",
       "contact": "Contacto",
       "opened": "abierta {{date}}",
       "apply": "Postularse",
       "applicationNoted": "Postulación registrada",
-      "all": "Todos"
+      "all": "Todos",
+      "directions": "Cómo llegar"
     },
     "facts": {
       "tradingName": "Nombre comercial",
@@ -251,11 +251,11 @@
       "lede": "UNFLD es una empresa de productos y un socio tecnológico. Construimos y operamos productos en tipos esenciales de trabajo, y construimos sistemas a medida junto a organizaciones que enfrentan problemas que vale la pena resolver bien.",
       "whoKicker": "Quiénes somos",
       "whoTitle": "Cinco letras. Una razón social completa. Una casa que construye.",
-      "whoBody": "Operamos como UNFLD. La empresa es UNFOLDING THE FUTURE LTDA — una sociedad brasileña de responsabilidad limitada (sociedade empresária limitada) en Bela Vista, São Paulo, activa desde {{founded}}. Construimos y operamos productos con nuestro propio nombre y construimos sistemas a medida junto a organizaciones con operaciones de peso.",
+      "whoBody": "Operamos como UNFLD. La empresa es UNFOLDING THE FUTURE LTDA — una sociedad brasileña de responsabilidad limitada (sociedade empresária limitada) en Jardim Paulistano, São Paulo, activa desde {{founded}}. Construimos y operamos productos con nuestro propio nombre y construimos sistemas a medida junto a organizaciones con operaciones de peso.",
       "tileProducts": "Productos de UNFLD",
       "tileProductsBody": "SiteCreator, Doutor Fiscal, Queravaga, Dialogus, Oluart, Unifikar.",
       "tileSp": "São Paulo",
-      "tileSpBody": "Bela Vista. Sede registrada.",
+      "tileSpBody": "Jardim Paulistano. Sede registrada.",
       "tileWork": "Trabajos seleccionados",
       "tileWorkBody": "Netflix, Embraer, SporTV y más.",
       "tileCareers": "Carreras",
@@ -270,7 +270,7 @@
       "valuesTitle": "Los principios detrás del trabajo.",
       "officeKicker": "Oficina",
       "officeTitle": "UNFLD en São Paulo.",
-      "officeLede": "Sede registrada y punto de encuentro de UNFLD en São Paulo, en Bela Vista, a minutos de Avenida Paulista.",
+      "officeLede": "La sede registrada de UNFLD en Avenida Brigadeiro Faria Lima, en Jardim Paulistano, São Paulo.",
       "pathKicker": "Nuestro camino de avance",
       "pathTitle": "Experiencia con raíces en 2019.",
       "latestNews": "Últimas novedades"
@@ -521,14 +521,14 @@
     },
     "saoPaulo": {
       "metaTitle": "São Paulo",
-      "metaDescription": "UNFLD en São Paulo. Sede registrada y punto de encuentro de UNFOLDING THE FUTURE LTDA, en Bela Vista.",
+      "metaDescription": "UNFLD en São Paulo. Sede registrada de UNFOLDING THE FUTURE LTDA en Avenida Brigadeiro Faria Lima, en Jardim Paulistano.",
       "kicker": "Sede",
       "title": "UNFLD en",
       "titleSecond": "São Paulo.",
-      "lede": "La sede registrada y el punto de encuentro de UNFOLDING THE FUTURE LTDA, en Bela Vista, a minutos de Avenida Paulista.",
+      "lede": "La sede registrada de UNFOLDING THE FUTURE LTDA en Avenida Brigadeiro Faria Lima, en Jardim Paulistano.",
       "imageAlt": "Ubicación de UNFLD en São Paulo",
-      "officeTitle": "Sede registrada y punto de encuentro",
-      "officeLede": "Nuestra base para decisiones de producto, sesiones con clientes y operaciones de la empresa en São Paulo."
+      "officeTitle": "Sede registrada",
+      "officeLede": "Nuestro domicilio registrado en São Paulo, en el barrio Jardim Paulistano."
     },
     "infrastructure": {
       "metaTitle": "Infraestructura",

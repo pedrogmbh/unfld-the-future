@@ -132,7 +132,7 @@ export const chrome = {
     buildWithUs: "Build with us",
     headquarters: "Headquarters",
     address: "Address",
-    coordinates: "Coordinates",
+    directions: "Directions",
     legalEntity: "Legal entity",
     contact: "Contact",
     opened: "opened {{date}}",

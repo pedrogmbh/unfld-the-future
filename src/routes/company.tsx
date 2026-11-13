@@ -321,7 +321,6 @@ function Company() {
               <p className="font-display text-xl font-medium">{o.city}</p>
               <p className="mt-1 text-sm text-muted">{o.role}</p>
               <p className="mt-2 text-sm text-muted">{o.detail}</p>
-              <p className="mt-4 font-mono text-[11px] text-subtle">{o.coords}</p>
             </Link>
           ))}
         </div>

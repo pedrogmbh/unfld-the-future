@@ -72,9 +72,18 @@ function SaoPaulo() {
           </div>
           <div>
             <dt className="text-[12px] tracking-[0.16em] text-subtle uppercase">
-              {chrome.common.coordinates}
+              {chrome.common.directions}
             </dt>
-            <dd className="mt-2 font-mono text-sm">{hq.coords}</dd>
+            <dd className="mt-2 text-sm">
+              <a
+                href={hq.mapHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold underline underline-offset-4 hover:text-fg"
+              >
+                {SITE.address.line1}
+              </a>
+            </dd>
           </div>
           <div>
             <dt className="text-[12px] tracking-[0.16em] text-subtle uppercase">

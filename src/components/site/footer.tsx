@@ -57,7 +57,10 @@ export function Footer() {
           <Col title={chrome.footer.products} links={footer.products} />
           <Col title={chrome.footer.buildWithUs} links={footer.buildWithUs} />
           <Col title={chrome.footer.company} links={footer.company} />
-          <Col title={chrome.footer.legal} links={footer.legal} />
+          <Col
+            title={chrome.footer.legal}
+            links={footer.legal.filter((link) => link.to !== "/legal/acceptable-use-policy")}
+          />
         </div>
 
         <div className="mt-16 border-t border-border pt-10">

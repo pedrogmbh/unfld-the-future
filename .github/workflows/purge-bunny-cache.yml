@@ -4,6 +4,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      purge_social_pages:
+        description: Also purge exact localized homepage and article URLs
+        type: boolean
+        default: false
 
 env:
   SITE: www.unfld.com.br
@@ -22,6 +27,23 @@ jobs:
           curl -v --fail-with-body -sS -X POST \
             "https://api.bunny.net/pullzone/${{ vars.BUNNY_PULL_ZONE_ID }}/purgeCache" \
             -H "AccessKey: ${{ secrets.BUNNYCDN_API_KEY }}"
+
+      - name: Purge localized social previews
+        if: inputs.purge_social_pages
+        env:
+          BUNNY_API_KEY: ${{ secrets.BUNNYCDN_API_KEY }}
+        run: |
+          set -euo pipefail
+          for language in en pt es fr; do
+            for path in / /telemedicina /blog/hive-mind; do
+              curl --fail-with-body -sS -X POST --get \
+                'https://api.bunny.net/purge' \
+                --data-urlencode "url=https://$SITE$path?hl=$language" \
+                --data-urlencode 'async=false' \
+                --data-urlencode 'exactPath=true' \
+                -H "AccessKey: $BUNNY_API_KEY"
+            done
+          done
 
       - name: Wait for BunnyCDN purge take effect
         run: sleep 10

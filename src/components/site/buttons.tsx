@@ -3,7 +3,7 @@ import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full text-[13px] font-medium tracking-wide transition-[opacity,transform,background-color,color,border-color] duration-150 ease-out active:scale-[0.96] disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 rounded-xs text-[15px] font-semibold tracking-wide transition-[opacity,transform,background-color,color,border-color] duration-150 ease-out active:scale-[0.96] disabled:opacity-50";
 
 const sizes = {
   sm: "h-9 px-4",
@@ -99,7 +99,7 @@ export function TextArrow({
   return (
     <span
       className={cn(
-        "group/a inline-flex items-center gap-2 text-[15px] font-medium text-fg",
+        "group/a inline-flex items-center gap-2 text-[15px] font-semibold text-fg",
         className,
       )}
     >

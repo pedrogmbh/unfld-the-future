@@ -2,7 +2,7 @@
 
 :root {
   color-scheme: dark;
-  --bg: #000;
+  --bg: #181B18;
   --fg: #f5f5f5;
   --muted: #8a8a8a;
   --line: #1a1a1a;
@@ -15,7 +15,7 @@ html, body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  font-family: "Source Sans 3", system-ui, sans-serif;
 }
 
 body {

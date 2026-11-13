@@ -8,9 +8,12 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "public/blog/sentinela-cve");
 
 function brandSvg(file, height) {
-  return readFileSync(join(root, "public/brand", file), "utf8")
-    .replaceAll('fill="currentColor"', 'fill="#f5f5f5"')
-    .replace("<svg ", `<svg height="${height}" width="auto" `);
+  const svg = readFileSync(join(root, "public/brand", file), "utf8");
+  const [, , , width, viewHeight] = svg.match(/viewBox="([\d.]+) ([\d.]+) ([\d.]+) ([\d.]+)"/);
+  return svg
+    .replace(/\s(?:width|height)="[^"]*"/g, "")
+    .replaceAll('fill="currentColor"', 'fill="#f5f3eb"')
+    .replace("<svg ", `<svg height="${height}" width="${height * Number(width) / Number(viewHeight)}" `);
 }
 
 const MARK = brandSvg("symbol.svg", 18);
@@ -45,26 +48,25 @@ function html(width, height) {
 <head>
 <meta charset="utf-8" />
 <style>
-  @font-face { font-family: "Inter Tight"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Medium.ttf") format("truetype"); font-weight: 500; }
-  @font-face { font-family: "Inter Tight"; src: url("file:///usr/share/fonts/truetype/macos/Inter-SemiBold.ttf") format("truetype"); font-weight: 600; }
-  @font-face { font-family: "Inter Tight"; src: url("file:///usr/share/fonts/truetype/macos/Inter-Regular.ttf") format("truetype"); font-weight: 400; }
-  @font-face { font-family: "IBM Plex Mono"; src: url("file://${join(root, "public/fonts/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2")}") format("woff2"); font-weight: 400; }
+  @font-face { font-family: "Source Sans 3"; src: url("/fonts/SourceSans3-Regular.woff2") format("woff2"); font-weight: 400; }
+  @font-face { font-family: "Source Sans 3"; src: url("/fonts/SourceSans3-Semibold.woff2") format("woff2"); font-weight: 600; }
+  @font-face { font-family: "Barlow Condensed"; src: url("/fonts/BarlowCondensed-SemiBold.woff2") format("woff2"); font-weight: 600; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: ${width}px; height: ${height}px; background: #000; color: #f5f5f5; overflow: hidden; }
-  body { font-family: "Inter Tight", Inter, sans-serif; display: grid; grid-template-columns: 1.15fr 0.85fr; }
+  html, body { width: ${width}px; height: ${height}px; background: #181b18; color: #f5f3eb; overflow: hidden; }
+  body { font-family: "Source Sans 3", Arial, sans-serif; display: grid; grid-template-columns: 1.15fr 0.85fr; }
   .copy { padding: ${Math.round(height * 0.11)}px ${Math.round(width * 0.055)}px; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
   .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; letter-spacing: 0.28em; font-size: 15px; }
-  .kicker { color: #e3b26a; letter-spacing: 0.18em; text-transform: uppercase; font-size: 15px; font-weight: 500; }
-  h1 { margin-top: 22px; font-weight: 500; font-size: ${width > 1400 ? 56 : 44}px; line-height: 0.95; letter-spacing: -0.045em; }
-  h1 span { display: block; color: #8a8a8a; white-space: nowrap; }
-  .sub { margin-top: 28px; max-width: 34rem; color: #8a8a8a; font-size: ${width > 1400 ? 22 : 18}px; line-height: 1.45; font-weight: 400; }
-  .by { font-family: "IBM Plex Mono", ui-monospace, monospace; color: #8a8a8a; font-size: 14px; }
-  .stage { position: relative; margin: ${Math.round(height * 0.08)}px ${Math.round(width * 0.04)}px ${Math.round(height * 0.08)}px 0; border: 1px solid #1a1a1a; background: #0f0f0f; overflow: hidden; display: flex; flex-direction: column; }
-  .badge { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid #f5f5f5; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; color: #8a8a8a; background: #0f0f0f; }
+  .kicker { color: #eba937; letter-spacing: 0.18em; text-transform: uppercase; font-size: 15px; font-weight: 500; }
+  h1 { margin-top: 22px; font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: ${width > 1400 ? 68 : 52}px; line-height: 0.95; letter-spacing: -0.015em; }
+  h1 span { display: block; color: #c0c6bb; white-space: nowrap; }
+  .sub { margin-top: 28px; max-width: 34rem; color: #c0c6bb; font-size: ${width > 1400 ? 22 : 18}px; line-height: 1.45; font-weight: 400; }
+  .by { font-family: "IBM Plex Mono", ui-monospace, monospace; color: #c0c6bb; font-size: 14px; }
+  .stage { position: relative; margin: ${Math.round(height * 0.08)}px ${Math.round(width * 0.04)}px ${Math.round(height * 0.08)}px 0; border: 1px solid #3b403a; background: #21251f; overflow: hidden; display: flex; flex-direction: column; }
+  .badge { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid #f5f3eb; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: 0.18em; color: #c0c6bb; background: #21251f; }
   .rows { position: relative; flex: 1; overflow: hidden; }
-  .row { display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; align-items: baseline; padding: 12px 22px; border-bottom: 1px solid #1a1a1a; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; color: #5c5c5c; }
-  .name { color: #f5f5f5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .fade { position: absolute; left: 0; right: 0; bottom: 0; height: 64px; background: linear-gradient(transparent, #0f0f0f); }
+  .row { display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; align-items: baseline; padding: 12px 22px; border-bottom: 1px solid #3b403a; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; color: #a1aa9b; }
+  .name { color: #f5f3eb; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .fade { position: absolute; left: 0; right: 0; bottom: 0; height: 64px; background: linear-gradient(transparent, #21251f); }
 </style>
 </head>
 <body>
@@ -94,7 +96,6 @@ async function shoot(page, width, height) {
 
 mkdirSync(outDir, { recursive: true });
 const browser = await chromium.launch({
-  executablePath: "/usr/bin/google-chrome",
   args: ["--no-sandbox", "--disable-dev-shm-usage"],
 });
 const page = await browser.newPage({ deviceScaleFactor: 1 });

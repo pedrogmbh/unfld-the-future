@@ -71,12 +71,12 @@ export function Header() {
           "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-200",
           scrolled || open
             ? "border-b border-border bg-bg/80 backdrop-blur-md"
-            : "border-b border-transparent bg-transparent",
+            : "border-b border-border/60 bg-bg/95",
         )}
       >
-        <div className="mx-auto flex h-[3.6rem] max-w-[88rem] items-center justify-between px-5 sm:px-8 lg:px-10">
+        <div className="mx-auto flex h-20 max-w-[88rem] items-center justify-between px-5 sm:px-8 lg:px-10">
           <Logo />
-          <nav className="hidden items-center gap-0.5 lg:flex">
+          <nav className="hidden items-center gap-0.5 xl:flex">
             {menus.map((m) => (
               <HoverMenu key={m.label} label={m.label} items={m.items} />
             ))}
@@ -84,13 +84,13 @@ export function Header() {
               <Link
                 key={l.to}
                 to={l.to}
-                className="px-3 py-2 text-[13px] font-medium text-muted transition-colors duration-150 hover:text-fg"
+                className="px-3 py-2 text-[13px] font-medium text-muted transition-colors duration-150 hover:text-gold"
               >
                 {l.label}
               </Link>
             ))}
           </nav>
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 xl:flex">
             <LanguageSwitcher compact />
             <WhatsAppBtn
               size="sm"
@@ -102,14 +102,14 @@ export function Header() {
             </WhatsAppBtn>
             <Link
               to="/contact"
-              className="inline-flex h-9 items-center rounded-full bg-accent px-4 text-[13px] font-medium text-accent-fg transition-opacity duration-150 hover:opacity-90 active:scale-[0.96]"
+              className="inline-flex h-9 items-center rounded-xs bg-accent px-4 text-[13px] font-medium text-accent-fg transition-opacity duration-150 hover:opacity-90 active:scale-[0.96]"
             >
               {chrome.talkToUnfld}
             </Link>
           </div>
           <button
             type="button"
-            className="relative size-11 lg:hidden"
+            className="relative size-11 xl:hidden"
             aria-label={open ? chrome.closeMenu : chrome.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -132,7 +132,7 @@ export function Header() {
 
       <div
         className={cn(
-          "fixed inset-0 z-40 overflow-y-auto bg-bg pt-16 transition-opacity duration-300 lg:hidden",
+          "fixed inset-0 z-40 overflow-y-auto bg-bg pt-16 transition-opacity duration-300 xl:hidden",
           open ? "opacity-100" : "pointer-events-none invisible opacity-0",
         )}
         aria-hidden={!open}
@@ -174,7 +174,7 @@ export function Header() {
           </WhatsAppBtn>
           <Link
             to="/contact"
-            className="mt-3 inline-flex h-12 items-center justify-center rounded-full bg-accent text-sm font-medium text-accent-fg"
+            className="mt-3 inline-flex h-12 items-center justify-center rounded-xs bg-accent text-sm font-medium text-accent-fg"
           >
             {chrome.talkToUnfld}
           </Link>
@@ -207,7 +207,7 @@ function HoverMenu({
     <div className="relative" onMouseEnter={show} onMouseLeave={hide}>
       <button
         type="button"
-        className="inline-flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-muted transition-colors duration-150 hover:text-fg"
+        className="inline-flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-muted transition-colors duration-150 hover:text-gold"
         aria-expanded={open}
       >
         {label}

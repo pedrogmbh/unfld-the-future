@@ -54,15 +54,15 @@ function Home() {
 
   return (
     <main>
-      <section className="flex min-h-[100dvh] w-full flex-col justify-end px-5 pt-28 pb-16 sm:px-8 sm:pb-20 lg:px-12 lg:pb-24">
-        <div className="mx-auto grid w-full max-w-6xl items-end gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-16">
+      <section className="flex w-full flex-col justify-center px-5 pt-32 pb-14 sm:px-8 sm:pt-36 sm:pb-20 lg:min-h-[90dvh] lg:px-12">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-12">
           <div className="min-w-0">
-            <h1 className="home-hero text-[clamp(2.6rem,7.2vw,5.75rem)] font-medium leading-[0.96] tracking-[-0.045em]">
+            <h1 className="font-display text-[clamp(3.5rem,6.4vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.015em]">
               {home.heroTitle}
               <br />
-              <span className="text-muted">{home.heroTitleSecond}</span>
+              <span className="text-fg">{home.heroTitleSecond}</span>
             </h1>
-            <p className="mt-8 max-w-xl text-[17px] leading-relaxed text-muted sm:text-lg">
+            <p className="mt-8 max-w-md text-lg leading-relaxed text-muted sm:text-xl">
               {`${company.title} ${company.titleSecond}`}
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -75,11 +75,24 @@ function Home() {
               </Link>
             </div>
           </div>
-          <div
-            role="img"
-            aria-label={home.heroImageAlt}
-            className="hero-still hidden aspect-video w-full overflow-hidden rounded-xl outline outline-1 -outline-offset-1 outline-fg/10 lg:block"
-          />
+          <picture className="block min-w-0 overflow-hidden">
+            <source
+              type="image/avif"
+              srcSet="/images/hive-fold-800.avif 800w, /images/hive-fold-1600.avif 1600w"
+              sizes="(min-width: 1024px) 552px, 100vw"
+            />
+            <img
+              src="/images/hive-fold-800.webp"
+              srcSet="/images/hive-fold-800.webp 800w, /images/hive-fold-1600.webp 1600w"
+              sizes="(min-width: 1024px) 552px, 100vw"
+              alt={home.heroImageAlt}
+              width={1536}
+              height={1024}
+              fetchPriority="high"
+              decoding="async"
+              className="aspect-[16/10] w-full object-cover lg:aspect-[4/5]"
+            />
+          </picture>
         </div>
       </section>
 
@@ -121,7 +134,7 @@ function Home() {
               <li key={product.slug}>
                 <Link
                   to={product.href as never}
-                  className="rounded-sm font-display text-lg font-medium tracking-tight transition-colors hover:text-muted sm:text-xl"
+                  className="rounded-sm font-sans text-lg font-medium tracking-tight transition-colors hover:text-muted sm:text-xl"
                 >
                   {product.shortName}
                 </Link>

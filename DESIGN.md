@@ -1,407 +1,128 @@
 # UNFLD Design System
 
-This file is the contract for anyone editing the site. Match what is here.
-Do not invent a second visual language. When in doubt, copy an existing
-page (`/` and `/api`) rather than a generic SaaS template.
-
-**North star:** the visual, motion, and typographic language of
-[x.ai](https://x.ai) — pure black, Inter Tight, IBM Plex Mono, grain,
-staggered blur+y, stacked macOS code windows, hairline grids. We copy the
-*language*, not the name, products, or copy. Stay on TanStack Start +
-React + Tailwind v4 + `motion` (`motion/react`). Do not switch to Next.js
-or Framer.
-
-Public-facing brand rules (name, mark, color) also live at
-`/legal/brand-guidelines`. This file is the implementation spec.
-
----
+The approved visual identity is **Célula aberta**, introduced in November 2026.
+The master assets and brand guide live in `public/brand/`. The website uses
+TanStack Start, React, Tailwind v4 and `motion/react`.
 
 ## Brand
 
-| | |
-|---|---|
-| Name | **UNFLD** — five capitals, pronounced “unfold”. Never Unfld, Unfold, UNFOLD in UI. |
-| Legal | UNFOLDING THE FUTURE LTDA (CNPJ 62.855.761/0001-82). Trading name: UNFLD. Opened 23 Sep 2025. Matriz, Ativa, ME. CNAE 62.04-0-00. Registered: admin@unfolding.com.br · (43) 3422-8348. |
-| Tagline | Unfold the future. |
-| Story | A software house that also ships its own products. We still build for others. We operate SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial, Oluart, and Unifikar. |
-| Products | Owned (in market): SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial, Oluart, Unifikar. |
-| HQ | São Paulo — Rua Avanhandava, 126, Bela Vista. |
+UNFLD has five capital letters and is pronounced “unfold”. The legal name is
+UNFOLDING THE FUTURE LTDA. Formal contracts and proposals use the legal name.
 
-**Mark.** The hexagon symbol. Source: `public/brand/symbol.svg`,
-`src/components/site/logo.tsx` (`Mark`), and `public/favicon.svg`. Faces
-use `currentColor`. On dark surfaces the official lockup paints two
-bevel facets, the top-right band and the bottom-left band, with
-`fill-logo-bevel` (`--color-logo-bevel`). The light lockup leaves those
-facets in the main color (`bevel={false}`). Favicon rasters at 16, 32,
-and 48 stay flat because the grey bands close up at that size. Do not
-rotate, add shadows, or redraw.
+The isotipo is an open hive cell formed from two parallel folds on a 30-degree
+grid. Its origin is the shared understanding between UNFLD’s founder and former
+CTO. The gap between the folds draws a U. The lettering is custom vector artwork.
 
-**Wordmark.** The traced UNFLD lettering in `public/brand/lockup.svg`
-(`Lockup`). Always locked up with the mark in chrome; the mark may stand
-alone only when the name is already on the surface.
+Use `Mark` and `Lockup` from `src/components/site/logo.tsx`. Geometry lives in
+`brand-mark.ts`. The default mark is Honey and the lettering inherits its
+surrounding text color. The existing `bevel={false}` prop selects one ink.
 
-**Tone** — calm, precise, first-person plural. Short sentences. No hype,
-no emoji, no exclamation marks in product UI. Prefer “we ship” over
-“we empower”. Em-dashes and middots (`·`) are on-brand.
+Use the standalone mark where the company name already appears. Leave clear
+space equal to one quarter of the mark’s width around every signature. Minimum
+widths are 24 px for the mark and 96 px for the full signature. The 16 px favicon
+has a dedicated optical master. Preserve orientation, proportions and the gap
+between the folds.
 
----
+Canonical assets are `/brand/lockup.svg`, `/brand/symbol.svg`, and their
+`-ink.svg` versions. `/logo.svg` is used by structured metadata. The approved
+manual and kit are downloadable from `/legal/brand-guidelines`.
 
 ## Color
 
-All color lives in `src/styles.css` under `@theme`. Consume tokens as
-Tailwind utilities (`bg-bg`, `text-muted`, `border-border`). **No raw
-hex in JSX.** No `text-white` / `bg-black` literals — use `text-fg` /
-`bg-bg`.
+Define colors in `src/styles.css` under `@theme`. JSX consumes token classes.
 
-### Surfaces
-
-| Token | Hex | Use |
+| Token | Value | Use |
 |---|---|---|
-| `bg` | `#000000` | Page, chrome, primary field |
-| `bg-elevated` | `#0a0a0a` | Dropdowns, elevated panels |
-| `bg-subtle` | `#111111` | Inset fills, selected pills |
-| `window` | `#0b0b0b` | Front code window |
-| `window-mid` | `#141414` | Stacked card (middle) |
-| `window-back` | `#1c1c1c` | Stacked card (back) |
-| `window-stage` | `#0f0f0f` | Code stage behind the stack |
+| `bg` | #181B18 | Ink, main digital field |
+| `fg`, `paper` | #F5F3EB | Paper, primary text and reading surfaces |
+| `accent`, `gold` | #EBA937 | Honey, isotipo, primary actions, focus and kickers |
+| `accent-fg` | #181B18 | Text on Honey |
+| `ochre` | #805113 | Links on Paper |
+| `shale` | #555C56 | Secondary text on Paper |
+| `bg-elevated` | #21251F | Menus and elevated panels |
+| `bg-subtle` | #292E27 | Inset panels |
+| `muted` | #C0C6BB | Secondary text on Ink |
+| `subtle` | #A1AA9B | Captions and metadata on Ink |
+| `border` | #3B403A | Decorative separators |
+| `border-strong` | #697160 | Control boundaries |
+| `status` | #7CBA8C | Operational dot beside its written label |
 
-### Type / chrome
+Honey on Ink measures 8.49:1 contrast. Ink on Paper measures 15.64:1.
+Ochre on Paper measures 6.09:1. Slate on Paper measures 6.19:1.
 
-| Token | Hex | Use |
-|---|---|---|
-| `fg` | `#f5f5f5` | Primary text, primary buttons |
-| `muted` | `#8a8a8a` | Body, nav idle, secondary lines |
-| `subtle` | `#5c5c5c` | Captions, footer meta, category labels |
-| `border` | `#1a1a1a` | Hairlines, card grids |
-| `border-strong` | `#2a2a2a` | Outlined buttons, dropdown chrome |
+Honey is a deliberate accent in digital layouts. Use it for the primary action
+and brand signature. Use an Ink signature and text on a full Honey field.
+Formal proposals use the black signature on white paper.
 
-### Accent
-
-There is **one** action accent: white on black. Kickers may use brass.
-
-| Token | Hex | Use |
-|---|---|---|
-| `accent` | `#ffffff` | Primary buttons, “Try for free” |
-| `accent-fg` | `#000000` | Text on primary buttons |
-| `gold` | `#e3b26a` | Kickers only — same hex as `code-str` |
-| `status` | `#187533` | Operational status dots only |
-
-Gold is type on kickers: `Kicker`, `PageHero` kickers, and the
-sentence-case “For developers” line. Never a fill, never a button, never
-the mark, never a status pill, never a rule. Do not substitute a
-brighter gold (`#ffba00`, traffic-amber). No purple, blue, or gradient
-**brand fills**. Other hues stay inside code.
-
-### Syntax (code only)
-
-| Token | Hex | Role |
-|---|---|---|
-| `code-kw` | `#c792ea` | Keywords (`import`, `from`, `const`, `print`, `curl`) |
-| `code-fn` | `#82aaff` | Calls (`getenv(`, `create(`, `user(`) |
-| `code-str` | `#e3b26a` | Strings |
-| `code-num` | `#f78c6c` | Numbers, `$ENV` vars |
-| `code-cmt` | `#5b6b73` | Comments |
-| `code-punct` | `#6b6b6b` | Punctuation |
-| (plain / prop) | `fg/88`–`fg/85` | Identifiers, PascalCase types, properties |
-
-Highlighter: `src/lib/highlight.tsx`. PascalCase + `(` is a **type**
-(white), not a function. Lowercase + `(` is a function (blue).
-
-### Traffic lights
-
-`traffic-red` `#ff5f57` · `traffic-amber` `#febc2e` · `traffic-green` `#28c840`.
-Only on code-window chrome.
-
-Operational status uses `status` `#187533` — an 8px dot (`bg-status`) on
-the footer legal bar and `/status`. No pulse. No Lucide icon. Do not use
-`traffic-green`, `emerald-*`, or gold for status.
-
-### Selection / focus
-
-Selection is inverted: white fill, black type. Focus ring is
-`1px solid rgba(255,255,255,0.55)` with 3px offset.
-
----
+Syntax colors belong inside code windows. Status has a written label and a
+static dot. Keep gradients confined to existing code-stage lighting.
 
 ## Typography
 
-Two families, loaded in `src/routes/__root.tsx`:
+All fonts are self-hosted in `public/fonts/`, declared in `faces.css`.
+The display and regular text fonts preload in `__root.tsx`.
 
-- **Inter Tight** — display and UI (`font-display`, `font-sans`)
-- **IBM Plex Mono** — code, coordinates, numeric labels (`font-mono`)
+- **Barlow Condensed Semibold** is `font-display`. Use it for headlines, section
+  titles and covers. Use 600 weight with modest negative tracking.
+- **Source Sans 3 Regular and Semibold** is `font-sans`. Use it for paragraphs,
+  navigation, buttons and reading. Body leads use 18–20 px with generous leading.
+- **IBM Plex Mono** is `font-mono`, reserved for code and technical metadata.
+- Use the supplied vector lettering for the UNFLD wordmark.
 
-Weights in use: 400, 500, 600, 700. Body is 400; UI labels 500;
-wordmark 600.
+Headline type balances at natural word boundaries. Retain the hierarchy in
+`PageHero` and existing product templates. Do not stretch type or artificially
+reconstruct the wordmark from a font. The downloadable Word template uses Arial
+at 11 pt for compatibility in tender documents.
 
-### Scale (use these, don’t invent)
+## Layout and images
 
-| Role | Size | Tracking | Leading | Weight |
-|---|---|---|---|---|
-| Hero h1 (home) | `clamp(3.2rem, 11vw, 8.4rem)` | `-0.05em` | `0.9` | 500 |
-| Page h1 | `clamp(2.6rem, 8vw, 6.5rem)` | `-0.045em` | `0.95` | 500 |
-| Section h2 | `clamp(1.8rem, 4vw, 3.75rem)` | tight / `-0.035em` | `1.05` | 500 |
-| Card / feature h3 | `text-xl`–`text-2xl` | `tracking-tight` | — | 500 |
-| Lede | `17px` / `sm:text-lg` | — | relaxed | 400, `text-muted` |
-| Body | `15px`–`16px` | — | `1.6`–`1.7` | 400, `text-muted` |
-| Nav / button | `13px` | `tracking-wide` on buttons | — | 500 |
-| Kicker | `13px` | `0.18em` | — | 500, **uppercase**, `text-gold` |
-| Footer col title | `11px` | `0.18em` | — | 500, uppercase, `text-subtle` |
-| Code | `12.5px` | — | `1.7` | 400, `font-mono` |
-| Wordmark | `13px` | `0.28em` | — | 600 |
+Content uses `max-w-6xl` with `px-5 sm:px-8 lg:px-12`. The fixed header is
+80 px high. Desktop navigation starts at 1280 px to leave room for the logo,
+language selector and contact actions.
 
-Headlines: `font-display font-medium`, never all-caps, never italic for
-hero type. `text-wrap: balance` on h1–h3, `pretty` on p.
+The homepage pairs display typography with the approved Honey paper folds.
+Responsive AVIF and WebP variants live at `/images/hive-fold-*`. The image is
+visible on mobile and has explicit dimensions, localized alt text and a stable
+aspect ratio. The 1200 × 630 share card uses the same mark and photographic study.
 
-A second line of a hero in `text-muted` is on-brand
-(“One API.” / “Every modality.”).
+Use negative space, hairline divisions and restrained rectangular controls.
+Primary buttons have Honey fill, Ink text and 4 px corners. Secondary actions
+use outlines. Existing card grids and product layouts use the shared tokens.
 
-Kickers in the developer section stay **sentence case**
-(“For developers”). Everywhere else, kickers are uppercase.
+Keep `w-full min-w-0` on nested flex and grid children that can overflow.
+Code may scroll within its panel. The page must fit a 390 px viewport.
+Use `Section`, `PageHero`, `BtnLink`, `LegalDoc`, and the existing templates.
 
-This site uses precise `text-[13px]`-style sizes to match x.ai. That is
-allowed **for type**. New *colors* still go in `@theme`.
+Product and team-history imagery remains specific to its subject. The corporate
+identity frames those images. Keep image alt text, intrinsic dimensions and lazy
+loading below the fold.
 
----
+## Motion and interaction
 
-## Layout
+Use `motion/react` primitives in `reveal.tsx`. Easing is
+`[0.22, 1, 0.36, 1]`. Respect reduced motion. Press scales to 0.96.
 
-- Content column: `max-w-6xl`, horizontal padding `px-5 sm:px-8 lg:px-12`.
-- Header inner: `max-w-[88rem]`, height `3.6rem`.
-- Footer inner: `max-w-7xl`.
-- Always `w-full min-w-0` on nested flex/grid children that can overflow
-  (especially code).
-- `overflow-x: clip` on `html`/`body`. Never introduce page-level
-  horizontal scroll.
-- Page top offset: heroes start at `pt-28` / `sm:pt-36` to clear the
-  fixed header.
+`WordStagger` animates on mount and keeps text readable in server-rendered HTML.
+`Reveal` runs on block elements. Header menu transitions last 180 ms and use a
+90 ms leave delay. Code tilt is mouse-only and skips reduced motion.
 
-### Section rhythm
+Closed mobile menus include `invisible pointer-events-none opacity-0`.
+The global focus ring is Honey with a 3 px offset. Grain stays subtle and
+pointer-transparent. Avoid autoplay loops or moving status dots.
 
-- Home / product blocks: `py-20 sm:py-28`.
-- Closing sections: `pb-24 sm:pb-32`.
-- Spacing scale is 4/8-based. Prefer `gap-3`, `mt-8`, `mt-10`, `p-6`/`p-8`.
+## Content and implementation
 
-### Hairline grids
+Use calm, precise language, concrete verbs and supported claims. Product names
+are proper nouns. Company-owned products are SiteCreator, Doutor Fiscal,
+Queravaga, Dialogus Psicossocial, Oluart and Unifikar.
 
-The signature card grid is **1px gaps on a border-colored field**:
+Keep navigation and company data in `src/lib/site.ts` and localized copy in the
+four message bundles. Brand guidance is translated in all four locales.
 
-```
-grid gap-px overflow-hidden rounded-xl border border-border bg-border
-  sm:grid-cols-2 lg:grid-cols-3
-```
+Preserve `getRouter()`, `PreviewHostBridge`, `grokPwaPlugin()`, the existing
+header/footer, auth-off configuration and static product architecture. Keep
+`npm run dev` on port 8080.
 
-Children are `bg-bg` (or `bg-bg` → `hover:bg-bg-elevated`). Do not put
-box-shadows on these cards. Hover may lift `~2px` (`-translate-y-0.5`).
-
-### Images
-
-- Wrapper: `overflow-hidden rounded-xl`.
-- Photo: `aspect-[16/8]` (hero/product) or `aspect-[16/9]` (company tiles),
-  `object-cover`, `outline outline-1 -outline-offset-1 outline-fg/10`.
-- Use `ParallaxImage` from `src/components/site/reveal.tsx` for full-bleed
-  stills. Cinematic, dark, geometric — existing set in `public/images/`.
-- No stock-looking people, no gradient blobs, no illustration kits.
-
-### Grain
-
-A fixed film-grain overlay (`.grain` in `styles.css`, mounted in
-`__root.tsx`) sits at `z-80`, opacity `0.045`, `mix-blend-mode: overlay`.
-Do not remove it. Do not add a second global overlay.
-
----
-
-## Motion
-
-Library: **`motion/react`** (Framer Motion). Respect
-`prefers-reduced-motion` on every animation — `useReducedMotion()`, and
-the CSS kill-switch already in `styles.css`.
-
-**Easing:** `[0.22, 1, 0.36, 1]` everywhere (smooth decelerate).
-**Press:** `scale(0.96)` — never smaller than `0.95`.
-**Icon swap (Copy → Check):** scale `0.25↔1`, opacity, blur `4px`,
-`duration-300`, `cubic-bezier(0.2, 0, 0, 1)`.
-
-### Primitives (`src/components/site/reveal.tsx`)
-
-Use these. Don’t hand-roll a second enter animation.
-
-| Primitive | When | Recipe |
-|---|---|---|
-| `Reveal` | Blocks entering on scroll | opacity 0→1, y 22→0, blur 10→0, 0.8s, `once` |
-| `Stagger` + `StaggerItem` | Grids, lists | stagger 0.06–0.08s, item y 18 + blur 8, 0.7s |
-| `WordStagger` | Hero / page titles | **`animate` on mount** (not `whileInView` — inline spans miss IO). 0.07s per word, 0.75s, nbsp between words |
-| `ParallaxImage` | Large stills | y ±42, scale 1.14→1.02, skipped on reduced motion |
-
-`whileInView` must use a **block** element (`div`/`section`). Do not put
-`whileInView` on an inline `span`.
-
-### Dropdowns / overlays
-
-Header menus and “Try for free” split:
-
-```
-enter: opacity 0, y 6, scale 0.97, blur 4px → rest, 180ms
-exit:  opacity 0, y 4, scale 0.99, blur 2px, 180ms
-```
-
-Hover intent delay on leave: **90ms**. Chevron rotates 180°.
-
-### Code window (`CodeTabs`)
-
-- Stage fades in: y 32, blur 12px, 0.9s.
-- Lines paint in with color: x 10, blur 6px, stagger **0.035s**, 0.45s.
-- Pointer (mouse only): stacked cards parallax + 3D tilt
-  (`rotateX` ±7, `rotateY` ±9, perspective 1100). Springs:
-  `{ stiffness: 55, damping: 18, mass: 0.55 }`.
-- No tilt / no parallax on touch or reduced motion.
-
-### What not to add
-
-- Bounce / spring with `bounce > 0` on UI chrome.
-- Marquees, gradient-blob orbits, cursor-follower blobs.
-- Layout animations that reflow the page (`layout` on large grids).
-- Animating `width`/`height`/`top` — transform and opacity only.
-- Auto-playing loops on hero type.
-- Pulsing status dots.
-
----
-
-## Components (reuse these)
-
-All under `src/components/site/`.
-
-| File | Role |
-|---|---|
-| `logo.tsx` | Hexagon mark + UNFLD lockup |
-| `header.tsx` | Fixed nav, hover menus, Contact Sales, Try-for-free split, mobile overlay |
-| `footer.tsx` | Five-column sitemap + legal + status chip |
-| `buttons.tsx` | `Btn`, `BtnLink` (primary / secondary / ghost), `TextArrow` |
-| `page-hero.tsx` | Inner-page hero (kicker, WordStagger title, lede, actions) |
-| `section.tsx` | `Section` (max-w-6xl), `Kicker`, `Hairline` |
-| `reveal.tsx` | Motion primitives |
-| `code-tabs.tsx` | Developer showcase: stacked window + language pills |
-| `code-block.tsx` | Smaller colored window for docs / news |
-| `product-page.tsx` | Product template (hero + parallax still + feature grid + quote) |
-| `legal-doc.tsx` | Legal article shell |
-| `not-found.tsx` | 404 |
-Copy, nav, products, news, plans: **`src/lib/site.ts`**. Don’t scatter
-sitemap links.
-
-### Header
-
-- Transparent over the hero; `bg-bg/80 backdrop-blur-md` + bottom border
-  after 8px scroll (or when the mobile menu is open).
-- Desktop: Products, Solutions, Developer, Company (chevrons) · Pricing · News.
-- Right: outlined **Contact Sales** + white split **Try for free**.
-- Mobile: hamburger → two-line morph. Overlay is
-  `fixed inset-0 z-40 bg-bg`. **Closed state must include `invisible`
-  and `pointer-events-none`**, not only `opacity-0` (opacity-0 overlays
-  still paint into screenshots and steal clicks).
-- Do not read `footer.*` at module top-level in `header.tsx` — keep
-  `navMenus()` inside the component (SSR chunk cycle).
-
-### Buttons
-
-- Pill (`rounded-full`).
-- Primary: `bg-accent text-accent-fg`, hover opacity 85%.
-- Secondary: `border-border-strong`, hover `border-fg/40 bg-fg/5`.
-- Heights: sm 36px, md 44px, lg 48px. Header CTAs are 36px.
-- Always `active:scale-[0.96]`.
-
-### Code surfaces
-
-**Showcase (`CodeTabs`)** — homepage developer section, `/api`.
-Stacked dark plates, crop marks (8×8 `bg-bg` squares), grain + spotlight
-on the stage (`.code-stage`), traffic lights, Copy, language pills
-**below** the stack. Selected pill is **black / `bg-bg` with white type**,
-not a white pill. Languages: Python, TypeScript, TypeScript (OpenAI SDK),
-cURL.
-
-**Inline (`CodeBlock`)** — docs, news. One window, optional filename,
-same highlighter, no stack / no tilt.
-
-Never ship a `<pre>` of un-highlighted code. Always run `highlight` /
-`highlightLines`.
-
----
-
-## Imagery
-
-Cinematic stills, near-black, geometric fold / plane / architecture.
-Current set in `public/images/`:
-
-`hero-fold.jpg` `forge.jpg` `build.jpg` `studio.jpg` `pulse.jpg`
-`relay.jpg` `infra.jpg` `office.jpg` `hq.jpg`
-
-OG card: `public/og.jpg` + `src/lib/og/site.json` (`title: "UNFLD"`,
-`card: "custom"`). Favicon: `public/favicon.svg`.
-
-If you add a still, keep the same grade (black void, cool metal, no
-people-first stock).
-
----
-
-## Voice in UI
-
-- Product names are proper nouns. Owned products: SiteCreator, Doutor Fiscal, Queravaga, Dialogus Psicossocial, Oluart, Unifikar.
-- Product sites: sitecreator.com.br, doutorfiscal.com, dialoguspsicossocial.com.br, queravaga.com, oluart.com, unifikar.com.
-- CTAs: “Our products”, “Contact Sales”, “Open SiteCreator”,
-  “Try for free”. Title case, no “Learn more” without a destination.
-- Dates: `Aug 18, 2026`.
-- Stats are sparse and specific (`15+`, `7`, `2019`).
-
----
-
-## Adding a page
-
-1. New route in `src/routes/` via `createFileRoute`.
-2. Wrap in `<main>`. Use `PageHero` + `Section`. Set
-   `head: () => ({ meta: [{ title: pageTitle("Name") }] })`.
-3. Enter content with `Reveal` / `Stagger`. Titles through `WordStagger`
-   (already inside `PageHero`).
-4. Link it from `footer` in `src/lib/site.ts` (and header menu if it
-   belongs there).
-5. Product pages go through `ProductPage`. Legal pages through
-   `LegalDoc`.
-6. Do not add auth, a database, or a second header/footer.
-
-Mobile (~390px): tap targets ≥ 40–44px, no horizontal overflow, hero
-type must remain visible (WordStagger uses mount `animate`, not
-`whileInView`).
-
----
-
-## Do
-
-- Edit tokens in `@theme`, then use utilities.
-- Match x.ai density: lots of black, little chrome, type doing the work.
-- Keep motion cinematic and slow on enter; snappy (150–200ms) on hover.
-- Keep syntax colors inside code. Gold chrome is kickers only.
-- Leave the grain, the hairline grids, and the hexagon mark alone.
-
-## Don’t
-
-- Don’t spread gold past kickers (no gold buttons, pills, rules, or fills).
-- Don’t add Inter / Geist / a third font. Inter Tight + IBM Plex Mono.
-- Don’t drop Framer-style gradient meshes, glassmorphism, or emoji icons.
-- Don’t replace `motion` with CSS-only page enters “to simplify”.
-- Don’t put `og:*` tags in `__root.tsx`.
-- Don’t hide the Grok/Remix pill or strip `PreviewHostBridge`.
-- Don’t bind a new look to one page — if the home is black and a new
-  page is a white dashboard, you broke the system.
-
----
-
-## File map
-
-```
-src/styles.css                 tokens, grain, code-stage, crop marks
-src/lib/site.ts                copy, nav, products, news, plans
-src/lib/highlight.tsx          syntax highlighter
-src/components/site/*          chrome + primitives
-src/routes/__root.tsx          fonts, grain, header/footer shell
-src/routes/index.tsx           home (reference composition)
-public/images/                 cinematic stills
-public/favicon.svg             hexagon mark
-public/og.jpg                  share card
-```
+Validate typechecking, localization, the production build, and existing tests.
+Inspect desktop and mobile pages, menu and language interactions, fonts, assets
+and the browser console. A successful HTTP response alone is insufficient.

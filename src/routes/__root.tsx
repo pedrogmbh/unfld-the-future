@@ -37,11 +37,11 @@ export const Route = createRootRouteWithContext<RouterContext>()({
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { title: APP_NAME },
-        { name: "theme-color", content: "#000000" },
+        { name: "theme-color", content: "#181B18" },
         { name: "description", content: description },
       ],
       links: [
-        { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+        { rel: "icon", href: "/favicon.ico", sizes: "16x16 32x32 48x48" },
         { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
         { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16.png" },
@@ -53,6 +53,21 @@ export const Route = createRootRouteWithContext<RouterContext>()({
           title: "UNFLD Blog",
         },
         { rel: "stylesheet", href: appCss },
+        { rel: "stylesheet", href: "/fonts/faces.css" },
+        {
+          rel: "preload",
+          as: "font",
+          type: "font/woff2",
+          href: "/fonts/BarlowCondensed-SemiBold.woff2",
+          crossOrigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          as: "font",
+          type: "font/woff2",
+          href: "/fonts/SourceSans3-Regular.woff2",
+          crossOrigin: "anonymous",
+        },
         { rel: "manifest", href: "/__grok/manifest.webmanifest" },
         { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
       ],
@@ -67,16 +82,6 @@ function Root() {
     <html lang={LOCALE_META[locale].html} className="dark antialiased" suppressHydrationWarning>
       <head>
         <HeadContent />
-        <link id="font-faces" rel="stylesheet" href="/fonts/faces.css" media="print" />
-        <noscript>
-          <link rel="stylesheet" href="/fonts/faces.css" />
-        </noscript>
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              '(function(){function apply(){var l=document.getElementById("font-faces");if(l)l.media="all";}requestAnimationFrame(function(){requestAnimationFrame(apply);});})();',
-          }}
-        />
       </head>
       <body className="bg-bg text-fg">
         <PreviewHostBridge />

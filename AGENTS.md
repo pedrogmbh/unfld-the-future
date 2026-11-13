@@ -14,9 +14,9 @@ Owned products in market: **SiteCreator**, **Doutor Fiscal**, **Queravaga**,
 **Dialogus Psicossocial**, **Oluart**, **Unifikar**. Do not add FCR,
 Ferramenta de Coleta, or Timac Agro back to the public site.
 
-North star: [x.ai](https://x.ai) visual/motion language (black field,
-Inter Tight, IBM Plex Mono, grain, blur+y, stacked code windows). Copy
-the _language_, not their name or products.
+The approved identity is **Célula aberta**. Honey on Ink, custom UNFLD
+lettering, and an open hive cell formed by two parallel folds. Use the
+masters in public/brand and the rules in DESIGN.md.
 
 Public repo: [pedrogmbh/unfld-the-future](https://github.com/pedrogmbh/unfld-the-future).
 Default branch: `main`.
@@ -32,7 +32,7 @@ Default branch: `main`.
 | Style | Tailwind v4 — tokens in `src/styles.css` `@theme` |
 | Motion | `motion/react` (Framer Motion) |
 | Icons | `lucide-react` |
-| Fonts | Inter Tight + IBM Plex Mono (loaded in `__root.tsx`) |
+| Fonts | Barlow Condensed Semibold for display, Source Sans 3 for UI and body, IBM Plex Mono for code |
 
 Do **not** migrate to Next.js, Framer, or another CSS framework.
 
@@ -73,7 +73,7 @@ src/routes/                    file routes
 src/routes/__root.tsx          fonts, grain, Header, Footer
 src/router.tsx                 getRouter() + NotFound
 public/images/                 cinematic stills
-public/favicon.svg             hexagon mark
+public/favicon.svg             open hive cell
 public/og.jpg                  OG image
 DESIGN.md                      visual / motion / type contract
 ```
@@ -116,18 +116,18 @@ News posts: `/news/$slug` + `getNews()`. Do not hardcode
 
 ## UI / UX (summary — full spec in DESIGN.md)
 
-- Pure black (`bg-bg`). Action accent: white on black. Kickers: `text-gold`.
+- Ink (`bg-bg`, #181B18), Paper text, Honey primary action and isotipo.
 - **No hex in JSX.** Tokens only (`text-fg`, `bg-bg`, `border-border`, `text-gold`).
-- Gold (`#e3b26a`) is kickers only. Syntax hues stay inside code.
+- Honey (`#EBA937`) identifies the mark, kickers, focus and primary actions. Syntax hues stay inside code.
 - Footer legal bar leads with an 8px `bg-status` dot +
   “All systems operational.” linking to `/status`. No pulse.
 - Hairline grids: `gap-px … border-border bg-border`, children `bg-bg`.
-- Hero type: `font-display font-medium`, negative tracking, never all-caps.
+- Hero type: `font-display font-semibold`, Barlow Condensed, slight negative tracking.
 - Kickers: uppercase `tracking-[0.18em] text-gold` — except the
   developer section kicker, which is sentence case (“For developers”).
-- Buttons are pills. Primary fill white; secondary outlined.
+- Buttons have restrained 4px corners. Primary fill Honey with Ink text; secondary outlined.
   Press scale `0.96`.
-- Name is **UNFLD** (five capitals). Mark and lockup from `logo.tsx` and `public/brand/`. Do not redraw.
+- Name is **UNFLD** (five capitals). Approved Célula aberta mark and custom lettering from `logo.tsx` and `public/brand/`. Keep ¼ of the mark width as clear space. The legacy `bevel={false}` prop selects one-color rendering.
 
 ### Motion
 
@@ -231,7 +231,7 @@ Performance and access, on every post:
 - LCP under 2.5s. CLS near 0. Animate transform and opacity, not layout.
 - Respect `prefers-reduced-motion`. The static frame has to carry the same facts. Animation is not the only place a fact appears.
 - One `h1`. Semantic sections. Alt text. The global focus ring. Contrast from the tokens in `DESIGN.md`.
-- Tokens only. No hex in JSX. Gold is kickers only.
+- Tokens only. No hex in JSX. Honey is the primary brand accent.
 
 `node --test scripts/blog-registry.test.mjs` checks that every registry
 slug has a route file, a cover, and an OG image, and that slugs are unique.
@@ -241,7 +241,7 @@ PNG OG images must be 1200×630.
 
 ## Do not
 
-- Don’t spread gold past kickers, add a third font, or use gradient-blob chrome.
+- Keep Honey accents deliberate. Use the supplied folds, fonts and logo masters. Code uses the existing monospace face.
 - Don’t replace `motion` with CSS-only page enters “to simplify”.
 - Don’t ship un-highlighted `<pre>` blocks.
 - Don’t add a second header/footer.

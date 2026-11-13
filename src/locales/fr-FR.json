@@ -182,7 +182,7 @@
       "frontDesign": "Design",
       "frontConsulting": "Conseil",
       "ourProducts": "Nos produits",
-      "heroImageAlt": "Un plan géométrique se dépliant dans un vide noir",
+      "heroImageAlt": "Deux plis parallèles de papier couleur miel sur un fond Encre",
       "productsKicker": "Produits par UNFLD",
       "productsTitle": "Des marchés différents. La même conviction.",
       "productsLede": "Comprendre le travail, construire ce qui devrait exister ensuite et rester responsables de ce qui suit la mise en production.",
@@ -1674,7 +1674,7 @@
       "metaDescription": "Comment nommer, écrire et représenter visuellement UNFLD et son sigle.",
       "kicker": "Marque",
       "title": "Charte de marque UNFLD",
-      "intro": "UNFLD signifie UNFOLDING THE FUTURE : la conviction que le progrès utile se construit en transformant un travail difficile en systèmes que l’on peut utiliser. La marque doit sembler précise, calme, pratique et en mouvement. Utilisez ces lignes directrices lorsque vous faites référence à UNFLD, à nos produits ou à des missions partenaires.",
+      "intro": "UNFLD signifie UNFOLDING THE FUTURE. Célula aberta, notre identité visuelle, est née d’un partenariat fondé sur une compréhension partagée. Deux plis suivent la même direction. Ensemble, ils forment une alvéole ouverte et le U de UNFLD.",
       "sections": [
         {
           "heading": "Nom et identité juridique",
@@ -1686,25 +1686,27 @@
         },
         {
           "heading": "Le sigle",
-          "body": "Le sigle est le symbole hexagonal. Utilisez-le avec le wordmark UNFLD, ou seul lorsque le nom est déjà sur la surface. Ne le faites pas tourner, ne le recolorez pas, ne le déformez pas et n’y ajoutez pas d’ombres décoratives."
+          "body": "Le symbole est une alvéole ouverte formée de deux plis sur une grille à 30 degrés. Utilisez le fichier vectoriel fourni avec le lettrage UNFLD, ou le symbole seul lorsque le nom est déjà visible. Réservez un espace libre égal au quart de la largeur du symbole autour de chaque signature. La largeur minimale est de 24 px pour le symbole et de 96 px pour la signature. Pour le favicon de 16 px, utilisez la version avec un intervalle élargi."
         },
         {
           "heading": "Système de couleurs",
-          "body": "Champ principal : noir pur (#000000). Typographie principale : blanc cassé (#F5F5F5). Typographie atténuée : gris neutre (#8A8A8A). L’accent d’action reste un blanc net sur noir, ou un noir sur blanc : boutons, la marque et les aplats restent là. Les kickers de section utilisent un laiton discret (#E3B26A), la même teinte que les chaînes dans le code. Utilisez-le seulement sur ces libellés — kickers de section en capitales, kickers de titre de page et la ligne en sentence case « Pour les développeurs ». Ne le mettez pas sur les boutons, la marque, les pastilles de statut, les règles ou les aplats. Ne le remplacez pas par un or plus vif. Le statut opérationnel utilise un petit point vert foncé (#187533) à côté de « Tous les systèmes sont opérationnels. » dans la barre juridique du pied de page et sur la page de statut du service. Ne le faites pas pulser, et n’utilisez pas ce vert ailleurs dans le chrome. Le vert plus clair des fenêtres de code reste uniquement sur les fenêtres de code. Pas de violet, de bleu ni de taches en dégradé dans le chrome."
+          "body": "Miel (#EBA937) identifie la marque et l’action principale. Encre (#181B18) est le fond numérique principal. Papier (#F5F3EB) porte le texte principal et les surfaces de lecture. Ardoise (#555C56) sert au texte sur fond clair. Ocre (#805113) identifie les liens sur Papier. Miel sur Encre offre un contraste de 8,49:1. Utilisez du texte Encre sur les boutons Miel. Les propositions formelles utilisent la signature noire sur papier blanc. Les indicateurs d’état portent un libellé écrit."
         },
         {
           "heading": "Typographie",
-          "body": "Inter Tight pour les titres d’affichage et les éléments d’interface. IBM Plex Mono pour le code, les coordonnées, les horodatages et les métadonnées techniques. Les titres sont serrés, légèrement suivis en négatif, jamais tout en capitales pour les phrases longues. Le wordmark est le lettrage UNFLD du lockup horizontal."
+          "body": "Barlow Condensed Semibold est utilisée pour les titres et les couvertures. Source Sans 3 Regular et Semibold servent aux paragraphes, à la navigation et à l’emphase. IBM Plex Mono est réservée au code et aux métadonnées techniques. Le wordmark UNFLD est un lettrage vectoriel sur mesure. Utilisez le fichier fourni. Les documents d’appel d’offres modifiables utilisent Arial en corps 11 pt."
         },
         {
           "heading": "Restrictions",
-          "body": "Ne placez pas le sigle sur des photographies chargées sans masquage en dégradé approprié. Ne l’associez pas à des logos tiers sans autorisation. N’imitez pas l’identité visuelle, l’architecture d’information ou la voix d’une autre entreprise. L’inspiration doit être transformée en un système reconnaissablement nôtre."
+          "body": "Conservez l’orientation du symbole et ses proportions. Utilisez les versions approuvées en Miel, Encre, blanc ou noir, sur une surface dégagée et contrastée. Préservez les deux plis et l’espace qui les sépare. Toute association avec des marques tierces nécessite une autorisation."
         },
         {
           "heading": "Questions et validations",
           "body": "Pour les demandes d’actifs de marque ou les validations : {{brand}}."
         }
-      ]
+      ],
+      "downloadKit": "Télécharger le kit de marque",
+      "downloadGuide": "Télécharger le guide de marque"
     }
   },
   "compliance": {

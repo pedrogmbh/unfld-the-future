@@ -47,16 +47,18 @@ export function LegalFromMessages({
   doc,
   kicker,
   afterIntro,
+  updated,
 }: {
   doc: LegalDocMessages;
   kicker?: string;
   afterIntro?: React.ReactNode;
+  updated?: string;
 }) {
   const locale = useLocale();
   const messages = useMessages();
   const vars = legalVars(locale);
   return (
-    <LegalDoc title={doc.title} kicker={kicker} updated={messages.legal.updated}>
+    <LegalDoc title={doc.title} kicker={kicker} updated={updated ?? messages.legal.updated}>
       <p>{interpolate(doc.intro, vars)}</p>
       {afterIntro}
       {doc.sections.flatMap((section) => [

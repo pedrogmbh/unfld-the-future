@@ -2,53 +2,57 @@ import { Link } from "@tanstack/react-router";
 import { useMessages } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import {
-  BEVEL_PATH,
-  LOCKUP_SYMBOL_TRANSFORM,
   LOCKUP_VIEWBOX,
-  LOCKUP_WORD_PATH,
   LOCKUP_WORD_TRANSFORM,
-  MARK_PATH,
+  MARK_INNER_PATH,
+  MARK_OUTER_PATH,
   MARK_VIEWBOX,
+  WORDMARK_LETTERS,
 } from "@/components/site/brand-mark";
 
-export function Mark({
-  className,
-  bevel = true,
-}: {
+type BrandProps = {
   className?: string;
+  /** False uses one ink. Retains compatibility with existing light-surface callers. */
   bevel?: boolean;
-}) {
+};
+
+export function Mark({ className, bevel = true }: BrandProps) {
   return (
     <svg
       viewBox={MARK_VIEWBOX}
-      className={cn("aspect-[381.5/477.36] h-5 w-auto", className)}
+      className={cn("h-6 w-auto shrink-0", className)}
+      fill="currentColor"
       aria-hidden="true"
     >
-      <path fill="currentColor" d={MARK_PATH} />
-      {bevel ? <path className="fill-logo-bevel" d={BEVEL_PATH} /> : null}
+      <g className={bevel ? "text-gold" : undefined}>
+        <path d={MARK_OUTER_PATH} />
+        <path d={MARK_INNER_PATH} />
+      </g>
     </svg>
   );
 }
 
-export function Lockup({
-  className,
-  bevel = true,
-}: {
-  className?: string;
-  bevel?: boolean;
-}) {
+export function Lockup({ className, bevel = true }: BrandProps) {
   return (
     <svg
       viewBox={LOCKUP_VIEWBOX}
-      className={cn("h-9 w-auto", className)}
+      className={cn("h-8 w-auto shrink-0", className)}
+      fill="currentColor"
       aria-hidden="true"
     >
-      <g transform={LOCKUP_SYMBOL_TRANSFORM}>
-        <path fill="currentColor" d={MARK_PATH} />
-        {bevel ? <path className="fill-logo-bevel" d={BEVEL_PATH} /> : null}
+      <g className={bevel ? "text-gold" : undefined}>
+        <path d={MARK_OUTER_PATH} />
+        <path d={MARK_INNER_PATH} />
       </g>
       <g transform={LOCKUP_WORD_TRANSFORM}>
-        <path fill="currentColor" d={LOCKUP_WORD_PATH} />
+        {WORDMARK_LETTERS.map((letter) => (
+          <path
+            key={letter.name}
+            transform={`translate(${letter.x} 0)`}
+            d={letter.path}
+            fillRule="evenodd"
+          />
+        ))}
       </g>
     </svg>
   );
@@ -60,7 +64,7 @@ export function Logo({ className }: { className?: string }) {
     <Link
       to="/"
       className={cn(
-        "inline-flex items-center text-fg transition-opacity duration-150 hover:opacity-70",
+        "inline-flex shrink-0 items-center text-fg transition-opacity duration-150 hover:opacity-80",
         className,
       )}
       aria-label={chrome.homeAria}

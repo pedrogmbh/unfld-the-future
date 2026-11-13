@@ -182,7 +182,7 @@
       "frontDesign": "Diseño",
       "frontConsulting": "Consultoría",
       "ourProducts": "Nuestros productos",
-      "heroImageAlt": "Un plano geométrico desplegándose en un vacío negro",
+      "heroImageAlt": "Dos pliegues paralelos de papel color miel sobre un fondo Tinta",
       "productsKicker": "Productos de UNFLD",
       "productsTitle": "Mercados distintos. La misma convicción.",
       "productsLede": "Entender el trabajo, construir lo que debería existir después y seguir siendo responsables de lo que ocurre luego del release.",
@@ -1674,7 +1674,7 @@
       "metaDescription": "Cómo nombrar, escribir y representar visualmente a UNFLD y su marca.",
       "kicker": "Marca",
       "title": "Guía de marca UNFLD",
-      "intro": "UNFLD significa UNFOLDING THE FUTURE: la convicción de que el progreso que importa se construye al convertir el trabajo difícil en sistemas que las personas pueden usar. La marca debería sentirse precisa, calma, práctica y en movimiento. Usen estas pautas al referirse a UNFLD, a nuestros productos o a encargos con socios.",
+      "intro": "UNFLD significa UNFOLDING THE FUTURE. Célula aberta, nuestra identidad visual, nace de una alianza construida sobre el entendimiento compartido. Dos pliegues siguen la misma dirección. Juntos forman una celda abierta de colmena y la U de UNFLD.",
       "sections": [
         {
           "heading": "Nombre e identidad legal",
@@ -1686,25 +1686,27 @@
         },
         {
           "heading": "La marca",
-          "body": "La marca es el símbolo hexagonal. Úsenla con el wordmark UNFLD, o sola cuando el nombre ya está en la superficie. No la roten, recoloreen, distorsionen ni le agreguen sombras decorativas."
+          "body": "El símbolo es una celda abierta de colmena formada por dos pliegues sobre una retícula de 30 grados. Usá el vector provisto con el lettering UNFLD o el símbolo solo cuando el nombre ya sea visible. Reservá un cuarto del ancho del símbolo como área libre alrededor de la firma. El ancho mínimo es de 24 px para el símbolo y 96 px para la firma. Para el favicon de 16 px, usá la versión con el espacio ampliado."
         },
         {
           "heading": "Sistema de color",
-          "body": "Campo primario: negro puro (#000000). Tipografía primaria: off-white (#F5F5F5). Tipografía atenuada: gris neutro (#8A8A8A). El acento de acción sigue siendo blanco nítido sobre negro, o negro sobre blanco: botones, la marca y los rellenos se quedan ahí. Los kickers de sección usan un latón discreto (#E3B26A), el mismo tono que las strings en el código. Úsenlo solo en esas etiquetas — kickers de sección en mayúsculas, kickers de título de página y la línea en sentence case “Para desarrolladores”. No lo pongan en botones, en la marca, en pastillas de estado, reglas o rellenos. No lo sustituyan por un oro más vivo. El estado operativo usa un punto verde oscuro pequeño (#187533) junto a “Todos los sistemas operativos.” en la barra jurídica del pie y en la página de estado del servicio. No lo hagan pulsar, y no usen ese verde en otro lugar del chrome. El verde más claro de las ventanas de código se queda solo en las ventanas de código. Sin púrpura, azul ni manchas de degradé en el chrome."
+          "body": "Miel (#EBA937) identifica la marca y la acción principal. Tinta (#181B18) es el fondo digital principal. Papel (#F5F3EB) se usa para el texto principal y las superficies de lectura. Pizarra (#555C56) acompaña el texto sobre fondos claros. Ocre (#805113) identifica enlaces sobre Papel. Miel sobre Tinta tiene un contraste de 8,49:1. Usá texto Tinta en los botones Miel. Las propuestas formales llevan la firma negra sobre papel blanco. Los indicadores de estado llevan una etiqueta escrita."
         },
         {
           "heading": "Tipografía",
-          "body": "Inter Tight para títulos de display y elementos de interfaz. IBM Plex Mono para código, coordenadas, marcas de tiempo y metadatos técnicos. Los titulares son compactos, con tracking levemente negativo, nunca en mayúsculas para oraciones largas. El wordmark es el lettering UNFLD del lockup horizontal."
+          "body": "Barlow Condensed Semibold se usa en titulares y portadas. Source Sans 3 Regular y Semibold se usan en párrafos, navegación y énfasis. IBM Plex Mono queda reservado para código y metadatos técnicos. El wordmark UNFLD es lettering vectorial propio. Usá el archivo provisto. Los documentos editables para licitaciones usan Arial de 11 pt en el cuerpo."
         },
         {
           "heading": "Restricciones",
-          "body": "No coloquen la marca sobre fotografías recargadas sin un enmascarado de degradé adecuado. No la bloqueen con logos de terceros sin permiso. No imiten la identidad visual, la arquitectura de información o la voz de otra empresa. La inspiración debe transformarse en un sistema reconociblemente nuestro."
+          "body": "Mantené la orientación del símbolo y sus proporciones. Usá las versiones aprobadas en Miel, Tinta, blanco o negro, sobre una superficie despejada y con contraste. Conservá los dos pliegues y el espacio entre ellos. La composición con marcas de terceros requiere autorización."
         },
         {
           "heading": "Consultas y aprobaciones",
           "body": "Para pedidos de assets de marca o consultas de aprobación: {{brand}}."
         }
-      ]
+      ],
+      "downloadKit": "Descargar el kit de marca",
+      "downloadGuide": "Descargar el manual de marca"
     }
   },
   "compliance": {

@@ -11,7 +11,7 @@ export const pages = {
     frontDesign: "Design",
     frontConsulting: "Consulting",
     ourProducts: "Our products",
-    heroImageAlt: "A geometric plane unfolding in a black void",
+    heroImageAlt: "Two parallel folds in honey-colored paper on an ink-dark field",
     productsKicker: "Products by UNFLD",
     productsTitle: "Different markets. The same conviction.",
     productsLede:

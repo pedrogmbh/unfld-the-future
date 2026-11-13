@@ -201,9 +201,11 @@ export const legal = {
     metaTitle: "Brand Guidelines",
     metaDescription: "How to name, write, and visually represent UNFLD and its mark.",
     kicker: "Brand",
+    downloadKit: "Download the brand kit",
+    downloadGuide: "Download the brand guide",
     title: "UNFLD Brand Guidelines",
     intro:
-      "UNFLD stands for UNFOLDING THE FUTURE: the belief that meaningful progress is built by turning difficult work into systems people can use. The brand should feel precise, calm, practical, and in motion. Use these guidelines when referencing UNFLD, our products, or partner engagements.",
+      "UNFLD stands for UNFOLDING THE FUTURE. Célula aberta, our visual identity, comes from a partnership built on shared understanding. Two folds follow the same direction. Together they form an open hive cell and the U in UNFLD.",
     sections: [
       {
         heading: "Name & legal identity",
@@ -215,19 +217,19 @@ export const legal = {
       },
       {
         heading: "The mark",
-        body: "The mark is the hexagon symbol. Use it with the UNFLD wordmark, or alone when the name is already on the surface. Do not rotate, recolor, distort, or add decorative shadows.",
+        body: "The symbol is an open hive cell made from two folds on a 30-degree grid. Use the supplied vector master with the custom UNFLD lettering, or use the symbol alone when the name is already visible. Keep clear space equal to one quarter of the symbol’s width around every signature. Minimum width is 24 px for the symbol and 96 px for the full signature. Use the dedicated optical version for a 16 px favicon.",
       },
       {
         heading: "Color system",
-        body: "Primary field: pure black (#000000). Primary type: off-white (#F5F5F5). Muted type: neutral gray (#8A8A8A). The action accent remains crisp white on black, or black on white: buttons, the mark, and fills stay there. Section kickers use a quiet brass (#E3B26A), the same hue as strings in code. Use it only on those labels — uppercase section kickers, page titles’ kickers, and the sentence-case “For developers” line. Do not put it on buttons, the mark, status pills, rules, or fills. Do not substitute a brighter gold. Operational status uses a small dark green dot (#187533) beside “All systems operational.” in the footer legal bar and on the service status page. Do not pulse it, and do not use that green elsewhere in chrome. The brighter window-chrome green stays on code windows only. No purple, blue, or gradient blobs in chrome.",
+        body: "Honey (#EBA937) identifies the mark and the primary action. Ink (#181B18) is the main digital field. Paper (#F5F3EB) carries primary text and reading surfaces. Slate (#555C56) supports text on light backgrounds. Ochre (#805113) is for links on Paper. Honey on Ink has 8.49:1 contrast. Use Ink text on Honey buttons. Formal proposals use the single-color black signature on white paper. Status indicators have a written label.",
       },
       {
         heading: "Typography",
-        body: "Inter Tight for display titles and interface elements. IBM Plex Mono for code, coordinates, timestamps, and technical metadata. Headlines are tight, slightly negatively tracked, never all-caps for long sentences. The wordmark is the UNFLD lettering in the horizontal lockup.",
+        body: "Barlow Condensed Semibold is the display face for headlines and covers. Source Sans 3 Regular and Semibold handle paragraphs, navigation, and emphasis. IBM Plex Mono is reserved for code and technical metadata. The UNFLD wordmark is custom vector lettering. Use the supplied artwork. Editable tender documents use Arial at 11 pt for body text.",
       },
       {
         heading: "Restrictions",
-        body: "Do not place the mark on busy photographs without proper gradient masking. Do not lock it up with third-party logos without permission. Do not imitate another company’s visual identity, information architecture, or voice. Inspiration must be transformed into a system recognizably ours.",
+        body: "Keep the symbol upright, preserve its proportions, and use the approved Honey, Ink, white, or black versions. Place it on a clear field with enough contrast. Keep the two folds and the space between them intact. Pairing the mark with third-party logos requires permission.",
       },
       {
         heading: "Questions & approvals",

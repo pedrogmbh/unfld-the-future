@@ -1,9 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "@/components/site/logo";
-import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { localizeFooter } from "@/lib/i18n/localize";
 import { useLocale, useMessages } from "@/lib/i18n";
-import { SITE, systemsStatus } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 function isFileOrExternal(to: string, external?: boolean) {
   return Boolean(external) || to.startsWith("http") || /\.[a-z0-9]+$/i.test(to);
@@ -84,17 +83,6 @@ export function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <LanguageSwitcher />
-            <Link
-              to={systemsStatus.to}
-              className="inline-flex items-center gap-2 text-[12px] text-subtle transition-colors hover:text-fg"
-            >
-              <span
-                aria-hidden
-                className="size-2 shrink-0 rounded-full bg-status"
-              />
-              {chrome.systemsStatus}
-            </Link>
             {footer.legal.slice(1).map((l) => (
               <Link
                 key={l.to}

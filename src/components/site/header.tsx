@@ -3,11 +3,8 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { Logo } from "@/components/site/logo";
-import { LanguageSwitcher } from "@/components/site/language-switcher";
-import { WhatsAppBtn } from "@/components/site/buttons";
 import { localizeFooter } from "@/lib/i18n/localize";
-import { interpolate, useLocale, useMessages } from "@/lib/i18n";
-import { SITE } from "@/lib/site";
+import { useLocale, useMessages } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -91,15 +88,6 @@ export function Header() {
             ))}
           </nav>
           <div className="hidden items-center gap-3 xl:flex">
-            <LanguageSwitcher compact />
-            <WhatsAppBtn
-              size="sm"
-              aria-label={interpolate(chrome.whatsappAria, {
-                number: SITE.whatsapp,
-              })}
-            >
-              {chrome.whatsapp} {SITE.whatsapp}
-            </WhatsAppBtn>
             <Link
               to="/contact"
               className="inline-flex h-9 items-center rounded-xs bg-accent px-4 text-[13px] font-medium text-accent-fg transition-opacity duration-150 hover:opacity-90 active:scale-[0.96]"
@@ -159,19 +147,6 @@ export function Header() {
               {l.label}
             </Link>
           ))}
-          <div className="py-4 flex flex-wrap items-center gap-3 text-xs font-mono text-muted">
-            <span>{chrome.language}:</span>
-            <LanguageSwitcher />
-          </div>
-          <WhatsAppBtn
-            size="lg"
-            className="mt-4 w-full"
-            aria-label={interpolate(chrome.whatsappAria, {
-              number: SITE.whatsapp,
-            })}
-          >
-            {chrome.whatsapp} {SITE.whatsapp}
-          </WhatsAppBtn>
           <Link
             to="/contact"
             className="mt-3 inline-flex h-12 items-center justify-center rounded-xs bg-accent text-sm font-medium text-accent-fg"

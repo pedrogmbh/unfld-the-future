@@ -119,8 +119,8 @@ News posts: `/news/$slug` + `getNews()`. Do not hardcode
 - Ink (`bg-bg`, #181B18), Paper text, Honey primary action and isotipo.
 - **No hex in JSX.** Tokens only (`text-fg`, `bg-bg`, `border-border`, `text-gold`).
 - Honey (`#EBA937`) identifies the mark, kickers, focus and primary actions. Syntax hues stay inside code.
-- Footer legal bar leads with an 8px `bg-status` dot +
-  “All systems operational.” linking to `/status`. No pulse.
+- Header and footer omit language selectors. The header omits WhatsApp.
+- Footer omits the operational status indicator.
 - Hairline grids: `gap-px … border-border bg-border`, children `bg-bg`.
 - Hero type: `font-display font-semibold`, Barlow Condensed, slight negative tracking.
 - Kickers: uppercase `tracking-[0.18em] text-gold` — except the

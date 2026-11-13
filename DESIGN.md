@@ -77,8 +77,9 @@ at 11 pt for compatibility in tender documents.
 ## Layout and images
 
 Content uses `max-w-6xl` with `px-5 sm:px-8 lg:px-12`. The fixed header is
-80 px high. Desktop navigation starts at 1280 px to leave room for the logo,
-language selector and contact actions.
+80 px high. Desktop navigation starts at 1280 px. The header contains the logo,
+navigation and the contact action. Header and footer omit language selectors.
+The header omits WhatsApp, and the footer omits the operational status indicator.
 
 The homepage pairs display typography with the approved Honey paper folds.
 Responsive AVIF and WebP variants live at `/images/hive-fold-*`. The image is

@@ -53,7 +53,7 @@ export const pages = {
     lede: "Four products built around telemedicine, workplace health, drawing, and vehicle retail.",
     primary: "Talk to UNFLD",
     secondary: "How we build",
-    imageAlt: "Paper sculptures of workplace wellbeing, drawing, vehicle retail and medical care, joined by one honey-colored fold",
+    imageAlt: "Four polished 3D application tiles in Ink and Honey, featuring the UNFLD mark",
     feature1Title: "Four products, each at a different stage",
     feature1Body:
       "Telemedicine, Dialogus, Oluart, and Unifikar advance through clearly defined stages, from early access to live availability.",
@@ -342,7 +342,7 @@ export const pages = {
     interviewTitle: "Interview process",
     officeKicker: "Office",
     officeTitle: "UNFLD in São Paulo",
-    officeAlt: "Paper figures building an open honey-colored cell together, an artistic representation of shared ownership",
+    officeAlt: "Three 3D profile tiles grouped around a Honey-colored tile with the UNFLD mark",
   },
   openRoles: {
     metaTitle: "Open roles",
@@ -453,7 +453,7 @@ export const pages = {
     lede: "Comprehensive compliance disclosures, Information Security Policy (PSSI), ISO 27001/27002 controls, GDPR/LGPD alignment, and infrastructure architecture across UNFLD products and engineering operations.",
     contactTeam: "Contact security & audit team",
     securityOverview: "Security overview",
-    imageAlt: "Six document layers aligned inside protective honey-colored folds, an artistic representation of traceable evidence",
+    imageAlt: "A layered 3D shield in Ink and Honey featuring the UNFLD mark",
     highlightsKicker: "What we hold ourselves to",
     highlightsTitle: "Six commitments the rest of this page has to prove.",
     repoKicker: "The repository",
@@ -483,7 +483,7 @@ export const pages = {
     assertion: "Assertion",
     delegation: "Delegation",
     identity: "Identity",
-    federationAlt: "One paper identity token linked through three controlled entrances by a honey-colored ribbon",
+    federationAlt: "A Honey-colored key in front of two UNFLD-branded access tiles",
     residencyKicker: "Data residency",
     residencyTitle: "Where the data physically sits, by contract.",
     residencyNote:

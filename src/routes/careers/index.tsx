@@ -135,8 +135,8 @@ function Careers() {
         </h2>
         <div className="mt-10 overflow-hidden rounded-xl">
           <img
-            src="/images/editorial/careers-hive-mind-1600.webp"
-            srcSet="/images/editorial/careers-hive-mind-800.webp 800w, /images/editorial/careers-hive-mind-1600.webp 1600w"
+            src="/images/features/careers-1600.webp"
+            srcSet="/images/features/careers-800.webp 800w, /images/features/careers-1600.webp 1600w"
             sizes="(min-width: 1248px) 1152px, calc(100vw - 40px)"
             alt={p.officeAlt}
             width={1600}

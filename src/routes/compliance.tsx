@@ -122,12 +122,12 @@ function CompliancePage() {
       <section className="w-full px-5 pb-20 sm:px-8 sm:pb-28 lg:px-12">
         <div className="mx-auto w-full max-w-6xl">
           <ParallaxImage
-            src="/images/editorial/compliance-evidence-1600.webp"
+            src="/images/features/compliance-1600.webp"
             parallax={false}
             alt={p.imageAlt}
             width={1600}
             height={800}
-            webpSrcSet="/images/editorial/compliance-evidence-800.webp 800w, /images/editorial/compliance-evidence-1600.webp 1600w"
+            webpSrcSet="/images/features/compliance-800.webp 800w, /images/features/compliance-1600.webp 1600w"
             sizes="(min-width: 1248px) 1152px, calc(100vw - 40px)"
           />
         </div>
@@ -744,12 +744,12 @@ function FederationBreak() {
         </div>
         <div className="min-w-0">
           <ParallaxImage
-            src="/images/editorial/compliance-identity-1600.webp"
+            src="/images/features/identity-1600.webp"
             parallax={false}
             alt={p.federationAlt}
             width={1600}
             height={800}
-            webpSrcSet="/images/editorial/compliance-identity-800.webp 800w, /images/editorial/compliance-identity-1600.webp 1600w"
+            webpSrcSet="/images/features/identity-800.webp 800w, /images/features/identity-1600.webp 1600w"
             sizes="(min-width: 1248px) 548px, (min-width: 1024px) 45vw, calc(100vw - 40px)"
           />
         </div>

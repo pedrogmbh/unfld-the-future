@@ -36,11 +36,11 @@ function Products() {
       primaryTo="/contact"
       secondary={p.secondary}
       secondaryTo="/how-we-work"
-      image="/images/features/products-1600.webp"
+      image="/images/features/products-4k.webp"
       imageAlt={p.imageAlt}
-      imageWidth={1600}
-      imageHeight={800}
-      imageWebpSrcSet="/images/features/products-800.webp 800w, /images/features/products-1600.webp 1600w"
+      imageWidth={3840}
+      imageHeight={1920}
+      imageWebpSrcSet="/images/features/products-960.webp 960w, /images/features/products-1920.webp 1920w, /images/features/products-4k.webp 3840w"
       imageSizes="(min-width: 1248px) 1152px, calc(100vw - 40px)"
       imageParallax={false}
       features={[

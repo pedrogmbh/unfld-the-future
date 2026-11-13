@@ -135,12 +135,12 @@ function Careers() {
         </h2>
         <div className="mt-10 overflow-hidden rounded-xl">
           <img
-            src="/images/features/careers-1600.webp"
-            srcSet="/images/features/careers-800.webp 800w, /images/features/careers-1600.webp 1600w"
+            src="/images/features/careers-4k.webp"
+            srcSet="/images/features/careers-960.webp 960w, /images/features/careers-1920.webp 1920w, /images/features/careers-4k.webp 3840w"
             sizes="(min-width: 1248px) 1152px, calc(100vw - 40px)"
             alt={p.officeAlt}
-            width={1600}
-            height={800}
+            width={3840}
+            height={1920}
             loading="lazy"
             decoding="async"
             className="aspect-[2/1] w-full object-cover"

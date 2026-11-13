@@ -456,3 +456,16 @@ test("vite plugin bakes og identity as a virtual module", () => {
   assert.match(plugin, /virtual:grok-og-identity/);
   assert.match(plugin, /snapshotOgIdentity/);
 });
+
+test("complete page metadata supplies the share title through repeated injections", () => {
+  const html = '<html><head><title>UNFLD — Unfolding the future.</title><meta property="og:title" content="UNFLD — Unfolding the future."><meta property="og:description" content="Build and operate real systems."><meta property="og:url" content="https://www.unfld.com.br/"><meta property="og:image" content="https://www.unfld.com.br/images/share/unfld-en.jpg"></head></html>';
+  const ctx = { host: "www.unfld.com.br", site: { title: "UNFLD", card: "custom", description: "Generic description" } };
+  const once = injectGrokPwaHead(html, ctx);
+  const twice = injectGrokPwaHead(once, ctx);
+  for (const result of [once, twice]) {
+    assert.equal((result.match(/property="og:title"/g) ?? []).length, 1);
+    assert.match(result, /property="og:title" content="UNFLD — Unfolding the future."/);
+    assert.match(result, /property="og:description" content="Build and operate real systems."/);
+    assert.match(result, /images\/share\/unfld-en.jpg/);
+  }
+});

@@ -19,11 +19,12 @@ export function buildPageHead({
   description,
   path,
   type = "website",
-  image = `${SITE.url}/og.jpg`,
+  image,
   jsonLd,
   locale = getCurrentLocale(),
 }: PageMetaOptions) {
   const messages = getMessages(locale);
+  const shareImage = image ?? `${SITE.url}/images/share/unfld-${locale.slice(0, 2)}.jpg`;
   const resolvedDescription = description ?? messages.pages.home.metaDescription;
   const fullTitle = title
     ? `${title} | ${SITE.name}`
@@ -43,13 +44,13 @@ export function buildPageHead({
     { property: "og:type", content: type },
     { property: "og:site_name", content: SITE.name },
     { property: "og:locale", content: locale.replace("-", "_") },
-    { property: "og:image", content: image },
+    { property: "og:image", content: shareImage },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: fullTitle },
     { name: "twitter:description", content: resolvedDescription },
-    { name: "twitter:image", content: image },
+    { name: "twitter:image", content: shareImage },
   ];
 
   const links = [

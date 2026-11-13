@@ -492,9 +492,14 @@ export function injectGrokPwaHead(html, ctx = {}) {
   const { site, projectId, creator, creatorId, host, cwd } = normalizeHeadContext(ctx);
   const documentTitle = titleFromDocument(html);
   const appName = resolveOgTitle(site, ctx.appName ?? DEFAULT_APP_NAME, host, documentTitle);
+  const pageHasShareDetails =
+    Boolean(documentTitle) &&
+    /property\s*=\s*["']og:url["']/i.test(html) &&
+    /property\s*=\s*["']og:description["']/i.test(html);
+  const shareSite = pageHasShareDetails ? { ...site, title: documentTitle, description: "" } : site;
   const keepOwnImage = pageOwnsOgImage(html);
   const keepArticle = pageDeclaresArticle(html);
-  const keys = replacedShareMetaKeys({ site, host, cwd });
+  const keys = replacedShareMetaKeys({ site: shareSite, host, cwd });
   if (keepOwnImage) {
     keys.delete("og:image");
     keys.delete("og:image:width");
@@ -514,7 +519,7 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  const ogTags = grokOgHeadTags({ host, appName, site, documentTitle, cwd }).filter((tag) => {
+  const ogTags = grokOgHeadTags({ host, appName, site: shareSite, documentTitle, cwd }).filter((tag) => {
     if (keepOwnImage && /property="og:image/.test(tag)) return false;
     if (keepArticle && /property="og:(?:title|type)"/.test(tag)) return false;
     return true;
